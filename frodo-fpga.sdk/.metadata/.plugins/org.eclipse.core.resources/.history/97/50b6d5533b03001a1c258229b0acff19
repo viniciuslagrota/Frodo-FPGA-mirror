@@ -1,0 +1,88 @@
+/*
+ * globalDef.h
+ *
+ *  Created on: 22 de set de 2019
+ *      Author: Vinicius
+ */
+
+#ifndef SRC_INCLUDE_GLOBALDEF_H_
+#define SRC_INCLUDE_GLOBALDEF_H_
+
+#include "semphr.h"
+#include "xgpio.h"
+#include "xllfifo.h"
+
+//////////////////////////////////////////////
+//
+//	Parameters
+//
+//////////////////////////////////////////////
+
+//////////////////////////////////////////////
+//
+//	Semaphores
+//
+//////////////////////////////////////////////
+SemaphoreHandle_t xSemaphore;
+SemaphoreHandle_t xPrintMutex;
+
+//////////////////////////////////////////////
+//
+//	Task handles
+//
+//////////////////////////////////////////////
+TaskHandle_t xSenderTask;
+TaskHandle_t xReceiverTask;
+TaskHandle_t xSwAesTask;
+TaskHandle_t xHwAesTask;
+TaskHandle_t xAnalyzeTask;
+
+//////////////////////////////////////////////
+//
+//	Queue handles
+//
+//////////////////////////////////////////////
+QueueHandle_t xQueueResults;
+
+//////////////////////////////////////////////
+//
+//	Global variables
+//
+//////////////////////////////////////////////
+u32 *memoryMMEncryption;
+u32 *memoryMMDecryption;
+
+//////////////////////////////////////////////
+//
+//	AXI GPIO
+//
+//////////////////////////////////////////////
+XGpio axiStartDoneKeyEncryption;
+XGpio axiStartDoneKeyDecryption;
+XGpio_Config * ConfigPtr0;
+XGpio axi_control_timer;
+XGpio_Config * ConfigPtr1;
+XGpio axi_counter_timer;
+XGpio_Config * ConfigPtr2;
+XGpio_Config * ConfigPtr3;
+
+//////////////////////////////////////////////
+//
+//	AXI Stream
+//
+//////////////////////////////////////////////
+XLlFifo fifoEncryption;
+XLlFifo fifoDecryption;
+
+//////////////////////////////////////////////
+//
+//	Task prototypes
+//
+//////////////////////////////////////////////
+void prvSenderTask( void *pvParameters );
+void prvReceiverTask( void *pvParameters );
+void prvSwAesTask( void *pvParameters );
+void prvHwAesTask( void *pvParameters );
+void prvAnalyzeTask( void *pvParameters );
+
+#endif /* SRC_INCLUDE_GLOBALDEF_H_ */
