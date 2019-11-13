@@ -1,4 +1,0 @@
-Running: xsim.dir/keccak_f1600_v1_0_behav/xsimk.exe -simmode gui -wdb keccak_f1600_v1_0_behav.wdb -simrunnum 0 -socket 53826
-Design successfully loaded
-Design Loading Memory Usage: 9872 KB (Peak: 9872 KB)
-Design Loading CPU Usage: 61 ms

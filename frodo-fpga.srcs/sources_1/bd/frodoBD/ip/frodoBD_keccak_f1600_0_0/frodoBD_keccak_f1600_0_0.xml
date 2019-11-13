@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>xilinx.com</spirit:vendor>
   <spirit:library>customized_ip</spirit:library>
-  <spirit:name>frodoBD_keccak_f1600_ip_0_0</spirit:name>
+  <spirit:name>frodoBD_keccak_f1600_0_0</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -818,7 +818,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">frodoBD_keccak_f1600_ip_0_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">frodoBD_keccak_f1600_0_0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
@@ -833,53 +833,63 @@
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
-      <xilinx:displayName>keccak_f1600_ip_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:displayName>keccak_f1600_v1.0</xilinx:displayName>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d6a698b_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a409642_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@17b28bf_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@711f07ae_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3598901d_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@50dfbbc1_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cceb14e_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fe68dfa_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@199dacc_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cb1d791_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a51e0a_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e22dca1_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2eb9b0b1_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c7072bb_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@66ca4b05_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c5f8203_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cff7d09_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@44d2725f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7644c81e_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@77dd5bb8_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d46deb7_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b432c6a_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@761b4f80_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cdfdec1_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@456a0343_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3251cb18_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@206c3465_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f1f3b_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2811c6aa_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@e161a52_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@364107a6_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ae55b28_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@15c69b38_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@20c3c9d3_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@228f87fa_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@37d4e709_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@702a27cb_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e2f3896_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@356ccd66_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7635c3f6_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@444e0edd_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b05795_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fbbc83f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4086b9d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ad5b204_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@793eae73_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3387c485_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44782470_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27e4ea8_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55caf775_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@725cef39_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@316c35d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b672afd_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42c97af9_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b542f11_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70241d66_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43e4bb81_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aa458c9_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fa1e4ae_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58b2b3b1_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@420a57f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@81ea570_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e7ea92f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fa149a0_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b6c77fe_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5942e6d6_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@575bc9a7_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5068d213_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3466ef8f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@322ee30b_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60807e60_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c6b6ca5_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4353f127_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dcfaeba_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@172dee0_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18cb749f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4756661_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bdf250d_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45e6b1cf_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67ef693a_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59e9458f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52859a08_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@471c36af_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a4dac4f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bc79a3c_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e28e62e_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@aac80ad_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2255bc16_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ad3ed6f_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@334ec863_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d65c256_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c35045d_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f5f652c_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39ff0452_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6efc0f20_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1886114e_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@751e4195_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f5f8cc8_ARCHIVE_LOCATION">c:/Projects/ip_repo/keccak_f1600_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.HAS_TKEEP" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -904,10 +914,10 @@
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f358bab0"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="6e0ba533"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ad61819f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c1d5b605"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="0764a277"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="dc0c7874"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="a79a133e"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c3cce78f"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
