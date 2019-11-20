@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sat Nov  9 18:40:49 2019
+| Date             : Tue Nov 19 19:57:20 2019
 | Host             : Vinicius-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file frodoBD_wrapper_power_routed.rpt -pb frodoBD_wrapper_power_summary_routed.pb -rpx frodoBD_wrapper_power_routed.rpx
 | Design           : frodoBD_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.658        |
+| Total On-Chip Power (W)  | 1.670        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.538        |
+| Dynamic (W)              | 1.550        |
 | Device Static (W)        | 0.120        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.9         |
-| Junction Temperature (C) | 44.1         |
+| Max Ambient (C)          | 65.7         |
+| Junction Temperature (C) | 44.3         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,21 +49,23 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.005 |        3 |       --- |             --- |
-| Slice Logic             |     0.001 |     2123 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      593 |     17600 |            3.37 |
-|   Register              |    <0.001 |     1071 |     35200 |            3.04 |
-|   CARRY4                |    <0.001 |       26 |      4400 |            0.59 |
-|   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
-|   Others                |     0.000 |      212 |       --- |             --- |
-| Signals                 |     0.002 |     1583 |       --- |             --- |
-| PS7                     |     1.530 |        1 |       --- |             --- |
-| Static Power            |     0.120 |          |           |                 |
-| Total                   |     1.658 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.013 |        3 |       --- |             --- |
+| Slice Logic              |     0.003 |    10410 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     3012 |     17600 |           17.11 |
+|   CARRY4                 |    <0.001 |       97 |      4400 |            2.20 |
+|   Register               |    <0.001 |     5008 |     35200 |           14.23 |
+|   LUT as Distributed RAM |    <0.001 |       60 |      6000 |            1.00 |
+|   LUT as Shift Register  |    <0.001 |       62 |      6000 |            1.03 |
+|   Others                 |     0.000 |      281 |       --- |             --- |
+| Signals                  |     0.003 |     6959 |       --- |             --- |
+| Block RAM                |     0.001 |        2 |        60 |            3.33 |
+| PS7                      |     1.530 |        1 |       --- |             --- |
+| Static Power             |     0.120 |          |           |                 |
+| Total                    |     1.670 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.008 |      0.007 |
+| Vccint    |       1.000 |     0.027 |       0.020 |      0.007 |
 | Vccaux    |       1.800 |     0.008 |       0.000 |      0.008 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -81,7 +83,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -148,14 +150,16 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| frodoBD_wrapper          |     1.538 |
-|   frodoBD_i              |     1.538 |
-|     axi_gpio_1           |     0.002 |
-|       U0                 |     0.002 |
-|     axi_interconnect_0   |     0.005 |
-|       s00_couplers       |     0.004 |
-|     processing_system7_0 |     1.530 |
-|       inst               |     1.530 |
+| frodoBD_wrapper          |     1.550 |
+|   frodoBD_i              |     1.550 |
+|     axi_fifo_mm_s_0      |     0.004 |
+|       U0                 |     0.004 |
+|     axi_interconnect_0   |     0.004 |
+|       s00_couplers       |     0.003 |
+|     keccak_f1600_ip_0    |     0.010 |
+|       U0                 |     0.010 |
+|     processing_system7_0 |     1.531 |
+|       inst               |     1.531 |
 +--------------------------+-----------+
 
 

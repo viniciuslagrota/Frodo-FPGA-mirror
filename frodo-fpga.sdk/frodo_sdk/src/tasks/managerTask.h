@@ -17,6 +17,8 @@
 #include "../include/globalDef.h"
 #include "../include/xil_printf_custom.h"
 
+#define PACKET_SIZE			50
+
 void prvManagerTask( void *pvParameters );
 
 #endif /* SRC_TASKS_MANAGERTASK_H_ */

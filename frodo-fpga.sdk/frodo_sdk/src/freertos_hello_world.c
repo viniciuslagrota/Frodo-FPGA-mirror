@@ -52,6 +52,7 @@ extern XGpio_Config * ConfigPtr0;
 extern XGpio axi_control_timer;
 extern XGpio_Config * ConfigPtr1;
 extern XGpio axi_counter_timer;
+extern XLlFifo fifoKeccak;
 
 int main( void )
 {
@@ -69,6 +70,31 @@ int main( void )
 
 	ConfigPtr1 = XGpio_LookupConfig(XPAR_AXI_GPIO_1_DEVICE_ID);
 	XGpio_CfgInitialize(&axi_counter_timer, ConfigPtr1, ConfigPtr1->BaseAddress);
+
+	//AXI FIFO
+	int xStatus;
+	int Status;
+
+	//Config FIFO
+	XLlFifo_Config *ConfigFifoKeccak;
+	ConfigFifoKeccak = XLlFfio_LookupConfig(XPAR_AXI_FIFO_0_DEVICE_ID);
+	if (!ConfigFifoKeccak)
+		xil_printf_m("[MAIN - ERROR] No configuration found.\n");
+
+	//Initialize FIFO
+	xil_printf_m("[MAIN] Fifo keccak address: %d.\n", &fifoKeccak);
+	xStatus = XLlFifo_CfgInitialize(&fifoKeccak, ConfigFifoKeccak, ConfigFifoKeccak->BaseAddress);
+	if(XST_SUCCESS != xStatus)
+		xil_printf_m("[MAIN] Failed to initialize FIFO keccak.\n");
+
+	xil_printf_m("[MAIN] FIFO keccak initialized.\n");
+
+	//Get FIFO status
+	Status = XLlFifo_Status(&fifoKeccak);
+	XLlFifo_IntClear(&fifoKeccak, 0xffffffff);
+	Status = XLlFifo_Status(&fifoKeccak);
+	if(Status != 0x0)
+		xil_printf_m("[MAIN - ERROR] Reset value wrong.\n");
 
 	//Creating tasks
 	xTaskCreate( prvManagerTask, ( const char * ) "ManagerTask", configMINIMAL_STACK_SIZE, NULL,
