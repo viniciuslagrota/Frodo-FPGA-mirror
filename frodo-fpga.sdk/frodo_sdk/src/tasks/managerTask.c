@@ -37,7 +37,7 @@ void prvManagerTask( void *pvParameters )
 
 		//Debug//
 
-		for(u32 i = 0; i < 4; i++)
+		for(u32 i = 0; i < PACKET_SIZE; i++)
 		{
 			u32 u32TxWord = i;
 			xil_printf_m("\tSent data: 0x%x\n", u32TxWord);
@@ -46,7 +46,7 @@ void prvManagerTask( void *pvParameters )
 		}
 
 		//Start Transmission by writing transmission length into the TLR
-		XLlFifo_iTxSetLen(&fifoKeccak, 16);
+		XLlFifo_iTxSetLen(&fifoKeccak, PACKET_SIZE*4);
 
 		//Check for Transmission completion
 		while(!(XLlFifo_IsTxDone(&fifoKeccak))){}

@@ -9,11 +9,6 @@ entity keccak_f1600_ip_v1_0 is
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
-
-		-- Parameters of Axi Slave Bus Interface S00_AXI
-		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 6;
-
 		-- Parameters of Axi Slave Bus Interface S00_AXIS
 		C_S00_AXIS_TDATA_WIDTH	: integer	:= 32;
 
@@ -50,8 +45,8 @@ end keccak_f1600_ip_v1_0;
 
 architecture arch_imp of keccak_f1600_ip_v1_0 is
 
-	--constant C_AXI_PACKET_SIZE       : integer   := 50; -- 50 words of 32 bits.
-	constant C_AXI_PACKET_SIZE       : integer   := 4; -- 4 words of 32 bits.
+	constant C_AXI_PACKET_SIZE       : integer   := 50; -- 50 words of 32 bits.
+	-- constant C_AXI_PACKET_SIZE       : integer   := 4; -- 4 words of 32 bits.
 
 	-- AXI Stream Slave signals
     signal s_data_slave_s : std_logic_vector(C_S00_AXIS_TDATA_WIDTH-1 downto 0);

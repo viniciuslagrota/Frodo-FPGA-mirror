@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:keccak_f1600_ip:1.0
--- IP Revision: 6
+-- IP Revision: 7
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -83,9 +83,7 @@ ARCHITECTURE frodoBD_keccak_f1600_ip_0_0_arch OF frodoBD_keccak_f1600_ip_0_0 IS
   COMPONENT keccak_f1600_ip_v1_0 IS
     GENERIC (
       C_S00_AXIS_TDATA_WIDTH : INTEGER; -- AXI4Stream sink: Data Width
-      C_M00_AXIS_TDATA_WIDTH : INTEGER; -- Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-      C_S00_AXI_DATA_WIDTH : INTEGER;
-      C_S00_AXI_ADDR_WIDTH : INTEGER
+      C_M00_AXIS_TDATA_WIDTH : INTEGER -- Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
     );
     PORT (
       start : IN STD_LOGIC;
@@ -132,9 +130,7 @@ BEGIN
   U0 : keccak_f1600_ip_v1_0
     GENERIC MAP (
       C_S00_AXIS_TDATA_WIDTH => 32,
-      C_M00_AXIS_TDATA_WIDTH => 32,
-      C_S00_AXI_DATA_WIDTH => 32,
-      C_S00_AXI_ADDR_WIDTH => 6
+      C_M00_AXIS_TDATA_WIDTH => 32
     )
     PORT MAP (
       start => start,

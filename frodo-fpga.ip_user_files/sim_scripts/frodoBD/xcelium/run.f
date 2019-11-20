@@ -89,9 +89,9 @@
   "../../../bd/frodoBD/ip/frodoBD_axi_gpio_2_0/sim/frodoBD_axi_gpio_2_0.vhd" \
   "../../../bd/frodoBD/ipshared/ea3f/hdl/timer_v1_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_timer_0_2/sim/frodoBD_timer_0_2.vhd" \
-  "../../../bd/frodoBD/ipshared/3637/hdl/keccak_f1600_ip_v1_0_M00_AXIS.vhd" \
-  "../../../bd/frodoBD/ipshared/3637/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd" \
-  "../../../bd/frodoBD/ipshared/3637/hdl/keccak_f1600_ip_v1_0.vhd" \
+  "../../../bd/frodoBD/ipshared/31b1/hdl/keccak_f1600_ip_v1_0_M00_AXIS.vhd" \
+  "../../../bd/frodoBD/ipshared/31b1/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd" \
+  "../../../bd/frodoBD/ipshared/31b1/hdl/keccak_f1600_ip_v1_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_keccak_f1600_ip_0_0/sim/frodoBD_keccak_f1600_ip_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_19 \

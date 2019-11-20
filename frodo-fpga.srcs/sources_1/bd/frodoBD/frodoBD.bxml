@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="frodoBD" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1573613586"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1573613586"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1573613586"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1573613586"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574203834"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574203834"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574203834"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574203834"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\frodoBD_processing_system7_0_0\frodoBD_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -87,6 +87,14 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip\frodoBD_auto_pc_0\frodoBD_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_0/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="synth\frodoBD.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -95,14 +103,6 @@
       <File Name="sim\frodoBD.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\frodoBD_auto_pc_0\frodoBD_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_interconnect_0/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="frodoBD_ooc.xdc" Type="XDC">
