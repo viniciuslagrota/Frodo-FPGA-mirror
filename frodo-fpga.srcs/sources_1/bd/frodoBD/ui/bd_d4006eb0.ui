@@ -21,15 +21,15 @@ preplace netloc axi_gpio_0_gpio2_io_o 1 3 1 N 400
 preplace netloc timer_0_count 1 3 2 N 530 1410
 preplace netloc axi_gpio_2_gpio_io_o 1 3 1 1120 680n
 preplace netloc keccak_f1600_ip_0_done 1 3 2 N 850 1410
-preplace netloc axi_fifo_mm_s_0_AXI_STR_TXD 1 3 1 N 660
 preplace netloc processing_system7_0_DDR 1 1 4 NJ 40 N 40 N 40 1420
-preplace netloc axi_interconnect_0_M00_AXI 1 2 1 760 350n
+preplace netloc axi_fifo_mm_s_0_AXI_STR_TXD 1 3 1 N 660
 preplace netloc axi_interconnect_0_M01_AXI 1 2 1 N 500
-preplace netloc S00_AXI_1 1 1 1 450 100n
 preplace netloc axi_interconnect_0_M02_AXI 1 2 1 770 520n
+preplace netloc keccak_f1600_ip_0_M00_AXIS 1 2 3 800 280 NJ 280 1420
+preplace netloc S00_AXI_1 1 1 1 450 100n
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 760 350n
 preplace netloc axi_interconnect_0_M03_AXI 1 2 1 760 540n
 preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 60 N 60 N 60 1410
-preplace netloc keccak_f1600_ip_0_M00_AXIS 1 2 3 800 280 NJ 280 1420
 levelinfo -pg 1 0 230 620 960 1280 1440
 pagesize -pg 1 -db -bbox -sgen 0 -220 1550 940
 "

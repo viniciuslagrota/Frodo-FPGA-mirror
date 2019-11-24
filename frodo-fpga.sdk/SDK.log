@@ -836,3 +836,4 @@ con
 ----------------End of Script----------------
 
 21:05:41 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local.tcl'
+23:22:31 INFO  : Disconnected from the channel tcfchan#2.
