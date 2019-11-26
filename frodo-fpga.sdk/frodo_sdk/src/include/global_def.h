@@ -22,7 +22,7 @@
 //
 //////////////////////////////////////////////
 XGpio axiStartDone;
-XGpio_Config * ConfigPtr0;
+//XGpio_Config * ConfigPtr0;
 XGpio_Config * ConfigPtr1;
 XGpio_Config * ConfigPtr2;
 XGpio axi_control_timer;

@@ -117,7 +117,6 @@ vcom -work axi_gpio_v2_0_21 -64 -93 \
 "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
 
 vcom -work xil_defaultlib -64 -93 \
-"../../../bd/frodoBD/ip/frodoBD_axi_gpio_0_0/sim/frodoBD_axi_gpio_0_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_1_0/sim/frodoBD_axi_gpio_1_0.vhd" \
 
 vcom -work lib_pkg_v1_0_2 -64 -93 \
@@ -134,20 +133,18 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_2_0/sim/frodoBD_axi_gpio_2_0.vhd" \
 "../../../bd/frodoBD/ipshared/ea3f/hdl/timer_v1_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_timer_0_2/sim/frodoBD_timer_0_2.vhd" \
-"../../../bd/frodoBD/ipshared/a151/hdl/keccak_f1600_core.vhd" \
-"../../../bd/frodoBD/ipshared/a151/hdl/keccak_f1600_ip_v1_0_M00_AXIS.vhd" \
-"../../../bd/frodoBD/ipshared/a151/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd" \
-"../../../bd/frodoBD/ipshared/a151/hdl/keccak_f1600_ip_v1_0.vhd" \
+"../../../bd/frodoBD/ipshared/44a1/hdl/keccak_f1600_core.vhd" \
+"../../../bd/frodoBD/ipshared/44a1/hdl/keccak_f1600_ip_v1_0_M00_AXIS.vhd" \
+"../../../bd/frodoBD/ipshared/44a1/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd" \
+"../../../bd/frodoBD/ipshared/44a1/hdl/keccak_f1600_ip_v1_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_keccak_f1600_ip_0_0/sim/frodoBD_keccak_f1600_ip_0_0.vhd" \
+"../../../bd/frodoBD/sim/frodoBD.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/frodoBD/ip/frodoBD_auto_pc_0/sim/frodoBD_auto_pc_0.v" \
-
-vcom -work xil_defaultlib -64 -93 \
-"../../../bd/frodoBD/sim/frodoBD.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

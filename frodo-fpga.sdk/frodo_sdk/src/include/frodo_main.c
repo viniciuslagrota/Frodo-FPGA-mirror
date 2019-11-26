@@ -32,9 +32,9 @@ void frodo_init()
 	u32TxWordVec[41] = 0x80000000;
 
 	//Reset and start timer
-	XGpio_DiscreteWrite(&axi_control_timer, 1, 0x1); // Reset
-	XGpio_DiscreteWrite(&axi_control_timer, 1, 0x0); //
-	XGpio_DiscreteWrite(&axi_control_timer, 2, 0x1); // Enable counter
+//	XGpio_DiscreteWrite(&axi_control_timer, 1, 0x1); // Reset
+//	XGpio_DiscreteWrite(&axi_control_timer, 1, 0x0); //
+//	XGpio_DiscreteWrite(&axi_control_timer, 2, 0x1); // Enable counter
 
 	//Sending data
 	for(u32 i = 0; i < PACKET_SIZE; i++)
@@ -59,7 +59,7 @@ void frodo_init()
 	}
 
 	//Stopping timer and reading time
-	XGpio_DiscreteWrite(&axi_control_timer, 2, 0x0); // Disable counter
+//	XGpio_DiscreteWrite(&axi_control_timer, 2, 0x0); // Disable counter
 	readTimer = XGpio_DiscreteRead(&axi_counter_timer, 1);
 	fval = (float)readTimer / (float)100;
 	whole = fval;

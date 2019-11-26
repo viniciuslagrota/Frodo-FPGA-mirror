@@ -53,7 +53,7 @@
 #include "include/global_def.h"
 
 extern XGpio axiStartDone;
-extern XGpio_Config * ConfigPtr0;
+//extern XGpio_Config * ConfigPtr0;
 extern XGpio_Config * ConfigPtr1;
 extern XGpio_Config * ConfigPtr2;
 extern XGpio axi_control_timer;
@@ -81,14 +81,7 @@ int main()
 		XGpioPs_WritePin(&Gpio, ledpin, u32LedState);
 		u32LedState ^= 0x1;
 
-		//---- AXI GPIO ----
-		ConfigPtr0 = XGpio_LookupConfig(XPAR_AXI_GPIO_0_DEVICE_ID);
-		XGpio_CfgInitialize(&axi_control_timer, ConfigPtr0, ConfigPtr0->BaseAddress);
-		XGpio_DiscreteWrite(&axi_control_timer, 1, 0x0); //Set reset bit low.
-		XGpio_DiscreteWrite(&axi_control_timer, 1, 0x1); //Set reset bit high to reset counter.
-		XGpio_DiscreteWrite(&axi_control_timer, 1, 0x0); //Set reset bit low.
-		XGpio_DiscreteWrite(&axi_control_timer, 2, 0x0); //Set enable bit low.
-
+		//---- AXI GPIO ---
 		ConfigPtr1 = XGpio_LookupConfig(XPAR_AXI_GPIO_1_DEVICE_ID);
 		XGpio_CfgInitialize(&axi_counter_timer, ConfigPtr1, ConfigPtr1->BaseAddress);
 
