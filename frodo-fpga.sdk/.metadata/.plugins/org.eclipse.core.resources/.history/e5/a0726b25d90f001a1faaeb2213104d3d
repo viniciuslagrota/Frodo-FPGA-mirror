@@ -1,0 +1,14 @@
+/*
+ * frodo_main.h
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#ifndef SRC_INCLUDE_FRODO_MAIN_H_
+#define SRC_INCLUDE_FRODO_MAIN_H_
+
+void frodo_init();
+
+
+#endif /* SRC_INCLUDE_FRODO_MAIN_H_ */

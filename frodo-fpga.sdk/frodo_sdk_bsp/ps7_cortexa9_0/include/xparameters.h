@@ -18,15 +18,19 @@
 
 #include "xparameters_ps.h"
 
-/* Platform specific definitions */
-#define PLATFORM_ZYNQ
- 
-/******************************************************************/
 #define STDIN_BASEADDRESS 0xE0001000
 #define STDOUT_BASEADDRESS 0xE0001000
 
 /******************************************************************/
 
+/* Platform specific definitions */
+#define PLATFORM_ZYNQ
+ 
+/* Definitions for sleep timer configuration */
+#define XSLEEP_TIMER_IS_DEFAULT_TIMER
+ 
+ 
+/******************************************************************/
 
 /* Definitions for peripheral PS7_DDR_0 */
 #define XPAR_PS7_DDR_0_S_AXI_BASEADDR 0x00100000
