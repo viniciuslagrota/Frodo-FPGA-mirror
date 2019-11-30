@@ -1,4 +1,4 @@
-verilog xil_defaultlib --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/1b7e/hdl/verilog" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/122e/hdl/verilog" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/6887/hdl/verilog" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/9623/hdl/verilog" \
+verilog xil_defaultlib --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" --include "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" \
 "../../../bd/frodoBD/ip/frodoBD_processing_system7_0_0/sim/frodoBD_processing_system7_0_0.v" \
 "../../../bd/frodoBD/ip/frodoBD_xbar_0/sim/frodoBD_xbar_0.v" \
 "../../../bd/frodoBD/ip/frodoBD_auto_pc_0/sim/frodoBD_auto_pc_0.v" \

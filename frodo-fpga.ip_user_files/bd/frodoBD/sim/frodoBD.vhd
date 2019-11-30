@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Nov 27 20:59:55 2019
+--Date        : Sat Nov 30 16:17:23 2019
 --Host        : Vinicius-PC running 64-bit major release  (build 9200)
 --Command     : generate_target frodoBD.bd
 --Design      : frodoBD
@@ -1328,7 +1328,7 @@ entity frodoBD is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of frodoBD : entity is "frodoBD,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=frodoBD,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=15,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_board_cnt=1,da_clkrst_cnt=9,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of frodoBD : entity is "frodoBD,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=frodoBD,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=14,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_board_cnt=1,da_clkrst_cnt=9,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of frodoBD : entity is "frodoBD.hwdef";
 end frodoBD;
@@ -1512,15 +1512,6 @@ architecture STRUCTURE of frodoBD is
     count : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component frodoBD_timer_0_2;
-  component frodoBD_system_ila_0_2 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component frodoBD_system_ila_0_2;
   component frodoBD_keccak_f1600_ip_0_0 is
   port (
     start : in STD_LOGIC;
@@ -1586,10 +1577,6 @@ architecture STRUCTURE of frodoBD is
   signal axi_fifo_mm_s_0_AXI_STR_TXD_TREADY : STD_LOGIC;
   signal axi_fifo_mm_s_0_AXI_STR_TXD_TVALID : STD_LOGIC;
   signal axi_gpio_2_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
-  attribute DEBUG : string;
-  attribute DEBUG of axi_gpio_2_gpio_io_o : signal is "true";
-  attribute MARK_DEBUG : boolean;
-  attribute MARK_DEBUG of axi_gpio_2_gpio_io_o : signal is std.standard.true;
   signal axi_interconnect_0_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_interconnect_0_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_interconnect_0_M00_AXI_ARVALID : STD_LOGIC;
@@ -1646,14 +1633,8 @@ architecture STRUCTURE of frodoBD is
   signal keccak_f1600_ip_0_M00_AXIS_TREADY : STD_LOGIC;
   signal keccak_f1600_ip_0_M00_AXIS_TVALID : STD_LOGIC;
   signal keccak_f1600_ip_0_done : STD_LOGIC;
-  attribute DEBUG of keccak_f1600_ip_0_done : signal is "true";
-  attribute MARK_DEBUG of keccak_f1600_ip_0_done : signal is std.standard.true;
   signal keccak_f1600_ip_0_enable_timer : STD_LOGIC;
-  attribute DEBUG of keccak_f1600_ip_0_enable_timer : signal is "true";
-  attribute MARK_DEBUG of keccak_f1600_ip_0_enable_timer : signal is std.standard.true;
   signal keccak_f1600_ip_0_reset_timer : STD_LOGIC;
-  attribute DEBUG of keccak_f1600_ip_0_reset_timer : signal is "true";
-  attribute MARK_DEBUG of keccak_f1600_ip_0_reset_timer : signal is std.standard.true;
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -2006,14 +1987,6 @@ processing_system7_0: component frodoBD_processing_system7_0_0
       USB0_PORT_INDCTL(1 downto 0) => NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED(1 downto 0),
       USB0_VBUS_PWRFAULT => '0',
       USB0_VBUS_PWRSELECT => NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED
-    );
-system_ila_0: component frodoBD_system_ila_0_2
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => keccak_f1600_ip_0_enable_timer,
-      probe1(0) => keccak_f1600_ip_0_reset_timer,
-      probe2(0) => axi_gpio_2_gpio_io_o(0),
-      probe3(0) => keccak_f1600_ip_0_done
     );
 timer_0: component frodoBD_timer_0_2
      port map (

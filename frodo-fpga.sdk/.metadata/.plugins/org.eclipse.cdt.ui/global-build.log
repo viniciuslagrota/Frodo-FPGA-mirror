@@ -435,3 +435,1157 @@ arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
   41672	   1600	  23432	  66704	  10490	frodo_sdk.elf
 'Finished building: frodo_sdk.elf.size'
 ' '
+12:31:51 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak-f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak-f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak-f1600.d" -MT"src/include/keccak-f1600.o" -o "src/include/keccak-f1600.o" "../src/include/keccak-f1600.c"
+'Finished building: ../src/include/keccak-f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak-f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41672	   1600	  23432	  66704	  10490	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:32:56 **** Clean-only build of configuration Debug for project frodo_sdk ****
+make clean 
+rm -rf  ./src/include/frodo_main.o ./src/include/keccak-f1600.o  ./src/helloworld.o ./src/platform.o  ./src/include/frodo_main.d ./src/include/keccak-f1600.d  ./src/helloworld.d ./src/platform.d  frodo_sdk.elf.size  frodo_sdk.elf
+' '
+12:32:56 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41672	   1600	  23432	  66704	  10490	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:33:07 **** Clean-only build of configuration Debug for project frodo_sdk ****
+make clean 
+rm -rf  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o  ./src/include/frodo_main.d ./src/include/keccak_f1600.d  ./src/helloworld.d ./src/platform.d  frodo_sdk.elf.size  frodo_sdk.elf
+' '
+12:33:08 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41672	   1600	  23432	  66704	  10490	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:33:20 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41672	   1600	  23432	  66704	  10490	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:34:19 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:18:35: error: 'u32TxWordVec' undeclared (first use in this function)
+    XLlFifo_TxPutWord(&fifoKeccak, u32TxWordVec[i]);
+                                   ^~~~~~~~~~~~
+../src/include/keccak_f1600.c:18:35: note: each undeclared identifier is reported only once for each function it appears in
+../src/include/keccak_f1600.c:29:2: error: 'readGpio' undeclared (first use in this function); did you mean 'XGpio'?
+  readGpio = XGpio_DiscreteRead(&axiStartDone, 1); //Check done pin
+  ^~~~~~~~
+  XGpio
+../src/include/keccak_f1600.c:37:2: error: 'readTimer' undeclared (first use in this function)
+  readTimer = XGpio_DiscreteRead(&axi_counter_timer, 1);
+  ^~~~~~~~~
+../src/include/keccak_f1600.c:38:2: error: 'fval' undeclared (first use in this function); did you mean 'flsl'?
+  fval = (float)readTimer / (float)100;
+  ^~~~
+  flsl
+../src/include/keccak_f1600.c:39:2: error: 'whole' undeclared (first use in this function)
+  whole = fval;
+  ^~~~~
+../src/include/keccak_f1600.c:40:2: error: 'thousandths' undeclared (first use in this function)
+  thousandths = (fval - whole) * 1000;
+  ^~~~~~~~~~~
+make: *** [src/include/subdir.mk:23: src/include/keccak_f1600.o] Error 1
+12:36:45 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:26:35: error: 'u32TxWordVec' undeclared (first use in this function)
+    XLlFifo_TxPutWord(&fifoKeccak, u32TxWordVec[i]);
+                                   ^~~~~~~~~~~~
+../src/include/keccak_f1600.c:26:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/include/subdir.mk:23: src/include/keccak_f1600.o] Error 1
+12:38:53 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42480	   1600	  23432	  67512	  107b8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:40:34 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42544	   1600	  23432	  67576	  107f8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:43:36 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+../src/include/frodo_main.c: In function 'frodo_init':
+../src/include/frodo_main.c:25:20: warning: passing argument 1 of 'keccak_f1600_func' from incompatible pointer type [-Wincompatible-pointer-types]
+  keccak_f1600_func(&state);
+                    ^~~~~~
+In file included from ../src/include/frodo_main.c:10:
+../src/include/keccak_f1600.h:15:35: note: expected 'uint64_t *' {aka 'long long unsigned int *'} but argument is of type 'u64 (*)[25]' {aka 'long long unsigned int (*)[25]'}
+ void keccak_f1600_func(uint64_t * state);
+                        ~~~~~~~~~~~^~~~~
+../src/include/frodo_main.c:20:13: warning: unused variable 'thousandths' [-Wunused-variable]
+  u32 whole, thousandths;
+             ^~~~~~~~~~~
+../src/include/frodo_main.c:20:6: warning: unused variable 'whole' [-Wunused-variable]
+  u32 whole, thousandths;
+      ^~~~~
+../src/include/frodo_main.c:19:8: warning: unused variable 'fval' [-Wunused-variable]
+  float fval;
+        ^~~~
+../src/include/frodo_main.c:18:6: warning: unused variable 'readTimer' [-Wunused-variable]
+  u32 readTimer;
+      ^~~~~~~~~
+../src/include/frodo_main.c:17:6: warning: unused variable 'readGpio' [-Wunused-variable]
+  u32 readGpio = 0x0;
+      ^~~~~~~~
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41748	   1600	  23432	  66780	  104dc	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:44:23 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41748	   1600	  23432	  66780	  104dc	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:44:34 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+12:45:14 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41684	   1600	  23432	  66716	  1049c	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:45:23 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+12:46:20 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41696	   1600	  23432	  66728	  104a8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:47:53 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41760	   1600	  23432	  66792	  104e8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+12:47:58 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+12:54:32 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41760	   1600	  23432	  66792	  104e8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:04:55 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:08:01 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:09:45 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41760	   1600	  23432	  66792	  104e8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:12:43 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42068	   1600	  23432	  67100	  1061c	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:12:46 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:14:04 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c:11:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ printStateMatrixDebug(uint64_t * s)
+ ^~~~~~~~~~~~~~~~~~~~~
+../src/include/keccak_f1600.c: In function 'printStateMatrixDebug':
+../src/include/keccak_f1600.c:13:6: warning: unused variable 'iCount' [-Wunused-variable]
+  int iCount = 0;
+      ^~~~~~
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:68:2: warning: implicit declaration of function 'printStateMatrix'; did you mean 'printStateMatrixDebug'? [-Wimplicit-function-declaration]
+  printStateMatrix(state);
+  ^~~~~~~~~~~~~~~~
+  printStateMatrixDebug
+../src/include/keccak_f1600.c: In function 'printStateMatrixDebug':
+../src/include/keccak_f1600.c:55:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: ./src/include/keccak_f1600.o: in function `keccak_f1600_func':
+C:\Projects\frodo-fpga\frodo-fpga.sdk\frodo_sdk\Debug/../src/include/keccak_f1600.c:68: undefined reference to `printStateMatrix'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:42: frodo_sdk.elf] Error 1
+16:14:37 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c:11:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ printStateMatrixDebug(uint64_t * s)
+ ^~~~~~~~~~~~~~~~~~~~~
+../src/include/keccak_f1600.c: In function 'printStateMatrixDebug':
+../src/include/keccak_f1600.c:55:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42584	   1600	  23432	  67616	  10820	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:14:47 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42584	   1600	  23432	  67616	  10820	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:14:56 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:15:01 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:16:32 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:92:36: error: 'u32TxWordVec' undeclared (first use in this function)
+     XLlFifo_TxPutWord(&fifoKeccak, u32TxWordVec[i]);
+                                    ^~~~~~~~~~~~
+../src/include/keccak_f1600.c:92:36: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/include/subdir.mk:23: src/include/keccak_f1600.o] Error 1
+16:17:37 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:92:36: error: 'u32TxWordVec' undeclared (first use in this function)
+     XLlFifo_TxPutWord(&fifoKeccak, u32TxWordVec[i]);
+                                    ^~~~~~~~~~~~
+../src/include/keccak_f1600.c:92:36: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/include/subdir.mk:23: src/include/keccak_f1600.o] Error 1
+16:17:52 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42584	   1600	  23432	  67616	  10820	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:17:56 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:37:30 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:122:48: warning: left shift count >= width of type [-Wshift-count-overflow]
+     state[i] |= XLlFifo_RxGetWord(&fifoKeccak) << 32;
+                                                ^~
+../src/include/keccak_f1600.c:124:28: warning: left shift count >= width of type [-Wshift-count-overflow]
+     state[i] = (0x00000000 << 32) | XLlFifo_RxGetWord(&fifoKeccak);
+                            ^~
+../src/include/keccak_f1600.c:116:7: warning: unused variable 'RxWord' [-Wunused-variable]
+   u32 RxWord;
+       ^~~~~~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:38:05 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:122:48: warning: left shift count >= width of type [-Wshift-count-overflow]
+     state[i] |= XLlFifo_RxGetWord(&fifoKeccak) << 32;
+                                                ^~
+../src/include/keccak_f1600.c:124:28: warning: left shift count >= width of type [-Wshift-count-overflow]
+     state[i] = (0x00000000 << 32) | XLlFifo_RxGetWord(&fifoKeccak);
+                            ^~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:38:10 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:40:04 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:122:50: warning: left shift count >= width of type [-Wshift-count-overflow]
+     state[i] |= (XLlFifo_RxGetWord(&fifoKeccak)) << 32;
+                                                  ^~
+../src/include/keccak_f1600.c:124:28: warning: left shift count >= width of type [-Wshift-count-overflow]
+     state[i] = (0x00000000 << 32) | XLlFifo_RxGetWord(&fifoKeccak);
+                            ^~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:41:09 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:122:28: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy((u32)(state[i]) + 1, XLlFifo_RxGetWord(&fifoKeccak), 4);
+            ~~~~~~~~~~~~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'long unsigned int'
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+../src/include/keccak_f1600.c:122:33: warning: passing argument 2 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy((u32)(state[i]) + 1, XLlFifo_RxGetWord(&fifoKeccak), 4);
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'const void * restrict' but argument is of type 'u32' {aka 'long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+../src/include/keccak_f1600.c:124:17: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy(state[i], XLlFifo_RxGetWord(&fifoKeccak), 4);
+            ~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'uint64_t' {aka 'long long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+../src/include/keccak_f1600.c:124:22: warning: passing argument 2 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy(state[i], XLlFifo_RxGetWord(&fifoKeccak), 4);
+                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'const void * restrict' but argument is of type 'u32' {aka 'long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:41:45 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:123:28: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy((u32)(state[i]) + 1, &RxWord, 4);
+            ~~~~~~~~~~~~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'long unsigned int'
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+../src/include/keccak_f1600.c:125:17: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy(state[i], &RxWord, 4);
+            ~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'uint64_t' {aka 'long long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:42:03 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:123:17: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy(state[i], &RxWord, 4);
+            ~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'uint64_t' {aka 'long long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+../src/include/keccak_f1600.c:125:17: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy(state[i], &RxWord, 4);
+            ~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'uint64_t' {aka 'long long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:42:11 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:125:17: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy(state[i], &RxWord, 4);
+            ~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'uint64_t' {aka 'long long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:42:46 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:123:13: error: lvalue required as unary '&' operand
+     memcpy((&(u32)(state[i])) + 1, &RxWord, 4);
+             ^
+make: *** [src/include/subdir.mk:23: src/include/keccak_f1600.o] Error 1
+16:42:55 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:123:12: error: lvalue required as unary '&' operand
+     memcpy(&((u32)(state[i])) + 1, &RxWord, 4);
+            ^
+make: *** [src/include/subdir.mk:23: src/include/keccak_f1600.o] Error 1
+16:43:25 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:123:12: error: lvalue required as unary '&' operand
+     memcpy(&((u32)(state[i])), &RxWord, 4);
+            ^
+make: *** [src/include/subdir.mk:23: src/include/keccak_f1600.o] Error 1
+16:43:46 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42624	   1600	  23432	  67656	  10848	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:44:11 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+../src/include/keccak_f1600.c: In function 'keccak_f1600_func':
+../src/include/keccak_f1600.c:123:19: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+     memcpy(*state + 1, &RxWord, 4);
+            ~~~~~~~^~~
+In file included from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_printf.h:9,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xil_io.h:61,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio_l.h:83,
+                 from ../../frodo_sdk_bsp/ps7_cortexa9_0/include/xgpio.h:133,
+                 from ../src/include/global_def.h:11,
+                 from ../src/include/keccak_f1600.h:11,
+                 from ../src/include/keccak_f1600.c:9:
+c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:31:9: note: expected 'void * restrict' but argument is of type 'uint64_t' {aka 'long long unsigned int'}
+ void *  memcpy (void *__restrict, const void *__restrict, size_t);
+         ^~~~~~
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:44:45 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42624	   1600	  23432	  67656	  10848	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:44:50 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:46:35 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42648	   1600	  23432	  67680	  10860	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:46:41 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:48:08 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42624	   1600	  23432	  67656	  10848	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:48:14 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:53:23 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:53:30 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:54:57 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:55:03 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:56:25 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:58:07 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:58:10 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/keccak_f1600.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:59:20 **** Auto Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/frodo_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_main.d" -MT"src/include/frodo_main.o" -o "src/include/frodo_main.o" "../src/include/frodo_main.c"
+'Finished building: ../src/include/frodo_main.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/frodo_main.o ./src/include/keccak_f1600.o  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42688	   1600	  23432	  67720	  10888	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+16:59:28 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
