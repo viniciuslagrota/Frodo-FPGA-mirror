@@ -13,12 +13,6 @@ void frodo_init()
 {
 	xil_printf_macro("Frodo init\n");
 
-	// ------ Key generation ------
-
-	// ------ Key encapsulation ------
-
-	// ------ Key decapsulation ------
-
 	// ------ Test keccak_function ------
 	u64 state[25] = { 0 };
 	state[0] = 0x000000000000001f;
