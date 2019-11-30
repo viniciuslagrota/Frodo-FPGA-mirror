@@ -1,0 +1,14 @@
+/*
+ * keccak-f1600.c
+
+ *
+ *  Created on: 30 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#include "keccak-f1600.h"
+
+keccak_f1600_func(uint64_t * state)
+{
+
+}

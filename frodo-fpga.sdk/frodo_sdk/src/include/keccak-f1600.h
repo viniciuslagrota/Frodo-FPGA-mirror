@@ -1,0 +1,17 @@
+/*
+ * keccak-f1600.h
+ *
+ *  Created on: 30 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#ifndef SRC_INCLUDE_KECCAK_F1600_H_
+#define SRC_INCLUDE_KECCAK_F1600_H_
+
+#include "global_def.h"
+
+#define PACKET_SIZE		50
+
+void keccak_f1600_func(uint64_t * state);
+
+#endif /* SRC_INCLUDE_KECCAK_F1600_H_ */

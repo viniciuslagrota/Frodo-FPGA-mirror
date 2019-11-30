@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:keccak_f1600_ip:1.0
--- IP Revision: 7
+-- IP Revision: 13
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -60,6 +60,8 @@ ENTITY frodoBD_keccak_f1600_ip_0_0 IS
   PORT (
     start : IN STD_LOGIC;
     done : OUT STD_LOGIC;
+    enable_timer : OUT STD_LOGIC;
+    reset_timer : OUT STD_LOGIC;
     s00_axis_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     s00_axis_tstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axis_tlast : IN STD_LOGIC;
@@ -88,6 +90,8 @@ ARCHITECTURE frodoBD_keccak_f1600_ip_0_0_arch OF frodoBD_keccak_f1600_ip_0_0 IS
     PORT (
       start : IN STD_LOGIC;
       done : OUT STD_LOGIC;
+      enable_timer : OUT STD_LOGIC;
+      reset_timer : OUT STD_LOGIC;
       s00_axis_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       s00_axis_tstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       s00_axis_tlast : IN STD_LOGIC;
@@ -126,6 +130,8 @@ ARCHITECTURE frodoBD_keccak_f1600_ip_0_0_arch OF frodoBD_keccak_f1600_ip_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF s00_axis_tstrb: SIGNAL IS "xilinx.com:interface:axis:1.0 S00_AXIS TSTRB";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axis_tdata: SIGNAL IS "XIL_INTERFACENAME S00_AXIS, WIZ_DATA_WIDTH 32, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN frodoBD_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axis_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 S00_AXIS TDATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF reset_timer: SIGNAL IS "XIL_INTERFACENAME reset_timer, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF reset_timer: SIGNAL IS "xilinx.com:signal:reset:1.0 reset_timer RST";
 BEGIN
   U0 : keccak_f1600_ip_v1_0
     GENERIC MAP (
@@ -135,6 +141,8 @@ BEGIN
     PORT MAP (
       start => start,
       done => done,
+      enable_timer => enable_timer,
+      reset_timer => reset_timer,
       s00_axis_tdata => s00_axis_tdata,
       s00_axis_tstrb => s00_axis_tstrb,
       s00_axis_tlast => s00_axis_tlast,

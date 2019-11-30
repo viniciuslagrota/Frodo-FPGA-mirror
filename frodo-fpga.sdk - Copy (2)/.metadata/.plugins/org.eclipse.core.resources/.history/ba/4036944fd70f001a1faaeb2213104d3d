@@ -1,0 +1,15 @@
+/*
+ * global_def.h
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#ifndef SRC_INCLUDE_GLOBAL_DEF_H_
+#define SRC_INCLUDE_GLOBAL_DEF_H_
+
+#include "xgpio.h"
+#include "xllfifo.h"
+
+
+#endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */

@@ -1,0 +1,15 @@
+/*
+ * frodo_main.c
+
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+void frodo_init()
+{
+	xil_printf("Frodo init\n");
+
+	//Test FIFO
+	XGpio_DiscreteWrite(&axiStartDoneKeyEncryption, 1, 0x1); // Start gpio set high
+}

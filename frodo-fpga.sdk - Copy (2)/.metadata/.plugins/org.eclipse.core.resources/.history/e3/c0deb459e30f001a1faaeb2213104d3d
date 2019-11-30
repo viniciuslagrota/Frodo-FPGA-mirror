@@ -1,0 +1,41 @@
+/*
+ * frodo_main.c
+
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#include "frodo_main.h"
+
+void frodo_init()
+{
+	xil_printf("Frodo init\n");
+
+	// ------ Variables ------
+	u32 readGpio = 0x0;
+
+	// ------ Test FIFO ------
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartDone, 1, 0x1); // Start gpio set high
+
+	//Sending data
+
+
+	//Reading done bit
+	readGpio = XGpio_DiscreteRead(&axiStartDone, 1); //Check done pin
+	while(readGpio == 0x0)
+	{
+		readGpio = XGpio_DiscreteRead(&axiStartDone, 1);
+	}
+
+	//Interpret data
+
+
+	//Set start pin low
+	XGpio_DiscreteWrite(&axiStartDone, 1, 0x0); // Start gpio set low
+
+
+
+}
