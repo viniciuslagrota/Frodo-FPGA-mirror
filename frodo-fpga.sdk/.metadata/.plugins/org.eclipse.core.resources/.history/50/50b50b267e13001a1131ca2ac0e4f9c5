@@ -11,5 +11,4 @@
 void keccak_f1600_func(uint64_t * state)
 {
 
-
 }
