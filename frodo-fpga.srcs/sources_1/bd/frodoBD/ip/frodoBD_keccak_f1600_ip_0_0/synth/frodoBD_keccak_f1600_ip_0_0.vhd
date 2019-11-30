@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:keccak_f1600_ip:1.0
--- IP Revision: 12
+-- IP Revision: 13
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -113,7 +113,7 @@ ARCHITECTURE frodoBD_keccak_f1600_ip_0_0_arch OF frodoBD_keccak_f1600_ip_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF frodoBD_keccak_f1600_ip_0_0_arch : ARCHITECTURE IS "frodoBD_keccak_f1600_ip_0_0,keccak_f1600_ip_v1_0,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF frodoBD_keccak_f1600_ip_0_0_arch: ARCHITECTURE IS "frodoBD_keccak_f1600_ip_0_0,keccak_f1600_ip_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=keccak_f1600_ip,x_ipVersion=1.0,x_ipCoreRevision=12,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32}";
+  ATTRIBUTE CORE_GENERATION_INFO OF frodoBD_keccak_f1600_ip_0_0_arch: ARCHITECTURE IS "frodoBD_keccak_f1600_ip_0_0,keccak_f1600_ip_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=keccak_f1600_ip,x_ipVersion=1.0,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF m00_axis_aresetn: SIGNAL IS "XIL_INTERFACENAME M00_AXIS_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";

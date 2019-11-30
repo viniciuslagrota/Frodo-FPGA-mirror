@@ -16,6 +16,9 @@
 
 #define ledpin 47
 
+#define xil_printf_macro xil_printf
+//#define xil_printf_macro
+
 //////////////////////////////////////////////
 //
 //	AXI GPIO

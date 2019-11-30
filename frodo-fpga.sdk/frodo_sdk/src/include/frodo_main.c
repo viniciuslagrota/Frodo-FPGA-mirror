@@ -10,7 +10,7 @@
 
 void frodo_init()
 {
-	xil_printf("Frodo init\n");
+	xil_printf_macro("Frodo init\n");
 
 	// ------ Variables ------
 	u32 readGpio = 0x0;
@@ -39,7 +39,7 @@ void frodo_init()
 	//Sending data
 	for(u32 i = 0; i < PACKET_SIZE; i++)
 	{
-//		xil_printf("\tSent data %d: 0x%x\n", i, u32TxWordVec[i]);
+//		xil_printf_macro("\tSent data %d: 0x%x\n", i, u32TxWordVec[i]);
 		if(XLlFifo_iTxVacancy(&fifoKeccak))
 			XLlFifo_TxPutWord(&fifoKeccak, u32TxWordVec[i]);
 	}
@@ -49,7 +49,7 @@ void frodo_init()
 
 	//Check for Transmission completion
 	while(!(XLlFifo_IsTxDone(&fifoKeccak))){}
-//	xil_printf("Transmission completed.\n");
+//	xil_printf_macro("Transmission completed.\n");
 
 	//Reading done bit
 	readGpio = XGpio_DiscreteRead(&axiStartDone, 1); //Check done pin
@@ -64,7 +64,7 @@ void frodo_init()
 	fval = (float)readTimer / (float)100;
 	whole = fval;
 	thousandths = (fval - whole) * 1000;
-	xil_printf("Time took to process Keccak-f1600: %d.%03d us\n", whole, thousandths);
+	xil_printf_macro("Time took to process Keccak-f1600: %d.%03d us\n", whole, thousandths);
 
 	//Interpret data
 	while(XLlFifo_iRxOccupancy(&fifoKeccak))
@@ -74,18 +74,18 @@ void frodo_init()
 		u32 RxWord;
 		int i;
 		ReceiveLength = (XLlFifo_iRxGetLen(&fifoKeccak))/4;
-		xil_printf("Received length: %d bytes.\n", ReceiveLength << 2);
+		xil_printf_macro("Received length: %d bytes.\n", ReceiveLength << 2);
 		for (i=0; i < ReceiveLength; i++) {
 			RxWord = XLlFifo_RxGetWord(&fifoKeccak);
-			xil_printf("\tReceived data: 0x%x\n", RxWord);
+			xil_printf_macro("\tReceived data: 0x%x\n", RxWord);
 		}
 	}
 	int Status;
 	Status = XLlFifo_IsRxDone(&fifoKeccak);
 	if(Status != TRUE)
-		xil_printf("Failing in receive complete...\n");
+		xil_printf_macro("Failing in receive complete...\n");
 
-	xil_printf("Reception completed.\n");
+	xil_printf_macro("Reception completed.\n");
 
 	//Set start pin low
 	XGpio_DiscreteWrite(&axiStartDone, 1, 0x0); // Start gpio set low
