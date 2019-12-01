@@ -8,16 +8,30 @@
 #ifndef SRC_INCLUDE_GLOBAL_DEF_H_
 #define SRC_INCLUDE_GLOBAL_DEF_H_
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "xgpio.h"
 #include "xllfifo.h"
 #include "xgpio.h"
 #include "xil_printf.h"
-#include "frodo_main.h"
+
+#include "keccak_f1600.h"
+#include "api_frodo640.h"
+#include "test_kem.h"
+#include "test_KEM640.h"
+#include "kem.h"
+
 
 #define ledpin 47
 
 #define xil_printf_macro xil_printf
 //#define xil_printf_macro
+
+#define KEM_TEST_ITERATIONS			1
+#define false						0
+#define true						1
+#define passed						0
+#define failed						1
 
 //////////////////////////////////////////////
 //

@@ -1,0 +1,48 @@
+/*
+ * frodo_main.c
+
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#include "test_kem.h"
+#include "api_frodo640.h"
+#include "keccak_f1600.h"
+
+int kem_test(const char *named_parameters, int iterations)
+{
+	// ------ Test keccak_function ------
+	u64 state[25] = { 0 };
+	state[0] = 0x000000000000001f;
+	state[20] = 0x8000000000000000;
+	keccak_f1600_func(state);
+
+	// ------ KEM test ------
+    uint8_t pk[CRYPTO_PUBLICKEYBYTES];
+    uint8_t sk[CRYPTO_SECRETKEYBYTES];
+    uint8_t ss_encap[CRYPTO_BYTES], ss_decap[CRYPTO_BYTES];
+    uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
+
+    xil_printf_macro("\n");
+    xil_printf_macro("=============================================================================================================================\n");
+    xil_printf_macro("Testing correctness of key encapsulation mechanism (KEM), system %s, tests for %d iterations\n", named_parameters, iterations);
+    xil_printf_macro("=============================================================================================================================\n");
+
+    for (int i = 0; i < iterations; i++) {
+//        crypto_kem_keypair(pk, sk);
+//        crypto_kem_enc(ct, ss_encap, pk);
+//        crypto_kem_dec(ss_decap, ct, sk);
+        if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
+            xil_printf_macro("\n ERROR!\n");
+	        return false;
+        }
+    }
+    xil_printf_macro("Tests PASSED. All session keys matched.\n");
+    xil_printf_macro("\n\n");
+
+
+
+
+    return true;
+}

@@ -1,0 +1,50 @@
+/*
+ * global_def.h
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#ifndef SRC_INCLUDE_GLOBAL_DEF_H_
+#define SRC_INCLUDE_GLOBAL_DEF_H_
+
+#include <stdio.h>
+#include "xgpio.h"
+#include "xllfifo.h"
+#include "xgpio.h"
+#include "xil_printf.h"
+
+#include "test_kem.h"
+#include "test_KEM640.h"
+#include "kem.h"
+
+#define ledpin 47
+
+#define xil_printf_macro xil_printf
+//#define xil_printf_macro
+
+#define SYSTEM_NAME    				"FrodoKEM-640"
+#define KEM_TEST_ITERATIONS			1
+#define false						0
+#define true						1
+
+//////////////////////////////////////////////
+//
+//	AXI GPIO
+//
+//////////////////////////////////////////////
+XGpio axiStartDone;
+//XGpio_Config * ConfigPtr0;
+XGpio_Config * ConfigPtr1;
+XGpio_Config * ConfigPtr2;
+XGpio axi_control_timer;
+XGpio axi_counter_timer;
+
+//////////////////////////////////////////////
+//
+//	AXI Stream
+//
+//////////////////////////////////////////////
+XLlFifo fifoKeccak;
+
+#endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */

@@ -1,0 +1,44 @@
+/*
+ * frodo_main.c
+
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#include "frodo_main.h"
+#include "keccak_f1600.h"
+
+static int kem_test(const char *named_parameters, int iterations)
+{
+    uint8_t pk[CRYPTO_PUBLICKEYBYTES];
+    uint8_t sk[CRYPTO_SECRETKEYBYTES];
+    uint8_t ss_encap[CRYPTO_BYTES], ss_decap[CRYPTO_BYTES];
+    uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
+
+    printf("\n");
+    printf("=============================================================================================================================\n");
+    printf("Testing correctness of key encapsulation mechanism (KEM), system %s, tests for %d iterations\n", named_parameters, iterations);
+    printf("=============================================================================================================================\n");
+
+    for (int i = 0; i < iterations; i++) {
+        crypto_kem_keypair(pk, sk);
+        crypto_kem_enc(ct, ss_encap, pk);
+        crypto_kem_dec(ss_decap, ct, sk);
+        if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
+            printf("\n ERROR!\n");
+	        return false;
+        }
+    }
+    printf("Tests PASSED. All session keys matched.\n");
+    printf("\n\n");
+
+    // ------ Test keccak_function ------
+	u64 state[25] = { 0 };
+	state[0] = 0x000000000000001f;
+	state[20] = 0x8000000000000000;
+	keccak_f1600_func(state);
+
+
+    return true;
+}

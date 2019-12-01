@@ -1,0 +1,33 @@
+/*
+ * random.c
+
+ *
+ *  Created on: 1 de dez de 2019
+ *      Author: Vinicius
+ */
+#include "random.h"
+
+int randombytes(unsigned char* random_array, unsigned long long nbytes)
+{
+//	int32_t i32nBytesCount = nbytes;
+	u32 u32Random;
+	u32 idx = 0;
+	unsigned long long i;
+
+	printf("Random bytes requested: %d\n", nbytes);
+
+	for(i = 0; i <= nbytes; i = i + 4)
+	{
+		u32Random = rand();
+
+		random_array[i + 0] = (u32Random >> 0) & 0xff;
+		random_array[i + 1] = (u32Random >> 8) & 0xff;
+		random_array[i + 2] = (u32Random >> 16) & 0xff;
+		random_array[i + 3] = (u32Random >> 24) & 0xff;
+
+		printf("nbytes: %d\tRandom: %x\ti : %d\n", nbytes, u32Random, i);
+	}
+
+
+	return passed;
+}
