@@ -8,6 +8,8 @@
 #ifndef SRC_INCLUDE_FRODO640_H_
 #define SRC_INCLUDE_FRODO640_H_
 
+#include "fips202.h"
+
 // Parameters for "FrodoKEM-640"
 #define PARAMS_N 640
 #define PARAMS_NBAR 8

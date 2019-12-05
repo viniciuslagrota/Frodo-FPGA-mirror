@@ -147,7 +147,7 @@ int main()
 		//Get random seed.
 		TempRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_TEMP);
 		TempData = XAdcPs_RawToTemperature(TempRawData);
-		xil_printf("\nRaw data %d\nThe Current Temperature is %0d.%03d Centigrades\n", TempRawData, (int)(TempData), XAdcFractionToInt(TempData));
+		printf("\nRaw data %d\nThe Current Temperature is %0d.%03d Centigrades\n", TempRawData, (int)(TempData), XAdcFractionToInt(TempData));
 		srand(TempRawData); //Get a random seed here!
 
 		//Frodo system

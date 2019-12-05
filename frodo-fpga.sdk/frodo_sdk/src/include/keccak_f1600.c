@@ -14,13 +14,13 @@ void printStateMatrixDebug(uint64_t * s)
 	int x = 0;
 	int y = 0;
 	int i;
-	xil_printf_macro("Matrix state:\n");
+	printf("Matrix state:\n");
 	for (size_t line = 0; line < 12; line++)
 	{
-		xil_printf_macro("(%d, %d) ", x, y);
+		printf("(%d, %d) ", x, y);
 
 		for (i = 0; i < 8; i++)
-			xil_printf_macro("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
+			printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
 
 		x++;
 		if (x == 5)
@@ -31,11 +31,11 @@ void printStateMatrixDebug(uint64_t * s)
 				y = 0;
 		}
 
-		xil_printf_macro(" ");
+		printf(" ");
 		for (i = 0; i < 8; i++)
-			xil_printf_macro("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
+			printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
 
-		xil_printf_macro(" (%d, %d)\n", x, y);
+		printf(" (%d, %d)\n", x, y);
 
 		x++;
 		if (x == 5)
@@ -46,17 +46,17 @@ void printStateMatrixDebug(uint64_t * s)
 				y = 0;
 		}
 	}
-	xil_printf_macro("(%d, %d) ", x, y);
+	printf("(%d, %d) ", x, y);
 
 	for (i = 0; i < 8; i++)
-		xil_printf_macro("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
+		printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
 
-	xil_printf_macro("\n");
+	printf("\n");
 }
 
-void keccak_f1600_func(uint64_t * state)
+void KeccakF1600_StatePermute_HW(uint64_t * state)
 {
-	xil_printf_macro("keccak_f1600_func init\n");
+//	xil_printf_macro("keccak_f1600_func init\n");
 //
 	// ------ Variables ------
 	u32 readGpio = 0x0;
@@ -65,7 +65,7 @@ void keccak_f1600_func(uint64_t * state)
 	u32 whole, thousandths;
 
 	//Print state matrix
-	printStateMatrixDebug(state);
+//	printStateMatrixDebug(state);
 
 	//Set start pin high
 	XGpio_DiscreteWrite(&axiStartDone, 1, 0x1); // Start gpio set high
@@ -106,7 +106,7 @@ void keccak_f1600_func(uint64_t * state)
 	fval = (float)readTimer / (float)100;
 	whole = fval;
 	thousandths = (fval - whole) * 1000;
-	xil_printf_macro("Time took to process Keccak-f1600: %d.%03d us\n", whole, thousandths);
+//	xil_printf_macro("Time took to process Keccak-f1600: %d.%03d us\n", whole, thousandths);
 
 	//Interpret data
 	while(XLlFifo_iRxOccupancy(&fifoKeccak))
@@ -116,7 +116,7 @@ void keccak_f1600_func(uint64_t * state)
 		u32 RxWord;
 		int i;
 		ReceiveLength = (XLlFifo_iRxGetLen(&fifoKeccak))/4;
-		xil_printf_macro("Received length: %d bytes.\n", ReceiveLength << 2);
+//		xil_printf_macro("Received length: %d bytes.\n", ReceiveLength << 2);
 		for (i = 0; i < ReceiveLength; i++) {
 			RxWord = XLlFifo_RxGetWord(&fifoKeccak);
 			if(i & 0x1) //upper word
@@ -129,15 +129,15 @@ void keccak_f1600_func(uint64_t * state)
 	}
 	int Status;
 	Status = XLlFifo_IsRxDone(&fifoKeccak);
-	if(Status != TRUE)
-		xil_printf_macro("Failing in receive complete...\n");
+//	if(Status != TRUE)
+//		xil_printf_macro("Failing in receive complete...\n");
 
-	xil_printf_macro("Reception completed.\n");
+//	xil_printf_macro("Reception completed.\n");
 
 	//Set start pin low
 	XGpio_DiscreteWrite(&axiStartDone, 1, 0x0); // Start gpio set low
 
 	//Print state matrix
-	printStateMatrixDebug(state);
+//	printStateMatrixDebug(state);
 
 }

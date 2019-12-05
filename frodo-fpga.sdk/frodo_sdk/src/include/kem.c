@@ -42,5 +42,16 @@ int crypto_kem_keypair(unsigned char* pk, unsigned char* sk)
 	printf("Input and output length: %d\n", BYTES_SEED_A);
 #endif
 
+	shake(pk_seedA, BYTES_SEED_A, randomness_z, BYTES_SEED_A);
+
+#if 1
+	printf("Output: ");
+	for (int i = 0; i < BYTES_SEED_A; i++)
+	{
+		printf("%02x ", *(pk_seedA + i));
+	}
+	printf("\n\n");
+#endif
+
 	return 0;
 }
