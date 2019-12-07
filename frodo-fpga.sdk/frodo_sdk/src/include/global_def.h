@@ -79,7 +79,7 @@ extern uint16_t CDF_TABLE_LEN;
 #define DEBUG_KEM_ENC				1
 //Keccak_f1600
 #define DEBUG_KECCAK_HW				0
-#define DEBUG_STATE_MATRIX			0
+#define DEBUG_STATE_MATRIX			1
 //Random
 #define DEBUG_RANDOM				0
 //Noise

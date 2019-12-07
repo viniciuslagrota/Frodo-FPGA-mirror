@@ -242,6 +242,7 @@ int crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk
 #endif
 
 	shake((uint8_t*)Sp, (2*PARAMS_N+PARAMS_NBAR)*PARAMS_NBAR*sizeof(uint16_t), shake_input_seedSE, 1 + CRYPTO_BYTES);
+
 #if DEBUG_KEM_ENC
 	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] Sp: ");
 	//for (int i = 0; i < 640 * 8 * 2; i++)
@@ -261,10 +262,54 @@ int crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk
 	frodo_mul_add_sa_plus_e(Bp, Sp, Ep, pk_seedA);
 	frodo_pack(ct_c1, (PARAMS_LOGQ*PARAMS_N*PARAMS_NBAR)/8, Bp, PARAMS_N*PARAMS_NBAR, PARAMS_LOGQ);
 
+#if DEBUG_KEM_ENC
+	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] ct: ");
+	for (int i = 0; i < 20; i++)
+	{
+		print_debug(DEBUG_KEM_ENC, "%d ", ct[i]);
+	}
+	print_debug(DEBUG_KEM_ENC, "\n");
+#endif
+
 	// Compute ss = F(ct||KK)
 	memcpy(Fin_ct, ct, CRYPTO_CIPHERTEXTBYTES);
 	memcpy(Fin_k, k, CRYPTO_BYTES);
+
+#if DEBUG_KEM_ENC
+	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] Fin (begin): ");
+	for (int i = 0; i < 20; i++)
+	{
+		print_debug(DEBUG_KEM_ENC, "%d ", Fin[i]);
+	}
+	print_debug(DEBUG_KEM_ENC, "\n");
+	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] Fin (end): ");
+	for (int i = CRYPTO_CIPHERTEXTBYTES; i < CRYPTO_CIPHERTEXTBYTES + CRYPTO_BYTES; i++)
+	{
+		print_debug(DEBUG_KEM_ENC, "%d ", Fin[i]);
+	}
+	print_debug(DEBUG_KEM_ENC, "\n");
+#endif
+
+//	memset(ss, 0x0, CRYPTO_BYTES);
+#if DEBUG_KEM_ENC
+	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] ss: ");
+	for (int i = 0; i < CRYPTO_BYTES; i++)
+	{
+		print_debug(DEBUG_KEM_ENC, "%d ", ss[i]);
+	}
+	print_debug(DEBUG_KEM_ENC, "\n");
+#endif
+
 	shake(ss, CRYPTO_BYTES, Fin, CRYPTO_CIPHERTEXTBYTES + CRYPTO_BYTES);
+
+#if DEBUG_KEM_ENC
+	print_debug(DEBUG_KEM_ENC, "\n[KEM - ENC] ss: ");
+	for (int i = 0; i < CRYPTO_BYTES; i++)
+	{
+		print_debug(DEBUG_KEM_ENC, "%d ", ss[i]);
+	}
+	print_debug(DEBUG_KEM_ENC, "\n");
+#endif
 
 	// Cleanup:
 	clear_bytes((uint8_t *)V, PARAMS_NBAR*PARAMS_NBAR*sizeof(uint16_t));
