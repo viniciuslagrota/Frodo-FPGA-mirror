@@ -185,40 +185,13 @@ int crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk
 	// pkh <- G_1(pk), generate random mu, compute (seedSE || k) = G_2(pkh || mu)
 	shake(pkh, BYTES_PKHASH, pk, CRYPTO_PUBLICKEYBYTES);
 
-#if DEBUG_KEM_ENC == 1
-	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] Shake pk: ");
-	for (int i = 0; i < BYTES_PKHASH; i++)
-	{
-		print_debug(DEBUG_KEM_ENC, "%02x ", *(pkh + i));
-	}
-	print_debug(DEBUG_KEM_ENC, "\n\n");
-#endif
-
 #if RANDOM_BYTES == 1
 	randombytes(mu, BYTES_MU);
 #else
-	memset(mu, 0x4, BYTES_MU);
-#endif
-
-#if DEBUG_KEM_ENC == 1
-	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] mu: ");
-	for (int i = 0; i < BYTES_MU; i++)
-	{
-		print_debug(DEBUG_KEM_ENC, "%02x ", *(mu + i));
-	}
-	print_debug(DEBUG_KEM_ENC, "\n");
+	memset(randomness, 0x2, BYTES_MU);
 #endif
 
 	shake(G2out, CRYPTO_BYTES + CRYPTO_BYTES, G2in, BYTES_PKHASH + BYTES_MU);
-
-#if DEBUG_KEM_ENC == 1
-	print_debug(DEBUG_KEM_ENC, "[KEM - ENC] Shake G2in: ");
-	for (int i = 0; i < CRYPTO_BYTES + CRYPTO_BYTES; i++)
-	{
-		print_debug(DEBUG_KEM_ENC, "%02x ", *(G2out + i));
-	}
-	print_debug(DEBUG_KEM_ENC, "\n\n");
-#endif
 
 	// Generate Sp and Ep, and compute Bp = Sp*A + Ep. Generate A on-the-fly
 	shake_input_seedSE[0] = 0x96;
@@ -252,28 +225,5 @@ int crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk
 	print_debug(DEBUG_KEM_ENC, "\n");
 #endif
 
-	for (size_t i = 0; i < (2 * PARAMS_N + PARAMS_NBAR) * PARAMS_NBAR; i++)
-	{
-		Sp[i] = LE_TO_UINT16(Sp[i]);
-	}
-	frodo_sample_n(Sp, PARAMS_N*PARAMS_NBAR);
-	frodo_sample_n(Ep, PARAMS_N*PARAMS_NBAR);
-	frodo_mul_add_sa_plus_e(Bp, Sp, Ep, pk_seedA);
-	frodo_pack(ct_c1, (PARAMS_LOGQ*PARAMS_N*PARAMS_NBAR)/8, Bp, PARAMS_N*PARAMS_NBAR, PARAMS_LOGQ);
-
-	// Compute ss = F(ct||KK)
-	memcpy(Fin_ct, ct, CRYPTO_CIPHERTEXTBYTES);
-	memcpy(Fin_k, k, CRYPTO_BYTES);
-	shake(ss, CRYPTO_BYTES, Fin, CRYPTO_CIPHERTEXTBYTES + CRYPTO_BYTES);
-
-	// Cleanup:
-	clear_bytes((uint8_t *)V, PARAMS_NBAR*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Sp, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Ep, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Epp, PARAMS_NBAR*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes(mu, BYTES_MU);
-	clear_bytes(G2out, 2*CRYPTO_BYTES);
-	clear_bytes(Fin_k, CRYPTO_BYTES);
-	clear_bytes(shake_input_seedSE, 1 + CRYPTO_BYTES);
 	return 0;
 }

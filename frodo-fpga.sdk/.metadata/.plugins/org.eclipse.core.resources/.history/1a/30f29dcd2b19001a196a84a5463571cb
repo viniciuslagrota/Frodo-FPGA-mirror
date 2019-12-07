@@ -101,7 +101,7 @@ int kem_test(const char *named_parameters, int iterations)
 		t = get_cyclecount() - t;
 		print_debug(DEBUG_TEST_KEM, "[MAIN] Crypto_kem_keypair took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
 
-		t = get_cyclecount();
+		crypto_kem_keypair(pk, sk);
 		crypto_kem_enc(ct, ss_encap, pk);
 		t = get_cyclecount() - t;
 		print_debug(DEBUG_TEST_KEM, "[MAIN] Crypto_kem_enc took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);

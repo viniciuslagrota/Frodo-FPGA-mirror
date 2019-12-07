@@ -197,7 +197,7 @@ int crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk
 #if RANDOM_BYTES == 1
 	randombytes(mu, BYTES_MU);
 #else
-	memset(mu, 0x4, BYTES_MU);
+	memset(mu, 0x2, BYTES_MU);
 #endif
 
 #if DEBUG_KEM_ENC == 1

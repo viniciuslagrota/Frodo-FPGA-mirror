@@ -14,6 +14,5 @@
 #define UINT16_TO_LE(n) (n)
 
 int crypto_kem_keypair(unsigned char* pk, unsigned char* sk);
-int crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk);
 
 #endif /* SRC_INCLUDE_KEM_H_ */
