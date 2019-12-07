@@ -27,6 +27,7 @@
 //	Keccak f1600 function
 //
 /////////////////////////////////////////////////////////////////
-void keccak_f1600_func(uint64_t * state);
+void printStateMatrixDebug(uint64_t * s);
+void KeccakF1600_StatePermute_HW(uint64_t * state);
 
 #endif /* SRC_INCLUDE_KECCAK_F1600_H_ */

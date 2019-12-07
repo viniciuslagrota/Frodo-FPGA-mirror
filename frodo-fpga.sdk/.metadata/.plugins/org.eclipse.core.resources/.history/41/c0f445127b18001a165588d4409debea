@@ -1,0 +1,59 @@
+/*
+ * kem.c
+
+ *
+ *  Created on: 1 de dez de 2019
+ *      Author: Vinicius
+ */
+
+#include "kem.h"
+#include "frodo640.h"
+
+int crypto_kem_keypair(unsigned char* pk, unsigned char* sk)
+{ // FrodoKEM's key generation
+  // Outputs: public key pk (               BYTES_SEED_A + (PARAMS_LOGQ*PARAMS_N*PARAMS_NBAR)/8 bytes)
+  //          secret key sk (CRYPTO_BYTES + BYTES_SEED_A + (PARAMS_LOGQ*PARAMS_N*PARAMS_NBAR)/8 + 2*PARAMS_N*PARAMS_NBAR + BYTES_PKHASH bytes)
+	uint8_t *pk_seedA = &pk[0];
+	uint8_t *pk_b = &pk[BYTES_SEED_A];
+	uint8_t *sk_s = &sk[0];
+	uint8_t *sk_pk = &sk[CRYPTO_BYTES];
+	uint8_t *sk_S = &sk[CRYPTO_BYTES + CRYPTO_PUBLICKEYBYTES];
+	uint8_t *sk_pkh = &sk[CRYPTO_BYTES + CRYPTO_PUBLICKEYBYTES + 2*PARAMS_N*PARAMS_NBAR];
+//	uint16_t B[5120] = {0};
+	uint16_t B[PARAMS_N*PARAMS_NBAR] = {0};
+	uint16_t S[2*PARAMS_N*PARAMS_NBAR] = {0};               // contains secret data
+	uint16_t *E = (uint16_t *)&S[PARAMS_N*PARAMS_NBAR];     // contains secret data
+	uint8_t randomness[2*CRYPTO_BYTES + BYTES_SEED_A];      // contains secret data via randomness_s and randomness_seedSE
+	uint8_t *randomness_s = &randomness[0];                 // contains secret data
+	uint8_t *randomness_seedSE = &randomness[CRYPTO_BYTES]; // contains secret data
+	uint8_t *randomness_z = &randomness[2*CRYPTO_BYTES];
+	uint8_t shake_input_seedSE[1 + CRYPTO_BYTES];           // contains secret data
+
+	// Generate the secret value s, the seed for S and E, and the seed for the seed for A. Add seed_A to the public key
+	randombytes(randomness, CRYPTO_BYTES + CRYPTO_BYTES + BYTES_SEED_A);
+
+	//Debug
+	print_debug(DEBUG_KEM, "Input: ");
+#if DEBUG_KEM == 1
+	for (int i = 0; i < BYTES_SEED_A; i++)
+	{
+		print_debug(DEBUG_KEM, "%02x ", randomness_z[i]);
+	}
+#endif
+	print_debug(DEBUG_KEM, "\n");
+	print_debug(DEBUG_KEM, "Input and output length: %d\n", BYTES_SEED_A);
+
+	shake(pk_seedA, BYTES_SEED_A, randomness_z, BYTES_SEED_A);
+
+	//Debug
+	print_debug(DEBUG_KEM, "Output: ");
+#if DEBUG_KEM == 1
+	for (int i = 0; i < BYTES_SEED_A; i++)
+	{
+		print_debug(DEBUG_KEM, "%02x ", *(pk_seedA + i));
+	}
+#endif
+	print_debug(DEBUG_KEM, "\n\n");
+
+	return 0;
+}

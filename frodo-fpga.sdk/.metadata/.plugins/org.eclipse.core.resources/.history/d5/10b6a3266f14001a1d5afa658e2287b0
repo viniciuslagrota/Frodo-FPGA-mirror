@@ -1,0 +1,15 @@
+/*
+ * random.c
+
+ *
+ *  Created on: 1 de dez de 2019
+ *      Author: Vinicius
+ */
+#include "random.h"
+
+int randombytes(unsigned char* random_array, unsigned long long nbytes)
+{
+
+
+	return passed;
+}
