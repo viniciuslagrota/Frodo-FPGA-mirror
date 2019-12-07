@@ -122,9 +122,8 @@ int crypto_kem_keypair(unsigned char* pk, unsigned char* sk)
 	frodo_mul_add_as_plus_e(B, S, E, pk);
 
 #if DEBUG_KEM == 1
-	print_debug(DEBUG_KEM, "[KEM] B: ");
-//	for (int i = 0; i < 640 * 8; i++)
-	for (int i = 0; i < 20; i++)
+	print_debug(DEBUG_KEM, "[KEM] B:");
+	for (int i = 0; i < 640 * 8; i++)
 	{
 		print_debug(DEBUG_KEM, "%d ", B[i]);
 	}

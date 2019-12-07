@@ -62,7 +62,7 @@ extern uint16_t CDF_TABLE_LEN;
 //Main
 #define DEBUG_MAIN					1
 //Test KEM
-#define DEBUG_TEST_KEM				1
+#define DEBUG_TEST_KEM				0
 //KEM
 #define DEBUG_KEM					0
 //Keccak_f1600

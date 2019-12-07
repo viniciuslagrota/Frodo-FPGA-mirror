@@ -15,7 +15,6 @@
 #include "xgpio.h"
 #include "xil_printf.h"
 
-#include "frodo640.h"
 #include "keccak_f1600.h"
 #include "api_frodo640.h"
 #include "test_kem.h"
@@ -64,7 +63,7 @@ extern uint16_t CDF_TABLE_LEN;
 //Test KEM
 #define DEBUG_TEST_KEM				1
 //KEM
-#define DEBUG_KEM					0
+#define DEBUG_KEM					1
 //Keccak_f1600
 #define DEBUG_KECCAK_HW				0
 #define DEBUG_STATE_MATRIX			0
@@ -114,17 +113,6 @@ XLlFifo fifoKeccak;
 #define passed						0
 #define failed						1
 #define ALIGN_HEADER(N)
-#define ALIGN_FOOTER(N) 			__attribute__((aligned(N)))
-
-// Defining method for generating matrix A
-#undef _AES128_FOR_A_
-#define _SHAKE128_FOR_A_
-#if defined(_AES128_FOR_A_)
-    #define USE_AES128_FOR_A
-#elif defined(_SHAKE128_FOR_A_)
-    #define USE_SHAKE128_FOR_A
-#else
-    ##error -- missing method for generating matrix A
-#endif
+#define ALIGN_FOOTER(N) 			__attribute__((align(N)))
 
 #endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */
