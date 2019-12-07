@@ -1,0 +1,19 @@
+/*
+ * frodo_main.h
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#ifndef SRC_INCLUDE_TEST_KEM_H_
+#define SRC_INCLUDE_TEST_KEM_H_
+
+#include "global_def.h"
+
+#define PACKET_SIZE		50
+
+//void frodo_init();
+static inline unsigned int get_cyclecount (void)
+int kem_test(const char *named_parameters, int iterations);
+
+#endif /* SRC_INCLUDE_TEST_KEM_H_ */

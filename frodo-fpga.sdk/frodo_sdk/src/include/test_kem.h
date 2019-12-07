@@ -13,6 +13,8 @@
 #define PACKET_SIZE		50
 
 //void frodo_init();
+unsigned int get_cyclecount (void);
+void init_perfcounters (int32_t do_reset, int32_t enable_divider);
 int kem_test(const char *named_parameters, int iterations);
 
 #endif /* SRC_INCLUDE_TEST_KEM_H_ */

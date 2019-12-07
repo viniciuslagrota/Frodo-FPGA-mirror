@@ -1,79 +1,199 @@
-23:33:23 **** Incremental Build of configuration Debug for project frodo_sdk ****
+22:18:17 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/fips202.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+'Finished building: ../src/include/fips202.c'
 ' '
 'Building file: ../src/include/keccak_f1600.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
-../src/include/keccak_f1600.c: In function 'printStateMatrixDebug':
-../src/include/keccak_f1600.c:23:15: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint64_t' {aka 'long long unsigned int'} [-Wformat=]
-    printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
-            ~~~^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            %02llx
-../src/include/keccak_f1600.c:36:15: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint64_t' {aka 'long long unsigned int'} [-Wformat=]
-    printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
-            ~~~^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            %02llx
-../src/include/keccak_f1600.c:52:14: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint64_t' {aka 'long long unsigned int'} [-Wformat=]
-   printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
-           ~~~^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-           %02llx
-../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW':
-../src/include/keccak_f1600.c:130:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
-  int Status;
-      ^~~~~~
-../src/include/keccak_f1600.c:65:13: warning: variable 'thousandths' set but not used [-Wunused-but-set-variable]
-  u32 whole, thousandths;
-             ^~~~~~~~~~~
 'Finished building: ../src/include/keccak_f1600.c'
+' '
+'Building file: ../src/include/kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+../src/include/kem.c: In function 'crypto_kem_keypair':
+../src/include/kem.c:27:11: warning: unused variable 'randomness_s' [-Wunused-variable]
+  uint8_t *randomness_s = &randomness[0];                 // contains secret data
+           ^~~~~~~~~~~~
+../src/include/kem.c:25:12: warning: unused variable 'E' [-Wunused-variable]
+  uint16_t *E = (uint16_t *)&S[PARAMS_N*PARAMS_NBAR];     // contains secret data
+            ^
+../src/include/kem.c:23:11: warning: unused variable 'B' [-Wunused-variable]
+  uint16_t B[PARAMS_N*PARAMS_NBAR] = {0};
+           ^
+../src/include/kem.c:21:11: warning: unused variable 'sk_pkh' [-Wunused-variable]
+  uint8_t *sk_pkh = &sk[CRYPTO_BYTES + CRYPTO_PUBLICKEYBYTES + 2*PARAMS_N*PARAMS_NBAR];
+           ^~~~~~
+../src/include/kem.c:20:11: warning: unused variable 'sk_S' [-Wunused-variable]
+  uint8_t *sk_S = &sk[CRYPTO_BYTES + CRYPTO_PUBLICKEYBYTES];
+           ^~~~
+../src/include/kem.c:19:11: warning: unused variable 'sk_pk' [-Wunused-variable]
+  uint8_t *sk_pk = &sk[CRYPTO_BYTES];
+           ^~~~~
+../src/include/kem.c:18:11: warning: unused variable 'sk_s' [-Wunused-variable]
+  uint8_t *sk_s = &sk[0];
+           ^~~~
+../src/include/kem.c:17:11: warning: unused variable 'pk_b' [-Wunused-variable]
+  uint8_t *pk_b = &pk[BYTES_SEED_A];
+           ^~~~
+'Finished building: ../src/include/kem.c'
+' '
+'Building file: ../src/include/noise.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+'Finished building: ../src/include/noise.c'
+' '
+'Building file: ../src/include/random.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+In file included from ../src/include/random.h:12,
+                 from ../src/include/random.c:8:
+../src/include/random.c: In function 'randombytes':
+../src/include/random.c:17:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+  print_debug(DEBUG_RANDOM, "[RANDOM] Random bytes requested: %d\n", nbytes);
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~
+../src/include/global_def.h:83:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/random.c:29:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   print_debug(DEBUG_RANDOM, "[RANDOM] nbytes: %d  \tRandom: %x   \t  i : %d\n", nbytes, u32Random, idx);
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~
+../src/include/global_def.h:83:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/random.c:29:29: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   print_debug(DEBUG_RANDOM, "[RANDOM] nbytes: %d  \tRandom: %x   \t  i : %d\n", nbytes, u32Random, idx);
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~          ~~~~~~~~~
+../src/include/global_def.h:83:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/random.c:29:29: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   print_debug(DEBUG_RANDOM, "[RANDOM] nbytes: %d  \tRandom: %x   \t  i : %d\n", nbytes, u32Random, idx);
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                     ~~~
+../src/include/global_def.h:83:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/random.c:30:29: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   print_debug(DEBUG_RANDOM, "[RANDOM] i : %d\n", i);
+                             ^~~~~~~~~~~~~~~~~~~  ~
+../src/include/global_def.h:83:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/random.c:12:6: warning: unused variable 'ullnBytesCount' [-Wunused-variable]
+  u32 ullnBytesCount = nbytes;
+      ^~~~~~~~~~~~~~
+'Finished building: ../src/include/random.c'
 ' '
 'Building file: ../src/include/test_kem.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
 ../src/include/test_kem.c: In function 'kem_test':
-../src/include/test_kem.c:87:10: warning: unused variable 'ct' [-Wunused-variable]
+../src/include/test_kem.c:91:10: warning: unused variable 'ct' [-Wunused-variable]
+  uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
+          ^~
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  98184	   2680	 138192	 239056	  3a5d0	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+22:18:31 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:18:43 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:18:57 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:19:59 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:91:10: warning: unused variable 'ct' [-Wunused-variable]
   uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
           ^~
 'Finished building: ../src/include/test_kem.c'
 ' '
 'Building target: frodo_sdk.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: frodo_sdk.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  98916	   2680	 138192	 239788	  3a8ac	frodo_sdk.elf
+  98184	   2680	 138192	 239056	  3a5d0	frodo_sdk.elf
 'Finished building: frodo_sdk.elf.size'
 ' '
-23:33:32 **** Incremental Build of configuration Debug for project frodo_sdk ****
+22:20:42 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-make: Nothing to be done for 'main-build'.
-23:34:50 **** Incremental Build of configuration Debug for project frodo_sdk ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-'Building file: ../src/main.c'
+'Building file: ../src/include/kem.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:150:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   printf("\nRaw data %d\nThe Current Temperature is %0d.%03d Centigrades\n", TempRawData, (int)(TempData), XAdcFractionToInt(TempData));
-                      ~^                                                      ~~~~~~~~~~~
-                      %ld
-'Finished building: ../src/main.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+../src/include/kem.c: In function 'crypto_kem_keypair':
+../src/include/kem.c:27:11: warning: unused variable 'randomness_s' [-Wunused-variable]
+  uint8_t *randomness_s = &randomness[0];                 // contains secret data
+           ^~~~~~~~~~~~
+../src/include/kem.c:25:12: warning: unused variable 'E' [-Wunused-variable]
+  uint16_t *E = (uint16_t *)&S[PARAMS_N*PARAMS_NBAR];     // contains secret data
+            ^
+../src/include/kem.c:23:11: warning: unused variable 'B' [-Wunused-variable]
+  uint16_t B[PARAMS_N*PARAMS_NBAR] = {0};
+           ^
+../src/include/kem.c:21:11: warning: unused variable 'sk_pkh' [-Wunused-variable]
+  uint8_t *sk_pkh = &sk[CRYPTO_BYTES + CRYPTO_PUBLICKEYBYTES + 2*PARAMS_N*PARAMS_NBAR];
+           ^~~~~~
+../src/include/kem.c:20:11: warning: unused variable 'sk_S' [-Wunused-variable]
+  uint8_t *sk_S = &sk[CRYPTO_BYTES + CRYPTO_PUBLICKEYBYTES];
+           ^~~~
+../src/include/kem.c:19:11: warning: unused variable 'sk_pk' [-Wunused-variable]
+  uint8_t *sk_pk = &sk[CRYPTO_BYTES];
+           ^~~~~
+../src/include/kem.c:18:11: warning: unused variable 'sk_s' [-Wunused-variable]
+  uint8_t *sk_s = &sk[0];
+           ^~~~
+../src/include/kem.c:17:11: warning: unused variable 'pk_b' [-Wunused-variable]
+  uint8_t *pk_b = &pk[BYTES_SEED_A];
+           ^~~~
+'Finished building: ../src/include/kem.c'
 ' '
 'Building target: frodo_sdk.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: frodo_sdk.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  98916	   2680	 138192	 239788	  3a8ac	frodo_sdk.elf
+  98184	   2680	 138192	 239056	  3a5d0	frodo_sdk.elf
 'Finished building: frodo_sdk.elf.size'
 ' '

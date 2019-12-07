@@ -10,6 +10,9 @@
 
 #include "global_def.h"
 
+#define LE_TO_UINT16(n) (n)
+#define UINT16_TO_LE(n) (n)
+
 int crypto_kem_keypair(unsigned char* pk, unsigned char* sk);
 
 #endif /* SRC_INCLUDE_KEM_H_ */

@@ -1,0 +1,110 @@
+/*
+ * frodo_main.c
+
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#include "global_def.h"
+#include "fips202.h"
+
+static inline unsigned int get_cyclecount (void)
+{
+	unsigned int value;
+	// Read CCNT Register
+	asm volatile ("MRC p15, 0, %0, c9, c13, 0\t\n": "=r"(value));
+	return value;
+}
+
+static inline void init_perfcounters (int32_t do_reset, int32_t enable_divider)
+{
+	// in general enable all counters (including cycle counter)
+	int32_t value = 1;
+
+	// peform reset:
+	if (do_reset)
+	{
+		value |= 2;     // reset all counters to zero.
+		value |= 4;     // reset cycle counter to zero.
+	}
+
+	if (enable_divider)
+		value |= 8;     // enable "by 64" divider for CCNT.
+
+	value |= 16;
+
+	// program the performance-counter control-register:
+	asm volatile ("MCR p15, 0, %0, c9, c12, 0\t\n" :: "r"(value));
+
+	// enable all counters:
+	asm volatile ("MCR p15, 0, %0, c9, c12, 1\t\n" :: "r"(0x8000000f));
+
+	// clear overflows:
+	asm volatile ("MCR p15, 0, %0, c9, c12, 3\t\n" :: "r"(0x8000000f));
+}
+
+int kem_test(const char *named_parameters, int iterations)
+{
+	/* enable user-mode access to the performance counter*/
+	asm ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
+
+	/* disable counter overflow interrupts (just in case)*/
+	asm ("MCR p15, 0, %0, C9, C14, 2\n\t" :: "r"(0x8000000f));
+
+	// init counters:
+	init_perfcounters (1, 0);
+
+	// measure the counting overhead:
+	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
+
+	unsigned int t;
+
+	// ------ Test keccak_function ------
+	u64 state[25] = { 0 };
+	state[0] = 0x000000000000001f;
+	state[20] = 0x8000000000000000;
+	t = get_cyclecount();
+	KeccakF1600_StatePermute_HW(state);
+	t = get_cyclecount() - t;
+	printStateMatrixDebug(state);
+	printf("Hardware function took exactly %d cycles or %d us(including function call)\n", t - overhead, (t - overhead)/666);
+
+	u64 state2[25] = { 0 };
+	state2[0] = 0x000000000000001f;
+	state2[20] = 0x8000000000000000;
+	t = get_cyclecount();
+	KeccakF1600_StatePermute_SW(state2);
+	t = get_cyclecount() - t;
+	printStateMatrixDebug(state2);
+	printf("Software function took exactly %d cycles (including function call)\n", t - overhead);
+
+	// ------ KEM test ------
+	uint8_t pk[CRYPTO_PUBLICKEYBYTES];
+	uint8_t sk[CRYPTO_SECRETKEYBYTES];
+	uint8_t ss_encap[CRYPTO_BYTES], ss_decap[CRYPTO_BYTES];
+	uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
+
+	printf("\n");
+	printf("=============================================================================================================================\n");
+	printf("Testing correctness of key encapsulation mechanism (KEM), system %s, tests for %d iterations\n", named_parameters, iterations);
+	printf("=============================================================================================================================\n");
+
+	for (int i = 0; i < iterations; i++) {
+		crypto_kem_keypair(pk, sk);
+		//        crypto_kem_enc(ct, ss_encap, pk);
+		//        crypto_kem_dec(ss_decap, ct, sk);
+		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
+			printf("\n ERROR!\n");
+			return false;
+		}
+	}
+	printf("Tests PASSED. All session keys matched.\n");
+	printf("\n\n");
+
+
+
+
+	return true;
+}

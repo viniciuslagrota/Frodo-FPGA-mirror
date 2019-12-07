@@ -83,7 +83,7 @@ int XAdcFractionToInt(float FloatNum)
 int main()
 {
     init_platform();
-    xil_printf("--- Frodo Algortithm ---\n\n");
+    print_debug(DEBUG_MAIN, "--- Frodo Algortithm ---\n\n");
 
     //---- Local variables ----
     u32 u32LedState = 0x0;
@@ -95,7 +95,7 @@ int main()
 	XAdcPs_SetSequencerMode(XAdcInstPtr, XADCPS_SEQ_MODE_SAFE);
 	TempRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_TEMP);
 	TempData = XAdcPs_RawToTemperature(TempRawData);
-	xil_printf("\nThe Current Temperature is %0d.%03d Centigrades\n", (int)(TempData), XAdcFractionToInt(TempData));
+	print_debug(DEBUG_MAIN, "[MAIN] The Current Temperature is %0d.%03d Centigrades\n", (int)(TempData), XAdcFractionToInt(TempData));
 
     //---- Blink led ----
 	XGpioPs Gpio;
@@ -121,22 +121,22 @@ int main()
 	XLlFifo_Config *ConfigFifoKeccak;
 	ConfigFifoKeccak = XLlFfio_LookupConfig(XPAR_AXI_FIFO_0_DEVICE_ID);
 	if (!ConfigFifoKeccak)
-		xil_printf("No configuration found.\n");
+		print_debug(DEBUG_ERROR, "[MAIN - ERROR] No configuration found.\n");
 
 	//Initialize FIFO
-	xil_printf("Fifo keccak address: %d.\n", &fifoKeccak);
+	print_debug(DEBUG_MAIN, "[MAIN] Fifo keccak address: %d.\n", (int)(&fifoKeccak));
 	xStatus = XLlFifo_CfgInitialize(&fifoKeccak, ConfigFifoKeccak, ConfigFifoKeccak->BaseAddress);
 	if(XST_SUCCESS != xStatus)
-		xil_printf("Failed to initialize FIFO keccak.\n");
+		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Failed to initialize FIFO keccak.\n");
 
-	xil_printf("FIFO keccak initialized.\n");
+	print_debug(DEBUG_MAIN, "[MAIN] FIFO keccak initialized.\n");
 
 	//Get FIFO status
 	Status = XLlFifo_Status(&fifoKeccak);
 	XLlFifo_IntClear(&fifoKeccak, 0xffffffff);
 	Status = XLlFifo_Status(&fifoKeccak);
 	if(Status != 0x0)
-		xil_printf("Reset value wrong.\n");
+		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Reset value wrong.\n");
 
     while(1)
     {
@@ -147,7 +147,7 @@ int main()
 		//Get random seed.
 		TempRawData = XAdcPs_GetAdcData(XAdcInstPtr, XADCPS_CH_TEMP);
 		TempData = XAdcPs_RawToTemperature(TempRawData);
-		printf("\nRaw data %d\nThe Current Temperature is %0d.%03d Centigrades\n", TempRawData, (int)(TempData), XAdcFractionToInt(TempData));
+		print_debug(DEBUG_MAIN, "[MAIN] The Current Temperature is %0d.%03d °C | Raw data %lu\n", (int)(TempData), XAdcFractionToInt(TempData), TempRawData);
 		srand(TempRawData); //Get a random seed here!
 
 		//Frodo system

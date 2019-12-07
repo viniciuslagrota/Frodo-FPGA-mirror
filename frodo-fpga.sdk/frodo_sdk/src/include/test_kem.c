@@ -9,7 +9,7 @@
 #include "global_def.h"
 #include "fips202.h"
 
-static inline unsigned int get_cyclecount (void)
+unsigned int get_cyclecount (void)
 {
 	unsigned int value;
 	// Read CCNT Register
@@ -17,7 +17,7 @@ static inline unsigned int get_cyclecount (void)
 	return value;
 }
 
-static inline void init_perfcounters (int32_t do_reset, int32_t enable_divider)
+void init_perfcounters (int32_t do_reset, int32_t enable_divider)
 {
 	// in general enable all counters (including cycle counter)
 	int32_t value = 1;
@@ -46,6 +46,16 @@ static inline void init_perfcounters (int32_t do_reset, int32_t enable_divider)
 
 int kem_test(const char *named_parameters, int iterations)
 {
+	// CDF table
+//	uint16_t CDF_TABLE[13] = {4643, 13363, 20579, 25843, 29227, 31145, 32103, 32525, 32689, 32745, 32762, 32766, 32767};
+//	uint16_t CDF_TABLE_LEN = 13;
+
+	// measure the counting overhead:
+	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
+
+	unsigned int t;
+
 	/* enable user-mode access to the performance counter*/
 	asm ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
 
@@ -55,12 +65,6 @@ int kem_test(const char *named_parameters, int iterations)
 	// init counters:
 	init_perfcounters (1, 0);
 
-	// measure the counting overhead:
-	unsigned int overhead = get_cyclecount();
-	overhead = get_cyclecount() - overhead;
-
-	unsigned int t;
-
 	// ------ Test keccak_function ------
 	u64 state[25] = { 0 };
 	state[0] = 0x000000000000001f;
@@ -69,7 +73,7 @@ int kem_test(const char *named_parameters, int iterations)
 	KeccakF1600_StatePermute_HW(state);
 	t = get_cyclecount() - t;
 	printStateMatrixDebug(state);
-	printf("Hardware function took exactly %d cycles (including function call)\n", t - overhead);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
 
 	u64 state2[25] = { 0 };
 	state2[0] = 0x000000000000001f;
@@ -78,7 +82,7 @@ int kem_test(const char *named_parameters, int iterations)
 	KeccakF1600_StatePermute_SW(state2);
 	t = get_cyclecount() - t;
 	printStateMatrixDebug(state2);
-	printf("Software function took exactly %d cycles (including function call)\n", t - overhead);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Software function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
 
 	// ------ KEM test ------
 	uint8_t pk[CRYPTO_PUBLICKEYBYTES];
@@ -86,22 +90,26 @@ int kem_test(const char *named_parameters, int iterations)
 	uint8_t ss_encap[CRYPTO_BYTES], ss_decap[CRYPTO_BYTES];
 	uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
 
-	printf("\n");
-	printf("=============================================================================================================================\n");
-	printf("Testing correctness of key encapsulation mechanism (KEM), system %s, tests for %d iterations\n", named_parameters, iterations);
-	printf("=============================================================================================================================\n");
+	print_debug(DEBUG_TEST_KEM, "\n");
+	print_debug(DEBUG_TEST_KEM, "=============================================================================================================================\n");
+	print_debug(DEBUG_TEST_KEM, "Testing correctness of key encapsulation mechanism (KEM), system %s, tests for %d iterations\n", named_parameters, iterations);
+	print_debug(DEBUG_TEST_KEM, "=============================================================================================================================\n");
 
 	for (int i = 0; i < iterations; i++) {
+		t = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
+		t = get_cyclecount() - t;
+		print_debug(DEBUG_TEST_KEM, "[MAIN] Crypto_kem_keypair took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
+
 		//        crypto_kem_enc(ct, ss_encap, pk);
 		//        crypto_kem_dec(ss_decap, ct, sk);
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			printf("\n ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] ERROR!\n");
 			return false;
 		}
 	}
-	printf("Tests PASSED. All session keys matched.\n");
-	printf("\n\n");
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Tests PASSED. All session keys matched.\n");
+	print_debug(DEBUG_TEST_KEM, "\n\n");
 
 
 

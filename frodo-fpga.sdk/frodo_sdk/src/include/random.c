@@ -14,7 +14,7 @@ int randombytes(unsigned char* random_array, u32 nbytes)
 	u32 idx = 0;
 	u32 i;
 
-//	printf("Random bytes requested: %d\n", nbytes);
+	print_debug(DEBUG_RANDOM, "[RANDOM] Random bytes requested: %d\n", nbytes);
 
 	for(i = nbytes; i > 3; i = i - 4)
 	{
@@ -26,8 +26,8 @@ int randombytes(unsigned char* random_array, u32 nbytes)
 		random_array[idx + 2] = (u8)((u32Random >> 16) & 0xff);
 		random_array[idx + 3] = (u8)((u32Random >> 24) & 0xff);
 
-//		printf("nbytes: %d  \tRandom: %x   \t  i : %d\n", nbytes, u32Random, idx);
-//		printf("i : %d\n", i);
+		print_debug(DEBUG_RANDOM, "[RANDOM] nbytes: %d  \tRandom: %x   \t  i : %d\n", nbytes, u32Random, idx);
+		print_debug(DEBUG_RANDOM, "[RANDOM] i : %d\n", i);
 	}
 
 //	switch(i)

@@ -32,25 +32,79 @@ int crypto_kem_keypair(unsigned char* pk, unsigned char* sk)
 	// Generate the secret value s, the seed for S and E, and the seed for the seed for A. Add seed_A to the public key
 	randombytes(randomness, CRYPTO_BYTES + CRYPTO_BYTES + BYTES_SEED_A);
 
-#if 1
-	printf("Input: ");
+	//Debug
+#if DEBUG_KEM == 1
+	print_debug(DEBUG_KEM, "[KEM] Input: ");
 	for (int i = 0; i < BYTES_SEED_A; i++)
 	{
-		printf("%02x ", randomness_z[i]);
+		print_debug(DEBUG_KEM, "%02x ", randomness_z[i]);
 	}
-	printf("\n");
-	printf("Input and output length: %d\n", BYTES_SEED_A);
+	print_debug(DEBUG_KEM, "\n");
+	print_debug(DEBUG_KEM, "[KEM] Input and output length: %d\n", BYTES_SEED_A);
 #endif
 
 	shake(pk_seedA, BYTES_SEED_A, randomness_z, BYTES_SEED_A);
 
-#if 1
-	printf("Output: ");
+	//Debug
+#if DEBUG_KEM == 1
+	print_debug(DEBUG_KEM, "[KEM] Output: ");
 	for (int i = 0; i < BYTES_SEED_A; i++)
 	{
-		printf("%02x ", *(pk_seedA + i));
+		print_debug(DEBUG_KEM, "%02x ", *(pk_seedA + i));
 	}
-	printf("\n\n");
+	print_debug(DEBUG_KEM, "\n\n");
+#endif
+
+	// Generate S and E, and compute B = A*S + E. Generate A on-the-fly
+	shake_input_seedSE[0] = 0x5F;
+
+	//Debug
+#if DEBUG_KEM == 1
+	print_debug(DEBUG_KEM, "[KEM] randomness_seedSE: ");
+	for (int i = 0; i < CRYPTO_BYTES; i++)
+	{
+		print_debug(DEBUG_KEM, "%02x ", randomness_seedSE[i]);
+	}
+	print_debug(DEBUG_KEM, "\n");
+#endif
+
+	memcpy(&shake_input_seedSE[1], randomness_seedSE, CRYPTO_BYTES);
+
+#if DEBUG_KEM == 1
+	print_debug(DEBUG_KEM, "[KEM] shake_input_seedSE: ");
+	for (int i = 0; i < CRYPTO_BYTES; i++)
+	{
+		print_debug(DEBUG_KEM, "%02x ", shake_input_seedSE[i]);
+	}
+	print_debug(DEBUG_KEM, "\n");
+#endif
+
+	shake((uint8_t*)S, 2*PARAMS_N*PARAMS_NBAR*sizeof(uint16_t), shake_input_seedSE, 1 + CRYPTO_BYTES);
+
+#if DEBUG_KEM == 1
+	print_debug(DEBUG_KEM, "[KEM] S: ");
+	//for (int i = 0; i < 640 * 8 * 2; i++)
+	for (int i = 0; i < 20; i++)
+	{
+		print_debug(DEBUG_KEM, "%d ", S[i]);
+	}
+	print_debug(DEBUG_KEM, "\n");
+#endif
+
+	for (size_t i = 0; i < 2 * PARAMS_N * PARAMS_NBAR; i++)
+	{
+		S[i] = LE_TO_UINT16(S[i]);
+	}
+	frodo_sample_n(S, PARAMS_N*PARAMS_NBAR);
+
+#if DEBUG_KEM == 1
+	print_debug(DEBUG_KEM, "[KEM] S: ");
+//	for (int i = 0; i < 640 * 8 * 2; i++)
+	for (int i = 0; i < 20; i++)
+	{
+		print_debug(DEBUG_KEM, "%d ", (int16_t)(S[i]));
+	}
+	print_debug(DEBUG_KEM, "\n");
 #endif
 
 	return 0;

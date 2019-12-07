@@ -14,13 +14,13 @@ void printStateMatrixDebug(uint64_t * s)
 	int x = 0;
 	int y = 0;
 	int i;
-	printf("Matrix state:\n");
+	print_debug(DEBUG_STATE_MATRIX, "[KECCAK-f1600] Matrix state:\n");
 	for (size_t line = 0; line < 12; line++)
 	{
-		printf("(%d, %d) ", x, y);
+		print_debug(DEBUG_STATE_MATRIX, "(%d, %d) ", x, y);
 
 		for (i = 0; i < 8; i++)
-			printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
+			print_debug(DEBUG_STATE_MATRIX, "%02x", (uint8_t)((s[5 * y + x] >> (8 * i)) & 0xff));
 
 		x++;
 		if (x == 5)
@@ -31,11 +31,11 @@ void printStateMatrixDebug(uint64_t * s)
 				y = 0;
 		}
 
-		printf(" ");
+		print_debug(DEBUG_STATE_MATRIX, " ");
 		for (i = 0; i < 8; i++)
-			printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
+			print_debug(DEBUG_STATE_MATRIX, "%02x", (uint8_t)((s[5 * y + x] >> (8 * i)) & 0xff));
 
-		printf(" (%d, %d)\n", x, y);
+		print_debug(DEBUG_STATE_MATRIX, " (%d, %d)\n", x, y);
 
 		x++;
 		if (x == 5)
@@ -46,17 +46,17 @@ void printStateMatrixDebug(uint64_t * s)
 				y = 0;
 		}
 	}
-	printf("(%d, %d) ", x, y);
+	print_debug(DEBUG_STATE_MATRIX, "(%d, %d) ", x, y);
 
 	for (i = 0; i < 8; i++)
-		printf("%02x", (s[5 * y + x] >> (8 * i)) & 0xff);
+		print_debug(DEBUG_STATE_MATRIX, "%02x", (uint8_t)((s[5 * y + x] >> (8 * i)) & 0xff));
 
-	printf("\n");
+	print_debug(DEBUG_STATE_MATRIX, "\n");
 }
 
 void KeccakF1600_StatePermute_HW(uint64_t * state)
 {
-//	xil_printf_macro("keccak_f1600_func init\n");
+	print_debug(DEBUG_KECCAK_HW, "[KECCAK-f1600] keccak_f1600_func init\n");
 //
 	// ------ Variables ------
 	u32 readGpio = 0x0;
@@ -73,15 +73,17 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 	//Sending data
 	for(u32 i = 0; i < 25; i++)
 	{
-//		xil_printf_macro("\tSent data %d: 0x%x\n", i, u32TxWordVec[i]);
+
 		if(XLlFifo_iTxVacancy(&fifoKeccak))
 		{
 			XLlFifo_TxPutWord(&fifoKeccak, (u32)(state[i] & 0xffffffff));
+			print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", i, (u32)(state[i] & 0xffffffff));
 		}
 
 		if(XLlFifo_iTxVacancy(&fifoKeccak))
 		{
 			XLlFifo_TxPutWord(&fifoKeccak, (u32)(state[i] >> 32));
+			print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", i, (u32)(state[i] >> 32));
 		}
 
 	}
@@ -91,7 +93,7 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 
 	//Check for Transmission completion
 	while(!(XLlFifo_IsTxDone(&fifoKeccak))){}
-//	xil_printf_macro("Transmission completed.\n");
+	print_debug(DEBUG_KECCAK_HW, "[KECCAK-f1600] Transmission completed.\n");
 
 	//Reading done bit
 	readGpio = XGpio_DiscreteRead(&axiStartDone, 1); //Check done pin
@@ -106,7 +108,7 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 	fval = (float)readTimer / (float)100;
 	whole = fval;
 	thousandths = (fval - whole) * 1000;
-//	xil_printf_macro("Time took to process Keccak-f1600: %d.%03d us\n", whole, thousandths);
+	print_debug(DEBUG_KECCAK_HW, "[KECCAK-f1600] Time took to process Keccak-f1600: %lu.%03lu us\n", whole, thousandths);
 
 	//Interpret data
 	while(XLlFifo_iRxOccupancy(&fifoKeccak))
@@ -116,7 +118,7 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 		u32 RxWord;
 		int i;
 		ReceiveLength = (XLlFifo_iRxGetLen(&fifoKeccak))/4;
-//		xil_printf_macro("Received length: %d bytes.\n", ReceiveLength << 2);
+		print_debug(DEBUG_KECCAK_HW, "[KECCAK-f1600] Received length: %lu bytes.\n", ReceiveLength << 2);
 		for (i = 0; i < ReceiveLength; i++) {
 			RxWord = XLlFifo_RxGetWord(&fifoKeccak);
 			if(i & 0x1) //upper word
@@ -124,15 +126,15 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 			else
 				state[i >> 1] = (u64)(RxWord);
 
-//			xil_printf_macro("\tReceived data: 0x%x\n", RxWord);
+			print_debug(DEBUG_KECCAK_HW, "\tReceived data: 0x%lx\n", RxWord);
 		}
 	}
 	int Status;
 	Status = XLlFifo_IsRxDone(&fifoKeccak);
-//	if(Status != TRUE)
-//		xil_printf_macro("Failing in receive complete...\n");
+	if(Status != TRUE)
+		print_debug(DEBUG_ERROR, "[KECCAK-f1600 - ERROR] Failing in receive complete...\n");
 
-//	xil_printf_macro("Reception completed.\n");
+	print_debug(DEBUG_KECCAK_HW, "[KECCAK-f1600] Reception completed.\n");
 
 	//Set start pin low
 	XGpio_DiscreteWrite(&axiStartDone, 1, 0x0); // Start gpio set low
