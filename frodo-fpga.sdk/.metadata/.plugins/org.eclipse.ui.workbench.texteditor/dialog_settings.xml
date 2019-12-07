@@ -2,26 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="KeccakF1600_StatePermute" key="selection"/>
+		<item value=", &quot;" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="KeccakF1600_StatePermute"/>
-			<item value="u32nBytesCount"/>
-			<item value="0x00040000"/>
-			<item value="ps7_ram_0_S_AXI_BASEADDR"/>
-			<item value="CDF_TABLE"/>
+			<item value=", &quot;"/>
+			<item value="//&#x09;&#x09;printf"/>
+			<item value="//&#x09;printf"/>
 			<item value="printf"/>
-			<item value="PACKET_SIZE"/>
-			<item value="printf_keccak"/>
+			<item value="DEBUG_KECCAK"/>
+			<item value="DEBUG_KECCAK_HW"/>
+			<item value="//&#x09;xil_printf_macro"/>
+			<item value="xil_printf"/>
 		</list>
 		<list key="replacehistory">
+			<item value=", &quot;[RANDOM] "/>
+			<item value=", &quot;[KECCAK-f1600] "/>
+			<item value=", &quot;[KEM] "/>
+			<item value="print_debug"/>
+			<item value="DEBUG_KECCAK_HW"/>
+			<item value=""/>
+			<item value="de"/>
 			<item value="i32nBytesCount"/>
-			<item value="xil_printf_macro"/>
-			<item value="ConfigFifoKeccak"/>
-			<item value="fifoKeccak"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

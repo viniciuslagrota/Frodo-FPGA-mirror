@@ -30,11 +30,8 @@ int crypto_kem_keypair(unsigned char* pk, unsigned char* sk)
 	uint8_t shake_input_seedSE[1 + CRYPTO_BYTES];           // contains secret data
 
 	// Generate the secret value s, the seed for S and E, and the seed for the seed for A. Add seed_A to the public key
-#if RANDOM_BYTES == 1
 	randombytes(randomness, CRYPTO_BYTES + CRYPTO_BYTES + BYTES_SEED_A);
-#else
-	memset(randomness, 0x2, 2*CRYPTO_BYTES + BYTES_SEED_A);
-#endif
+	memset(randomness, 0x0, 2*CRYPTO_BYTES + BYTES_SEED_A);
 
 	//Debug
 #if DEBUG_KEM == 1
