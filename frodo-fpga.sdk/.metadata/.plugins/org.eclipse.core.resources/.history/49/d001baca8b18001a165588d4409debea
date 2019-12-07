@@ -22,6 +22,7 @@
 #include "test_KEM640.h"
 #include "kem.h"
 #include "random.h"
+#include "noise.h"
 #include "frodo_macrify.h"
 
 #define ledpin 47
@@ -46,15 +47,10 @@ extern uint16_t CDF_TABLE_LEN;
 //	Keccak definitions
 //
 //////////////////////////////////////////////
-#define USE_HW
-
-#ifdef USE_HW
+//Software implementation
+//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_SW
 //Hardware implementation
 #define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_HW
-#else
-//Software implementation
-#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_SW
-#endif
 
 //////////////////////////////////////////////
 //

@@ -134,22 +134,5 @@ int crypto_kem_keypair(unsigned char* pk, unsigned char* sk)
 	// Encode the second part of the public key
 	frodo_pack(pk_b, CRYPTO_PUBLICKEYBYTES - BYTES_SEED_A, B, PARAMS_N*PARAMS_NBAR, PARAMS_LOGQ);
 
-	// Add s, pk and S to the secret key
-	memcpy(sk_s, randomness_s, CRYPTO_BYTES + 1);
-	memcpy(sk_pk, pk, CRYPTO_PUBLICKEYBYTES);
-	for (size_t i = 0; i < PARAMS_N * PARAMS_NBAR; i++) {
-		S[i] = UINT16_TO_LE(S[i]);
-	}
-	memcpy(sk_S, S, 2*PARAMS_N*PARAMS_NBAR);
-
-	// Add H(pk) to the secret key
-	shake(sk_pkh, BYTES_PKHASH, pk, CRYPTO_PUBLICKEYBYTES);
-
-	// Cleanup:
-	clear_bytes((uint8_t *)S, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)E, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes(randomness, 2*CRYPTO_BYTES);
-	clear_bytes(shake_input_seedSE, 1 + CRYPTO_BYTES);
-
 	return 0;
 }
