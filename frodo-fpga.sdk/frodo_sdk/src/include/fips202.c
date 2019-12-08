@@ -21,6 +21,7 @@ static uint64_t load64(const unsigned char *x)
   for (i = 0; i < 8; ++i) {
     r |= (unsigned long long)x[i] << 8 * i;
   }
+
   return r;
 }
 
@@ -346,20 +347,21 @@ static void keccak_absorb(uint64_t *s, unsigned int r, const unsigned char *m, u
       s[i] ^= load64(m + 8 * i);
 
     KeccakF1600_StatePermute(s);
+
     mlen -= r;
     m += r;
   }
-
-  for (i = 0; i < r; ++i)
-    t[i] = 0;
-  for (i = 0; i < mlen; ++i)
-    t[i] = m[i];
-  t[i] = p;
-  t[r - 1] |= 128;
+    for (i = 0; i < r; ++i)
+      t[i] = 0;
+    for (i = 0; i < mlen; ++i)
+      t[i] = m[i];
+    t[i] = p;
+    t[r - 1] |= 128;
   for (i = 0; i < r / 8; ++i)
-    s[i] ^= load64(t + 8 * i);
+  {
+	  s[i] ^= load64(t + 8 * i);
+  }
 }
-
 
 static void keccak_squeezeblocks(unsigned char *h, unsigned long long int nblocks, uint64_t *s, unsigned int r)
 {
@@ -368,6 +370,7 @@ static void keccak_squeezeblocks(unsigned char *h, unsigned long long int nblock
   while(nblocks > 0)
   {
     KeccakF1600_StatePermute(s);
+
     for (i = 0; i < (r>>3); i++)
     {
       store64(h+8*i, s[i]);
@@ -376,7 +379,6 @@ static void keccak_squeezeblocks(unsigned char *h, unsigned long long int nblock
     nblocks--;
   }
 }
-
 
 /********** SHAKE128 ***********/
 
@@ -394,28 +396,32 @@ void shake128_squeezeblocks(unsigned char *output, unsigned long long nblocks, u
 
 void shake128(unsigned char *output, unsigned long long outlen, const unsigned char *input,  unsigned long long inlen)
 {
-  uint64_t s[25] = {0};
-  unsigned char t[SHAKE128_RATE];
-  unsigned long long nblocks = outlen/SHAKE128_RATE;
-  size_t i;
+	uint64_t s[25] = {0};
+	unsigned char t[SHAKE128_RATE];
+	unsigned long long nblocks = outlen/SHAKE128_RATE;
+	size_t i;
 
-  /* Absorb input */
-  keccak_absorb(s, SHAKE128_RATE, input, inlen, 0x1F);
+	/* Absorb input */
 
-  /* Squeeze output */
-  keccak_squeezeblocks(output, nblocks, s, SHAKE128_RATE);
+	keccak_absorb(s, SHAKE128_RATE, input, inlen, 0x1F);
 
-  output += nblocks*SHAKE128_RATE;
-  outlen -= nblocks*SHAKE128_RATE;
+	/* Squeeze output */
+	keccak_squeezeblocks(output, nblocks, s, SHAKE128_RATE);
 
-  if (outlen)
-  {
-    keccak_squeezeblocks(t, 1, s, SHAKE128_RATE);
-    for (i = 0; i < outlen; i++)
-      output[i] = t[i];
-  }
+	output += nblocks*SHAKE128_RATE;
+	outlen -= nblocks*SHAKE128_RATE;
+
+	if (outlen)
+	{
+		keccak_squeezeblocks(t, 1, s, SHAKE128_RATE);
+
+		for (i = 0; i < outlen; i++)
+		{
+			output[i] = t[i];
+		}
+
+	}
 }
-
 
 /********** SHAKE256 ***********/
 

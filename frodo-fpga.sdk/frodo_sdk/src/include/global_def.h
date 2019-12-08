@@ -61,7 +61,7 @@ extern uint16_t CDF_TABLE_LEN;
 //	Generate random numbers
 //
 //////////////////////////////////////////////
-#define RANDOM_BYTES				1
+#define RANDOM_BYTES				0
 
 //////////////////////////////////////////////
 //
@@ -75,7 +75,8 @@ extern uint16_t CDF_TABLE_LEN;
 //Test KEM
 #define DEBUG_TEST_KEM				1
 //KEM
-#define DEBUG_KEM					0
+#define DEBUG_KEM_KEYPAIR			0
+#define DEBUG_KEM_ENC				0
 //Keccak_f1600
 #define DEBUG_KECCAK_HW				0
 #define DEBUG_STATE_MATRIX			0

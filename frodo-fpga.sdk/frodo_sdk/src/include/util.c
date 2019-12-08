@@ -58,6 +58,54 @@ void frodo_pack(unsigned char *out, const size_t outlen, const uint16_t *in, con
     }
 }
 
+void frodo_unpack(uint16_t *out, const size_t outlen, const unsigned char *in, const size_t inlen, const unsigned char lsb)
+{ // Unpack the input char vector into a uint16_t output vector, copying lsb bits
+  // for each output element from input. outlen must be at least ceil(inlen * 8 / lsb).
+    memset(out, 0, outlen * sizeof(uint16_t));
+
+    size_t i = 0;            // whole uint16_t already filled in
+    size_t j = 0;            // whole bytes already copied
+    unsigned char w = 0;     // the leftover, not yet copied
+    unsigned char bits = 0;  // the number of lsb bits of w
+
+    while (i < outlen && (j < inlen || ((j == inlen) && (bits > 0)))) {
+        /*
+        in: |  |  |  |  |  |  |**|**|...
+                              ^
+                              j
+        w : | *|
+              ^
+              bits
+        out:|   *****|   *****|   ***  |        |...
+                              ^   ^
+                              i   b
+        */
+        unsigned char b = 0;  // bits in out[i] already filled in
+        while (b < lsb) {
+            int nbits = min(lsb - b, bits);
+            uint16_t mask = (1 << nbits) - 1;
+            unsigned char t = (w >> (bits - nbits)) & mask;  // the bits to copy from w to out
+            out[i] = out[i] + (t << (lsb - b - nbits));
+            b += nbits;
+            bits -= nbits;
+            w &= ~(mask << bits);  // not strictly necessary; mostly for debugging
+
+            if (bits == 0) {
+                if (j < inlen) {
+                    w = in[j];
+                    bits = 8;
+                    j++;
+                } else {
+                    break;  // the input vector is exhausted
+                }
+            }
+        }
+        if (b == lsb) {  // out[i] is filled in
+            i++;
+        }
+    }
+}
+
 void clear_bytes(uint8_t *mem, size_t n)
 { // Clear 8-bit bytes from memory. "n" indicates the number of bytes to be zeroed.
   // This function uses the volatile type qualifier to inform the compiler not to optimize out the memory clearing.
