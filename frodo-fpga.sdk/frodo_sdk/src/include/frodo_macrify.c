@@ -317,3 +317,49 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 
 	return 1;
 }
+
+void frodo_mul_add_sb_plus_e(uint16_t *out, const uint16_t *b, const uint16_t *s, const uint16_t *e)
+{ // Multiply by s on the left
+  // Inputs: b (N x N_BAR), s (N_BAR x N), e (N_BAR x N_BAR)
+  // Output: out = s*b + e (N_BAR x N_BAR)
+	int i, j, k;
+
+	for (k = 0; k < PARAMS_NBAR; k++) {
+		for (i = 0; i < PARAMS_NBAR; i++) {
+			out[k*PARAMS_NBAR + i] = e[k*PARAMS_NBAR + i];
+			for (j = 0; j < PARAMS_N; j++) {
+				out[k*PARAMS_NBAR + i] += s[k*PARAMS_N + j] * b[j*PARAMS_NBAR + i];
+			}
+			out[k*PARAMS_NBAR + i] = (uint32_t)(out[k*PARAMS_NBAR + i]) & ((1<<PARAMS_LOGQ)-1);
+		}
+	}
+}
+
+void frodo_add(uint16_t *out, const uint16_t *a, const uint16_t *b)
+{ // Add a and b
+  // Inputs: a, b (N_BAR x N_BAR)
+  // Output: c = a + b
+
+    for (int i = 0; i < (PARAMS_NBAR*PARAMS_NBAR); i++) {
+        out[i] = (a[i] + b[i]) & ((1<<PARAMS_LOGQ)-1);
+    }
+}
+
+void frodo_key_encode(uint16_t *out, const uint16_t *in)
+{ // Encoding
+    unsigned int i, j, npieces_word = 8;
+    unsigned int nwords = (PARAMS_NBAR*PARAMS_NBAR)/8;
+    uint64_t temp, mask = ((uint64_t)1 << PARAMS_EXTRACTED_BITS) - 1;
+    uint16_t* pos = out;
+
+    for (i = 0; i < nwords; i++) {
+        temp = 0;
+        for(j = 0; j < PARAMS_EXTRACTED_BITS; j++)
+            temp |= ((uint64_t)((uint8_t*)in)[i*PARAMS_EXTRACTED_BITS + j]) << (8*j);
+        for (j = 0; j < npieces_word; j++) {
+            *pos = (uint16_t)((temp & mask) << (PARAMS_LOGQ - PARAMS_EXTRACTED_BITS));
+            temp >>= PARAMS_EXTRACTED_BITS;
+            pos++;
+        }
+    }
+}

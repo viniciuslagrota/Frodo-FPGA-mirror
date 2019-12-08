@@ -21,6 +21,7 @@ static uint64_t load64(const unsigned char *x)
   for (i = 0; i < 8; ++i) {
     r |= (unsigned long long)x[i] << 8 * i;
   }
+
   return r;
 }
 
@@ -335,13 +336,10 @@ void KeccakF1600_StatePermute_SW(uint64_t * state)
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 
 
-static void keccak_absorb(uint64_t *s, unsigned int r, const unsigned char *m, unsigned long long int mlen, unsigned char p, int debug)
+static void keccak_absorb(uint64_t *s, unsigned int r, const unsigned char *m, unsigned long long int mlen, unsigned char p)
 {
   unsigned long long i;
   unsigned char t[200];
-
-  if(debug)
-	  printf("mlen: %llu\n", mlen);
 
   while (mlen >= r)
   {
@@ -349,38 +347,29 @@ static void keccak_absorb(uint64_t *s, unsigned int r, const unsigned char *m, u
       s[i] ^= load64(m + 8 * i);
 
     KeccakF1600_StatePermute(s);
+
     mlen -= r;
     m += r;
   }
-
-  for (i = 0; i < r; ++i)
-    t[i] = 0;
-  for (i = 0; i < mlen; ++i)
-    t[i] = m[i];
-  t[i] = p;
-  t[r - 1] |= 128;
+    for (i = 0; i < r; ++i)
+      t[i] = 0;
+    for (i = 0; i < mlen; ++i)
+      t[i] = m[i];
+    t[i] = p;
+    t[r - 1] |= 128;
   for (i = 0; i < r / 8; ++i)
-    s[i] ^= load64(t + 8 * i);
+  {
+	  s[i] ^= load64(t + 8 * i);
+  }
 }
 
-
-static void keccak_squeezeblocks(unsigned char *h, unsigned long long int nblocks, uint64_t *s, unsigned int r, int debug)
+static void keccak_squeezeblocks(unsigned char *h, unsigned long long int nblocks, uint64_t *s, unsigned int r)
 {
   unsigned int i;
 
   while(nblocks > 0)
   {
-	  //Debug
-	  if(debug)
-	  	printStateMatrixDebug(s);
-	  	//
-
     KeccakF1600_StatePermute(s);
-
-    //Debug
-    if(debug)
-    	printStateMatrixDebug(s);
-    	//
 
     for (i = 0; i < (r>>3); i++)
     {
@@ -391,18 +380,17 @@ static void keccak_squeezeblocks(unsigned char *h, unsigned long long int nblock
   }
 }
 
-
 /********** SHAKE128 ***********/
 
 void shake128_absorb(uint64_t *s, const unsigned char *input, unsigned int inputByteLen)
 {
-	keccak_absorb(s, SHAKE128_RATE, input, inputByteLen, 0x1F, 0);
+	keccak_absorb(s, SHAKE128_RATE, input, inputByteLen, 0x1F);
 }
 
 
 void shake128_squeezeblocks(unsigned char *output, unsigned long long nblocks, uint64_t *s)
 {
-	keccak_squeezeblocks(output, nblocks, s, SHAKE128_RATE, 0);
+	keccak_squeezeblocks(output, nblocks, s, SHAKE128_RATE);
 }
 
 
@@ -412,66 +400,24 @@ void shake128(unsigned char *output, unsigned long long outlen, const unsigned c
 	unsigned char t[SHAKE128_RATE];
 	unsigned long long nblocks = outlen/SHAKE128_RATE;
 	size_t i;
-	int debug = 0;
 
 	/* Absorb input */
 
-	//Debug
-		if (outlen == 16)
-		{
-			printf("Antes absorb\n");
-			printStateMatrixDebug(s);
-			debug = 1;
-		}
-		//
-
-	keccak_absorb(s, SHAKE128_RATE, input, inlen, 0x1F, debug);
-
-	//Debug
-		if (outlen == 16)
-		{
-			printf("Depois absorb\n");
-			printStateMatrixDebug(s);
-		}
-		//
+	keccak_absorb(s, SHAKE128_RATE, input, inlen, 0x1F);
 
 	/* Squeeze output */
-	keccak_squeezeblocks(output, nblocks, s, SHAKE128_RATE, 0);
+	keccak_squeezeblocks(output, nblocks, s, SHAKE128_RATE);
 
 	output += nblocks*SHAKE128_RATE;
 	outlen -= nblocks*SHAKE128_RATE;
 
 	if (outlen)
 	{
-
-		//Debug
-		if (outlen == 16)
-		{
-			printf("outlen = 16\n");
-		}
-		//
-
-		keccak_squeezeblocks(t, 1, s, SHAKE128_RATE, 0);
-
-		//Debug
-		if (outlen == 16)
-		{
-			printf("t: ");
-			for (int i = 0; i < SHAKE128_RATE; i++)
-			{
-				printf("%d ", t[i]);
-			}
-			printf("\n");
-		}
-		//
+		keccak_squeezeblocks(t, 1, s, SHAKE128_RATE);
 
 		for (i = 0; i < outlen; i++)
 		{
 			output[i] = t[i];
-			//Debug
-			if (outlen == 16)
-				printf("%d ", output[i]);
-			//
 		}
 
 	}

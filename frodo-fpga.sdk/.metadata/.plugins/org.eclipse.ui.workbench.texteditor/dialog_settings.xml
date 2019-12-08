@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="keccak_absorb" key="selection"/>
+		<item value="if(i % 16" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="if(i % 16"/>
+			<item value="Sp"/>
+			<item value="printf("/>
+			<item value="debug"/>
+			<item value="frodo_sample_n(Epp, PARAMS_NBAR*PARAMS_NBAR);"/>
+			<item value="t:"/>
+			<item value="load64"/>
 			<item value="keccak_absorb"/>
-			<item value="[KEM]"/>
-			<item value="DEBUG_KEM"/>
-			<item value=", &quot;"/>
-			<item value="//&#x09;&#x09;printf"/>
-			<item value="//&#x09;printf"/>
-			<item value="printf"/>
-			<item value="DEBUG_KECCAK"/>
 		</list>
 		<list key="replacehistory">
+			<item value="print_debug(DEBUG_KEM_ENC, "/>
 			<item value="[KEM - KEYPAIR]"/>
 			<item value="DEBUG_KEM_KEYPAIR"/>
 			<item value=", &quot;[RANDOM] "/>
@@ -25,7 +26,6 @@
 			<item value=", &quot;[KEM] "/>
 			<item value="print_debug"/>
 			<item value="DEBUG_KECCAK_HW"/>
-			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
