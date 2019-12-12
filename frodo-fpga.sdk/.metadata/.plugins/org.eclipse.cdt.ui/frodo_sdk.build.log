@@ -1,4 +1,4 @@
-16:44:25 **** Incremental Build of configuration Debug for project frodo_sdk ****
+22:00:40 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -55,9 +55,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 103880	   2680	 138192	 244752	  3bc10	frodo_sdk.elf
+ 106776	   2680	 138192	 247648	  3c760	frodo_sdk.elf
 'Finished building: frodo_sdk.elf.size'
 ' '
 
-16:44:35 Build Finished (took 10s.271ms)
+22:00:51 Build Finished (took 11s.728ms)
 

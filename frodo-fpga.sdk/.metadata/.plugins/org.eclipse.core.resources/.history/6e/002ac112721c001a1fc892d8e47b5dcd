@@ -469,16 +469,6 @@ int crypto_kem_dec(unsigned char *ss, const unsigned char *ct, const unsigned ch
 	}
 	shake(ss, CRYPTO_BYTES, Fin, CRYPTO_CIPHERTEXTBYTES + CRYPTO_BYTES);
 
-	// Cleanup:
-	clear_bytes((uint8_t *)W, PARAMS_NBAR*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Sp, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)S, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Ep, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Epp, PARAMS_NBAR*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes(muprime, BYTES_MU);
-	clear_bytes(G2out, 2*CRYPTO_BYTES);
-	clear_bytes(Fin_k, CRYPTO_BYTES);
-	clear_bytes(shake_input_seedSEprime, 1 + CRYPTO_BYTES);
 
     return 0;
 }
