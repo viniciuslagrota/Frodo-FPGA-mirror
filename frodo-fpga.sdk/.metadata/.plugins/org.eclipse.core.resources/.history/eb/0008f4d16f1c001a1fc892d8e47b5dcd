@@ -54,7 +54,7 @@ int kem_test(const char *named_parameters, int iterations)
 	unsigned int overhead = get_cyclecount();
 	overhead = get_cyclecount() - overhead;
 
-	unsigned int t_keypair, t_enc, t_dec, t_total;
+	unsigned int t;
 
 	/* enable user-mode access to the performance counter*/
 	asm ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
@@ -66,23 +66,23 @@ int kem_test(const char *named_parameters, int iterations)
 	init_perfcounters (1, 0);
 
 	// ------ Test keccak_function ------
-//	u64 state[25] = { 0 };
-//	state[0] = 0x000000000000001f;
-//	state[20] = 0x8000000000000000;
-//	t = get_cyclecount();
-//	KeccakF1600_StatePermute_HW(state);
-//	t = get_cyclecount() - t;
-//	printStateMatrixDebug(state);
-//	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
-//
-//	u64 state2[25] = { 0 };
-//	state2[0] = 0x000000000000001f;
-//	state2[20] = 0x8000000000000000;
-//	t = get_cyclecount();
-//	KeccakF1600_StatePermute_SW(state2);
-//	t = get_cyclecount() - t;
-//	printStateMatrixDebug(state2);
-//	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Software function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
+	u64 state[25] = { 0 };
+	state[0] = 0x000000000000001f;
+	state[20] = 0x8000000000000000;
+	t = get_cyclecount();
+	KeccakF1600_StatePermute_HW(state);
+	t = get_cyclecount() - t;
+	printStateMatrixDebug(state);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
+
+	u64 state2[25] = { 0 };
+	state2[0] = 0x000000000000001f;
+	state2[20] = 0x8000000000000000;
+	t = get_cyclecount();
+	KeccakF1600_StatePermute_SW(state2);
+	t = get_cyclecount() - t;
+	printStateMatrixDebug(state2);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Software function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
 
 	// ------ KEM test ------
 	uint8_t pk[CRYPTO_PUBLICKEYBYTES];
@@ -96,33 +96,26 @@ int kem_test(const char *named_parameters, int iterations)
 	print_debug(DEBUG_TEST_KEM, "=============================================================================================================================\n");
 
 	for (int i = 0; i < iterations; i++) {
-		t_keypair = get_cyclecount();
+		t = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair = get_cyclecount() - t_keypair - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair took exactly %d cycles or %d us (including function call)\n", t_keypair, (t_keypair)/666);
+		t = get_cyclecount() - t;
+		print_debug(DEBUG_TEST_KEM, "[MAIN] Crypto_kem_keypair took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
 
-		t_enc = get_cyclecount();
+		t = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc = get_cyclecount() - t_enc - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc took exactly %d cycles or %d us (including function call)\n", t_enc, (t_enc)/666);
-
-		t_dec = get_cyclecount();
-		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec = get_cyclecount() - t_dec - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec took exactly %d cycles or %d us (including function call)\n", t_dec, (t_dec)/666);
+		t = get_cyclecount() - t;
+		print_debug(DEBUG_TEST_KEM, "[MAIN] Crypto_kem_enc took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
 
 		//        crypto_kem_dec(ss_decap, ct, sk);
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
 			print_debug(DEBUG_ERROR, "[TEST_KEM] ERROR!\n");
 			return false;
 		}
-
-		//Total time
-		t_total = t_keypair + t_enc + t_dec;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time %d cycles or %d us (including function call)\n", t_total, (t_total)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Tests PASSED. All session keys matched.\n");
-		print_debug(DEBUG_TEST_KEM, "\n\n");
 	}
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Tests PASSED. All session keys matched.\n");
+	print_debug(DEBUG_TEST_KEM, "\n\n");
+
+
 
 
 	return true;

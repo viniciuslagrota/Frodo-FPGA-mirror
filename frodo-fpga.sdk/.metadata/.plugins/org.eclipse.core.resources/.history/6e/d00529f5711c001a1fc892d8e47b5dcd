@@ -444,41 +444,6 @@ int crypto_kem_dec(unsigned char *ss, const unsigned char *ct, const unsigned ch
 	frodo_sample_n(Ep, PARAMS_N*PARAMS_NBAR);
 	frodo_mul_add_sa_plus_e(BBp, Sp, Ep, pk_seedA);
 
-	// Generate Epp, and compute W = Sp*B + Epp
-	frodo_sample_n(Epp, PARAMS_NBAR*PARAMS_NBAR);
-	frodo_unpack(B, PARAMS_N*PARAMS_NBAR, pk_b, CRYPTO_PUBLICKEYBYTES - BYTES_SEED_A, PARAMS_LOGQ);
-	frodo_mul_add_sb_plus_e(W, B, Sp, Epp);
-
-	// Encode mu, and compute CC = W + enc(mu') (mod q)
-	frodo_key_encode(CC, (uint16_t*)muprime);
-	frodo_add(CC, W, CC);
-
-	// Prepare input to F
-	memcpy(Fin_ct, ct, CRYPTO_CIPHERTEXTBYTES);
-
-	// Reducing BBp modulo q
-	for (int i = 0; i < PARAMS_N*PARAMS_NBAR; i++) BBp[i] = BBp[i] & ((1 << PARAMS_LOGQ)-1);
-
-	// Is (Bp == BBp & C == CC) = true
-	if (memcmp(Bp, BBp, 2*PARAMS_N*PARAMS_NBAR) == 0 && memcmp(C, CC, 2*PARAMS_NBAR*PARAMS_NBAR) == 0) {
-		// Load k' to do ss = F(ct || k')
-		memcpy(Fin_k, kprime, CRYPTO_BYTES);
-	} else {
-		// Load s to do ss = F(ct || s)
-		memcpy(Fin_k, sk_s, CRYPTO_BYTES);
-	}
-	shake(ss, CRYPTO_BYTES, Fin, CRYPTO_CIPHERTEXTBYTES + CRYPTO_BYTES);
-
-	// Cleanup:
-	clear_bytes((uint8_t *)W, PARAMS_NBAR*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Sp, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)S, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Ep, PARAMS_N*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes((uint8_t *)Epp, PARAMS_NBAR*PARAMS_NBAR*sizeof(uint16_t));
-	clear_bytes(muprime, BYTES_MU);
-	clear_bytes(G2out, 2*CRYPTO_BYTES);
-	clear_bytes(Fin_k, CRYPTO_BYTES);
-	clear_bytes(shake_input_seedSEprime, 1 + CRYPTO_BYTES);
 
     return 0;
 }
