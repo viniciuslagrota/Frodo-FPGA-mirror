@@ -9,6 +9,29 @@
 #include "global_def.h"
 #include "fips202.h"
 
+static enum keccakType
+{
+	KECCAK_SW,
+	KECCAK_HW
+} keccakStatePermuteType = KECCAK_SW;
+
+void KeccakF1600_StatePermute(uint64_t * state)
+{
+	switch(keccakStatePermuteType)
+	{
+		case KECCAK_SW:
+		{
+			KeccakF1600_StatePermute_SW(state);
+			break;
+		}
+		case KECCAK_HW:
+		{
+			KeccakF1600_StatePermute_HW(state);
+			break;
+		}
+	}
+}
+
 unsigned int get_cyclecount (void)
 {
 	unsigned int value;
@@ -54,7 +77,8 @@ int kem_test(const char *named_parameters, int iterations)
 	unsigned int overhead = get_cyclecount();
 	overhead = get_cyclecount() - overhead;
 
-	unsigned int t_keypair, t_enc, t_dec, t_total;
+	unsigned int t_keypair_sw, t_enc_sw, t_dec_sw, t_total_sw;
+	unsigned int t_keypair_hw, t_enc_hw, t_dec_hw, t_total_hw;
 
 	/* enable user-mode access to the performance counter*/
 	asm ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
@@ -95,33 +119,71 @@ int kem_test(const char *named_parameters, int iterations)
 	print_debug(DEBUG_TEST_KEM, "Testing correctness of key encapsulation mechanism (KEM), system %s, tests for %d iterations\n", named_parameters, iterations);
 	print_debug(DEBUG_TEST_KEM, "=============================================================================================================================\n");
 
-	for (int i = 0; i < iterations; i++) {
-		t_keypair = get_cyclecount();
+	for (int i = 0; i < iterations; i++)
+	{
+		keccakStatePermuteType = KECCAK_SW;
+
+		t_keypair_sw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair = get_cyclecount() - t_keypair - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair took exactly %d cycles or %d us (including function call)\n", t_keypair, (t_keypair)/666);
+		t_keypair_sw = get_cyclecount() - t_keypair_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using SW took exactly %d cycles or %d us (including function call)\n", t_keypair_sw, (t_keypair_sw)/666);
 
-		t_enc = get_cyclecount();
+		t_enc_sw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc = get_cyclecount() - t_enc - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc took exactly %d cycles or %d us (including function call)\n", t_enc, (t_enc)/666);
+		t_enc_sw = get_cyclecount() - t_enc_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using SW took exactly %d cycles or %d us (including function call)\n", t_enc_sw, (t_enc_sw)/666);
 
-		t_dec = get_cyclecount();
+		t_dec_sw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec = get_cyclecount() - t_dec - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec took exactly %d cycles or %d us (including function call)\n", t_dec, (t_dec)/666);
+		t_dec_sw = get_cyclecount() - t_dec_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using SW took exactly %d cycles or %d us (including function call)\n", t_dec_sw, (t_dec_sw)/666);
 
-		//        crypto_kem_dec(ss_decap, ct, sk);
+		//Total sw time
+		t_total_sw = t_keypair_sw + t_enc_sw + t_dec_sw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using SW is %d cycles or %d us (including function call)\n", t_total_sw, (t_total_sw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] SW tests PASSED. All session keys matched.\n");
+		print_debug(DEBUG_TEST_KEM, "\n");
+
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] SW ERROR!\n");
 			return false;
 		}
 
-		//Total time
-		t_total = t_keypair + t_enc + t_dec;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time %d cycles or %d us (including function call)\n", t_total, (t_total)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Tests PASSED. All session keys matched.\n");
-		print_debug(DEBUG_TEST_KEM, "\n\n");
+		keccakStatePermuteType = KECCAK_HW;
+
+		t_keypair_hw = get_cyclecount();
+		crypto_kem_keypair(pk, sk);
+		t_keypair_hw = get_cyclecount() - t_keypair_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair took exactly %d cycles or %d us (including function call)\n", t_keypair_hw, (t_keypair_hw)/666);
+
+		t_enc_hw = get_cyclecount();
+		crypto_kem_enc(ct, ss_encap, pk);
+		t_enc_hw = get_cyclecount() - t_enc_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc took exactly %d cycles or %d us (including function call)\n", t_enc_hw, (t_enc_hw)/666);
+
+		t_dec_hw = get_cyclecount();
+		crypto_kem_dec(ss_decap, ct, sk);
+		t_dec_hw = get_cyclecount() - t_dec_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec took exactly %d cycles or %d us (including function call)\n", t_dec_hw, (t_dec_hw)/666);
+
+		//Total sw time
+		t_total_hw = t_keypair_hw + t_enc_sw + t_dec_hw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using HW is %d cycles or %d us (including function call)\n", t_total_hw, (t_total_hw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] HW tests PASSED. All session keys matched.\n");
+		print_debug(DEBUG_TEST_KEM, "\n");
+
+		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
+			print_debug(DEBUG_ERROR, "[TEST_KEM] HW ERROR!\n");
+			return false;
+		}
+
+		//Table
+		print_debug(DEBUG_TEST_KEM, "\t\tkey pair (us) \t|\t encryption (us) \t|\t decryption (us) \t\t|\t\t total (us) \t\t|\t Porcentage (%c) \n", 37);
+		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t -\n", t_keypair_sw/666, t_enc_sw/666, t_dec_sw/666, t_total_sw/666);
+		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t %.02f\n", t_keypair_hw/666, t_enc_hw/666, t_dec_hw/666, t_total_hw/666, ((float)t_total_hw/(float)t_total_sw)*100.0);
+		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n\n\n");
 	}
 
 

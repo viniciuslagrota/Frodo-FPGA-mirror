@@ -48,13 +48,13 @@ extern uint16_t CDF_TABLE_LEN;
 //////////////////////////////////////////////
 //#define USE_HW
 
-#ifdef USE_HW
-//Hardware implementation
-#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_HW
-#else
-//Software implementation
-#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_SW
-#endif
+//#ifdef USE_HW
+////Hardware implementation
+//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_HW
+//#else
+////Software implementation
+//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_SW
+//#endif
 
 //////////////////////////////////////////////
 //
