@@ -72,11 +72,15 @@ set rc [catch {
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Projects/frodo-fpga/frodo-fpga.cache/wt [current_project]
   set_property parent.project_path C:/Projects/frodo-fpga/frodo-fpga.xpr [current_project]
-  set_property ip_repo_paths C:/Projects/ip_repo [current_project]
+  set_property ip_repo_paths {
+  C:/Projects/ip_repo/keccak_f1600_ip_1.0
+  C:/Projects/ip_repo/keccak_f1600_1.0
+  C:/Projects/ip_repo
+} [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Projects/frodo-fpga/frodo-fpga.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   add_files -quiet C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
@@ -164,7 +168,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force frodoBD_wrapper.mmi }
   write_bitstream -force frodoBD_wrapper.bit 
   catch { write_sysdef -hwdef frodoBD_wrapper.hwdef -bitfile frodoBD_wrapper.bit -meminfo frodoBD_wrapper.mmi -file frodoBD_wrapper.sysdef }

@@ -2,22 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="xSemaphore" key="selection"/>
+		<item value="t_total_sw" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="xSemaphore"/>
+			<item value="t_total"/>
+			<item value="t_dec"/>
+			<item value="t_enc"/>
+			<item value="t_keypair"/>
+			<item value="DEBUG_MAIN, "/>
+			<item value="if(i % 16"/>
+			<item value="Sp"/>
+			<item value="printf("/>
 		</list>
 		<list key="replacehistory">
+			<item value="t_total_sw"/>
+			<item value="t_dec_sw"/>
+			<item value="t_enc_sw"/>
+			<item value="t_keypair_sw"/>
+			<item value="DEBUG_MAIN, ("/>
+			<item value="print_debug(DEBUG_KEM_ENC, "/>
+			<item value="[KEM - KEYPAIR]"/>
+			<item value="DEBUG_KEM_KEYPAIR"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="336" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="454" key="DIALOG_HEIGHT"/>
-		<item value="801" key="DIALOG_X_ORIGIN"/>
-		<item value="222" key="DIALOG_Y_ORIGIN"/>
+		<item value="1121" key="DIALOG_X_ORIGIN"/>
+		<item value="277" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
