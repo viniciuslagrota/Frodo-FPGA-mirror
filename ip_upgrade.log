@@ -1,6 +1,53 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun Dec 15 21:11:56 2019
+| Host         : Vinicius-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'frodoBD_keccak_f1600_mm_ip_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of frodoBD_keccak_f1600_mm_ip_0_0 (xilinx.com:user:keccak_f1600_mm_ip:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'frodoBD_keccak_f1600_mm_ip_0_0'.
+
+
+-Upgrade has added interface 'reset_timer' (xilinx.com:signal:reset:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'frodoBD_keccak_f1600_mm_ip_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'done'
+
+-Upgrade has added port 'enable_timer'
+
+-Upgrade has added port 'reset_timer'
+
+-Upgrade has added port 'start'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 | Date         : Sat Nov 30 16:17:08 2019
 | Host         : Vinicius-PC running 64-bit major release  (build 9200)
 | Command      : upgrade_ip
