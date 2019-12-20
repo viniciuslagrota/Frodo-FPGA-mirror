@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Sat Nov 30 16:22:07 2019
+| Date         : Thu Dec 19 23:51:48 2019
 | Host         : Vinicius-PC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file frodoBD_wrapper_utilization_synth.rpt -pb frodoBD_wrapper_utilization_synth.pb
 | Design       : frodoBD_wrapper
@@ -27,20 +27,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+-----------+-------+
-|          Site Type         | Used | Fixed | Available | Util% |
-+----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 8522 |     0 |     17600 | 48.42 |
-|   LUT as Logic             | 8396 |     0 |     17600 | 47.70 |
-|   LUT as Memory            |  126 |     0 |      6000 |  2.10 |
-|     LUT as Distributed RAM |   60 |     0 |           |       |
-|     LUT as Shift Register  |   66 |     0 |           |       |
-| Slice Registers            | 9069 |     0 |     35200 | 25.76 |
-|   Register as Flip Flop    | 9069 |     0 |     35200 | 25.76 |
-|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
-| F7 Muxes                   |   96 |     0 |      8800 |  1.09 |
-| F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
-+----------------------------+------+-------+-----------+-------+
++----------------------------+-------+-------+-----------+-------+
+|          Site Type         |  Used | Fixed | Available | Util% |
++----------------------------+-------+-------+-----------+-------+
+| Slice LUTs*                | 15480 |     0 |     17600 | 87.95 |
+|   LUT as Logic             | 15354 |     0 |     17600 | 87.24 |
+|   LUT as Memory            |   126 |     0 |      6000 |  2.10 |
+|     LUT as Distributed RAM |    60 |     0 |           |       |
+|     LUT as Shift Register  |    66 |     0 |           |       |
+| Slice Registers            | 17702 |     0 |     35200 | 50.29 |
+|   Register as Flip Flop    | 17702 |     0 |     35200 | 50.29 |
+|   Register as Latch        |     0 |     0 |     35200 |  0.00 |
+| F7 Muxes                   |   699 |     0 |      8800 |  7.94 |
+| F8 Muxes                   |   256 |     0 |      4400 |  5.82 |
++----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 88    |          Yes |         Set |            - |
-| 8981  |          Yes |       Reset |            - |
+| 164   |          Yes |         Set |            - |
+| 17538 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,24 +90,24 @@ Table of Contents
 4. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+-----------+--------+
-|          Site Type          | Used | Fixed | Available |  Util% |
-+-----------------------------+------+-------+-----------+--------+
-| Bonded IOB                  |    0 |     0 |       100 |   0.00 |
-| Bonded IPADs                |    0 |     0 |         2 |   0.00 |
-| Bonded IOPADs               |  130 |     0 |       130 | 100.00 |
-| PHY_CONTROL                 |    0 |     0 |         2 |   0.00 |
-| PHASER_REF                  |    0 |     0 |         2 |   0.00 |
-| OUT_FIFO                    |    0 |     0 |         8 |   0.00 |
-| IN_FIFO                     |    0 |     0 |         8 |   0.00 |
-| IDELAYCTRL                  |    0 |     0 |         2 |   0.00 |
-| IBUFDS                      |    0 |     0 |        96 |   0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |   0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |   0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |   0.00 |
-| ILOGIC                      |    0 |     0 |       100 |   0.00 |
-| OLOGIC                      |    0 |     0 |       100 |   0.00 |
-+-----------------------------+------+-------+-----------+--------+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |    0 |     0 |       100 |  0.00 |
+| Bonded IPADs                |    0 |     0 |         2 |  0.00 |
+| Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
+| PHASER_REF                  |    0 |     0 |         2 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |         8 |  0.00 |
+| IN_FIFO                     |    0 |     0 |         8 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |         2 |  0.00 |
+| IBUFDS                      |    0 |     0 |        96 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |  0.00 |
+| ILOGIC                      |    0 |     0 |       100 |  0.00 |
+| OLOGIC                      |    0 |     0 |       100 |  0.00 |
++-----------------------------+------+-------+-----------+-------+
 
 
 5. Clocking
@@ -116,7 +116,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
+| BUFGCTRL   |    0 |     0 |        32 |  0.00 |
 | BUFIO      |    0 |     0 |         8 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         2 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         2 |  0.00 |
@@ -146,35 +146,35 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+----------------------+
-| Ref Name | Used |  Functional Category |
-+----------+------+----------------------+
-| FDRE     | 8981 |         Flop & Latch |
-| LUT3     | 3564 |                  LUT |
-| LUT6     | 2667 |                  LUT |
-| LUT5     | 2240 |                  LUT |
-| LUT2     | 2096 |                  LUT |
-| LUT4     |  409 |                  LUT |
-| LUT1     |  182 |                  LUT |
-| BIBUF    |  130 |                   IO |
-| CARRY4   |  121 |           CarryLogic |
-| MUXF7    |   96 |                MuxFx |
-| FDSE     |   88 |         Flop & Latch |
-| RAMD64E  |   60 |   Distributed Memory |
-| SRLC32E  |   47 |   Distributed Memory |
-| SRL16E   |   19 |   Distributed Memory |
-| RAMB36E1 |    2 |         Block Memory |
-| PS7      |    1 | Specialized Resource |
-| BUFG     |    1 |                Clock |
-+----------+------+----------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| FDRE     | 17538 |        Flop & Latch |
+| LUT6     |  6195 |                 LUT |
+| LUT5     |  4252 |                 LUT |
+| LUT2     |  4037 |                 LUT |
+| LUT3     |  3812 |                 LUT |
+| MUXF7    |   699 |               MuxFx |
+| LUT4     |   626 |                 LUT |
+| MUXF8    |   256 |               MuxFx |
+| FDSE     |   164 |        Flop & Latch |
+| CARRY4   |   153 |          CarryLogic |
+| LUT1     |    84 |                 LUT |
+| RAMD64E  |    60 |  Distributed Memory |
+| SRLC32E  |    47 |  Distributed Memory |
+| SRL16E   |    19 |  Distributed Memory |
+| RAMB36E1 |     2 |        Block Memory |
++----------+-------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++--------------------------------+------+
+|            Ref Name            | Used |
++--------------------------------+------+
+| frodoBD_processing_system7_0_0 |    1 |
++--------------------------------+------+
 
 
 9. Instantiated Netlists

@@ -11,14 +11,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1000000001fs"></ZoomEndTime>
-      <Cursor1Time time="230000000fs"></Cursor1Time>
+      <ZoomEndTime time="21000000000fs"></ZoomEndTime>
+      <Cursor1Time time="9070000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="185"></NameColumnWidth>
-      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+      <NameColumnWidth column_width="344"></NameColumnWidth>
+      <ValueColumnWidth column_width="335"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="37" />
+   <WVObjectSize size="58" />
    <wvobject fp_name="/testbench/start" type="logic">
       <obj_property name="ElementShortName">start</obj_property>
       <obj_property name="ObjectShortName">start</obj_property>
@@ -163,8 +163,92 @@
       <obj_property name="label">MM</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_araddr" type="array">
+      <obj_property name="ElementShortName">axi_araddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">axi_araddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write" type="array">
+      <obj_property name="ElementShortName">slv_reg_write[63:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_reg_write[63:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_addr_write" type="array">
+      <obj_property name="ElementShortName">slv_addr_write[5:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_addr_write[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s_eop" type="logic">
+      <obj_property name="ElementShortName">s_eop</obj_property>
+      <obj_property name="ObjectShortName">s_eop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/ready_i" type="logic">
+      <obj_property name="ElementShortName">ready_i</obj_property>
+      <obj_property name="ObjectShortName">ready_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/valid_o" type="logic">
+      <obj_property name="ElementShortName">valid_o</obj_property>
+      <obj_property name="ObjectShortName">valid_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/data_o" type="array">
+      <obj_property name="ElementShortName">data_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/valid_i" type="logic">
+      <obj_property name="ElementShortName">valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/ready_o" type="logic">
+      <obj_property name="ElementShortName">ready_o</obj_property>
+      <obj_property name="ObjectShortName">ready_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/data_i" type="array">
+      <obj_property name="ElementShortName">data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_addr_read" type="array">
+      <obj_property name="ElementShortName">slv_addr_read[5:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_addr_read[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_read" type="array">
+      <obj_property name="ElementShortName">slv_reg_read[63:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_reg_read[63:0][31:0]</obj_property>
+   </wvobject>
    <wvobject type="divider" fp_name="divider37">
       <obj_property name="label">Core</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/data_i_mm" type="array">
+      <obj_property name="ElementShortName">data_i_mm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_i_mm[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/valid_i_mm" type="logic">
+      <obj_property name="ElementShortName">valid_i_mm</obj_property>
+      <obj_property name="ObjectShortName">valid_i_mm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/ready_o_mm" type="logic">
+      <obj_property name="ElementShortName">ready_o_mm</obj_property>
+      <obj_property name="ObjectShortName">ready_o_mm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/ready_i_mm" type="logic">
+      <obj_property name="ElementShortName">ready_i_mm</obj_property>
+      <obj_property name="ObjectShortName">ready_i_mm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/data_o_mm" type="array">
+      <obj_property name="ElementShortName">data_o_mm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_o_mm[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/keccak_f1600_mm_core_inst/valid_o_mm" type="logic">
+      <obj_property name="ElementShortName">valid_o_mm</obj_property>
+      <obj_property name="ObjectShortName">valid_o_mm</obj_property>
    </wvobject>
 </wave_config>
