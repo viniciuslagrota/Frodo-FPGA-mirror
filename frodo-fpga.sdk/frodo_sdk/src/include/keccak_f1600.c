@@ -77,13 +77,13 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 		if(XLlFifo_iTxVacancy(&fifoKeccak))
 		{
 			XLlFifo_TxPutWord(&fifoKeccak, (u32)(state[i] & 0xffffffff));
-			print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", i, (u32)(state[i] & 0xffffffff));
+			print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
 		}
 
 		if(XLlFifo_iTxVacancy(&fifoKeccak))
 		{
 			XLlFifo_TxPutWord(&fifoKeccak, (u32)(state[i] >> 32));
-			print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", i, (u32)(state[i] >> 32));
+			print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
 		}
 
 	}
@@ -103,7 +103,6 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 	}
 
 	//Stopping timer and reading time
-//	XGpio_DiscreteWrite(&axi_control_timer, 2, 0x0); // Disable counter
 	readTimer = XGpio_DiscreteRead(&axi_counter_timer, 1);
 	fval = (float)readTimer / (float)100;
 	whole = fval;
@@ -143,3 +142,71 @@ void KeccakF1600_StatePermute_HW(uint64_t * state)
 //	printStateMatrixDebug(state);
 
 }
+
+void KeccakF1600_StatePermute_HW_MM(uint64_t * state)
+{
+	print_debug(DEBUG_KECCAK_HW_MM, "[KECCAK-f1600] keccak_f1600_mm_func init\n");
+
+	//Variables
+	u32 readGpio = 0x0;
+	u32 readTimer;
+	float fval;
+	u32 whole, thousandths;
+	int i;
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartDoneMM, 1, 0x1); // Start gpio set high
+
+	//Sending data
+	for(u32 i = 0; i < 25; i++)
+	{
+		memoryMMkeccak[(i << 1)] = (u32)(state[i] & 0xffffffff);
+		print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+
+		memoryMMkeccak[(i << 1) + 1] = (u32)(state[i] >> 32);
+		print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+	}
+
+	//Reading done bit
+	readGpio = XGpio_DiscreteRead(&axiStartDoneMM, 1); //Check done pin
+	while(readGpio == 0x0)
+	{
+		readGpio = XGpio_DiscreteRead(&axiStartDoneMM, 1);
+	}
+	print_debug(DEBUG_KECCAK_HW_MM, "[KECCAK-f1600] Done bit high!\n");
+
+	//Stopping timer and reading time
+	readTimer = XGpio_DiscreteRead(&axi_counter_timer_mm, 1);
+	fval = (float)readTimer / (float)100;
+	whole = fval;
+	thousandths = (fval - whole) * 1000;
+	print_debug(DEBUG_KECCAK_HW, "[KECCAK-f1600] Time took to process Keccak-f1600-MM: %lu.%03lu us\n", whole, thousandths);
+
+	//Interpret data
+//	for (i = 0; i < 50; i++)
+//	{
+//		if(i & 0x1) //upper word
+//			state[i >> 1] |= (u64)(memoryMMkeccak[i]) << 32;
+//		else
+//			state[i >> 1] = memoryMMkeccak[i];
+//
+//		print_debug(DEBUG_KECCAK_HW, "\tReceived data: 0x%x\n", memoryMMkeccak[i]);
+//	}
+
+	for (i = 0; i < 25; i++)
+	{
+		state[i] = (u64)(memoryMMkeccak[(i << 1) + 1]) << 32 | memoryMMkeccak[i << 1];
+	}
+
+//	for (i = 51; i < 64; i++)
+//	{
+//		print_debug(DEBUG_KECCAK_HW, "\tReceived data (debug): 0x%x\n", memoryMMkeccak[i]);
+//	}
+
+	//Set start pin low
+	XGpio_DiscreteWrite(&axiStartDone, 1, 0x0); // Start gpio set low
+
+	//Print state matrix
+//	printStateMatrixDebug(state);
+}
+

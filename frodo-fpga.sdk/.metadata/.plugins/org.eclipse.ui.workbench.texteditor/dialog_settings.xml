@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="t_total_sw" key="selection"/>
+		<item value="XPAR_KECCAK_F1600_MM_" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="t_total"/>
-			<item value="t_dec"/>
-			<item value="t_enc"/>
-			<item value="t_keypair"/>
-			<item value="DEBUG_MAIN, "/>
-			<item value="if(i % 16"/>
-			<item value="Sp"/>
-			<item value="printf("/>
+			<item value="XPAR_KECCAK_F1600_MM_"/>
+			<item value="XPAR_KECCAK_F1600_"/>
+			<item value="XPAR_KECCAK_"/>
+			<item value="XPAR_KECCAK_f1600_IP_0_S00_AXI_BASEADDR"/>
+			<item value="XPAR_KECCAK_F1600_IP_0_S00_AXI_BASEADDR"/>
+			<item value="axi_control_timer"/>
+			<item value="XPAR_KECCAK_F1600_MM_IP_0_S00"/>
+			<item value="XPAR_KECCAK_F1600"/>
 		</list>
 		<list key="replacehistory">
 			<item value="t_total_sw"/>
@@ -29,9 +29,9 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="336" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="454" key="DIALOG_HEIGHT"/>
+		<item value="277" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="370" key="DIALOG_HEIGHT"/>
 		<item value="1121" key="DIALOG_X_ORIGIN"/>
 		<item value="277" key="DIALOG_Y_ORIGIN"/>
 	</section>

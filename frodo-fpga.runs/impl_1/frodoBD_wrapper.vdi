@@ -1,0 +1,71 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Dec 28 13:19:37 2019
+# Process ID: 32
+# Current directory: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1
+# Command line: vivado.exe -log frodoBD_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source frodoBD_wrapper.tcl -notrace
+# Log file: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/frodoBD_wrapper.vdi
+# Journal file: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source frodoBD_wrapper.tcl -notrace
+Command: open_checkpoint frodoBD_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 296.266 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Netlist 29-17] Analyzing 1126 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1322.305 ; gain = 19.742
+Restored from archive | CPU: 4.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1322.305 ; gain = 19.742
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1322.305 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 14 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2019.1 (64-bit) build 2552052
+open_checkpoint: Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.305 ; gain = 1026.039
+INFO: [Memdata 28-208] The XPM instance: <frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <frodoBD_i/axi_fifo_mm_s_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-167] Found XPM memory block frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-208] The XPM instance: <frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <frodoBD_i/axi_fifo_mm_s_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+Command: write_bitstream -force frodoBD_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [DRC REQP-181] writefirst: Synchronous clocking is detected for BRAM (frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-181] writefirst: Synchronous clocking is detected for BRAM (frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 2 Advisories
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./frodoBD_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] 'C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Sat Dec 28 13:20:53 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.1/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:44 ; elapsed = 00:00:41 . Memory (MB): peak = 1836.438 ; gain = 491.723
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 28 13:20:53 2019...
