@@ -46,9 +46,24 @@ extern uint16_t CDF_TABLE_LEN;
 //	Compilation defines
 //
 //////////////////////////////////////////////
-#define ENABLE_KECCAK_DEBUG			0
-#define ENABLE_KEM_TEST				1
-#define ENABLE_HW_TIMER				1
+#define ENABLE_KECCAK_DEBUG			1
+#define ENABLE_KEM_TEST				0
+#define ENABLE_HW_TIMER				0
+
+//////////////////////////////////////////////
+//
+//	Keccak definitions
+//
+//////////////////////////////////////////////
+//#define USE_HW
+
+//#ifdef USE_HW
+////Hardware implementation
+//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_HW
+//#else
+////Software implementation
+//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_SW
+//#endif
 
 //////////////////////////////////////////////
 //

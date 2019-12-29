@@ -101,36 +101,30 @@ int kem_test(const char *named_parameters, int iterations)
 	u64 state[25] = { 0 };
 	state[0] = 0x000000000000001f;
 	state[20] = 0x8000000000000000;
-	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Initializing Hardware function test\n");
-	printStateMatrixDebug(state);
 	unsigned int t;
 	t = get_cyclecount();
 	KeccakF1600_StatePermute_HW(state);
 	t = get_cyclecount() - t;
 	printStateMatrixDebug(state);
-	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware function took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
 
 	u64 state2[25] = { 0 };
 	state2[0] = 0x000000000000001f;
 	state2[20] = 0x8000000000000000;
-	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Initializing Software function test\n");
-	printStateMatrixDebug(state2);
 	t = get_cyclecount();
 	KeccakF1600_StatePermute_SW(state2);
 	t = get_cyclecount() - t;
 	printStateMatrixDebug(state2);
-	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Software function took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Software function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
 
 	u64 state3[25] = { 0 };
 	state3[0] = 0x000000000000001f;
 	state3[20] = 0x8000000000000000;
-	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Initializing Hardware Memory-Mapped function test\n");
-	printStateMatrixDebug(state3);
 	t = get_cyclecount();
 	KeccakF1600_StatePermute_HW_MM(state3);
 	t = get_cyclecount() - t;
 	printStateMatrixDebug(state3);
-	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware Memory-Mapped function took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware Memory-Mapped function took exactly %d cycles or %d us (including function call)\n", t - overhead, (t - overhead)/666);
 #endif
 
 #if ENABLE_KEM_TEST

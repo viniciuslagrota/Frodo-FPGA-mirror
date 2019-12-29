@@ -40,15 +40,23 @@ extern uint16_t CDF_TABLE_LEN;
 //
 //////////////////////////////////////////////
 #define KEM_TEST_ITERATIONS			1
+#define ENABLE_KECCAK_DEBUG			0
+#define ENABLE_KEM_TEST				1
 
 //////////////////////////////////////////////
 //
-//	Compilation defines
+//	Keccak definitions
 //
 //////////////////////////////////////////////
-#define ENABLE_KECCAK_DEBUG			0
-#define ENABLE_KEM_TEST				1
-#define ENABLE_HW_TIMER				1
+//#define USE_HW
+
+//#ifdef USE_HW
+////Hardware implementation
+//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_HW
+//#else
+////Software implementation
+//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_SW
+//#endif
 
 //////////////////////////////////////////////
 //
@@ -75,7 +83,7 @@ extern uint16_t CDF_TABLE_LEN;
 //Keccak_f1600
 #define DEBUG_KECCAK_HW				0
 #define DEBUG_KECCAK_HW_MM			0
-#define DEBUG_STATE_MATRIX			1
+#define DEBUG_STATE_MATRIX			0
 //Random
 #define DEBUG_RANDOM				0
 //Noise
