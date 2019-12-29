@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Sat Dec 28 12:57:47 2019
+--Date        : Sun Dec 29 17:55:58 2019
 --Host        : Vinicius-PC running 64-bit major release  (build 9200)
 --Command     : generate_target frodoBD.bd
 --Design      : frodoBD
@@ -2247,35 +2247,6 @@ architecture STRUCTURE of frodoBD is
     m00_axis_aresetn : in STD_LOGIC
   );
   end component frodoBD_keccak_f1600_ip_0_0;
-  component frodoBD_keccak_f1600_mm_ip_0_0 is
-  port (
-    start : in STD_LOGIC;
-    done : out STD_LOGIC;
-    enable_timer : out STD_LOGIC;
-    reset_timer : out STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
-  );
-  end component frodoBD_keccak_f1600_mm_ip_0_0;
   component frodoBD_timer_1_0 is
   port (
     clk : in STD_LOGIC;
@@ -2334,6 +2305,35 @@ architecture STRUCTURE of frodoBD is
     gpio_io_t : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component frodoBD_axi_gpio_3_0;
+  component frodoBD_keccak_f1600_mm_ip_0_0 is
+  port (
+    start : in STD_LOGIC;
+    done : out STD_LOGIC;
+    enable_timer : out STD_LOGIC;
+    reset_timer : out STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component frodoBD_keccak_f1600_mm_ip_0_0;
   signal S00_AXI_1_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal S00_AXI_1_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal S00_AXI_1_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );

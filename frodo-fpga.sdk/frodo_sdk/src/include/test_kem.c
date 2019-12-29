@@ -83,9 +83,9 @@ int kem_test(const char *named_parameters, int iterations)
 	unsigned int overhead = get_cyclecount();
 	overhead = get_cyclecount() - overhead;
 
-	unsigned int t_keypair_sw, t_enc_sw, t_dec_sw, t_total_sw;
-	unsigned int t_keypair_hw, t_enc_hw, t_dec_hw, t_total_hw;
-	unsigned int t_keypair_hw_mm, t_enc_hw_mm, t_dec_hw_mm, t_total_hw_mm;
+	volatile unsigned int t_keypair_sw = 0, t_enc_sw = 0, t_dec_sw = 0, t_total_sw = 0;
+	volatile unsigned int t_keypair_hw = 0, t_enc_hw = 0, t_dec_hw = 0, t_total_hw = 0;
+	volatile unsigned int t_keypair_hw_mm = 0, t_enc_hw_mm = 0, t_dec_hw_mm = 0, t_total_hw_mm = 0;
 
 	/* enable user-mode access to the performance counter*/
 	asm ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
@@ -232,14 +232,24 @@ int kem_test(const char *named_parameters, int iterations)
 		}
 
 		//Table
+		float fRelativeHw = 100.0-(t_total_hw/(float)t_total_sw)*100.0;
+		u32 wholeHw, thousandthsHw;
+		wholeHw = fRelativeHw;
+		thousandthsHw = (fRelativeHw - wholeHw) * 1000;
+		float fRelativeHwMM = 100.0-(t_total_hw_mm/(float)t_total_sw)*100.0;
+		u32 wholeHwMM, thousandthsHwMM;
+		wholeHwMM = fRelativeHwMM;
+		thousandthsHwMM = (fRelativeHwMM - wholeHwMM) * 1000;
 		print_debug(DEBUG_TEST_KEM, "\t\tkey pair (us) \t|\t encryption (us) \t|\t decryption (us) \t\t|\t\t total (us) \t\t|\t Improvement (%c) \n", 37);
 		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t -\n", t_keypair_sw/666, t_enc_sw/666, t_dec_sw/666, t_total_sw/666);
 		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t %.02f\n", t_keypair_hw/666, t_enc_hw/666, t_dec_hw/666, t_total_hw/666, 100.0-((float)t_total_hw/(float)t_total_sw)*100.0);
+		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t %lu.%03lu\n", t_keypair_hw/666, t_enc_hw/666, t_dec_hw/666, t_total_hw/666, wholeHw, thousandthsHw);
 		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t %.02f\n", t_keypair_hw_mm/666, t_enc_hw_mm/666, t_dec_hw_mm/666, t_total_hw_mm/666, 100.0-((float)t_total_hw_mm/(float)t_total_sw)*100.0);
+		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t %lu.%03lu\n", t_keypair_hw_mm/666, t_enc_hw_mm/666, t_dec_hw_mm/666, t_total_hw_mm/666, wholeHwMM, thousandthsHwMM);
 		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n\n\n");
+
+
 	}
 #endif
 

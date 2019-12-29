@@ -93,22 +93,19 @@
   "../../../bd/frodoBD/ipshared/7d49/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd" \
   "../../../bd/frodoBD/ipshared/7d49/hdl/keccak_f1600_ip_v1_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_keccak_f1600_ip_0_0/sim/frodoBD_keccak_f1600_ip_0_0.vhd" \
-  "../../../bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_core.vhd" \
-  "../../../bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd" \
-  "../../../bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0.vhd" \
+  "../../../bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_core.vhd" \
+  "../../../bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd" \
+  "../../../bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/sim/frodoBD_keccak_f1600_mm_ip_0_0.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_timer_1_0/sim/frodoBD_timer_1_0.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_0_1/sim/frodoBD_axi_gpio_0_1.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_3_0/sim/frodoBD_axi_gpio_3_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_19 \
   "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/frodoBD/ip/frodoBD_auto_pc_0/sim/frodoBD_auto_pc_0.v" \
--endlib
--makelib xcelium_lib/axi_mmu_v2_1_17 \
-  "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b5b8/hdl/axi_mmu_v2_1_vl_rfs.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/frodoBD/ip/frodoBD_s00_mmu_0/sim/frodoBD_s00_mmu_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/frodoBD/sim/frodoBD.vhd" \

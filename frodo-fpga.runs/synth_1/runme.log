@@ -21,9 +21,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14172 
+INFO: Helper process launched with PID 8888 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 733.223 ; gain = 178.109
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 734.383 ; gain = 178.742
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'frodoBD_wrapper' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:40]
 INFO: [Synth 8-3491] module 'frodoBD' declared at 'C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd:2019' bound to instance 'frodoBD_i' of component 'frodoBD' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:67]
@@ -2523,29 +2523,29 @@ INFO: [Synth 8-3491] module 'frodoBD_keccak_f1600_mm_ip_0_0' declared at 'c:/Pro
 INFO: [Synth 8-638] synthesizing module 'frodoBD_keccak_f1600_mm_ip_0_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:89]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0.vhd:5' bound to instance 'U0' of component 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:161]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:5' bound to instance 'U0' of component 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:6' bound to instance 'keccak_f1600_mm_ip_v1_0_S00_AXI_inst' of component 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0.vhd:141]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:6' bound to instance 'keccak_f1600_mm_ip_v1_0_S00_AXI_inst' of component 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:141]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-WARNING: [Synth 8-614] signal 'axi_araddr' is read in the process but is not in the sensitivity list [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:1038]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:362]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:1192]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:1207]
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' (65#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
+WARNING: [Synth 8-614] signal 'axi_araddr' is read in the process but is not in the sensitivity list [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:331]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:235]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:352]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:367]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' (65#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_core' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_core.vhd:34' bound to instance 'keccak_f1600_mm_core_inst' of component 'keccak_f1600_mm_core' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_core' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_core.vhd:52]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_core' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_core.vhd:34' bound to instance 'keccak_f1600_mm_core_inst' of component 'keccak_f1600_mm_core' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_core' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_core.vhd:52]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 WARNING: [Synth 8-5856] 3D RAM a_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
 WARNING: [Synth 8-5856] 3D RAM a_line_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_core' (66#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_core.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0' (67#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/cfde/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_core' (66#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_core.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0' (67#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
 INFO: [Synth 8-256] done synthesizing module 'frodoBD_keccak_f1600_mm_ip_0_0' (68#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:89]
 INFO: [Synth 8-3491] module 'frodoBD_proc_sys_reset_0_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_proc_sys_reset_0_0/synth/frodoBD_proc_sys_reset_0_0.vhd:59' bound to instance 'proc_sys_reset_0' of component 'frodoBD_proc_sys_reset_0_0' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd:2901]
 INFO: [Synth 8-638] synthesizing module 'frodoBD_proc_sys_reset_0_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_proc_sys_reset_0_0/synth/frodoBD_proc_sys_reset_0_0.vhd:74]
@@ -2810,7 +2810,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_decerr_slave has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_20_decerr_slave has unconnected port S_AXI_WLAST
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 1346.277 ; gain = 791.164
+Finished RTL Elaboration : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 1346.434 ; gain = 790.793
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2823,13 +2823,13 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 1346.277 ; gain = 791.164
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:16 ; elapsed = 00:01:20 . Memory (MB): peak = 1346.434 ; gain = 790.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 1346.277 ; gain = 791.164
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:16 ; elapsed = 00:01:20 . Memory (MB): peak = 1346.434 ; gain = 790.793
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 409 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -2878,15 +2878,15 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/frodoBD_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1402.953 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1406.258 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 409 instances were transformed.
   FDR => FDRE: 408 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.441 . Memory (MB): peak = 1402.953 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.424 . Memory (MB): peak = 1406.258 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:49 ; elapsed = 00:01:53 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Constraint Validation : Time (s): cpu = 00:01:44 ; elapsed = 00:01:47 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
@@ -2966,7 +2966,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:20 ; elapsed = 00:02:25 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:16 ; elapsed = 00:02:21 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -2978,7 +2978,7 @@ Report RTL Partitions:
 |1     |keccak_f1600_ip_v1_0__GB0    |           1|     43445|
 |2     |keccak_f1600_ip_v1_0__GB1    |           1|      3735|
 |3     |keccak_f1600_mm_core         |           1|     39722|
-|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|     15492|
+|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|     15561|
 |5     |frodoBD__GC0                 |           1|     13117|
 +------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -4307,7 +4307,7 @@ INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instan
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:57 ; elapsed = 00:04:04 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:48 ; elapsed = 00:03:55 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -4344,14 +4344,14 @@ Report RTL Partitions:
 |1     |keccak_f1600_ip_v1_0__GB0    |           1|     24062|
 |2     |keccak_f1600_ip_v1_0__GB1    |           1|      5029|
 |3     |keccak_f1600_mm_core         |           1|     19115|
-|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9261|
+|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9329|
 |5     |frodoBD__GC0                 |           1|      7771|
 +------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:08 ; elapsed = 00:04:15 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:12 ; elapsed = 00:04:19 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -4359,7 +4359,7 @@ Start Timing Optimization
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:15 ; elapsed = 00:04:22 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Timing Optimization : Time (s): cpu = 00:04:22 ; elapsed = 00:04:29 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -4392,14 +4392,14 @@ Report RTL Partitions:
 |1     |keccak_f1600_ip_v1_0__GB0    |           1|     24062|
 |2     |keccak_f1600_ip_v1_0__GB1    |           1|      5029|
 |3     |keccak_f1600_mm_core         |           1|     19115|
-|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9261|
+|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9329|
 |5     |frodoBD__GC0                 |           1|      7771|
 +------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:37 ; elapsed = 00:04:44 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Technology Mapping : Time (s): cpu = 00:04:51 ; elapsed = 00:04:58 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4424,7 +4424,7 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:51 ; elapsed = 00:04:58 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished IO Insertion : Time (s): cpu = 00:05:10 ; elapsed = 00:05:17 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -4437,7 +4437,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:51 ; elapsed = 00:04:59 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:10 ; elapsed = 00:05:18 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4449,25 +4449,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:57 ; elapsed = 00:05:04 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:18 ; elapsed = 00:05:25 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:57 ; elapsed = 00:05:04 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:18 ; elapsed = 00:05:25 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:05:14 ; elapsed = 00:05:22 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:42 ; elapsed = 00:05:49 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:05:14 ; elapsed = 00:05:22 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:42 ; elapsed = 00:05:50 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -4504,11 +4504,11 @@ Report Cell Usage:
 |2     |BUFG       |     1|
 |3     |CARRY4     |   153|
 |4     |LUT1       |   196|
-|5     |LUT2       |  4037|
+|5     |LUT2       |  4051|
 |6     |LUT3       |  3812|
-|7     |LUT4       |   626|
-|8     |LUT5       |  4252|
-|9     |LUT6       |  6195|
+|7     |LUT4       |   627|
+|8     |LUT5       |  4256|
+|9     |LUT6       |  6192|
 |10    |MUXF7      |   699|
 |11    |MUXF8      |   256|
 |12    |PS7        |     1|
@@ -4527,17 +4527,17 @@ Report Instance Areas:
 +------+-------------------------------------------------------------------------------+---------------------------------------------------------------+------+
 |      |Instance                                                                       |Module                                                         |Cells |
 +------+-------------------------------------------------------------------------------+---------------------------------------------------------------+------+
-|1     |top                                                                            |                                                               | 38144|
-|2     |  frodoBD_i                                                                    |frodoBD                                                        | 38144|
+|1     |top                                                                            |                                                               | 38160|
+|2     |  frodoBD_i                                                                    |frodoBD                                                        | 38160|
 |3     |    keccak_f1600_ip_0                                                          |frodoBD_keccak_f1600_ip_0_0                                    | 16887|
 |4     |      U0                                                                       |keccak_f1600_ip_v1_0                                           | 16887|
 |5     |        keccak_f1600_core_inst                                                 |keccak_f1600_core                                              | 11874|
 |6     |        keccak_f1600_ip_v1_0_M00_AXIS_inst                                     |keccak_f1600_ip_v1_0_M00_AXIS                                  |  1713|
 |7     |        keccak_f1600_ip_v1_0_S00_AXIS_inst                                     |keccak_f1600_ip_v1_0_S00_AXIS                                  |  3295|
-|8     |    keccak_f1600_mm_ip_0                                                       |frodoBD_keccak_f1600_mm_ip_0_0                                 | 16793|
-|9     |      U0                                                                       |keccak_f1600_mm_ip_v1_0                                        | 16793|
-|10    |        keccak_f1600_mm_core_inst                                              |keccak_f1600_mm_core                                           | 10290|
-|11    |        keccak_f1600_mm_ip_v1_0_S00_AXI_inst                                   |keccak_f1600_mm_ip_v1_0_S00_AXI                                |  6499|
+|8     |    keccak_f1600_mm_ip_0                                                       |frodoBD_keccak_f1600_mm_ip_0_0                                 | 16809|
+|9     |      U0                                                                       |keccak_f1600_mm_ip_v1_0                                        | 16809|
+|10    |        keccak_f1600_mm_core_inst                                              |keccak_f1600_mm_core                                           | 10292|
+|11    |        keccak_f1600_mm_ip_v1_0_S00_AXI_inst                                   |keccak_f1600_mm_ip_v1_0_S00_AXI                                |  6513|
 |12    |    axi_fifo_mm_s_0                                                            |frodoBD_axi_fifo_mm_s_0_0                                      |  1429|
 |13    |      U0                                                                       |axi_fifo_mm_s                                                  |  1429|
 |14    |        COMP_IPIC2AXI_S                                                        |ipic2axi_s                                                     |  1233|
@@ -4673,17 +4673,17 @@ Report Instance Areas:
 |144   |      U0                                                                       |timer_v1_0                                                     |    41|
 +------+-------------------------------------------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:05:14 ; elapsed = 00:05:22 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:42 ; elapsed = 00:05:50 . Memory (MB): peak = 1406.258 ; gain = 850.617
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:33 ; elapsed = 00:05:03 . Memory (MB): peak = 1402.953 ; gain = 791.164
-Synthesis Optimization Complete : Time (s): cpu = 00:05:15 ; elapsed = 00:05:23 . Memory (MB): peak = 1402.953 ; gain = 847.840
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:05 ; elapsed = 00:05:31 . Memory (MB): peak = 1406.258 ; gain = 790.793
+Synthesis Optimization Complete : Time (s): cpu = 00:05:42 ; elapsed = 00:05:50 . Memory (MB): peak = 1406.258 ; gain = 850.617
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1399 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1402.953 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1406.258 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 289 instances were transformed.
   FDR => FDRE: 272 instances
@@ -4694,11 +4694,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 773 Infos, 167 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:05:29 ; elapsed = 00:05:38 . Memory (MB): peak = 1402.953 ; gain = 1104.258
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1402.953 ; gain = 0.000
+synth_design: Time (s): cpu = 00:06:01 ; elapsed = 00:06:10 . Memory (MB): peak = 1406.258 ; gain = 1106.570
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1406.258 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1402.953 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 1406.258 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file frodoBD_wrapper_utilization_synth.rpt -pb frodoBD_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Dec 28 13:04:20 2019...
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 29 18:03:07 2019...
