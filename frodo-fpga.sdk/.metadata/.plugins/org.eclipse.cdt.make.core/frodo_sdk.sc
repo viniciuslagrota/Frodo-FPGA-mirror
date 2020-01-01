@@ -10,6 +10,7 @@
 <includePath path="#undef __ARM_FEATURE_FP16_SCALAR_ARITHMETIC" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC" removed="true"/>
 <includePath path="c:\xilinx\sdk\2019.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/8.2.0/include"/>
+<includePath path="#undef __thumb__" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_COPROC" removed="true"/>
 <includePath path="#undef __ARM_ARCH_ISA_THUMB" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_CRC32" removed="true"/>
@@ -872,6 +873,8 @@
 </instance>
 <instance id="xilinx.gnu.armv7.exe.debug.2027252564;xilinx.gnu.armv7.exe.debug.2027252564.;xilinx.gnu.armv7.c.toolchain.compiler.debug.306354343;xilinx.gnu.armv7.c.compiler.input.1358407573">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="#undef __THUMBEL__" removed="true"/>
+<includePath path="#undef __ARM_ARCH_ISA_THUMB" removed="true"/>
 <includePath path="#undef __ARM_ARCH_EXT_IDIV__" removed="true"/>
 <includePath path="#undef __ARM_ARCH" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC" removed="true"/>

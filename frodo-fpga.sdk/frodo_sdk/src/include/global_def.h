@@ -43,18 +43,12 @@ extern uint16_t CDF_TABLE_LEN;
 
 //////////////////////////////////////////////
 //
-//	Keccak definitions
+//	Compilation defines
 //
 //////////////////////////////////////////////
-//#define USE_HW
-
-//#ifdef USE_HW
-////Hardware implementation
-//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_HW
-//#else
-////Software implementation
-//#define KeccakF1600_StatePermute 	KeccakF1600_StatePermute_SW
-//#endif
+#define ENABLE_KECCAK_DEBUG			0
+#define ENABLE_KEM_TEST				1
+#define ENABLE_HW_TIMER				1
 
 //////////////////////////////////////////////
 //
@@ -80,7 +74,8 @@ extern uint16_t CDF_TABLE_LEN;
 #define DEBUG_KEM_DEC				0
 //Keccak_f1600
 #define DEBUG_KECCAK_HW				0
-#define DEBUG_STATE_MATRIX			0
+#define DEBUG_KECCAK_HW_MM			0
+#define DEBUG_STATE_MATRIX			1
 //Random
 #define DEBUG_RANDOM				0
 //Noise
@@ -104,11 +99,14 @@ extern uint16_t CDF_TABLE_LEN;
 //
 //////////////////////////////////////////////
 XGpio axiStartDone;
-//XGpio_Config * ConfigPtr0;
+XGpio axiStartDoneMM;
+XGpio_Config * ConfigPtr0;
 XGpio_Config * ConfigPtr1;
 XGpio_Config * ConfigPtr2;
-XGpio axi_control_timer;
+XGpio_Config * ConfigPtr3;
 XGpio axi_counter_timer;
+XGpio axi_counter_timer_mm;
+u32 *memoryMMkeccak;
 
 //////////////////////////////////////////////
 //

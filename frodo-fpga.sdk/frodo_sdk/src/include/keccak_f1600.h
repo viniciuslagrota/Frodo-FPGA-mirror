@@ -29,5 +29,6 @@
 /////////////////////////////////////////////////////////////////
 void printStateMatrixDebug(uint64_t * s);
 void KeccakF1600_StatePermute_HW(uint64_t * state);
+void KeccakF1600_StatePermute_HW_MM(uint64_t * state);
 
 #endif /* SRC_INCLUDE_KECCAK_F1600_H_ */
