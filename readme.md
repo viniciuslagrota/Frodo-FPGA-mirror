@@ -5,6 +5,8 @@ The FPGA Zynq-7000 is a SOC FPGA (ARM A9 dual-core + FPGA).
 
 ## Frodo explained
 
+Read Standard Lattice-Based Key Encapsulation on Embedded Devices article.
+
 ## What was done
 In order to implement the Frodo algorithm and propose enhancements on it, the first step was to use the available online implementation, proposed by its creators, and migrate the code to the ARM A9. This will be the base for further comparations.
 
