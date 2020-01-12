@@ -100,6 +100,9 @@
   "../../../bd/frodoBD/ip/frodoBD_timer_1_0/sim/frodoBD_timer_1_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_axi_gpio_0_1/sim/frodoBD_axi_gpio_0_1.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_axi_gpio_3_0/sim/frodoBD_axi_gpio_3_0.vhd" \
+  "../../../bd/frodoBD/ipshared/d104/hdl/mult_add_sa_plus_e_ip_v1_0_S00_AXI.vhd" \
+  "../../../bd/frodoBD/ipshared/d104/hdl/mult_add_sa_plus_e_ip_v1_0.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_mult_add_sa_plus_e_ip_0_0/sim/frodoBD_mult_add_sa_plus_e_ip_0_0.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

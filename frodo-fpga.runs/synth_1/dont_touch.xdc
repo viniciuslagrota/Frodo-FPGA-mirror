@@ -43,6 +43,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpi
 # IP: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_3_0 || ORIG_REF_NAME==frodoBD_axi_gpio_3_0} -quiet] -quiet
 
+# IP: bd/frodoBD/ip/frodoBD_mult_add_sa_plus_e_ip_0_0/frodoBD_mult_add_sa_plus_e_ip_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_mult_add_sa_plus_e_ip_0_0 || ORIG_REF_NAME==frodoBD_mult_add_sa_plus_e_ip_0_0} -quiet] -quiet
+
 # IP: bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_auto_pc_0 || ORIG_REF_NAME==frodoBD_auto_pc_0} -quiet] -quiet
 

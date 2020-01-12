@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Sun Dec 29 18:08:33 2019
+| Date         : Thu Jan  2 18:17:15 2020
 | Host         : Vinicius-PC running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file frodoBD_wrapper_timing_summary_routed.rpt -pb frodoBD_wrapper_timing_summary_routed.pb -rpx frodoBD_wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design       : frodoBD_wrapper
@@ -127,7 +127,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      1.038        0.000                      0                40394        0.029        0.000                      0                40394        3.750        0.000                       0                 17700  
+      1.007        0.000                      0                40444        0.010        0.000                      0                40444        3.750        0.000                       0                 17707  
 
 
 All user specified timing constraints are met.
@@ -150,7 +150,7 @@ clk_fpga_0  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-clk_fpga_0          1.038        0.000                      0                40394        0.029        0.000                      0                40394        3.750        0.000                       0                 17700  
+clk_fpga_0          1.007        0.000                      0                40444        0.010        0.000                      0                40444        3.750        0.000                       0                 17707  
 
 
 ------------------------------------------------------------------------------------------------
@@ -181,131 +181,27 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  clk_fpga_0
   To Clock:  clk_fpga_0
 
-Setup :            0  Failing Endpoints,  Worst Slack        1.038ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.029ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        1.007ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.010ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.750ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             1.038ns  (required time - arrival time)
-  Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
-                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[16][29]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.495ns  (logic 1.450ns (17.069%)  route 7.045ns (82.931%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.252ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.690ns = ( 12.691 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.073ns
-    Clock Pessimism Removal (CPR):    0.130ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
-    PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
-  -------------------------------------------------------------------    -------------------
-    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[29])
-                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[29]
-                         net (fo=71, routed)          7.045    11.568    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[29]
-    SLICE_X31Y7          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[16][29]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.498    12.690    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X31Y7          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[16][29]/C
-                         clock pessimism              0.130    12.820    
-                         clock uncertainty           -0.154    12.666    
-    SLICE_X31Y7          FDRE (Setup_fdre_C_D)       -0.061    12.605    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[16][29]
-  -------------------------------------------------------------------
-                         required time                         12.605    
-                         arrival time                         -11.568    
-  -------------------------------------------------------------------
-                         slack                                  1.038    
-
-Slack (MET) :             1.061ns  (required time - arrival time)
-  Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
-                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[15][14]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.482ns  (logic 1.450ns (17.094%)  route 7.032ns (82.906%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.255ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.687ns = ( 12.688 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.073ns
-    Clock Pessimism Removal (CPR):    0.130ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
-    PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
-  -------------------------------------------------------------------    -------------------
-    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[14])
-                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[14]
-                         net (fo=69, routed)          7.032    11.555    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[14]
-    SLICE_X35Y13         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[15][14]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.495    12.687    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X35Y13         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[15][14]/C
-                         clock pessimism              0.130    12.817    
-                         clock uncertainty           -0.154    12.663    
-    SLICE_X35Y13         FDRE (Setup_fdre_C_D)       -0.047    12.616    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[15][14]
-  -------------------------------------------------------------------
-                         required time                         12.616    
-                         arrival time                         -11.555    
-  -------------------------------------------------------------------
-                         slack                                  1.061    
-
-Slack (MET) :             1.083ns  (required time - arrival time)
+Slack (MET) :             1.007ns  (required time - arrival time)
   Source:                 frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][1][39]/D
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][37]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.564ns  (logic 0.716ns (8.361%)  route 7.848ns (91.639%))
+  Data Path Delay:        8.685ns  (logic 0.580ns (6.678%)  route 8.105ns (93.322%))
   Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        -0.232ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.683ns = ( 12.684 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.045ns
+  Clock Path Skew:        -0.186ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.740ns = ( 12.740 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.055ns
     Clock Pessimism Removal (CPR):    0.130ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -320,14 +216,14 @@ Slack (MET) :             1.083ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.737     3.045    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
-    SLICE_X43Y27         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/C
+                         net (fo=17707, routed)       1.747     3.055    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
+    SLICE_X43Y34         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X43Y27         FDRE (Prop_fdre_C_Q)         0.419     3.464 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/Q
-                         net (fo=124, routed)         7.848    11.312    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5_n_0
-    SLICE_X15Y18         LUT5 (Prop_lut5_I3_O)        0.297    11.609 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[4][1][39]_i_1/O
-                         net (fo=1, routed)           0.000    11.609    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[4][1][39]_i_1_n_0
-    SLICE_X15Y18         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][1][39]/D
+    SLICE_X43Y34         FDRE (Prop_fdre_C_Q)         0.456     3.511 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/Q
+                         net (fo=123, routed)         8.105    11.616    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5_n_0
+    SLICE_X3Y12          LUT5 (Prop_lut5_I3_O)        0.124    11.740 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[2][4][37]_i_1/O
+                         net (fo=1, routed)           0.000    11.740    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[2][4][37]_i_1_n_0
+    SLICE_X3Y12          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][37]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -335,29 +231,29 @@ Slack (MET) :             1.083ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.491    12.683    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
-    SLICE_X15Y18         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][1][39]/C
-                         clock pessimism              0.130    12.813    
-                         clock uncertainty           -0.154    12.659    
-    SLICE_X15Y18         FDRE (Setup_fdre_C_D)        0.032    12.691    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][1][39]
+                         net (fo=17707, routed)       1.547    12.740    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
+    SLICE_X3Y12          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][37]/C
+                         clock pessimism              0.130    12.869    
+                         clock uncertainty           -0.154    12.715    
+    SLICE_X3Y12          FDRE (Setup_fdre_C_D)        0.031    12.746    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][37]
   -------------------------------------------------------------------
-                         required time                         12.691    
-                         arrival time                         -11.609    
+                         required time                         12.746    
+                         arrival time                         -11.740    
   -------------------------------------------------------------------
-                         slack                                  1.083    
+                         slack                                  1.007    
 
-Slack (MET) :             1.111ns  (required time - arrival time)
+Slack (MET) :             1.137ns  (required time - arrival time)
   Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
                             (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[28][29]/D
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[55][6]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.456ns  (logic 1.450ns (17.148%)  route 7.006ns (82.852%))
+  Data Path Delay:        8.522ns  (logic 1.450ns (17.015%)  route 7.072ns (82.985%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.251ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.691ns = ( 12.691 - 10.000 ) 
+  Clock Path Skew:        -0.174ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.768ns = ( 12.768 - 10.000 ) 
     Source Clock Delay      (SCD):    3.073ns
     Clock Pessimism Removal (CPR):    0.130ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -373,13 +269,13 @@ Slack (MET) :             1.111ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+                         net (fo=17707, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
     PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[29])
-                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[29]
-                         net (fo=71, routed)          7.006    11.529    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[29]
-    SLICE_X32Y8          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[28][29]/D
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[6])
+                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[6]
+                         net (fo=70, routed)          7.072    11.595    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[6]
+    SLICE_X42Y4          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[55][6]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -387,29 +283,29 @@ Slack (MET) :             1.111ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.499    12.691    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X32Y8          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[28][29]/C
-                         clock pessimism              0.130    12.821    
-                         clock uncertainty           -0.154    12.667    
-    SLICE_X32Y8          FDRE (Setup_fdre_C_D)       -0.028    12.639    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[28][29]
+                         net (fo=17707, routed)       1.576    12.768    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X42Y4          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[55][6]/C
+                         clock pessimism              0.130    12.898    
+                         clock uncertainty           -0.154    12.744    
+    SLICE_X42Y4          FDRE (Setup_fdre_C_D)       -0.013    12.731    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[55][6]
   -------------------------------------------------------------------
-                         required time                         12.639    
-                         arrival time                         -11.529    
+                         required time                         12.731    
+                         arrival time                         -11.595    
   -------------------------------------------------------------------
-                         slack                                  1.111    
+                         slack                                  1.137    
 
-Slack (MET) :             1.177ns  (required time - arrival time)
+Slack (MET) :             1.197ns  (required time - arrival time)
   Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
                             (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[60][0]/D
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[50][7]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.351ns  (logic 1.450ns (17.364%)  route 6.901ns (82.636%))
+  Data Path Delay:        8.414ns  (logic 1.450ns (17.232%)  route 6.964ns (82.768%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.251ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.691ns = ( 12.691 - 10.000 ) 
+  Clock Path Skew:        -0.173ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.770ns = ( 12.769 - 10.000 ) 
     Source Clock Delay      (SCD):    3.073ns
     Clock Pessimism Removal (CPR):    0.130ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -425,13 +321,13 @@ Slack (MET) :             1.177ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+                         net (fo=17707, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
     PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[0])
-                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[0]
-                         net (fo=74, routed)          6.901    11.423    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[0]
-    SLICE_X27Y4          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[60][0]/D
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[7])
+                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[7]
+                         net (fo=70, routed)          6.964    11.487    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[7]
+    SLICE_X41Y1          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[50][7]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -439,29 +335,82 @@ Slack (MET) :             1.177ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.499    12.691    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X27Y4          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[60][0]/C
-                         clock pessimism              0.130    12.821    
-                         clock uncertainty           -0.154    12.667    
-    SLICE_X27Y4          FDRE (Setup_fdre_C_D)       -0.067    12.600    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[60][0]
+                         net (fo=17707, routed)       1.577    12.769    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X41Y1          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[50][7]/C
+                         clock pessimism              0.130    12.899    
+                         clock uncertainty           -0.154    12.745    
+    SLICE_X41Y1          FDRE (Setup_fdre_C_D)       -0.061    12.684    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[50][7]
   -------------------------------------------------------------------
-                         required time                         12.600    
-                         arrival time                         -11.423    
+                         required time                         12.684    
+                         arrival time                         -11.487    
   -------------------------------------------------------------------
-                         slack                                  1.177    
+                         slack                                  1.197    
 
-Slack (MET) :             1.184ns  (required time - arrival time)
-  Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
-                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[23][31]/D
+Slack (MET) :             1.199ns  (required time - arrival time)
+  Source:                 frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[1][4][39]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.328ns  (logic 1.450ns (17.410%)  route 6.878ns (82.590%))
+  Data Path Delay:        8.574ns  (logic 0.580ns (6.764%)  route 7.994ns (93.236%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.104ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.743ns = ( 12.743 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.977ns
+    Clock Pessimism Removal (CPR):    0.130ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.669     2.977    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
+    SLICE_X31Y36         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X31Y36         FDRE (Prop_fdre_C_Q)         0.456     3.433 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep/Q
+                         net (fo=123, routed)         7.994    11.427    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep_n_0
+    SLICE_X2Y4           LUT5 (Prop_lut5_I3_O)        0.124    11.551 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[1][4][39]_i_1/O
+                         net (fo=1, routed)           0.000    11.551    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[1][4][39]_i_1_n_0
+    SLICE_X2Y4           FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[1][4][39]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.551    12.743    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
+    SLICE_X2Y4           FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[1][4][39]/C
+                         clock pessimism              0.130    12.873    
+                         clock uncertainty           -0.154    12.719    
+    SLICE_X2Y4           FDRE (Setup_fdre_C_D)        0.031    12.750    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[1][4][39]
+  -------------------------------------------------------------------
+                         required time                         12.750    
+                         arrival time                         -11.551    
+  -------------------------------------------------------------------
+                         slack                                  1.199    
+
+Slack (MET) :             1.208ns  (required time - arrival time)
+  Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[56][6]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        8.451ns  (logic 1.450ns (17.157%)  route 7.001ns (82.843%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.252ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.690ns = ( 12.691 - 10.000 ) 
+  Clock Path Skew:        -0.173ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.770ns = ( 12.769 - 10.000 ) 
     Source Clock Delay      (SCD):    3.073ns
     Clock Pessimism Removal (CPR):    0.130ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -477,13 +426,170 @@ Slack (MET) :             1.184ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+                         net (fo=17707, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[6])
+                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[6]
+                         net (fo=70, routed)          7.001    11.524    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[6]
+    SLICE_X42Y0          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[56][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.577    12.769    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X42Y0          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[56][6]/C
+                         clock pessimism              0.130    12.899    
+                         clock uncertainty           -0.154    12.745    
+    SLICE_X42Y0          FDRE (Setup_fdre_C_D)       -0.013    12.732    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[56][6]
+  -------------------------------------------------------------------
+                         required time                         12.732    
+                         arrival time                         -11.524    
+  -------------------------------------------------------------------
+                         slack                                  1.208    
+
+Slack (MET) :             1.209ns  (required time - arrival time)
+  Source:                 frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][2][13]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        8.482ns  (logic 0.580ns (6.838%)  route 7.902ns (93.162%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.186ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.740ns = ( 12.740 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.055ns
+    Clock Pessimism Removal (CPR):    0.130ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.747     3.055    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
+    SLICE_X43Y34         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y34         FDRE (Prop_fdre_C_Q)         0.456     3.511 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/Q
+                         net (fo=123, routed)         7.902    11.413    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5_n_0
+    SLICE_X3Y12          LUT5 (Prop_lut5_I3_O)        0.124    11.537 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[4][2][13]_i_1/O
+                         net (fo=1, routed)           0.000    11.537    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[4][2][13]_i_1_n_0
+    SLICE_X3Y12          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][2][13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.547    12.740    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
+    SLICE_X3Y12          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][2][13]/C
+                         clock pessimism              0.130    12.869    
+                         clock uncertainty           -0.154    12.715    
+    SLICE_X3Y12          FDRE (Setup_fdre_C_D)        0.031    12.746    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[4][2][13]
+  -------------------------------------------------------------------
+                         required time                         12.746    
+                         arrival time                         -11.537    
+  -------------------------------------------------------------------
+                         slack                                  1.209    
+
+Slack (MET) :             1.303ns  (required time - arrival time)
+  Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[42][10]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        8.361ns  (logic 1.450ns (17.343%)  route 6.911ns (82.657%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.151ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.691ns = ( 12.691 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.073ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+    PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[10])
+                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[10]
+                         net (fo=69, routed)          6.911    11.434    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[10]
+    SLICE_X20Y46         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[42][10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     10.000    10.000 r  
+    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.499    12.691    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X20Y46         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[42][10]/C
+                         clock pessimism              0.230    12.922    
+                         clock uncertainty           -0.154    12.768    
+    SLICE_X20Y46         FDRE (Setup_fdre_C_D)       -0.031    12.737    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[42][10]
+  -------------------------------------------------------------------
+                         required time                         12.737    
+                         arrival time                         -11.434    
+  -------------------------------------------------------------------
+                         slack                                  1.303    
+
+Slack (MET) :             1.321ns  (required time - arrival time)
+  Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
+                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[37][31]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        8.183ns  (logic 1.450ns (17.719%)  route 6.733ns (82.281%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.260ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.682ns = ( 12.682 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.073ns
+    Clock Pessimism Removal (CPR):    0.130ns
+  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.300ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
     PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
     PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[31])
                                                       1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[31]
-                         net (fo=72, routed)          6.878    11.401    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[31]
-    SLICE_X31Y8          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[23][31]/D
+                         net (fo=72, routed)          6.733    11.256    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[31]
+    SLICE_X22Y14         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[37][31]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -491,29 +597,29 @@ Slack (MET) :             1.184ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.498    12.690    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X31Y8          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[23][31]/C
-                         clock pessimism              0.130    12.820    
-                         clock uncertainty           -0.154    12.666    
-    SLICE_X31Y8          FDRE (Setup_fdre_C_D)       -0.081    12.585    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[23][31]
+                         net (fo=17707, routed)       1.490    12.682    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X22Y14         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[37][31]/C
+                         clock pessimism              0.130    12.812    
+                         clock uncertainty           -0.154    12.658    
+    SLICE_X22Y14         FDRE (Setup_fdre_C_D)       -0.081    12.577    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[37][31]
   -------------------------------------------------------------------
-                         required time                         12.585    
-                         arrival time                         -11.401    
+                         required time                         12.577    
+                         arrival time                         -11.256    
   -------------------------------------------------------------------
-                         slack                                  1.184    
+                         slack                                  1.321    
 
-Slack (MET) :             1.188ns  (required time - arrival time)
+Slack (MET) :             1.324ns  (required time - arrival time)
   Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
                             (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[13][29]/D
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[54][6]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.343ns  (logic 1.450ns (17.379%)  route 6.893ns (82.621%))
+  Data Path Delay:        8.287ns  (logic 1.450ns (17.497%)  route 6.837ns (82.503%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.256ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.686ns = ( 12.686 - 10.000 ) 
+  Clock Path Skew:        -0.173ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.770ns = ( 12.769 - 10.000 ) 
     Source Clock Delay      (SCD):    3.073ns
     Clock Pessimism Removal (CPR):    0.130ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -529,13 +635,13 @@ Slack (MET) :             1.188ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+                         net (fo=17707, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
     PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[29])
-                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[29]
-                         net (fo=71, routed)          6.893    11.416    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[29]
-    SLICE_X27Y14         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[13][29]/D
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[6])
+                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[6]
+                         net (fo=70, routed)          6.837    11.360    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[6]
+    SLICE_X41Y0          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[54][6]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -543,29 +649,29 @@ Slack (MET) :             1.188ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.494    12.686    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X27Y14         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[13][29]/C
-                         clock pessimism              0.130    12.816    
-                         clock uncertainty           -0.154    12.662    
-    SLICE_X27Y14         FDRE (Setup_fdre_C_D)       -0.058    12.604    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[13][29]
+                         net (fo=17707, routed)       1.577    12.769    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X41Y0          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[54][6]/C
+                         clock pessimism              0.130    12.899    
+                         clock uncertainty           -0.154    12.745    
+    SLICE_X41Y0          FDRE (Setup_fdre_C_D)       -0.062    12.683    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[54][6]
   -------------------------------------------------------------------
-                         required time                         12.604    
-                         arrival time                         -11.416    
+                         required time                         12.683    
+                         arrival time                         -11.360    
   -------------------------------------------------------------------
-                         slack                                  1.188    
+                         slack                                  1.324    
 
-Slack (MET) :             1.193ns  (required time - arrival time)
+Slack (MET) :             1.364ns  (required time - arrival time)
   Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
                             (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[17][29]/D
+  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[49][6]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.338ns  (logic 1.450ns (17.391%)  route 6.888ns (82.609%))
+  Data Path Delay:        8.294ns  (logic 1.450ns (17.482%)  route 6.844ns (82.518%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.257ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.685ns = ( 12.686 - 10.000 ) 
+  Clock Path Skew:        -0.174ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.768ns = ( 12.768 - 10.000 ) 
     Source Clock Delay      (SCD):    3.073ns
     Clock Pessimism Removal (CPR):    0.130ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -581,13 +687,13 @@ Slack (MET) :             1.193ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
+                         net (fo=17707, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
     PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
   -------------------------------------------------------------------    -------------------
-    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[29])
-                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[29]
-                         net (fo=71, routed)          6.888    11.410    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[29]
-    SLICE_X31Y15         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[17][29]/D
+    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[6])
+                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[6]
+                         net (fo=70, routed)          6.844    11.367    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[6]
+    SLICE_X38Y0          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[49][6]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -595,121 +701,16 @@ Slack (MET) :             1.193ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.493    12.685    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X31Y15         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[17][29]/C
-                         clock pessimism              0.130    12.815    
-                         clock uncertainty           -0.154    12.661    
-    SLICE_X31Y15         FDRE (Setup_fdre_C_D)       -0.058    12.603    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[17][29]
+                         net (fo=17707, routed)       1.576    12.768    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X38Y0          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[49][6]/C
+                         clock pessimism              0.130    12.898    
+                         clock uncertainty           -0.154    12.744    
+    SLICE_X38Y0          FDRE (Setup_fdre_C_D)       -0.013    12.731    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[49][6]
   -------------------------------------------------------------------
-                         required time                         12.603    
-                         arrival time                         -11.410    
+                         required time                         12.731    
+                         arrival time                         -11.367    
   -------------------------------------------------------------------
-                         slack                                  1.193    
-
-Slack (MET) :             1.217ns  (required time - arrival time)
-  Source:                 frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
-                            (rising edge-triggered cell PS7 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[21][29]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.317ns  (logic 1.450ns (17.433%)  route 6.867ns (82.567%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.253ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.689ns = ( 12.689 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.073ns
-    Clock Pessimism Removal (CPR):    0.130ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.765     3.073    frodoBD_i/processing_system7_0/inst/M_AXI_GP0_ACLK
-    PS7_X0Y0             PS7                                          r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0ACLK
-  -------------------------------------------------------------------    -------------------
-    PS7_X0Y0             PS7 (Prop_ps7_MAXIGP0ACLK_MAXIGP0WDATA[29])
-                                                      1.450     4.523 r  frodoBD_i/processing_system7_0/inst/PS7_i/MAXIGP0WDATA[29]
-                         net (fo=71, routed)          6.867    11.390    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_wdata[29]
-    SLICE_X33Y11         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[21][29]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.497    12.689    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X33Y11         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[21][29]/C
-                         clock pessimism              0.130    12.819    
-                         clock uncertainty           -0.154    12.665    
-    SLICE_X33Y11         FDRE (Setup_fdre_C_D)       -0.058    12.607    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/slv_reg_write_reg[21][29]
-  -------------------------------------------------------------------
-                         required time                         12.607    
-                         arrival time                         -11.390    
-  -------------------------------------------------------------------
-                         slack                                  1.217    
-
-Slack (MET) :             1.218ns  (required time - arrival time)
-  Source:                 frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][40]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        8.429ns  (logic 0.716ns (8.494%)  route 7.713ns (91.506%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        -0.230ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.686ns = ( 12.686 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.045ns
-    Clock Pessimism Removal (CPR):    0.130ns
-  Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.300ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.207     1.207    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.101     1.308 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.737     3.045    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
-    SLICE_X43Y27         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X43Y27         FDRE (Prop_fdre_C_Q)         0.419     3.464 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5/Q
-                         net (fo=124, routed)         7.713    11.177    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/st_reg[2]_rep__5_n_0
-    SLICE_X15Y17         LUT5 (Prop_lut5_I3_O)        0.297    11.474 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[2][4][40]_i_1/O
-                         net (fo=1, routed)           0.000    11.474    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line[2][4][40]_i_1_n_0
-    SLICE_X15Y17         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][40]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                     10.000    10.000 r  
-    PS7_X0Y0             PS7                          0.000    10.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           1.101    11.101    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.091    11.192 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       1.493    12.685    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
-    SLICE_X15Y17         FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][40]/C
-                         clock pessimism              0.130    12.815    
-                         clock uncertainty           -0.154    12.661    
-    SLICE_X15Y17         FDRE (Setup_fdre_C_D)        0.031    12.692    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[2][4][40]
-  -------------------------------------------------------------------
-                         required time                         12.692    
-                         arrival time                         -11.474    
-  -------------------------------------------------------------------
-                         slack                                  1.218    
+                         slack                                  1.364    
 
 
 
@@ -717,66 +718,19 @@ Slack (MET) :             1.218ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.029ns  (arrival time - required time)
-  Source:                 frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.doutb_reg_reg_pipe_34_reg/C
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[19]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.gen_doutb_pipe.doutb_pipe_reg[0][5]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.403ns  (logic 0.215ns (53.357%)  route 0.188ns (46.643%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.201ns
-    Source Clock Delay      (SCD):    0.905ns
-    Clock Pessimism Removal (CPR):    0.029ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.564     0.905    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/clka
-    SLICE_X28Y49         FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.doutb_reg_reg_pipe_34_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y49         FDRE (Prop_fdre_C_Q)         0.164     1.069 r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.doutb_reg_reg_pipe_34_reg/Q
-                         net (fo=1, routed)           0.188     1.256    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.doutb_reg_reg_pipe_34_reg_n_0
-    SLICE_X31Y50         LUT3 (Prop_lut3_I2_O)        0.051     1.307 r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.gen_doutb_pipe.doutb_pipe[0][5]_i_1/O
-                         net (fo=1, routed)           0.000     1.307    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.doutb_reg[5]
-    SLICE_X31Y50         FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.gen_doutb_pipe.doutb_pipe_reg[0][5]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.831     1.201    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/clka
-    SLICE_X31Y50         FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.gen_doutb_pipe.doutb_pipe_reg[0][5]/C
-                         clock pessimism             -0.029     1.172    
-    SLICE_X31Y50         FDRE (Hold_fdre_C_D)         0.107     1.279    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_rd_b.gen_doutb_pipe.doutb_pipe_reg[0][5]
-  -------------------------------------------------------------------
-                         required time                         -1.279    
-                         arrival time                           1.307    
-  -------------------------------------------------------------------
-                         slack                                  0.029    
-
-Slack (MET) :             0.036ns  (arrival time - required time)
-  Source:                 frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[38][0]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[37][0]/D
+  Destination:            frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[19].reg1_reg[19]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.394ns  (logic 0.186ns (47.258%)  route 0.208ns (52.742%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.189ns
-    Source Clock Delay      (SCD):    0.889ns
+  Data Path Delay:        0.366ns  (logic 0.209ns (57.051%)  route 0.157ns (42.949%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.264ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.197ns
+    Source Clock Delay      (SCD):    0.899ns
     Clock Pessimism Removal (CPR):    0.034ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -786,14 +740,14 @@ Slack (MET) :             0.036ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.548     0.889    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/m00_axis_aclk
-    SLICE_X23Y78         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[38][0]/C
+                         net (fo=17707, routed)       0.558     0.899    frodoBD_i/axi_gpio_0/U0/gpio_core_1/s_axi_aclk
+    SLICE_X20Y53         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[19]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y78         FDRE (Prop_fdre_C_Q)         0.141     1.030 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[38][0]/Q
-                         net (fo=1, routed)           0.208     1.237    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/stream_data_fifo_reg[37][31]_0[0]
-    SLICE_X19Y79         LUT3 (Prop_lut3_I0_O)        0.045     1.282 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/stream_data_fifo[37][0]_i_1/O
-                         net (fo=1, routed)           0.000     1.282    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[37][31]_1[0]
-    SLICE_X19Y79         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[37][0]/D
+    SLICE_X20Y53         FDRE (Prop_fdre_C_Q)         0.164     1.063 r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[19]/Q
+                         net (fo=1, routed)           0.157     1.220    frodoBD_i/axi_gpio_0/U0/gpio_core_1/gpio_Data_In[19]
+    SLICE_X22Y53         LUT5 (Prop_lut5_I0_O)        0.045     1.265 r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[19].reg1[19]_i_1/O
+                         net (fo=1, routed)           0.000     1.265    frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[19].reg1[19]_i_1_n_0
+    SLICE_X22Y53         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[19].reg1_reg[19]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -801,29 +755,29 @@ Slack (MET) :             0.036ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.819     1.189    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/m00_axis_aclk
-    SLICE_X19Y79         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[37][0]/C
-                         clock pessimism             -0.034     1.155    
-    SLICE_X19Y79         FDRE (Hold_fdre_C_D)         0.091     1.246    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo_reg[37][0]
+                         net (fo=17707, routed)       0.827     1.197    frodoBD_i/axi_gpio_0/U0/gpio_core_1/s_axi_aclk
+    SLICE_X22Y53         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[19].reg1_reg[19]/C
+                         clock pessimism             -0.034     1.163    
+    SLICE_X22Y53         FDRE (Hold_fdre_C_D)         0.092     1.255    frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[19].reg1_reg[19]
   -------------------------------------------------------------------
-                         required time                         -1.246    
-                         arrival time                           1.282    
+                         required time                         -1.255    
+                         arrival time                           1.265    
   -------------------------------------------------------------------
-                         slack                                  0.036    
+                         slack                                  0.010    
 
-Slack (MET) :             0.038ns  (arrival time - required time)
-  Source:                 frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_wr_data_reg[13]/C
+Slack (MET) :             0.021ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.gmm2s.wr_data_int_reg[13]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4/D
+                            (rising edge-triggered cell SRL16E clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.384ns  (logic 0.141ns (36.714%)  route 0.243ns (63.286%))
+  Data Path Delay:        0.342ns  (logic 0.128ns (37.399%)  route 0.214ns (62.601%))
   Logic Levels:           0  
-  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.205ns
-    Source Clock Delay      (SCD):    0.906ns
+  Clock Path Skew:        0.265ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.221ns
+    Source Clock Delay      (SCD):    0.927ns
     Clock Pessimism Removal (CPR):    0.029ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -833,12 +787,12 @@ Slack (MET) :             0.038ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.565     0.906    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/s_axi_aclk
-    SLICE_X11Y50         FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_wr_data_reg[13]/C
+                         net (fo=17707, routed)       0.586     0.927    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aclk
+    SLICE_X2Y48          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X11Y50         FDRE (Prop_fdre_C_Q)         0.141     1.047 r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_wr_data_reg[13]/Q
-                         net (fo=1, routed)           0.243     1.290    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.gmm2s.wr_data_int_reg[31]_0[13]
-    SLICE_X10Y49         FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.gmm2s.wr_data_int_reg[13]/D
+    SLICE_X2Y48          FDRE (Prop_fdre_C_Q)         0.128     1.055 r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awid_r_reg[1]/Q
+                         net (fo=1, routed)           0.214     1.269    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/in[5]
+    SLICE_X0Y50          SRL16E                                       r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -846,25 +800,165 @@ Slack (MET) :             0.038ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.835     1.205    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/s_axi_aclk
-    SLICE_X10Y49         FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.gmm2s.wr_data_int_reg[13]/C
-                         clock pessimism             -0.029     1.176    
-    SLICE_X10Y49         FDRE (Hold_fdre_C_D)         0.076     1.252    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.gmm2s.wr_data_int_reg[13]
+                         net (fo=17707, routed)       0.851     1.221    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/aclk
+    SLICE_X0Y50          SRL16E                                       r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4/CLK
+                         clock pessimism             -0.029     1.192    
+    SLICE_X0Y50          SRL16E (Hold_srl16e_CLK_D)
+                                                      0.056     1.248    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][9]_srl4
   -------------------------------------------------------------------
-                         required time                         -1.252    
+                         required time                         -1.248    
+                         arrival time                           1.269    
+  -------------------------------------------------------------------
+                         slack                                  0.021    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.295ns  (logic 0.128ns (43.463%)  route 0.167ns (56.537%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.264ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.197ns
+    Source Clock Delay      (SCD):    0.899ns
+    Clock Pessimism Removal (CPR):    0.034ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.558     0.899    frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/s_axi_aclk
+    SLICE_X21Y55         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X21Y55         FDRE (Prop_fdre_C_Q)         0.128     1.027 r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4/Q
+                         net (fo=1, routed)           0.167     1.193    frodoBD_i/axi_gpio_0/U0/gpio_core_1/gpio_io_i_d2[2]
+    SLICE_X24Y55         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.827     1.197    frodoBD_i/axi_gpio_0/U0/gpio_core_1/s_axi_aclk
+    SLICE_X24Y55         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[2]/C
+                         clock pessimism             -0.034     1.163    
+    SLICE_X24Y55         FDRE (Hold_fdre_C_D)         0.006     1.169    frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.169    
+                         arrival time                           1.193    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.026ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/skid_buffer_reg[22]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.418ns  (logic 0.209ns (50.028%)  route 0.209ns (49.972%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.270ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.222ns
+    Source Clock Delay      (SCD):    0.923ns
+    Clock Pessimism Removal (CPR):    0.029ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.582     0.923    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/aclk
+    SLICE_X0Y52          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/skid_buffer_reg[22]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y52          FDRE (Prop_fdre_C_Q)         0.164     1.087 r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/skid_buffer_reg[22]/Q
+                         net (fo=1, routed)           0.209     1.295    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/skid_buffer_reg_n_0_[22]
+    SLICE_X0Y48          LUT3 (Prop_lut3_I2_O)        0.045     1.340 r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i[22]_i_1/O
+                         net (fo=1, routed)           0.000     1.340    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/skid_buffer[22]
+    SLICE_X0Y48          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.852     1.222    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/aclk
+    SLICE_X0Y48          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[22]/C
+                         clock pessimism             -0.029     1.193    
+    SLICE_X0Y48          FDRE (Hold_fdre_C_D)         0.121     1.314    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg[22]
+  -------------------------------------------------------------------
+                         required time                         -1.314    
+                         arrival time                           1.340    
+  -------------------------------------------------------------------
+                         slack                                  0.026    
+
+Slack (MET) :             0.027ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[12].reg1_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_gpio_0/U0/ip2bus_data_i_D1_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.391ns  (logic 0.186ns (47.595%)  route 0.205ns (52.405%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.273ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.202ns
+    Source Clock Delay      (SCD):    0.900ns
+    Clock Pessimism Removal (CPR):    0.029ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.559     0.900    frodoBD_i/axi_gpio_0/U0/gpio_core_1/s_axi_aclk
+    SLICE_X21Y50         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[12].reg1_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X21Y50         FDRE (Prop_fdre_C_Q)         0.141     1.041 r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[12].reg1_reg[12]/Q
+                         net (fo=1, routed)           0.205     1.245    frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.ALLIN1_ND.READ_REG_GEN[12].reg1_reg
+    SLICE_X19Y47         LUT6 (Prop_lut6_I1_O)        0.045     1.290 r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/ip2bus_data_i_D1[12]_i_1/O
+                         net (fo=1, routed)           0.000     1.290    frodoBD_i/axi_gpio_0/U0/ip2bus_data[12]
+    SLICE_X19Y47         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/ip2bus_data_i_D1_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.832     1.202    frodoBD_i/axi_gpio_0/U0/s_axi_aclk
+    SLICE_X19Y47         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/ip2bus_data_i_D1_reg[12]/C
+                         clock pessimism             -0.029     1.173    
+    SLICE_X19Y47         FDRE (Hold_fdre_C_D)         0.091     1.264    frodoBD_i/axi_gpio_0/U0/ip2bus_data_i_D1_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -1.264    
                          arrival time                           1.290    
   -------------------------------------------------------------------
-                         slack                                  0.038    
+                         slack                                  0.027    
 
-Slack (MET) :             0.039ns  (arrival time - required time)
-  Source:                 frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg/C
+Slack (MET) :             0.028ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awlen_r_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[11]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][3]_srl4/D
+                            (rising edge-triggered cell SRL16E clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.268ns  (logic 0.141ns (52.639%)  route 0.127ns (47.361%))
+  Data Path Delay:        0.350ns  (logic 0.128ns (36.551%)  route 0.222ns (63.449%))
   Logic Levels:           0  
   Clock Path Skew:        0.267ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.223ns
@@ -878,12 +972,12 @@ Slack (MET) :             0.039ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.586     0.927    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/aclk
-    SLICE_X5Y49          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg/C
+                         net (fo=17707, routed)       0.586     0.927    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/aclk
+    SLICE_X2Y48          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awlen_r_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X5Y49          FDRE (Prop_fdre_C_Q)         0.141     1.068 r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg/Q
-                         net (fo=100, routed)         0.127     1.194    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg_0
-    SLICE_X3Y50          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[11]/CE
+    SLICE_X2Y48          FDRE (Prop_fdre_C_Q)         0.128     1.055 r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.aw_channel_0/s_awlen_r_reg[3]/Q
+                         net (fo=1, routed)           0.222     1.277    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/in[3]
+    SLICE_X4Y50          SRL16E                                       r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][3]_srl4/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -891,30 +985,31 @@ Slack (MET) :             0.039ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.853     1.223    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/aclk
-    SLICE_X3Y50          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[11]/C
+                         net (fo=17707, routed)       0.853     1.223    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/aclk
+    SLICE_X4Y50          SRL16E                                       r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][3]_srl4/CLK
                          clock pessimism             -0.029     1.194    
-    SLICE_X3Y50          FDRE (Hold_fdre_C_CE)       -0.039     1.155    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[11]
+    SLICE_X4Y50          SRL16E (Hold_srl16e_CLK_D)
+                                                      0.055     1.249    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][3]_srl4
   -------------------------------------------------------------------
-                         required time                         -1.155    
-                         arrival time                           1.194    
+                         required time                         -1.249    
+                         arrival time                           1.277    
   -------------------------------------------------------------------
-                         slack                                  0.039    
+                         slack                                  0.028    
 
-Slack (MET) :             0.039ns  (arrival time - required time)
-  Source:                 frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg/C
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/M_AXIS_TDATA_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[33]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/DIADI[10]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.268ns  (logic 0.141ns (52.639%)  route 0.127ns (47.361%))
+  Data Path Delay:        0.386ns  (logic 0.164ns (42.481%)  route 0.222ns (57.519%))
   Logic Levels:           0  
-  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.223ns
-    Source Clock Delay      (SCD):    0.927ns
-    Clock Pessimism Removal (CPR):    0.029ns
+  Clock Path Skew:        0.060ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.245ns
+    Source Clock Delay      (SCD):    0.903ns
+    Clock Pessimism Removal (CPR):    0.282ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -923,59 +1018,12 @@ Slack (MET) :             0.039ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.586     0.927    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/aclk
-    SLICE_X5Y49          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg/C
+                         net (fo=17707, routed)       0.562     0.903    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/m00_axis_aclk
+    SLICE_X6Y60          FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/M_AXIS_TDATA_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X5Y49          FDRE (Prop_fdre_C_Q)         0.141     1.068 r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg/Q
-                         net (fo=100, routed)         0.127     1.194    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/s_ready_i_reg_0
-    SLICE_X3Y50          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[33]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.853     1.223    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/aclk
-    SLICE_X3Y50          FDRE                                         r  frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[33]/C
-                         clock pessimism             -0.029     1.194    
-    SLICE_X3Y50          FDRE (Hold_fdre_C_CE)       -0.039     1.155    frodoBD_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/r.r_pipe/skid_buffer_reg[33]
-  -------------------------------------------------------------------
-                         required time                         -1.155    
-                         arrival time                           1.194    
-  -------------------------------------------------------------------
-                         slack                                  0.039    
-
-Slack (MET) :             0.049ns  (arrival time - required time)
-  Source:                 frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1][61]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][1][61]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.440ns  (logic 0.209ns (47.539%)  route 0.231ns (52.461%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.269ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.189ns
-    Source Clock Delay      (SCD):    0.886ns
-    Clock Pessimism Removal (CPR):    0.034ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.545     0.886    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/s00_axis_aclk
-    SLICE_X24Y74         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1][61]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X24Y74         FDRE (Prop_fdre_C_Q)         0.164     1.050 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1][61]/Q
-                         net (fo=2, routed)           0.231     1.280    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1]_14[61]
-    SLICE_X20Y69         LUT6 (Prop_lut6_I5_O)        0.045     1.325 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a[1][1][61]_i_1/O
-                         net (fo=1, routed)           0.000     1.325    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a[1][1]_40[61]
-    SLICE_X20Y69         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][1][61]/D
+    SLICE_X6Y60          FDRE (Prop_fdre_C_Q)         0.164     1.067 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/M_AXIS_TDATA_reg[10]/Q
+                         net (fo=1, routed)           0.222     1.289    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/dina[10]
+    RAMB36_X0Y11         RAMB36E1                                     r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/DIADI[10]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -983,126 +1031,74 @@ Slack (MET) :             0.049ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.819     1.189    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/s00_axis_aclk
-    SLICE_X20Y69         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][1][61]/C
-                         clock pessimism             -0.034     1.155    
-    SLICE_X20Y69         FDRE (Hold_fdre_C_D)         0.121     1.276    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][1][61]
+                         net (fo=17707, routed)       0.875     1.245    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/clka
+    RAMB36_X0Y11         RAMB36E1                                     r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKBWRCLK
+                         clock pessimism             -0.282     0.963    
+    RAMB36_X0Y11         RAMB36E1 (Hold_ramb36e1_CLKBWRCLK_DIADI[10])
+                                                      0.296     1.259    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg
   -------------------------------------------------------------------
-                         required time                         -1.276    
-                         arrival time                           1.325    
+                         required time                         -1.259    
+                         arrival time                           1.289    
   -------------------------------------------------------------------
-                         slack                                  0.049    
+                         slack                                  0.030    
 
-Slack (MET) :             0.049ns  (arrival time - required time)
-  Source:                 frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[13]/C
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[20].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[16]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.422ns  (logic 0.342ns (81.063%)  route 0.080ns (18.937%))
-  Logic Levels:           2  (CARRY4=2)
-  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.204ns
-    Source Clock Delay      (SCD):    0.908ns
-    Clock Pessimism Removal (CPR):    0.029ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.567     0.908    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/s_aclk
-    SLICE_X9Y49          FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[13]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y49          FDRE (Prop_fdre_C_Q)         0.141     1.049 r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[13]/Q
-                         net (fo=5, routed)           0.079     1.128    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[13]
-    SLICE_X9Y49          CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.147     1.275 r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[12]_i_1/CO[3]
-                         net (fo=1, routed)           0.001     1.275    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[12]_i_1_n_0
-    SLICE_X9Y50          CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.054     1.329 r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[16]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.329    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[16]_i_1_n_7
-    SLICE_X9Y50          FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[16]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.834     1.204    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/s_aclk
-    SLICE_X9Y50          FDRE                                         r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[16]/C
-                         clock pessimism             -0.029     1.175    
-    SLICE_X9Y50          FDRE (Hold_fdre_C_D)         0.105     1.280    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/gaxis_pkt_fifo_cc.axis_pkt_cnt_reg[16]
-  -------------------------------------------------------------------
-                         required time                         -1.280    
-                         arrival time                           1.329    
-  -------------------------------------------------------------------
-                         slack                                  0.049    
-
-Slack (MET) :             0.052ns  (arrival time - required time)
-  Source:                 frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1][25]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][0][25]/D
+  Destination:            frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[11]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.411ns  (logic 0.186ns (45.258%)  route 0.225ns (54.742%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.198ns
-    Source Clock Delay      (SCD):    0.897ns
-    Clock Pessimism Removal (CPR):    0.034ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.556     0.897    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/s00_axis_aclk
-    SLICE_X23Y89         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1][25]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X23Y89         FDRE (Prop_fdre_C_Q)         0.141     1.038 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1][25]/Q
-                         net (fo=2, routed)           0.225     1.263    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_line_reg[1][1]_14[25]
-    SLICE_X18Y88         LUT6 (Prop_lut6_I3_O)        0.045     1.308 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a[1][0][25]_i_1/O
-                         net (fo=1, routed)           0.000     1.308    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a[1][0]_41[25]
-    SLICE_X18Y88         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][0][25]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_fpga_0 rise edge)
-                                                      0.000     0.000 r  
-    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.828     1.198    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/s00_axis_aclk
-    SLICE_X18Y88         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][0][25]/C
-                         clock pessimism             -0.034     1.164    
-    SLICE_X18Y88         FDRE (Hold_fdre_C_D)         0.092     1.256    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[1][0][25]
-  -------------------------------------------------------------------
-                         required time                         -1.256    
-                         arrival time                           1.308    
-  -------------------------------------------------------------------
-                         slack                                  0.052    
-
-Slack (MET) :             0.053ns  (arrival time - required time)
-  Source:                 frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[3][2][11]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_reg[3][2][11]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk_fpga_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.436ns  (logic 0.186ns (42.613%)  route 0.250ns (57.387%))
-  Logic Levels:           1  (LUT6=1)
+  Data Path Delay:        0.293ns  (logic 0.128ns (43.719%)  route 0.165ns (56.281%))
+  Logic Levels:           0  
   Clock Path Skew:        0.263ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.199ns
+    Destination Clock Delay (DCD):    1.197ns
+    Source Clock Delay      (SCD):    0.900ns
+    Clock Pessimism Removal (CPR):    0.034ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.559     0.900    frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/s_axi_aclk
+    SLICE_X21Y52         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[20].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X21Y52         FDRE (Prop_fdre_C_Q)         0.128     1.028 r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[20].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4/Q
+                         net (fo=1, routed)           0.165     1.192    frodoBD_i/axi_gpio_0/U0/gpio_core_1/gpio_io_i_d2[11]
+    SLICE_X24Y53         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=17707, routed)       0.827     1.197    frodoBD_i/axi_gpio_0/U0/gpio_core_1/s_axi_aclk
+    SLICE_X24Y53         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[11]/C
+                         clock pessimism             -0.034     1.163    
+    SLICE_X24Y53         FDRE (Hold_fdre_C_D)        -0.001     1.162    frodoBD_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_In_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.162    
+                         arrival time                           1.192    
+  -------------------------------------------------------------------
+                         slack                                  0.030    
+
+Slack (MET) :             0.032ns  (arrival time - required time)
+  Source:                 frodoBD_i/axi_gpio_0/U0/ip2bus_data_i_D1_reg[24]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_gpio_0/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.362ns  (logic 0.141ns (38.929%)  route 0.221ns (61.071%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.202ns
     Source Clock Delay      (SCD):    0.902ns
     Clock Pessimism Removal (CPR):    0.034ns
 
@@ -1113,14 +1109,12 @@ Slack (MET) :             0.053ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.561     0.902    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
-    SLICE_X23Y1          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[3][2][11]/C
+                         net (fo=17707, routed)       0.561     0.902    frodoBD_i/axi_gpio_0/U0/s_axi_aclk
+    SLICE_X22Y48         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/ip2bus_data_i_D1_reg[24]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y1          FDRE (Prop_fdre_C_Q)         0.141     1.043 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[3][2][11]/Q
-                         net (fo=2, routed)           0.250     1.293    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_line_reg[3][2]_7[11]
-    SLICE_X20Y8          LUT6 (Prop_lut6_I5_O)        0.045     1.338 r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a[3][2][11]_i_1/O
-                         net (fo=1, routed)           0.000     1.338    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a[3][2]_32[11]
-    SLICE_X20Y8          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_reg[3][2][11]/D
+    SLICE_X22Y48         FDRE (Prop_fdre_C_Q)         0.141     1.043 r  frodoBD_i/axi_gpio_0/U0/ip2bus_data_i_D1_reg[24]/Q
+                         net (fo=1, routed)           0.221     1.264    frodoBD_i/axi_gpio_0/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[31]_0[7]
+    SLICE_X16Y47         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -1128,30 +1122,30 @@ Slack (MET) :             0.053ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.829     1.199    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/s00_axi_aclk
-    SLICE_X20Y8          FDRE                                         r  frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_reg[3][2][11]/C
-                         clock pessimism             -0.034     1.165    
-    SLICE_X20Y8          FDRE (Hold_fdre_C_D)         0.120     1.285    frodoBD_i/keccak_f1600_mm_ip_0/U0/keccak_f1600_mm_core_inst/a_reg[3][2][11]
+                         net (fo=17707, routed)       0.832     1.202    frodoBD_i/axi_gpio_0/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_aclk
+    SLICE_X16Y47         FDRE                                         r  frodoBD_i/axi_gpio_0/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]/C
+                         clock pessimism             -0.034     1.168    
+    SLICE_X16Y47         FDRE (Hold_fdre_C_D)         0.064     1.232    frodoBD_i/axi_gpio_0/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]
   -------------------------------------------------------------------
-                         required time                         -1.285    
-                         arrival time                           1.338    
+                         required time                         -1.232    
+                         arrival time                           1.264    
   -------------------------------------------------------------------
-                         slack                                  0.053    
+                         slack                                  0.032    
 
-Slack (MET) :             0.054ns  (arrival time - required time)
-  Source:                 frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[4][0][25]/C
+Slack (MET) :             0.032ns  (arrival time - required time)
+  Source:                 frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/M_AXIS_TDATA_reg[22]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/c_reg[4][25]/D
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/DIADI[22]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.412ns  (logic 0.209ns (50.770%)  route 0.203ns (49.230%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.265ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.196ns
-    Source Clock Delay      (SCD):    0.897ns
-    Clock Pessimism Removal (CPR):    0.034ns
+  Data Path Delay:        0.388ns  (logic 0.164ns (42.235%)  route 0.224ns (57.765%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.060ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.245ns
+    Source Clock Delay      (SCD):    0.903ns
+    Clock Pessimism Removal (CPR):    0.282ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1160,14 +1154,12 @@ Slack (MET) :             0.054ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.315     0.315    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.026     0.341 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.556     0.897    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/s00_axis_aclk
-    SLICE_X20Y88         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[4][0][25]/C
+                         net (fo=17707, routed)       0.562     0.903    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/m00_axis_aclk
+    SLICE_X6Y60          FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/M_AXIS_TDATA_reg[22]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X20Y88         FDRE (Prop_fdre_C_Q)         0.164     1.061 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/a_reg[4][0][25]/Q
-                         net (fo=7, routed)           0.203     1.263    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/p_1_in827_in
-    SLICE_X23Y90         LUT5 (Prop_lut5_I1_O)        0.045     1.308 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/c[4][25]_i_1/O
-                         net (fo=1, routed)           0.000     1.308    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/c_reg[4]07136_out
-    SLICE_X23Y90         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/c_reg[4][25]/D
+    SLICE_X6Y60          FDRE (Prop_fdre_C_Q)         0.164     1.067 r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_ip_v1_0_M00_AXIS_inst/M_AXIS_TDATA_reg[22]/Q
+                         net (fo=1, routed)           0.224     1.291    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/dina[22]
+    RAMB36_X0Y11         RAMB36E1                                     r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/DIADI[22]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -1175,15 +1167,16 @@ Slack (MET) :             0.054ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.341     0.341    frodoBD_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y15       BUFG (Prop_bufg_I_O)         0.029     0.370 r  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=17700, routed)       0.826     1.196    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/s00_axis_aclk
-    SLICE_X23Y90         FDRE                                         r  frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/c_reg[4][25]/C
-                         clock pessimism             -0.034     1.162    
-    SLICE_X23Y90         FDRE (Hold_fdre_C_D)         0.092     1.254    frodoBD_i/keccak_f1600_ip_0/U0/keccak_f1600_core_inst/c_reg[4][25]
+                         net (fo=17707, routed)       0.875     1.245    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/clka
+    RAMB36_X0Y11         RAMB36E1                                     r  frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKBWRCLK
+                         clock pessimism             -0.282     0.963    
+    RAMB36_X0Y11         RAMB36E1 (Hold_ramb36e1_CLKBWRCLK_DIADI[22])
+                                                      0.296     1.259    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg
   -------------------------------------------------------------------
-                         required time                         -1.254    
-                         arrival time                           1.308    
+                         required time                         -1.259    
+                         arrival time                           1.291    
   -------------------------------------------------------------------
-                         slack                                  0.054    
+                         slack                                  0.032    
 
 
 
@@ -1197,36 +1190,36 @@ Period(ns):         10.000
 Sources:            { frodoBD_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X1Y11    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKARDCLK
-Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB36_X1Y11    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKBWRCLK
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X0Y9     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKARDCLK
-Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB36_X0Y9     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X0Y11    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB36_X0Y11    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_RX_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X2Y14    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         10.000      7.424      RAMB36_X2Y14    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/CLKBWRCLK
 Min Period        n/a     BUFG/I              n/a            2.155         10.000      7.845      BUFGCTRL_X0Y15  frodoBD_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/I
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X16Y52    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IP2Bus_Error_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X15Y53    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IP2Bus_RdAck_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X18Y52    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IP2Bus_WrAck_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X19Y52    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IPIC_STATE_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X0Y49     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/wrp_inst/count_value_i_reg[4]/C
-Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMA/CLK
-Low Pulse Width   Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMA/CLK
-Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMB/CLK
-Low Pulse Width   Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMB/CLK
-Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMC/CLK
-Low Pulse Width   Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMC/CLK
-Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMD/CLK
-Low Pulse Width   Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X28Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMD/CLK
-Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X34Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_15_17/RAMA/CLK
-Low Pulse Width   Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X34Y51    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_15_17/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y49    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y49    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y49    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMC/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y49    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMD/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y54    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_21_21/DP/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y54    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_21_21/SP/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y50    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_64_127_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y50    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_64_127_0_2/RAMB/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y50    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_64_127_0_2/RAMC/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X24Y50    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_64_127_0_2/RAMD/CLK
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X20Y53    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IP2Bus_Error_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X17Y54    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IP2Bus_RdAck_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X22Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IP2Bus_WrAck_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X17Y54    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/IPIC_STATE_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         10.000      9.000      SLICE_X32Y61    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/wrp_inst/count_value_i_reg[4]/C
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMA/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMB/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMC/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMD/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y56    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_18_20/RAMA/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y56    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_18_20/RAMB/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y56    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_18_20/RAMC/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y56    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_18_20/RAMD/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y53     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_21_21/DP/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y53     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_21_21/SP/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMA/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMB/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMC/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X10Y55    frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_0_2/RAMD/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y58     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMA/CLK
+High Pulse Width  Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y58     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMA/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y58     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMB/CLK
+High Pulse Width  Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y58     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMB/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y58     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMC/CLK
+High Pulse Width  Fast    RAMD64E/CLK         n/a            1.250         5.000       3.750      SLICE_X8Y58     frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_63_12_14/RAMC/CLK
 
 
 

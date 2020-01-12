@@ -145,6 +145,9 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/frodoBD/ip/frodoBD_timer_1_0/sim/frodoBD_timer_1_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_0_1/sim/frodoBD_axi_gpio_0_1.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_3_0/sim/frodoBD_axi_gpio_3_0.vhd" \
+"../../../bd/frodoBD/ipshared/d104/hdl/mult_add_sa_plus_e_ip_v1_0_S00_AXI.vhd" \
+"../../../bd/frodoBD/ipshared/d104/hdl/mult_add_sa_plus_e_ip_v1_0.vhd" \
+"../../../bd/frodoBD/ip/frodoBD_mult_add_sa_plus_e_ip_0_0/sim/frodoBD_mult_add_sa_plus_e_ip_0_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
