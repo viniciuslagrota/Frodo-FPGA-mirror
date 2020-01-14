@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Jan  2 18:04:22 2020
+--Date        : Mon Jan 13 21:25:30 2020
 --Host        : Vinicius-PC running 64-bit major release  (build 9200)
 --Command     : generate_target frodoBD_wrapper.bd
 --Design      : frodoBD_wrapper
