@@ -3,6 +3,7 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 0fbdfdd5e52d44fea55c40023fc399f6 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-516] comparison between unequal length arrays always returns FALSE [c:/projects/ip_repo/mult_add_sa_plus_e_mm_ip_1.0/hdl/mult_add_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:383]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
