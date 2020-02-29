@@ -2,8 +2,8 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 5 -x 1860 -y 250 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 5 -x 1860 -y 220 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1850 -y 250 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1850 -y 220 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -x 420 -y 300 -defaultsOSRD
 preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 420 -y 80 -defaultsOSRD
 preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 880 -y 410 -defaultsOSRD
@@ -17,9 +17,10 @@ preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1280 -y 1070 -defaultsOSRD
 preplace inst axi_gpio_3 -pg 1 -lvl 3 -x 1280 -y 930 -defaultsOSRD
 preplace inst keccak_f1600_mm_ip_0 -pg 1 -lvl 4 -x 1670 -y 860 -defaultsOSRD
 preplace inst mult_add_sa_plus_e_mm_ip_0 -pg 1 -lvl 4 -x 1670 -y 1310 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 450 640 100 1090 300 1490
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 620 110 1060 820 1510
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 440 630
+preplace inst axi_gpio_4 -pg 1 -lvl 3 -x 1280 -y 1270 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 450 640 80 1090 300 1500
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 650 110 1050 820 1510
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 440 620
 preplace netloc timer_0_count 1 3 2 N 420 1800
 preplace netloc axi_gpio_2_gpio_io_o 1 3 1 1440 590n
 preplace netloc keccak_f1600_ip_0_done 1 3 2 N 730 1800
@@ -29,28 +30,31 @@ preplace netloc timer_1_count 1 3 2 1440 1130 1800
 preplace netloc keccak_f1600_mm_ip_0_enable_timer 1 3 2 1520 960 1810
 preplace netloc keccak_f1600_mm_ip_0_reset_timer 1 3 2 1530 970 1800
 preplace netloc axi_gpio_3_gpio_io_o 1 3 1 1440 850n
-preplace netloc keccak_f1600_mm_ip_0_done 1 3 2 1460 950 1820
-preplace netloc axi_interconnect_0_M00_AXI 1 2 1 1100 330n
-preplace netloc keccak_f1600_ip_0_M00_AXIS 1 2 3 1120 810 1500J 770 1820
-preplace netloc axi_interconnect_0_M07_AXI 1 2 2 1050 490 1450J
-preplace netloc axi_interconnect_0_M02_AXI 1 2 1 1080 370n
+preplace netloc keccak_f1600_mm_ip_0_done 1 3 2 1470 950 1820
+preplace netloc axi_gpio_4_gpio_io_o 1 3 1 N 1280
+preplace netloc mult_add_sa_plus_e_mm_ip_0_busy 1 3 2 1450J 1160 1800
+preplace netloc keccak_f1600_ip_0_M00_AXIS 1 2 3 1110 810 1470J 770 1820
+preplace netloc axi_interconnect_0_M02_AXI 1 2 1 1080 360n
+preplace netloc axi_interconnect_0_M06_AXI 1 2 2 1100 330 1480J
 preplace netloc axi_fifo_mm_s_0_AXI_STR_TXD 1 3 1 1510 550n
-preplace netloc axi_interconnect_0_M04_AXI 1 2 1 1040 410n
-preplace netloc axi_interconnect_0_M06_AXI 1 2 2 1110 330 1470J
-preplace netloc axi_interconnect_0_M01_AXI 1 2 1 1120 350n
-preplace netloc processing_system7_0_DDR 1 1 4 630J 120 N 120 N 120 1830
-preplace netloc axi_interconnect_0_M05_AXI 1 2 1 1020 430n
-preplace netloc axi_interconnect_0_M08_AXI 1 2 2 1030 310 1480J
-preplace netloc S00_AXI_1 1 1 1 660 190n
-preplace netloc processing_system7_0_FIXED_IO 1 1 4 650J 130 N 130 N 130 1800
-preplace netloc axi_interconnect_0_M03_AXI 1 2 2 1070J 320 1460
-levelinfo -pg 1 0 420 880 1280 1670 1860
-pagesize -pg 1 -db -bbox -sgen 0 -460 1970 1460
+preplace netloc axi_interconnect_0_M07_AXI 1 2 2 1060 490 1460J
+preplace netloc axi_interconnect_0_M04_AXI 1 2 1 1040 400n
+preplace netloc axi_interconnect_0_M01_AXI 1 2 1 1110 340n
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 1040 320n
+preplace netloc processing_system7_0_DDR 1 1 4 620J 90 N 90 N 90 1830
+preplace netloc axi_interconnect_0_M08_AXI 1 2 2 1070 310 1490J
+preplace netloc axi_interconnect_0_M05_AXI 1 2 1 1030 420n
+preplace netloc S00_AXI_1 1 1 1 660 170n
+preplace netloc axi_interconnect_0_M03_AXI 1 2 2 1060J 320 1450
+preplace netloc processing_system7_0_FIXED_IO 1 1 4 630J 100 N 100 N 100 1800
+preplace netloc axi_interconnect_0_M09_AXI 1 2 1 1020 500n
+levelinfo -pg 1 0 420 880 1280 1670 1850
+pagesize -pg 1 -db -bbox -sgen 0 -460 1960 1460
 "
 }
 {
    "da_axi4_cnt":"3",
    "da_board_cnt":"1",
-   "da_clkrst_cnt":"9",
+   "da_clkrst_cnt":"10",
    "da_ps7_cnt":"1"
 }
