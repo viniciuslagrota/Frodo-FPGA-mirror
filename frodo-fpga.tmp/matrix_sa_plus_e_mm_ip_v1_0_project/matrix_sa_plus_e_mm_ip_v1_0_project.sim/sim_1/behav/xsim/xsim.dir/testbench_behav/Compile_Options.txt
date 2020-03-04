@@ -1,0 +1,1 @@
+-wto "4792fb329b8d449b895258cfc5484b48" --incr --debug "typical" --relax --mt "2" -L "work" -L "secureip" --snapshot "testbench_behav" "work.testbench" -log "elaborate.log" 
