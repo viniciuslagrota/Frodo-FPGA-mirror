@@ -64,7 +64,7 @@ extern XGpio_Config * ConfigPtr3;
 extern XGpio_Config * ConfigPtr4;
 extern XGpio axi_counter_timer;
 extern XGpio axi_counter_timer_mm;
-extern XGpio axiStartDoneMatrix;
+extern XGpio axiStartBusyMatrix;
 extern XLlFifo fifoKeccak;
 extern u32 *memoryMMkeccak;
 extern u32 *memoryMatrixS;
@@ -129,7 +129,8 @@ int main()
 	XGpio_CfgInitialize(&axi_counter_timer_mm, ConfigPtr0, ConfigPtr0->BaseAddress);
 
 	ConfigPtr4 = XGpio_LookupConfig(XPAR_AXI_GPIO_4_DEVICE_ID);
-	XGpio_CfgInitialize(&axiStartDoneMatrix, ConfigPtr4, ConfigPtr4->BaseAddress);
+	XGpio_CfgInitialize(&axiStartBusyMatrix, ConfigPtr4, ConfigPtr4->BaseAddress);
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); //Set start bit low.
 
 	//---- AXI MM ----
 	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;
