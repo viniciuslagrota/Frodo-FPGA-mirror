@@ -7,6 +7,7 @@ vhdl work  \
 "../../../../../../../ip_repo/matrix_sa_plus_e_mm_ip_1.0/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd" \
 "../../../../../../../ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/multiplicator.vhd" \
 "../../../../../../../ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/true_dual_bram.vhd" \
+"../../../../../../../ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/true_single_bram.vhd" \
 "../../../../../../../ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/testbench.vhd" \
 
 # Do not sort compile order

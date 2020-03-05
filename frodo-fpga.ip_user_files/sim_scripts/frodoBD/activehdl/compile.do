@@ -21,7 +21,6 @@ vlib activehdl/lib_pkg_v1_0_2
 vlib activehdl/lib_fifo_v1_0_13
 vlib activehdl/axi_fifo_mm_s_v4_2_1
 vlib activehdl/axi_protocol_converter_v2_1_19
-vlib activehdl/axi_mmu_v2_1_17
 
 vmap xilinx_vip activehdl/xilinx_vip
 vmap xil_defaultlib activehdl/xil_defaultlib
@@ -43,7 +42,6 @@ vmap lib_pkg_v1_0_2 activehdl/lib_pkg_v1_0_2
 vmap lib_fifo_v1_0_13 activehdl/lib_fifo_v1_0_13
 vmap axi_fifo_mm_s_v4_2_1 activehdl/axi_fifo_mm_s_v4_2_1
 vmap axi_protocol_converter_v2_1_19 activehdl/axi_protocol_converter_v2_1_19
-vmap axi_mmu_v2_1_17 activehdl/axi_mmu_v2_1_17
 
 vlog -work xilinx_vip  -sv2k12 "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "C:/Xilinx/Vivado/2019.1/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
@@ -148,13 +146,14 @@ vcom -work xil_defaultlib -93 \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_0_1/sim/frodoBD_axi_gpio_0_1.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_3_0/sim/frodoBD_axi_gpio_3_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_4_0/sim/frodoBD_axi_gpio_4_0.vhd" \
-"../../../bd/frodoBD/ipshared/e1d7/src/controller.vhd" \
-"../../../bd/frodoBD/ipshared/e1d7/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd" \
-"../../../bd/frodoBD/ipshared/e1d7/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd" \
-"../../../bd/frodoBD/ipshared/e1d7/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd" \
-"../../../bd/frodoBD/ipshared/e1d7/src/multiplicator.vhd" \
-"../../../bd/frodoBD/ipshared/e1d7/src/true_dual_bram.vhd" \
-"../../../bd/frodoBD/ipshared/e1d7/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/src/controller.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/src/multiplicator.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/src/true_dual_bram.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/src/true_single_bram.vhd" \
+"../../../bd/frodoBD/ipshared/feb5/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_matrix_sa_plus_e_mm_ip_0_0/sim/frodoBD_matrix_sa_plus_e_mm_ip_0_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
@@ -162,12 +161,6 @@ vlog -work axi_protocol_converter_v2_1_19  -v2k5 "+incdir+../../../../frodo-fpga
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/frodoBD/ip/frodoBD_auto_pc_0/sim/frodoBD_auto_pc_0.v" \
-
-vlog -work axi_mmu_v2_1_17  -v2k5 "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b5b8/hdl/axi_mmu_v2_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/frodoBD/ip/frodoBD_s00_mmu_0/sim/frodoBD_s00_mmu_0.v" \
 
 vcom -work xil_defaultlib -93 \
 "../../../bd/frodoBD/sim/frodoBD.vhd" \

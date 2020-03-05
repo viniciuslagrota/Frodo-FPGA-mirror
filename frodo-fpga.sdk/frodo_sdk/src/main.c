@@ -61,10 +61,15 @@ extern XGpio_Config * ConfigPtr0;
 extern XGpio_Config * ConfigPtr1;
 extern XGpio_Config * ConfigPtr2;
 extern XGpio_Config * ConfigPtr3;
+extern XGpio_Config * ConfigPtr4;
 extern XGpio axi_counter_timer;
 extern XGpio axi_counter_timer_mm;
+extern XGpio axiStartDoneMatrix;
 extern XLlFifo fifoKeccak;
 extern u32 *memoryMMkeccak;
+extern u32 *memoryMatrixS;
+extern u32 *memoryMatrixA;
+extern u32 *memoryMatrixB;
 static XAdcPs XAdcInst;
 XAdcPs_Config *ConfigPtr;
 u32 TempRawData;
@@ -123,6 +128,9 @@ int main()
 	ConfigPtr0 = XGpio_LookupConfig(XPAR_AXI_GPIO_0_DEVICE_ID);
 	XGpio_CfgInitialize(&axi_counter_timer_mm, ConfigPtr0, ConfigPtr0->BaseAddress);
 
+	ConfigPtr4 = XGpio_LookupConfig(XPAR_AXI_GPIO_4_DEVICE_ID);
+	XGpio_CfgInitialize(&axiStartDoneMatrix, ConfigPtr4, ConfigPtr4->BaseAddress);
+
 	//---- AXI MM ----
 	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;
 	print_debug(DEBUG_ERROR, "[MAIN] Memory golden word: 0x%lx.\n", memoryMMkeccak[63]);
@@ -133,6 +141,11 @@ int main()
 		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Hardware problem: 0x%lx\n", memoryMMkeccak[63]);
 		exit(0);
 	}
+
+	memoryMatrixS = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S00_AXI_BASEADDR;
+	memoryMatrixA = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S01_AXI_BASEADDR;
+	memoryMatrixB = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S02_AXI_BASEADDR;
+	print_debug(DEBUG_ERROR, "[MAIN] Matrix MM initialized.\n");
 
 	//---- AXI FIFO ----
 	int xStatus;

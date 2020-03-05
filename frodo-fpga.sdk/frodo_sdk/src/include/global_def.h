@@ -104,9 +104,14 @@ XGpio_Config * ConfigPtr0;
 XGpio_Config * ConfigPtr1;
 XGpio_Config * ConfigPtr2;
 XGpio_Config * ConfigPtr3;
+XGpio_Config * ConfigPtr4;
 XGpio axi_counter_timer;
 XGpio axi_counter_timer_mm;
+XGpio axiStartDoneMatrix;
 u32 *memoryMMkeccak;
+u32 *memoryMatrixS;
+u32 *memoryMatrixA;
+u32 *memoryMatrixB;
 
 //////////////////////////////////////////////
 //

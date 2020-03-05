@@ -17,10 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
-set_param synth.incrementalSynthesisCache C:/Users/Vinicius/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-13200-Vinicius-PC/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -46,6 +42,7 @@ read_vhdl -library work {
   c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd
   c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/multiplicator.vhd
   c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/true_dual_bram.vhd
+  c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/true_single_bram.vhd
   c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being

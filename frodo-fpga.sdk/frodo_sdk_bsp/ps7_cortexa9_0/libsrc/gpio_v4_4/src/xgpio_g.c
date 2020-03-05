@@ -5,7 +5,7 @@
 * Version: 2019.1
 * DO NOT EDIT.
 *
-* Copyright (C) 2010-2019 Xilinx, Inc. All Rights Reserved.*
+* Copyright (C) 2010-2020 Xilinx, Inc. All Rights Reserved.*
 *Permission is hereby granted, free of charge, to any person obtaining a copy
 *of this software and associated documentation files (the Software), to deal
 *in the Software without restriction, including without limitation the rights
@@ -65,6 +65,12 @@ XGpio_Config XGpio_ConfigTable[XPAR_XGPIO_NUM_INSTANCES] =
 		XPAR_AXI_GPIO_3_BASEADDR,
 		XPAR_AXI_GPIO_3_INTERRUPT_PRESENT,
 		XPAR_AXI_GPIO_3_IS_DUAL
+	},
+	{
+		XPAR_AXI_GPIO_4_DEVICE_ID,
+		XPAR_AXI_GPIO_4_BASEADDR,
+		XPAR_AXI_GPIO_4_INTERRUPT_PRESENT,
+		XPAR_AXI_GPIO_4_IS_DUAL
 	}
 };
 

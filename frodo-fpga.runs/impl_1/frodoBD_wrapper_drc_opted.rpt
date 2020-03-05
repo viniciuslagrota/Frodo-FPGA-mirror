@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Mar  3 15:22:19 2020
+| Date         : Thu Mar  5 10:42:33 2020
 | Host         : Vinicius-PC running 64-bit major release  (build 9200)
 | Command      : report_drc -file frodoBD_wrapper_drc_opted.rpt -pb frodoBD_wrapper_drc_opted.pb -rpx frodoBD_wrapper_drc_opted.rpx
 | Design       : frodoBD_wrapper
@@ -24,11 +24,10 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 20
+             Violations found: 18
 +----------+----------+------------------------+------------+
 | Rule     | Severity | Description            | Violations |
 +----------+----------+------------------------+------------+
-| UTLZ-1   | Error    | Resource utilization   | 2          |
 | DPIP-1   | Warning  | Input pipelining       | 8          |
 | DPOP-2   | Warning  | MREG Output pipelining | 8          |
 | REQP-181 | Advisory | writefirst             | 2          |
@@ -36,16 +35,6 @@ Table of Contents
 
 2. REPORT DETAILS
 -----------------
-UTLZ-1#1 Error
-Resource utilization  - PBlock:ROOT
-LUT as Logic over-utilized in Top Level Design (This design requires more LUT as Logic cells than are available in the target device. This design requires 22608 of such cell types but only 17600 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device. Please set tcl parameter "drc.disableLUTOverUtilError" to 1 to change this error to warning.)ROOT
-Related violations: <none>
-
-UTLZ-1#2 Error
-Resource utilization  - PBlock:ROOT
-Slice LUTs over-utilized in Top Level Design (This design requires more Slice LUTs cells than are available in the target device. This design requires 22734 of such cell types but only 17600 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device. Please set tcl parameter "drc.disableLUTOverUtilError" to 1 to change this error to warning.)ROOT
-Related violations: <none>
-
 DPIP-1#1 Warning
 Input pipelining  
 DSP frodoBD_i/matrix_sa_plus_e_mm_ip_0/U0/multiplicator_inst/data_out_0_reg input frodoBD_i/matrix_sa_plus_e_mm_ip_0/U0/multiplicator_inst/data_out_0_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
