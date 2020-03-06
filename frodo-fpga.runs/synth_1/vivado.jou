@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Mar  5 10:35:15 2020
-# Process ID: 5100
+# Start of session at: Fri Mar  6 19:44:42 2020
+# Process ID: 1048
 # Current directory: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1
 # Command line: vivado.exe -log frodoBD_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source frodoBD_wrapper.tcl
 # Log file: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.vds
