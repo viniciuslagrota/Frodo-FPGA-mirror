@@ -18,43 +18,48 @@ static enum keccakType
 
 void matrix_SA_mult(uint32_t * S, uint32_t * A, uint32_t * B)
 {
+	#define REPEAT		3
+
 	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Matrix init\n");
 
 	//Variables
-	int i;
+	int i, j;
 	u32 readGpio = 0x0;
 
 	//Set start pin high
 	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
 
-	//Sending data S
-	for(i = 0; i < 16; i++)
+	for(j = 0; j < REPEAT; j++)
 	{
-		memoryMatrixS[i] = S[i];
-		print_debug(DEBUG_MATRIX_MM, "\tSent data S[%d]: 0x%lx\n", i, S[i]);
-	}
+		//Sending data S
+		for(i = 0; i < 16; i++)
+		{
+			memoryMatrixS[i] = S[i];
+	//		print_debug(DEBUG_MATRIX_MM, "\tSent data S[%d]: 0x%lx\n", i, S[i]);
+		}
 
-	//Sending data A
-	for(i = 0; i < 1280; i++)
-	{
-		memoryMatrixA[i] = A[i];
-		print_debug(DEBUG_MATRIX_MM, "\tSent data A[%d]: 0x%lx\n", i, A[i]);
-	}
+		//Sending data A
+		for(i = 0; i < 1280; i++)
+		{
+			memoryMatrixA[i] = A[i];
+	//		print_debug(DEBUG_MATRIX_MM, "\tSent data A[%d]: 0x%lx\n", i, A[i]);
+		}
 
-	//Reading busy bit
-	readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1); //Check done pin
-	while(readGpio == 0x1)
-	{
-		readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1);
-	}
-	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
+		//Reading busy bit
+		readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1); //Check done pin
+		while(readGpio == 0x1)
+		{
+			readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1);
+		}
+		print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
 
-	//Interpret data
-	for (i = 0; i < 2560; i++)
-	{
-		B[i] = memoryMatrixB[i];
-		if(i < 20 || i > 2500)
-			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+		//Interpret data
+		for (i = 0; i < 2560; i++)
+		{
+			B[i] = memoryMatrixB[i];
+			if(i < 20 || i > 2500)
+				print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+		}
 	}
 
 	//Set start pin low

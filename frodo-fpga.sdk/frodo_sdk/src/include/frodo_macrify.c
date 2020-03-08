@@ -127,6 +127,43 @@ int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
     return 1;
 }
 
+void frodo_mul_add_sa_plus_e_hw(uint32_t * S, uint32_t * A, uint32_t * B)
+{
+	//Variables
+	int i;
+	u32 readGpio = 0x0;
+
+	//Sending data S
+	for(i = 0; i < 16; i++)
+	{
+		memoryMatrixS[i] = S[i];
+//		print_debug(DEBUG_MATRIX_MM, "\tSent data S[%d]: 0x%lx\n", i, S[i]);
+	}
+
+	//Sending data A
+	for(i = 0; i < 1280; i++)
+	{
+		memoryMatrixA[i] = A[i];
+//		print_debug(DEBUG_MATRIX_MM, "\tSent data A[%d]: 0x%lx\n", i, A[i]);
+	}
+
+	//Reading busy bit
+	readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1); //Check done pin
+	while(readGpio == 0x1)
+	{
+		readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1);
+	}
+//	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
+
+	//Interpret data
+	for (i = 0; i < 2560; i++)
+	{
+		B[i] = memoryMatrixB[i];
+//		if(i < 20 || i > 2500)
+//			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+	}
+}
+
 int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
 { // Generate-and-multiply: generate matrix A (N x N) column-wise, multiply by s' on the left.
   // Inputs: s', e' (N_BAR x N)
@@ -136,6 +173,16 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
 		*((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
 	}
+
+//	uint16_t out2[PARAMS_N*PARAMS_NBAR*2];
+//	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
+//		*((uint32_t*)&out2[i]) = *((uint32_t*)&e[i]);
+//	}
+
+//	print_debug(DEBUG_MATRIX_MM, "\tout[0]: 0x%lx\n", out[0]);
+//	print_debug(DEBUG_MATRIX_MM, "\tout[1]: 0x%lx\n", out[1]);
+//	print_debug(DEBUG_MATRIX_MM, "\tout2[0]: 0x%lx\n", out2[0]);
+//	print_debug(DEBUG_MATRIX_MM, "\tout2[1]: 0x%lx\n", out2[1]);
 
 #if defined(USE_AES128_FOR_A)
 	int k;
@@ -238,6 +285,17 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 	uint8_t seed_A_separated[2 + BYTES_SEED_A];
 	uint16_t* seed_A_origin = (uint16_t*)&seed_A_separated;
 	memcpy(&seed_A_separated[2], seed_A, BYTES_SEED_A);
+
+#if ENABLE_MATRIX_HW
+	uint32_t s_matrix[16];
+	uint32_t * a_matrix;
+	uint8_t idx_s_matrix;
+	uint32_t sum2[PARAMS_N * PARAMS_NBAR / 2];
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+#endif
+
 	for (kk = 0; kk < PARAMS_N; kk+=4) {
 		seed_A_origin[0] = UINT16_TO_LE(kk + 0);
 		shake128((unsigned char*)(a_cols + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
@@ -251,6 +309,7 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 			a_cols[i] = LE_TO_UINT16(a_cols[i]);
 		}
 
+#if ENABLE_MATRIX_SW
 		for (i = 0; i < PARAMS_NBAR; i++) {
 			uint16_t sum[PARAMS_N] = {0};
 			for (j = 0; j < 4; j++) {
@@ -262,8 +321,78 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 			for(k = 0; k < PARAMS_N; k++){
 				out[i*PARAMS_N + k] += sum[k];
 			}
+
+//			print_debug(DEBUG_MATRIX_MM, "\ts[0:3]: 0x%lx 0x%lx 0x%lx 0x%lx\n", s[0], s[1], s[2], s[3]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[0,640,1280,1920]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[0], a_cols[640], a_cols[1280], a_cols[1920]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[1,641,1281,1921]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[1], a_cols[641], a_cols[1281], a_cols[1921]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[2,642,1282,1922]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[2], a_cols[642], a_cols[1282], a_cols[1922]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[3,643,1283,1923]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[3], a_cols[643], a_cols[1283], a_cols[1923]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[0]: 0x%lx\n", sum[0]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[1]: 0x%lx\n", sum[1]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[2]: 0x%lx\n", sum[2]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[3]: 0x%lx\n", sum[3]);
 		}
-	}
+#endif
+
+#if ENABLE_MATRIX_HW
+		idx_s_matrix = 0;
+		for(i = 0; i < PARAMS_NBAR; i++)
+		{
+			for(j = 0; j < 4; j+=2)
+			{
+				s_matrix[idx_s_matrix] = (s[i*PARAMS_N + kk + j] << 16) | s[i*PARAMS_N + kk + j + 1];
+				idx_s_matrix++;
+			}
+		}
+		a_matrix = (uint32_t *)a_cols;
+
+		frodo_mul_add_sa_plus_e_hw(s_matrix, a_matrix, sum2);
+
+//		print_debug(DEBUG_MATRIX_MM, "Fim hw\n");
+
+		for(i = 0; i < PARAMS_NBAR; i++)
+		{
+			for(k = 0; k < PARAMS_N; k+=2)
+			{
+				out[i*PARAMS_N + k] += sum2[i*PARAMS_N + (k >> 1)] & 0xffff;
+				out[i*PARAMS_N + k + 1] += sum2[i*PARAMS_N + (k >> 1)] >> 16;
+//				if(i == 0 && k < 4)
+//				{
+//					print_debug(DEBUG_MATRIX_MM, "\tsum2h[%d]: 0x%lx\n", i*PARAMS_N + (k >> 1), sum2[i*PARAMS_N + (k >> 1)] & 0xffff);
+//					print_debug(DEBUG_MATRIX_MM, "\tsum2l[%d]: 0x%lx\n", i*PARAMS_N + (k >> 1), sum2[i*PARAMS_N + (k >> 1)] >> 16);
+//				}
+
+			}
+		}
+
+		//Compare outs
+//		for(i = 0; i < PARAMS_NBAR; i++)
+//		{
+//			for(k = 0; k < PARAMS_N; k+=2)
+//			{
+//				if(out[i*PARAMS_N + k] != out2[i*PARAMS_N + k])
+//				{
+//					print_debug(DEBUG_MATRIX_MM, "out[%d] = 0x%lx != out2[%d] = 0x%lx\n", i*PARAMS_N + k, out[i*PARAMS_N + k], i*PARAMS_N + k, out2[i*PARAMS_N + k]);
+//				}
+//			}
+//		}
+
+//		print_debug(DEBUG_MATRIX_MM, "\tsum2[0]: 0x%lx\n", sum2[0] & 0xffff);
+//		print_debug(DEBUG_MATRIX_MM, "\tsum2[1]: 0x%lx\n", sum2[0] >> 16);
+//		print_debug(DEBUG_MATRIX_MM, "\tsum2[3]: 0x%lx\n", sum2[1] & 0xffff);
+//		print_debug(DEBUG_MATRIX_MM, "\tsum2[4]: 0x%lx\n", sum2[1] >> 16);
+//
+//		print_debug(DEBUG_MATRIX_MM, "Fim um kk\n");
+#endif
+	} //kk for
+
+
+
+#if ENABLE_MATRIX_HW
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
+#endif
+
 #else  // Using vector intrinsics
 	uint8_t seed_A_separated_0[2 + BYTES_SEED_A];
 	uint8_t seed_A_separated_1[2 + BYTES_SEED_A];

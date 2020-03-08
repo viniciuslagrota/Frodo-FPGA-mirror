@@ -1,6 +1,48 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Mar  7 21:25:00 2020
+| Host         : Vinicius-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'frodoBD_matrix_sa_plus_e_mm_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of frodoBD_matrix_sa_plus_e_mm_ip_0_0 (xilinx.com:user:matrix_sa_plus_e_mm_ip:1.0) from (Rev. 15) to (Rev. 16)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Mar  7 21:23:26 2020
+| Host         : Vinicius-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'frodoBD_matrix_sa_plus_e_mm_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of frodoBD_matrix_sa_plus_e_mm_ip_0_0 (xilinx.com:user:matrix_sa_plus_e_mm_ip:1.0) from (Rev. 14) to (Rev. 15)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 | Date         : Fri Mar  6 19:40:11 2020
 | Host         : Vinicius-PC running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

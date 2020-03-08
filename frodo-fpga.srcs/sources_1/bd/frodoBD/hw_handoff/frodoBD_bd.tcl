@@ -730,7 +730,7 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs keccak_f1600_mm_ip_0/S00_AXI/S00_AXI_reg] SEG_keccak_f1600_mm_ip_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_sa_plus_e_mm_ip_0/S00_AXI/S00_AXI_reg] SEG_matrix_sa_plus_e_mm_ip_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_sa_plus_e_mm_ip_0/S01_AXI/S01_AXI_reg] SEG_matrix_sa_plus_e_mm_ip_0_S01_AXI_reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_sa_plus_e_mm_ip_0/S02_AXI/S02_AXI_reg] SEG_matrix_sa_plus_e_mm_ip_0_S02_AXI_reg
+  create_bd_addr_seg -range 0x00040000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_sa_plus_e_mm_ip_0/S02_AXI/S02_AXI_reg] SEG_matrix_sa_plus_e_mm_ip_0_S02_AXI_reg
 
 
   # Restore current instance

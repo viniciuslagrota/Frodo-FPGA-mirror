@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Mar  6 19:50:37 2020
+| Date         : Sat Mar  7 21:32:22 2020
 | Host         : Vinicius-PC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file frodoBD_wrapper_utilization_synth.rpt -pb frodoBD_wrapper_utilization_synth.pb
 | Design       : frodoBD_wrapper
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 16021 |     0 |     17600 | 91.03 |
-|   LUT as Logic             | 15831 |     0 |     17600 | 89.95 |
+| Slice LUTs*                | 16024 |     0 |     17600 | 91.05 |
+|   LUT as Logic             | 15834 |     0 |     17600 | 89.97 |
 |   LUT as Memory            |   190 |     0 |      6000 |  3.17 |
 |     LUT as Distributed RAM |   124 |     0 |           |       |
 |     LUT as Shift Register  |    66 |     0 |           |       |
@@ -152,12 +152,12 @@ Table of Contents
 | Ref Name |  Used |  Functional Category |
 +----------+-------+----------------------+
 | FDRE     | 17876 |         Flop & Latch |
-| LUT6     |  6305 |                  LUT |
-| LUT5     |  4336 |                  LUT |
-| LUT2     |  4094 |                  LUT |
+| LUT6     |  6318 |                  LUT |
+| LUT5     |  4328 |                  LUT |
+| LUT2     |  4095 |                  LUT |
 | LUT3     |  3948 |                  LUT |
 | MUXF7    |   699 |                MuxFx |
-| LUT4     |   669 |                  LUT |
+| LUT4     |   663 |                  LUT |
 | MUXF8    |   256 |                MuxFx |
 | LUT1     |   217 |                  LUT |
 | CARRY4   |   170 |           CarryLogic |

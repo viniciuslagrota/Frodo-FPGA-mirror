@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Mar  6 19:56:00 2020
+| Date             : Sat Mar  7 21:38:38 2020
 | Host             : Vinicius-PC running 64-bit major release  (build 9200)
 | Command          : report_power -file frodoBD_wrapper_power_routed.rpt -pb frodoBD_wrapper_power_summary_routed.pb -rpx frodoBD_wrapper_power_routed.rpx
 | Design           : frodoBD_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.752        |
+| Total On-Chip Power (W)  | 1.751        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.629        |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.023 |        3 |       --- |             --- |
-| Slice Logic              |     0.028 |    38968 |       --- |             --- |
-|   LUT as Logic           |     0.027 |    15483 |     17600 |           87.97 |
+| Clocks                   |     0.024 |        3 |       --- |             --- |
+| Slice Logic              |     0.028 |    38970 |       --- |             --- |
+|   LUT as Logic           |     0.027 |    15487 |     17600 |           87.99 |
 |   Register               |    <0.001 |    17927 |     35200 |           50.93 |
 |   CARRY4                 |    <0.001 |      170 |      4400 |            3.86 |
 |   LUT as Distributed RAM |    <0.001 |      124 |      6000 |            2.07 |
 |   F7/F8 Muxes            |    <0.001 |      955 |     17600 |            5.43 |
 |   LUT as Shift Register  |    <0.001 |       62 |      6000 |            1.03 |
 |   Others                 |     0.000 |      337 |       --- |             --- |
-| Signals                  |     0.038 |    25817 |       --- |             --- |
+| Signals                  |     0.037 |    25814 |       --- |             --- |
 | Block RAM                |     0.010 |        8 |        60 |           13.33 |
 | DSPs                     |    <0.001 |        4 |        80 |            5.00 |
 | PS7                      |     1.530 |        1 |       --- |             --- |
 | Static Power             |     0.122 |          |           |                 |
-| Total                    |     1.752 |          |           |                 |
+| Total                    |     1.751 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -154,12 +154,12 @@ Table of Contents
 +------------------------------+-----------+
 | frodoBD_wrapper              |     1.629 |
 |   frodoBD_i                  |     1.629 |
-|     axi_fifo_mm_s_0          |     0.004 |
-|       U0                     |     0.004 |
+|     axi_fifo_mm_s_0          |     0.003 |
+|       U0                     |     0.003 |
 |     axi_interconnect_0       |     0.004 |
 |       s00_couplers           |     0.003 |
-|     keccak_f1600_ip_0        |     0.035 |
-|       U0                     |     0.035 |
+|     keccak_f1600_ip_0        |     0.034 |
+|       U0                     |     0.034 |
 |     keccak_f1600_mm_ip_0     |     0.042 |
 |       U0                     |     0.042 |
 |     matrix_sa_plus_e_mm_ip_0 |     0.010 |

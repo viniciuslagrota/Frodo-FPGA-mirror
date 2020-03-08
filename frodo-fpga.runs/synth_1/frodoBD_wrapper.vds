@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Mar  6 19:44:42 2020
-# Process ID: 1048
+# Start of session at: Sat Mar  7 21:25:43 2020
+# Process ID: 18320
 # Current directory: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1
 # Command line: vivado.exe -log frodoBD_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source frodoBD_wrapper.tcl
 # Log file: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.vds
@@ -13,19 +13,15 @@ source frodoBD_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-WARNING: [BD 41-1661] One or more IPs have been locked in the design 'frodoBD.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
-List of locked IPs:
-frodoBD_matrix_sa_plus_e_mm_ip_0_0
-
 Command: synth_design -top frodoBD_wrapper -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5732 
+INFO: Helper process launched with PID 18632 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 736.328 ; gain = 178.965
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 734.313 ; gain = 177.320
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'frodoBD_wrapper' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:40]
 INFO: [Synth 8-3491] module 'frodoBD' declared at 'C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd:3009' bound to instance 'frodoBD_i' of component 'frodoBD' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:67]
@@ -2289,7 +2285,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_axi_crossbar' [c:
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
 	Parameter C_M_AXI_BASE_ADDR bound to: 640'b0000000000000000000000000000000001000001001001000000000000000000000000000000000000000000000000000100001111000100000000000000000000000000000000000000000000000000010000111100001100000000000000000000000000000000000000000000000001000011110000100000000000000000000000000000000000000000000000000100000100100010000000000000000000000000000000000000000000000000010000010010001100000000000000000000000000000000000000000000000001000011110000010000000000000000000000000000000000000000000000000100000100100001000000000000000000000000000000000000000000000000010000111100000000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_M_AXI_ADDR_WIDTH bound to: 320'b00000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 320'b00000000000000000000000000010000000000000000000000000000000100100000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000 
 	Parameter C_S_AXI_BASE_ID bound to: 0 - type: integer 
 	Parameter C_S_AXI_THREAD_ID_WIDTH bound to: 0 - type: integer 
 	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
@@ -2338,7 +2334,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_crossbar_sasd' [c
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
 	Parameter C_M_AXI_BASE_ADDR bound to: 640'b0000000000000000000000000000000001000001001001000000000000000000000000000000000000000000000000000100001111000100000000000000000000000000000000000000000000000000010000111100001100000000000000000000000000000000000000000000000001000011110000100000000000000000000000000000000000000000000000000100000100100010000000000000000000000000000000000000000000000000010000010010001100000000000000000000000000000000000000000000000001000011110000010000000000000000000000000000000000000000000000000100000100100001000000000000000000000000000000000000000000000000010000111100000000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_M_AXI_HIGH_ADDR bound to: 640'b0000000000000000000000000000000001000001001001001111111111111111000000000000000000000000000000000100001111000100111111111111111100000000000000000000000000000000010000111100001111111111111111110000000000000000000000000000000001000011110000101111111111111111000000000000000000000000000000000100000100100010111111111111111100000000000000000000000000000000010000010010001111111111111111110000000000000000000000000000000001000011110000011111111111111111000000000000000000000000000000000100000100100001111111111111111100000000000000000000000000000000010000111100000011111111111111110000000000000000000000000000000001000001001000001111111111111111 
+	Parameter C_M_AXI_HIGH_ADDR bound to: 640'b0000000000000000000000000000000001000001001001001111111111111111000000000000000000000000000000000100001111000111111111111111111100000000000000000000000000000000010000111100001111111111111111110000000000000000000000000000000001000011110000101111111111111111000000000000000000000000000000000100000100100010111111111111111100000000000000000000000000000000010000010010001111111111111111110000000000000000000000000000000001000011110000011111111111111111000000000000000000000000000000000100000100100001111111111111111100000000000000000000000000000000010000111100000011111111111111110000000000000000000000000000000001000001001000001111111111111111 
 	Parameter C_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_S_AXI_HIGH_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
@@ -2391,7 +2387,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_20_addr_decoder' [c:
 	Parameter C_TARGET_HOT bound to: 1 - type: integer 
 	Parameter C_REGION_ENC bound to: 1 - type: integer 
 	Parameter C_BASE_ADDR bound to: 640'b0000000000000000000000000000000001000001001001000000000000000000000000000000000000000000000000000100001111000100000000000000000000000000000000000000000000000000010000111100001100000000000000000000000000000000000000000000000001000011110000100000000000000000000000000000000000000000000000000100000100100010000000000000000000000000000000000000000000000000010000010010001100000000000000000000000000000000000000000000000001000011110000010000000000000000000000000000000000000000000000000100000100100001000000000000000000000000000000000000000000000000010000111100000000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_HIGH_ADDR bound to: 640'b0000000000000000000000000000000001000001001001001111111111111111000000000000000000000000000000000100001111000100111111111111111100000000000000000000000000000000010000111100001111111111111111110000000000000000000000000000000001000011110000101111111111111111000000000000000000000000000000000100000100100010111111111111111100000000000000000000000000000000010000010010001111111111111111110000000000000000000000000000000001000011110000011111111111111111000000000000000000000000000000000100000100100001111111111111111100000000000000000000000000000000010000111100000011111111111111110000000000000000000000000000000001000001001000001111111111111111 
+	Parameter C_HIGH_ADDR bound to: 640'b0000000000000000000000000000000001000001001001001111111111111111000000000000000000000000000000000100001111000111111111111111111100000000000000000000000000000000010000111100001111111111111111110000000000000000000000000000000001000011110000101111111111111111000000000000000000000000000000000100000100100010111111111111111100000000000000000000000000000000010000010010001111111111111111110000000000000000000000000000000001000011110000011111111111111111000000000000000000000000000000000100000100100001111111111111111100000000000000000000000000000000010000111100000011111111111111110000000000000000000000000000000001000001001000001111111111111111 
 	Parameter C_TARGET_QUAL bound to: 11'b01111111111 
 	Parameter C_RESOLUTION bound to: 2 - type: integer 
 	Parameter C_COMPARATOR_THRESHOLD bound to: 6 - type: integer 
@@ -2616,8 +2612,8 @@ INFO: [Synth 8-638] synthesizing module 'frodoBD_matrix_sa_plus_e_mm_ip_0_0' [c:
 	Parameter C_S01_AXI_ADDR_WIDTH bound to: 13 - type: integer 
 	Parameter C_S02_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S02_AXI_ADDR_WIDTH bound to: 14 - type: integer 
-INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:5' bound to instance 'U0' of component 'matrix_sa_plus_e_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_matrix_sa_plus_e_mm_ip_0_0/synth/frodoBD_matrix_sa_plus_e_mm_ip_0_0.vhd:293]
-INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:98]
+INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:5' bound to instance 'U0' of component 'matrix_sa_plus_e_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_matrix_sa_plus_e_mm_ip_0_0/synth/frodoBD_matrix_sa_plus_e_mm_ip_0_0.vhd:293]
+INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:98]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter C_S01_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -2626,76 +2622,76 @@ INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0' [c:/Projec
 	Parameter C_S02_AXI_ADDR_WIDTH bound to: 14 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:6' bound to instance 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst' of component 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:267]
-INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:93]
+INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:6' bound to instance 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst' of component 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:267]
+INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:93]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter MEM_SIZE bound to: 8 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_0_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:473]
-INFO: [Synth 8-638] synthesizing module 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:51]
+INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_0_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:473]
+INFO: [Synth 8-638] synthesizing module 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:51]
 	Parameter MEM_SIZE bound to: 8 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'true_single_bram' (74#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'true_single_bram' (74#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:51]
 	Parameter MEM_SIZE bound to: 8 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_0_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:473]
-WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:318]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:401]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:419]
-WARNING: [Synth 8-3848] Net axi_rdata in module/entity matrix_sa_plus_e_mm_ip_v1_0_S00_AXI does not have driver. [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:107]
-INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' (75#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:93]
+INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_0_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:473]
+WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:318]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:401]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:419]
+WARNING: [Synth 8-3848] Net axi_rdata in module/entity matrix_sa_plus_e_mm_ip_v1_0_S00_AXI does not have driver. [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:107]
+INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S00_AXI' (75#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd:93]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 13 - type: integer 
-INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:8' bound to instance 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst' of component 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:304]
-INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:95]
+INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:8' bound to instance 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst' of component 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:95]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 13 - type: integer 
 	Parameter MEM_SIZE bound to: 320 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
-INFO: [Synth 8-638] synthesizing module 'true_single_bram__parameterized2' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:51]
+INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
+INFO: [Synth 8-638] synthesizing module 'true_single_bram__parameterized2' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:51]
 	Parameter MEM_SIZE bound to: 320 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'true_single_bram__parameterized2' (75#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'true_single_bram__parameterized2' (75#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:51]
 	Parameter MEM_SIZE bound to: 320 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
+INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
 	Parameter MEM_SIZE bound to: 320 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
+INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
 	Parameter MEM_SIZE bound to: 320 - type: integer 
 	Parameter WORD_SIZE bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
-WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:322]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:405]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:423]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:441]
-WARNING: [Synth 8-3848] Net axi_rdata in module/entity matrix_sa_plus_e_mm_ip_v1_0_S01_AXI does not have driver. [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:109]
-INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' (76#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:95]
+INFO: [Synth 8-3491] module 'true_single_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_single_bram.vhd:36' bound to instance 'true_single_bram_s00_inst' of component 'true_single_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:538]
+WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:322]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:405]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:423]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:441]
+WARNING: [Synth 8-3848] Net axi_rdata in module/entity matrix_sa_plus_e_mm_ip_v1_0_S01_AXI does not have driver. [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:109]
+INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S01_AXI' (76#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd:95]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 14 - type: integer 
-INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:7' bound to instance 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst' of component 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:341]
-INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:92]
+INFO: [Synth 8-3491] module 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:7' bound to instance 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst' of component 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:341]
+INFO: [Synth 8-638] synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:92]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 14 - type: integer 
 	Parameter MEM_SIZE bound to: 5120 - type: integer 
 	Parameter WORD_SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'true_dual_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_dual_bram.vhd:36' bound to instance 'true_dual_bram_line_inst' of component 'true_dual_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:508]
-INFO: [Synth 8-638] synthesizing module 'true_dual_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_dual_bram.vhd:57]
+INFO: [Synth 8-3491] module 'true_dual_bram' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_dual_bram.vhd:36' bound to instance 'true_dual_bram_line_inst' of component 'true_dual_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:508]
+INFO: [Synth 8-638] synthesizing module 'true_dual_bram' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_dual_bram.vhd:57]
 	Parameter MEM_SIZE bound to: 5120 - type: integer 
 	Parameter WORD_SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'true_dual_bram' (77#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/true_dual_bram.vhd:57]
-WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:238]
-WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:339]
-INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' (78#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:92]
-INFO: [Synth 8-3491] module 'controller' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/controller.vhd:34' bound to instance 'controller_inst' of component 'controller' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:375]
-INFO: [Synth 8-638] synthesizing module 'controller' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/controller.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'controller' (79#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/controller.vhd:52]
-INFO: [Synth 8-3491] module 'multiplicator' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:35' bound to instance 'multiplicator_inst' of component 'multiplicator' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:392]
-INFO: [Synth 8-638] synthesizing module 'multiplicator' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:51]
-INFO: [Synth 8-256] done synthesizing module 'multiplicator' (80#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:51]
-INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0' (81#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:98]
+INFO: [Synth 8-256] done synthesizing module 'true_dual_bram' (77#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/true_dual_bram.vhd:57]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:238]
+WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:339]
+INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0_S02_AXI' (78#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd:92]
+INFO: [Synth 8-3491] module 'controller' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/controller.vhd:34' bound to instance 'controller_inst' of component 'controller' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:375]
+INFO: [Synth 8-638] synthesizing module 'controller' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/controller.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'controller' (79#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/controller.vhd:52]
+INFO: [Synth 8-3491] module 'multiplicator' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:35' bound to instance 'multiplicator_inst' of component 'multiplicator' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:392]
+INFO: [Synth 8-638] synthesizing module 'multiplicator' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'multiplicator' (80#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'matrix_sa_plus_e_mm_ip_v1_0' (81#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd:98]
 INFO: [Synth 8-256] done synthesizing module 'frodoBD_matrix_sa_plus_e_mm_ip_0_0' (82#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_matrix_sa_plus_e_mm_ip_0_0/synth/frodoBD_matrix_sa_plus_e_mm_ip_0_0.vhd:129]
 INFO: [Synth 8-3491] module 'frodoBD_proc_sys_reset_0_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_proc_sys_reset_0_0/synth/frodoBD_proc_sys_reset_0_0.vhd:59' bound to instance 'proc_sys_reset_0' of component 'frodoBD_proc_sys_reset_0_0' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd:4238]
 INFO: [Synth 8-638] synthesizing module 'frodoBD_proc_sys_reset_0_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_proc_sys_reset_0_0/synth/frodoBD_proc_sys_reset_0_0.vhd:74]
@@ -2960,7 +2956,7 @@ WARNING: [Synth 8-3331] design matrix_sa_plus_e_mm_ip_v1_0_S02_AXI has unconnect
 WARNING: [Synth 8-3331] design matrix_sa_plus_e_mm_ip_v1_0_S02_AXI has unconnected port S_AXI_AWPROT[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:10 ; elapsed = 00:01:14 . Memory (MB): peak = 1356.906 ; gain = 799.543
+Finished RTL Elaboration : Time (s): cpu = 00:01:21 ; elapsed = 00:01:26 . Memory (MB): peak = 1358.563 ; gain = 801.570
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2973,10 +2969,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 1356.906 ; gain = 799.543
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:28 ; elapsed = 00:01:33 . Memory (MB): peak = 1358.563 ; gain = 801.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 1356.906 ; gain = 799.543
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:28 ; elapsed = 00:01:33 . Memory (MB): peak = 1358.563 ; gain = 801.570
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 415 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -3032,15 +3028,15 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/frodoBD_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1413.516 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1417.191 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 415 instances were transformed.
   FDR => FDRE: 414 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.452 . Memory (MB): peak = 1413.516 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.513 . Memory (MB): peak = 1417.191 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:45 ; elapsed = 00:01:48 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Constraint Validation : Time (s): cpu = 00:02:00 ; elapsed = 00:02:04 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
@@ -3048,7 +3044,7 @@ Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:45 ; elapsed = 00:01:49 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:00 ; elapsed = 00:02:04 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -3083,7 +3079,7 @@ Applied set_property DONT_TOUCH = true for frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPI
 Applied set_property DONT_TOUCH = true for frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/\grxd.COMP_RX_FIFO /\gfifo_gen.COMP_AXIS_FG_FIFO /COMP_FIFO. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for frodoBD_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/\grxd.COMP_rx_len_fifo . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:00 ; elapsed = 00:02:05 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1056]
@@ -3159,7 +3155,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 INFO: [Synth 8-3971] The signal "true_dual_bram:/RAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:16 ; elapsed = 00:02:20 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:39 ; elapsed = 00:02:46 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -4429,14 +4425,14 @@ INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:721]
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:721]
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v:721]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_mult_data_3_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:90]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:87]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:89]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_0_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:80]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_mult_data_3_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:90]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:87]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:89]
-WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_0_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/e045/src/multiplicator.vhd:80]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_mult_data_3_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:90]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:89]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_0_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:80]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_mult_data_3_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:90]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_00 was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:89]
+WARNING: [Synth 8-6014] Unused sequential element U0/multiplicator_inst/s_data_out_0_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b8f6/src/multiplicator.vhd:80]
 DSP Report: Generating DSP U0/multiplicator_inst/s_mult_data_3_reg, operation Mode is: (A2*B)'.
 DSP Report: register U0/multiplicator_inst/s_mult_data_3_reg is absorbed into DSP U0/multiplicator_inst/s_mult_data_3_reg.
 DSP Report: register U0/multiplicator_inst/s_mult_data_3_reg is absorbed into DSP U0/multiplicator_inst/s_mult_data_3_reg.
@@ -4708,7 +4704,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:52 ; elapsed = 00:03:58 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:21 ; elapsed = 00:04:30 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -4781,13 +4777,13 @@ Report RTL Partitions:
 |2     |keccak_f1600_ip_v1_0__GB1    |           1|      5029|
 |3     |keccak_f1600_mm_core         |           1|     19115|
 |4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9329|
-|5     |frodoBD__GC0                 |           1|      9148|
+|5     |frodoBD__GC0                 |           1|      9145|
 +------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:11 ; elapsed = 00:04:17 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:40 ; elapsed = 00:04:49 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -4795,7 +4791,7 @@ Start Timing Optimization
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:18 ; elapsed = 00:04:24 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Timing Optimization : Time (s): cpu = 00:04:46 ; elapsed = 00:04:55 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -4836,7 +4832,7 @@ Report RTL Partitions:
 |2     |keccak_f1600_ip_v1_0__GB1    |           1|      5029|
 |3     |keccak_f1600_mm_core         |           1|     19115|
 |4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9329|
-|5     |frodoBD__GC0                 |           1|      9148|
+|5     |frodoBD__GC0                 |           1|      9145|
 +------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -4858,7 +4854,7 @@ INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_sa_plus_e_mm_i
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:40 ; elapsed = 00:04:47 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Technology Mapping : Time (s): cpu = 00:05:10 ; elapsed = 00:05:19 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4883,7 +4879,7 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:53 ; elapsed = 00:05:00 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished IO Insertion : Time (s): cpu = 00:05:26 ; elapsed = 00:05:36 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -4896,7 +4892,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:54 ; elapsed = 00:05:00 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:27 ; elapsed = 00:05:36 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4908,25 +4904,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:59 ; elapsed = 00:05:06 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:33 ; elapsed = 00:05:42 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:05:00 ; elapsed = 00:05:06 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:33 ; elapsed = 00:05:42 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:05:16 ; elapsed = 00:05:23 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:50 ; elapsed = 00:06:00 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:05:16 ; elapsed = 00:05:23 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:51 ; elapsed = 00:06:00 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -4966,11 +4962,11 @@ Report Cell Usage:
 |5     |DSP48E1_1  |     1|
 |6     |DSP48E1_2  |     1|
 |7     |LUT1       |   217|
-|8     |LUT2       |  4094|
+|8     |LUT2       |  4095|
 |9     |LUT3       |  3948|
-|10    |LUT4       |   669|
-|11    |LUT5       |  4336|
-|12    |LUT6       |  6305|
+|10    |LUT4       |   663|
+|11    |LUT5       |  4328|
+|12    |LUT6       |  6318|
 |13    |MUXF7      |   699|
 |14    |MUXF8      |   256|
 |15    |PS7        |     1|
@@ -5100,11 +5096,11 @@ Report Instance Areas:
 |106   |      xbar                                                                     |frodoBD_xbar_0                                                 |   563|
 |107   |        inst                                                                   |axi_crossbar_v2_1_20_axi_crossbar                              |   563|
 |108   |          \gen_sasd.crossbar_sasd_0                                            |axi_crossbar_v2_1_20_crossbar_sasd                             |   563|
-|109   |            addr_arbiter_inst                                                  |axi_crossbar_v2_1_20_addr_arbiter_sasd                         |   188|
+|109   |            addr_arbiter_inst                                                  |axi_crossbar_v2_1_20_addr_arbiter_sasd                         |   190|
 |110   |            \gen_decerr.decerr_slave_inst                                      |axi_crossbar_v2_1_20_decerr_slave                              |    19|
 |111   |            reg_slice_r                                                        |axi_register_slice_v2_1_19_axic_register_slice__parameterized7 |   306|
 |112   |            splitter_ar                                                        |axi_crossbar_v2_1_20_splitter__parameterized0                  |     4|
-|113   |            splitter_aw                                                        |axi_crossbar_v2_1_20_splitter                                  |    19|
+|113   |            splitter_aw                                                        |axi_crossbar_v2_1_20_splitter                                  |    17|
 |114   |      s00_couplers                                                             |s00_couplers_imp_FTJI6L                                        |  1140|
 |115   |        auto_pc                                                                |frodoBD_auto_pc_0                                              |  1140|
 |116   |          inst                                                                 |axi_protocol_converter_v2_1_19_axi_protocol_converter          |  1140|
@@ -5159,17 +5155,17 @@ Report Instance Areas:
 |165   |      U0                                                                       |timer_v1_0                                                     |    41|
 +------+-------------------------------------------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:05:16 ; elapsed = 00:05:23 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:51 ; elapsed = 00:06:00 . Memory (MB): peak = 1417.191 ; gain = 860.199
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:38 ; elapsed = 00:05:03 . Memory (MB): peak = 1413.516 ; gain = 799.543
-Synthesis Optimization Complete : Time (s): cpu = 00:05:16 ; elapsed = 00:05:24 . Memory (MB): peak = 1413.516 ; gain = 856.152
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:00 ; elapsed = 00:05:39 . Memory (MB): peak = 1417.191 ; gain = 801.570
+Synthesis Optimization Complete : Time (s): cpu = 00:05:51 ; elapsed = 00:06:01 . Memory (MB): peak = 1417.191 ; gain = 860.199
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1496 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1413.516 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1417.191 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 357 instances were transformed.
   FDR => FDRE: 276 instances
@@ -5179,13 +5175,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-873 Infos, 185 Warnings, 0 Critical Warnings and 0 Errors encountered.
+873 Infos, 184 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:05:31 ; elapsed = 00:05:39 . Memory (MB): peak = 1413.516 ; gain = 1101.027
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1413.516 ; gain = 0.000
+synth_design: Time (s): cpu = 00:06:08 ; elapsed = 00:06:20 . Memory (MB): peak = 1417.191 ; gain = 1118.086
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1417.191 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1413.516 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1417.191 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file frodoBD_wrapper_utilization_synth.rpt -pb frodoBD_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar  6 19:50:37 2020...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar  7 21:32:22 2020...
