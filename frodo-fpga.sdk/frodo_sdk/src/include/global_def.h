@@ -46,7 +46,7 @@ extern uint16_t CDF_TABLE_LEN;
 //	Compilation defines
 //
 //////////////////////////////////////////////
-#define ENABLE_KECCAK_DEBUG			0
+#define ENABLE_DEBUG				0
 #define ENABLE_KEM_TEST				1
 #define ENABLE_HW_TIMER				1
 #define ENABLE_MATRIX_SW			0
