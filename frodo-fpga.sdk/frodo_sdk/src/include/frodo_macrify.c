@@ -291,12 +291,28 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 	uint32_t * a_matrix;
 	uint8_t idx_s_matrix;
 	uint32_t sum2[PARAMS_N * PARAMS_NBAR / 2];
+	uint16_t out2[PARAMS_N*PARAMS_NBAR] = {0};
+	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
+		*((uint32_t*)&out2[i]) = *((uint32_t*)&e[i]);
+	}
 
-	//Set start pin high
-	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+#if ENABLE_MATRIX_SW == 1 & ENABLE_MATRIX_HW == 1
+	//Previous comparison
+	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i++)
+	{
+		if(out[i] != out2[i])
+			print_debug(DEBUG_MATRIX_MM, "\tComparison error of previous out at %d\n", i);
+	}
+#endif
+
 #endif
 
 	for (kk = 0; kk < PARAMS_N; kk+=4) {
+
+		//Set start pin high
+		XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+
+//		print_debug(DEBUG_MATRIX_MM, "kk: %d\n", kk);
 		seed_A_origin[0] = UINT16_TO_LE(kk + 0);
 		shake128((unsigned char*)(a_cols + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
 		seed_A_origin[0] = UINT16_TO_LE(kk + 1);
@@ -308,31 +324,6 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 		for (i = 0; i < 4 * PARAMS_N; i++) {
 			a_cols[i] = LE_TO_UINT16(a_cols[i]);
 		}
-
-#if ENABLE_MATRIX_SW
-		for (i = 0; i < PARAMS_NBAR; i++) {
-			uint16_t sum[PARAMS_N] = {0};
-			for (j = 0; j < 4; j++) {
-				uint16_t sp = s[i*PARAMS_N + kk + j];
-				for (k = 0; k < PARAMS_N; k++) {                // Matrix-vector multiplication
-					sum[k] += sp * a_cols[(t+j)*PARAMS_N + k];
-				}
-			 }
-			for(k = 0; k < PARAMS_N; k++){
-				out[i*PARAMS_N + k] += sum[k];
-			}
-
-//			print_debug(DEBUG_MATRIX_MM, "\ts[0:3]: 0x%lx 0x%lx 0x%lx 0x%lx\n", s[0], s[1], s[2], s[3]);
-//			print_debug(DEBUG_MATRIX_MM, "\ta[0,640,1280,1920]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[0], a_cols[640], a_cols[1280], a_cols[1920]);
-//			print_debug(DEBUG_MATRIX_MM, "\ta[1,641,1281,1921]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[1], a_cols[641], a_cols[1281], a_cols[1921]);
-//			print_debug(DEBUG_MATRIX_MM, "\ta[2,642,1282,1922]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[2], a_cols[642], a_cols[1282], a_cols[1922]);
-//			print_debug(DEBUG_MATRIX_MM, "\ta[3,643,1283,1923]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[3], a_cols[643], a_cols[1283], a_cols[1923]);
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[0]: 0x%lx\n", sum[0]);
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[1]: 0x%lx\n", sum[1]);
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[2]: 0x%lx\n", sum[2]);
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[3]: 0x%lx\n", sum[3]);
-		}
-#endif
 
 #if ENABLE_MATRIX_HW
 		idx_s_matrix = 0;
@@ -350,19 +341,27 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 
 //		print_debug(DEBUG_MATRIX_MM, "Fim hw\n");
 
-		for(i = 0; i < PARAMS_NBAR; i++)
-		{
-			for(k = 0; k < PARAMS_N; k+=2)
-			{
-				out[i*PARAMS_N + k] += sum2[i*PARAMS_N + (k >> 1)] & 0xffff;
-				out[i*PARAMS_N + k + 1] += sum2[i*PARAMS_N + (k >> 1)] >> 16;
-//				if(i == 0 && k < 4)
-//				{
-//					print_debug(DEBUG_MATRIX_MM, "\tsum2h[%d]: 0x%lx\n", i*PARAMS_N + (k >> 1), sum2[i*PARAMS_N + (k >> 1)] & 0xffff);
-//					print_debug(DEBUG_MATRIX_MM, "\tsum2l[%d]: 0x%lx\n", i*PARAMS_N + (k >> 1), sum2[i*PARAMS_N + (k >> 1)] >> 16);
-//				}
+//		for(i = 0; i < PARAMS_NBAR; i++)
+//		{
+//			for(k = 0; k < PARAMS_N; k+=2)
+//			{
+//				out2[i*PARAMS_N + k] += sum2[i*PARAMS_N + (k >> 1)] & 0xffff;
+//				out2[i*PARAMS_N + k + 1] += sum2[i*PARAMS_N + (k >> 1)] >> 16;
+////				if(i == 0 && k < 4)
+////				{
+////					print_debug(DEBUG_MATRIX_MM, "\tsum2h[%d]: 0x%lx\n", i*PARAMS_N + (k >> 1), sum2[i*PARAMS_N + (k >> 1)] & 0xffff);
+////					print_debug(DEBUG_MATRIX_MM, "\tsum2l[%d]: 0x%lx\n", i*PARAMS_N + (k >> 1), sum2[i*PARAMS_N + (k >> 1)] >> 16);
+////				}
+//
+//			}
+//		}
 
-			}
+		for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
+		{
+			if((k & 0x1) == 0)
+				out[k] += sum2[k >> 1] & 0xffff;
+			else
+				out[k] += sum2[k >> 1] >> 16;
 		}
 
 		//Compare outs
@@ -384,14 +383,70 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 //
 //		print_debug(DEBUG_MATRIX_MM, "Fim um kk\n");
 #endif
-	} //kk for
 
+#if ENABLE_MATRIX_SW
+		for (i = 0; i < PARAMS_NBAR; i++) {
+			uint16_t sum[PARAMS_N] = {0};
+			for (j = 0; j < 4; j++) {
+				uint16_t sp = s[i*PARAMS_N + kk + j];
+				for (k = 0; k < PARAMS_N; k++) {                // Matrix-vector multiplication
+					sum[k] += sp * a_cols[(t+j)*PARAMS_N + k];
+				}
+			 }
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[0]: 0x%lx\n", sum[0]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[1]: 0x%lx\n", sum[1]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[2]: 0x%lx\n", sum[2]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[3]: 0x%lx\n", sum[3]);
+			for(k = 0; k < PARAMS_N; k++){
+				out[i*PARAMS_N + k] += sum[k];
 
+				//Compare with HW
+				if((k & 0x1) == 0)
+				{
+					if(sum[k] != (sum2[(i*PARAMS_N + k) >> 1] & 0xffff))
+						print_debug(DEBUG_MATRIX_MM, "\tPos %d: sum: 0x%lx e  sum2: 0x%lx\n", i*PARAMS_N + k, sum[k], sum2[(i*PARAMS_N + k) >> 1] & 0xffff);
+//					else
+//						print_debug(DEBUG_MATRIX_MM, "\tPos %d: ok\n", i*PARAMS_N + k);
+
+				}
+				else
+				{
+					if(sum[k] != (sum2[(i*PARAMS_N + k) >> 1] >> 16))
+						print_debug(DEBUG_MATRIX_MM, "\tPos %d: sum: 0x%lx e  sum2: 0x%lx\n", i*PARAMS_N + k, sum[k], sum2[(i*PARAMS_N + k) >> 1] >> 16);
+//					else
+//						print_debug(DEBUG_MATRIX_MM, "\tPos %d: ok\n", i*PARAMS_N + k);
+				}
+
+			}
+
+//			print_debug(DEBUG_MATRIX_MM, "\ts[0:3]: 0x%lx 0x%lx 0x%lx 0x%lx\n", s[0], s[1], s[2], s[3]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[0,640,1280,1920]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[0], a_cols[640], a_cols[1280], a_cols[1920]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[1,641,1281,1921]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[1], a_cols[641], a_cols[1281], a_cols[1921]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[2,642,1282,1922]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[2], a_cols[642], a_cols[1282], a_cols[1922]);
+//			print_debug(DEBUG_MATRIX_MM, "\ta[3,643,1283,1923]: 0x%lx 0x%lx 0x%lx 0x%lx\n", a_cols[3], a_cols[643], a_cols[1283], a_cols[1923]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[0]: 0x%lx\n", sum[0]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[1]: 0x%lx\n", sum[1]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[2]: 0x%lx\n", sum[2]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[3]: 0x%lx\n", sum[3]);
+		}
+#endif
 
 #if ENABLE_MATRIX_HW
-	//Set start pin high
-	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
+		//Set start pin high
+		XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
 #endif
+
+	} //kk for
+
+#if ENABLE_MATRIX_SW == 1 & ENABLE_MATRIX_HW == 1
+	//Post comparison
+	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i++)
+	{
+		if(out[i] != out2[i])
+			print_debug(DEBUG_MATRIX_MM, "\tComparison error of post out at %d\n", i);
+	}
+#endif
+
 
 #else  // Using vector intrinsics
 	uint8_t seed_A_separated_0[2 + BYTES_SEED_A];
