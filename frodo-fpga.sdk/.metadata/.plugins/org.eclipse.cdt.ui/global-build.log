@@ -1,19 +1,39 @@
-22:33:08 **** Incremental Build of configuration Debug for project frodo_sdk ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for 'main-build'.
-22:33:44 **** Incremental Build of configuration Debug for project frodo_sdk ****
+18:38:56 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 'Building file: ../src/include/test_kem.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
-In file included from ../src/include/test_kem.c:11:
-../../frodo_sdk_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
- #pragma message ("For the sleep routines, Global timer is being used")
-         ^~~~~~~
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:199:130: warning: unused variable 't_total_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:96: warning: unused variable 't_dec_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:62: warning: unused variable 't_enc_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:121: warning: unused variable 't_total_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:90: warning: unused variable 't_dec_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:59: warning: unused variable 't_enc_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:24: warning: unused variable 't_keypair_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
 'Finished building: ../src/include/test_kem.c'
 ' '
 'Building target: frodo_sdk.elf'
@@ -24,11 +44,646 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 112384	   2712	 138224	 253320	  3dd88	frodo_sdk.elf
+ 114688	   2728	2104336	2221752	 21e6b8	frodo_sdk.elf
 'Finished building: frodo_sdk.elf.size'
 ' '
-22:33:59 **** Incremental Build of configuration Debug for project frodo_sdk ****
+18:39:30 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for 'main-build'.
+18:40:00 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:40:19 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:40:42 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+18:42:12 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:199:130: warning: unused variable 't_total_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:96: warning: unused variable 't_dec_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:62: warning: unused variable 't_enc_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:121: warning: unused variable 't_total_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:90: warning: unused variable 't_dec_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:59: warning: unused variable 't_enc_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:24: warning: unused variable 't_keypair_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 115160	   2728	2104336	2222224	 21e890	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+18:42:37 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:199:130: warning: unused variable 't_total_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:96: warning: unused variable 't_dec_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:62: warning: unused variable 't_enc_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:121: warning: unused variable 't_total_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:90: warning: unused variable 't_dec_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:59: warning: unused variable 't_enc_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:198:24: warning: unused variable 't_keypair_keccak_hw_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_hw = 0, t_enc_keccak_hw_matrix_hw = 0, t_dec_keccak_hw_matrix_hw = 0, t_total_keccak_hw_matrix_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 115232	   2728	2104336	2222296	 21e8d8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+18:58:50 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:199:130: warning: unused variable 't_total_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:96: warning: unused variable 't_dec_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:62: warning: unused variable 't_enc_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:199:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_hw = 0, t_enc_keccak_hw_mm_matrix_hw = 0, t_dec_keccak_hw_mm_matrix_hw = 0, t_total_keccak_hw_mm_matrix_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+In file included from ../src/include/test_kem.c:9:
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/global_def.h:97:4: warning: 'thousandthsKeccakHwMatrixHw' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    printf(__VA_ARGS__); \
+    ^~~~~~
+../src/include/test_kem.c:420:30: note: 'thousandthsKeccakHwMatrixHw' was declared here
+   u32 wholeKeccakHwMatrixHw, thousandthsKeccakHwMatrixHw;
+                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 116656	   2728	2104336	2223720	 21ee68	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+18:59:24 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:11:05 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118032	   2728	2104336	2225096	 21f3c8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:11:47 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:17:44 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118064	   2728	2104336	2225128	 21f3e8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:18:57 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118072	   2728	2104336	2225136	 21f3f0	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:19:07 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:20:16 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118080	   2728	2104336	2225144	 21f3f8	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:20:26 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:21:50 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118136	   2728	2104336	2225200	 21f430	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:22:00 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:22:39 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118152	   2728	2104336	2225216	 21f440	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:23:29 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118160	   2728	2104336	2225224	 21f448	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:23:38 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:24:54 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118160	   2728	2104336	2225224	 21f448	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:26:02 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118152	   2728	2104336	2225216	 21f440	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:26:38 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118160	   2728	2104336	2225224	 21f448	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:26:50 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:27:38 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118160	   2728	2104336	2225224	 21f448	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:28:17 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118152	   2728	2104336	2225216	 21f440	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:28:58 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118152	   2728	2104336	2225216	 21f440	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:29:37 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118152	   2728	2104336	2225216	 21f440	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:30:21 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118160	   2728	2104336	2225224	 21f448	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:30:31 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:31:05 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118160	   2728	2104336	2225224	 21f448	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:33:02 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118488	   2728	2104336	2225552	 21f590	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
+19:33:27 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:34:07 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/include/test_kem.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/include/test_kem.c'
+' '
+'Building target: frodo_sdk.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: frodo_sdk.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 118480	   2728	2104336	2225544	 21f588	frodo_sdk.elf
+'Finished building: frodo_sdk.elf.size'
+' '
