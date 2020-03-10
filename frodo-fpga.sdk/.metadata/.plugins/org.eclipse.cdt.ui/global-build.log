@@ -687,3 +687,8 @@ arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
  118480	   2728	2104336	2225544	 21f588	frodo_sdk.elf
 'Finished building: frodo_sdk.elf.size'
 ' '
+11:03:17 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
