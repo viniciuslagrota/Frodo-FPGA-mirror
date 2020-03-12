@@ -2173,66 +2173,6 @@
               "m11_couplers/S_AXI"
             ]
           },
-          "axi_interconnect_0_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
-          "m11_couplers_to_axi_interconnect_0": {
-            "interface_ports": [
-              "M11_AXI",
-              "m11_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
-            ]
-          },
-          "m04_couplers_to_axi_interconnect_0": {
-            "interface_ports": [
-              "M04_AXI",
-              "m04_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m03_couplers": {
-            "interface_ports": [
-              "xbar/M03_AXI",
-              "m03_couplers/S_AXI"
-            ]
-          },
-          "m03_couplers_to_axi_interconnect_0": {
-            "interface_ports": [
-              "M03_AXI",
-              "m03_couplers/M_AXI"
-            ]
-          },
-          "m01_couplers_to_axi_interconnect_0": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
-          "m00_couplers_to_axi_interconnect_0": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
           "xbar_to_m01_couplers": {
             "interface_ports": [
               "xbar/M01_AXI",
@@ -2281,6 +2221,66 @@
               "m13_couplers/M_AXI"
             ]
           },
+          "m08_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M08_AXI",
+              "m08_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m12_couplers": {
+            "interface_ports": [
+              "xbar/M12_AXI",
+              "m12_couplers/S_AXI"
+            ]
+          },
+          "m12_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M12_AXI",
+              "m12_couplers/M_AXI"
+            ]
+          },
+          "m04_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M04_AXI",
+              "m04_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m03_couplers": {
+            "interface_ports": [
+              "xbar/M03_AXI",
+              "m03_couplers/S_AXI"
+            ]
+          },
+          "m03_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M03_AXI",
+              "m03_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "m01_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "m00_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m08_couplers": {
+            "interface_ports": [
+              "xbar/M08_AXI",
+              "m08_couplers/S_AXI"
+            ]
+          },
           "xbar_to_m04_couplers": {
             "interface_ports": [
               "xbar/M04_AXI",
@@ -2323,28 +2323,28 @@
               "m07_couplers/S_AXI"
             ]
           },
-          "xbar_to_m08_couplers": {
+          "axi_interconnect_0_to_s00_couplers": {
             "interface_ports": [
-              "xbar/M08_AXI",
-              "m08_couplers/S_AXI"
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           },
-          "m08_couplers_to_axi_interconnect_0": {
+          "s00_couplers_to_xbar": {
             "interface_ports": [
-              "M08_AXI",
-              "m08_couplers/M_AXI"
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
             ]
           },
-          "xbar_to_m12_couplers": {
+          "m11_couplers_to_axi_interconnect_0": {
             "interface_ports": [
-              "xbar/M12_AXI",
-              "m12_couplers/S_AXI"
+              "M11_AXI",
+              "m11_couplers/M_AXI"
             ]
           },
-          "m12_couplers_to_axi_interconnect_0": {
+          "xbar_to_m02_couplers": {
             "interface_ports": [
-              "M12_AXI",
-              "m12_couplers/M_AXI"
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
             ]
           }
         },
@@ -2674,16 +2674,16 @@
       }
     },
     "interface_nets": {
-      "axi_interconnect_0_M04_AXI": {
-        "interface_ports": [
-          "axi_interconnect_0/M04_AXI",
-          "axi_gpio_0/S_AXI"
-        ]
-      },
       "axi_interconnect_0_M00_AXI": {
         "interface_ports": [
           "axi_interconnect_0/M00_AXI",
           "axi_gpio_1/S_AXI"
+        ]
+      },
+      "axi_interconnect_0_M04_AXI": {
+        "interface_ports": [
+          "axi_interconnect_0/M04_AXI",
+          "axi_gpio_0/S_AXI"
         ]
       },
       "processing_system7_0_DDR": {
@@ -2692,70 +2692,10 @@
           "processing_system7_0/DDR"
         ]
       },
-      "S00_AXI_1": {
-        "interface_ports": [
-          "axi_interconnect_0/S00_AXI",
-          "processing_system7_0/M_AXI_GP0"
-        ]
-      },
-      "keccak_f1600_ip_0_M00_AXIS": {
-        "interface_ports": [
-          "keccak_f1600_ip_0/M00_AXIS",
-          "axi_fifo_mm_s_0/AXI_STR_RXD"
-        ]
-      },
-      "axi_interconnect_0_M02_AXI": {
-        "interface_ports": [
-          "axi_interconnect_0/M02_AXI",
-          "axi_gpio_2/S_AXI"
-        ]
-      },
-      "axi_interconnect_0_M07_AXI": {
-        "interface_ports": [
-          "matrix_sa_plus_e_mm_ip_0/S01_AXI",
-          "axi_interconnect_0/M07_AXI"
-        ]
-      },
-      "axi_interconnect_0_M03_AXI": {
-        "interface_ports": [
-          "axi_interconnect_0/M03_AXI",
-          "keccak_f1600_mm_ip_0/S00_AXI"
-        ]
-      },
-      "axi_interconnect_0_M11_AXI": {
-        "interface_ports": [
-          "axi_interconnect_0/M11_AXI",
-          "matrix_as_plus_e_mm_0/S01_AXI"
-        ]
-      },
-      "axi_interconnect_0_M05_AXI": {
-        "interface_ports": [
-          "axi_interconnect_0/M05_AXI",
-          "axi_gpio_3/S_AXI"
-        ]
-      },
-      "axi_interconnect_0_M12_AXI": {
-        "interface_ports": [
-          "axi_interconnect_0/M12_AXI",
-          "matrix_as_plus_e_mm_0/S02_AXI"
-        ]
-      },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
-        ]
-      },
       "axi_fifo_mm_s_0_AXI_STR_TXD": {
         "interface_ports": [
           "axi_fifo_mm_s_0/AXI_STR_TXD",
           "keccak_f1600_ip_0/S00_AXIS"
-        ]
-      },
-      "axi_interconnect_0_M09_AXI": {
-        "interface_ports": [
-          "axi_gpio_4/S_AXI",
-          "axi_interconnect_0/M09_AXI"
         ]
       },
       "axi_interconnect_0_M08_AXI": {
@@ -2770,10 +2710,10 @@
           "matrix_sa_plus_e_mm_ip_0/S00_AXI"
         ]
       },
-      "axi_interconnect_0_M10_AXI": {
+      "processing_system7_0_FIXED_IO": {
         "interface_ports": [
-          "matrix_as_plus_e_mm_0/S00_AXI",
-          "axi_interconnect_0/M10_AXI"
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
         ]
       },
       "axi_interconnect_0_M01_AXI": {
@@ -2786,6 +2726,66 @@
         "interface_ports": [
           "axi_interconnect_0/M13_AXI",
           "axi_gpio_5/S_AXI"
+        ]
+      },
+      "axi_interconnect_0_M10_AXI": {
+        "interface_ports": [
+          "matrix_as_plus_e_mm_0/S00_AXI",
+          "axi_interconnect_0/M10_AXI"
+        ]
+      },
+      "S00_AXI_1": {
+        "interface_ports": [
+          "axi_interconnect_0/S00_AXI",
+          "processing_system7_0/M_AXI_GP0"
+        ]
+      },
+      "axi_interconnect_0_M02_AXI": {
+        "interface_ports": [
+          "axi_interconnect_0/M02_AXI",
+          "axi_gpio_2/S_AXI"
+        ]
+      },
+      "axi_interconnect_0_M05_AXI": {
+        "interface_ports": [
+          "axi_interconnect_0/M05_AXI",
+          "axi_gpio_3/S_AXI"
+        ]
+      },
+      "axi_interconnect_0_M09_AXI": {
+        "interface_ports": [
+          "axi_gpio_4/S_AXI",
+          "axi_interconnect_0/M09_AXI"
+        ]
+      },
+      "axi_interconnect_0_M12_AXI": {
+        "interface_ports": [
+          "axi_interconnect_0/M12_AXI",
+          "matrix_as_plus_e_mm_0/S02_AXI"
+        ]
+      },
+      "keccak_f1600_ip_0_M00_AXIS": {
+        "interface_ports": [
+          "keccak_f1600_ip_0/M00_AXIS",
+          "axi_fifo_mm_s_0/AXI_STR_RXD"
+        ]
+      },
+      "axi_interconnect_0_M07_AXI": {
+        "interface_ports": [
+          "matrix_sa_plus_e_mm_ip_0/S01_AXI",
+          "axi_interconnect_0/M07_AXI"
+        ]
+      },
+      "axi_interconnect_0_M11_AXI": {
+        "interface_ports": [
+          "axi_interconnect_0/M11_AXI",
+          "matrix_as_plus_e_mm_0/S01_AXI"
+        ]
+      },
+      "axi_interconnect_0_M03_AXI": {
+        "interface_ports": [
+          "axi_interconnect_0/M03_AXI",
+          "keccak_f1600_mm_ip_0/S00_AXI"
         ]
       }
     },
