@@ -2791,7 +2791,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>matrix_as_plus_e_mm_ip_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreRevision>7</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1beb04db_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2588765a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
@@ -2914,6 +2914,83 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@35ea4818_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1bb2452f_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@42e5e384_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50ec13b7_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43137757_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e91023a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@654e8564_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9a0e9ce_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2aa4ae50_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ddb43e4_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51cb9bc0_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b97e7dd_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@778a31dd_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25401333_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@732a5aac_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d432100_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23b1dc3a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b849918_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4995e064_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69fd39bc_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@593d0bf7_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44cd1d5f_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65cf7ae3_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d598862_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a0605cc_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@374aad70_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e411407_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68a55a98_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75f7a9c0_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79382766_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@371e2731_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e5b881b_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4175c15e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73fb37e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c0e9265_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@633ebb2a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50a5c6_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@288998ac_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43618660_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75ffd27e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a4cc8c2_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45d6da9e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@493872be_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@457edc6d_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eb92d5f_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55c39dc3_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5304243_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d1d67d5_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cec0d22_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bf0062b_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2eff867_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e3213b_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79ee9a9d_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69816f94_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ca5fca0_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12caa8f1_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15043e00_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11dbc550_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9c94320_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@300a46bd_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6db77df4_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30d88af6_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7740a3b_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ccaf90f_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4764a31_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48360c1a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27661fa1_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50f871f5_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10371139_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c613115_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fc49162_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17f0d045_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35fb2241_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45e813ee_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2539890e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45324af8_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b86bcca_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@642be485_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62b48ee5_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f359dab_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -2988,7 +3065,7 @@
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="6a1baa23"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="dea1b8ef"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2e85c7b5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="517d7929"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="334814a7"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="7cb26216"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="2c995864"/>
