@@ -65,11 +65,15 @@ extern XGpio_Config * ConfigPtr4;
 extern XGpio axi_counter_timer;
 extern XGpio axi_counter_timer_mm;
 extern XGpio axiStartBusyMatrix;
+extern XGpio axiStartBusyMatrix2;
 extern XLlFifo fifoKeccak;
 extern u32 *memoryMMkeccak;
 extern u32 *memoryMatrixS;
 extern u32 *memoryMatrixA;
 extern u32 *memoryMatrixB;
+extern u32 *memoryMatrixA2;
+extern u32 *memoryMatrixS2;
+extern u32 *memoryMatrixB2;
 static XAdcPs XAdcInst;
 XAdcPs_Config *ConfigPtr;
 u32 TempRawData;
@@ -132,6 +136,10 @@ int main()
 	XGpio_CfgInitialize(&axiStartBusyMatrix, ConfigPtr4, ConfigPtr4->BaseAddress);
 	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); //Set start bit low.
 
+	ConfigPtr5 = XGpio_LookupConfig(XPAR_AXI_GPIO_5_DEVICE_ID);
+	XGpio_CfgInitialize(&axiStartBusyMatrix2, ConfigPtr5, ConfigPtr5->BaseAddress);
+	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); //Set start bit low.
+
 	//---- AXI MM ----
 	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;
 	print_debug(DEBUG_ERROR, "[MAIN] Memory golden word: 0x%lx.\n", memoryMMkeccak[63]);
@@ -146,7 +154,12 @@ int main()
 	memoryMatrixS = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S00_AXI_BASEADDR;
 	memoryMatrixA = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S01_AXI_BASEADDR;
 	memoryMatrixB = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S02_AXI_BASEADDR;
-	print_debug(DEBUG_ERROR, "[MAIN] Matrix MM initialized.\n");
+	print_debug(DEBUG_ERROR, "[MAIN] Matrix SA initialized.\n");
+
+	memoryMatrixA2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S00_AXI_BASEADDR;
+	memoryMatrixS2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S01_AXI_BASEADDR;
+	memoryMatrixB2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S02_AXI_BASEADDR;
+	print_debug(DEBUG_ERROR, "[MAIN] Matrix AS initialized.\n");
 
 	//---- AXI FIFO ----
 	int xStatus;

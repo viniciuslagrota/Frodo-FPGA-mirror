@@ -46,9 +46,10 @@ extern uint16_t CDF_TABLE_LEN;
 //	Compilation defines
 //
 //////////////////////////////////////////////
-#define ENABLE_DEBUG				0
-#define ENABLE_KEM_TEST				1
+#define ENABLE_DEBUG				1
+#define ENABLE_KEM_TEST				0
 #define ENABLE_HW_TIMER				1
+//Just used for debug
 #define ENABLE_MATRIX_SW			0
 #define ENABLE_MATRIX_HW			1
 
@@ -109,13 +110,18 @@ XGpio_Config * ConfigPtr1;
 XGpio_Config * ConfigPtr2;
 XGpio_Config * ConfigPtr3;
 XGpio_Config * ConfigPtr4;
+XGpio_Config * ConfigPtr5;
 XGpio axi_counter_timer;
 XGpio axi_counter_timer_mm;
 XGpio axiStartBusyMatrix;
+XGpio axiStartBusyMatrix2;
 u32 *memoryMMkeccak;
 u32 *memoryMatrixS;
 u32 *memoryMatrixA;
 u32 *memoryMatrixB;
+u32 *memoryMatrixA2;
+u32 *memoryMatrixS2;
+u32 *memoryMatrixB2;
 
 //////////////////////////////////////////////
 //

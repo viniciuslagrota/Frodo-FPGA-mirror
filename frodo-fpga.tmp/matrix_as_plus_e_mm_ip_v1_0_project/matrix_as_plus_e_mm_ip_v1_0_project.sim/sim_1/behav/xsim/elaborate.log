@@ -1,7 +1,0 @@
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 5c7c7a61cd3b4913bb24647f520de372 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-ERROR: [VRFC 10-3353] formal port 'start' has no actual or default value [c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/controller2.vhd:42]
-ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit testbench in library work failed.
