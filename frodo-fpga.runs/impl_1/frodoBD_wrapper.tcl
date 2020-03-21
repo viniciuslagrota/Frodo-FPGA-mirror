@@ -70,20 +70,20 @@ set rc [catch {
   set_property board_part em.avnet.com:microzed_7010:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Projects/frodo-fpga/frodo-fpga.cache/wt [current_project]
-  set_property parent.project_path C:/Projects/frodo-fpga/frodo-fpga.xpr [current_project]
+  set_property webtalk.parent_dir C:/Projetos/frodo-fpga/frodo-fpga.cache/wt [current_project]
+  set_property parent.project_path C:/Projetos/frodo-fpga/frodo-fpga.xpr [current_project]
   set_property ip_repo_paths {
-  C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0
-  C:/Projects/ip_repo
+  C:/Projetos/ip_repo/matrix_as_plus_e_mm_ip_1.0
+  C:/Projetos/ip_repo
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Projects/frodo-fpga/frodo-fpga.cache/ip [current_project]
+  set_property ip_output_repo C:/Projetos/frodo-fpga/frodo-fpga.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.dcp
+  add_files -quiet C:/Projetos/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd
+  add_files C:/Projetos/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd
   set_param project.isImplRun false
   set_param project.isImplRun true
   link_design -top frodoBD_wrapper -part xc7z010clg400-1
