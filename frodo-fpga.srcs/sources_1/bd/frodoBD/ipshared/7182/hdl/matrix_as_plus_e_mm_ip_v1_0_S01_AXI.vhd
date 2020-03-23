@@ -17,7 +17,7 @@ entity matrix_as_plus_e_mm_ip_v1_0_S01_AXI is
 		-- Width of S_AXI address bus
 		C_S_AXI_ADDR_WIDTH	: integer	:= 14;
 		-- Request address length
-		REQ_BITS_LEN        : integer   := 9
+		REQ_BITS_LEN        : integer   := 12
 	);
 	port (
 		-- Users to add ports here
@@ -94,9 +94,9 @@ end matrix_as_plus_e_mm_ip_v1_0_S01_AXI;
 architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0_S01_AXI is
 
     -- Constant
-    constant MEM_SIZE       : integer := 320;
+    constant MEM_SIZE       : integer := 2560;
 	constant WORD_SIZE      : integer := C_S_AXI_DATA_WIDTH;    
-	constant N_MEMORIES     : integer := 8;  
+	constant N_MEMORIES     : integer := 1;  
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -128,15 +128,15 @@ architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0_S01_AXI is
 	
 	signal s_data_0       : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	
-	type type_data_mem is array (N_MEMORIES - 1 downto 0) of std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-    signal s_data_mem      : type_data_mem;
+--	type type_data_mem is array (N_MEMORIES - 1 downto 0) of std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+    signal s_data_mem      : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
     
     signal addr_ram        : std_logic_vector(REQ_BITS_LEN-1 downto 0); 
-	signal s_addr_ram      : std_logic_vector(REQ_BITS_LEN-1 downto 0); 
-	signal en              : std_logic_vector(N_MEMORIES-1 downto 0);
-	signal s_en            : std_logic_vector(N_MEMORIES-1 downto 0);
+--	signal s_addr_ram      : std_logic_vector(REQ_BITS_LEN-1 downto 0); 
+--	signal en              : std_logic;
+--	signal s_en            : std_logic;
 	
-	signal s_receiving     : std_logic;
+--	signal s_receiving     : std_logic;
 	
 	component true_single_bram2 is
         generic(
@@ -351,82 +351,55 @@ begin
     end process;
     
     -- Data receiving detection
-    process (S_AXI_ACLK)
-    begin
-        if rising_edge(S_AXI_ACLK) then 
-            if (S_AXI_ARESETN = '0') then
-                s_receiving <= '0';
-            else
-                if(axi_wready = '1') then
-                    s_receiving <= '1';
-                elsif(s_eop = '1') then
-                    s_receiving <= '0';
-                else
-                    s_receiving <= s_receiving;
-                end if;
-            end if;
-        end if;
-    end process;
+--    process (S_AXI_ACLK)
+--    begin
+--        if rising_edge(S_AXI_ACLK) then 
+--            if (S_AXI_ARESETN = '0') then
+--                s_receiving <= '0';
+--            else
+--                if(axi_wready = '1') then
+--                    s_receiving <= '1';
+--                elsif(s_eop = '1') then
+--                    s_receiving <= '0';
+--                else
+--                    s_receiving <= s_receiving;
+--                end if;
+--            end if;
+--        end if;
+--    end process;
+    
+    
+    -- TODO: fazer aqui!!!!!!
     
     -- Enable RAM logic
-    process (S_AXI_ACLK)
-        variable loc_addr : integer; 
-    begin
-        if rising_edge(S_AXI_ACLK) then 
-            if (S_AXI_ARESETN = '0') then
-                en <= "00000001";
-                s_en <= "00000001";
-            else
-                loc_addr := conv_integer(s_axi_awaddr(C_S_AXI_ADDR_WIDTH-1 downto 2));                
-                if(s_receiving = '1') then
-                    if(loc_addr = 0) then
-                        en <= "00000001";
-                    elsif(loc_addr = MEM_SIZE) then
-                        en <= "00000010";
-                    elsif(loc_addr = 2*MEM_SIZE) then
-                        en <= "00000100";
-                    elsif(loc_addr = 3*MEM_SIZE) then
-                        en <= "00001000";
-                    elsif(loc_addr = 4*MEM_SIZE) then
-                        en <= "00010000";
-                    elsif(loc_addr = 5*MEM_SIZE) then
-                        en <= "00100000";
-                    elsif(loc_addr = 6*MEM_SIZE) then
-                        en <= "01000000";
-                    elsif(loc_addr = 7*MEM_SIZE) then
-                        en <= "10000000";
-                    else
-                        en <= en;
-                    end if;
-                else
-                    if(req_addr = MEM_SIZE - 1) then
-                        s_en <= s_en(6 downto 0) & s_en(7);
-                    else
-                        s_en <= s_en;
-                    end if;
-                    en <= s_en;
-                end if;
-            end if;
-        end if;
-    end process;
+--    process (S_AXI_ACLK)
+--    begin
+--        if rising_edge(S_AXI_ACLK) then 
+--            if (S_AXI_ARESETN = '0') then
+--                en <= '1';
+--            else             
+--                if(s_receiving = '1') then
+--                    en <= '1';
+--                else
+--                    en <= '0';
+--                end if;
+--            end if;
+--        end if;
+--    end process;
     
     -- RAM address
-    process (S_AXI_ACLK)
-    begin
-        if rising_edge(S_AXI_ACLK) then 
-            if (S_AXI_ARESETN = '0') then
-                s_addr_ram <= (others => '0');
-            else    
-                if(axi_bvalid = '1') then
-                    if(conv_integer(addr_ram) = MEM_SIZE - 1) then
-                        s_addr_ram <= (others => '0');
-                    else
-                        s_addr_ram <= std_logic_vector(unsigned(s_addr_ram) + 1);
-                    end if;
-                end if;
-            end if;
-        end if;
-    end process;
+--    process (S_AXI_ACLK)
+--    begin
+--        if rising_edge(S_AXI_ACLK) then 
+--            if (S_AXI_ARESETN = '0') then
+--                s_addr_ram <= (others => '0');
+--            else    
+--                if(axi_bvalid = '1') then
+--                    s_addr_ram <= std_logic_vector(unsigned(s_addr_ram) + 1); -- TODO: zerar!
+--                end if;
+--            end if;
+--        end if;
+--    end process;
     
     -- Register data 
     process( S_AXI_ACLK )
@@ -435,46 +408,26 @@ begin
             if ( S_AXI_ARESETN = '0' ) then
                 s_data_0 <= (others => '0');
             else                
-                if(en = "00000001") then
-                    s_data_0 <= s_data_mem(0);
-                elsif(en = "00000010") then
-                    s_data_0 <= s_data_mem(1);
-                elsif(en = "00000100") then
-                    s_data_0 <= s_data_mem(2);
-                elsif(en = "00001000") then
-                    s_data_0 <= s_data_mem(3);
-                elsif(en = "00010000") then
-                    s_data_0 <= s_data_mem(4);
-                elsif(en = "00100000") then
-                    s_data_0 <= s_data_mem(5);
-                elsif(en = "01000000") then
-                    s_data_0 <= s_data_mem(6);
-                elsif(en = "10000000") then
-                    s_data_0 <= s_data_mem(7);   
-                else
-                    s_data_0 <= s_data_0;
-                end if;
+                s_data_0 <= s_data_mem;
             end if;
         end if;
     end process;
     
-    addr_ram <= s_addr_ram when axi_bvalid = '1' else
-                std_logic_vector(req_addr);
+    addr_ram <= S_AXI_AWADDR(13 downto 2) when axi_bvalid = '1' else
+                std_logic_vector(req_addr);  
                 
-    generate_ram : for i in 0 to (N_MEMORIES - 1) generate
-        true_single_bram2_s01_inst : true_single_bram2
-        generic map(
-            MEM_SIZE  => MEM_SIZE,
-            WORD_SIZE => WORD_SIZE
-        )            
-        port map(      
-            clk       => S_AXI_ACLK,
-            en        => en(i),
-            we        => axi_bvalid,
-            addr      => addr_ram,
-            di        => S_AXI_WDATA,
-            do        => s_data_mem(i)
-        );
-    end generate;
+    true_single_bram2_s01_inst : true_single_bram2
+    generic map(
+        MEM_SIZE  => MEM_SIZE,
+        WORD_SIZE => WORD_SIZE
+    )            
+    port map(      
+        clk       => S_AXI_ACLK,
+        en        => '1',
+        we        => axi_bvalid,
+        addr      => addr_ram,
+        di        => S_AXI_WDATA,
+        do        => s_data_mem
+    );
 
 end arch_imp;

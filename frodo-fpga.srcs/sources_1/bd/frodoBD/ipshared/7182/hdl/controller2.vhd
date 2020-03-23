@@ -33,7 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity controller2 is
     generic (
 		S00_REQ_BITS_LEN        : integer   := 9;
-		S01_REQ_BITS_LEN        : integer   := 9;
+		S01_REQ_BITS_LEN        : integer   := 12;
 		S02_REQ_BITS_LEN        : integer   := 11
     );
     port(
@@ -60,20 +60,21 @@ architecture Behavioral of controller2 is
     signal s_s00_eop_locked     : std_logic;
     signal s_s01_eop_locked     : std_logic;
     signal s_enable_mult        : std_logic; 
-    signal s_enable_mult_vec    : std_logic_vector(3 downto 0);
+    signal s_enable_mult_vec    : std_logic_vector(5 downto 0);
     signal s_column_counter     : unsigned (2 downto 0);
-    signal s_req_addr           : unsigned (S00_REQ_BITS_LEN-1 downto 0);   
+    signal s_s00_req_addr       : unsigned (S00_REQ_BITS_LEN-1 downto 0);   
+    signal s_s01_req_addr       : unsigned (S01_REQ_BITS_LEN-1 downto 0);   
     signal s_s02_req_addr       : unsigned (S02_REQ_BITS_LEN-1 downto 0); 
     signal s_busy               : std_logic;    
        
 begin
 
     enable_mult <= s_enable_mult;
-    s00_req_addr <= s_req_addr;
-    s01_req_addr <= s_req_addr;
+    s00_req_addr <= s_s00_req_addr;
+    s01_req_addr <= s_s01_req_addr;
     s02_req_addr <= s_s02_req_addr;
-    reset_sum <= '1' when (s_req_addr = "000000011") else '0';
-    valid_data_to_s02 <= '1' when ((s_enable_mult_vec(3) = '1' and s_req_addr = "000000011") or (s_enable_mult_vec(3) = '1' and s_enable_mult_vec(2) = '0')) else '0';
+    reset_sum <= '1' when (s_s00_req_addr = "000000100") else '0';
+    valid_data_to_s02 <= '1' when ((s_enable_mult_vec(5) = '1' and s_s00_req_addr = "000000101") or (s_enable_mult_vec(5) = '1' and s_enable_mult_vec(4) = '0')) else '0';
     busy <= s_busy;
     
     -- EOP locked
@@ -86,13 +87,13 @@ begin
             else
                 if(s00_eop = '1') then
                     s_s00_eop_locked <= '1';
-                elsif(s_req_addr = x"13F" and s_column_counter = x"7") then --319
+                elsif(s_s00_req_addr = x"13F" and s_column_counter = x"7") then --319
                     s_s00_eop_locked <= '0';
                 end if;                                                         
                 
                 if(s01_eop = '1') then
                     s_s01_eop_locked <= '1';
-                elsif(s_req_addr = x"13F" and s_column_counter = x"7") then --319
+                elsif(s_s01_req_addr = x"9FF") then --2559
                     s_s01_eop_locked <= '0';
                 end if;
             end if;
@@ -108,7 +109,7 @@ begin
             else
                 if(s00_sop = '1') then
                     s_column_counter <= (others => '0');
-                elsif(s_req_addr = x"13F") then
+                elsif(s_s00_req_addr = x"13F") then
                     s_column_counter <= s_column_counter + 1;
                 else
                     s_column_counter <= s_column_counter;
@@ -124,7 +125,7 @@ begin
             if(aresetn = '0') then
                 s_enable_mult <= '0';
             else
-                if(s_req_addr = x"13F" and s_column_counter = x"7") then --319
+                if(s_s00_req_addr = x"13F" and s_column_counter = x"7") then --319
                     s_enable_mult <= '0';
                 elsif(s_s00_eop_locked = '1' and s_s01_eop_locked = '1') then
                     s_enable_mult <= '1';
@@ -142,26 +143,46 @@ begin
             if(aresetn = '0') then
                 s_enable_mult_vec <= (others => '0');
             else
-                s_enable_mult_vec <= s_enable_mult_vec(2 downto 0) & s_enable_mult;
+                s_enable_mult_vec <= s_enable_mult_vec(4 downto 0) & s_enable_mult;
             end if;
         end if;
     end process;
     
-    -- Request address S00 and S001
+    -- Request address S00
     process(clk)
     begin
         if(rising_edge(clk)) then
             if(aresetn = '0') then
-                s_req_addr <= (others => '0');
+                s_s00_req_addr <= (others => '0');
             else
                 if(s_enable_mult = '1') then
-                    if(s_req_addr = x"13F") then -- leitura de cada memória.                  
-                        s_req_addr <= (others => '0');
+                    if(s_s00_req_addr = x"13F") then -- leitura de cada memória.                  
+                        s_s00_req_addr <= (others => '0');
                     else
-                        s_req_addr <= s_req_addr + 1;
+                        s_s00_req_addr <= s_s00_req_addr + 1;
                     end if;
                 else
-                    s_req_addr <= (others => '0');
+                    s_s00_req_addr <= (others => '0');
+                end if;
+            end if;
+        end if;
+    end process;    
+    
+    -- Request address S01
+    process(clk)
+    begin
+        if(rising_edge(clk)) then
+            if(aresetn = '0') then
+                s_s01_req_addr <= (others => '0');
+            else
+                if(s_enable_mult = '1') then
+                    if(s_s01_req_addr = x"9FF") then -- leitura de cada memória.                  
+                        s_s01_req_addr <= (others => '0');
+                    else
+                        s_s01_req_addr <= s_s01_req_addr + 1;
+                    end if;
+                else
+                    s_s01_req_addr <= (others => '0');
                 end if;
             end if;
         end if;
@@ -176,7 +197,7 @@ begin
             else
                 if(start = '0') then
                     s_s02_req_addr <= (others => '0');
-                elsif((s_enable_mult_vec(3) = '1' and s_req_addr = "000000011") or (s_enable_mult_vec(3) = '1' and s_enable_mult_vec(2) = '0')) then -- the same as valid_data_to_s02
+                elsif((s_enable_mult_vec(5) = '1' and s_s00_req_addr = "000000101") or (s_enable_mult_vec(5) = '1' and s_enable_mult_vec(4) = '0')) then -- the same as valid_data_to_s02
                     if(s_s02_req_addr = x"4ff") then
                         s_s02_req_addr <= (others => '0');
                     else

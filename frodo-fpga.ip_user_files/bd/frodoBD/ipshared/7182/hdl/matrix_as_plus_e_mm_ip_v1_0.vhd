@@ -104,9 +104,9 @@ end matrix_as_plus_e_mm_ip_v1_0;
 architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0 is
 
     constant S00_REQ_BITS_LEN   : integer   := 9;
-    constant S01_REQ_BITS_LEN   : integer   := 9;
+    constant S01_REQ_BITS_LEN   : integer   := 12;
     constant S02_REQ_BITS_LEN   : integer   := 11;
-
+    
     signal s00_sop              : std_logic;
     signal s01_sop              : std_logic;
     signal s00_eop              : std_logic;
@@ -128,13 +128,13 @@ architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0 is
     signal reset_sum            : std_logic;
     signal valid_data_to_s02    : std_logic;
     signal s_data_to_s02_0      : std_logic_vector(C_S00_AXI_DATA_WIDTH/2-1 downto 0);
-
+    
 	-- component declaration
 	component matrix_as_plus_e_mm_ip_v1_0_S00_AXI is
 		generic (
-		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 13;
-		REQ_BITS_LEN        : integer   := 9
+		C_S_AXI_DATA_WIDTH	: integer	:= C_S00_AXI_DATA_WIDTH;
+		C_S_AXI_ADDR_WIDTH	: integer	:= C_S00_AXI_ADDR_WIDTH;
+		REQ_BITS_LEN        : integer   := S00_REQ_BITS_LEN
 		);
 		port (
 		sop             : out std_logic;
@@ -170,9 +170,9 @@ architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0 is
 
 	component matrix_as_plus_e_mm_ip_v1_0_S01_AXI is
 		generic (
-		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 14;
-		REQ_BITS_LEN        : integer   := 9
+		C_S_AXI_DATA_WIDTH	: integer	:= C_S01_AXI_DATA_WIDTH;   
+		C_S_AXI_ADDR_WIDTH	: integer	:= C_S01_AXI_ADDR_WIDTH;   
+		REQ_BITS_LEN        : integer   := S01_REQ_BITS_LEN     
 		);
 		port (
 		sop             : out std_logic;
@@ -205,9 +205,9 @@ architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0 is
 
 	component matrix_as_plus_e_mm_ip_v1_0_S02_AXI is
 		generic (
-		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 15;
-		REQ_BITS_LEN        : integer   := 3
+		C_S_AXI_DATA_WIDTH	: integer	:= C_S02_AXI_DATA_WIDTH;   
+		C_S_AXI_ADDR_WIDTH	: integer	:= C_S02_AXI_ADDR_WIDTH;   
+		REQ_BITS_LEN        : integer   := S02_REQ_BITS_LEN     
 		);
 		port (
 		start           : in std_logic;
@@ -243,9 +243,9 @@ architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0 is
 	
 	component controller2 is
 	    generic (
-		S00_REQ_BITS_LEN        : integer   := 9;
-		S01_REQ_BITS_LEN        : integer   := 9;
-		S02_REQ_BITS_LEN        : integer   := 11
+		S00_REQ_BITS_LEN        : integer   := S00_REQ_BITS_LEN;
+		S01_REQ_BITS_LEN        : integer   := S01_REQ_BITS_LEN;
+		S02_REQ_BITS_LEN        : integer   := S02_REQ_BITS_LEN
 		);
         port(
         clk                 : in std_logic;
@@ -268,7 +268,7 @@ architecture arch_imp of matrix_as_plus_e_mm_ip_v1_0 is
     
     component multiplicator2 is
     generic (
-		C_S_AXI_DATA_WIDTH	: integer	:= 32
+		C_S_AXI_DATA_WIDTH	: integer	:= C_S00_AXI_DATA_WIDTH
 		);
     port(
         clk         : in std_logic;

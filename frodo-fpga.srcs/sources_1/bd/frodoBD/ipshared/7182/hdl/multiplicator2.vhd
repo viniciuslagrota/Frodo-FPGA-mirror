@@ -97,26 +97,46 @@ architecture Behavioral of multiplicator2 is
     signal s_s02_data_3     : integer;  
     
 begin
-
+        
     -- S00
-    s_s00_data_upper_0 <= conv_integer(s00_data_0(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2));
-    s_s00_data_lower_0 <= conv_integer(s00_data_0(C_S_AXI_DATA_WIDTH/2-1 downto 0));
-    s_s00_data_upper_1 <= conv_integer(s00_data_1(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2));
-    s_s00_data_lower_1 <= conv_integer(s00_data_1(C_S_AXI_DATA_WIDTH/2-1 downto 0));
-    s_s00_data_upper_2 <= conv_integer(s00_data_2(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2));
-    s_s00_data_lower_2 <= conv_integer(s00_data_2(C_S_AXI_DATA_WIDTH/2-1 downto 0));
-    s_s00_data_upper_3 <= conv_integer(s00_data_3(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2));
-    s_s00_data_lower_3 <= conv_integer(s00_data_3(C_S_AXI_DATA_WIDTH/2-1 downto 0));
+    process(clk)
+    begin
+        if(rising_edge(clk)) then
+            if(aresetn = '0') then
+                s_s00_data_upper_0 <= 0;
+                s_s00_data_lower_0 <= 0;
+                s_s00_data_upper_1 <= 0;
+                s_s00_data_lower_1 <= 0;
+                s_s00_data_upper_2 <= 0;
+                s_s00_data_lower_2 <= 0;
+                s_s00_data_upper_3 <= 0;
+                s_s00_data_lower_3 <= 0;
+            else
+                s_s00_data_upper_0 <= to_integer(unsigned(s00_data_0(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2)));
+                s_s00_data_lower_0 <= to_integer(unsigned(s00_data_0(C_S_AXI_DATA_WIDTH/2-1 downto 0)));
+                s_s00_data_upper_1 <= to_integer(unsigned(s00_data_1(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2)));
+                s_s00_data_lower_1 <= to_integer(unsigned(s00_data_1(C_S_AXI_DATA_WIDTH/2-1 downto 0)));
+                s_s00_data_upper_2 <= to_integer(unsigned(s00_data_2(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2)));
+                s_s00_data_lower_2 <= to_integer(unsigned(s00_data_2(C_S_AXI_DATA_WIDTH/2-1 downto 0)));
+                s_s00_data_upper_3 <= to_integer(unsigned(s00_data_3(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2)));
+                s_s00_data_lower_3 <= to_integer(unsigned(s00_data_3(C_S_AXI_DATA_WIDTH/2-1 downto 0)));
+            end if;
+        end if;
+    end process;
     
     -- S01
-    s_s01_data_upper_0 <= conv_integer(s01_data_0(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2));
-    s_s01_data_lower_0 <= conv_integer(s01_data_0(C_S_AXI_DATA_WIDTH/2-1 downto 0));  
-    
-    -- S02
-    s02_data_0 <= std_logic_vector(to_unsigned(s_s02_data_0, s02_data_0'length));
-    s02_data_1 <= std_logic_vector(to_unsigned(s_s02_data_1, s02_data_1'length));
-    s02_data_2 <= std_logic_vector(to_unsigned(s_s02_data_2, s02_data_2'length));
-    s02_data_3 <= std_logic_vector(to_unsigned(s_s02_data_3, s02_data_3'length));    
+    process(clk)
+    begin
+        if(rising_edge(clk)) then
+            if(aresetn = '0') then
+                s_s01_data_upper_0 <= 0;
+                s_s01_data_lower_0 <= 0;
+            else
+                s_s01_data_upper_0 <= to_integer(unsigned(s01_data_0(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH/2)));
+                s_s01_data_lower_0 <= to_integer(unsigned(s01_data_0(C_S_AXI_DATA_WIDTH/2-1 downto 0)));  
+            end if;
+        end if;
+    end process;
 
     -- Multiply
     process(clk)
@@ -165,6 +185,24 @@ begin
                     s_s02_data_2 <= s_s02_data_2 + s_mult_data_upper_2 + s_mult_data_lower_2;
                     s_s02_data_3 <= s_s02_data_3 + s_mult_data_upper_3 + s_mult_data_lower_3;
                 end if;
+            end if;
+        end if;
+    end process;
+    
+    -- S02
+    process(clk)
+    begin
+        if(rising_edge(clk)) then
+            if(aresetn = '0') then
+                s02_data_0 <= (others => '0');
+                s02_data_1 <= (others => '0');
+                s02_data_2 <= (others => '0');
+                s02_data_3 <= (others => '0');
+            else
+                s02_data_0 <= std_logic_vector(to_unsigned(s_s02_data_0, s02_data_0'length));
+                s02_data_1 <= std_logic_vector(to_unsigned(s_s02_data_1, s02_data_1'length));
+                s02_data_2 <= std_logic_vector(to_unsigned(s_s02_data_2, s02_data_2'length));
+                s02_data_3 <= std_logic_vector(to_unsigned(s_s02_data_3, s02_data_3'length));  
             end if;
         end if;
     end process;
