@@ -72,7 +72,10 @@ set rc [catch {
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Projects/frodo-fpga/frodo-fpga.cache/wt [current_project]
   set_property parent.project_path C:/Projects/frodo-fpga/frodo-fpga.xpr [current_project]
-  set_property ip_repo_paths C:/Projects/ip_repo [current_project]
+  set_property ip_repo_paths {
+  C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0
+  C:/Projects/ip_repo
+} [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Projects/frodo-fpga/frodo-fpga.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]

@@ -8,162 +8,353 @@
 
 #include "frodo_macrify.h"
 
-int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
-{ // Generate-and-multiply: generate matrix A (N x N) row-wise, multiply by s on the right.
-  // Inputs: s, e (N x N_BAR)
-  // Output: out = A*s + e (N x N_BAR)
-    int i, j, k;
-    ALIGN_HEADER(32) int16_t a_row[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
+/*************************************************************************************************************
+***
+***	FRODO_MUL_ADD_AS_PLUS_E
+***
+**************************************************************************************************************/
 
-    for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
-        *((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
-    }
+///////// ORIGINAL
 
-#if defined(USE_AES128_FOR_A)
-    int16_t a_row_temp[4*PARAMS_N] = {0};                       // Take four lines of A at once
-#if !defined(USE_OPENSSL)
-    uint8_t aes_key_schedule[16*11];
-    AES128_load_schedule(seed_A, aes_key_schedule);
-#else
-    EVP_CIPHER_CTX *aes_key_schedule;
-    int len;
-    if (!(aes_key_schedule = EVP_CIPHER_CTX_new())) handleErrors();
-    if (1 != EVP_EncryptInit_ex(aes_key_schedule, EVP_aes_128_ecb(), NULL, seed_A, NULL)) handleErrors();
-#endif
+//int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+//{ // Generate-and-multiply: generate matrix A (N x N) row-wise, multiply by s on the right.
+//  // Inputs: s, e (N x N_BAR)
+//  // Output: out = A*s + e (N x N_BAR)
+//    int i, j, k;
+//    ALIGN_HEADER(32) int16_t a_row[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
+//
+//    for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
+//        *((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
+//    }
+//
+//#if defined(USE_AES128_FOR_A)
+//    int16_t a_row_temp[4*PARAMS_N] = {0};                       // Take four lines of A at once
+//#if !defined(USE_OPENSSL)
+//    uint8_t aes_key_schedule[16*11];
+//    AES128_load_schedule(seed_A, aes_key_schedule);
+//#else
+//    EVP_CIPHER_CTX *aes_key_schedule;
+//    int len;
+//    if (!(aes_key_schedule = EVP_CIPHER_CTX_new())) handleErrors();
+//    if (1 != EVP_EncryptInit_ex(aes_key_schedule, EVP_aes_128_ecb(), NULL, seed_A, NULL)) handleErrors();
+//#endif
+//
+//    for (j = 0; j < PARAMS_N; j += PARAMS_STRIPE_STEP) {
+//        a_row_temp[j + 1 + 0*PARAMS_N] = UINT16_TO_LE(j);       // Loading values in the little-endian order
+//        a_row_temp[j + 1 + 1*PARAMS_N] = UINT16_TO_LE(j);
+//        a_row_temp[j + 1 + 2*PARAMS_N] = UINT16_TO_LE(j);
+//        a_row_temp[j + 1 + 3*PARAMS_N] = UINT16_TO_LE(j);
+//    }
+//
+//    for (i = 0; i < PARAMS_N; i += 4) {
+//        for (j = 0; j < PARAMS_N; j += PARAMS_STRIPE_STEP) {    // Go through A, four rows at a time
+//            a_row_temp[j + 0*PARAMS_N] = UINT16_TO_LE(i+0);     // Loading values in the little-endian order
+//            a_row_temp[j + 1*PARAMS_N] = UINT16_TO_LE(i+1);
+//            a_row_temp[j + 2*PARAMS_N] = UINT16_TO_LE(i+2);
+//            a_row_temp[j + 3*PARAMS_N] = UINT16_TO_LE(i+3);
+//        }
+//
+//#if !defined(USE_OPENSSL)
+//        AES128_ECB_enc_sch((uint8_t*)a_row_temp, 4*PARAMS_N*sizeof(int16_t), aes_key_schedule, (uint8_t*)a_row);
+//#else
+//        if (1 != EVP_EncryptUpdate(aes_key_schedule, (uint8_t*)a_row, &len, (uint8_t*)a_row_temp, 4*PARAMS_N*sizeof(int16_t))) handleErrors();
+//#endif
+//#elif defined (USE_SHAKE128_FOR_A)
+//#if defined(WINDOWS) | !defined(USE_AVX2)
+//    uint8_t seed_A_separated[2 + BYTES_SEED_A];
+//    uint16_t* seed_A_origin = (uint16_t*)&seed_A_separated;
+//    memcpy(&seed_A_separated[2], seed_A, BYTES_SEED_A);
+//    for (i = 0; i < PARAMS_N; i += 4) {
+//        seed_A_origin[0] = UINT16_TO_LE(i + 0);
+//        shake128((unsigned char*)(a_row + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+//        seed_A_origin[0] = UINT16_TO_LE(i + 1);
+//        shake128((unsigned char*)(a_row + 1*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+//        seed_A_origin[0] = UINT16_TO_LE(i + 2);
+//        shake128((unsigned char*)(a_row + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+//        seed_A_origin[0] = UINT16_TO_LE(i + 3);
+//        shake128((unsigned char*)(a_row + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+//#else
+//    uint8_t seed_A_separated_0[2 + BYTES_SEED_A];
+//    uint8_t seed_A_separated_1[2 + BYTES_SEED_A];
+//    uint8_t seed_A_separated_2[2 + BYTES_SEED_A];
+//    uint8_t seed_A_separated_3[2 + BYTES_SEED_A];
+//    uint16_t* seed_A_origin_0 = (uint16_t*)&seed_A_separated_0;
+//    uint16_t* seed_A_origin_1 = (uint16_t*)&seed_A_separated_1;
+//    uint16_t* seed_A_origin_2 = (uint16_t*)&seed_A_separated_2;
+//    uint16_t* seed_A_origin_3 = (uint16_t*)&seed_A_separated_3;
+//    memcpy(&seed_A_separated_0[2], seed_A, BYTES_SEED_A);
+//    memcpy(&seed_A_separated_1[2], seed_A, BYTES_SEED_A);
+//    memcpy(&seed_A_separated_2[2], seed_A, BYTES_SEED_A);
+//    memcpy(&seed_A_separated_3[2], seed_A, BYTES_SEED_A);
+//    for (i = 0; i < PARAMS_N; i += 4) {
+//        seed_A_origin_0[0] = UINT16_TO_LE(i + 0);
+//        seed_A_origin_1[0] = UINT16_TO_LE(i + 1);
+//        seed_A_origin_2[0] = UINT16_TO_LE(i + 2);
+//        seed_A_origin_3[0] = UINT16_TO_LE(i + 3);
+//        shake128_4x((unsigned char*)(a_row), (unsigned char*)(a_row + PARAMS_N), (unsigned char*)(a_row + 2*PARAMS_N), (unsigned char*)(a_row + 3*PARAMS_N),
+//                    (unsigned long long)(2*PARAMS_N), seed_A_separated_0, seed_A_separated_1, seed_A_separated_2, seed_A_separated_3, 2 + BYTES_SEED_A);
+//#endif
+//#endif
+//        for (k = 0; k < 4 * PARAMS_N; k++) {
+//            a_row[k] = LE_TO_UINT16(a_row[k]);
+//        }
+//        for (k = 0; k < PARAMS_NBAR; k++) {
+//            uint16_t sum[4] = {0};
+//            for (j = 0; j < PARAMS_N; j++) {                    // Matrix-vector multiplication
+//                uint16_t sp = s[k*PARAMS_N + j];
+//                sum[0] += a_row[0*PARAMS_N + j] * sp;           // Go through four lines with same s
+//                sum[1] += a_row[1*PARAMS_N + j] * sp;
+//                sum[2] += a_row[2*PARAMS_N + j] * sp;
+//                sum[3] += a_row[3*PARAMS_N + j] * sp;
+//            }
+//            out[(i+0)*PARAMS_NBAR + k] += sum[0];
+//            out[(i+2)*PARAMS_NBAR + k] += sum[2];
+//            out[(i+1)*PARAMS_NBAR + k] += sum[1];
+//            out[(i+3)*PARAMS_NBAR + k] += sum[3];
+//        }
+//    }
+//
+//#if defined(USE_AES128_FOR_A)
+//    AES128_free_schedule(aes_key_schedule);
+//#endif
+//
+//#if 0
+//	int16_t max = 0, min = 0;
+//	printf("A:\n");
+//	for (int i = 0; i < 2560; i++)
+//	{
+//		printf("%d ", a_row[i]);
+//		if (max < a_row[i])
+//			max = a_row[i];
+//
+//		if (min > a_row[i])
+//			min = a_row[i];
+//	}
+//	printf("\nMax: %d | Min: %d\n", max, min);
+//#endif
+//    return 1;
+//}
 
-    for (j = 0; j < PARAMS_N; j += PARAMS_STRIPE_STEP) {
-        a_row_temp[j + 1 + 0*PARAMS_N] = UINT16_TO_LE(j);       // Loading values in the little-endian order
-        a_row_temp[j + 1 + 1*PARAMS_N] = UINT16_TO_LE(j);
-        a_row_temp[j + 1 + 2*PARAMS_N] = UINT16_TO_LE(j);
-        a_row_temp[j + 1 + 3*PARAMS_N] = UINT16_TO_LE(j);
-    }
+//////// END
 
-    for (i = 0; i < PARAMS_N; i += 4) {
-        for (j = 0; j < PARAMS_N; j += PARAMS_STRIPE_STEP) {    // Go through A, four rows at a time
-            a_row_temp[j + 0*PARAMS_N] = UINT16_TO_LE(i+0);     // Loading values in the little-endian order
-            a_row_temp[j + 1*PARAMS_N] = UINT16_TO_LE(i+1);
-            a_row_temp[j + 2*PARAMS_N] = UINT16_TO_LE(i+2);
-            a_row_temp[j + 3*PARAMS_N] = UINT16_TO_LE(i+3);
-        }
-
-#if !defined(USE_OPENSSL)
-        AES128_ECB_enc_sch((uint8_t*)a_row_temp, 4*PARAMS_N*sizeof(int16_t), aes_key_schedule, (uint8_t*)a_row);
-#else
-        if (1 != EVP_EncryptUpdate(aes_key_schedule, (uint8_t*)a_row, &len, (uint8_t*)a_row_temp, 4*PARAMS_N*sizeof(int16_t))) handleErrors();
-#endif
-#elif defined (USE_SHAKE128_FOR_A)
-#if defined(WINDOWS) | !defined(USE_AVX2)
-    uint8_t seed_A_separated[2 + BYTES_SEED_A];
-    uint16_t* seed_A_origin = (uint16_t*)&seed_A_separated;
-    memcpy(&seed_A_separated[2], seed_A, BYTES_SEED_A);
-    for (i = 0; i < PARAMS_N; i += 4) {
-        seed_A_origin[0] = UINT16_TO_LE(i + 0);
-        shake128((unsigned char*)(a_row + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
-        seed_A_origin[0] = UINT16_TO_LE(i + 1);
-        shake128((unsigned char*)(a_row + 1*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
-        seed_A_origin[0] = UINT16_TO_LE(i + 2);
-        shake128((unsigned char*)(a_row + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
-        seed_A_origin[0] = UINT16_TO_LE(i + 3);
-        shake128((unsigned char*)(a_row + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
-#else
-    uint8_t seed_A_separated_0[2 + BYTES_SEED_A];
-    uint8_t seed_A_separated_1[2 + BYTES_SEED_A];
-    uint8_t seed_A_separated_2[2 + BYTES_SEED_A];
-    uint8_t seed_A_separated_3[2 + BYTES_SEED_A];
-    uint16_t* seed_A_origin_0 = (uint16_t*)&seed_A_separated_0;
-    uint16_t* seed_A_origin_1 = (uint16_t*)&seed_A_separated_1;
-    uint16_t* seed_A_origin_2 = (uint16_t*)&seed_A_separated_2;
-    uint16_t* seed_A_origin_3 = (uint16_t*)&seed_A_separated_3;
-    memcpy(&seed_A_separated_0[2], seed_A, BYTES_SEED_A);
-    memcpy(&seed_A_separated_1[2], seed_A, BYTES_SEED_A);
-    memcpy(&seed_A_separated_2[2], seed_A, BYTES_SEED_A);
-    memcpy(&seed_A_separated_3[2], seed_A, BYTES_SEED_A);
-    for (i = 0; i < PARAMS_N; i += 4) {
-        seed_A_origin_0[0] = UINT16_TO_LE(i + 0);
-        seed_A_origin_1[0] = UINT16_TO_LE(i + 1);
-        seed_A_origin_2[0] = UINT16_TO_LE(i + 2);
-        seed_A_origin_3[0] = UINT16_TO_LE(i + 3);
-        shake128_4x((unsigned char*)(a_row), (unsigned char*)(a_row + PARAMS_N), (unsigned char*)(a_row + 2*PARAMS_N), (unsigned char*)(a_row + 3*PARAMS_N),
-                    (unsigned long long)(2*PARAMS_N), seed_A_separated_0, seed_A_separated_1, seed_A_separated_2, seed_A_separated_3, 2 + BYTES_SEED_A);
-#endif
-#endif
-        for (k = 0; k < 4 * PARAMS_N; k++) {
-            a_row[k] = LE_TO_UINT16(a_row[k]);
-        }
-        for (k = 0; k < PARAMS_NBAR; k++) {
-            uint16_t sum[4] = {0};
-            for (j = 0; j < PARAMS_N; j++) {                    // Matrix-vector multiplication
-                uint16_t sp = s[k*PARAMS_N + j];
-                sum[0] += a_row[0*PARAMS_N + j] * sp;           // Go through four lines with same s
-                sum[1] += a_row[1*PARAMS_N + j] * sp;
-                sum[2] += a_row[2*PARAMS_N + j] * sp;
-                sum[3] += a_row[3*PARAMS_N + j] * sp;
-            }
-            out[(i+0)*PARAMS_NBAR + k] += sum[0];
-            out[(i+2)*PARAMS_NBAR + k] += sum[2];
-            out[(i+1)*PARAMS_NBAR + k] += sum[1];
-            out[(i+3)*PARAMS_NBAR + k] += sum[3];
-        }
-    }
-
-#if defined(USE_AES128_FOR_A)
-    AES128_free_schedule(aes_key_schedule);
-#endif
-
-#if 0
-	int16_t max = 0, min = 0;
-	printf("A:\n");
-	for (int i = 0; i < 2560; i++)
-	{
-		printf("%d ", a_row[i]);
-		if (max < a_row[i])
-			max = a_row[i];
-
-		if (min > a_row[i])
-			min = a_row[i];
-	}
-	printf("\nMax: %d | Min: %d\n", max, min);
-#endif
-    return 1;
-}
-
-void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
+// Auxiliar function HW
+void frodo_mul_add_as_plus_e_hw_func(uint32_t * A, uint32_t * S, uint32_t * B, uint8_t send_s, uint8_t send_data)
 {
 	//Variables
 	int i;
 	u32 readGpio = 0x0;
 
-	//Sending data S
-	for(i = 0; i < 16; i++)
-	{
-		memoryMatrixS[i] = S[i];
-//		print_debug(DEBUG_MATRIX_MM, "\tSent data S[%d]: 0x%lx\n", i, S[i]);
-	}
+//	//Set start pin high
+//	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high
 
-	//Sending data A
-	for(i = 0; i < 1280; i++)
-	{
-		memoryMatrixA[i] = A[i];
-//		print_debug(DEBUG_MATRIX_MM, "\tSent data A[%d]: 0x%lx\n", i, A[i]);
-	}
+//	for(j = 0; j < 160; j++)
+//	{
 
-	//Reading busy bit
-	readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1); //Check done pin
-	while(readGpio == 0x1)
-	{
-		readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1);
-	}
-//	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
+		//Sending data A
+		for(i = 0; i < 1280; i++)
+		{
+			memoryMatrixA2[i] = A[i];
+//			if(i < 20 || i > 1200)
+//			if(i >= PARAMS_N && i < PARAMS_N + 20 )
+//				print_debug(DEBUG_MATRIX_MM, "\tSent data A2[%d]: 0x%lx\n", i, A[i]);
+		}
+
+		//Sending data S
+		if(send_s)
+		{
+			for(i = 0; i < 2560; i++)
+			{
+				memoryMatrixS2[i] = S[i];
+	//			if(i < 20 || i > 2500)
+	//			if(i >= PARAMS_N && i < PARAMS_N + 20 )
+	//				print_debug(DEBUG_MATRIX_MM, "\tSent data S2[%d]: 0x%lx\n", i, S[i]);
+			}
+		}
+
+
+		//Reading busy bit
+		readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix2, 1); //Check done pin
+		while(readGpio == 0x1)
+		{
+			readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix2, 1);
+		}
+//		print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
+//	}
 
 	//Interpret data
-	for (i = 0; i < 2560; i++)
+	if(send_data)
 	{
-		B[i] = memoryMatrixB[i];
-//		if(i < 20 || i > 2500)
-//			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+		for (i = 0; i < 2560; i++)
+		{
+			B[i] = memoryMatrixB2[i];
+	//		if(i < 20 || i > 2500)
+	//			print_debug(DEBUG_MATRIX_MM, "\tB2[%d]: 0x%lx\n", i, B[i]);
+		}
 	}
+
+
+//	//Set start pin low
+//	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); // Start gpio set low
 }
 
+int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+//int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+{ // Generate-and-multiply: generate matrix A (N x N) row-wise, multiply by s on the right.
+  // Inputs: s, e (N x N_BAR)
+  // Output: out = A*s + e (N x N_BAR)
+	int i, k;
+	ALIGN_HEADER(32) int16_t a_row[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
+
+	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
+		*((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
+	}
+
+	uint8_t seed_A_separated[2 + BYTES_SEED_A];
+	uint16_t* seed_A_origin = (uint16_t*)&seed_A_separated;
+	uint32_t b_matrix[PARAMS_N*PARAMS_NBAR/2];
+	memcpy(&seed_A_separated[2], seed_A, BYTES_SEED_A);
+	uint8_t req_data = 0;
+	uint8_t send_s = 1;
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high
+
+	for (i = 0; i < PARAMS_N; i += 4) {
+		seed_A_origin[0] = UINT16_TO_LE(i + 0);
+		shake128((unsigned char*)(a_row + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+		seed_A_origin[0] = UINT16_TO_LE(i + 1);
+		shake128((unsigned char*)(a_row + 1*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+		seed_A_origin[0] = UINT16_TO_LE(i + 2);
+		shake128((unsigned char*)(a_row + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+		seed_A_origin[0] = UINT16_TO_LE(i + 3);
+		shake128((unsigned char*)(a_row + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+
+//		for (k = 0; k < 4 * PARAMS_N; k++) {
+//			a_row[k] = LE_TO_UINT16(a_row[k]);
+//		}
+
+		if(i == PARAMS_N - 4)
+			req_data = 1;
+
+		if(i > 0)
+			send_s = 0;
+
+		frodo_mul_add_as_plus_e_hw_func((uint32_t *)a_row, (uint32_t *)s, b_matrix, send_s, req_data); //TODO: adicionar um sinal de last, para pedir somente 1x os dados.
+	}
+
+	//Set start pin low
+	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); // Start gpio set low
+
+	for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
+	{
+		if((k & 0x1) == 0)
+			out[k] += b_matrix[k >> 1] >> 16;
+		else
+			out[k] += b_matrix[k >> 1] & 0xffff;
+	}
+
+	return 1;
+}
+
+int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+//int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+{ // Generate-and-multiply: generate matrix A (N x N) row-wise, multiply by s on the right.
+  // Inputs: s, e (N x N_BAR)
+  // Output: out = A*s + e (N x N_BAR)
+	int i, j, k;
+	ALIGN_HEADER(32) int16_t a_row[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
+
+//	uint16_t out2[PARAMS_N*PARAMS_NBAR];
+
+	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
+		*((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
+	}
+
+//	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
+//		*((uint32_t*)&out2[i]) = *((uint32_t*)&e[i]);
+//	}
+
+	uint8_t seed_A_separated[2 + BYTES_SEED_A];
+	uint16_t* seed_A_origin = (uint16_t*)&seed_A_separated;
+//	uint32_t b_matrix[PARAMS_N*PARAMS_NBAR/2] = {0};
+	memcpy(&seed_A_separated[2], seed_A, BYTES_SEED_A);
+
+	//Debug
+	//Set start pin high
+//	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+
+	for (i = 0; i < PARAMS_N; i += 4) {
+		seed_A_origin[0] = UINT16_TO_LE(i + 0);
+		shake128((unsigned char*)(a_row + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+		seed_A_origin[0] = UINT16_TO_LE(i + 1);
+		shake128((unsigned char*)(a_row + 1*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+		seed_A_origin[0] = UINT16_TO_LE(i + 2);
+		shake128((unsigned char*)(a_row + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+		seed_A_origin[0] = UINT16_TO_LE(i + 3);
+		shake128((unsigned char*)(a_row + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+
+		for (k = 0; k < 4 * PARAMS_N; k++) {
+			a_row[k] = LE_TO_UINT16(a_row[k]);
+		}
+
+		for (k = 0; k < PARAMS_NBAR; k++) {
+			uint16_t sum[4] = {0};
+			for (j = 0; j < PARAMS_N; j++) {                    // Matrix-vector multiplication
+				uint16_t sp = s[k*PARAMS_N + j];
+				sum[0] += a_row[0*PARAMS_N + j] * sp;           // Go through four lines with same s
+				sum[1] += a_row[1*PARAMS_N + j] * sp;
+				sum[2] += a_row[2*PARAMS_N + j] * sp;
+				sum[3] += a_row[3*PARAMS_N + j] * sp;
+			}
+			out[(i+0)*PARAMS_NBAR + k] += sum[0];
+			out[(i+2)*PARAMS_NBAR + k] += sum[2];
+			out[(i+1)*PARAMS_NBAR + k] += sum[1];
+			out[(i+3)*PARAMS_NBAR + k] += sum[3];
+
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+0)*PARAMS_NBAR + k, sum[0]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+1)*PARAMS_NBAR + k, sum[1]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+2)*PARAMS_NBAR + k, sum[2]);
+//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+3)*PARAMS_NBAR + k, sum[3]);
+		}
+
+		//Debug
+//		frodo_mul_add_as_plus_e_hw_func((uint32_t *)a_row, (uint32_t *)s, b_matrix);
+
+//		for (k = 0; k < 32; k++)
+//		{
+//			if((k & 0x1) == 0)
+//				print_debug(DEBUG_MATRIX_MM, "\tb[%d]: 0x%lx\n", k, b_matrix[k >> 1] >> 16);
+//			else
+//				print_debug(DEBUG_MATRIX_MM, "\tb[%d]: 0x%lx\n", k, b_matrix[k >> 1] & 0xffff);
+//		}
+//		print_debug(DEBUG_MATRIX_MM, "\tStop\n");
+		//End debug
+
+	} //for i
+
+	//Set start pin low
+//	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); // Start gpio set low
+
+//	for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
+//	{
+//		if((k & 0x1) == 0)
+//			out2[k] += b_matrix[k >> 1] >> 16;
+//		else
+//			out2[k] += b_matrix[k >> 1] & 0xffff;
+//
+//		if(out[k] != out2[k])
+//			print_debug(DEBUG_MATRIX_MM, "\tErro em %d\n", k);
+//
+//	}
+
+	return 1;
+}
+
+/*************************************************************************************************************
+***
+***	FRODO_MUL_ADD_SA_PLUS_E
+***
+**************************************************************************************************************/
 ///////// ORIGINAL
 
 //int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
@@ -176,7 +367,7 @@ void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
 //		*((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
 //	}
 //
-////	uint16_t out2[PARAMS_N*PARAMS_NBAR*2];
+////	uint16_t out2[PARAMS_N*PARAMS_NBAR];
 ////	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
 ////		*((uint32_t*)&out2[i]) = *((uint32_t*)&e[i]);
 ////	}
@@ -504,6 +695,9 @@ void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
 //	return 1;
 //}
 
+///////// END
+
+//Software
 int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
 { // Generate-and-multiply: generate matrix A (N x N) column-wise, multiply by s' on the left.
   // Inputs: s', e' (N_BAR x N)
@@ -554,6 +748,45 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 	return 1;
 }
 
+// Auxiliar function HW
+void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
+{
+	//Variables
+	int i;
+	u32 readGpio = 0x0;
+
+	//Sending data S
+	for(i = 0; i < 16; i++)
+	{
+		memoryMatrixS[i] = S[i];
+//		print_debug(DEBUG_MATRIX_MM, "\tSent data S[%d]: 0x%lx\n", i, S[i]);
+	}
+
+	//Sending data A
+	for(i = 0; i < 1280; i++)
+	{
+		memoryMatrixA[i] = A[i];
+//		print_debug(DEBUG_MATRIX_MM, "\tSent data A[%d]: 0x%lx\n", i, A[i]);
+	}
+
+	//Reading busy bit
+	readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1); //Check done pin
+	while(readGpio == 0x1)
+	{
+		readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1);
+	}
+//	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
+
+	//Interpret data
+	for (i = 0; i < 2560; i++)
+	{
+		B[i] = memoryMatrixB[i];
+//		if(i < 20 || i > 2500)
+//			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+	}
+}
+
+//Hardware
 int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
 { // Generate-and-multiply: generate matrix A (N x N) column-wise, multiply by s' on the left.
   // Inputs: s', e' (N_BAR x N)
@@ -628,6 +861,11 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 	return 1;
 }
 
+/*************************************************************************************************************
+***
+***	FRODO_MUL_ADD_SB_PLUS_E
+***
+**************************************************************************************************************/
 void frodo_mul_add_sb_plus_e(uint16_t *out, const uint16_t *b, const uint16_t *s, const uint16_t *e)
 { // Multiply by s on the left
   // Inputs: b (N x N_BAR), s (N_BAR x N), e (N_BAR x N_BAR)
@@ -645,6 +883,11 @@ void frodo_mul_add_sb_plus_e(uint16_t *out, const uint16_t *b, const uint16_t *s
 	}
 }
 
+/*************************************************************************************************************
+***
+***	FRODO_MUL_BS
+***
+**************************************************************************************************************/
 void frodo_mul_bs(uint16_t *out, const uint16_t *b, const uint16_t *s)
 { // Multiply by s on the right
   // Inputs: b (N_BAR x N), s (N x N_BAR)
@@ -662,6 +905,11 @@ void frodo_mul_bs(uint16_t *out, const uint16_t *b, const uint16_t *s)
     }
 }
 
+/*************************************************************************************************************
+***
+***	FRODO_SUB
+***
+**************************************************************************************************************/
 void frodo_sub(uint16_t *out, const uint16_t *a, const uint16_t *b)
 { // Subtract a and b
   // Inputs: a, b (N_BAR x N_BAR)
@@ -672,6 +920,11 @@ void frodo_sub(uint16_t *out, const uint16_t *a, const uint16_t *b)
     }
 }
 
+/*************************************************************************************************************
+***
+***	FRODO_ADD
+***
+**************************************************************************************************************/
 void frodo_add(uint16_t *out, const uint16_t *a, const uint16_t *b)
 { // Add a and b
   // Inputs: a, b (N_BAR x N_BAR)
@@ -682,6 +935,11 @@ void frodo_add(uint16_t *out, const uint16_t *a, const uint16_t *b)
     }
 }
 
+/*************************************************************************************************************
+***
+***	FRODO_KEY_ENCODE
+***
+**************************************************************************************************************/
 void frodo_key_encode(uint16_t *out, const uint16_t *in)
 { // Encoding
     unsigned int i, j, npieces_word = 8;
@@ -701,6 +959,11 @@ void frodo_key_encode(uint16_t *out, const uint16_t *in)
     }
 }
 
+/*************************************************************************************************************
+***
+***	FRODO_KEY_DECODE
+***
+**************************************************************************************************************/
 void frodo_key_decode(uint16_t *out, const uint16_t *in)
 { // Decoding
     unsigned int i, j, index = 0, npieces_word = 8;
