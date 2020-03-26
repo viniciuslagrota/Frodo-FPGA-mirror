@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ENABLE_MATRIX_HW" key="selection"/>
+		<item value="thousandthsKeccakHwMMMatrixSaHwAsSw" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ENABLE_MATRIX_HW"/>
-			<item value="ENABLE_MATRIX_SW"/>
-			<item value="_hw_"/>
-			<item value="Hw"/>
-			<item value="HW"/>
-			<item value="_sw_"/>
-			<item value="Sw"/>
-			<item value="SW"/>
+			<item value="thousandthsKeccakHwMMMatrixHw"/>
+			<item value="wholeKeccakHwMMMatrixHw"/>
+			<item value="fRelativeKeccakHwMMMatrixHw"/>
+			<item value="thousandthsKeccakHwMatrixHw"/>
+			<item value="wholeKeccakHwMatrixHw"/>
+			<item value="fRelativeKeccakHwMatrixHw"/>
+			<item value="thousandthsKeccakSwMatrixHw"/>
+			<item value="wholeKeccakSwMatrixHw"/>
 		</list>
 		<list key="replacehistory">
-			<item value="_hw_mm_"/>
-			<item value="HwMM"/>
-			<item value="HW_MM"/>
-			<item value="_hw_"/>
-			<item value="Hw"/>
-			<item value="HW"/>
-			<item value="_sw_mm_"/>
-			<item value="codeFeaturesType = t_keypair_keccak_sw_mm_matrix_hw"/>
+			<item value="thousandthsKeccakHwMMMatrixSaHwAsSw"/>
+			<item value="wholeKeccakHwMMMatrixSaHwAsSw"/>
+			<item value="fRelativeKeccakHwMMMatrixSaHwAsSw"/>
+			<item value="thousandthsKeccakHwMatrixSaHwAsSw"/>
+			<item value="wholeKeccakHwMatrixSaHwAsSw"/>
+			<item value="fRelativeKeccakHwMatrixSaHwAsSw"/>
+			<item value="thousandthsKeccakSwMatrixSaHwAsSw"/>
+			<item value="wholeKeccakSwMatrixSaHwAsSw"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
