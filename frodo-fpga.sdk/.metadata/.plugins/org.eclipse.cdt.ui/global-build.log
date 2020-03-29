@@ -1,34 +1,1304 @@
-22:33:08 **** Incremental Build of configuration Debug for project frodo_sdk ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for 'main-build'.
-22:33:44 **** Incremental Build of configuration Debug for project frodo_sdk ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-'Building file: ../src/include/test_kem.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
-In file included from ../src/include/test_kem.c:11:
-../../frodo_sdk_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+16:27:21 **** Build of project frodo_sdk_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/keccak_f1600_mm_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/keccak_f1600_mm_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/llfifo_v5_3/src"
+make -C ps7_cortexa9_0/libsrc/llfifo_v5_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/keccak_f1600_mm_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/keccak_f1600_mm_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling keccak_f1600_mm_ip..."
+keccak_f1600_mm_ip_selftest.c: In function 'KECCAK_F1600_MM_IP_Reg_SelfTest':
+keccak_f1600_mm_ip_selftest.c:52:67: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( KECCAK_F1600_MM_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                                   ^~
+keccak_f1600_mm_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/llfifo_v5_3/src"
+make -C ps7_cortexa9_0/libsrc/llfifo_v5_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling llfifo"
+"Running Make libs in ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling matrix_as_plus_e_mm_ip..."
+matrix_as_plus_e_mm_ip_selftest.c: In function 'MATRIX_AS_PLUS_E_MM_IP_Reg_SelfTest':
+matrix_as_plus_e_mm_ip_selftest.c:52:71: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( MATRIX_AS_PLUS_E_MM_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                                       ^~
+matrix_as_plus_e_mm_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling matrix_sa_plus_e_mm_ip..."
+matrix_sa_plus_e_mm_ip_selftest.c: In function 'MATRIX_SA_PLUS_E_MM_IP_Reg_SelfTest':
+matrix_sa_plus_e_mm_ip_selftest.c:52:71: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( MATRIX_SA_PLUS_E_MM_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                                       ^~
+matrix_sa_plus_e_mm_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
  #pragma message ("For the sleep routines, Global timer is being used")
          ^~~~~~~
-'Finished building: ../src/include/test_kem.c'
-' '
-'Building target: frodo_sdk.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: frodo_sdk.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112384	   2712	 138224	 253320	  3dd88	frodo_sdk.elf
-'Finished building: frodo_sdk.elf.size'
-' '
-22:33:59 **** Incremental Build of configuration Debug for project frodo_sdk ****
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+16:27:54 **** Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
-' '
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_KEM640.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_KEM640.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_KEM640.d" -MT"src/include/test_KEM640.o" -o "src/include/test_KEM640.o" "../src/include/test_KEM640.c"
+Finished building: ../src/include/test_KEM640.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130040	   2752	2104368	2237160	 2222e8	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:29:11 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:220:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:220:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:220:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:220:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:148: warning: unused variable 't_total_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:148: warning: unused variable 't_total_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:148: warning: unused variable 't_total_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:148: warning: unused variable 't_total_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:148: warning: unused variable 't_total_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:148: warning: unused variable 't_total_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:148: warning: unused variable 't_total_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:148: warning: unused variable 't_total_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 133904	   2752	2104368	2241024	 223200	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:29:57 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 133672	   2752	2104368	2240792	 223118	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:34:22 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:36:29 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:37:19 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 129808	   2752	2104368	2236928	 222200	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:39:54 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 129616	   2752	2104368	2236736	 222140	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:40:06 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:41:51 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 129808	   2752	2104368	2236928	 222200	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:42:02 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:42:57 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:220:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:220:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:220:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:220:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:148: warning: unused variable 't_total_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:219:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_matrix_sa_hw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:148: warning: unused variable 't_total_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:218:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_hw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:217:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:148: warning: unused variable 't_total_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:216:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_matrix_sa_sw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:148: warning: unused variable 't_total_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:215:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_sw_as_hw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:214:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:148: warning: unused variable 't_total_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:213:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_matrix_sa_hw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:148: warning: unused variable 't_total_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:212:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_hw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:157: warning: unused variable 't_total_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:114: warning: unused variable 't_dec_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:71: warning: unused variable 't_enc_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:211:24: warning: unused variable 't_keypair_keccak_hw_mm_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:148: warning: unused variable 't_total_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:108: warning: unused variable 't_dec_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:68: warning: unused variable 't_enc_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:210:24: warning: unused variable 't_keypair_keccak_hw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_hw_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_matrix_sa_sw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:148: warning: unused variable 't_total_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                                                                                                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:108: warning: unused variable 't_dec_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                                                                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:68: warning: unused variable 't_enc_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:209:24: warning: unused variable 't_keypair_keccak_sw_matrix_sa_sw_as_sw' [-Wunused-variable]
+  volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 133480	   2752	2104368	2240600	 223058	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:43:27 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 129616	   2752	2104368	2236736	 222140	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:44:19 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/fips202.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
+../src/include/fips202.c: In function 'keccak_absorb':
+../src/include/fips202.c:349:5: warning: implicit declaration of function 'KeccakF1600_StatePermute'; did you mean 'KeccakF1600_StatePermute_SW'? [-Wimplicit-function-declaration]
+     KeccakF1600_StatePermute(s);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+     KeccakF1600_StatePermute_SW
+Finished building: ../src/include/fips202.c
+ 
+Building file: ../src/include/frodo_macrify.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_as_plus_e_SW':
+../src/include/frodo_macrify.c:284:1: warning: multi-line comment [-Wcomment]
+ // XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
+ ^
+../src/include/frodo_macrify.c: In function 'frodo_mul_add_sa_plus_e_HW':
+../src/include/frodo_macrify.c:800:6: warning: unused variable 't' [-Wunused-variable]
+  int t=0;
+      ^
+Finished building: ../src/include/frodo_macrify.c
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building file: ../src/include/kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
+Finished building: ../src/include/kem.c
+ 
+Building file: ../src/include/noise.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
+Finished building: ../src/include/noise.c
+ 
+Building file: ../src/include/random.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
+Finished building: ../src/include/random.c
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
+../src/include/test_kem.c:152:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
+../src/include/test_kem.c:162:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/include/test_kem.c
+ 
+Building file: ../src/include/util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
+Finished building: ../src/include/util.c
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 129744	   2752	2104368	2236864	 2221c0	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:44:33 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:45:24 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/keccak_f1600.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
+In file included from ../src/include/keccak_f1600.h:16,
+                 from ../src/include/keccak_f1600.c:9:
+../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
+../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
+../src/include/global_def.h:98:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+Finished building: ../src/include/keccak_f1600.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 129808	   2752	2104368	2236928	 222200	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+16:45:32 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
 make: Nothing to be done for 'main-build'.

@@ -1,0 +1,243 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Mar  3 19:07:42 2020
+| Host         : Vinicius-PC running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file keccak_f1600_ip_v1_0_control_sets_placed.rpt
+| Design       : keccak_f1600_ip_v1_0
+| Device       : xc7z010
+-------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   165 |
+|    Minimum number of control sets                        |   165 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    27 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   165 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   160 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              10 |            5 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              38 |           15 |
+| Yes          | No                    | No                     |            7072 |         2524 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             173 |           58 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------+----------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+|       Clock Signal       |                          Enable Signal                         |                       Set/Reset Signal                      | Slice Load Count | Bel Load Count |
++--------------------------+----------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/done_i_1_n_0                            | keccak_f1600_core_inst/p_0_in                               |                1 |              1 |
+|  s00_axis_aclk_IBUF_BUFG | reset_timer_OBUF                                               | keccak_f1600_core_inst/done_reg_0                           |                1 |              1 |
+|  m00_axis_aclk_IBUF_BUFG |                                                                |                                                             |                1 |              3 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/write_pointer[5]_i_2__0_n_0 | keccak_f1600_ip_v1_0_M00_AXIS_inst/clear                    |                2 |              6 |
+|  s00_axis_aclk_IBUF_BUFG |                                                                |                                                             |                4 |              7 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[49]_0      |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | s00_axis_aresetn_IBUF                                          | keccak_f1600_ip_v1_0_S00_AXIS_inst/data_o[31]_i_1_n_0       |               12 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/data_o_s[31]_i_1_n_0                    |                                                             |               26 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][0][31]_i_1_n_0                     |                                                             |               22 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][0][63]_i_1_n_0                     |                                                             |               24 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][1][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][1][31]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][2][31]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][2][63]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][3][31]_i_1_n_0                     |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][3][63]_i_1_n_0                     |                                                             |               19 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][4][31]_i_1_n_0                     |                                                             |               18 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][0][31]_i_1_n_0                     |                                                             |               20 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[0][4][63]_i_1_n_0                     |                                                             |               19 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][0][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][1][31]_i_1_n_0                     |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][2][31]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][1][63]_i_1_n_0                     |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[13]_39     |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[12]_9      |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[10]_41     |                                                             |                8 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[0]_12      |                                                             |                9 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[11]_40     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][3][31]_i_1_n_0                     |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][2][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][3][63]_i_1_n_0                     |                                                             |               20 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][4][31]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[1][4][63]_i_1_n_0                     |                                                             |               20 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][0][31]_i_1_n_0                     |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][1][31]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][0][63]_i_1_n_0                     |                                                             |               19 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][1][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][2][31]_i_1_n_0                     |                                                             |               19 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][2][63]_i_1_n_0                     |                                                             |               18 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][3][31]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][3][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][4][31]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[2][4][63]_i_1_n_0                     |                                                             |               19 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][0][31]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][0][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][1][31]_i_1_n_0                     |                                                             |               20 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][1][63]_i_1_n_0                     |                                                             |               20 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][2][31]_i_1_n_0                     |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][2][63]_i_1_n_0                     |                                                             |               18 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][3][31]_i_1_n_0                     |                                                             |               15 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][3][63]_i_1_n_0                     |                                                             |               18 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][4][63]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[3][4][31]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][0][63]_i_1_n_0                     |                                                             |               18 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][0][31]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][1][31]_i_1_n_0                     |                                                             |               19 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][2][31]_i_1_n_0                     |                                                             |               19 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][1][63]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][2][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][3][31]_i_1_n_0                     |                                                             |               18 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][3][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][4][31]_i_1_n_0                     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a[4][4][63]_i_1_n_0                     |                                                             |               17 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[25]_32     |                                                             |               16 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[29]_27     |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/x[0]_i_1_n_0                            | keccak_f1600_core_inst/p_0_in                               |                8 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/y[0]_i_1_n_0                            | keccak_f1600_core_inst/p_0_in                               |                8 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[14]_38     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[16]_8      |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[15]_37     |                                                             |                4 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[18]_35     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[17]_36     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[19]_34     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[1]_48      |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[21]_33     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[20]_7      |                                                             |                4 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[22]_32     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[23]_31     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[25]_30     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[24]_6      |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[27]_28     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[26]_29     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[46]_14     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[28]_5      |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[30]_26     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[2]_47      |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[32]_4      |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[31]_25     |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[34]_23     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[33]_24     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[35]_22     |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[37]_21     |                                                             |                8 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[36]_3      |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[39]_19     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[38]_20     |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[3]_46      |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[40]_2      |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[41]_18     |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[42]_17     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[43]_16     |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[44]_1      |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[45]_15     |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[49]_49     |                                                             |                4 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[4]_11      |                                                             |                8 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[47]_13     |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[48]_0      |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[6]_44      |                                                             |                8 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[5]_45      |                                                             |                7 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[7]_43      |                                                             |                5 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[9]_42      |                                                             |                6 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_S00_AXIS_inst/stream_data_fifo[8]_10      |                                                             |                7 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | m00_axis_aresetn_IBUF                                          | keccak_f1600_ip_v1_0_M00_AXIS_inst/M_AXIS_TDATA[31]_i_1_n_0 |               11 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[4]_49      |                                                             |                9 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[48]_1      |                                                             |               18 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[5]_48      |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[6]_47      |                                                             |               15 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[7]_46      |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[8]_45      |                                                             |               15 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[9]_44      |                                                             |               11 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[12]_41     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[15]_38     |                                                             |               15 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[46]_15     |                                                             |               12 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[37]_24     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[39]_22     |                                                             |               19 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[44]_17     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[2]_11      |                                                             |               10 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[11]_42     |                                                             |               12 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[27]_30     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[45]_16     |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[32]_5      |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[28]_29     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[29]_28     |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[20]_37     |                                                             |               11 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[22]_35     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[33]_3      |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[34]_4      |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[36]_25     |                                                             |               11 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[14]_39     |                                                             |                8 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[17]_7      |                                                             |               12 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[19]_6      |                                                             |               15 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[16]_9      |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[21]_36     |                                                             |               10 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[30]_27     |                                                             |               12 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[31]_26     |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[18]_8      |                                                             |               10 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[26]_31     |                                                             |               15 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[38]_23     |                                                             |               18 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[3]_10      |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[35]_2      |                                                             |               11 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[40]_21     |                                                             |               19 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[13]_40     |                                                             |               12 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[0]_13      |                                                             |                8 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[24]_33     |                                                             |               12 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[42]_19     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[43]_18     |                                                             |               14 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[10]_43     |                                                             |               12 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[47]_14     |                                                             |               16 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[23]_34     |                                                             |               13 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[1]_12      |                                                             |               11 |             32 |
+|  m00_axis_aclk_IBUF_BUFG | keccak_f1600_ip_v1_0_M00_AXIS_inst/stream_data_fifo[41]_20     |                                                             |               14 |             32 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/round_rep[4]_i_1_n_0                    | keccak_f1600_core_inst/p_0_in                               |               15 |             37 |
+|  s00_axis_aclk_IBUF_BUFG |                                                                | keccak_f1600_core_inst/p_0_in                               |               15 |             38 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/c[4]_2                                  |                                                             |              116 |            320 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/d[4]_1                                  |                                                             |               81 |            320 |
+|  s00_axis_aclk_IBUF_BUFG | keccak_f1600_core_inst/a_line[4][4]_27                         |                                                             |              462 |           1600 |
++--------------------------+----------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+
+
+

@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Sun Dec 29 18:03:07 2019
-| Host         : Vinicius-PC running 64-bit major release  (build 9200)
+| Date         : Sat Mar 28 15:36:37 2020
+| Host         : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
 | Command      : report_utilization -file frodoBD_wrapper_utilization_synth.rpt -pb frodoBD_wrapper_utilization_synth.pb
 | Design       : frodoBD_wrapper
 | Device       : 7z010clg400-1
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 15598 |     0 |     17600 | 88.63 |
-|   LUT as Logic             | 15472 |     0 |     17600 | 87.91 |
-|   LUT as Memory            |   126 |     0 |      6000 |  2.10 |
-|     LUT as Distributed RAM |    60 |     0 |           |       |
+| Slice LUTs*                | 13811 |     0 |     17600 | 78.47 |
+|   LUT as Logic             | 13621 |     0 |     17600 | 77.39 |
+|   LUT as Memory            |   190 |     0 |      6000 |  3.17 |
+|     LUT as Distributed RAM |   124 |     0 |           |       |
 |     LUT as Shift Register  |    66 |     0 |           |       |
-| Slice Registers            | 17702 |     0 |     35200 | 50.29 |
-|   Register as Flip Flop    | 17702 |     0 |     35200 | 50.29 |
+| Slice Registers            | 13573 |     0 |     35200 | 38.56 |
+|   Register as Flip Flop    | 13573 |     0 |     35200 | 38.56 |
 |   Register as Latch        |     0 |     0 |     35200 |  0.00 |
-| F7 Muxes                   |   699 |     0 |      8800 |  7.94 |
-| F8 Muxes                   |   256 |     0 |      4400 |  5.82 |
+| F7 Muxes                   |   123 |     0 |      8800 |  1.40 |
+| F8 Muxes                   |     0 |     0 |      4400 |  0.00 |
 +----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 164   |          Yes |         Set |            - |
-| 17538 |          Yes |       Reset |            - |
+| 135   |          Yes |         Set |            - |
+| 13438 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,10 +69,11 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |    2 |     0 |        60 |  3.33 |
-|   RAMB36/FIFO*    |    2 |     0 |        60 |  3.33 |
-|     RAMB36E1 only |    2 |       |           |       |
-|   RAMB18          |    0 |     0 |       120 |  0.00 |
+| Block RAM Tile    |   18 |     0 |        60 | 30.00 |
+|   RAMB36/FIFO*    |   14 |     0 |        60 | 23.33 |
+|     RAMB36E1 only |   14 |       |           |       |
+|   RAMB18          |    8 |     0 |       120 |  6.67 |
+|     RAMB18E1 only |    8 |       |           |       |
 +-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
@@ -80,11 +81,12 @@ Table of Contents
 3. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |        80 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |   12 |     0 |        80 | 15.00 |
+|   DSP48E1 only |   12 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -149,22 +151,24 @@ Table of Contents
 +----------+-------+----------------------+
 | Ref Name |  Used |  Functional Category |
 +----------+-------+----------------------+
-| FDRE     | 17538 |         Flop & Latch |
-| LUT6     |  6192 |                  LUT |
-| LUT5     |  4256 |                  LUT |
-| LUT2     |  4051 |                  LUT |
-| LUT3     |  3812 |                  LUT |
-| MUXF7    |   699 |                MuxFx |
-| LUT4     |   627 |                  LUT |
-| MUXF8    |   256 |                MuxFx |
-| LUT1     |   196 |                  LUT |
-| FDSE     |   164 |         Flop & Latch |
-| CARRY4   |   153 |           CarryLogic |
+| FDRE     | 13438 |         Flop & Latch |
+| LUT6     |  5440 |                  LUT |
+| LUT3     |  5288 |                  LUT |
+| LUT5     |  3766 |                  LUT |
+| LUT2     |  2400 |                  LUT |
+| LUT4     |   746 |                  LUT |
+| LUT1     |   220 |                  LUT |
+| CARRY4   |   212 |           CarryLogic |
+| FDSE     |   135 |         Flop & Latch |
 | BIBUF    |   130 |                   IO |
+| MUXF7    |   123 |                MuxFx |
+| RAMS32   |    64 |   Distributed Memory |
 | RAMD64E  |    60 |   Distributed Memory |
 | SRLC32E  |    47 |   Distributed Memory |
 | SRL16E   |    19 |   Distributed Memory |
-| RAMB36E1 |     2 |         Block Memory |
+| RAMB36E1 |    14 |         Block Memory |
+| DSP48E1  |    12 |     Block Arithmetic |
+| RAMB18E1 |     8 |         Block Memory |
 | PS7      |     1 | Specialized Resource |
 | BUFG     |     1 |                Clock |
 +----------+-------+----------------------+

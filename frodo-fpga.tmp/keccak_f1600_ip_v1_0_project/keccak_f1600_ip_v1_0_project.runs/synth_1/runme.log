@@ -1,0 +1,364 @@
+
+*** Running vivado
+    with args -log keccak_f1600_ip_v1_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source keccak_f1600_ip_v1_0.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source keccak_f1600_ip_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0' already exists; ignoring attempt to add it again.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/projects/frodo-fpga/frodo-fpga.tmp/keccak_f1600_ip_v1_0_project/keccak_f1600_ip_v1_0_project.cache/ip 
+Command: synth_design -top keccak_f1600_ip_v1_0 -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3728 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 483.297 ; gain = 182.477
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_ip_v1_0' [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0.vhd:48]
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_PACKET_SIZE bound to: 50 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'keccak_f1600_ip_v1_0_S00_AXIS' declared at 'c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd:5' bound to instance 'keccak_f1600_ip_v1_0_S00_AXIS_inst' of component 'keccak_f1600_ip_v1_0_S00_AXIS' [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0.vhd:145]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_ip_v1_0_S00_AXIS' [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd:42]
+	Parameter C_AXI_PACKET_SIZE bound to: 50 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_ip_v1_0_S00_AXIS' (1#1) [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0_S00_AXIS.vhd:42]
+	Parameter C_AXI_PACKET_SIZE bound to: 50 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'keccak_f1600_ip_v1_0_M00_AXIS' declared at 'c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0_M00_AXIS.vhd:5' bound to instance 'keccak_f1600_ip_v1_0_M00_AXIS_inst' of component 'keccak_f1600_ip_v1_0_M00_AXIS' [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_ip_v1_0_M00_AXIS' [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0_M00_AXIS.vhd:40]
+	Parameter C_AXI_PACKET_SIZE bound to: 50 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_ip_v1_0_M00_AXIS' (2#1) [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0_M00_AXIS.vhd:40]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'keccak_f1600_core' declared at 'c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_core.vhd:34' bound to instance 'keccak_f1600_core_inst' of component 'keccak_f1600_core' [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_core' [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_core.vhd:54]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+WARNING: [Synth 8-5856] 3D RAM a_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM a_line_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_core' (3#1) [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_core.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_ip_v1_0' (4#1) [c:/Projects/ip_repo/keccak_f1600_ip_1.0/hdl/keccak_f1600_ip_v1_0.vhd:48]
+WARNING: [Synth 8-3331] design keccak_f1600_core has unconnected port empty_i_s
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[3]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[2]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[1]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[0]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TLAST
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 731.453 ; gain = 430.633
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 731.453 ; gain = 430.633
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 731.453 ; gain = 430.633
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "rc" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:36 . Memory (MB): peak = 795.070 ; gain = 494.250
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input      6 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3585  
+	   5 Input      1 Bit         XORs := 320   
++---Registers : 
+	               64 Bit    Registers := 60    
+	               32 Bit    Registers := 106   
+	                6 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 125   
+	   8 Input     64 Bit        Muxes := 49    
+	   4 Input     64 Bit        Muxes := 24    
+	  10 Input     64 Bit        Muxes := 1     
+	  25 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 102   
+	   9 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	  11 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 39    
+	   3 Input      1 Bit        Muxes := 96    
+	   8 Input      1 Bit        Muxes := 12    
+	  10 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module keccak_f1600_ip_v1_0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module keccak_f1600_ip_v1_0_S00_AXIS 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 51    
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 49    
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 48    
+Module keccak_f1600_ip_v1_0_M00_AXIS 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 51    
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 49    
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 48    
+Module keccak_f1600_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3585  
+	   5 Input      1 Bit         XORs := 320   
++---Registers : 
+	               64 Bit    Registers := 60    
+	               32 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 125   
+	   8 Input     64 Bit        Muxes := 49    
+	   4 Input     64 Bit        Muxes := 24    
+	  10 Input     64 Bit        Muxes := 1     
+	  25 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 4     
+	   9 Input      3 Bit        Muxes := 1     
+	  11 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 25    
+	  10 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design keccak_f1600_core has unconnected port empty_i_s
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[3]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[2]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[1]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[0]
+WARNING: [Synth 8-3331] design keccak_f1600_ip_v1_0_S00_AXIS has unconnected port S_AXIS_TLAST
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:14 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:16 ; elapsed = 00:01:15 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:01:21 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:29 ; elapsed = 00:01:29 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:29 ; elapsed = 00:01:29 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:36 ; elapsed = 00:01:36 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:36 ; elapsed = 00:01:36 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    24|
+|3     |LUT1   |     5|
+|4     |LUT2   |  1898|
+|5     |LUT3   |  3152|
+|6     |LUT4   |   195|
+|7     |LUT5   |  2071|
+|8     |LUT6   |  2174|
+|9     |MUXF7  |    96|
+|10    |FDRE   |  7290|
+|11    |FDSE   |     1|
+|12    |IBUF   |    39|
+|13    |OBUF   |    42|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------------------+------------------------------+------+
+|      |Instance                             |Module                        |Cells |
++------+-------------------------------------+------------------------------+------+
+|1     |top                                  |                              | 16989|
+|2     |  keccak_f1600_core_inst             |keccak_f1600_core             | 11891|
+|3     |  keccak_f1600_ip_v1_0_M00_AXIS_inst |keccak_f1600_ip_v1_0_M00_AXIS |  1712|
+|4     |  keccak_f1600_ip_v1_0_S00_AXIS_inst |keccak_f1600_ip_v1_0_S00_AXIS |  3299|
++------+-------------------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:36 ; elapsed = 00:01:36 . Memory (MB): peak = 1041.027 ; gain = 740.207
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:36 ; elapsed = 00:01:37 . Memory (MB): peak = 1041.027 ; gain = 740.207
+Synthesis Optimization Complete : Time (s): cpu = 00:01:36 ; elapsed = 00:01:37 . Memory (MB): peak = 1041.027 ; gain = 740.207
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 120 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1041.027 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+27 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:01:46 . Memory (MB): peak = 1041.027 ; gain = 740.207
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1041.027 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'c:/Projects/frodo-fpga/frodo-fpga.tmp/keccak_f1600_ip_v1_0_project/keccak_f1600_ip_v1_0_project.runs/synth_1/keccak_f1600_ip_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file keccak_f1600_ip_v1_0_utilization_synth.rpt -pb keccak_f1600_ip_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  3 19:00:46 2020...

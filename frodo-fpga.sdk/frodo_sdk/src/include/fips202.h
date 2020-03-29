@@ -11,6 +11,7 @@
 #include "global_def.h"
 #include <stdint.h>
 #include "keccak_f1600.h"
+#include "frodo_macrify.h"
 
 #define SHAKE128_RATE 168
 #define SHAKE256_RATE 136

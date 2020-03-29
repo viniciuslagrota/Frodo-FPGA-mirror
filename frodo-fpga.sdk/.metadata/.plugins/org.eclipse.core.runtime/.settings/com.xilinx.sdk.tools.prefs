@@ -1,0 +1,16 @@
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.bss=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.data=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.data1=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.fixup=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.rodata=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.rodata1=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.sbss=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.sbss2=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.sdata=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.sdata2=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:.text=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:heap=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:heap-size=1048576
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:stack=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.frodo_sdk\:stack-size=1048576
+eclipse.preferences.version=1

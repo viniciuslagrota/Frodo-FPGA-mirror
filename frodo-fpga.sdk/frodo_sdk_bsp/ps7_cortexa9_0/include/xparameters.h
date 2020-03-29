@@ -221,7 +221,7 @@
 /******************************************************************/
 
 /* Definitions for driver GPIO */
-#define XPAR_XGPIO_NUM_INSTANCES 4
+#define XPAR_XGPIO_NUM_INSTANCES 6
 
 /* Definitions for peripheral AXI_GPIO_1 */
 #define XPAR_AXI_GPIO_1_BASEADDR 0x41200000
@@ -255,6 +255,22 @@
 #define XPAR_AXI_GPIO_3_IS_DUAL 0
 
 
+/* Definitions for peripheral AXI_GPIO_4 */
+#define XPAR_AXI_GPIO_4_BASEADDR 0x41240000
+#define XPAR_AXI_GPIO_4_HIGHADDR 0x4124FFFF
+#define XPAR_AXI_GPIO_4_DEVICE_ID 4
+#define XPAR_AXI_GPIO_4_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_4_IS_DUAL 0
+
+
+/* Definitions for peripheral AXI_GPIO_5 */
+#define XPAR_AXI_GPIO_5_BASEADDR 0x41250000
+#define XPAR_AXI_GPIO_5_HIGHADDR 0x4125FFFF
+#define XPAR_AXI_GPIO_5_DEVICE_ID 5
+#define XPAR_AXI_GPIO_5_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_5_IS_DUAL 0
+
+
 /******************************************************************/
 
 /* Canonical definitions for peripheral AXI_GPIO_1 */
@@ -284,6 +300,20 @@
 #define XPAR_GPIO_3_DEVICE_ID XPAR_AXI_GPIO_3_DEVICE_ID
 #define XPAR_GPIO_3_INTERRUPT_PRESENT 0
 #define XPAR_GPIO_3_IS_DUAL 0
+
+/* Canonical definitions for peripheral AXI_GPIO_4 */
+#define XPAR_GPIO_4_BASEADDR 0x41240000
+#define XPAR_GPIO_4_HIGHADDR 0x4124FFFF
+#define XPAR_GPIO_4_DEVICE_ID XPAR_AXI_GPIO_4_DEVICE_ID
+#define XPAR_GPIO_4_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_4_IS_DUAL 0
+
+/* Canonical definitions for peripheral AXI_GPIO_5 */
+#define XPAR_GPIO_5_BASEADDR 0x41250000
+#define XPAR_GPIO_5_HIGHADDR 0x4125FFFF
+#define XPAR_GPIO_5_DEVICE_ID XPAR_AXI_GPIO_5_DEVICE_ID
+#define XPAR_GPIO_5_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_5_IS_DUAL 0
 
 
 /******************************************************************/
@@ -337,6 +367,36 @@
 #define XPAR_AXI_FIFO_0_AXI4_HIGHADDR 0U
 #define XPAR_AXI_FIFO_0_DATA_INTERFACE_TYPE 0U
 
+
+
+/******************************************************************/
+
+/* Definitions for driver MATRIX_AS_PLUS_E_MM_IP */
+#define XPAR_MATRIX_AS_PLUS_E_MM_IP_NUM_INSTANCES 1
+
+/* Definitions for peripheral MATRIX_AS_PLUS_E_MM_0 */
+#define XPAR_MATRIX_AS_PLUS_E_MM_0_DEVICE_ID 0
+#define XPAR_MATRIX_AS_PLUS_E_MM_0_S00_AXI_BASEADDR 0x43C80000
+#define XPAR_MATRIX_AS_PLUS_E_MM_0_S00_AXI_HIGHADDR 0x43C8FFFF
+#define XPAR_MATRIX_AS_PLUS_E_MM_0_S01_AXI_BASEADDR 0x43C90000
+#define XPAR_MATRIX_AS_PLUS_E_MM_0_S01_AXI_HIGHADDR 0x43C9FFFF
+#define XPAR_MATRIX_AS_PLUS_E_MM_0_S02_AXI_BASEADDR 0x43CA0000
+#define XPAR_MATRIX_AS_PLUS_E_MM_0_S02_AXI_HIGHADDR 0x43CAFFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver MATRIX_SA_PLUS_E_MM_IP */
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_NUM_INSTANCES 1
+
+/* Definitions for peripheral MATRIX_SA_PLUS_E_MM_IP_0 */
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_0_DEVICE_ID 0
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S00_AXI_BASEADDR 0x43C20000
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S00_AXI_HIGHADDR 0x43C2FFFF
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S01_AXI_BASEADDR 0x43C30000
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S01_AXI_HIGHADDR 0x43C3FFFF
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S02_AXI_BASEADDR 0x43C40000
+#define XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S02_AXI_HIGHADDR 0x43C7FFFF
 
 
 /******************************************************************/

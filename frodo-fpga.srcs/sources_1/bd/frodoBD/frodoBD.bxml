@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="frodoBD" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1577652959"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1577652959"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1577652959"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1577652959"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1585420120"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1585420120"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1585420120"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1585420120"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\frodoBD_processing_system7_0_0\frodoBD_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -105,6 +105,38 @@
       </File>
       <File Name="ip\frodoBD_axi_gpio_3_0\frodoBD_axi_gpio_3_0.xci" Type="IP">
         <Instance HierarchyPath="axi_gpio_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\frodoBD_axi_gpio_4_0\frodoBD_axi_gpio_4_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\frodoBD_matrix_sa_plus_e_mm_ip_0_0\frodoBD_matrix_sa_plus_e_mm_ip_0_0.xci" Type="IP">
+        <Instance HierarchyPath="matrix_sa_plus_e_mm_ip_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\frodoBD_matrix_as_plus_e_mm_0_0\frodoBD_matrix_as_plus_e_mm_0_0.xci" Type="IP">
+        <Instance HierarchyPath="matrix_as_plus_e_mm_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\frodoBD_axi_gpio_5_0\frodoBD_axi_gpio_5_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_5"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

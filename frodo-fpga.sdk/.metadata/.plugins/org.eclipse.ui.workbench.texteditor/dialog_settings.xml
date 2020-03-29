@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="XPAR_KECCAK_F1600_MM_" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="thousandthsKeccakHwMMMatrixSaHwAsSw" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="XPAR_KECCAK_F1600_MM_"/>
-			<item value="XPAR_KECCAK_F1600_"/>
-			<item value="XPAR_KECCAK_"/>
-			<item value="XPAR_KECCAK_f1600_IP_0_S00_AXI_BASEADDR"/>
-			<item value="XPAR_KECCAK_F1600_IP_0_S00_AXI_BASEADDR"/>
-			<item value="axi_control_timer"/>
-			<item value="XPAR_KECCAK_F1600_MM_IP_0_S00"/>
-			<item value="XPAR_KECCAK_F1600"/>
+			<item value="thousandthsKeccakHwMMMatrixHw"/>
+			<item value="wholeKeccakHwMMMatrixHw"/>
+			<item value="fRelativeKeccakHwMMMatrixHw"/>
+			<item value="thousandthsKeccakHwMatrixHw"/>
+			<item value="wholeKeccakHwMatrixHw"/>
+			<item value="fRelativeKeccakHwMatrixHw"/>
+			<item value="thousandthsKeccakSwMatrixHw"/>
+			<item value="wholeKeccakSwMatrixHw"/>
 		</list>
 		<list key="replacehistory">
-			<item value="t_total_sw"/>
-			<item value="t_dec_sw"/>
-			<item value="t_enc_sw"/>
-			<item value="t_keypair_sw"/>
-			<item value="DEBUG_MAIN, ("/>
-			<item value="print_debug(DEBUG_KEM_ENC, "/>
-			<item value="[KEM - KEYPAIR]"/>
-			<item value="DEBUG_KEM_KEYPAIR"/>
+			<item value="thousandthsKeccakHwMMMatrixSaHwAsSw"/>
+			<item value="wholeKeccakHwMMMatrixSaHwAsSw"/>
+			<item value="fRelativeKeccakHwMMMatrixSaHwAsSw"/>
+			<item value="thousandthsKeccakHwMatrixSaHwAsSw"/>
+			<item value="wholeKeccakHwMatrixSaHwAsSw"/>
+			<item value="fRelativeKeccakHwMatrixSaHwAsSw"/>
+			<item value="thousandthsKeccakSwMatrixSaHwAsSw"/>
+			<item value="wholeKeccakSwMatrixSaHwAsSw"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
