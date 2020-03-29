@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sat Mar 28 15:42:23 2020
+| Date             : Sun Mar 29 12:21:57 2020
 | Host             : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
 | Command          : report_power -file frodoBD_wrapper_power_routed.rpt -pb frodoBD_wrapper_power_summary_routed.pb -rpx frodoBD_wrapper_power_routed.rpx
 | Design           : frodoBD_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.804        |
+| Total On-Chip Power (W)  | 1.777        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.680        |
-| Device Static (W)        | 0.125        |
+| Dynamic (W)              | 1.653        |
+| Device Static (W)        | 0.124        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 64.2         |
-| Junction Temperature (C) | 45.8         |
+| Max Ambient (C)          | 64.5         |
+| Junction Temperature (C) | 45.5         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.025 |        3 |       --- |             --- |
-| Slice Logic              |     0.042 |    32030 |       --- |             --- |
-|   LUT as Logic           |     0.041 |    13419 |     17600 |           76.24 |
-|   Register               |    <0.001 |    13455 |     35200 |           38.22 |
-|   CARRY4                 |    <0.001 |      212 |      4400 |            4.82 |
-|   LUT as Distributed RAM |    <0.001 |      124 |      6000 |            2.07 |
-|   F7/F8 Muxes            |    <0.001 |      123 |     17600 |            0.70 |
+| Clocks                   |     0.015 |        3 |       --- |             --- |
+| Slice Logic              |     0.029 |    12953 |       --- |             --- |
+|   LUT as Logic           |     0.028 |     5578 |     17600 |           31.69 |
+|   CARRY4                 |    <0.001 |      109 |      4400 |            2.48 |
+|   Register               |    <0.001 |     5172 |     35200 |           14.69 |
+|   LUT as Distributed RAM |    <0.001 |       64 |      6000 |            1.07 |
+|   F7/F8 Muxes            |    <0.001 |       27 |     17600 |            0.15 |
 |   LUT as Shift Register  |    <0.001 |       62 |      6000 |            1.03 |
-|   Others                 |     0.000 |      381 |       --- |             --- |
-| Signals                  |     0.067 |    22847 |       --- |             --- |
-| Block RAM                |     0.016 |       18 |        60 |           30.00 |
+|   Others                 |     0.000 |      298 |       --- |             --- |
+| Signals                  |     0.056 |    10826 |       --- |             --- |
+| Block RAM                |     0.024 |       16 |        60 |           26.67 |
 | DSPs                     |    <0.001 |       12 |        80 |           15.00 |
 | PS7                      |     1.530 |        1 |       --- |             --- |
-| Static Power             |     0.125 |          |           |                 |
-| Total                    |     1.804 |          |           |                 |
+| Static Power             |     0.124 |          |           |                 |
+| Total                    |     1.777 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.157 |       0.148 |      0.008 |
+| Vccint    |       1.000 |     0.129 |       0.121 |      0.008 |
 | Vccaux    |       1.800 |     0.008 |       0.000 |      0.008 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -85,11 +85,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.003 |       0.001 |      0.002 |
+| Vccbram   |       1.000 |     0.003 |       0.002 |      0.002 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.750 |       0.718 |      0.032 |
+| Vccpint   |       1.000 |     0.749 |       0.718 |      0.031 |
 | Vccpaux   |       1.800 |     0.061 |       0.051 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -152,22 +152,21 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| frodoBD_wrapper              |     1.680 |
-|   frodoBD_i                  |     1.680 |
-|     axi_fifo_mm_s_0          |     0.004 |
-|       U0                     |     0.004 |
-|     axi_interconnect_0       |     0.003 |
+| frodoBD_wrapper              |     1.653 |
+|   frodoBD_i                  |     1.653 |
+|     axi_gpio_0               |     0.001 |
+|       U0                     |     0.001 |
+|     axi_interconnect_0       |     0.004 |
 |       s00_couplers           |     0.003 |
-|     keccak_f1600_ip_0        |     0.037 |
-|       U0                     |     0.037 |
-|     keccak_f1600_mm_ip_0     |     0.082 |
-|       U0                     |     0.082 |
-|     matrix_as_plus_e_mm_0    |     0.009 |
-|       U0                     |     0.009 |
-|     matrix_sa_plus_e_mm_ip_0 |     0.010 |
-|       U0                     |     0.010 |
-|     processing_system7_0     |     1.534 |
-|       inst                   |     1.534 |
+|       xbar                   |     0.001 |
+|     keccak_f1600_mm_ip_0     |     0.083 |
+|       U0                     |     0.083 |
+|     matrix_as_plus_e_mm_0    |     0.017 |
+|       U0                     |     0.017 |
+|     matrix_sa_plus_e_mm_ip_0 |     0.014 |
+|       U0                     |     0.014 |
+|     processing_system7_0     |     1.533 |
+|       inst                   |     1.533 |
 +------------------------------+-----------+
 
 
