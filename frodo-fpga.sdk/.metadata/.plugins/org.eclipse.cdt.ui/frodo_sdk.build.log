@@ -1,8 +1,8 @@
-13:02:01 **** Incremental Build of configuration Debug for project frodo_sdk ****
+16:45:32 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
 make: Nothing to be done for 'main-build'.
 
-13:02:01 Build Finished (took 272ms)
+16:45:32 Build Finished (took 331ms)
 

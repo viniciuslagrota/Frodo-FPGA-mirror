@@ -10,9 +10,7 @@
 
 source keccak_f1600_mm_ip_v1_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0'. The path is contained within another repository.
-WARNING: [IP_Flow 19-2207] Repository 'c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0' already exists; ignoring attempt to add it again.
-WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0'. The path is contained within another repository.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
@@ -22,98 +20,106 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12932 
+INFO: Helper process launched with PID 6412 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 482.961 ; gain = 184.297
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 484.512 ; gain = 189.480
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:56]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:6' bound to instance 'keccak_f1600_mm_ip_v1_0_S00_AXI_inst' of component 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:141]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:9' bound to instance 'keccak_f1600_mm_ip_v1_0_S00_AXI_inst' of component 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:163]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:94]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-WARNING: [Synth 8-614] signal 'axi_araddr' is read in the process but is not in the sensitivity list [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:331]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:235]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:352]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:367]
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' (1#1) [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
+WARNING: [Synth 8-5856] 3D RAM to_round_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:190]
+WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:291]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:362]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' (1#1) [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:94]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_core' declared at 'c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_core.vhd:34' bound to instance 'keccak_f1600_mm_core_inst' of component 'keccak_f1600_mm_core' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_core' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_core.vhd:52]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_core_fast' declared at 'c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_core_fast.vhd:37' bound to instance 'keccak_f1600_mm_core_fast_inst' of component 'keccak_f1600_mm_core_fast' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:216]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_core_fast' [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_core_fast.vhd:53]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-WARNING: [Synth 8-5856] 3D RAM a_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-WARNING: [Synth 8-5856] 3D RAM a_line_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_core' (2#1) [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_core.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0' (3#1) [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
-WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port start
+WARNING: [Synth 8-5856] 3D RAM s_round_out_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM theta_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_core_fast' (2#1) [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_core_fast.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0' (3#1) [c:/Projects/ip_repo/keccak_f1600_mm_ip_1.0/hdl/keccak_f1600_mm_ip_v1_0.vhd:56]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port valid_i
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[7]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[6]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[5]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[4]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[3]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[0]
 WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[7]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[6]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[5]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[4]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[3]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[0]
 WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
 WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 744.523 ; gain = 445.859
+Finished Synthesize : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 742.508 ; gain = 447.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 744.523 ; gain = 445.859
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 742.508 ; gain = 447.477
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 744.523 ; gain = 445.859
----------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "rc" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:36 . Memory (MB): peak = 801.352 ; gain = 502.688
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:45 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-----------------------------+------------+----------+
-|      |RTL Partition                |Replication |Instances |
-+------+-----------------------------+------------+----------+
-|1     |keccak_f1600_mm_core         |           1|     39722|
-|2     |keccak_f1600_mm_ip_v1_0__GB1 |           1|     15561|
-+------+-----------------------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|     18716|
+|2     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|     18384|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|     12900|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|     14229|
+|5     |keccak_f1600_mm_ip_v1_0__GC0         |           1|     17895|
++------+-------------------------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 3     
-	   2 Input      6 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 5     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 3585  
+	   3 Input      1 Bit         XORs := 1600  
 	   5 Input      1 Bit         XORs := 320   
+	   2 Input      1 Bit         XORs := 1664  
 +---Registers : 
-	               64 Bit    Registers := 60    
-	               32 Bit    Registers := 134   
-	                8 Bit    Registers := 2     
-	                6 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 3     
+	               64 Bit    Registers := 50    
+	               32 Bit    Registers := 5     
+	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 16    
 +---Muxes : 
 	   2 Input     64 Bit        Muxes := 125   
-	   8 Input     64 Bit        Muxes := 49    
-	   4 Input     64 Bit        Muxes := 24    
-	  10 Input     64 Bit        Muxes := 1     
 	  25 Input     64 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 68    
-	   2 Input      8 Bit        Muxes := 320   
-	   9 Input      3 Bit        Muxes := 1     
-	  11 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 12    
-	   2 Input      1 Bit        Muxes := 102   
-	  10 Input      1 Bit        Muxes := 1     
-	  11 Input      1 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 38    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -127,46 +133,36 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 4     
-Module keccak_f1600_mm_core 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 3     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 3585  
-	   5 Input      1 Bit         XORs := 320   
-+---Registers : 
-	               64 Bit    Registers := 60    
-	               32 Bit    Registers := 4     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
-+---Muxes : 
-	   2 Input     64 Bit        Muxes := 125   
-	   8 Input     64 Bit        Muxes := 49    
-	   4 Input     64 Bit        Muxes := 24    
-	  10 Input     64 Bit        Muxes := 1     
-	  25 Input     64 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 4     
-	   9 Input      3 Bit        Muxes := 1     
-	  11 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 12    
-	   2 Input      1 Bit        Muxes := 25    
-	  10 Input      1 Bit        Muxes := 1     
-	  11 Input      1 Bit        Muxes := 2     
 Module keccak_f1600_mm_ip_v1_0_S00_AXI 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      6 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 4     
 +---Registers : 
-	               32 Bit    Registers := 130   
-	                8 Bit    Registers := 2     
-	                6 Bit    Registers := 2     
+	               64 Bit    Registers := 25    
+	               32 Bit    Registers := 4     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 64    
-	   2 Input      8 Bit        Muxes := 320   
-	   2 Input      1 Bit        Muxes := 73    
+	   2 Input     64 Bit        Muxes := 100   
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 30    
+Module keccak_f1600_mm_core_fast 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 1600  
+	   5 Input      1 Bit         XORs := 320   
+	   2 Input      1 Bit         XORs := 1664  
++---Registers : 
+	               64 Bit    Registers := 25    
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	  25 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 25    
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -183,50 +179,85 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-3886] merging instance 'i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keccak_f1600_mm_ip_v1_0_S00_AXI_inst/\axi_rresp_reg[1] )
-INFO: [Synth 8-3886] merging instance 'i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keccak_f1600_mm_ip_v1_0_S00_AXI_inst/\axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (keccak_f1600_mm_ip_v1_0_S00_AXI_inst/ready_o_reg)
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[7]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[6]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[5]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[4]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[3]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awaddr[0]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_wstrb[3]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_wstrb[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_wstrb[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_wstrb[0]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[7]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[6]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[5]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[4]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[3]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_araddr[0]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design keccak_f1600_mm_ip_v1_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'axi_rresp_reg[0]' (FDRE) to 'axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'axi_bresp_reg[0]' (FDRE) to 'axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\axi_bresp_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:01:20 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:30 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-----------------------------+------------+----------+
-|      |RTL Partition                |Replication |Instances |
-+------+-----------------------------+------------+----------+
-|1     |keccak_f1600_mm_core         |           1|     19115|
-|2     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9327|
-+------+-----------------------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|       696|
+|2     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|       356|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|      2486|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|      1222|
+|5     |keccak_f1600_mm_ip_v1_0__GC0         |           1|     12975|
++------+-------------------------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:01:20 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Timing Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:31 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-----------------------------+------------+----------+
-|      |RTL Partition                |Replication |Instances |
-+------+-----------------------------+------------+----------+
-|1     |keccak_f1600_mm_core         |           1|     19115|
-|2     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9327|
-+------+-----------------------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|       456|
+|2     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|       356|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|      2081|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|      1222|
+|5     |keccak_f1600_mm_ip_v1_0__GC0         |           1|     12975|
++------+-------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:25 ; elapsed = 00:01:25 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|       176|
+|2     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|       143|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|      1767|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|       609|
+|5     |keccak_f1600_mm_ip_v1_0__GC0         |           1|      6268|
++------+-------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -243,7 +274,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:32 ; elapsed = 00:01:32 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished IO Insertion : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -256,7 +287,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:32 ; elapsed = 00:01:32 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:35 ; elapsed = 00:01:40 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -268,25 +299,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:33 ; elapsed = 00:01:33 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:36 ; elapsed = 00:01:40 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:33 ; elapsed = 00:01:33 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:36 ; elapsed = 00:01:40 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:41 ; elapsed = 00:01:41 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:37 ; elapsed = 00:01:41 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:41 ; elapsed = 00:01:41 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:37 ; elapsed = 00:01:41 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -303,51 +334,50 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    24|
-|3     |LUT1   |     9|
-|4     |LUT2   |  1935|
-|5     |LUT3   |   260|
-|6     |LUT4   |   189|
-|7     |LUT5   |  1966|
-|8     |LUT6   |  3363|
-|9     |MUXF7  |   603|
-|10    |MUXF8  |   256|
-|11    |FDRE   |  8163|
-|12    |FDSE   |    41|
-|13    |IBUF   |    56|
-|14    |OBUF   |    44|
+|2     |CARRY4 |    44|
+|3     |LUT1   |     2|
+|4     |LUT2   |   187|
+|5     |LUT3   |  1542|
+|6     |LUT4   |   155|
+|7     |LUT5   |  1341|
+|8     |LUT6   |  2245|
+|9     |MUXF7  |    27|
+|10    |FDRE   |  3418|
+|11    |FDSE   |     1|
+|12    |IBUF   |    40|
+|13    |OBUF   |    44|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------------------------------------+--------------------------------+------+
 |      |Instance                               |Module                          |Cells |
 +------+---------------------------------------+--------------------------------+------+
-|1     |top                                    |                                | 16910|
-|2     |  keccak_f1600_mm_core_inst            |keccak_f1600_mm_core            | 10292|
-|3     |  keccak_f1600_mm_ip_v1_0_S00_AXI_inst |keccak_f1600_mm_ip_v1_0_S00_AXI |  6513|
+|1     |top                                    |                                |  9047|
+|2     |  keccak_f1600_mm_core_fast_inst       |keccak_f1600_mm_core_fast       |  6838|
+|3     |  keccak_f1600_mm_ip_v1_0_S00_AXI_inst |keccak_f1600_mm_ip_v1_0_S00_AXI |  2119|
 +------+---------------------------------------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:41 ; elapsed = 00:01:41 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:37 ; elapsed = 00:01:41 . Memory (MB): peak = 819.086 ; gain = 524.055
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:41 ; elapsed = 00:01:42 . Memory (MB): peak = 1063.480 ; gain = 764.816
-Synthesis Optimization Complete : Time (s): cpu = 00:01:41 ; elapsed = 00:01:42 . Memory (MB): peak = 1063.480 ; gain = 764.816
+Synthesis finished with 0 errors, 0 critical warnings and 59 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:37 ; elapsed = 00:01:41 . Memory (MB): peak = 819.086 ; gain = 524.055
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:41 . Memory (MB): peak = 819.086 ; gain = 524.055
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 883 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 71 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1063.480 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 855.352 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-27 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+26 Infos, 61 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1063.480 ; gain = 764.816
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1063.480 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:01:49 . Memory (MB): peak = 855.352 ; gain = 564.129
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 855.352 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'c:/Projects/frodo-fpga/frodo-fpga.tmp/keccak_f1600_mm_ip_v1_0_project/keccak_f1600_mm_ip_v1_0_project.runs/synth_1/keccak_f1600_mm_ip_v1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file keccak_f1600_mm_ip_v1_0_utilization_synth.rpt -pb keccak_f1600_mm_ip_v1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar  3 19:00:16 2020...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 28 15:21:09 2020...

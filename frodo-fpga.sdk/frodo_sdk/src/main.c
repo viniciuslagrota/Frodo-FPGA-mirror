@@ -142,14 +142,14 @@ int main()
 
 	//---- AXI MM ----
 	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;
-	print_debug(DEBUG_ERROR, "[MAIN] Memory golden word: 0x%lx.\n", memoryMMkeccak[63]);
-	if(memoryMMkeccak[63] == 0xfeedfeed)
-		print_debug(DEBUG_ERROR, "[MAIN] Golden word correct.\n");
-	else
-	{
-		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Hardware problem: 0x%lx\n", memoryMMkeccak[63]);
-		exit(0);
-	}
+//	print_debug(DEBUG_ERROR, "[MAIN] Memory golden word: 0x%lx.\n", memoryMMkeccak[63]);
+//	if(memoryMMkeccak[63] == 0xfeedfeed)
+//		print_debug(DEBUG_ERROR, "[MAIN] Golden word correct.\n");
+//	else
+//	{
+//		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Hardware problem: 0x%lx\n", memoryMMkeccak[63]);
+//		exit(0);
+//	}
 
 	memoryMatrixS = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S00_AXI_BASEADDR;
 	memoryMatrixA = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S01_AXI_BASEADDR;
