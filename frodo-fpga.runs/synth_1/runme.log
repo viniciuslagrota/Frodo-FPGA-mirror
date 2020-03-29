@@ -19,9 +19,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12736 
+INFO: Helper process launched with PID 10160 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 734.926 ; gain = 177.750
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 734.770 ; gain = 177.531
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'frodoBD_wrapper' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:40]
 INFO: [Synth 8-3491] module 'frodoBD' declared at 'C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd:3999' bound to instance 'frodoBD_i' of component 'frodoBD' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:67]
@@ -2639,29 +2639,29 @@ INFO: [Synth 8-3491] module 'frodoBD_keccak_f1600_mm_ip_0_0' declared at 'c:/Pro
 INFO: [Synth 8-638] synthesizing module 'frodoBD_keccak_f1600_mm_ip_0_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:89]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:5' bound to instance 'U0' of component 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:161]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0.vhd:8' bound to instance 'U0' of component 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0.vhd:56]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:6' bound to instance 'keccak_f1600_mm_ip_v1_0_S00_AXI_inst' of component 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:141]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_ip_v1_0_S00_AXI' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:9' bound to instance 'keccak_f1600_mm_ip_v1_0_S00_AXI_inst' of component 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0.vhd:163]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:94]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
-WARNING: [Synth 8-614] signal 'axi_araddr' is read in the process but is not in the sensitivity list [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:331]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:235]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:352]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:367]
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' (75#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:93]
+WARNING: [Synth 8-5856] 3D RAM to_round_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:190]
+WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:291]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:362]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0_S00_AXI' (75#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0_S00_AXI.vhd:94]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'keccak_f1600_mm_core' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_core.vhd:34' bound to instance 'keccak_f1600_mm_core_inst' of component 'keccak_f1600_mm_core' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_core' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_core.vhd:52]
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_core_fast' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_core_fast.vhd:37' bound to instance 'keccak_f1600_mm_core_fast_inst' of component 'keccak_f1600_mm_core_fast' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0.vhd:216]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_core_fast' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_core_fast.vhd:53]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
-WARNING: [Synth 8-5856] 3D RAM a_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-WARNING: [Synth 8-5856] 3D RAM a_line_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_core' (76#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_core.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0' (77#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/355c/hdl/keccak_f1600_mm_ip_v1_0.vhd:53]
+WARNING: [Synth 8-5856] 3D RAM s_round_out_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM theta_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_core_fast' (76#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_core_fast.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_ip_v1_0' (77#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/284a/hdl/keccak_f1600_mm_ip_v1_0.vhd:56]
 INFO: [Synth 8-256] done synthesizing module 'frodoBD_keccak_f1600_mm_ip_0_0' (78#1) [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/synth/frodoBD_keccak_f1600_mm_ip_0_0.vhd:89]
 INFO: [Synth 8-3491] module 'frodoBD_matrix_as_plus_e_mm_0_0' declared at 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_matrix_as_plus_e_mm_0_0/synth/frodoBD_matrix_as_plus_e_mm_0_0.vhd:59' bound to instance 'matrix_as_plus_e_mm_0' of component 'frodoBD_matrix_as_plus_e_mm_0_0' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd:5439]
 INFO: [Synth 8-638] synthesizing module 'frodoBD_matrix_as_plus_e_mm_0_0' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_matrix_as_plus_e_mm_0_0/synth/frodoBD_matrix_as_plus_e_mm_0_0.vhd:129]
@@ -3125,7 +3125,7 @@ WARNING: [Synth 8-3331] design matrix_sa_plus_e_mm_ip_v1_0_S02_AXI has unconnect
 WARNING: [Synth 8-3331] design matrix_sa_plus_e_mm_ip_v1_0_S02_AXI has unconnected port S_AXI_AWPROT[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1367.500 ; gain = 810.324
+Finished RTL Elaboration : Time (s): cpu = 00:01:12 ; elapsed = 00:01:16 . Memory (MB): peak = 1367.070 ; gain = 809.832
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3138,13 +3138,13 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:01:24 . Memory (MB): peak = 1367.500 ; gain = 810.324
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:22 . Memory (MB): peak = 1367.070 ; gain = 809.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:20 ; elapsed = 00:01:24 . Memory (MB): peak = 1367.500 ; gain = 810.324
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:19 ; elapsed = 00:01:22 . Memory (MB): peak = 1367.070 ; gain = 809.832
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 421 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -3201,21 +3201,24 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/frodoBD_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1425.059 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1449.043 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 421 instances were transformed.
   FDR => FDRE: 420 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.492 . Memory (MB): peak = 1425.059 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.439 . Memory (MB): peak = 1449.043 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:53 ; elapsed = 00:01:55 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Constraint Validation : Time (s): cpu = 00:01:49 ; elapsed = 00:01:52 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:49 ; elapsed = 00:01:52 . Memory (MB): peak = 1449.043 ; gain = 891.805
+---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1056]
 INFO: [Synth 8-802] inferred FSM for state register 'gen_fwft.curr_fwft_state_reg' in module 'xpm_fifo_base'
@@ -3294,27 +3297,30 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 INFO: [Synth 8-3971] The signal "true_dual_bram:/RAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:25 ; elapsed = 00:02:28 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:36 ; elapsed = 00:02:40 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 
 Report RTL Partitions: 
-+------+-----------------------------+------------+----------+
-|      |RTL Partition                |Replication |Instances |
-+------+-----------------------------+------------+----------+
-|1     |keccak_f1600_ip_v1_0__GB0    |           1|     43445|
-|2     |keccak_f1600_ip_v1_0__GB1    |           1|      3735|
-|3     |keccak_f1600_mm_core         |           1|     39722|
-|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|     15561|
-|5     |frodoBD__GC0                 |           1|     19703|
-+------+-----------------------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_ip_v1_0__GB0            |           1|     43445|
+|2     |keccak_f1600_ip_v1_0__GB1            |           1|      3735|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|     18716|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|     18384|
+|5     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|     12900|
+|6     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|     14229|
+|7     |keccak_f1600_mm_ip_v1_0__GC0         |           1|     17895|
+|8     |frodoBD__GC0                         |           1|     19703|
++------+-------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 6     
+	   2 Input     32 Bit       Adders := 8     
 	   3 Input     32 Bit       Adders := 4     
 	   2 Input     31 Bit       Adders := 1     
 	   2 Input     22 Bit       Adders := 2     
@@ -3329,23 +3335,24 @@ Detailed RTL Component Info :
 	   4 Input      8 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 1     
 	   4 Input      7 Bit       Adders := 3     
-	   2 Input      6 Bit       Adders := 5     
+	   2 Input      6 Bit       Adders := 3     
 	   2 Input      5 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 10    
 	   2 Input      3 Bit       Adders := 2     
 	   4 Input      2 Bit       Adders := 3     
 	   2 Input      2 Bit       Adders := 2     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 7170  
+	   2 Input      1 Bit         XORs := 5249  
 	   5 Input      1 Bit         XORs := 640   
+	   3 Input      1 Bit         XORs := 1600  
 +---Registers : 
 	               66 Bit    Registers := 4     
-	               64 Bit    Registers := 121   
+	               64 Bit    Registers := 111   
 	               53 Bit    Registers := 4     
 	               47 Bit    Registers := 2     
 	               36 Bit    Registers := 2     
 	               33 Bit    Registers := 1     
-	               32 Bit    Registers := 309   
+	               32 Bit    Registers := 180   
 	               22 Bit    Registers := 3     
 	               16 Bit    Registers := 21    
 	               15 Bit    Registers := 1     
@@ -3355,13 +3362,13 @@ Detailed RTL Component Info :
 	               11 Bit    Registers := 2     
 	               10 Bit    Registers := 12    
 	                9 Bit    Registers := 21    
-	                8 Bit    Registers := 6     
+	                8 Bit    Registers := 4     
 	                7 Bit    Registers := 3     
-	                6 Bit    Registers := 9     
+	                6 Bit    Registers := 7     
 	                5 Bit    Registers := 4     
 	                4 Bit    Registers := 20    
-	                3 Bit    Registers := 11    
-	                2 Bit    Registers := 54    
+	                3 Bit    Registers := 10    
+	                2 Bit    Registers := 53    
 	                1 Bit    Registers := 401   
 +---Multipliers : 
 	                32x32  Multipliers := 8     
@@ -3374,14 +3381,14 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     66 Bit        Muxes := 4     
 	   2 Input     64 Bit        Muxes := 251   
-	   8 Input     64 Bit        Muxes := 98    
-	   4 Input     64 Bit        Muxes := 48    
-	  10 Input     64 Bit        Muxes := 2     
+	   8 Input     64 Bit        Muxes := 49    
+	   4 Input     64 Bit        Muxes := 24    
+	  10 Input     64 Bit        Muxes := 1     
 	  25 Input     64 Bit        Muxes := 2     
 	   2 Input     47 Bit        Muxes := 2     
 	   2 Input     36 Bit        Muxes := 2     
 	   9 Input     33 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 195   
+	   2 Input     32 Bit        Muxes := 133   
 	   8 Input     32 Bit        Muxes := 1     
 	   5 Input     32 Bit        Muxes := 6     
 	   2 Input     22 Bit        Muxes := 7     
@@ -3396,7 +3403,6 @@ Detailed RTL Component Info :
 	   2 Input     12 Bit        Muxes := 8     
 	   2 Input     11 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 15    
-	   2 Input      8 Bit        Muxes := 320   
 	   2 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 3     
 	   2 Input      5 Bit        Muxes := 6     
@@ -3404,16 +3410,16 @@ Detailed RTL Component Info :
 	   4 Input      4 Bit        Muxes := 7     
 	   2 Input      4 Bit        Muxes := 59    
 	   5 Input      4 Bit        Muxes := 3     
-	   9 Input      3 Bit        Muxes := 2     
+	   9 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	  11 Input      2 Bit        Muxes := 2     
+	  11 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 124   
 	   4 Input      2 Bit        Muxes := 26    
 	   7 Input      2 Bit        Muxes := 6     
-	   8 Input      1 Bit        Muxes := 28    
-	   2 Input      1 Bit        Muxes := 490   
-	  10 Input      1 Bit        Muxes := 2     
-	  11 Input      1 Bit        Muxes := 4     
+	   8 Input      1 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 426   
+	  10 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 2     
 	   3 Input      1 Bit        Muxes := 98    
 	   4 Input      1 Bit        Muxes := 24    
 	   9 Input      1 Bit        Muxes := 10    
@@ -3484,46 +3490,36 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 4     
-Module keccak_f1600_mm_core 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 3     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 3585  
-	   5 Input      1 Bit         XORs := 320   
-+---Registers : 
-	               64 Bit    Registers := 60    
-	               32 Bit    Registers := 4     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
-+---Muxes : 
-	   2 Input     64 Bit        Muxes := 125   
-	   8 Input     64 Bit        Muxes := 49    
-	   4 Input     64 Bit        Muxes := 24    
-	  10 Input     64 Bit        Muxes := 1     
-	  25 Input     64 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 4     
-	   9 Input      3 Bit        Muxes := 1     
-	  11 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 12    
-	   2 Input      1 Bit        Muxes := 25    
-	  10 Input      1 Bit        Muxes := 1     
-	  11 Input      1 Bit        Muxes := 2     
 Module keccak_f1600_mm_ip_v1_0_S00_AXI 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      6 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 4     
 +---Registers : 
-	               32 Bit    Registers := 130   
-	                8 Bit    Registers := 2     
-	                6 Bit    Registers := 2     
+	               64 Bit    Registers := 25    
+	               32 Bit    Registers := 4     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 64    
-	   2 Input      8 Bit        Muxes := 320   
-	   2 Input      1 Bit        Muxes := 73    
+	   2 Input     64 Bit        Muxes := 100   
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 30    
+Module keccak_f1600_mm_core_fast 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 1600  
+	   5 Input      1 Bit         XORs := 320   
+	   2 Input      1 Bit         XORs := 1664  
++---Registers : 
+	               64 Bit    Registers := 25    
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	  25 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 25    
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
 Module keccak_f1600_mm_ip_v1_0 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -4744,7 +4740,14 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design keccak_f1600_ip_v1_0__GB0 has port m00_axis_tstrb[3] driven by constant 1
+WARNING: [Synth 8-3917] design keccak_f1600_ip_v1_0__GB0 has port m00_axis_tstrb[2] driven by constant 1
+WARNING: [Synth 8-3917] design keccak_f1600_ip_v1_0__GB0 has port m00_axis_tstrb[1] driven by constant 1
+WARNING: [Synth 8-3917] design keccak_f1600_ip_v1_0__GB0 has port m00_axis_tstrb[0] driven by constant 1
+INFO: [Synth 8-3886] merging instance 'axi_rresp_reg[0]' (FDRE) to 'axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'axi_bresp_reg[0]' (FDRE) to 'axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\axi_bresp_reg[1] )
 INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1677]
 INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1677]
 INFO: [Synth 8-4471] merging register 'bus2ip_reset_reg' into 'AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg' [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/9c6e/hdl/axi_gpio_v2_0_vh_rfs.vhd:1677]
@@ -4901,6 +4904,7 @@ DSP Report: register U0/multiplicator_inst/s_data_out_0_reg is absorbed into DSP
 DSP Report: register U0/multiplicator_inst/s_mult_data_1_reg is absorbed into DSP U0/multiplicator_inst/s_data_out_0_reg.
 DSP Report: operator U0/multiplicator_inst/s_data_out_00 is absorbed into DSP U0/multiplicator_inst/s_data_out_0_reg.
 DSP Report: operator U0/multiplicator_inst/s_mult_data_10 is absorbed into DSP U0/multiplicator_inst/s_data_out_0_reg.
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -4914,22 +4918,17 @@ INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM 
 WARNING: [Synth 8-6014] Unused sequential element U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg was removed. 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/keccak_f1600_mm_ip_0/U0i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'frodoBD_i/keccak_f1600_mm_ip_0/U0i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/keccak_f1600_mm_ip_0/U0i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/\axi_rresp_reg[1] )
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/keccak_f1600_mm_ip_0/U0i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'frodoBD_i/keccak_f1600_mm_ip_0/U0i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/keccak_f1600_mm_ip_0/U0i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/\axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (frodoBD_i/keccak_f1600_mm_ip_0/U0i_0/keccak_f1600_mm_ip_v1_0_S00_AXI_inst/ready_o_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/grxd.fg_rxd_wr_length_reg[0] )
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[0]' (FDRE) to 'frodoBD_i/i_0/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[1]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[1]' (FDRE) to 'frodoBD_i/i_0/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[2]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[2]' (FDRE) to 'frodoBD_i/i_0/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_fifo_mm_s_0/\U0/COMP_IPIF/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_fifo_mm_s_0/\U0/COMP_IPIF/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/grxd.fg_rxd_wr_length_reg[0] )
+INFO: [Synth 8-3886] merging instance 'axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[0]' (FDRE) to 'axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[1]'
+INFO: [Synth 8-3886] merging instance 'axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[1]' (FDRE) to 'axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[2]'
+INFO: [Synth 8-3886] merging instance 'axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[2]' (FDRE) to 'axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/sig_txd_dest_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_fifo_mm_s_0/\U0/COMP_IPIF/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_fifo_mm_s_0/\U0/COMP_IPIF/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_0/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
@@ -4994,10 +4993,10 @@ INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[29].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[30].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[31].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_1/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio__1.
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio__1.
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio__1.
@@ -5035,144 +5034,146 @@ INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio__1.
 INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio__1.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[30]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[29]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[29]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[28]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[28]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[27]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[27]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[26]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[26]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[25]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[25]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[24]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[24]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[23]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[23]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[22]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[22]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[21]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[21]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[20]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[20]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[19]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[19]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[18]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[18]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[17]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[17]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[16]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[16]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[15]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[15]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[14]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[14]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[13]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[13]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[12]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[12]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[11]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[11]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[10]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[10]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[9]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[9]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[8]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[8]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[7]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[7]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[6]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[5]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[5]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[4]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[4]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[3]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[3]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[2]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[2]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[1]' (FDR) to 'frodoBD_i/i_0/axi_gpio_2/U0/ip2bus_data_i_D1_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[1]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[30]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[29]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[29]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[28]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[28]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[27]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[27]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[26]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[26]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[25]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[25]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[24]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[24]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[23]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[23]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[22]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[22]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[21]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[21]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[20]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[20]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[19]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[19]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[18]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[18]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[17]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[17]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[16]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[16]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[15]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[15]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[14]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[14]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[13]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[13]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[12]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[12]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[11]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[11]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[10]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[10]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[9]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[9]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[8]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[8]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[7]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[7]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[6]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[5]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[5]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[4]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[4]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[3]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[3]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[2]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[2]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[1]' (FDR) to 'frodoBD_i/i_0/axi_gpio_3/U0/ip2bus_data_i_D1_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[1]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]'
-INFO: [Synth 8-3886] merging instance 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]' (FDRE) to 'frodoBD_i/i_0/axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]'
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[30]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[29]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[28]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[28]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[27]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[26]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[26]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[25]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[24]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[24]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[23]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[22]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[22]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[21]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[20]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[20]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[19]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[18]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[18]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[17]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[16]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[16]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[15]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[15]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[14]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[14]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[13]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[13]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[12]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[12]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[11]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[11]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[10]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[10]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[9]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[8]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[7]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[6]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[5]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[4]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[3]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[2]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[1]' (FDR) to 'axi_gpio_2/U0/ip2bus_data_i_D1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[1]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[7]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[8]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[9]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[10]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[11]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[12]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[13]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[14]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[15]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[16]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[17]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[18]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[19]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[20]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[21]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[22]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[23]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[24]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[25]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[26]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[27]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[28]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[29]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[30]' (FDRE) to 'axi_gpio_2/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_2/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[30]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[29]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[28]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[28]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[27]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[26]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[26]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[25]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[24]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[24]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[23]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[22]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[22]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[21]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[20]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[20]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[19]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[18]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[18]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[17]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[16]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[16]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[15]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[15]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[14]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[14]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[13]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[13]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[12]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[12]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[11]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[11]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[10]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[10]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[9]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[8]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[7]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[6]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[5]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[4]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[3]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[2]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[1]' (FDR) to 'axi_gpio_3/U0/ip2bus_data_i_D1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[1]' (FDRE) to 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[2]' (FDRE) to 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[3]' (FDRE) to 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[4]' (FDRE) to 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]'
+INFO: [Synth 8-3886] merging instance 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[5]' (FDRE) to 'axi_gpio_3/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_reg[6]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_3_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_3_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_2_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_2_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_1_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_1_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_0_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s01_data_upper_0_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_0_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s01_data_lower_0_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_rresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_rresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/multiplicator_inst/s_data_out_00__34 )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/multiplicator_inst/s_data_out_0_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_rresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_rresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_3/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_4/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (axi_gpio_5/U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_3_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_3_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_2_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_2_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_1_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_1_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_upper_0_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s01_data_upper_0_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s00_data_lower_0_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/multiplicator2_inst/s_s01_data_lower_0_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_as_plus_e_mm_0/\U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/multiplicator_inst/s_data_out_00__34 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/multiplicator_inst/s_data_out_0_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:04 ; elapsed = 00:04:09 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:42 ; elapsed = 00:04:00 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
@@ -5205,13 +5206,13 @@ Block RAM: Preliminary Mapping  Report (see note below)
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 Distributed RAM: Preliminary Mapping  Report (see note below)
-+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
-|Module Name                                                                                                                   | RTL Object                                                                                      | Inference      | Size (Depth x Width) | Primitives                  | 
-+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
-|frodoBD_i/i_0/axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg                                                                | User Attribute | 128 x 22             | RAM64X1D x 2  RAM64M x 14   | 
-|frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[1].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
-|frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
-+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|Module Name                                                                                                     | RTL Object                                                                                      | Inference      | Size (Depth x Width) | Primitives                  | 
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg                                                                | User Attribute | 128 x 22             | RAM64X1D x 2  RAM64M x 14   | 
+|matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[1].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
+|matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
@@ -5283,20 +5284,23 @@ INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0i_4/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
-+------+-----------------------------+------------+----------+
-|      |RTL Partition                |Replication |Instances |
-+------+-----------------------------+------------+----------+
-|1     |keccak_f1600_ip_v1_0__GB0    |           1|     24062|
-|2     |keccak_f1600_ip_v1_0__GB1    |           1|      5029|
-|3     |keccak_f1600_mm_core         |           1|     19115|
-|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9329|
-|5     |frodoBD__GC0                 |           1|     11467|
-+------+-----------------------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_ip_v1_0__GB0            |           1|     24060|
+|2     |keccak_f1600_ip_v1_0__GB1            |           1|      5029|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|       696|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|       356|
+|5     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|      2486|
+|6     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|      1222|
+|7     |keccak_f1600_mm_ip_v1_0__GC0         |           1|     12975|
+|8     |frodoBD__GC0                         |           1|     11467|
++------+-------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:21 ; elapsed = 00:04:26 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:00 ; elapsed = 00:04:18 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -5304,7 +5308,7 @@ Start Timing Optimization
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 INFO: [Synth 8-5775] Found 'rw_addr_collision' attribute set to 'no' on SDP RAM gen_wr_a.gen_word_narrow.mem_reg. Setting write mode to NO_CHANGE 
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:28 ; elapsed = 00:04:34 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Timing Optimization : Time (s): cpu = 00:04:09 ; elapsed = 00:04:28 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5334,30 +5338,90 @@ Block RAM: Final Mapping  Report
 
 
 Distributed RAM: Final Mapping  Report
-+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
-|Module Name                                                                                                                   | RTL Object                                                                                      | Inference      | Size (Depth x Width) | Primitives                  | 
-+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
-|frodoBD_i/i_0/axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg                                                                | User Attribute | 128 x 22             | RAM64X1D x 2  RAM64M x 14   | 
-|frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[1].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
-|frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
-+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|Module Name                                                                                                     | RTL Object                                                                                      | Inference      | Size (Depth x Width) | Primitives                  | 
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|axi_fifo_mm_s_0/\U0/COMP_IPIC2AXI_S/grxd.COMP_rx_len_fifo /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg                                                                | User Attribute | 128 x 22             | RAM64X1D x 2  RAM64M x 14   | 
+|matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[1].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
+|matrix_sa_plus_e_mm_ip_0                                                                                        | U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram_s00_0_inst/RAM_reg | Implied        | 8 x 32               | RAM16X1S x 32               | 
++----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-----------------------------+------------+----------+
-|      |RTL Partition                |Replication |Instances |
-+------+-----------------------------+------------+----------+
-|1     |keccak_f1600_ip_v1_0__GB0    |           1|     24062|
-|2     |keccak_f1600_ip_v1_0__GB1    |           1|      5029|
-|3     |keccak_f1600_mm_core         |           1|     19115|
-|4     |keccak_f1600_mm_ip_v1_0__GB1 |           1|      9329|
-|5     |frodoBD__GC0                 |           1|     11467|
-+------+-----------------------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_ip_v1_0__GB0            |           1|     24060|
+|2     |keccak_f1600_ip_v1_0__GB1            |           1|      5028|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|       456|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|       356|
+|5     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|      2081|
+|6     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|      1222|
+|7     |keccak_f1600_mm_ip_v1_0__GC0         |           1|     12975|
+|8     |frodoBD__GC0                         |           1|     11467|
++------+-------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[1].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[1].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[2].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[2].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[3].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[3].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/generate_ram[0].true_single_bram2_s01_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/generate_ram[1].true_single_bram2_s01_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/generate_ram[2].true_single_bram2_s01_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S02_AXI_inst/generate_ram[3].true_single_bram2_s01_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[0].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[0].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[1].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[1].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[2].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[2].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[3].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI_inst/generate_ram[3].true_single_bram_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:04:28 ; elapsed = 00:05:00 . Memory (MB): peak = 1449.043 ; gain = 891.805
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |keccak_f1600_ip_v1_0__GB0            |           1|     13534|
+|2     |keccak_f1600_ip_v1_0__GB1            |           1|      3289|
+|3     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB0 |           1|       176|
+|4     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB1 |           1|       143|
+|5     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB2 |           1|      1767|
+|6     |keccak_f1600_mm_ip_v1_0_S00_AXI__GB3 |           1|       609|
+|7     |keccak_f1600_mm_ip_v1_0__GC0         |           1|      6268|
+|8     |frodoBD__GC0                         |           1|      6208|
++------+-------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_as_plus_e_mm_0/U0/matrix_as_plus_e_mm_ip_v1_0_S00_AXI_inst/generate_ram[0].true_single_bram2_s00_inst/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
@@ -5387,33 +5451,12 @@ INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_sa_plus_e_mm_i
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:52 ; elapsed = 00:04:58 . Memory (MB): peak = 1425.059 ; gain = 867.883
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
 INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/aresetn_d_reg[1] is being inverted and renamed to inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/aresetn_d_reg[1]_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:05:06 ; elapsed = 00:05:12 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished IO Insertion : Time (s): cpu = 00:04:40 ; elapsed = 00:05:13 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -5426,7 +5469,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:05:06 ; elapsed = 00:05:12 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:40 ; elapsed = 00:05:13 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5438,25 +5481,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:12 ; elapsed = 00:05:18 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:46 ; elapsed = 00:05:20 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:05:13 ; elapsed = 00:05:18 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:46 ; elapsed = 00:05:20 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:05:29 ; elapsed = 00:05:34 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:55 ; elapsed = 00:05:29 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:05:29 ; elapsed = 00:05:35 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:55 ; elapsed = 00:05:29 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5491,51 +5534,50 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BIBUF      |   130|
 |2     |BUFG       |     1|
-|3     |CARRY4     |   192|
+|3     |CARRY4     |   212|
 |4     |DSP48E1_1  |     2|
 |5     |DSP48E1_2  |     1|
 |6     |DSP48E1_3  |     8|
 |7     |DSP48E1_4  |     1|
-|8     |LUT1       |   226|
-|9     |LUT2       |  4147|
-|10    |LUT3       |  4006|
-|11    |LUT4       |   781|
-|12    |LUT5       |  4394|
-|13    |LUT6       |  6557|
-|14    |MUXF7      |   699|
-|15    |MUXF8      |   256|
-|16    |PS7        |     1|
-|17    |RAM16X1S   |    64|
-|18    |RAM64M     |    14|
-|19    |RAM64X1D   |     2|
-|20    |RAMB18E1   |     8|
-|21    |RAMB36E1_2 |     4|
-|22    |RAMB36E1_3 |     4|
-|23    |RAMB36E1_4 |     2|
-|24    |RAMB36E1_5 |     4|
-|25    |SRL16      |     1|
-|26    |SRL16E     |    18|
-|27    |SRLC32E    |    47|
-|28    |FDR        |   280|
-|29    |FDRE       | 17903|
-|30    |FDSE       |   175|
+|8     |LUT1       |   220|
+|9     |LUT2       |  2400|
+|10    |LUT3       |  5288|
+|11    |LUT4       |   746|
+|12    |LUT5       |  3766|
+|13    |LUT6       |  5440|
+|14    |MUXF7      |   123|
+|15    |PS7        |     1|
+|16    |RAM16X1S   |    64|
+|17    |RAM64M     |    14|
+|18    |RAM64X1D   |     2|
+|19    |RAMB18E1   |     8|
+|20    |RAMB36E1_2 |     4|
+|21    |RAMB36E1_3 |     4|
+|22    |RAMB36E1_4 |     2|
+|23    |RAMB36E1_5 |     4|
+|24    |SRL16      |     1|
+|25    |SRL16E     |    18|
+|26    |SRLC32E    |    47|
+|27    |FDR        |   280|
+|28    |FDRE       | 13158|
+|29    |FDSE       |   135|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+-------------------------------------------------------------------------------+---------------------------------------------------------------+------+
 |      |Instance                                                                       |Module                                                         |Cells |
 +------+-------------------------------------------------------------------------------+---------------------------------------------------------------+------+
-|1     |top                                                                            |                                                               | 39928|
-|2     |  frodoBD_i                                                                    |frodoBD                                                        | 39928|
+|1     |top                                                                            |                                                               | 32080|
+|2     |  frodoBD_i                                                                    |frodoBD                                                        | 32080|
 |3     |    keccak_f1600_ip_0                                                          |frodoBD_keccak_f1600_ip_0_0                                    | 16887|
 |4     |      U0                                                                       |keccak_f1600_ip_v1_0                                           | 16887|
 |5     |        keccak_f1600_core_inst                                                 |keccak_f1600_core                                              | 11874|
 |6     |        keccak_f1600_ip_v1_0_M00_AXIS_inst                                     |keccak_f1600_ip_v1_0_M00_AXIS                                  |  1713|
 |7     |        keccak_f1600_ip_v1_0_S00_AXIS_inst                                     |keccak_f1600_ip_v1_0_S00_AXIS                                  |  3295|
-|8     |    keccak_f1600_mm_ip_0                                                       |frodoBD_keccak_f1600_mm_ip_0_0                                 | 16809|
-|9     |      U0                                                                       |keccak_f1600_mm_ip_v1_0                                        | 16809|
-|10    |        keccak_f1600_mm_core_inst                                              |keccak_f1600_mm_core                                           | 10292|
-|11    |        keccak_f1600_mm_ip_v1_0_S00_AXI_inst                                   |keccak_f1600_mm_ip_v1_0_S00_AXI                                |  6513|
+|8     |    keccak_f1600_mm_ip_0                                                       |frodoBD_keccak_f1600_mm_ip_0_0                                 |  8962|
+|9     |      U0                                                                       |keccak_f1600_mm_ip_v1_0                                        |  8962|
+|10    |        keccak_f1600_mm_core_fast_inst                                         |keccak_f1600_mm_core_fast                                      |  6838|
+|11    |        keccak_f1600_mm_ip_v1_0_S00_AXI_inst                                   |keccak_f1600_mm_ip_v1_0_S00_AXI                                |  2119|
 |12    |    axi_fifo_mm_s_0                                                            |frodoBD_axi_fifo_mm_s_0_0                                      |  1429|
 |13    |      U0                                                                       |axi_fifo_mm_s                                                  |  1429|
 |14    |        COMP_IPIC2AXI_S                                                        |ipic2axi_s                                                     |  1233|
@@ -5636,11 +5678,11 @@ Report Instance Areas:
 |109   |            I_DECODER                                                          |address_decoder__parameterized0                                |    27|
 |110   |        gpio_core_1                                                            |GPIO_Core__parameterized1                                      |    14|
 |111   |          \Not_Dual.INPUT_DOUBLE_REGS3                                         |cdc_sync__parameterized0                                       |     4|
-|112   |    axi_interconnect_0                                                         |frodoBD_axi_interconnect_0_0                                   |  1822|
-|113   |      xbar                                                                     |frodoBD_xbar_0                                                 |   682|
-|114   |        inst                                                                   |axi_crossbar_v2_1_20_axi_crossbar                              |   682|
-|115   |          \gen_sasd.crossbar_sasd_0                                            |axi_crossbar_v2_1_20_crossbar_sasd                             |   675|
-|116   |            addr_arbiter_inst                                                  |axi_crossbar_v2_1_20_addr_arbiter_sasd                         |   202|
+|112   |    axi_interconnect_0                                                         |frodoBD_axi_interconnect_0_0                                   |  1821|
+|113   |      xbar                                                                     |frodoBD_xbar_0                                                 |   681|
+|114   |        inst                                                                   |axi_crossbar_v2_1_20_axi_crossbar                              |   681|
+|115   |          \gen_sasd.crossbar_sasd_0                                            |axi_crossbar_v2_1_20_crossbar_sasd                             |   674|
+|116   |            addr_arbiter_inst                                                  |axi_crossbar_v2_1_20_addr_arbiter_sasd                         |   201|
 |117   |            \gen_decerr.decerr_slave_inst                                      |axi_crossbar_v2_1_20_decerr_slave                              |    17|
 |118   |            reg_slice_r                                                        |axi_register_slice_v2_1_19_axic_register_slice__parameterized7 |   384|
 |119   |            splitter_ar                                                        |axi_crossbar_v2_1_20_splitter__parameterized0                  |    11|
@@ -5715,17 +5757,17 @@ Report Instance Areas:
 |188   |      U0                                                                       |timer_v1_0                                                     |    41|
 +------+-------------------------------------------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:05:29 ; elapsed = 00:05:35 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:56 ; elapsed = 00:05:29 . Memory (MB): peak = 1449.043 ; gain = 891.805
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:44 ; elapsed = 00:05:12 . Memory (MB): peak = 1425.059 ; gain = 810.324
-Synthesis Optimization Complete : Time (s): cpu = 00:05:29 ; elapsed = 00:05:36 . Memory (MB): peak = 1425.059 ; gain = 867.883
+Synthesis finished with 0 errors, 0 critical warnings and 140 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:14 ; elapsed = 00:05:09 . Memory (MB): peak = 1449.043 ; gain = 809.832
+Synthesis Optimization Complete : Time (s): cpu = 00:04:56 ; elapsed = 00:05:30 . Memory (MB): peak = 1449.043 ; gain = 891.805
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1542 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-17] Analyzing 730 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1428.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1449.043 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 361 instances were transformed.
   FDR => FDRE: 280 instances
@@ -5735,13 +5777,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-977 Infos, 197 Warnings, 0 Critical Warnings and 0 Errors encountered.
+1007 Infos, 201 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:05:44 ; elapsed = 00:05:53 . Memory (MB): peak = 1428.246 ; gain = 1129.059
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1428.246 ; gain = 0.000
+synth_design: Time (s): cpu = 00:05:10 ; elapsed = 00:05:45 . Memory (MB): peak = 1449.043 ; gain = 1149.664
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1449.043 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1428.246 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1449.043 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file frodoBD_wrapper_utilization_synth.rpt -pb frodoBD_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 12:37:50 2020...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 28 15:36:37 2020...
