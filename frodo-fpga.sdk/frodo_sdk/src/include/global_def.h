@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "xgpio.h"
-#include "xllfifo.h"
 #include "xgpio.h"
 #include "xil_printf.h"
 
@@ -122,13 +121,6 @@ u32 *memoryMatrixB;
 u32 *memoryMatrixA2;
 u32 *memoryMatrixS2;
 u32 *memoryMatrixB2;
-
-//////////////////////////////////////////////
-//
-//	AXI Stream
-//
-//////////////////////////////////////////////
-XLlFifo fifoKeccak;
 
 //////////////////////////////////////////////
 //
