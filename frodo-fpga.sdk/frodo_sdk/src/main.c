@@ -66,7 +66,6 @@ extern XGpio axi_counter_timer;
 extern XGpio axi_counter_timer_mm;
 extern XGpio axiStartBusyMatrix;
 extern XGpio axiStartBusyMatrix2;
-extern XLlFifo fifoKeccak;
 extern u32 *memoryMMkeccak;
 extern u32 *memoryMatrixS;
 extern u32 *memoryMatrixA;
@@ -118,12 +117,12 @@ int main()
 	XGpioPs_SetOutputEnablePin(&Gpio, ledpin, 1);
 
 	//---- AXI GPIO ---
-	ConfigPtr1 = XGpio_LookupConfig(XPAR_AXI_GPIO_1_DEVICE_ID);
-	XGpio_CfgInitialize(&axi_counter_timer, ConfigPtr1, ConfigPtr1->BaseAddress);
-
-	ConfigPtr2 = XGpio_LookupConfig(XPAR_AXI_GPIO_2_DEVICE_ID);
-	XGpio_CfgInitialize(&axiStartDone, ConfigPtr2, ConfigPtr2->BaseAddress);
-	XGpio_DiscreteWrite(&axiStartDone, 1, 0x0); //Set start bit low.
+//	ConfigPtr1 = XGpio_LookupConfig(XPAR_AXI_GPIO_1_DEVICE_ID);
+//	XGpio_CfgInitialize(&axi_counter_timer, ConfigPtr1, ConfigPtr1->BaseAddress);
+//
+//	ConfigPtr2 = XGpio_LookupConfig(XPAR_AXI_GPIO_2_DEVICE_ID);
+//	XGpio_CfgInitialize(&axiStartDone, ConfigPtr2, ConfigPtr2->BaseAddress);
+//	XGpio_DiscreteWrite(&axiStartDone, 1, 0x0); //Set start bit low.
 
 	ConfigPtr3 = XGpio_LookupConfig(XPAR_AXI_GPIO_3_DEVICE_ID);
 	XGpio_CfgInitialize(&axiStartDoneMM, ConfigPtr3, ConfigPtr3->BaseAddress);
@@ -142,14 +141,7 @@ int main()
 
 	//---- AXI MM ----
 	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;
-//	print_debug(DEBUG_ERROR, "[MAIN] Memory golden word: 0x%lx.\n", memoryMMkeccak[63]);
-//	if(memoryMMkeccak[63] == 0xfeedfeed)
-//		print_debug(DEBUG_ERROR, "[MAIN] Golden word correct.\n");
-//	else
-//	{
-//		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Hardware problem: 0x%lx\n", memoryMMkeccak[63]);
-//		exit(0);
-//	}
+	print_debug(DEBUG_ERROR, "[MAIN] Keccak MM initialized.\n");
 
 	memoryMatrixS = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S00_AXI_BASEADDR;
 	memoryMatrixA = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S01_AXI_BASEADDR;
@@ -161,30 +153,30 @@ int main()
 	memoryMatrixB2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S02_AXI_BASEADDR;
 	print_debug(DEBUG_ERROR, "[MAIN] Matrix AS initialized.\n");
 
-	//---- AXI FIFO ----
-	int xStatus;
-	int Status;
-
-	//Config FIFO
-	XLlFifo_Config *ConfigFifoKeccak;
-	ConfigFifoKeccak = XLlFfio_LookupConfig(XPAR_AXI_FIFO_0_DEVICE_ID);
-	if (!ConfigFifoKeccak)
-		print_debug(DEBUG_ERROR, "[MAIN - ERROR] No configuration found.\n");
-
-	//Initialize FIFO
-	print_debug(DEBUG_MAIN, "[MAIN] Fifo keccak address: %d.\n", (int)(&fifoKeccak));
-	xStatus = XLlFifo_CfgInitialize(&fifoKeccak, ConfigFifoKeccak, ConfigFifoKeccak->BaseAddress);
-	if(XST_SUCCESS != xStatus)
-		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Failed to initialize FIFO keccak.\n");
-
-	print_debug(DEBUG_MAIN, "[MAIN] FIFO keccak initialized.\n");
-
-	//Get FIFO status
-	Status = XLlFifo_Status(&fifoKeccak);
-	XLlFifo_IntClear(&fifoKeccak, 0xffffffff);
-	Status = XLlFifo_Status(&fifoKeccak);
-	if(Status != 0x0)
-		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Reset value wrong.\n");
+//	//---- AXI FIFO ----
+//	int xStatus;
+//	int Status;
+//
+//	//Config FIFO
+//	XLlFifo_Config *ConfigFifoKeccak;
+//	ConfigFifoKeccak = XLlFfio_LookupConfig(XPAR_AXI_FIFO_0_DEVICE_ID);
+//	if (!ConfigFifoKeccak)
+//		print_debug(DEBUG_ERROR, "[MAIN - ERROR] No configuration found.\n");
+//
+//	//Initialize FIFO
+//	print_debug(DEBUG_MAIN, "[MAIN] Fifo keccak address: %d.\n", (int)(&fifoKeccak));
+//	xStatus = XLlFifo_CfgInitialize(&fifoKeccak, ConfigFifoKeccak, ConfigFifoKeccak->BaseAddress);
+//	if(XST_SUCCESS != xStatus)
+//		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Failed to initialize FIFO keccak.\n");
+//
+//	print_debug(DEBUG_MAIN, "[MAIN] FIFO keccak initialized.\n");
+//
+//	//Get FIFO status
+//	Status = XLlFifo_Status(&fifoKeccak);
+//	XLlFifo_IntClear(&fifoKeccak, 0xffffffff);
+//	Status = XLlFifo_Status(&fifoKeccak);
+//	if(Status != 0x0)
+//		print_debug(DEBUG_ERROR, "[MAIN - ERROR] Reset value wrong.\n");
 
     while(1)
     {
