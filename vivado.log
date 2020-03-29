@@ -1518,3 +1518,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 
 open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 3105.406 ; gain = 209.500
 report_utilization -name utilization_1
+current_project keccak_f1600_mm_ip_v1_0_project
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 3175.555 ; gain = 0.000
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 11:29:23 2020...

@@ -143,3 +143,6 @@ current_project keccak_f1600_mm_ip_v1_0_project
 current_project frodo-fpga
 open_run synth_1 -name synth_1
 report_utilization -name utilization_1
+current_project keccak_f1600_mm_ip_v1_0_project
+close_sim
+close_project
