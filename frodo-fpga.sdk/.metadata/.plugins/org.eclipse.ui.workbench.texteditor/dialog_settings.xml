@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="thousandthsKeccakHwMMMatrixSaHwAsSw" key="selection"/>
+		<item value="overhead" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="overhead"/>
+			<item value="t_keypair_keccak_sw_matrix_sa_sw_as_sw"/>
 			<item value="thousandthsKeccakHwMMMatrixHw"/>
 			<item value="wholeKeccakHwMMMatrixHw"/>
 			<item value="fRelativeKeccakHwMMMatrixHw"/>
 			<item value="thousandthsKeccakHwMatrixHw"/>
 			<item value="wholeKeccakHwMatrixHw"/>
 			<item value="fRelativeKeccakHwMatrixHw"/>
-			<item value="thousandthsKeccakSwMatrixHw"/>
-			<item value="wholeKeccakSwMatrixHw"/>
 		</list>
 		<list key="replacehistory">
 			<item value="thousandthsKeccakHwMMMatrixSaHwAsSw"/>

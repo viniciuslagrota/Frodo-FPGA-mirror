@@ -9,6 +9,17 @@
 #include "global_def.h"
 #include "fips202.h"
 
+unsigned int overhead;
+
+#if ENABLE_SW_TIMER
+	volatile uint32_t t_keccak_sw = 0, t_keccak_sw_acc = 0;
+	volatile uint32_t t_keccak_hw = 0, t_keccak_hw_acc = 0;
+	volatile uint32_t t_matrix_sa_sw = 0, t_matrix_sa_sw_acc = 0;
+	volatile uint32_t t_matrix_sa_hw = 0, t_matrix_sa_hw_acc = 0;
+	volatile uint32_t t_matrix_as_sw = 0, t_matrix_as_sw_acc = 0;
+	volatile uint32_t t_matrix_as_hw = 0, t_matrix_as_hw_acc = 0;
+#endif
+
 static enum codeType
 {
 	KECCAK_SW_MATRIX_SA_SW_AS_SW,
@@ -127,21 +138,56 @@ void matrix_AS_mult(uint32_t * A, uint32_t * S, uint32_t * B)
 
 void KeccakF1600_StatePermute(uint64_t * state)
 {
+
+#if ENABLE_SW_TIMER
+	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
+	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
+	{
+		t_keccak_sw = get_cyclecount();
+		KeccakF1600_StatePermute_SW(state);
+		t_keccak_sw_acc += get_cyclecount() - t_keccak_sw - overhead;
+	}
+	else
+	{
+		t_keccak_hw = get_cyclecount();
+		KeccakF1600_StatePermute_HW_MM(state);
+		t_keccak_hw_acc += get_cyclecount() - t_keccak_hw - overhead;
+	}
+#else
 	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
 	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
 		KeccakF1600_StatePermute_SW(state);
 	else
 		KeccakF1600_StatePermute_HW_MM(state);
+#endif
 }
 
 int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
 {
 	int iReturn;
+
+#if ENABLE_SW_TIMER
+	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
+	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_HW)
+	{
+		t_matrix_sa_sw = get_cyclecount();
+		iReturn = frodo_mul_add_sa_plus_e_SW(out, s, e, seed_A);
+		t_matrix_sa_sw_acc += get_cyclecount() - t_matrix_sa_sw - overhead;
+	}
+	else
+	{
+		t_matrix_sa_hw = get_cyclecount();
+		iReturn = frodo_mul_add_sa_plus_e_HW(out, s, e, seed_A);
+		t_matrix_sa_hw_acc += get_cyclecount() - t_matrix_sa_hw - overhead;
+	}
+
+#else
 	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
 	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_HW)
 		iReturn = frodo_mul_add_sa_plus_e_SW(out, s, e, seed_A);
 	else
 		iReturn = frodo_mul_add_sa_plus_e_HW(out, s, e, seed_A);
+#endif
 
 	return iReturn;
 }
@@ -149,11 +195,28 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
 {
 	int iReturn;
+
+#if ENABLE_SW_TIMER
+	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
+	   codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_HW_AS_SW)
+	{
+		t_matrix_as_sw = get_cyclecount();
+		iReturn = frodo_mul_add_as_plus_e_SW(out, s, e, seed_A);
+		t_matrix_as_sw_acc += get_cyclecount() - t_matrix_as_sw - overhead;
+	}
+	else
+	{
+		t_matrix_as_hw = get_cyclecount();
+		iReturn = frodo_mul_add_as_plus_e_HW(out, s, e, seed_A);
+		t_matrix_as_hw_acc += get_cyclecount() - t_matrix_as_sw - overhead;
+	}
+#else
 	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
 	   codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_HW_AS_SW)
 		iReturn = frodo_mul_add_as_plus_e_SW(out, s, e, seed_A);
 	else
 		iReturn = frodo_mul_add_as_plus_e_HW(out, s, e, seed_A);
+#endif
 
 	return iReturn;
 }
@@ -200,7 +263,7 @@ int kem_test(const char *named_parameters, int iterations)
 //	uint16_t CDF_TABLE_LEN = 13;
 
 	// measure the counting overhead:
-	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount();
 	overhead = get_cyclecount() - overhead;
 
 	volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
@@ -211,6 +274,13 @@ int kem_test(const char *named_parameters, int iterations)
 	volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
 	volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
 	volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+
+#if ENABLE_SW_TIMER
+	t_keccak_sw = 0; t_keccak_sw_acc = 0;
+	t_keccak_hw = 0; t_keccak_hw_acc = 0;
+	t_matrix_sa_sw = 0; t_matrix_sa_sw_acc = 0;
+	t_matrix_sa_hw = 0; t_matrix_sa_hw_acc = 0;
+#endif
 
 	/* enable user-mode access to the performance counter*/
 	asm ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
@@ -547,6 +617,7 @@ int kem_test(const char *named_parameters, int iterations)
 		wholeKeccakHwMMMatrixSaHwAsHw = fRelativeKeccakHwMMMatrixSaHwAsHw;
 		thousandthsKeccakHwMMMatrixSaHwAsHw = (fRelativeKeccakHwMMMatrixSaHwAsHw - wholeKeccakHwMMMatrixSaHwAsHw) * 1000;
 
+		print_debug(DEBUG_TEST_KEM, "------------------------------------------------------------ Total time and performance ---------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\tKeccak\t\t|\t\t\tMatrix\t\t\t|\t\tkey pair (us) \t\t|\t encryption (us) \t|\t decryption (us) \t\t|\t\t total (us) \t\t|\t Improvement (%c) \n", 37);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t\t -\n", t_keypair_keccak_sw_matrix_sa_sw_as_sw/666, t_enc_keccak_sw_matrix_sa_sw_as_sw/666, t_dec_keccak_sw_matrix_sa_sw_as_sw/666, t_total_keccak_sw_matrix_sa_sw_as_sw/666);
@@ -564,8 +635,43 @@ int kem_test(const char *named_parameters, int iterations)
 		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_sw_matrix_sa_hw_as_hw/666, t_enc_keccak_sw_matrix_sa_hw_as_hw/666, t_dec_keccak_sw_matrix_sa_hw_as_hw/666, t_total_keccak_sw_matrix_sa_hw_as_hw/666, wholeKeccakSwMatrixSaHwAsHw, thousandthsKeccakSwMatrixSaHwAsHw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw/666, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw/666, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw/666, t_total_keccak_hw_mm_matrix_sa_hw_as_hw/666, wholeKeccakHwMMMatrixSaHwAsHw, thousandthsKeccakHwMMMatrixSaHwAsHw);
-		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
+		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n\n");
 
+#if ENABLE_SW_TIMER
+		float fRelativeKeccak = 100.0-(t_keccak_hw_acc/(float)t_keccak_sw_acc)*100.0;
+		u32 wholeKeccak, thousandthsKeccak;
+		wholeKeccak = fRelativeKeccak;
+		thousandthsKeccak = (fRelativeKeccak - wholeKeccak) * 1000;
+		float fRelativeMatrixSa = 100.0-(t_matrix_sa_hw_acc/(float)t_matrix_sa_sw_acc)*100.0;
+		u32 wholeMatrixSa, thousandthsMatrixSa;
+		wholeMatrixSa = fRelativeMatrixSa;
+		thousandthsMatrixSa = (fRelativeMatrixSa - wholeMatrixSa) * 1000;
+		float fRelativeMatrixAs = 100.0-(t_matrix_as_hw_acc/(float)t_matrix_as_sw_acc)*100.0;
+		u32 wholeMatrixAs, thousandthsMatrixAs;
+		wholeMatrixAs = fRelativeMatrixAs;
+		thousandthsMatrixAs = (fRelativeMatrixAs - wholeMatrixAs) * 1000;
+//		print_debug(DEBUG_TEST_KEM, "\tt_keccak_sw_acc: %lu cycles or %lu us\n", t_keccak_sw_acc, (t_keccak_sw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_keccak_hw_acc: %lu cycles or %lu us\n", t_keccak_hw_acc, (t_keccak_hw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_keccak (%c): %lu.%03lu\n", 37, wholeKeccak, thousandthsKeccak);
+//		print_debug(DEBUG_TEST_KEM, "\tt_matrix_sa_sw_acc: %lu cycles or %lu us\n", t_matrix_sa_sw_acc, (t_matrix_sa_sw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_matrix_sa_hw_acc: %lu cycles or %lu us\n", t_matrix_sa_hw_acc, (t_matrix_sa_hw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_matrix_sa (%c): %lu.%03lu\n", 37, wholeMatrixSa, thousandthsMatrixSa);
+//		print_debug(DEBUG_TEST_KEM, "\tt_matrix_as_sw_acc: %lu cycles or %lu us\n", t_matrix_as_sw_acc, (t_matrix_as_sw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_matrix_as_hw_acc: %lu cycles or %lu us\n", t_matrix_as_hw_acc, (t_matrix_as_hw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_matrix_as (%c): %lu.%03lu\n", 37, wholeMatrixAs, thousandthsMatrixAs);
+//		print_debug(DEBUG_TEST_KEM, "\n\n");
+
+		print_debug(DEBUG_TEST_KEM, "----------------------------- Function processing time -----------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\tAlgorithm\t\t|\t\tSW time (us)\t\t\t|\t\tHW time (us) \t\t|\t Improvement (%c) \n", 37);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t  Keccak  \t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_keccak_sw_acc)/666, (t_keccak_hw_acc)/666, wholeKeccak, thousandthsKeccak);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_matrix_sa_sw_acc)/666, (t_matrix_sa_hw_acc)/666, wholeMatrixSa, thousandthsMatrixSa);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_matrix_as_sw_acc)/666, (t_matrix_as_hw_acc)/666, wholeMatrixAs, thousandthsMatrixAs);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n\n");
+
+#endif
 	}
 #endif
 
