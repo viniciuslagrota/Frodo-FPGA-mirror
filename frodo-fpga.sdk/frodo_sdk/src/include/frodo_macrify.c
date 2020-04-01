@@ -239,7 +239,7 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		if(i > 0)
 			send_s = 0;
 
-		frodo_mul_add_as_plus_e_hw_func((uint32_t *)a_row, (uint32_t *)s, b_matrix, send_s, req_data); //TODO: adicionar um sinal de last, para pedir somente 1x os dados.
+		frodo_mul_add_as_plus_e_hw_func((uint32_t *)a_row, (uint32_t *)s, b_matrix, send_s, req_data);
 	}
 
 	//Set start pin low
@@ -248,9 +248,9 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 	for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
 	{
 		if((k & 0x1) == 0)
-			out[k] += b_matrix[k >> 1] >> 16;
+			out[k] = (b_matrix[k >> 1] >> 16) + e[k];
 		else
-			out[k] += b_matrix[k >> 1] & 0xffff;
+			out[k] = (b_matrix[k >> 1] & 0xffff) + e[k];
 	}
 
 	return 1;
@@ -749,7 +749,7 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 }
 
 // Auxiliar function HW
-void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
+void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B, uint8_t req_data)
 {
 	//Variables
 	int i;
@@ -778,12 +778,16 @@ void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
 //	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
 
 	//Interpret data
-	for (i = 0; i < 2560; i++)
+	if(req_data)
 	{
-		B[i] = memoryMatrixB[i];
-//		if(i < 20 || i > 2500)
-//			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+		for (i = 0; i < 2560; i++)
+		{
+			B[i] = memoryMatrixB[i];
+	//		if(i < 20 || i > 2500)
+	//			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+		}
 	}
+
 }
 
 //Hardware
@@ -814,10 +818,12 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		*((uint32_t*)&out2[i]) = *((uint32_t*)&e[i]);
 	}
 
-	for (kk = 0; kk < PARAMS_N; kk+=4) {
+	uint8_t req_data = 0;
 
-		//Set start pin high
-		XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+
+	for (kk = 0; kk < PARAMS_N; kk+=4) {
 
 //		print_debug(DEBUG_MATRIX_MM, "kk: %d\n", kk);
 		seed_A_origin[0] = UINT16_TO_LE(kk + 0);
@@ -843,20 +849,23 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		}
 		a_matrix = (uint32_t *)a_cols;
 
-		frodo_mul_add_sa_plus_e_hw_func(s_matrix, a_matrix, sum2);
+		if(kk == PARAMS_N - 4)
+			req_data = 1;
+
+		frodo_mul_add_sa_plus_e_hw_func(s_matrix, a_matrix, sum2, req_data);
 
 		for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
 		{
 			if((k & 0x1) == 0)
-				out[k] += sum2[k >> 1] & 0xffff;
+				out[k] = (sum2[k >> 1] & 0xffff) + e[k];
 			else
-				out[k] += sum2[k >> 1] >> 16;
+				out[k] = (sum2[k >> 1] >> 16) + e[k];
 		}
 
-		//Set start pin high
-		XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
-
 	} //kk for
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
 
 	return 1;
 }
