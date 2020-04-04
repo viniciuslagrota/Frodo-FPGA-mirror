@@ -152,6 +152,25 @@ void KeccakF1600_StatePermute(uint64_t * state)
 		t_keccak_hw = get_cyclecount();
 		KeccakF1600_StatePermute_HW_MM(state);
 		t_keccak_hw_acc += get_cyclecount() - t_keccak_hw - overhead;
+
+#if ENABLE_HW_TIMER
+		//Stopping timer and reading time
+		u32 readTimer;
+		float fval;
+		u32 whole, thousandths;
+
+		readTimer = XGpio_DiscreteRead(&keccak_total_time, 1);
+		fval = (float)readTimer / (float)100;
+		whole = fval;
+		thousandths = (fval - whole) * 1000;
+		print_debug(DEBUG_TIMER, "[KECCAK-f1600] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+
+		readTimer = XGpio_DiscreteRead(&keccak_proc_time, 1);
+		fval = (float)readTimer / (float)100;
+		whole = fval;
+		thousandths = (fval - whole) * 1000;
+		print_debug(DEBUG_TIMER, "[KECCAK-f1600] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+#endif
 	}
 #else
 	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||

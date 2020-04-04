@@ -47,7 +47,7 @@ extern uint16_t CDF_TABLE_LEN;
 //////////////////////////////////////////////
 #define ENABLE_DEBUG				0
 #define ENABLE_KEM_TEST				1
-#define ENABLE_HW_TIMER				0
+#define ENABLE_HW_TIMER				1
 #define ENABLE_SW_TIMER				1
 //Just used for debug
 #define ENABLE_MATRIX_SW			0
@@ -79,6 +79,7 @@ extern uint16_t CDF_TABLE_LEN;
 #define DEBUG_KECCAK_HW				0
 #define DEBUG_KECCAK_HW_MM			0
 #define DEBUG_STATE_MATRIX			1
+#define DEBUG_TIMER					1
 //Random
 #define DEBUG_RANDOM				0
 //Noise
@@ -111,8 +112,8 @@ XGpio_Config * ConfigPtr2;
 XGpio_Config * ConfigPtr3;
 XGpio_Config * ConfigPtr4;
 XGpio_Config * ConfigPtr5;
-XGpio axi_counter_timer;
-XGpio axi_counter_timer_mm;
+XGpio keccak_total_time;
+XGpio keccak_proc_time;
 XGpio axiStartBusyMatrix;
 XGpio axiStartBusyMatrix2;
 u32 *memoryMMkeccak;

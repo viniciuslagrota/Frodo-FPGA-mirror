@@ -62,8 +62,8 @@ extern XGpio_Config * ConfigPtr1;
 extern XGpio_Config * ConfigPtr2;
 extern XGpio_Config * ConfigPtr3;
 extern XGpio_Config * ConfigPtr4;
-extern XGpio axi_counter_timer;
-extern XGpio axi_counter_timer_mm;
+extern XGpio keccak_total_time;
+extern XGpio keccak_proc_time;
 extern XGpio axiStartBusyMatrix;
 extern XGpio axiStartBusyMatrix2;
 extern u32 *memoryMMkeccak;
@@ -129,7 +129,10 @@ int main()
 	XGpio_DiscreteWrite(&axiStartDoneMM, 1, 0x0); //Set start bit low.
 
 	ConfigPtr0 = XGpio_LookupConfig(XPAR_AXI_GPIO_0_DEVICE_ID);
-	XGpio_CfgInitialize(&axi_counter_timer_mm, ConfigPtr0, ConfigPtr0->BaseAddress);
+	XGpio_CfgInitialize(&keccak_total_time, ConfigPtr0, ConfigPtr0->BaseAddress);
+
+	ConfigPtr1 = XGpio_LookupConfig(XPAR_AXI_GPIO_1_DEVICE_ID);
+	XGpio_CfgInitialize(&keccak_proc_time, ConfigPtr1, ConfigPtr1->BaseAddress);
 
 	ConfigPtr4 = XGpio_LookupConfig(XPAR_AXI_GPIO_4_DEVICE_ID);
 	XGpio_CfgInitialize(&axiStartBusyMatrix, ConfigPtr4, ConfigPtr4->BaseAddress);
