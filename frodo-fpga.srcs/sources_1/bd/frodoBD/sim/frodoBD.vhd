@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Sat Apr  4 17:53:15 2020
+--Date        : Sat Apr  4 20:19:12 2020
 --Host        : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
 --Command     : generate_target frodoBD.bd
 --Design      : frodoBD
@@ -3561,7 +3561,7 @@ entity frodoBD is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of frodoBD : entity is "frodoBD,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=frodoBD,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=28,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=14,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_clkrst_cnt=17,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of frodoBD : entity is "frodoBD,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=frodoBD,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=30,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=14,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_clkrst_cnt=17,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of frodoBD : entity is "frodoBD.hwdef";
 end frodoBD;
@@ -3682,7 +3682,8 @@ architecture STRUCTURE of frodoBD is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 )
+    gpio_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    gpio2_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component frodoBD_axi_gpio_0_1;
   component frodoBD_axi_gpio_3_0 is
@@ -3737,75 +3738,6 @@ architecture STRUCTURE of frodoBD is
     gpio_io_t : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component frodoBD_axi_gpio_4_0;
-  component frodoBD_matrix_sa_plus_e_mm_ip_0_0 is
-  port (
-    start : in STD_LOGIC;
-    busy : out STD_LOGIC;
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC;
-    s01_axi_awaddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    s01_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s01_axi_awvalid : in STD_LOGIC;
-    s01_axi_awready : out STD_LOGIC;
-    s01_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s01_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s01_axi_wvalid : in STD_LOGIC;
-    s01_axi_wready : out STD_LOGIC;
-    s01_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s01_axi_bvalid : out STD_LOGIC;
-    s01_axi_bready : in STD_LOGIC;
-    s01_axi_araddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    s01_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s01_axi_arvalid : in STD_LOGIC;
-    s01_axi_arready : out STD_LOGIC;
-    s01_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s01_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s01_axi_rvalid : out STD_LOGIC;
-    s01_axi_rready : in STD_LOGIC;
-    s01_axi_aclk : in STD_LOGIC;
-    s01_axi_aresetn : in STD_LOGIC;
-    s02_axi_awaddr : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    s02_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s02_axi_awvalid : in STD_LOGIC;
-    s02_axi_awready : out STD_LOGIC;
-    s02_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s02_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s02_axi_wvalid : in STD_LOGIC;
-    s02_axi_wready : out STD_LOGIC;
-    s02_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s02_axi_bvalid : out STD_LOGIC;
-    s02_axi_bready : in STD_LOGIC;
-    s02_axi_araddr : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    s02_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s02_axi_arvalid : in STD_LOGIC;
-    s02_axi_arready : out STD_LOGIC;
-    s02_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s02_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s02_axi_rvalid : out STD_LOGIC;
-    s02_axi_rready : in STD_LOGIC;
-    s02_axi_aclk : in STD_LOGIC;
-    s02_axi_aresetn : in STD_LOGIC
-  );
-  end component frodoBD_matrix_sa_plus_e_mm_ip_0_0;
   component frodoBD_axi_gpio_5_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -3940,7 +3872,96 @@ architecture STRUCTURE of frodoBD is
     count : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component frodoBD_timer_0_0;
-  component frodoBD_axi_gpio_0_2 is
+  component frodoBD_matrix_sa_plus_e_mm_ip_0_0 is
+  port (
+    start : in STD_LOGIC;
+    busy : out STD_LOGIC;
+    enable_total_timer : out STD_LOGIC;
+    reset_total_timer : out STD_LOGIC;
+    enable_proc_timer : out STD_LOGIC;
+    reset_proc_timer : out STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC;
+    s01_axi_awaddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    s01_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s01_axi_awvalid : in STD_LOGIC;
+    s01_axi_awready : out STD_LOGIC;
+    s01_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s01_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s01_axi_wvalid : in STD_LOGIC;
+    s01_axi_wready : out STD_LOGIC;
+    s01_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s01_axi_bvalid : out STD_LOGIC;
+    s01_axi_bready : in STD_LOGIC;
+    s01_axi_araddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
+    s01_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s01_axi_arvalid : in STD_LOGIC;
+    s01_axi_arready : out STD_LOGIC;
+    s01_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s01_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s01_axi_rvalid : out STD_LOGIC;
+    s01_axi_rready : in STD_LOGIC;
+    s01_axi_aclk : in STD_LOGIC;
+    s01_axi_aresetn : in STD_LOGIC;
+    s02_axi_awaddr : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    s02_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s02_axi_awvalid : in STD_LOGIC;
+    s02_axi_awready : out STD_LOGIC;
+    s02_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s02_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s02_axi_wvalid : in STD_LOGIC;
+    s02_axi_wready : out STD_LOGIC;
+    s02_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s02_axi_bvalid : out STD_LOGIC;
+    s02_axi_bready : in STD_LOGIC;
+    s02_axi_araddr : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    s02_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s02_axi_arvalid : in STD_LOGIC;
+    s02_axi_arready : out STD_LOGIC;
+    s02_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s02_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s02_axi_rvalid : out STD_LOGIC;
+    s02_axi_rready : in STD_LOGIC;
+    s02_axi_aclk : in STD_LOGIC;
+    s02_axi_aresetn : in STD_LOGIC
+  );
+  end component frodoBD_matrix_sa_plus_e_mm_ip_0_0;
+  component frodoBD_timer_2_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    enable : in STD_LOGIC;
+    count : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component frodoBD_timer_2_0;
+  component frodoBD_timer_3_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    enable : in STD_LOGIC;
+    count : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component frodoBD_timer_3_0;
+  component frodoBD_axi_gpio_0_3 is
   port (
     s_axi_aclk : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC;
@@ -3961,9 +3982,10 @@ architecture STRUCTURE of frodoBD is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 )
+    gpio_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    gpio2_io_i : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  end component frodoBD_axi_gpio_0_2;
+  end component frodoBD_axi_gpio_0_3;
   signal S00_AXI_1_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal S00_AXI_1_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal S00_AXI_1_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -4230,6 +4252,10 @@ architecture STRUCTURE of frodoBD is
   signal keccak_f1600_mm_ip_0_reset_total_timer : STD_LOGIC;
   signal matrix_as_plus_e_mm_0_busy : STD_LOGIC;
   signal matrix_sa_plus_e_mm_ip_0_busy : STD_LOGIC;
+  signal matrix_sa_plus_e_mm_ip_0_enable_proc_timer : STD_LOGIC;
+  signal matrix_sa_plus_e_mm_ip_0_enable_total_timer : STD_LOGIC;
+  signal matrix_sa_plus_e_mm_ip_0_reset_proc_timer : STD_LOGIC;
+  signal matrix_sa_plus_e_mm_ip_0_reset_total_timer : STD_LOGIC;
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -4256,6 +4282,8 @@ architecture STRUCTURE of frodoBD is
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
   signal timer_0_count : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal timer_1_count : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal timer_2_count : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal timer_3_count : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_axi_gpio_3_gpio_io_t_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_gpio_4_gpio_io_t_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_gpio_5_gpio_io_t_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -4296,6 +4324,7 @@ architecture STRUCTURE of frodoBD is
 begin
 axi_gpio_0: component frodoBD_axi_gpio_0_1
      port map (
+      gpio2_io_i(31 downto 0) => timer_1_count(31 downto 0),
       gpio_io_i(31 downto 0) => timer_0_count(31 downto 0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M01_AXI_ARADDR(8 downto 0),
@@ -4317,9 +4346,10 @@ axi_gpio_0: component frodoBD_axi_gpio_0_1
       s_axi_wstrb(3 downto 0) => axi_interconnect_0_M01_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => axi_interconnect_0_M01_AXI_WVALID
     );
-axi_gpio_1: component frodoBD_axi_gpio_0_2
+axi_gpio_1: component frodoBD_axi_gpio_0_3
      port map (
-      gpio_io_i(31 downto 0) => timer_1_count(31 downto 0),
+      gpio2_io_i(31 downto 0) => timer_3_count(31 downto 0),
+      gpio_io_i(31 downto 0) => timer_2_count(31 downto 0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M11_AXI_ARADDR(8 downto 0),
       s_axi_aresetn => proc_sys_reset_0_peripheral_aresetn(0),
@@ -4803,6 +4833,10 @@ matrix_as_plus_e_mm_0: component frodoBD_matrix_as_plus_e_mm_0_0
 matrix_sa_plus_e_mm_ip_0: component frodoBD_matrix_sa_plus_e_mm_ip_0_0
      port map (
       busy => matrix_sa_plus_e_mm_ip_0_busy,
+      enable_proc_timer => matrix_sa_plus_e_mm_ip_0_enable_proc_timer,
+      enable_total_timer => matrix_sa_plus_e_mm_ip_0_enable_total_timer,
+      reset_proc_timer => matrix_sa_plus_e_mm_ip_0_reset_proc_timer,
+      reset_total_timer => matrix_sa_plus_e_mm_ip_0_reset_total_timer,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(5 downto 0) => axi_interconnect_0_M03_AXI_ARADDR(5 downto 0),
       s00_axi_aresetn => proc_sys_reset_0_peripheral_aresetn(0),
@@ -4965,5 +4999,19 @@ timer_1: component frodoBD_timer_1_0
       count(31 downto 0) => timer_1_count(31 downto 0),
       enable => keccak_f1600_mm_ip_0_enable_timer,
       reset => keccak_f1600_mm_ip_0_reset_timer
+    );
+timer_2: component frodoBD_timer_2_0
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      count(31 downto 0) => timer_2_count(31 downto 0),
+      enable => matrix_sa_plus_e_mm_ip_0_enable_total_timer,
+      reset => matrix_sa_plus_e_mm_ip_0_reset_total_timer
+    );
+timer_3: component frodoBD_timer_3_0
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      count(31 downto 0) => timer_3_count(31 downto 0),
+      enable => matrix_sa_plus_e_mm_ip_0_enable_proc_timer,
+      reset => matrix_sa_plus_e_mm_ip_0_reset_proc_timer
     );
 end STRUCTURE;

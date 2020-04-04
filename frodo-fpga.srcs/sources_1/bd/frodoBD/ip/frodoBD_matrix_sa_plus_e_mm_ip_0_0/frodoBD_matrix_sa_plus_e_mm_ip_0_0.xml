@@ -1699,11 +1699,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Mar 08 00:25:08 UTC 2020</spirit:value>
+            <spirit:value>Sat Apr 04 23:13:12 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5f593e72</spirit:value>
+            <spirit:value>9:8db5e9c1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1714,7 +1714,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5f593e72</spirit:value>
+            <spirit:value>9:8db5e9c1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1730,11 +1730,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Mar 08 00:25:08 UTC 2020</spirit:value>
+            <spirit:value>Sat Apr 04 23:13:12 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5f593e72</spirit:value>
+            <spirit:value>9:8db5e9c1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1750,11 +1750,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Mar 08 00:25:08 UTC 2020</spirit:value>
+            <spirit:value>Sat Apr 04 23:13:12 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5a1c759f</spirit:value>
+            <spirit:value>9:43abef37</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1770,11 +1770,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Mar 08 00:25:08 UTC 2020</spirit:value>
+            <spirit:value>Sat Apr 04 23:13:12 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5a1c759f</spirit:value>
+            <spirit:value>9:43abef37</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1795,6 +1795,58 @@
       </spirit:port>
       <spirit:port>
         <spirit:name>busy</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>enable_total_timer</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>reset_total_timer</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>enable_proc_timer</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>reset_proc_timer</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -2793,42 +2845,47 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/controller.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/controller.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/multiplicator.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/multiplicator.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/true_dual_bram.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/timer_controller.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/true_single_bram.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/true_dual_bram.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/true_single_bram.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
@@ -2844,42 +2901,47 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/controller.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/controller.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0_S01_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/multiplicator.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/multiplicator.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/true_dual_bram.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/hdl/timer_controller.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/src/true_single_bram.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/true_dual_bram.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b8f6/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/33b4/src/true_single_bram.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/33b4/hdl/matrix_sa_plus_e_mm_ip_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
@@ -3053,7 +3115,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>matrix_sa_plus_e_mm_ip_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>16</xilinx:coreRevision>
+      <xilinx:coreRevision>17</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@56b76dd1_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1e4ad685_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
@@ -3364,6 +3426,71 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@54f9d3fe_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@58bee8f0_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1a51d61e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e713715_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@649cc314_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78b03c54_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78cdafc1_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64164ae0_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c6cbf12_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ba8cc98_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5422ef1a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11d9e9fe_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@465c8728_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15c1bf3b_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e4d01ec_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@511dd9bd_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a1c98af_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6960161e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@282de83b_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@509cfba5_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f00181e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f34dee1_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50702cd7_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@276340c7_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e8ec7fe_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a8eb50d_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d34fc5c_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bd40292_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40bf1eca_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e2586a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ba4c464_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1436d9d3_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@516525b0_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17b5c072_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@252e6c7a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@332216f3_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bbf9022_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7355c3b1_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74a429b2_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@768b3831_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dc57ed3_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@666b4437_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a2e38f8_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21661929_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e2b8a3f_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26585448_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@106f7cdf_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fd8cf8a_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48c4f524_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1513068d_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@176f221c_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29f556fa_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@104e6c5b_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ace814e_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bda0b78_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74face45_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@767f2096_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29b09d3f_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43b66312_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eec1b61_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61627128_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cccf912_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63f283b4_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4247ee32_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ba1f8b0_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17c0b217_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4010e8ff_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e8f7b9c_ARCHIVE_LOCATION">c:/Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -3453,8 +3580,8 @@
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c5066532"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="014ec56f"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6b7a264a"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="02d71a8b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="5381772c"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="e9271d46"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="f86bdc1f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="0302bfd6"/>
     </xilinx:packagingInfo>

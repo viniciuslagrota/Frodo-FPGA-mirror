@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:matrix_sa_plus_e_mm_ip:1.0
--- IP Revision: 16
+-- IP Revision: 17
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -60,6 +60,10 @@ ENTITY frodoBD_matrix_sa_plus_e_mm_ip_0_0 IS
   PORT (
     start : IN STD_LOGIC;
     busy : OUT STD_LOGIC;
+    enable_total_timer : OUT STD_LOGIC;
+    reset_total_timer : OUT STD_LOGIC;
+    enable_proc_timer : OUT STD_LOGIC;
+    reset_proc_timer : OUT STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -141,6 +145,10 @@ ARCHITECTURE frodoBD_matrix_sa_plus_e_mm_ip_0_0_arch OF frodoBD_matrix_sa_plus_e
     PORT (
       start : IN STD_LOGIC;
       busy : OUT STD_LOGIC;
+      enable_total_timer : OUT STD_LOGIC;
+      reset_total_timer : OUT STD_LOGIC;
+      enable_proc_timer : OUT STD_LOGIC;
+      reset_proc_timer : OUT STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -296,6 +304,10 @@ BEGIN
     PORT MAP (
       start => start,
       busy => busy,
+      enable_total_timer => enable_total_timer,
+      reset_total_timer => reset_total_timer,
+      enable_proc_timer => enable_proc_timer,
+      reset_proc_timer => reset_proc_timer,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,
