@@ -20,6 +20,19 @@ unsigned int overhead;
 	volatile uint32_t t_matrix_as_hw = 0, t_matrix_as_hw_acc = 0;
 #endif
 
+#if ENABLE_HW_TIMER
+	u32 readTimerKeccakTotal;
+	u32 readTimerKeccakProc;
+	u32 readTimerMatrixSaTotal;
+	u32 readTimerMatrixSaProc;
+	u32 readTimerMatrixAsTotal;
+	u32 readTimerMatrixAsProc;
+
+	u32 countKeccak;
+	u32 countMatrixSa;
+	u32 countMatrixAs;
+#endif
+
 static enum codeType
 {
 	KECCAK_SW_MATRIX_SA_SW_AS_SW,
@@ -31,6 +44,13 @@ static enum codeType
 	KECCAK_SW_MATRIX_SA_HW_AS_HW,
 	KECCAK_HW_MM_MATRIX_SA_HW_AS_HW
 } codeFeaturesType = KECCAK_SW_MATRIX_SA_SW_AS_HW;
+
+//void ticks_to_us(u32 readTimer, u32 * whole, u32 * thousandths, u32 freq_MHz)
+//{
+//	float fval = (float)readTimer / (float)freq_MHz;
+//	*whole = fval;
+//	*thousandths = (fval - whole) * 1000;
+//}
 
 #if ENABLE_DEBUG
 void matrix_SA_mult(uint32_t * S, uint32_t * A, uint32_t * B)
@@ -164,12 +184,16 @@ void KeccakF1600_StatePermute(uint64_t * state)
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+		readTimerKeccakTotal += readTimer;
 
 		readTimer = XGpio_DiscreteRead(&keccak_time, 2);
 		fval = (float)readTimer / (float)100;
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+		readTimerKeccakProc += readTimer;
+
+		countKeccak++;
 #endif
 	}
 #else
@@ -210,12 +234,16 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Matrix-SA: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+		readTimerMatrixSaTotal += readTimer;
 
 		readTimer = XGpio_DiscreteRead(&matrix_sa_time, 2);
 		fval = (float)readTimer / (float)100;
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Matrix-SA: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+		readTimerMatrixSaProc += readTimer;
+
+		countMatrixSa++;
 #endif
 	}
 
@@ -247,6 +275,29 @@ int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 		t_matrix_as_hw = get_cyclecount();
 		iReturn = frodo_mul_add_as_plus_e_HW(out, s, e, seed_A);
 		t_matrix_as_hw_acc += get_cyclecount() - t_matrix_as_sw - overhead;
+
+#if ENABLE_HW_TIMER
+		//Stopping timer and reading time
+		u32 readTimer;
+		float fval;
+		u32 whole, thousandths;
+
+		readTimer = XGpio_DiscreteRead(&matrix_as_time, 1);
+		fval = (float)readTimer / (float)100;
+		whole = fval;
+		thousandths = (fval - whole) * 1000;
+		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Matrix-AS: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+		readTimerMatrixAsTotal += readTimer;
+
+		readTimer = XGpio_DiscreteRead(&matrix_as_time, 2);
+		fval = (float)readTimer / (float)100;
+		whole = fval;
+		thousandths = (fval - whole) * 1000;
+		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Matrix-AS: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+		readTimerMatrixAsProc += readTimer;
+
+		countMatrixAs++;
+#endif
 	}
 #else
 	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
@@ -318,6 +369,19 @@ int kem_test(const char *named_parameters, int iterations)
 	t_keccak_hw = 0; t_keccak_hw_acc = 0;
 	t_matrix_sa_sw = 0; t_matrix_sa_sw_acc = 0;
 	t_matrix_sa_hw = 0; t_matrix_sa_hw_acc = 0;
+#endif
+
+#if ENABLE_HW_TIMER
+	readTimerKeccakTotal = 0;
+	readTimerKeccakProc = 0;
+	readTimerMatrixSaTotal = 0;
+	readTimerMatrixSaProc = 0;
+	readTimerMatrixAsTotal = 0;
+	readTimerMatrixAsProc = 0;
+
+	countKeccak = 0;
+	countMatrixSa = 0;
+	countMatrixAs = 0;
 #endif
 
 	/* enable user-mode access to the performance counter*/
@@ -708,8 +772,34 @@ int kem_test(const char *named_parameters, int iterations)
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_matrix_as_sw_acc)/666, (t_matrix_as_hw_acc)/666, wholeMatrixAs, thousandthsMatrixAs);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n\n");
-
 #endif
+
+#if ENABLE_HW_TIMER
+		float fRelativeKeccakTime = (readTimerKeccakProc/(float)readTimerKeccakTotal)*100.0;
+		u32 wholeKeccakHW, thousandthsKeccakHW;
+		wholeKeccakHW = fRelativeKeccakTime;
+		thousandthsKeccakHW = (fRelativeKeccakTime - wholeKeccakHW) * 1000;
+		float fRelativeMatrixSaTime = (readTimerMatrixSaProc/(float)readTimerMatrixSaTotal)*100.0;
+		u32 wholeMatrixSaHW, thousandthsMatrixSaHW;
+		wholeMatrixSaHW = fRelativeMatrixSaTime;
+		thousandthsMatrixSaHW = (fRelativeMatrixSaTime - wholeMatrixSaHW) * 1000;
+		float fRelativeMatrixAsTime = (readTimerMatrixAsProc/(float)readTimerMatrixAsTotal)*100.0;
+		u32 wholeMatrixAsHW, thousandthsMatrixAsHW;
+		wholeMatrixAsHW = fRelativeMatrixAsTime;
+		thousandthsMatrixAsHW = (fRelativeMatrixAsTime - wholeMatrixAsHW) * 1000;
+		print_debug(DEBUG_TEST_KEM, "--------------------------------- Hardware processing time analize ----------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\tAlgorithm\t\t|\t\t\tTotal time (ns)\t\t\t|\t\t\tProc time (ns) \t\t|\t Porcentage (%c) \n", 37);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t  Keccak  \t\t|\t\t\t\t   %d   \t\t\t\t|\t\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", (readTimerKeccakTotal/countKeccak), (readTimerKeccakProc/countKeccak), wholeKeccakHW, thousandthsKeccakHW);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t\t   %d   \t\t\t|\t\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (readTimerMatrixSaTotal/countMatrixSa), (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t\t   %d   \t\t\t|\t\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (readTimerMatrixAsTotal/countMatrixAs), (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
+		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------\n\n");
+#endif
+
+
+
 	}
 #endif
 

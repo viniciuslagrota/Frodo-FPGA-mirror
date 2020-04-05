@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Mar 29 11:34:34 2020
-# Process ID: 10720
+# Start of session at: Sun Apr  5 17:36:44 2020
+# Process ID: 13996
 # Current directory: C:/Projects/frodo-fpga
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14384 C:\Projects\frodo-fpga\frodo-fpga.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12332 C:\Projects\frodo-fpga\frodo-fpga.xpr
 # Log file: C:/Projects/frodo-fpga/vivado.log
 # Journal file: C:/Projects/frodo-fpga\vivado.jou
 #-----------------------------------------------------------
@@ -17,7 +17,7 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0'. The path is contained within another repository.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:11 . Memory (MB): peak = 756.086 ; gain = 120.484
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 777.754 ; gain = 145.578
 update_compile_order -fileset sources_1
 open_bd_design {C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd}
 Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
@@ -25,78 +25,259 @@ Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_r
 Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
 Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
 Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
-Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
-Adding component instance block -- xilinx.com:ip:axi_fifo_mm_s:4.2 - axi_fifo_mm_s_0
-Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_2
-Adding component instance block -- xilinx.com:user:timer:1.0 - timer_0
-Adding component instance block -- xilinx.com:user:keccak_f1600_ip:1.0 - keccak_f1600_ip_0
 Adding component instance block -- xilinx.com:user:timer:1.0 - timer_1
 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_3
 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_4
-Adding component instance block -- xilinx.com:user:matrix_sa_plus_e_mm_ip:1.0 - matrix_sa_plus_e_mm_ip_0
 Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_5
 Adding component instance block -- xilinx.com:user:matrix_as_plus_e_mm_ip:1.0 - matrix_as_plus_e_mm_0
 Adding component instance block -- xilinx.com:user:keccak_f1600_mm_ip:1.0 - keccak_f1600_mm_ip_0
+Adding component instance block -- xilinx.com:user:timer:1.0 - timer_0
+Adding component instance block -- xilinx.com:user:matrix_sa_plus_e_mm_ip:1.0 - matrix_sa_plus_e_mm_ip_0
+Adding component instance block -- xilinx.com:user:timer:1.0 - timer_2
+Adding component instance block -- xilinx.com:user:timer:1.0 - timer_3
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+WARNING: [BD 41-1731] Type mismatch between connected pins: /keccak_f1600_mm_ip_0/reset_proc_timer(undef) and /timer_1/reset(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /keccak_f1600_mm_ip_0/reset_total_timer(undef) and /timer_0/reset(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /matrix_sa_plus_e_mm_ip_0/reset_total_timer(undef) and /timer_2/reset(rst)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /matrix_sa_plus_e_mm_ip_0/reset_proc_timer(undef) and /timer_3/reset(rst)
 Successfully read diagram <frodoBD> from BD file <C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd>
-open_bd_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 893.715 ; gain = 85.938
-delete_bd_objs [get_bd_intf_nets axi_fifo_mm_s_0_AXI_STR_TXD] [get_bd_intf_nets keccak_f1600_ip_0_M00_AXIS] [get_bd_nets axi_gpio_2_gpio_io_o] [get_bd_nets keccak_f1600_ip_0_done] [get_bd_nets keccak_f1600_ip_0_enable_timer] [get_bd_nets keccak_f1600_ip_0_reset_timer] [get_bd_cells keccak_f1600_ip_0]
-undo
-INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_intf_nets axi_fifo_mm_s_0_AXI_STR_TXD] [get_bd_intf_nets keccak_f1600_ip_0_M00_AXIS] [get_bd_nets axi_gpio_2_gpio_io_o] [get_bd_nets keccak_f1600_ip_0_done] [get_bd_nets keccak_f1600_ip_0_enable_timer] [get_bd_nets keccak_f1600_ip_0_reset_timer] [get_bd_cells keccak_f1600_ip_0]'
-set_property location {5 2197 621} [get_bd_cells keccak_f1600_ip_0]
-delete_bd_objs [get_bd_nets keccak_f1600_ip_0_reset_timer] [get_bd_nets keccak_f1600_ip_0_enable_timer] [get_bd_nets timer_0_count] [get_bd_cells timer_0]
-delete_bd_objs [get_bd_intf_nets axi_fifo_mm_s_0_AXI_STR_TXD] [get_bd_intf_nets keccak_f1600_ip_0_M00_AXIS] [get_bd_nets axi_gpio_2_gpio_io_o] [get_bd_nets keccak_f1600_ip_0_done] [get_bd_cells keccak_f1600_ip_0]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M00_AXI] [get_bd_cells axi_gpio_1]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M01_AXI] [get_bd_cells axi_fifo_mm_s_0]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M02_AXI] [get_bd_cells axi_gpio_2]
-regenerate_bd_layout -routing
-set_property location {4.5 1616 359} [get_bd_cells timer_1]
-regenerate_bd_layout -routing
-set_property location {3 958 541} [get_bd_cells axi_gpio_3]
-set_property location {3 924 496} [get_bd_cells axi_gpio_3]
-set_property location {3 953 636} [get_bd_cells axi_gpio_0]
-set_property location {3 916 759} [get_bd_cells axi_gpio_4]
-set_property location {4 1277 1134} [get_bd_cells matrix_as_plus_e_mm_0]
-set_property location {4 1280 794} [get_bd_cells matrix_sa_plus_e_mm_ip_0]
-set_property location {3 930 790} [get_bd_cells axi_gpio_4]
-set_property location {3 903 1108} [get_bd_cells axi_gpio_5]
-set_property location {5 1536 493} [get_bd_cells timer_1]
-startgroup
-set_property -dict [list CONFIG.NUM_MI {11}] [get_bd_cells axi_interconnect_0]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M11_AXI] [get_bd_intf_nets axi_interconnect_0_M12_AXI] [get_bd_intf_nets axi_interconnect_0_M13_AXI]
-endgroup
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M03_AXI]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M04_AXI]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M05_AXI]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M06_AXI]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M07_AXI]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M08_AXI]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M09_AXI]
-delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M10_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins keccak_f1600_mm_ip_0/S00_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins axi_gpio_0/S_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M02_AXI] [get_bd_intf_pins axi_gpio_3/S_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M03_AXI] [get_bd_intf_pins matrix_sa_plus_e_mm_ip_0/S00_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M04_AXI] [get_bd_intf_pins matrix_sa_plus_e_mm_ip_0/S01_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M05_AXI] [get_bd_intf_pins matrix_sa_plus_e_mm_ip_0/S02_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M06_AXI] [get_bd_intf_pins axi_gpio_4/S_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M07_AXI] [get_bd_intf_pins matrix_as_plus_e_mm_0/S00_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M08_AXI] [get_bd_intf_pins matrix_as_plus_e_mm_0/S01_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M09_AXI] [get_bd_intf_pins matrix_as_plus_e_mm_0/S02_AXI]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M10_AXI] [get_bd_intf_pins axi_gpio_5/S_AXI]
-save_bd_design
+open_bd_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 920.742 ; gain = 102.086
+ipx::edit_ip_in_project -upgrade true -name matrix_as_plus_e_mm_ip_v1_0_project -directory C:/Projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 920.742 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 935.859 ; gain = 15.117
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/controller2.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'controller2'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'matrix_as_plus_e_mm_ip_v1_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0_S00_AXI.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'matrix_as_plus_e_mm_ip_v1_0_S00_AXI'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0_S01_AXI.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'matrix_as_plus_e_mm_ip_v1_0_S01_AXI'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0_S02_AXI.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'matrix_as_plus_e_mm_ip_v1_0_S02_AXI'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/multiplicator2.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'multiplicator2'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/true_single_bram2.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'true_single_bram2'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/testbench.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'testbench'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+"xelab -wto 00b0a7c28dd14216a6e95227a2773a01 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 00b0a7c28dd14216a6e95227a2773a01 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity work.true_single_bram2 [\true_single_bram2(mem_size=320,...]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0_S00_AXI [matrix_as_plus_e_mm_ip_v1_0_s00_...]
+Compiling architecture behavioral of entity work.true_single_bram2 [\true_single_bram2(mem_size=2560...]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0_S01_AXI [matrix_as_plus_e_mm_ip_v1_0_s01_...]
+Compiling architecture behavioral of entity work.true_single_bram2 [\true_single_bram2(mem_size=1280...]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0_S02_AXI [matrix_as_plus_e_mm_ip_v1_0_s02_...]
+Compiling architecture behavioral of entity work.controller2 [controller2_default]
+Compiling architecture behavioral of entity work.multiplicator2 [multiplicator2_default]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0 [matrix_as_plus_e_mm_ip_v1_0_defa...]
+Compiling architecture behavioral of entity work.testbench
+Built simulation snapshot testbench_behav
+
+****** Webtalk v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr  5 17:44:12 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.1/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 109.344 ; gain = 17.824
+INFO: [Common 17-206] Exiting Webtalk at Sun Apr  5 17:44:12 2020...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 942.934 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "testbench_behav -key {Behavioral:sim_1:Functional:testbench} -tclbatch {testbench.tcl} -view {c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/testbench_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/testbench_behav.wcfg
+WARNING: Simulation object /testbench/uut/matrix_as_plus_e_mm_ip_v1_0_S01_AXI_inst/s_receiving was not found in the design.
+WARNING: Simulation object /testbench/uut/matrix_as_plus_e_mm_ip_v1_0_S01_AXI_inst/en was not found in the design.
+WARNING: Simulation object /testbench/uut/matrix_as_plus_e_mm_ip_v1_0_S01_AXI_inst/s_addr_ram was not found in the design.
+open_wave_config: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 959.813 ; gain = 0.000
+source testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 959.813 ; gain = 16.879
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 959.813 ; gain = 16.879
+run 10 us
+run 1000 us
+run 1000 us
+close [ open C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd w ]
+add_files C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd
+set_property library work [get_files  C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1001.504 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'matrix_as_plus_e_mm_ip_v1_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'timer_controller2'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+"xelab -wto 00b0a7c28dd14216a6e95227a2773a01 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 00b0a7c28dd14216a6e95227a2773a01 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity work.true_single_bram2 [\true_single_bram2(mem_size=320,...]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0_S00_AXI [matrix_as_plus_e_mm_ip_v1_0_s00_...]
+Compiling architecture behavioral of entity work.true_single_bram2 [\true_single_bram2(mem_size=2560...]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0_S01_AXI [matrix_as_plus_e_mm_ip_v1_0_s01_...]
+Compiling architecture behavioral of entity work.true_single_bram2 [\true_single_bram2(mem_size=1280...]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0_S02_AXI [matrix_as_plus_e_mm_ip_v1_0_s02_...]
+Compiling architecture behavioral of entity work.controller2 [controller2_default]
+Compiling architecture behavioral of entity work.multiplicator2 [multiplicator2_default]
+Compiling architecture behavioral of entity work.timer_controller2 [timer_controller2_default]
+Compiling architecture arch_imp of entity work.matrix_as_plus_e_mm_ip_v1_0 [matrix_as_plus_e_mm_ip_v1_0_defa...]
+Compiling architecture behavioral of entity work.testbench
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:20 . Memory (MB): peak = 1001.504 ; gain = 0.000
+save_wave_config {c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/testbench_behav.wcfg}
+run 1000 us
+run 1000 us
+run 1000 us
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj testbench_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim/sim_1/behav/xsim'
+"xelab -wto 00b0a7c28dd14216a6e95227a2773a01 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 00b0a7c28dd14216a6e95227a2773a01 --incr --debug typical --relax --mt 2 -L work -L secureip --snapshot testbench_behav work.testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1026.840 ; gain = 0.000
+run 1000 us
+run 1000 us
+save_wave_config {c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/testbench_behav.wcfg}
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/component.xml' ignored by IP packager.
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/component.xml' ignored by IP packager.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_proc_timer' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_total_timer' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+INFO: [IP_Flow 19-3166] Bus Interface 'S01_AXI': References existing memory map 'S01_AXI'.
+INFO: [IP_Flow 19-3166] Bus Interface 'S02_AXI': References existing memory map 'S02_AXI'.
+ipx::remove_bus_interface reset_proc_timer [ipx::current_core]
+ipx::remove_bus_interface reset_total_timer [ipx::current_core]
+set_property core_revision 17 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+ERROR: [Project 1-161] Failed to remove the directory 'c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project/matrix_as_plus_e_mm_ip_v1_0_project.sim'. The directory might be in use by some other process.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:matrix_as_plus_e_mm_ip:1.0 [get_ips  frodoBD_matrix_as_plus_e_mm_0_0] -log ip_upgrade.log
+Upgrading 'C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd'
+INFO: [IP_Flow 19-3422] Upgraded frodoBD_matrix_as_plus_e_mm_0_0 (matrix_as_plus_e_mm_ip_v1.0 1.0) from revision 16 to revision 17
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'enable_proc_timer'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'enable_total_timer'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'reset_proc_timer'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'reset_total_timer'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'frodoBD_matrix_as_plus_e_mm_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1279] The upgrade of 'frodoBD_matrix_as_plus_e_mm_0_0' has identified issues that may require user intervention. Please review the upgrade log 'c:/Projects/frodo-fpga/ip_upgrade.log', and verify that the upgraded IP is correctly configured.
 Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
 Wrote  : <C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ui/bd_d4006eb0.ui> 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
-CRITICAL WARNING: [BD 41-1356] Slave segment </axi_gpio_5/S_AXI/Reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
-CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
-CRITICAL WARNING: [BD 41-1347] Reset pin /timer_1/reset (associated clock /timer_1/clk) is connected to asynchronous reset source /keccak_f1600_mm_ip_0/reset_timer.
-This may prevent design from meeting timing. Instead it should be connected to reset source /proc_sys_reset_0/peripheral_aresetn.
-CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
-CRITICAL WARNING: [BD 41-1356] Slave segment </axi_gpio_5/S_AXI/Reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
-CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Projects/frodo-fpga/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips frodoBD_matrix_as_plus_e_mm_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd]
 Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
 VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd
 VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/sim/frodoBD.vhd
@@ -112,66 +293,127 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_4 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_sa_plus_e_mm_ip_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_as_plus_e_mm_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_1 .
 WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc'
 INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_mmu .
 Exporting to file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD.hwh
 Generated Block Design Tcl file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD_bd.tcl
 Generated Hardware Definition File C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.hwdef
-[Sun Mar 29 11:47:12 2020] Launched synth_1...
-Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/runme.log
-[Sun Mar 29 11:47:12 2020] Launched impl_1...
-Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1126.145 ; gain = 158.906
-open_run impl_1
-INFO: [Device 21-403] Loading part xc7z010clg400-1
-INFO: [Netlist 29-17] Analyzing 227 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2019.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Timing 38-478] Restoring timing data from binary archive.
-INFO: [Timing 38-479] Binary timing data restore complete.
-INFO: [Project 1-856] Restoring constraints from binary archive.
-INFO: [Project 1-853] Binary constraint restore complete.
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1983.109 ; gain = 0.000
-Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1983.109 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1983.109 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 64 instances were transformed.
-  RAM16X1S => RAM32X1S (RAMS32): 64 instances
+generate_target: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1478.129 ; gain = 0.000
+export_ip_user_files -of_objects [get_files C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd] -directory C:/Projects/frodo-fpga/frodo-fpga.ip_user_files/sim_scripts -ip_user_files_dir C:/Projects/frodo-fpga/frodo-fpga.ip_user_files -ipstatic_source_dir C:/Projects/frodo-fpga/frodo-fpga.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/modelsim} {questa=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/questa} {riviera=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/riviera} {activehdl=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+copy_bd_objs /  [get_bd_cells {axi_gpio_1}]
+set_property location {3 1425 1350} [get_bd_cells axi_gpio_2]
+set_property location {3 1379 1305} [get_bd_cells axi_gpio_2]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:timer:1.0 timer_4
+endgroup
+set_property location {5 2307 1155} [get_bd_cells timer_4]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:timer:1.0 timer_5
+endgroup
+set_property location {5 2282 1291} [get_bd_cells timer_5]
+connect_bd_net [get_bd_pins axi_gpio_2/gpio_io_i] [get_bd_pins timer_4/count]
+WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_2/gpio_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO
+connect_bd_net [get_bd_pins timer_5/count] [get_bd_pins axi_gpio_2/gpio2_io_i]
+WARNING: [BD 41-1306] The connection to interface pin /axi_gpio_2/gpio2_io_i is being overridden by the user. This pin will not be connected as a part of interface connection GPIO2
+connect_bd_net [get_bd_pins timer_4/clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins timer_5/clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins timer_4/reset] [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_proc_timer]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /matrix_sa_plus_e_mm_ip_0/reset_proc_timer(undef) and /timer_4/reset(rst)
+connect_bd_net [get_bd_pins timer_5/reset] [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_proc_timer]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /matrix_sa_plus_e_mm_ip_0/reset_proc_timer(undef) and /timer_5/reset(rst)
+delete_bd_objs [get_bd_nets matrix_sa_plus_e_mm_ip_0_reset_proc_timer]
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/reset_total_timer] [get_bd_pins timer_4/reset]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /matrix_as_plus_e_mm_0/reset_total_timer(undef) and /timer_4/reset(rst)
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/reset_proc_timer] [get_bd_pins timer_5/reset]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /matrix_as_plus_e_mm_0/reset_proc_timer(undef) and /timer_5/reset(rst)
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/enable_total_timer] [get_bd_pins timer_4/enable]
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/enable_proc_timer] [get_bd_pins timer_5/enable]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {13}] [get_bd_cells axi_interconnect_0]
+endgroup
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M12_AXI] [get_bd_intf_pins axi_gpio_2/S_AXI]
+connect_bd_net [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+connect_bd_net [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+regenerate_bd_layout -routing
+set_property location {4 1338 833} [get_bd_cells matrix_sa_plus_e_mm_ip_0]
+set_property location {5 1634 893} [get_bd_cells timer_3]
+set_property location {5 1637 772} [get_bd_cells timer_2]
+set_property location {4 1337 416} [get_bd_cells keccak_f1600_mm_ip_0]
+set_property location {3 959 351} [get_bd_cells axi_gpio_3]
+set_property location {3 958 480} [get_bd_cells axi_gpio_0]
+set_property location {3 962 1312} [get_bd_cells axi_gpio_2]
+set_property location {3 956 1175} [get_bd_cells axi_gpio_5]
+assign_bd_address [get_bd_addr_segs {axi_gpio_2/S_AXI/Reg }]
+Slave segment </axi_gpio_2/S_AXI/Reg> is being mapped into address space </processing_system7_0/Data> at <0x4125_0000 [ 64K ]>
+save_bd_design
+Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
+Wrote  : <C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ui/bd_d4006eb0.ui> 
+report_ip_status -name ip_status 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1
 
-open_run: Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 2136.141 ; gain = 1009.297
-open_report: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2234.113 ; gain = 97.000
-report_utilization -name utilization_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/timer_3/reset
+
+Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/sim/frodoBD.vhd
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block keccak_f1600_mm_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_sa_plus_e_mm_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_as_plus_e_mm_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_5 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD.hwh
+Generated Block Design Tcl file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD_bd.tcl
+Generated Hardware Definition File C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.hwdef
+[Sun Apr  5 18:07:08 2020] Launched synth_1...
+Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/runme.log
+[Sun Apr  5 18:07:08 2020] Launched impl_1...
+Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1541.789 ; gain = 43.488
+report_ip_status -name ip_status 
 file copy -force C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/frodoBD_wrapper.sysdef C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
 
 launch_sdk -workspace C:/Projects/frodo-fpga/frodo-fpga.sdk -hwspec C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
 INFO: [Vivado 12-393] Launching SDK...
 INFO: [Vivado 12-417] Running xsdk -workspace C:/Projects/frodo-fpga/frodo-fpga.sdk -hwspec C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
-INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
-INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
-INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
-assign_bd_address [get_bd_addr_segs {axi_gpio_5/S_AXI/Reg }]
-Slave segment </axi_gpio_5/S_AXI/Reg> is being mapped into address space </processing_system7_0/Data> at <0x4120_0000 [ 64K ]>
-set_property range 64K [get_bd_addr_segs {processing_system7_0/Data/SEG_matrix_sa_plus_e_mm_ip_0_S02_AXI_reg}]
-delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_5_Reg]
-assign_bd_address [get_bd_addr_segs {axi_gpio_5/S_AXI/Reg }]
-Slave segment </axi_gpio_5/S_AXI/Reg> is being mapped into address space </processing_system7_0/Data> at <0x4120_0000 [ 64K ]>
-assign_bd_address [get_bd_addr_segs {matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg }]
-Slave segment </matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg> is being mapped into address space </processing_system7_0/Data> at <0x43C0_0000 [ 64K ]>
-assign_bd_address [get_bd_addr_segs {matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg }]
-Slave segment </matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg> is being mapped into address space </processing_system7_0/Data> at <0x43C5_0000 [ 64K ]>
+connect_bd_net [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_proc_timer] [get_bd_pins timer_3/reset]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /matrix_sa_plus_e_mm_ip_0/reset_proc_timer(undef) and /timer_3/reset(rst)
 save_bd_design
 Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
+Wrote  : <C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ui/bd_d4006eb0.ui> 
 reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1
+
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-CRITICAL WARNING: [BD 41-1347] Reset pin /timer_1/reset (associated clock /timer_1/clk) is connected to asynchronous reset source /keccak_f1600_mm_ip_0/reset_timer.
-This may prevent design from meeting timing. Instead it should be connected to reset source /proc_sys_reset_0/peripheral_aresetn.
 Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
 VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd
 VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/sim/frodoBD.vhd
@@ -187,17 +429,25 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_4 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_sa_plus_e_mm_ip_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_as_plus_e_mm_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_5 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_2 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_5 .
 WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc'
 INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
 Exporting to file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD.hwh
 Generated Block Design Tcl file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD_bd.tcl
 Generated Hardware Definition File C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.hwdef
-[Sun Mar 29 12:14:22 2020] Launched synth_1...
+[Sun Apr  5 19:44:22 2020] Launched synth_1...
 Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/runme.log
-[Sun Mar 29 12:14:22 2020] Launched impl_1...
+[Sun Apr  5 19:44:22 2020] Launched impl_1...
 Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2355.398 ; gain = 40.289
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1560.293 ; gain = 4.277
+report_ip_status -name ip_status 
 file copy -force C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/frodoBD_wrapper.sysdef C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
 
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 20:14:55 2020...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  5 20:28:15 2020...

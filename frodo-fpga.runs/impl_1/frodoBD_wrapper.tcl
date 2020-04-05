@@ -60,15 +60,12 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache C:/Users/vinic/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4628-DESKTOP-0F4OK3D/incrSyn
   create_project -in_memory -part xc7z010clg400-1
   set_property board_part em.avnet.com:microzed_7010:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]

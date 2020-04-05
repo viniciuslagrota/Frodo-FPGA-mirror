@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="XPAR_AXI_GPIO_0_DEVICE_ID" key="selection"/>
+		<item value="matrix_sa_time" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="matrix_sa_time"/>
 			<item value="XPAR_AXI_GPIO_1_DEVICE_ID"/>
 			<item value="keccak_total_time"/>
 			<item value="axi_counter_timer_mm"/>
@@ -15,7 +16,6 @@
 			<item value="t_keypair_keccak_sw_matrix_sa_sw_as_sw"/>
 			<item value="thousandthsKeccakHwMMMatrixHw"/>
 			<item value="wholeKeccakHwMMMatrixHw"/>
-			<item value="fRelativeKeccakHwMMMatrixHw"/>
 		</list>
 		<list key="replacehistory">
 			<item value="thousandthsKeccakHwMMMatrixSaHwAsSw"/>

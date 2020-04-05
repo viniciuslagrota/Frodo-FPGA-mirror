@@ -64,6 +64,7 @@ extern XGpio_Config * ConfigPtr3;
 extern XGpio_Config * ConfigPtr4;
 extern XGpio keccak_time;
 extern XGpio matrix_sa_time;
+extern XGpio matrix_as_time;
 extern XGpio axiStartBusyMatrix;
 extern XGpio axiStartBusyMatrix2;
 extern u32 *memoryMMkeccak;
@@ -133,6 +134,9 @@ int main()
 
 	ConfigPtr1 = XGpio_LookupConfig(XPAR_AXI_GPIO_1_DEVICE_ID);
 	XGpio_CfgInitialize(&matrix_sa_time, ConfigPtr1, ConfigPtr1->BaseAddress);
+
+	ConfigPtr2 = XGpio_LookupConfig(XPAR_AXI_GPIO_2_DEVICE_ID);
+	XGpio_CfgInitialize(&matrix_as_time, ConfigPtr2, ConfigPtr2->BaseAddress);
 
 	ConfigPtr4 = XGpio_LookupConfig(XPAR_AXI_GPIO_4_DEVICE_ID);
 	XGpio_CfgInitialize(&axiStartBusyMatrix, ConfigPtr4, ConfigPtr4->BaseAddress);
