@@ -54,6 +54,12 @@ set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_5_0/frodoBD_axi_gpio_5_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_5_0/frodoBD_axi_gpio_5_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_5_0/frodoBD_axi_gpio_5_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_0_3/frodoBD_axi_gpio_0_3_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_0_3/frodoBD_axi_gpio_0_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_0_3/frodoBD_axi_gpio_0_3.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_1_0/frodoBD_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_1_0/frodoBD_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_1_0/frodoBD_axi_gpio_1_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD_ooc.xdc]
 

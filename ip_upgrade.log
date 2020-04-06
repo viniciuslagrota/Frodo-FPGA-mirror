@@ -1,6 +1,133 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun Apr  5 18:02:40 2020
+| Host         : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'frodoBD_matrix_as_plus_e_mm_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of frodoBD_matrix_as_plus_e_mm_0_0 (xilinx.com:user:matrix_as_plus_e_mm_ip:1.0) from (Rev. 16) to (Rev. 17)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'frodoBD_matrix_as_plus_e_mm_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'enable_proc_timer'
+
+-Upgrade has added port 'enable_total_timer'
+
+-Upgrade has added port 'reset_proc_timer'
+
+-Upgrade has added port 'reset_total_timer'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Apr  4 20:12:59 2020
+| Host         : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'frodoBD_matrix_sa_plus_e_mm_ip_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of frodoBD_matrix_sa_plus_e_mm_ip_0_0 (xilinx.com:user:matrix_sa_plus_e_mm_ip:1.0) from (Rev. 16) to (Rev. 17)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'frodoBD_matrix_sa_plus_e_mm_ip_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'enable_proc_timer'
+
+-Upgrade has added port 'enable_total_timer'
+
+-Upgrade has added port 'reset_proc_timer'
+
+-Upgrade has added port 'reset_total_timer'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sat Apr  4 17:07:19 2020
+| Host         : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'frodoBD_keccak_f1600_mm_ip_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of frodoBD_keccak_f1600_mm_ip_0_0 (xilinx.com:user:keccak_f1600_mm_ip:1.0) from (Rev. 13) to (Rev. 14)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'frodoBD_keccak_f1600_mm_ip_0_0'.
+
+
+-Upgrade has removed interface 'reset_timer'
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'frodoBD_keccak_f1600_mm_ip_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'enable_timer'
+
+-Upgrade has removed port 'reset_timer'
+
+-Upgrade has added port 'enable_proc_timer'
+
+-Upgrade has added port 'enable_total_timer'
+
+-Upgrade has added port 'reset_proc_timer'
+
+-Upgrade has added port 'reset_total_timer'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 | Date         : Sat Mar 28 15:27:53 2020
 | Host         : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

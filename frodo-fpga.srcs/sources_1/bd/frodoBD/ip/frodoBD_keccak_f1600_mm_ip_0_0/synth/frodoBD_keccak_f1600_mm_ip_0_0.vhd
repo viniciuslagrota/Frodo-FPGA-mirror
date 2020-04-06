@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:keccak_f1600_mm_ip:1.0
--- IP Revision: 13
+-- IP Revision: 14
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -60,8 +60,10 @@ ENTITY frodoBD_keccak_f1600_mm_ip_0_0 IS
   PORT (
     start : IN STD_LOGIC;
     done : OUT STD_LOGIC;
-    enable_timer : OUT STD_LOGIC;
-    reset_timer : OUT STD_LOGIC;
+    enable_total_timer : OUT STD_LOGIC;
+    reset_total_timer : OUT STD_LOGIC;
+    enable_proc_timer : OUT STD_LOGIC;
+    reset_proc_timer : OUT STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -97,8 +99,10 @@ ARCHITECTURE frodoBD_keccak_f1600_mm_ip_0_0_arch OF frodoBD_keccak_f1600_mm_ip_0
     PORT (
       start : IN STD_LOGIC;
       done : OUT STD_LOGIC;
-      enable_timer : OUT STD_LOGIC;
-      reset_timer : OUT STD_LOGIC;
+      enable_total_timer : OUT STD_LOGIC;
+      reset_total_timer : OUT STD_LOGIC;
+      enable_proc_timer : OUT STD_LOGIC;
+      reset_proc_timer : OUT STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -127,7 +131,7 @@ ARCHITECTURE frodoBD_keccak_f1600_mm_ip_0_0_arch OF frodoBD_keccak_f1600_mm_ip_0
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF frodoBD_keccak_f1600_mm_ip_0_0_arch : ARCHITECTURE IS "frodoBD_keccak_f1600_mm_ip_0_0,keccak_f1600_mm_ip_v1_0,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF frodoBD_keccak_f1600_mm_ip_0_0_arch: ARCHITECTURE IS "frodoBD_keccak_f1600_mm_ip_0_0,keccak_f1600_mm_ip_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=keccak_f1600_mm_ip,x_ipVersion=1.0,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=8}";
+  ATTRIBUTE CORE_GENERATION_INFO OF frodoBD_keccak_f1600_mm_ip_0_0_arch: ARCHITECTURE IS "frodoBD_keccak_f1600_mm_ip_0_0,keccak_f1600_mm_ip_v1_0,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=keccak_f1600_mm_ip,x_ipVersion=1.0,x_ipCoreRevision=14,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=8}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_aresetn: SIGNAL IS "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
@@ -152,11 +156,9 @@ ARCHITECTURE frodoBD_keccak_f1600_mm_ip_0_0_arch OF frodoBD_keccak_f1600_mm_ip_0
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 64, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 8, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN frodoBD_processing_sys" & 
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 64, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 8, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN frodoBD_processing_sys" & 
 "tem7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF reset_timer: SIGNAL IS "XIL_INTERFACENAME reset_timer, POLARITY ACTIVE_LOW, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF reset_timer: SIGNAL IS "xilinx.com:signal:reset:1.0 reset_timer RST";
 BEGIN
   U0 : keccak_f1600_mm_ip_v1_0
     GENERIC MAP (
@@ -166,8 +168,10 @@ BEGIN
     PORT MAP (
       start => start,
       done => done,
-      enable_timer => enable_timer,
-      reset_timer => reset_timer,
+      enable_total_timer => enable_total_timer,
+      reset_total_timer => reset_total_timer,
+      enable_proc_timer => enable_proc_timer,
+      reset_proc_timer => reset_proc_timer,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,

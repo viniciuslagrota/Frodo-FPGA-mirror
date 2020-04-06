@@ -175,19 +175,6 @@ void KeccakF1600_StatePermute_HW_MM(uint64_t * state)
 	}
 	print_debug(DEBUG_KECCAK_HW_MM, "[KECCAK-f1600] Done bit high!\n");
 
-#if ENABLE_HW_TIMER
-	//Stopping timer and reading time
-	u32 readTimer;
-	float fval;
-	u32 whole, thousandths;
-
-	readTimer = XGpio_DiscreteRead(&axi_counter_timer_mm, 1);
-	fval = (float)readTimer / (float)100;
-	whole = fval;
-	thousandths = (fval - whole) * 1000;
-	print_debug(DEBUG_KECCAK_HW, "[KECCAK-f1600] Time took to process Keccak-f1600-MM: %lu.%03lu us\n", whole, thousandths);
-#endif
-
 	//Interpret data
 //	for (i = 0; i < 50; i++)
 //	{
