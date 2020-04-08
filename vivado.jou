@@ -2,230 +2,64 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Apr  7 10:51:08 2020
-# Process ID: 10596
+# Start of session at: Wed Apr  8 10:00:23 2020
+# Process ID: 6220
 # Current directory: C:/Projects/frodo-fpga
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6176 C:\Projects\frodo-fpga\frodo-fpga.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19232 C:\Projects\frodo-fpga\frodo-fpga.xpr
 # Log file: C:/Projects/frodo-fpga/vivado.log
 # Journal file: C:/Projects/frodo-fpga\vivado.jou
 #-----------------------------------------------------------
-start_guioopen_project C:/Projects/frodo-fpga/frodo-fpga.xpr
+start_gui
+open_project C:/Projects/frodo-fpga/frodo-fpga.xpr
 update_compile_order -fileset sources_1
 open_bd_design {C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd}
-create_peripheral xilinx.com user shake128_mm_ip 1.0 -dir C:/Projects/frodo-fpga/../ip_repo
-add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core xilinx.com:user:shake128_mm_ip:1.0]
-generate_peripheral -driver -bfm_example_design -debug_hw_example_design [ipx::find_open_core xilinx.com:user:shake128_mm_ip:1.0]
-write_peripheral [ipx::find_open_core xilinx.com:user:shake128_mm_ip:1.0]
-set_property  ip_repo_paths  {C:/Projects/frodo-fpga/../ip_repo/shake128_mm_ip_1.0 C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0 C:/Projects/ip_repo} [current_project]
-update_ip_catalog -rebuild
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:user:shake128_mm_ip:1.0 shake128_mm_ip_0
-endgroup
-set_property location {5 1561 1545} [get_bd_cells shake128_mm_ip_0]
-set_property location {4 1613 15} [get_bd_cells shake128_mm_ip_0]
-connect_bd_net [get_bd_pins shake128_mm_ip_0/s00_axi_aresetn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
-connect_bd_net [get_bd_pins shake128_mm_ip_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
 ipx::edit_ip_in_project -upgrade true -name shake128_mm_ip_v1_0_project -directory C:/Projects/frodo-fpga/frodo-fpga.tmp/shake128_mm_ip_v1_0_project c:/Projects/ip_repo/shake128_mm_ip_1.0/component.xml
 update_compile_order -fileset sources_1
-add_files -norecurse -copy_to c:/Projects/ip_repo/shake128_mm_ip_1.0/src C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/true_single_bram3.vhd
-update_compile_order -fileset sources_1
-set_property library work [get_files  c:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/shake128_mm_ip_v1_0.vhd]
-set_property library work [get_files  c:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd]
-set_property library work [get_files  c:/Projects/ip_repo/shake128_mm_ip_1.0/src/true_single_bram3.vhd]
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd w ]
-add_files -fileset sim_1 C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-launch_simulation
-set_property library work [get_files  C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd]
+set_property library xil_defaultlib [get_files  c:/Projects/ip_repo/shake128_mm_ip_1.0/src/keccak_global2.vhd]
 launch_simulation
 launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
+open_wave_config c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg
 source testbench.tcl
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-add_files -fileset sim_1 -norecurse C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg
-set_property xsim.view C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg [get_filesets sim_1]
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+run 1000 us
 relaunch_sim
-run 100 us
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-relaunch_sim
-relaunch_sim
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-relaunch_sim
-run 100 us
-close [ open C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/keccak_absorb.vhd w ]
-add_files C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/keccak_absorb.vhd
-set_property library work [get_files  C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/keccak_absorb.vhd]
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-relaunch_sim
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-add_files -norecurse -copy_to c:/Projects/ip_repo/shake128_mm_ip_1.0/src C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/keccak_global.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-run 100 us
-relaunch_sim
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-export_ip_user_files -of_objects  [get_files c:/Projects/ip_repo/shake128_mm_ip_1.0/src/keccak_global.vhd] -no_script -reset -force -quiet
-remove_files  c:/Projects/ip_repo/shake128_mm_ip_1.0/src/keccak_global.vhd
-add_files -norecurse -copy_to c:/Projects/ip_repo/shake128_mm_ip_1.0/src C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/keccak_f1600_mm_core_fast2.vhd
-set_property library work [get_files  c:/Projects/ip_repo/shake128_mm_ip_1.0/src/keccak_f1600_mm_core_fast2.vhd]
-add_files -norecurse -copy_to c:/Projects/ip_repo/shake128_mm_ip_1.0/src C:/Projects/ip_repo/shake128_mm_ip_1.0/hdl/keccak_global2.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-relaunch_sim
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-run 100 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 100 us
-run 100 us
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-relaunch_sim
-relaunch_sim
-run 100 us
+run 1000 us
 run 1000 us
 relaunch_sim
 run 1000 us
 relaunch_sim
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
 run 1000 us
+current_project frodo-fpga
+close_project
 relaunch_sim
-run 1000 us
+relaunch_sim
+relaunch_sim
 relaunch_sim
 relaunch_sim
 run 1000 us
 relaunch_sim
 run 1000 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+relaunch_sim
+run 1000 us
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+relaunch_sim
+run 1000 us
+relaunch_sim
+run 1000 us
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
 relaunch_sim
 run 1000 us
 relaunch_sim
@@ -239,35 +73,40 @@ run 1000 us
 relaunch_sim
 run 1000 us
 relaunch_sim
+close_sim
+launch_simulation
+open_wave_config c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg
+source testbench.tcl
 run 1000 us
 relaunch_sim
 run 1000 us
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+relaunch_sim
+relaunch_sim
+run 1000 us
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
 relaunch_sim
 run 1000 us
 relaunch_sim
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg
+source testbench.tcl
 run 1000 us
-relaunch_sim
+save_wave_config {c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config c:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg
+source testbench.tcl
 run 1000 us
-relaunch_sim
-run 1000 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-relaunch_sim
-run 1000 us
-save_wave_config {C:/Projects/ip_repo/shake128_mm_ip_1.0/testbench_behav.wcfg}
 ipx::merge_project_changes files [ipx::current_core]
 ipx::merge_project_changes hdl_parameters [ipx::current_core]
-set_property core_revision 2 [ipx::current_core]
+set_property core_revision 3 [ipx::current_core]
 ipx::update_source_project_archive -component [ipx::current_core]
 ipx::create_xgui_files [ipx::current_core]
 ipx::update_checksums [ipx::current_core]
 ipx::save_core [ipx::current_core]
 ipx::move_temp_component_back -component [ipx::current_core]
 close_project -delete
-update_ip_catalog -rebuild -scan_changes
-report_ip_status -name ip_status
-upgrade_ip [get_ips  frodoBD_shake128_mm_ip_0_0] -log ip_upgrade.log
-export_ip_user_files -of_objects [get_ips frodoBD_shake128_mm_ip_0_0] -no_script -sync -force -quiet
