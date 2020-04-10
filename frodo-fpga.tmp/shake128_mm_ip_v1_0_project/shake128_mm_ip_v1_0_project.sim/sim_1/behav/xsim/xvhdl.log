@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/keccak_squeeze.vhd" into library work
-INFO: [VRFC 10-3107] analyzing entity 'keccak_squeeze'
-INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/shake128_mm_ip_v1_0.vhd" into library work
-INFO: [VRFC 10-3107] analyzing entity 'shake128_mm_ip_v1_0'
