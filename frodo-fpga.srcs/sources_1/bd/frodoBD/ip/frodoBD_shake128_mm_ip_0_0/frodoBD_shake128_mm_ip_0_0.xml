@@ -397,7 +397,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI.CLK_DOMAIN"/>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI.CLK_DOMAIN">frodoBD_processing_system7_0_0_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -526,7 +526,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.CLK_DOMAIN"/>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.CLK_DOMAIN">frodoBD_processing_system7_0_0_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -568,6 +568,99 @@
     </spirit:memoryMap>
   </spirit:memoryMaps>
   <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesis</spirit:name>
+        <spirit:displayName>VHDL Synthesis</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>shake128_mm_ip_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Apr 10 22:04:54 UTC 2020</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:4891138e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_synthesisconstraints</spirit:name>
+        <spirit:displayName>Synthesis Constraints</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis.constraints</spirit:envIdentifier>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:4891138e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsynthesiswrapper</spirit:name>
+        <spirit:displayName>VHDL Synthesis Wrapper</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>frodoBD_shake128_mm_ip_0_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Apr 10 22:04:54 UTC 2020</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:4891138e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlbehavioralsimulation</spirit:name>
+        <spirit:displayName>VHDL Simulation</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>shake128_mm_ip_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Apr 10 22:04:54 UTC 2020</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:a77141b3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_vhdlsimulationwrapper</spirit:name>
+        <spirit:displayName>VHDL Simulation Wrapper</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>frodoBD_shake128_mm_ip_0_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_vhdlsimulationwrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri Apr 10 22:04:54 UTC 2020</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:a77141b3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
     <spirit:ports>
       <spirit:port>
         <spirit:name>start</spirit:name>
@@ -576,7 +669,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -584,11 +678,12 @@
       <spirit:port>
         <spirit:name>busy</spirit:name>
         <spirit:wire>
-          <spirit:direction>in</spirit:direction>
+          <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -604,7 +699,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -620,7 +716,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -636,7 +733,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -652,7 +750,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -664,7 +763,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -676,7 +776,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -692,7 +793,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -708,7 +810,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -720,7 +823,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -732,7 +836,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -748,7 +853,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -760,7 +866,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -772,7 +879,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -788,7 +896,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -804,7 +913,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -816,7 +926,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -828,7 +939,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -844,7 +956,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -860,7 +973,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -872,7 +986,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -884,7 +999,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -896,7 +1012,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -908,7 +1025,8 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
         </spirit:wire>
@@ -950,6 +1068,98 @@
       <spirit:enumeration spirit:text="false">0</spirit:enumeration>
     </spirit:choice>
   </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/src/keccak_global2.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/keccak_absorb.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/src/keccak_f1600_mm_core_fast2.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/keccak_squeeze.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/src/true_single_bram3.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/shake128_mm_ip_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>synth/frodoBD_shake128_mm_ip_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/src/keccak_global2.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/keccak_absorb.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/src/keccak_f1600_mm_core_fast2.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/keccak_squeeze.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/src/true_single_bram3.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/dae6/hdl/shake128_mm_ip_v1_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>work</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsimulationwrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/frodoBD_shake128_mm_ip_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
   <spirit:description>Shake128 IP</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
@@ -1015,7 +1225,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>shake128_mm_ip_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreRevision>6</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@70839f2d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7e1a5a97_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
@@ -1383,13 +1593,378 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@57b22003_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@5bf12529_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3e519bd8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c4a934_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f83d8c4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18ebaab4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42412977_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e2fb423_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13780312_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37658014_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78edfb83_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@720f1cf8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@581045d5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@407990c7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@91204e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53f656eb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@588d8811_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75dcc54b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@336a02db_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68444754_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@143213c5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65ea3e1a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c43148d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d846b52_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10d1884d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dbc8318_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5632c2a4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3213260a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c61a6d9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42708e87_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72a124c8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@315aa5e4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48a36fad_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b08c197_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e9c9103_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5811ad12_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71033cf6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6211428a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7186bfd8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3663d15f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ed892b0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51edfb8a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a16bdbc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@226f23f5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17d5fa47_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f6a17a7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47df988_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44c4ca47_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ce26a1e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@427675d9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75b4976b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20aec3c5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16b5ab2d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@757a4cdf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27536143_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49538f70_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ade7ab1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fde0510_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42897533_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1366b90e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e41a610_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40392e6e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c75643a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@722fa6e1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66c90470_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78d643ab_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31aac49b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a4c934d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4281865e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a4d1805_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@174b9e7e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78031436_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b525913_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d4de0a4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33b55422_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21820cb3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d1ca929_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32147f82_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42bdf371_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f0f5199_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bb785a3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b744ec1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7315f751_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5739b43f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75a7191d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ea13b3c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2025e903_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@be34106_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11e36110_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38de2eba_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bc02f2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13d4cecb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cadec00_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@467ac3bf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e073ed3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18e20758_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b6e38e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e329ed5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22538a00_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64e571c0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f0487b7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11ea8067_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6010bfc8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dead2d3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bdc0ea0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b7ff46f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53510555_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30437169_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@895eb41_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cdcd4b7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51c75b62_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fc3320a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45b1aa0a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c92e0d0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57fa1759_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bfb983f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73fbfab_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@366dcca6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f494b42_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74dbd678_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f03c737_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@465ea369_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@419d4f8a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73b915f2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11e3b924_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21895e2e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57f3ff40_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3730dab4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b342c10_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3948071f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20516412_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26c703e3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21b185a7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ee89296_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7428f152_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@537e998_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17ddd38a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2aceb841_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d184518_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@586e40a6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65740521_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5283414c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cb74a93_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4925faca_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1361cfa2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@157454ef_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6aafdcbf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62ccbf36_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@415967f0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@536fdf70_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20f8bd66_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b423075_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bb4b0d6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b7dd4b1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@759dbabb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cb06698_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4527478_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25faf074_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a0a088_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a309fab_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cc0d171_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6de5e700_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@476cc296_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18ea98fb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c4282db_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d9aa365_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d4075d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@960748c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23e6fe72_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d98e041_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@642fb35_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@268d564e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d85c83c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2aef1192_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3aab69b1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a362354_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28e99951_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@789ab608_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ec35737_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30b0c458_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c5a79a0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34fefef4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d4ba6f3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c69838_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ae5ba5f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61370636_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c7872e6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d306b9d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@777ce9ec_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ae7888_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed5ab62_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a7ec731_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e353902_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4371a97f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@245894a8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cdaa10e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c30d5ca_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@656e828f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bee3463_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11074985_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e75d29e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@225a453d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b7fb7ad_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42546b64_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58f11364_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37325379_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32e2551e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f6e2d3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c92a951_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3efa9884_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@569ccb6b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@179c9704_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ae9cafe_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31ad1318_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41ca3c22_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ce564bc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b726e2f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dfb91d2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78a67600_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ffbcce9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@edbb736_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fec35a9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5745e15_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cc0142d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dd89046_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f9f1915_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14acdd72_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@604f15a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47aac6a5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ccfc5ce_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e648c58_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@156dff8d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b47f943_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@170e50f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39f10c46_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@160b58a5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d4a9db0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d4075e2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e9b47ac_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4174287a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a403670_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@529c964a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2560bd80_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ae407a5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b601752_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63d9050c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@489223b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c2d5890_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@308a13d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@225cedac_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a31910b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3befa2f7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@564cffca_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11d9ad87_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2792e62e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c9a84b0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1915caa4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e2a992_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ad57379_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d68dbcc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58750d98_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33b01dc5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ac4f4e1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@309da180_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ddeceb8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b93f3fa_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f7b5f26_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c202bc5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a466ae8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7923009d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1da6250a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13e6100_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2227b9f4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f576d52_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59637d1f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11fc0399_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16859e0c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dc25f7c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f91b3ab_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76fa0d7d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b7d17aa_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@216085c8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4701a9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13224f72_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dbbb7a1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d0fb439_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c12e65d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4010c115_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58e5a2b5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49094bfb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68b885d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e418fef_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c3e498c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fbe3144_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e72ce9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18f88281_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25fe948e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65d8240b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4690ef53_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@413c05f5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68a5e243_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d84bcdd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2920a33c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79006f2f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3179ed14_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11917c0f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17bd9e0e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@105d5117_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d375d8e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@375672db_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10b48890_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43894e39_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16901768_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@778fe03f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74b2b10b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38429840_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b57757e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c24feb8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@773c0b89_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49102a35_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70041064_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@578a88e9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@446c9ddc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5517992e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13adb8e2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4207427a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6285d61d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@721d661e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4469c182_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1719deda_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d65496e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69ab4956_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13c7d9d7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29a1d8a3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76c9207e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74a0b1bf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d0d2682_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@333a78f9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78c9e6fb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7464761_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35e77c11_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36e3260a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@422f1433_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39879172_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@211d4309_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57f532b7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eb5d485_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631c76fe_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c8729d0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78863da8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64e3972d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e4e0471_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1115d3bc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7703892_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@136f0a8b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16a92b68_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42531cc0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3273c594_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e5990aa_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1328e372_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5713756e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43b636be_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75d3c139_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38914cd2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2275659a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56e60eb4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ARUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.AWUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.BUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.DATA_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.HAS_BRESP" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.HAS_BURST" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.HAS_CACHE" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -1407,15 +1982,17 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.READ_WRITE_MODE" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.RUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.WUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI_CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a6aebf4"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a63f3fc"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6e0fe34e"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="43a5dde4"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6cea9c47"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="0b759242"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e17178b9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="7a9deada"/>
     </xilinx:packagingInfo>
