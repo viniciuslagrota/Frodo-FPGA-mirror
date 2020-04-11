@@ -149,13 +149,13 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/frodoBD/ip/frodoBD_axi_gpio_1_0/sim/frodoBD_axi_gpio_1_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_timer_4_0/sim/frodoBD_timer_4_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_timer_5_0/sim/frodoBD_timer_5_0.vhd" \
-"../../../bd/frodoBD/ipshared/dae6/src/keccak_global2.vhd" \
-"../../../bd/frodoBD/ipshared/dae6/hdl/keccak_absorb.vhd" \
-"../../../bd/frodoBD/ipshared/dae6/src/keccak_f1600_mm_core_fast2.vhd" \
-"../../../bd/frodoBD/ipshared/dae6/hdl/keccak_squeeze.vhd" \
-"../../../bd/frodoBD/ipshared/dae6/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd" \
-"../../../bd/frodoBD/ipshared/dae6/src/true_single_bram3.vhd" \
-"../../../bd/frodoBD/ipshared/dae6/hdl/shake128_mm_ip_v1_0.vhd" \
+"../../../bd/frodoBD/ipshared/8295/src/keccak_global2.vhd" \
+"../../../bd/frodoBD/ipshared/8295/hdl/keccak_absorb.vhd" \
+"../../../bd/frodoBD/ipshared/8295/src/keccak_f1600_mm_core_fast2.vhd" \
+"../../../bd/frodoBD/ipshared/8295/hdl/keccak_squeeze.vhd" \
+"../../../bd/frodoBD/ipshared/8295/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd" \
+"../../../bd/frodoBD/ipshared/8295/src/true_single_bram3.vhd" \
+"../../../bd/frodoBD/ipshared/8295/hdl/shake128_mm_ip_v1_0.vhd" \
 "../../../bd/frodoBD/ip/frodoBD_shake128_mm_ip_0_0/sim/frodoBD_shake128_mm_ip_0_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_19 -64 -incr "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/ec67/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/8c62/hdl" "+incdir+../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_processing_system7_0_0" "+incdir+C:/Xilinx/Vivado/2019.1/data/xilinx_vip/include" \

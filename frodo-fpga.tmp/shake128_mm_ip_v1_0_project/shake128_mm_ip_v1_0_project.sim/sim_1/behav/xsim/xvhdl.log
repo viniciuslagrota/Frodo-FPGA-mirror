@@ -1,0 +1,18 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'testbench'
+ERROR: [VRFC 10-4982] syntax error near 'end' [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:197]
+ERROR: [VRFC 10-4982] syntax error near 'end' [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:201]
+ERROR: [VRFC 10-4982] syntax error near 'if' [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:206]
+ERROR: [VRFC 10-2989] 'countermm' is not declared [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:235]
+ERROR: [VRFC 10-3559] near 'std_logic_vector' ; type conversion expression type cannot be determined uniquely [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:235]
+ERROR: [VRFC 10-2989] 'countermm' is not declared [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:236]
+ERROR: [VRFC 10-2989] 'countervec' is not declared [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:241]
+ERROR: [VRFC 10-2989] 'countervec' is not declared [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:246]
+ERROR: [VRFC 10-1471] type error near mod_0 ; current type st_in_type; expected type st_type [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:232]
+ERROR: [VRFC 10-1471] type error near mod_1 ; current type st_in_type; expected type st_type [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:238]
+ERROR: [VRFC 10-1471] type error near mod_2 ; current type st_in_type; expected type st_type [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:243]
+ERROR: [VRFC 10-4982] syntax error near 'elsif' [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:250]
+ERROR: [VRFC 10-2989] 'countermm' is not declared [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:253]
+ERROR: [VRFC 10-2989] 'countervec' is not declared [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:254]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd:38]
+INFO: [VRFC 10-3070] VHDL file 'c:/projects/ip_repo/shake128_mm_ip_1.0/hdl/testbench.vhd' ignored due to errors
