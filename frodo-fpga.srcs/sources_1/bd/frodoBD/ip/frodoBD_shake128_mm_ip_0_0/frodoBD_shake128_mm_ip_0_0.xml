@@ -581,11 +581,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 11 21:40:08 UTC 2020</spirit:value>
+            <spirit:value>Mon Apr 13 23:24:59 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8ded62f0</spirit:value>
+            <spirit:value>9:d4b8c3a6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -596,7 +596,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8ded62f0</spirit:value>
+            <spirit:value>9:d4b8c3a6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -612,11 +612,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 11 21:40:08 UTC 2020</spirit:value>
+            <spirit:value>Mon Apr 13 23:25:00 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8ded62f0</spirit:value>
+            <spirit:value>9:d4b8c3a6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -632,11 +632,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 11 21:40:08 UTC 2020</spirit:value>
+            <spirit:value>Mon Apr 13 23:24:59 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:620d30cd</spirit:value>
+            <spirit:value>9:8c3f6fe5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -652,11 +652,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 11 21:40:08 UTC 2020</spirit:value>
+            <spirit:value>Mon Apr 13 23:25:00 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:620d30cd</spirit:value>
+            <spirit:value>9:8c3f6fe5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1072,36 +1072,31 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/src/keccak_global2.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/src/keccak_global2.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/keccak_absorb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>work</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/8295/src/keccak_f1600_mm_core_fast2.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/src/keccak_f1600_mm_core_fast2.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/keccak_squeeze.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/hdl/shake128_core.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/src/true_single_bram3.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/src/true_single_bram3.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/shake128_mm_ip_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/hdl/shake128_mm_ip_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
@@ -1117,36 +1112,31 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/src/keccak_global2.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/src/keccak_global2.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/keccak_absorb.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>work</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/8295/src/keccak_f1600_mm_core_fast2.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/src/keccak_f1600_mm_core_fast2.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/keccak_squeeze.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/hdl/shake128_core.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/src/true_single_bram3.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/src/true_single_bram3.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8295/hdl/shake128_mm_ip_v1_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/7080/hdl/shake128_mm_ip_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
@@ -1225,7 +1215,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>shake128_mm_ip_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@70839f2d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7e1a5a97_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
@@ -2007,6 +1997,593 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@665974eb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@69a54181_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3fe8803d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41fadeb0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@181b2604_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76b41bff_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f8327c4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29adf1f2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31c017ec_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63e06b32_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ef8e381_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5be04a8d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9ccaeea_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6aa5e9a1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22345d41_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a6c7f88_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b27109_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71c4047d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5452b43c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22557c94_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54e095bf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f1a478e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@175b34ff_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@141f4074_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@588bbed0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7996a9bb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b9e2567_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f5e75c7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a4e8bd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b5c2deb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ea0e29f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@167baa68_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a937ced_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3121498a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@406611fa_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28663c54_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fe1fa41_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c81410e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cbf332_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78045a2b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e2598c6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66283ea1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7065ab39_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18698245_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@319bf63c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dde9a19_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2af7ebc9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3abcf788_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5551ac7b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b8a4b14_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6036d301_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59391110_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66fd721b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fff212c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72a29fa5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2351f043_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cf94a46_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69d4ce0b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20cf39e8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69b4c950_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9ba91ae_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74c94b38_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45f309bd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@368ed4f4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60d890da_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27909f3c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10716387_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bdb7807_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a8cc4be_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@442ae4b7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b0f1712_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2139f697_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a62364_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c19f138_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28282c08_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f2a0f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38809944_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51d5e17a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76768428_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27487bcd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74e55204_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77ca1988_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e685366_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18c2acdb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f9f25c8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6eefbce3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@358de1dd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dbc3de6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@705abe3b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3665739_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@181c1809_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c8e54b5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d45c09b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c903ef7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11b94ec7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32a54150_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68a302f8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a16e8da_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55cf9008_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@331d1611_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70fc750b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@420b80ff_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12af439f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@738eaedb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54e41767_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a5f8098_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@676f2cc8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ddac286_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3db84470_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13c29352_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35b08f7f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28864b09_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2885fc15_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59aad7e2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4664db9d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51fd3e36_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ac30e81_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e05f795_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1eadaebc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f52d9ac_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d65b5a6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3806e9a3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@520b4457_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@580f6d9f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2df6bb7c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3083d082_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1195ff8a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@791bb6b8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@540dda67_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@785970df_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3668f041_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6db02c2b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@510a519e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d0ebf08_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@98056bf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@226fedff_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4936bec9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19da50f3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3713bc77_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7acc1cae_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@744c753c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16efd8c7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76608296_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61cd1b58_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66180a98_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e6d52d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bbdaf82_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d9051b8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72e6b098_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d18c938_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5373f638_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fd0bb90_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3322dacc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21bdcd16_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b32af1f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fae2c42_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67154b13_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@944f6cd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6606e1bf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73233c5b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71705894_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@687f7ea5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@89c8f66_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1918f62b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50a8c76e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53047c09_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@367fcf69_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60dfcf0d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bb4b36_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bb1e744_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bf338d0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67f5f08_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fafd4e9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21b5ac24_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@106b4fcc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e420f57_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cb19e20_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7980aea8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e33ec01_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a14acbe_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@594f3ef7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e96cab0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79fd1eb1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a48e313_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63ddef46_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@784e9b0b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@511cb3ce_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54bb0684_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25e5b396_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b191d53_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53a8f555_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@265768dc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@149e0507_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e8f76c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a30a61a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50e88c8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@425fa48c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42f5909e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cdf4f35_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a71362f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@154f506e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cc25950_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e315988_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6aa99604_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16c57a80_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c859acb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ad38bb8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1eff1223_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5441dbf5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f82cd9b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@609b8e44_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2789df60_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75090b7c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@869b5e7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63fd59e5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a346924_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14c575c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ff5f0cb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40b7d9ce_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5686a46f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31d0ccce_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26469eed_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78369547_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67f6fcdb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68e987ac_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e37fd91_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68a8f3c8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b86a0e4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58d9da0f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@465ccf69_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c78dc7e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@316ee1d9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c8fbc68_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4632dd6e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67220a6a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48b3d12c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@250a2c66_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37b1a26d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5afcd133_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37da2551_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d8694f4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34d6ba6f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@294b3f3c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6761b69_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bac2e40_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7df012ef_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5855c5c4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@519b7b50_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bf567cb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54b538d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1662fd04_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e201eb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5162554e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65cb11e6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d27f6e7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@228fe81a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3826a9cc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10ff0ed2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32d6181_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61fabdef_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74bfb224_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41ba4c41_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72cfec73_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5115a861_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a37dbe2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50ce1508_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@91beff9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e3ff26f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a0be28a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fe40dde_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@da018f5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b3d59dd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f601ef4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b8390d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c38f3c1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52645ce7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5388ec3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@177b70f1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39170cd0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50346a75_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a2dbda4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15cd83e2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dc097b3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d910e32_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31b62580_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@698369d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d0adb9c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4add5538_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59156f05_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3efc6bac_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67208ce6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@208f96d5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c0a2236_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26d27321_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4298b0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12c6c648_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@eb9e894_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@415554c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28120d9f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5aa0d4a0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c4651cb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a68481e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67d66d59_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fca9b97_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e845b59_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59549f4b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53e5b9d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@701f7b9f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2db30629_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59b83101_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f3307d0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@238ce132_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d5580a9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a996186_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52ba8149_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d47a27b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5694049b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50520869_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f249731_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79c297e6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6df2841f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15b6aa5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e743ab8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43a1d7d0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27ebd3d7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23f20f32_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6be2898_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@398cb5fa_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6173a3b7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4867de73_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@302983cd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bbb168_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77210907_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24ab9876_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@360f22e4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18bab886_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ffeaf84_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a604bca_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22481fc8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f4fbaac_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fa46142_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46bc47f4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54dc41d7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e51464b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c541d0f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35a21bd1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4339ec53_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bee5ada_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@428f07ad_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22a8b68f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ce96b24_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@256ed4cc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ac9685f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10cc3099_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@551ae62_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@278e7cee_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dd96fc0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45174c53_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62a6c251_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@349fe413_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b383c57_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a02b1d5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b6cff67_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a12e72a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d51d717_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d2c2a3f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@587137d2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1771813d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18de5667_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a380ea4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@646eec91_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f937b40_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d03d11e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21432079_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74ffe09a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fbb5e88_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51f8f2a4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f237eda_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57963150_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65afdf9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e168702_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7728d3c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a829f1d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63738a90_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43fd528_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7597c01a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3506608a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27d8d86c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@88de103_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7834ced8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f90f079_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78437ac4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fc1a181_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28e2fa52_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@705e6adb_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9b73d73_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@178a7214_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6363e8c1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64ea95ff_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11bb518_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@833db43_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e6f258a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44bd5a45_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b04de3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a2dd5b5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65eb180a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11b12942_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bc4fdd8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@532ba93c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64ac55ba_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d4d47ea_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a66e830_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a162753_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ee9f22f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77c45682_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7321f1d0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7621b7ae_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@787b2b7b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ab99aa7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75f55048_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@532630db_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50730786_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cc33085_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f786dc3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5293d59f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fa4506b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7229291a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@177f7ea1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50e6422b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@338a8e91_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e1118ba_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bc3f748_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b9df5c1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c4ddc30_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d97c3b3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@341ee9bd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24dd61b8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b159413_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@287a2672_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60aec188_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19f31700_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60176adc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22e3af55_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5556be3f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b455cf2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d44f20b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c62881b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38b33a3c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1839b5d1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@403f1e28_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f46fb7c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4502e86e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2749f06b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bc0c48a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fc1ce6e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18d82a99_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24874416_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75d2c71e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ea2f1c9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c047c05_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e6e05b2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a53aed9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@713be92c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e337af8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72a29357_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33ee6db2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bdd2b52_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36c1f90d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cf3d7db_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47452839_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dcdc436_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e4602f2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c2ae7dd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@182e109_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7503cef_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d696a7b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67be9f59_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b08de56_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ee1f1bf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a004e89_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bb991b8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a20e361_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7203f34_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1498ba28_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28a9e2c2_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2efdca93_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1459fd58_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@501c2112_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70e3bc4f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5648707f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c9fc1dd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ce89e3f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8aef211_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@745440_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31f3df99_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dff252d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64987b08_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379c8515_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@da7166d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@767a7dfa_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b88473a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dfa724e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f70c4f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32e32280_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19b5bc15_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60b87797_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78c6d50b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f96622d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37713120_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@146e4b6a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@416ab57_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4575fbdd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@646256d0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b3a2347_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@731252be_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24484e10_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58b037d4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@595d7aa8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56672caf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ae5864c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e95dddd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e7e37f6_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@225759e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5041b905_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62b22e39_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cc927a8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fbda3b5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52e0a5f1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46352269_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@85ada64_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e3b7ad5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44b0bf92_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10340331_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d7ce24e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@708283bd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e228ad7_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bee7d2f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ce6b6b8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56443113_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22a3b37e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7672567b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ca1eb1_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@700ee83a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ac0acf4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34b2c464_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44c1a183_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b4f68a4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c5a240f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@358c6c17_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4769d81b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5190d33a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28c64d8e_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3644e053_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75db4e4f_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7287aa5c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1579aca9_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@595e5e42_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d687a98_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@628adc6b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78566648_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47d95bb3_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3abd1437_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b35ee59_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73803c3b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@322e6ee8_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a25d699_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5235c115_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15e0b05c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@786c2f1a_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ffc6faa_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@205b367_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1482abec_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f014cc4_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e4611dd_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57f8851c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@488493c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ae3a52c_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cf936dc_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@229dde13_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b80e397_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ac93e96_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@decb126_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7754c9f0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f39e5d5_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c3bc05d_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@710e0af0_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c1b9987_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4924c5cf_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@691b2a26_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b0cd50b_ARCHIVE_LOCATION">c:/Projects/ip_repo/shake128_mm_ip_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -2026,7 +2603,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.HAS_RRESP" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.HAS_WSTRB" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.MAX_BURST_LENGTH" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.MAX_BURST_LENGTH" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.NUM_READ_OUTSTANDING" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.NUM_WRITE_OUTSTANDING" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.PROTOCOL" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -2042,7 +2619,7 @@
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a63f3fc"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="bbc360dd"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="fa5c26dc"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="0b759242"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e17178b9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="7a9deada"/>

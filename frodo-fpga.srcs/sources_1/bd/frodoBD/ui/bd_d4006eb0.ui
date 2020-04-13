@@ -2,72 +2,81 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 6 -x 2000 -y 250 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 6 -x 2000 -y 220 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 410 -y 330 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 410 -y 110 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 780 -y 740 -defaultsOSRD
-preplace inst timer_1 -pg 1 -lvl 5 -x 1870 -y 490 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1180 -y 480 -defaultsOSRD
-preplace inst axi_gpio_3 -pg 1 -lvl 3 -x 1180 -y 330 -defaultsOSRD
-preplace inst axi_gpio_4 -pg 1 -lvl 3 -x 1180 -y 770 -defaultsOSRD
-preplace inst axi_gpio_5 -pg 1 -lvl 3 -x 1180 -y 1170 -defaultsOSRD
-preplace inst keccak_f1600_mm_ip_0 -pg 1 -lvl 4 -x 1570 -y 420 -defaultsOSRD
-preplace inst timer_0 -pg 1 -lvl 5 -x 1870 -y 330 -defaultsOSRD
-preplace inst matrix_sa_plus_e_mm_ip_0 -pg 1 -lvl 4 -x 1570 -y 830 -defaultsOSRD
-preplace inst timer_2 -pg 1 -lvl 5 -x 1870 -y 770 -defaultsOSRD
-preplace inst timer_3 -pg 1 -lvl 5 -x 1870 -y 910 -defaultsOSRD
-preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 1180 -y 920 -defaultsOSRD
-preplace inst matrix_as_plus_e_mm_0 -pg 1 -lvl 4 -x 1570 -y 1240 -defaultsOSRD
-preplace inst axi_gpio_2 -pg 1 -lvl 3 -x 1180 -y 1320 -defaultsOSRD
-preplace inst timer_4 -pg 1 -lvl 5 -x 1870 -y 1170 -defaultsOSRD
-preplace inst timer_5 -pg 1 -lvl 5 -x 1870 -y 1310 -defaultsOSRD
-preplace inst shake128_mm_ip_0 -pg 1 -lvl 4 -x 1570 -y 10 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 470 640 380 1000 580 1360 310 1740
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 620 350 950 570 1370
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 10 10 610
-preplace netloc keccak_f1600_mm_ip_0_enable_timer 1 4 1 1760 440n
-preplace netloc keccak_f1600_mm_ip_0_reset_timer 1 4 1 1750 460n
-preplace netloc axi_gpio_3_gpio_io_o 1 3 1 1390 350n
-preplace netloc keccak_f1600_mm_ip_0_done 1 3 2 1400 520 1710
-preplace netloc axi_gpio_4_gpio_io_o 1 3 1 1320 790n
-preplace netloc matrix_sa_plus_e_mm_ip_0_busy 1 3 2 1340J 980 1710
-preplace netloc axi_gpio_5_gpio_io_o 1 3 1 1320 1190n
-preplace netloc matrix_as_plus_e_mm_0_busy 1 3 2 1320J 1090 1710
-preplace netloc timer_0_count 1 3 3 1390 530 1730J 410 1980
-preplace netloc keccak_f1600_mm_ip_0_enable_total_timer 1 4 1 1730 350n
-preplace netloc keccak_f1600_mm_ip_0_reset_total_timer 1 4 1 1720 330n
-preplace netloc matrix_sa_plus_e_mm_ip_0_enable_total_timer 1 4 1 1730 790n
-preplace netloc matrix_sa_plus_e_mm_ip_0_reset_total_timer 1 4 1 1720 770n
-preplace netloc matrix_sa_plus_e_mm_ip_0_enable_proc_timer 1 4 1 1730 850n
-preplace netloc timer_1_count 1 3 3 1380J 570 NJ 570 1980
-preplace netloc timer_2_count 1 3 3 1330J 990 NJ 990 1980
-preplace netloc timer_3_count 1 3 3 1320 1000 NJ 1000 1970
-preplace netloc timer_4_count 1 3 3 1340J 1390 NJ 1390 1980
-preplace netloc timer_5_count 1 3 3 1320 1400 NJ 1400 1970
-preplace netloc matrix_as_plus_e_mm_0_reset_total_timer 1 4 1 1750 1170n
-preplace netloc matrix_as_plus_e_mm_0_reset_proc_timer 1 4 1 1710 1280n
-preplace netloc matrix_as_plus_e_mm_0_enable_total_timer 1 4 1 1760 1190n
-preplace netloc matrix_as_plus_e_mm_0_enable_proc_timer 1 4 1 1720 1260n
-preplace netloc matrix_sa_plus_e_mm_ip_0_reset_proc_timer 1 4 1 1720 870n
+preplace port DDR -pg 1 -lvl 6 -x 2180 -y 250 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 2180 -y 220 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 380 -y 330 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 380 -y 110 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 750 -y 740 -defaultsOSRD
+preplace inst timer_1 -pg 1 -lvl 5 -x 2050 -y 490 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1160 -y 520 -defaultsOSRD
+preplace inst axi_gpio_3 -pg 1 -lvl 3 -x 1160 -y 370 -defaultsOSRD
+preplace inst axi_gpio_4 -pg 1 -lvl 3 -x 1160 -y 810 -defaultsOSRD
+preplace inst axi_gpio_5 -pg 1 -lvl 3 -x 1160 -y 1210 -defaultsOSRD
+preplace inst keccak_f1600_mm_ip_0 -pg 1 -lvl 4 -x 1750 -y 420 -defaultsOSRD
+preplace inst timer_0 -pg 1 -lvl 5 -x 2050 -y 330 -defaultsOSRD
+preplace inst matrix_sa_plus_e_mm_ip_0 -pg 1 -lvl 4 -x 1750 -y 830 -defaultsOSRD
+preplace inst timer_2 -pg 1 -lvl 5 -x 2050 -y 770 -defaultsOSRD
+preplace inst timer_3 -pg 1 -lvl 5 -x 2050 -y 910 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 1160 -y 960 -defaultsOSRD
+preplace inst matrix_as_plus_e_mm_0 -pg 1 -lvl 4 -x 1750 -y 1240 -defaultsOSRD
+preplace inst axi_gpio_2 -pg 1 -lvl 3 -x 1160 -y 1360 -defaultsOSRD
+preplace inst timer_4 -pg 1 -lvl 5 -x 2050 -y 1170 -defaultsOSRD
+preplace inst timer_5 -pg 1 -lvl 5 -x 2050 -y 1310 -defaultsOSRD
+preplace inst axi_gpio_6 -pg 1 -lvl 3 -x 1160 -y -40 -defaultsOSRD
+preplace inst axi_gpio_7 -pg 1 -lvl 3 -x 1160 -y 130 -defaultsOSRD
+preplace inst shake128_mm_ip_0 -pg 1 -lvl 4 -x 1750 -y 10 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 470 610 320 950 230 1380 310 1920
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 590 240 960 220 1390
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 10 10 580
+preplace netloc keccak_f1600_mm_ip_0_enable_timer 1 4 1 1940 440n
+preplace netloc keccak_f1600_mm_ip_0_reset_timer 1 4 1 1930 460n
+preplace netloc axi_gpio_3_gpio_io_o 1 3 1 1400 390n
+preplace netloc keccak_f1600_mm_ip_0_done 1 3 2 1310 320 1890
+preplace netloc axi_gpio_4_gpio_io_o 1 3 1 1360 800n
+preplace netloc matrix_sa_plus_e_mm_ip_0_busy 1 3 2 1350J 980 1890
+preplace netloc axi_gpio_5_gpio_io_o 1 3 1 1360 1210n
+preplace netloc matrix_as_plus_e_mm_0_busy 1 3 2 1330J 1390 1890
+preplace netloc timer_0_count 1 3 3 1410 570 NJ 570 2160
+preplace netloc keccak_f1600_mm_ip_0_enable_total_timer 1 4 1 1910 350n
+preplace netloc keccak_f1600_mm_ip_0_reset_total_timer 1 4 1 1900 330n
+preplace netloc matrix_sa_plus_e_mm_ip_0_enable_total_timer 1 4 1 1910 790n
+preplace netloc matrix_sa_plus_e_mm_ip_0_reset_total_timer 1 4 1 1900 770n
+preplace netloc matrix_sa_plus_e_mm_ip_0_enable_proc_timer 1 4 1 1910 850n
+preplace netloc timer_1_count 1 3 3 NJ 550 1890J 580 2150
+preplace netloc timer_2_count 1 3 3 1320J 990 NJ 990 2160
+preplace netloc timer_3_count 1 3 3 1300 1000 NJ 1000 2150
+preplace netloc timer_4_count 1 3 3 1310J 1400 NJ 1400 2160
+preplace netloc timer_5_count 1 3 3 1300 1410 NJ 1410 2150
+preplace netloc matrix_as_plus_e_mm_0_reset_total_timer 1 4 1 1930 1170n
+preplace netloc matrix_as_plus_e_mm_0_reset_proc_timer 1 4 1 1900 1280n
+preplace netloc matrix_as_plus_e_mm_0_enable_total_timer 1 4 1 1940 1190n
+preplace netloc matrix_as_plus_e_mm_0_enable_proc_timer 1 4 1 1910 1260n
+preplace netloc matrix_sa_plus_e_mm_ip_0_reset_proc_timer 1 4 1 1900 870n
+preplace netloc shake128_mm_ip_0_busy 1 3 2 1380J -100 1890
+preplace netloc axi_gpio_6_gpio_io_o 1 3 1 1380 -30n
+preplace netloc Net 1 3 1 1310 0n
+preplace netloc Net1 1 3 1 1330 20n
 preplace netloc processing_system7_0_DDR 1 1 5 NJ 250 N 250 N 250 N 250 N
-preplace netloc axi_interconnect_0_M09_AXI 1 2 2 980J 1010 1340
-preplace netloc axi_interconnect_0_M02_AXI 1 2 1 920 310n
-preplace netloc S00_AXI_1 1 1 1 630 310n
-preplace netloc axi_interconnect_0_M01_AXI 1 2 1 930 460n
-preplace netloc axi_interconnect_0_M07_AXI 1 2 2 990J 1020 1350
-preplace netloc axi_interconnect_0_M08_AXI 1 2 2 970J 1030 1330
-preplace netloc axi_interconnect_0_M11_AXI 1 2 1 960 840n
-preplace netloc axi_interconnect_0_M00_AXI 1 2 2 940 590 1340J
-preplace netloc axi_interconnect_0_M04_AXI 1 2 2 1010J 680 1390
-preplace netloc processing_system7_0_FIXED_IO 1 1 5 640J 240 N 240 N 240 N 240 1980
-preplace netloc axi_interconnect_0_M03_AXI 1 2 2 990J 670 1400
-preplace netloc axi_interconnect_0_M05_AXI 1 2 2 1020J 690 1380
-preplace netloc axi_interconnect_0_M10_AXI 1 2 1 930 820n
-preplace netloc axi_interconnect_0_M12_AXI 1 2 1 920 860n
-preplace netloc axi_interconnect_0_M06_AXI 1 2 1 1020 740n
-levelinfo -pg 1 -10 410 780 1180 1570 1870 2000
-pagesize -pg 1 -db -bbox -sgen -10 -110 2110 1620
+preplace netloc axi_interconnect_0_M00_AXI 1 2 2 890 290 1410J
+preplace netloc axi_interconnect_0_M04_AXI 1 2 2 NJ 670 1360
+preplace netloc axi_interconnect_0_M07_AXI 1 2 2 990J 720 1330
+preplace netloc axi_interconnect_0_M08_AXI 1 2 2 980J 710 1340
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 610J 230 890 -140 N -140 N -140 2160
+preplace netloc axi_interconnect_0_M02_AXI 1 2 1 930 350n
+preplace netloc axi_interconnect_0_M09_AXI 1 2 2 1000J 730 1310
+preplace netloc S00_AXI_1 1 1 1 600 310n
+preplace netloc axi_interconnect_0_M01_AXI 1 2 1 940 500n
+preplace netloc axi_interconnect_0_M11_AXI 1 2 1 920 810n
+preplace netloc axi_interconnect_0_M10_AXI 1 2 1 930 790n
+preplace netloc axi_interconnect_0_M05_AXI 1 2 2 NJ 690 1350
+preplace netloc axi_interconnect_0_M03_AXI 1 2 2 NJ 650 1370
+preplace netloc axi_interconnect_0_M12_AXI 1 2 1 890 830n
+preplace netloc axi_interconnect_0_M06_AXI 1 2 1 940 710n
+preplace netloc axi_interconnect_0_M13_AXI 1 2 2 900 -130 1390J
+preplace netloc axi_interconnect_0_M14_AXI 1 2 1 910 -60n
+preplace netloc axi_interconnect_0_M15_AXI 1 2 1 970 110n
+levelinfo -pg 1 -10 380 750 1160 1750 2050 2180
+pagesize -pg 1 -db -bbox -sgen -10 -230 2290 1620
 "
 }
 {

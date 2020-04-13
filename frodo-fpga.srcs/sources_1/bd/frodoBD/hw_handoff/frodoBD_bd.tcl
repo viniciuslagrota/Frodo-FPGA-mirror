@@ -208,10 +208,26 @@ proc create_root_design { parentCell } {
    CONFIG.C_GPIO_WIDTH {1} \
  ] $axi_gpio_5
 
+  # Create instance: axi_gpio_6, and set properties
+  set axi_gpio_6 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_6 ]
+  set_property -dict [ list \
+   CONFIG.C_GPIO_WIDTH {1} \
+ ] $axi_gpio_6
+
+  # Create instance: axi_gpio_7, and set properties
+  set axi_gpio_7 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_7 ]
+  set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS {1} \
+   CONFIG.C_ALL_INPUTS_2 {1} \
+   CONFIG.C_GPIO2_WIDTH {15} \
+   CONFIG.C_GPIO_WIDTH {15} \
+   CONFIG.C_IS_DUAL {1} \
+ ] $axi_gpio_7
+
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {13} \
+   CONFIG.NUM_MI {16} \
  ] $axi_interconnect_0
 
   # Create instance: keccak_f1600_mm_ip_0, and set properties
@@ -722,13 +738,19 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_interconnect_0_M10_AXI [get_bd_intf_pins axi_gpio_5/S_AXI] [get_bd_intf_pins axi_interconnect_0/M10_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M11_AXI [get_bd_intf_pins axi_gpio_1/S_AXI] [get_bd_intf_pins axi_interconnect_0/M11_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M12_AXI [get_bd_intf_pins axi_gpio_2/S_AXI] [get_bd_intf_pins axi_interconnect_0/M12_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M13_AXI [get_bd_intf_pins axi_interconnect_0/M13_AXI] [get_bd_intf_pins shake128_mm_ip_0/S00_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M14_AXI [get_bd_intf_pins axi_gpio_6/S_AXI] [get_bd_intf_pins axi_interconnect_0/M14_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M15_AXI [get_bd_intf_pins axi_gpio_7/S_AXI] [get_bd_intf_pins axi_interconnect_0/M15_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
+  connect_bd_net -net Net [get_bd_pins axi_gpio_7/gpio_io_i] [get_bd_pins shake128_mm_ip_0/inlen]
+  connect_bd_net -net Net1 [get_bd_pins axi_gpio_7/gpio2_io_i] [get_bd_pins shake128_mm_ip_0/outlen]
   connect_bd_net -net axi_gpio_3_gpio_io_o [get_bd_pins axi_gpio_3/gpio_io_o] [get_bd_pins keccak_f1600_mm_ip_0/start]
   connect_bd_net -net axi_gpio_4_gpio_io_o [get_bd_pins axi_gpio_4/gpio_io_o] [get_bd_pins matrix_sa_plus_e_mm_ip_0/start]
   connect_bd_net -net axi_gpio_5_gpio_io_o [get_bd_pins axi_gpio_5/gpio_io_o] [get_bd_pins matrix_as_plus_e_mm_0/start]
+  connect_bd_net -net axi_gpio_6_gpio_io_o [get_bd_pins axi_gpio_6/gpio_io_o] [get_bd_pins shake128_mm_ip_0/start]
   connect_bd_net -net keccak_f1600_mm_ip_0_done [get_bd_pins axi_gpio_3/gpio_io_i] [get_bd_pins keccak_f1600_mm_ip_0/done]
   connect_bd_net -net keccak_f1600_mm_ip_0_enable_timer [get_bd_pins keccak_f1600_mm_ip_0/enable_proc_timer] [get_bd_pins timer_1/enable]
   connect_bd_net -net keccak_f1600_mm_ip_0_enable_total_timer [get_bd_pins keccak_f1600_mm_ip_0/enable_total_timer] [get_bd_pins timer_0/enable]
@@ -744,9 +766,10 @@ proc create_root_design { parentCell } {
   connect_bd_net -net matrix_sa_plus_e_mm_ip_0_enable_total_timer [get_bd_pins matrix_sa_plus_e_mm_ip_0/enable_total_timer] [get_bd_pins timer_2/enable]
   connect_bd_net -net matrix_sa_plus_e_mm_ip_0_reset_proc_timer [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_proc_timer] [get_bd_pins timer_3/reset]
   connect_bd_net -net matrix_sa_plus_e_mm_ip_0_reset_total_timer [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_total_timer] [get_bd_pins timer_2/reset]
-  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_gpio_3/s_axi_aresetn] [get_bd_pins axi_gpio_4/s_axi_aresetn] [get_bd_pins axi_gpio_5/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/M09_ARESETN] [get_bd_pins axi_interconnect_0/M10_ARESETN] [get_bd_pins axi_interconnect_0/M11_ARESETN] [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins keccak_f1600_mm_ip_0/s00_axi_aresetn] [get_bd_pins matrix_as_plus_e_mm_0/s00_axi_aresetn] [get_bd_pins matrix_as_plus_e_mm_0/s01_axi_aresetn] [get_bd_pins matrix_as_plus_e_mm_0/s02_axi_aresetn] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s00_axi_aresetn] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s01_axi_aresetn] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s02_axi_aresetn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins shake128_mm_ip_0/s00_axi_aresetn]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_gpio_3/s_axi_aclk] [get_bd_pins axi_gpio_4/s_axi_aclk] [get_bd_pins axi_gpio_5/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins keccak_f1600_mm_ip_0/s00_axi_aclk] [get_bd_pins matrix_as_plus_e_mm_0/s00_axi_aclk] [get_bd_pins matrix_as_plus_e_mm_0/s01_axi_aclk] [get_bd_pins matrix_as_plus_e_mm_0/s02_axi_aclk] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s00_axi_aclk] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s01_axi_aclk] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s02_axi_aclk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins shake128_mm_ip_0/s00_axi_aclk] [get_bd_pins timer_0/clk] [get_bd_pins timer_1/clk] [get_bd_pins timer_2/clk] [get_bd_pins timer_3/clk] [get_bd_pins timer_4/clk] [get_bd_pins timer_5/clk]
+  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_gpio_3/s_axi_aresetn] [get_bd_pins axi_gpio_4/s_axi_aresetn] [get_bd_pins axi_gpio_5/s_axi_aresetn] [get_bd_pins axi_gpio_6/s_axi_aresetn] [get_bd_pins axi_gpio_7/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/M09_ARESETN] [get_bd_pins axi_interconnect_0/M10_ARESETN] [get_bd_pins axi_interconnect_0/M11_ARESETN] [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins axi_interconnect_0/M13_ARESETN] [get_bd_pins axi_interconnect_0/M14_ARESETN] [get_bd_pins axi_interconnect_0/M15_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins keccak_f1600_mm_ip_0/s00_axi_aresetn] [get_bd_pins matrix_as_plus_e_mm_0/s00_axi_aresetn] [get_bd_pins matrix_as_plus_e_mm_0/s01_axi_aresetn] [get_bd_pins matrix_as_plus_e_mm_0/s02_axi_aresetn] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s00_axi_aresetn] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s01_axi_aresetn] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s02_axi_aresetn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins shake128_mm_ip_0/s00_axi_aresetn]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_gpio_3/s_axi_aclk] [get_bd_pins axi_gpio_4/s_axi_aclk] [get_bd_pins axi_gpio_5/s_axi_aclk] [get_bd_pins axi_gpio_6/s_axi_aclk] [get_bd_pins axi_gpio_7/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins keccak_f1600_mm_ip_0/s00_axi_aclk] [get_bd_pins matrix_as_plus_e_mm_0/s00_axi_aclk] [get_bd_pins matrix_as_plus_e_mm_0/s01_axi_aclk] [get_bd_pins matrix_as_plus_e_mm_0/s02_axi_aclk] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s00_axi_aclk] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s01_axi_aclk] [get_bd_pins matrix_sa_plus_e_mm_ip_0/s02_axi_aclk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins shake128_mm_ip_0/s00_axi_aclk] [get_bd_pins timer_0/clk] [get_bd_pins timer_1/clk] [get_bd_pins timer_2/clk] [get_bd_pins timer_3/clk] [get_bd_pins timer_4/clk] [get_bd_pins timer_5/clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+  connect_bd_net -net shake128_mm_ip_0_busy [get_bd_pins axi_gpio_6/gpio_io_i] [get_bd_pins shake128_mm_ip_0/busy]
   connect_bd_net -net timer_0_count [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins timer_0/count]
   connect_bd_net -net timer_1_count [get_bd_pins axi_gpio_0/gpio2_io_i] [get_bd_pins timer_1/count]
   connect_bd_net -net timer_2_count [get_bd_pins axi_gpio_1/gpio_io_i] [get_bd_pins timer_2/count]
@@ -761,6 +784,8 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00010000 -offset 0x41220000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_3/S_AXI/Reg] SEG_axi_gpio_3_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41240000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_4/S_AXI/Reg] SEG_axi_gpio_4_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_5/S_AXI/Reg] SEG_axi_gpio_5_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41260000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_6/S_AXI/Reg] SEG_axi_gpio_6_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41270000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_7/S_AXI/Reg] SEG_axi_gpio_7_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs keccak_f1600_mm_ip_0/S00_AXI/S00_AXI_reg] SEG_keccak_f1600_mm_ip_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C80000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_as_plus_e_mm_0/S00_AXI/S00_AXI_reg] SEG_matrix_as_plus_e_mm_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg] SEG_matrix_as_plus_e_mm_0_S01_AXI_reg
@@ -768,6 +793,7 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_sa_plus_e_mm_ip_0/S00_AXI/S00_AXI_reg] SEG_matrix_sa_plus_e_mm_ip_0_S00_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_sa_plus_e_mm_ip_0/S01_AXI/S01_AXI_reg] SEG_matrix_sa_plus_e_mm_ip_0_S01_AXI_reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs matrix_sa_plus_e_mm_ip_0/S02_AXI/S02_AXI_reg] SEG_matrix_sa_plus_e_mm_ip_0_S02_AXI_reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C60000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs shake128_mm_ip_0/S00_AXI/S00_AXI_reg] SEG_shake128_mm_ip_0_S00_AXI_reg
 
 
   # Restore current instance

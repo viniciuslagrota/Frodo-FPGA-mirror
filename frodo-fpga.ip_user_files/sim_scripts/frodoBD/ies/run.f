@@ -110,14 +110,15 @@
   "../../../bd/frodoBD/ip/frodoBD_axi_gpio_1_0/sim/frodoBD_axi_gpio_1_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_timer_4_0/sim/frodoBD_timer_4_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_timer_5_0/sim/frodoBD_timer_5_0.vhd" \
-  "../../../bd/frodoBD/ipshared/8295/src/keccak_global2.vhd" \
-  "../../../bd/frodoBD/ipshared/8295/hdl/keccak_absorb.vhd" \
-  "../../../bd/frodoBD/ipshared/8295/src/keccak_f1600_mm_core_fast2.vhd" \
-  "../../../bd/frodoBD/ipshared/8295/hdl/keccak_squeeze.vhd" \
-  "../../../bd/frodoBD/ipshared/8295/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd" \
-  "../../../bd/frodoBD/ipshared/8295/src/true_single_bram3.vhd" \
-  "../../../bd/frodoBD/ipshared/8295/hdl/shake128_mm_ip_v1_0.vhd" \
+  "../../../bd/frodoBD/ipshared/7080/src/keccak_global2.vhd" \
+  "../../../bd/frodoBD/ipshared/7080/src/keccak_f1600_mm_core_fast2.vhd" \
+  "../../../bd/frodoBD/ipshared/7080/hdl/shake128_core.vhd" \
+  "../../../bd/frodoBD/ipshared/7080/hdl/shake128_mm_ip_v1_0_S00_AXI.vhd" \
+  "../../../bd/frodoBD/ipshared/7080/src/true_single_bram3.vhd" \
+  "../../../bd/frodoBD/ipshared/7080/hdl/shake128_mm_ip_v1_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_shake128_mm_ip_0_0/sim/frodoBD_shake128_mm_ip_0_0.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_4_1/sim/frodoBD_axi_gpio_4_1.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_7_0/sim/frodoBD_axi_gpio_7_0.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
