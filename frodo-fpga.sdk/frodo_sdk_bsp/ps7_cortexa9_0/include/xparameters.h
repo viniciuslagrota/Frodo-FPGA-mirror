@@ -221,7 +221,7 @@
 /******************************************************************/
 
 /* Definitions for driver GPIO */
-#define XPAR_XGPIO_NUM_INSTANCES 6
+#define XPAR_XGPIO_NUM_INSTANCES 8
 
 /* Definitions for peripheral AXI_GPIO_0 */
 #define XPAR_AXI_GPIO_0_BASEADDR 0x41230000
@@ -271,6 +271,22 @@
 #define XPAR_AXI_GPIO_2_IS_DUAL 1
 
 
+/* Definitions for peripheral AXI_GPIO_6 */
+#define XPAR_AXI_GPIO_6_BASEADDR 0x41260000
+#define XPAR_AXI_GPIO_6_HIGHADDR 0x4126FFFF
+#define XPAR_AXI_GPIO_6_DEVICE_ID 6
+#define XPAR_AXI_GPIO_6_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_6_IS_DUAL 0
+
+
+/* Definitions for peripheral AXI_GPIO_7 */
+#define XPAR_AXI_GPIO_7_BASEADDR 0x41270000
+#define XPAR_AXI_GPIO_7_HIGHADDR 0x4127FFFF
+#define XPAR_AXI_GPIO_7_DEVICE_ID 7
+#define XPAR_AXI_GPIO_7_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_7_IS_DUAL 1
+
+
 /******************************************************************/
 
 /* Canonical definitions for peripheral AXI_GPIO_0 */
@@ -314,6 +330,20 @@
 #define XPAR_GPIO_5_DEVICE_ID XPAR_AXI_GPIO_2_DEVICE_ID
 #define XPAR_GPIO_5_INTERRUPT_PRESENT 0
 #define XPAR_GPIO_5_IS_DUAL 1
+
+/* Canonical definitions for peripheral AXI_GPIO_6 */
+#define XPAR_GPIO_6_BASEADDR 0x41260000
+#define XPAR_GPIO_6_HIGHADDR 0x4126FFFF
+#define XPAR_GPIO_6_DEVICE_ID XPAR_AXI_GPIO_6_DEVICE_ID
+#define XPAR_GPIO_6_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_6_IS_DUAL 0
+
+/* Canonical definitions for peripheral AXI_GPIO_7 */
+#define XPAR_GPIO_7_BASEADDR 0x41270000
+#define XPAR_GPIO_7_HIGHADDR 0x4127FFFF
+#define XPAR_GPIO_7_DEVICE_ID XPAR_AXI_GPIO_7_DEVICE_ID
+#define XPAR_GPIO_7_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_7_IS_DUAL 1
 
 
 /******************************************************************/
@@ -491,6 +521,17 @@
 #define XPAR_XSDPS_0_MIO_BANK 0
 #define XPAR_XSDPS_0_HAS_EMIO 0
 #define XPAR_XSDPS_0_IS_CACHE_COHERENT 0
+
+
+/******************************************************************/
+
+/* Definitions for driver SHAKE128_IP */
+#define XPAR_SHAKE128_IP_NUM_INSTANCES 1
+
+/* Definitions for peripheral SHAKE128_IP_0 */
+#define XPAR_SHAKE128_IP_0_DEVICE_ID 0
+#define XPAR_SHAKE128_IP_0_S00_AXI_BASEADDR 0x43C60000
+#define XPAR_SHAKE128_IP_0_S00_AXI_HIGHADDR 0x43C6FFFF
 
 
 /******************************************************************/

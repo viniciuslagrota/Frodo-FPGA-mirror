@@ -61,14 +61,14 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_timer_4
 # IP: bd/frodoBD/ip/frodoBD_timer_5_0/frodoBD_timer_5_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_timer_5_0 || ORIG_REF_NAME==frodoBD_timer_5_0} -quiet] -quiet
 
-# IP: bd/frodoBD/ip/frodoBD_shake128_mm_ip_0_0/frodoBD_shake128_mm_ip_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_shake128_mm_ip_0_0 || ORIG_REF_NAME==frodoBD_shake128_mm_ip_0_0} -quiet] -quiet
-
 # IP: bd/frodoBD/ip/frodoBD_axi_gpio_4_1/frodoBD_axi_gpio_4_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_4_1 || ORIG_REF_NAME==frodoBD_axi_gpio_4_1} -quiet] -quiet
 
 # IP: bd/frodoBD/ip/frodoBD_axi_gpio_7_0/frodoBD_axi_gpio_7_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_7_0 || ORIG_REF_NAME==frodoBD_axi_gpio_7_0} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_shake128_ip_0_0/frodoBD_shake128_ip_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_shake128_ip_0_0 || ORIG_REF_NAME==frodoBD_shake128_ip_0_0} -quiet] -quiet
 
 # IP: bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_auto_pc_0 || ORIG_REF_NAME==frodoBD_auto_pc_0} -quiet] -quiet

@@ -62,11 +62,16 @@ extern XGpio_Config * ConfigPtr1;
 extern XGpio_Config * ConfigPtr2;
 extern XGpio_Config * ConfigPtr3;
 extern XGpio_Config * ConfigPtr4;
+extern XGpio_Config * ConfigPtr5;
+extern XGpio_Config * ConfigPtr6;
+extern XGpio_Config * ConfigPtr7;
 extern XGpio keccak_time;
 extern XGpio matrix_sa_time;
 extern XGpio matrix_as_time;
 extern XGpio axiStartBusyMatrix;
 extern XGpio axiStartBusyMatrix2;
+extern XGpio axiStartBusyShake;
+extern XGpio axiInlenOutlen;
 extern u32 *memoryMMkeccak;
 extern u32 *memoryMatrixS;
 extern u32 *memoryMatrixA;
@@ -74,6 +79,7 @@ extern u32 *memoryMatrixB;
 extern u32 *memoryMatrixA2;
 extern u32 *memoryMatrixS2;
 extern u32 *memoryMatrixB2;
+extern u32 *memoryMMshake;
 static XAdcPs XAdcInst;
 XAdcPs_Config *ConfigPtr;
 u32 TempRawData;
@@ -146,6 +152,13 @@ int main()
 	XGpio_CfgInitialize(&axiStartBusyMatrix2, ConfigPtr5, ConfigPtr5->BaseAddress);
 	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); //Set start bit low.
 
+	ConfigPtr6 = XGpio_LookupConfig(XPAR_AXI_GPIO_6_DEVICE_ID);
+	XGpio_CfgInitialize(&axiStartBusyShake, ConfigPtr6, ConfigPtr6->BaseAddress);
+	XGpio_DiscreteWrite(&axiStartBusyShake, 1, 0x0); //Set start bit low.
+
+	ConfigPtr7 = XGpio_LookupConfig(XPAR_AXI_GPIO_7_DEVICE_ID);
+	XGpio_CfgInitialize(&axiInlenOutlen, ConfigPtr7, ConfigPtr7->BaseAddress);
+
 	//---- AXI MM ----
 	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;
 	print_debug(DEBUG_ERROR, "[MAIN] Keccak MM initialized.\n");
@@ -159,6 +172,9 @@ int main()
 	memoryMatrixS2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S01_AXI_BASEADDR;
 	memoryMatrixB2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S02_AXI_BASEADDR;
 	print_debug(DEBUG_ERROR, "[MAIN] Matrix AS initialized.\n");
+
+	memoryMMshake = (u32 *) XPAR_SHAKE128_IP_0_S00_AXI_BASEADDR;
+	print_debug(DEBUG_ERROR, "[MAIN] Shake128 initialized.\n");
 
 //	//---- AXI FIFO ----
 //	int xStatus;
@@ -200,7 +216,7 @@ int main()
 		//Frodo system
 		kem_test(SYSTEM_NAME, KEM_TEST_ITERATIONS);
 
-    	sleep(1);
+//    	sleep(1);
     }
 
     cleanup_platform();

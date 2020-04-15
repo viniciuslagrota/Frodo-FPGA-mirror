@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Apr 13 20:24:58 2020
+--Date        : Wed Apr 15 12:28:24 2020
 --Host        : DESKTOP-0F4OK3D running 64-bit major release  (build 9200)
 --Command     : generate_target frodoBD.bd
 --Design      : frodoBD
@@ -5020,11 +5020,11 @@ architecture STRUCTURE of frodoBD is
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    gpio_io_i : in STD_LOGIC_VECTOR ( 14 downto 0 );
-    gpio2_io_i : in STD_LOGIC_VECTOR ( 14 downto 0 )
+    gpio_io_o : out STD_LOGIC_VECTOR ( 14 downto 0 );
+    gpio2_io_o : out STD_LOGIC_VECTOR ( 14 downto 0 )
   );
   end component frodoBD_axi_gpio_7_0;
-  component frodoBD_shake128_mm_ip_0_0 is
+  component frodoBD_shake128_ip_0_0 is
   port (
     start : in STD_LOGIC;
     busy : out STD_LOGIC;
@@ -5052,7 +5052,7 @@ architecture STRUCTURE of frodoBD is
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC
   );
-  end component frodoBD_shake128_mm_ip_0_0;
+  end component frodoBD_shake128_ip_0_0;
   signal S00_AXI_1_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal S00_AXI_1_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal S00_AXI_1_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -5095,6 +5095,8 @@ architecture STRUCTURE of frodoBD is
   signal axi_gpio_4_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_gpio_5_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_gpio_6_gpio_io_o : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_gpio_7_gpio2_io_o : STD_LOGIC_VECTOR ( 14 downto 0 );
+  signal axi_gpio_7_gpio_io_o : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal axi_interconnect_0_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_interconnect_0_M00_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal axi_interconnect_0_M00_AXI_ARREADY : STD_LOGIC;
@@ -5422,7 +5424,7 @@ architecture STRUCTURE of frodoBD is
   signal processing_system7_0_FIXED_IO_PS_CLK : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
-  signal shake128_mm_ip_0_busy : STD_LOGIC;
+  signal shake128_ip_0_busy : STD_LOGIC;
   signal timer_0_count : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal timer_1_count : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal timer_2_count : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -5433,8 +5435,6 @@ architecture STRUCTURE of frodoBD is
   signal NLW_axi_gpio_4_gpio_io_t_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_gpio_5_gpio_io_t_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_gpio_6_gpio_io_t_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_axi_gpio_7_gpio2_io_i_UNCONNECTED : STD_LOGIC_VECTOR ( 14 downto 0 );
-  signal NLW_axi_gpio_7_gpio_io_i_UNCONNECTED : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal NLW_proc_sys_reset_0_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_proc_sys_reset_0_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_0_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -5444,8 +5444,6 @@ architecture STRUCTURE of frodoBD is
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_shake128_mm_ip_0_inlen_UNCONNECTED : STD_LOGIC_VECTOR ( 14 downto 0 );
-  signal NLW_shake128_mm_ip_0_outlen_UNCONNECTED : STD_LOGIC_VECTOR ( 14 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
   attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
@@ -5621,7 +5619,7 @@ axi_gpio_5: component frodoBD_axi_gpio_5_0
     );
 axi_gpio_6: component frodoBD_axi_gpio_4_1
      port map (
-      gpio_io_i(0) => shake128_mm_ip_0_busy,
+      gpio_io_i(0) => shake128_ip_0_busy,
       gpio_io_o(0) => axi_gpio_6_gpio_io_o(0),
       gpio_io_t(0) => NLW_axi_gpio_6_gpio_io_t_UNCONNECTED(0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
@@ -5646,8 +5644,8 @@ axi_gpio_6: component frodoBD_axi_gpio_4_1
     );
 axi_gpio_7: component frodoBD_axi_gpio_7_0
      port map (
-      gpio2_io_i(14 downto 0) => NLW_axi_gpio_7_gpio2_io_i_UNCONNECTED(14 downto 0),
-      gpio_io_i(14 downto 0) => NLW_axi_gpio_7_gpio_io_i_UNCONNECTED(14 downto 0),
+      gpio2_io_o(14 downto 0) => axi_gpio_7_gpio2_io_o(14 downto 0),
+      gpio_io_o(14 downto 0) => axi_gpio_7_gpio_io_o(14 downto 0),
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(8 downto 0) => axi_interconnect_0_M15_AXI_ARADDR(8 downto 0),
       s_axi_aresetn => proc_sys_reset_0_peripheral_aresetn(0),
@@ -6291,11 +6289,11 @@ processing_system7_0: component frodoBD_processing_system7_0_0
       USB0_VBUS_PWRFAULT => '0',
       USB0_VBUS_PWRSELECT => NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED
     );
-shake128_mm_ip_0: component frodoBD_shake128_mm_ip_0_0
+shake128_ip_0: component frodoBD_shake128_ip_0_0
      port map (
-      busy => shake128_mm_ip_0_busy,
-      inlen(14 downto 0) => NLW_shake128_mm_ip_0_inlen_UNCONNECTED(14 downto 0),
-      outlen(14 downto 0) => NLW_shake128_mm_ip_0_outlen_UNCONNECTED(14 downto 0),
+      busy => shake128_ip_0_busy,
+      inlen(14 downto 0) => axi_gpio_7_gpio_io_o(14 downto 0),
+      outlen(14 downto 0) => axi_gpio_7_gpio2_io_o(14 downto 0),
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(14 downto 0) => axi_interconnect_0_M13_AXI_ARADDR(14 downto 0),
       s00_axi_aresetn => proc_sys_reset_0_peripheral_aresetn(0),
