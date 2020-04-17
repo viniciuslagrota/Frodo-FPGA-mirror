@@ -40134,3 +40134,909 @@ con
 ----------------End of Script----------------
 
 21:20:28 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:25:32 INFO  : Disconnected from the channel tcfchan#3.
+21:25:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:25:33 INFO  : 'fpga -state' command is executed.
+21:25:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:25:34 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:25:34 INFO  : 'jtag frequency' command is executed.
+21:25:34 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:25:34 INFO  : Context for 'APU' is selected.
+21:25:34 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:25:34 INFO  : 'configparams force-mem-access 1' command is executed.
+21:25:34 INFO  : Context for 'APU' is selected.
+21:25:34 INFO  : 'stop' command is executed.
+21:25:35 INFO  : 'ps7_init' command is executed.
+21:25:35 INFO  : 'ps7_post_config' command is executed.
+21:25:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:25:35 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:25:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:25:35 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:25:35 INFO  : 'configparams force-mem-access 0' command is executed.
+21:25:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:25:35 INFO  : Memory regions updated for context APU
+21:25:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:25:35 INFO  : 'con' command is executed.
+21:25:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:25:35 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:35:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:35:10 INFO  : FPGA configured successfully with bitstream "C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/frodoBD_wrapper.bit"
+21:35:15 INFO  : Disconnected from the channel tcfchan#4.
+21:35:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:35:16 INFO  : 'fpga -state' command is executed.
+21:35:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:16 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:35:16 INFO  : 'jtag frequency' command is executed.
+21:35:16 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:35:16 INFO  : Context for 'APU' is selected.
+21:35:16 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:35:16 INFO  : 'configparams force-mem-access 1' command is executed.
+21:35:16 INFO  : Context for 'APU' is selected.
+21:35:16 INFO  : 'stop' command is executed.
+21:35:17 INFO  : 'ps7_init' command is executed.
+21:35:17 INFO  : 'ps7_post_config' command is executed.
+21:35:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:35:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:17 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:35:17 INFO  : 'configparams force-mem-access 0' command is executed.
+21:35:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:35:17 INFO  : Memory regions updated for context APU
+21:35:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:17 INFO  : 'con' command is executed.
+21:35:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:35:17 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:35:26 INFO  : Disconnected from the channel tcfchan#5.
+21:35:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:35:27 INFO  : 'fpga -state' command is executed.
+21:35:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:27 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:35:27 INFO  : 'jtag frequency' command is executed.
+21:35:27 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:35:27 INFO  : Context for 'APU' is selected.
+21:35:27 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:35:27 INFO  : 'configparams force-mem-access 1' command is executed.
+21:35:27 INFO  : Context for 'APU' is selected.
+21:35:27 INFO  : 'stop' command is executed.
+21:35:28 INFO  : 'ps7_init' command is executed.
+21:35:28 INFO  : 'ps7_post_config' command is executed.
+21:35:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:35:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:28 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:35:28 INFO  : 'configparams force-mem-access 0' command is executed.
+21:35:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:35:28 INFO  : Memory regions updated for context APU
+21:35:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:28 INFO  : 'con' command is executed.
+21:35:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:35:28 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:35:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:35:41 INFO  : FPGA configured successfully with bitstream "C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/frodoBD_wrapper.bit"
+21:35:45 INFO  : Disconnected from the channel tcfchan#6.
+21:35:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:35:47 INFO  : 'fpga -state' command is executed.
+21:35:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:35:47 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:35:47 INFO  : 'jtag frequency' command is executed.
+21:35:47 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:35:47 INFO  : Context for 'APU' is selected.
+21:35:47 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:35:47 INFO  : 'configparams force-mem-access 1' command is executed.
+21:35:47 INFO  : Context for 'APU' is selected.
+21:35:47 INFO  : 'stop' command is executed.
+21:35:48 INFO  : 'ps7_init' command is executed.
+21:35:48 INFO  : 'ps7_post_config' command is executed.
+21:35:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:48 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:35:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:48 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:35:48 INFO  : 'configparams force-mem-access 0' command is executed.
+21:35:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:35:48 INFO  : Memory regions updated for context APU
+21:35:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:35:48 INFO  : 'con' command is executed.
+21:35:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:35:48 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:36:50 INFO  : Disconnected from the channel tcfchan#7.
+21:36:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:36:51 INFO  : 'fpga -state' command is executed.
+21:36:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:36:51 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:36:51 INFO  : 'jtag frequency' command is executed.
+21:36:51 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:36:52 INFO  : Context for 'APU' is selected.
+21:36:52 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:36:52 INFO  : 'configparams force-mem-access 1' command is executed.
+21:36:52 INFO  : Context for 'APU' is selected.
+21:36:52 INFO  : 'stop' command is executed.
+21:36:52 INFO  : 'ps7_init' command is executed.
+21:36:52 INFO  : 'ps7_post_config' command is executed.
+21:36:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:36:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:36:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:36:52 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:36:52 INFO  : 'configparams force-mem-access 0' command is executed.
+21:36:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:36:53 INFO  : Memory regions updated for context APU
+21:36:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:36:53 INFO  : 'con' command is executed.
+21:36:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:36:53 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:37:12 INFO  : Disconnected from the channel tcfchan#8.
+21:37:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:37:13 INFO  : 'fpga -state' command is executed.
+21:37:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:37:14 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:37:14 INFO  : 'jtag frequency' command is executed.
+21:37:14 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:37:14 INFO  : Context for 'APU' is selected.
+21:37:14 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:37:14 INFO  : 'configparams force-mem-access 1' command is executed.
+21:37:14 INFO  : Context for 'APU' is selected.
+21:37:14 INFO  : 'stop' command is executed.
+21:37:14 INFO  : 'ps7_init' command is executed.
+21:37:14 INFO  : 'ps7_post_config' command is executed.
+21:37:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:37:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:15 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:37:15 INFO  : 'configparams force-mem-access 0' command is executed.
+21:37:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:37:15 INFO  : Memory regions updated for context APU
+21:37:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:15 INFO  : 'con' command is executed.
+21:37:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:37:15 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:37:52 INFO  : Disconnected from the channel tcfchan#9.
+21:37:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:37:54 INFO  : 'fpga -state' command is executed.
+21:37:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:37:54 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:37:54 INFO  : 'jtag frequency' command is executed.
+21:37:54 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:37:54 INFO  : Context for 'APU' is selected.
+21:37:54 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:37:54 INFO  : 'configparams force-mem-access 1' command is executed.
+21:37:54 INFO  : Context for 'APU' is selected.
+21:37:54 INFO  : 'stop' command is executed.
+21:37:55 INFO  : 'ps7_init' command is executed.
+21:37:55 INFO  : 'ps7_post_config' command is executed.
+21:37:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:37:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:55 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:37:55 INFO  : 'configparams force-mem-access 0' command is executed.
+21:37:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:37:55 INFO  : Memory regions updated for context APU
+21:37:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:55 INFO  : 'con' command is executed.
+21:37:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:37:55 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:38:37 INFO  : Disconnected from the channel tcfchan#10.
+21:38:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:38:38 INFO  : 'fpga -state' command is executed.
+21:38:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:38:39 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:38:39 INFO  : 'jtag frequency' command is executed.
+21:38:39 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:38:39 INFO  : Context for 'APU' is selected.
+21:38:39 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:38:39 INFO  : 'configparams force-mem-access 1' command is executed.
+21:38:39 INFO  : Context for 'APU' is selected.
+21:38:39 INFO  : 'stop' command is executed.
+21:38:39 INFO  : 'ps7_init' command is executed.
+21:38:39 INFO  : 'ps7_post_config' command is executed.
+21:38:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:38:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:40 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:38:40 INFO  : 'configparams force-mem-access 0' command is executed.
+21:38:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:38:40 INFO  : Memory regions updated for context APU
+21:38:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:40 INFO  : 'con' command is executed.
+21:38:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:38:40 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:39:47 INFO  : Disconnected from the channel tcfchan#11.
+21:39:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:39:48 INFO  : 'fpga -state' command is executed.
+21:39:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:39:49 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:39:49 INFO  : 'jtag frequency' command is executed.
+21:39:49 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:39:49 INFO  : Context for 'APU' is selected.
+21:39:49 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:39:49 INFO  : 'configparams force-mem-access 1' command is executed.
+21:39:49 INFO  : Context for 'APU' is selected.
+21:39:49 INFO  : 'stop' command is executed.
+21:39:49 INFO  : 'ps7_init' command is executed.
+21:39:49 INFO  : 'ps7_post_config' command is executed.
+21:39:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:39:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:39:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:39:50 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:39:50 INFO  : 'configparams force-mem-access 0' command is executed.
+21:39:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:39:50 INFO  : Memory regions updated for context APU
+21:39:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:39:50 INFO  : 'con' command is executed.
+21:39:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:39:50 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:40:35 INFO  : Disconnected from the channel tcfchan#12.
+21:40:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:40:36 INFO  : 'fpga -state' command is executed.
+21:40:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:40:36 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:40:36 INFO  : 'jtag frequency' command is executed.
+21:40:36 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:40:36 INFO  : Context for 'APU' is selected.
+21:40:36 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:40:36 INFO  : 'configparams force-mem-access 1' command is executed.
+21:40:37 INFO  : Context for 'APU' is selected.
+21:40:37 INFO  : 'stop' command is executed.
+21:40:37 INFO  : 'ps7_init' command is executed.
+21:40:37 INFO  : 'ps7_post_config' command is executed.
+21:40:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:40:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:37 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:40:37 INFO  : 'configparams force-mem-access 0' command is executed.
+21:40:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:40:38 INFO  : Memory regions updated for context APU
+21:40:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:38 INFO  : 'con' command is executed.
+21:40:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:40:38 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:42:31 INFO  : Disconnected from the channel tcfchan#13.
+21:42:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:42:32 INFO  : 'fpga -state' command is executed.
+21:42:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:42:32 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:42:32 INFO  : 'jtag frequency' command is executed.
+21:42:32 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:42:32 INFO  : Context for 'APU' is selected.
+21:42:32 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:42:32 INFO  : 'configparams force-mem-access 1' command is executed.
+21:42:32 INFO  : Context for 'APU' is selected.
+21:42:32 INFO  : 'stop' command is executed.
+21:42:33 INFO  : 'ps7_init' command is executed.
+21:42:33 INFO  : 'ps7_post_config' command is executed.
+21:42:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:42:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:42:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:42:33 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:42:33 INFO  : 'configparams force-mem-access 0' command is executed.
+21:42:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:42:33 INFO  : Memory regions updated for context APU
+21:42:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:42:33 INFO  : 'con' command is executed.
+21:42:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:42:33 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:47:36 INFO  : Disconnected from the channel tcfchan#14.
+21:48:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:48:21 INFO  : 'fpga -state' command is executed.
+21:48:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:48:21 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:48:21 INFO  : 'jtag frequency' command is executed.
+21:48:21 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:48:21 INFO  : Context for 'APU' is selected.
+21:48:21 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:48:21 INFO  : 'configparams force-mem-access 1' command is executed.
+21:48:21 INFO  : Context for 'APU' is selected.
+21:48:21 INFO  : 'stop' command is executed.
+21:48:22 INFO  : 'ps7_init' command is executed.
+21:48:22 INFO  : 'ps7_post_config' command is executed.
+21:48:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:48:22 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:48:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:48:22 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:48:22 INFO  : 'configparams force-mem-access 0' command is executed.
+21:48:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:48:22 INFO  : Memory regions updated for context APU
+21:48:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:48:23 INFO  : 'con' command is executed.
+21:48:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:48:23 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:49:04 INFO  : Disconnected from the channel tcfchan#15.
+21:49:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:49:05 INFO  : 'fpga -state' command is executed.
+21:49:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:49:05 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:49:05 INFO  : 'jtag frequency' command is executed.
+21:49:05 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:49:05 INFO  : Context for 'APU' is selected.
+21:49:05 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:49:05 INFO  : 'configparams force-mem-access 1' command is executed.
+21:49:05 INFO  : Context for 'APU' is selected.
+21:49:05 INFO  : 'stop' command is executed.
+21:49:06 INFO  : 'ps7_init' command is executed.
+21:49:06 INFO  : 'ps7_post_config' command is executed.
+21:49:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:49:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:49:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:49:06 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:49:06 INFO  : 'configparams force-mem-access 0' command is executed.
+21:49:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:49:06 INFO  : Memory regions updated for context APU
+21:49:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:49:07 INFO  : 'con' command is executed.
+21:49:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:49:07 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:49:42 INFO  : Disconnected from the channel tcfchan#16.
+21:49:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:49:43 INFO  : 'fpga -state' command is executed.
+21:49:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:49:44 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:49:44 INFO  : 'jtag frequency' command is executed.
+21:49:44 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:49:44 INFO  : Context for 'APU' is selected.
+21:49:44 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:49:44 INFO  : 'configparams force-mem-access 1' command is executed.
+21:49:44 INFO  : Context for 'APU' is selected.
+21:49:44 INFO  : 'stop' command is executed.
+21:49:44 INFO  : 'ps7_init' command is executed.
+21:49:44 INFO  : 'ps7_post_config' command is executed.
+21:49:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:49:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:49:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:49:45 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:49:45 INFO  : 'configparams force-mem-access 0' command is executed.
+21:49:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:49:45 INFO  : Memory regions updated for context APU
+21:49:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:49:45 INFO  : 'con' command is executed.
+21:49:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:49:45 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:51:19 INFO  : Disconnected from the channel tcfchan#17.
+21:51:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:51:20 INFO  : 'fpga -state' command is executed.
+21:51:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:51:20 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:51:20 INFO  : 'jtag frequency' command is executed.
+21:51:20 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:51:20 INFO  : Context for 'APU' is selected.
+21:51:20 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:51:20 INFO  : 'configparams force-mem-access 1' command is executed.
+21:51:20 INFO  : Context for 'APU' is selected.
+21:51:20 INFO  : 'stop' command is executed.
+21:51:21 INFO  : 'ps7_init' command is executed.
+21:51:21 INFO  : 'ps7_post_config' command is executed.
+21:51:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:51:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:51:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:51:21 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:51:21 INFO  : 'configparams force-mem-access 0' command is executed.
+21:51:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:51:21 INFO  : Memory regions updated for context APU
+21:51:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:51:22 INFO  : 'con' command is executed.
+21:51:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:51:22 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:52:42 INFO  : Disconnected from the channel tcfchan#18.
+21:52:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:52:43 INFO  : 'fpga -state' command is executed.
+21:52:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:52:43 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:52:43 INFO  : 'jtag frequency' command is executed.
+21:52:43 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:52:43 INFO  : Context for 'APU' is selected.
+21:52:44 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:52:44 INFO  : 'configparams force-mem-access 1' command is executed.
+21:52:44 INFO  : Context for 'APU' is selected.
+21:52:44 INFO  : 'stop' command is executed.
+21:52:44 INFO  : 'ps7_init' command is executed.
+21:52:44 INFO  : 'ps7_post_config' command is executed.
+21:52:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:52:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:52:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:52:44 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:52:44 INFO  : 'configparams force-mem-access 0' command is executed.
+21:52:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:52:45 INFO  : Memory regions updated for context APU
+21:52:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:52:45 INFO  : 'con' command is executed.
+21:52:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:52:45 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+21:54:29 INFO  : Disconnected from the channel tcfchan#19.
+21:55:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+21:55:38 INFO  : 'fpga -state' command is executed.
+21:55:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:55:39 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+21:55:39 INFO  : 'jtag frequency' command is executed.
+21:55:39 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:55:39 INFO  : Context for 'APU' is selected.
+21:55:39 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+21:55:39 INFO  : 'configparams force-mem-access 1' command is executed.
+21:55:39 INFO  : Context for 'APU' is selected.
+21:55:39 INFO  : 'stop' command is executed.
+21:55:39 INFO  : 'ps7_init' command is executed.
+21:55:39 INFO  : 'ps7_post_config' command is executed.
+21:55:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:55:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:55:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:55:40 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:55:40 INFO  : 'configparams force-mem-access 0' command is executed.
+21:55:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:55:40 INFO  : Memory regions updated for context APU
+21:55:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:55:40 INFO  : 'con' command is executed.
+21:55:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+21:55:40 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+22:00:12 INFO  : Disconnected from the channel tcfchan#20.
+22:00:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+22:00:14 INFO  : 'fpga -state' command is executed.
+22:00:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:00:14 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+22:00:14 INFO  : 'jtag frequency' command is executed.
+22:00:14 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:00:14 INFO  : Context for 'APU' is selected.
+22:00:14 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+22:00:14 INFO  : 'configparams force-mem-access 1' command is executed.
+22:00:14 INFO  : Context for 'APU' is selected.
+22:00:14 INFO  : 'stop' command is executed.
+22:00:15 INFO  : 'ps7_init' command is executed.
+22:00:15 INFO  : 'ps7_post_config' command is executed.
+22:00:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:15 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:00:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:15 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:00:15 INFO  : 'configparams force-mem-access 0' command is executed.
+22:00:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:00:15 INFO  : Memory regions updated for context APU
+22:00:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:15 INFO  : 'con' command is executed.
+22:00:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+22:00:15 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+22:00:21 INFO  : Disconnected from the channel tcfchan#21.
+22:00:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+22:00:22 INFO  : 'fpga -state' command is executed.
+22:00:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:00:22 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+22:00:22 INFO  : 'jtag frequency' command is executed.
+22:00:22 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:00:22 INFO  : Context for 'APU' is selected.
+22:00:22 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+22:00:23 INFO  : 'configparams force-mem-access 1' command is executed.
+22:00:23 INFO  : Context for 'APU' is selected.
+22:00:23 INFO  : 'stop' command is executed.
+22:00:23 INFO  : 'ps7_init' command is executed.
+22:00:23 INFO  : 'ps7_post_config' command is executed.
+22:00:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:00:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:24 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:00:24 INFO  : 'configparams force-mem-access 0' command is executed.
+22:00:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:00:24 INFO  : Memory regions updated for context APU
+22:00:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:24 INFO  : 'con' command is executed.
+22:00:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+22:00:24 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'
+22:02:14 INFO  : Disconnected from the channel tcfchan#22.
+22:02:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1" && level==0} -index 1' command is executed.
+22:02:15 INFO  : 'fpga -state' command is executed.
+22:02:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:02:16 INFO  : Jtag cable 'Digilent JTAG-HS3 210299A8DCD1' is selected.
+22:02:16 INFO  : 'jtag frequency' command is executed.
+22:02:16 INFO  : Sourcing of 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:02:16 INFO  : Context for 'APU' is selected.
+22:02:16 INFO  : Hardware design information is loaded from 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf'.
+22:02:16 INFO  : 'configparams force-mem-access 1' command is executed.
+22:02:16 INFO  : Context for 'APU' is selected.
+22:02:16 INFO  : 'stop' command is executed.
+22:02:16 INFO  : 'ps7_init' command is executed.
+22:02:16 INFO  : 'ps7_post_config' command is executed.
+22:02:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:16 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:02:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:17 INFO  : The application 'C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:02:17 INFO  : 'configparams force-mem-access 0' command is executed.
+22:02:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+loadhw -hw C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+dow C:/Projects/frodo-fpga/frodo-fpga.sdk/frodo_sdk/Debug/frodo_sdk.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:02:17 INFO  : Memory regions updated for context APU
+22:02:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:02:17 INFO  : 'con' command is executed.
+22:02:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS3 210299A8DCD1"} -index 0
+con
+----------------End of Script----------------
+
+22:02:17 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo_sdk.elf_on_local_(1).tcl'

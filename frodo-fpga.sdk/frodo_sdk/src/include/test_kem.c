@@ -255,21 +255,68 @@ void shake128_hw(unsigned char *output, unsigned long long outlen, const unsigne
 }
 #endif
 
-void KeccakF1600_StatePermute(uint64_t * state)
-{
+//void KeccakF1600_StatePermute(uint64_t * state)
+//{
+//#if ENABLE_SW_TIMER
+//	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
+//	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
+//	{
+//		t_keccak_sw = get_cyclecount();
+//		KeccakF1600_StatePermute_SW(state);
+//		t_keccak_sw_acc += get_cyclecount() - t_keccak_sw - overhead;
+//	}
+//	else
+//	{
+//		t_keccak_hw = get_cyclecount();
+//		KeccakF1600_StatePermute_HW_MM(state);
+//		t_keccak_hw_acc += get_cyclecount() - t_keccak_hw - overhead;
+//
+//#if ENABLE_HW_TIMER
+//		//Stopping timer and reading time
+//		u32 readTimer;
+//		float fval;
+//		u32 whole, thousandths;
+//
+//		readTimer = XGpio_DiscreteRead(&keccak_time, 1);
+//		fval = (float)readTimer / (float)100;
+//		whole = fval;
+//		thousandths = (fval - whole) * 1000;
+//		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+//		readTimerKeccakTotal += readTimer;
+//
+//		readTimer = XGpio_DiscreteRead(&keccak_time, 2);
+//		fval = (float)readTimer / (float)100;
+//		whole = fval;
+//		thousandths = (fval - whole) * 1000;
+//		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
+//		readTimerKeccakProc += readTimer;
+//
+//		countKeccak++;
+//#endif
+//	}
+//#else
+//	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
+//	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
+//		KeccakF1600_StatePermute_SW(state);
+//	else
+//		KeccakF1600_StatePermute_HW_MM(state);
+//#endif
+//}
 
+void shake128(unsigned char *output, unsigned long long outlen, const unsigned char *input,  unsigned long long inlen)
+{
 #if ENABLE_SW_TIMER
 	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
 	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
 	{
 		t_keccak_sw = get_cyclecount();
-		KeccakF1600_StatePermute_SW(state);
+		shake128_sw(output, outlen, input, inlen);
 		t_keccak_sw_acc += get_cyclecount() - t_keccak_sw - overhead;
 	}
 	else
 	{
 		t_keccak_hw = get_cyclecount();
-		KeccakF1600_StatePermute_HW_MM(state);
+		shake128_hw(output, outlen, input, inlen);
 		t_keccak_hw_acc += get_cyclecount() - t_keccak_hw - overhead;
 
 #if ENABLE_HW_TIMER
@@ -298,9 +345,9 @@ void KeccakF1600_StatePermute(uint64_t * state)
 #else
 	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
 	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
-		KeccakF1600_StatePermute_SW(state);
+		shake128_sw(output, outlen, input, inlen);
 	else
-		KeccakF1600_StatePermute_HW_MM(state);
+		shake128_hw(output, outlen, input, inlen);
 #endif
 }
 
@@ -373,7 +420,7 @@ int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 	{
 		t_matrix_as_hw = get_cyclecount();
 		iReturn = frodo_mul_add_as_plus_e_HW(out, s, e, seed_A);
-		t_matrix_as_hw_acc += get_cyclecount() - t_matrix_as_sw - overhead;
+		t_matrix_as_hw_acc += get_cyclecount() - t_matrix_as_hw - overhead;
 
 #if ENABLE_HW_TIMER
 		//Stopping timer and reading time
@@ -482,6 +529,8 @@ int kem_test(const char *named_parameters, int iterations)
 	t_keccak_hw = 0; t_keccak_hw_acc = 0;
 	t_matrix_sa_sw = 0; t_matrix_sa_sw_acc = 0;
 	t_matrix_sa_hw = 0; t_matrix_sa_hw_acc = 0;
+	t_matrix_as_sw = 0; t_matrix_as_sw_acc = 0;
+	t_matrix_as_hw = 0; t_matrix_as_hw_acc = 0;
 #endif
 
 #if ENABLE_HW_TIMER
