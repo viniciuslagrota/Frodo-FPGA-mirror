@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER shake128_mm_ip
+	OPTION supported_peripherals = (shake128_mm_ip);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = shake128_mm_ip;
+END DRIVER

@@ -46,8 +46,14 @@ extern uint16_t CDF_TABLE_LEN;
 //
 //////////////////////////////////////////////
 #define ENABLE_DEBUG				0
+	#define ENABLE_TEST_KECCAK_SW		0
+	#define ENABLE_TEST_KECCAK_HW_MM	0
+	#define ENABLE_TEST_MATRIX_SA		0
+	#define ENABLE_TEST_MATRIX_AS		0
+	#define ENABLE_TEST_SHAKE			1
+
 #define ENABLE_KEM_TEST				1
-#define ENABLE_HW_TIMER				1
+#define ENABLE_HW_TIMER				0
 #define ENABLE_SW_TIMER				1
 //Just used for debug
 #define ENABLE_MATRIX_SW			0
@@ -86,6 +92,8 @@ extern uint16_t CDF_TABLE_LEN;
 #define DEBUG_NOISE					0
 //Matrix multiplication
 #define DEBUG_MATRIX_MM				1
+//SHAKE128
+#define DEBUG_SHAKE_MM				0
 
 
 //////////////////////////////////////////////
@@ -112,11 +120,15 @@ XGpio_Config * ConfigPtr2;
 XGpio_Config * ConfigPtr3;
 XGpio_Config * ConfigPtr4;
 XGpio_Config * ConfigPtr5;
+XGpio_Config * ConfigPtr6;
+XGpio_Config * ConfigPtr7;
 XGpio keccak_time;
 XGpio matrix_sa_time;
 XGpio matrix_as_time;
 XGpio axiStartBusyMatrix;
 XGpio axiStartBusyMatrix2;
+XGpio axiStartBusyShake;
+XGpio axiInlenOutlen;
 u32 *memoryMMkeccak;
 u32 *memoryMatrixS;
 u32 *memoryMatrixA;
@@ -124,6 +136,7 @@ u32 *memoryMatrixB;
 u32 *memoryMatrixA2;
 u32 *memoryMatrixS2;
 u32 *memoryMatrixB2;
+u32 *memoryMMshake;
 
 //////////////////////////////////////////////
 //
