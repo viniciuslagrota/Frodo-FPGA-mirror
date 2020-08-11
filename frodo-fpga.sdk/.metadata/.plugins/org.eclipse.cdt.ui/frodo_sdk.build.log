@@ -1,4 +1,4 @@
-22:02:10 **** Incremental Build of configuration Debug for project frodo_sdk ****
+11:47:06 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -8,14 +8,14 @@ arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o
 In file included from ../src/include/test_kem.c:9:
 ../src/include/test_kem.c: In function 'kem_test':
 ../src/include/test_kem.c:1025:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t  Keccak  \t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_keccak_sw_acc)/666, (t_keccak_hw_acc)/666, wholeKeccak, thousandthsKeccak);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~
+   print_debug(DEBUG_TEST_KEM, "\t\t  SHAK128  \t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_shake128_sw_acc)/666, (t_shake128_hw_acc)/666, wholeShake128, thousandthsShake128);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
 ../src/include/test_kem.c:1025:31: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long unsigned int' [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t  Keccak  \t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_keccak_sw_acc)/666, (t_keccak_hw_acc)/666, wholeKeccak, thousandthsKeccak);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                         ~~~~~~~~~~~~~~~~~~~~~
+   print_debug(DEBUG_TEST_KEM, "\t\t  SHAK128  \t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_shake128_sw_acc)/666, (t_shake128_hw_acc)/666, wholeShake128, thousandthsShake128);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                           ~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
@@ -53,9 +53,9 @@ Finished building target: frodo_sdk.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 124088	   2760	2104384	2231232	 220bc0	frodo_sdk.elf
+ 124184	   2760	2104384	2231328	 220c20	frodo_sdk.elf
 Finished building: frodo_sdk.elf.size
  
 
-22:02:13 Build Finished (took 3s.653ms)
+11:47:10 Build Finished (took 3s.816ms)
 

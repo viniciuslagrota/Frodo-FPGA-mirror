@@ -1,0 +1,534 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Aug  6 16:35:37 2020
+# Process ID: 16524
+# Current directory: c:/Projects/frodo-fpga/frodo-fpga.tmp/shake128_ip_v1_0_project/shake128_ip_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log shake128_ip_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source shake128_ip_v1_0.tcl
+# Log file: c:/Projects/frodo-fpga/frodo-fpga.tmp/shake128_ip_v1_0_project/shake128_ip_v1_0_project.runs/synth_1/shake128_ip_v1_0.vds
+# Journal file: c:/Projects/frodo-fpga/frodo-fpga.tmp/shake128_ip_v1_0_project/shake128_ip_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source shake128_ip_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+CRITICAL WARNING: [IP_Flow 19-4648] Error loading IP definition shake128_mm_ip_v1.0 (xilinx.com:user:shake128_mm_ip:1.0): This component is not valid; it has a subcoreRef defined to be the same as its parent.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/projects/frodo-fpga/frodo-fpga.tmp/shake128_ip_v1_0_project/shake128_ip_v1_0_project.cache/ip 
+Command: synth_design -top shake128_ip_v1_0 -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11892 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 484.551 ; gain = 186.293
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'shake128_ip_v1_0' [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0.vhd:55]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter REQ_BITS_LEN bound to: 13 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter REQ_BITS_LEN bound to: 13 - type: integer 
+INFO: [Synth 8-3491] module 'shake128_ip_v1_0_S00_AXI' declared at 'c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0_S00_AXI.vhd:8' bound to instance 'shake128_mm_ip_v1_0_S00_AXI_inst' of component 'shake128_ip_v1_0_S00_AXI' [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0.vhd:169]
+INFO: [Synth 8-638] synthesizing module 'shake128_ip_v1_0_S00_AXI' [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0_S00_AXI.vhd:101]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 15 - type: integer 
+	Parameter REQ_BITS_LEN bound to: 13 - type: integer 
+	Parameter MEM_SIZE bound to: 2583 - type: integer 
+	Parameter WORD_SIZE bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'true_single_bram3' declared at 'c:/Projects/ip_repo/shake128_ip_1.0/src/true_single_bram3.vhd:35' bound to instance 'true_single_bram3_s01_inst' of component 'true_single_bram3' [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0_S00_AXI.vhd:644]
+INFO: [Synth 8-638] synthesizing module 'true_single_bram3' [c:/Projects/ip_repo/shake128_ip_1.0/src/true_single_bram3.vhd:50]
+	Parameter MEM_SIZE bound to: 2583 - type: integer 
+	Parameter WORD_SIZE bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'true_single_bram3' (1#1) [c:/Projects/ip_repo/shake128_ip_1.0/src/true_single_bram3.vhd:50]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0_S00_AXI.vhd:259]
+WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0_S00_AXI.vhd:328]
+INFO: [Synth 8-256] done synthesizing module 'shake128_ip_v1_0_S00_AXI' (2#1) [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0_S00_AXI.vhd:101]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter REQ_BITS_LEN bound to: 13 - type: integer 
+INFO: [Synth 8-3491] module 'shake128_core' declared at 'c:/Projects/ip_repo/shake128_ip_1.0/src/shake128_core.vhd:37' bound to instance 'shake128_core_inst' of component 'shake128_core' [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0.vhd:210]
+INFO: [Synth 8-638] synthesizing module 'shake128_core' [c:/Projects/ip_repo/shake128_ip_1.0/src/shake128_core.vhd:66]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter REQ_BITS_LEN bound to: 13 - type: integer 
+WARNING: [Synth 8-5856] 3D RAM s_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'shake128_core' (3#1) [c:/Projects/ip_repo/shake128_ip_1.0/src/shake128_core.vhd:66]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'keccak_f1600_mm_core_fast2' declared at 'c:/Projects/ip_repo/shake128_ip_1.0/src/keccak_f1600_mm_core_fast2.vhd:37' bound to instance 'keccak_f1600_mm_core_fast2_inst' of component 'keccak_f1600_mm_core_fast2' [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'keccak_f1600_mm_core_fast2' [c:/Projects/ip_repo/shake128_ip_1.0/src/keccak_f1600_mm_core_fast2.vhd:51]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+WARNING: [Synth 8-5856] 3D RAM s_round_out_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM theta_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'keccak_f1600_mm_core_fast2' (4#1) [c:/Projects/ip_repo/shake128_ip_1.0/src/keccak_f1600_mm_core_fast2.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'shake128_ip_v1_0' (5#1) [c:/Projects/ip_repo/shake128_ip_1.0/hdl/shake128_ip_v1_0.vhd:55]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[14]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[13]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[12]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[11]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[10]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[9]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[8]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[7]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[6]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[5]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[4]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[3]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[2]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[1]
+WARNING: [Synth 8-3331] design shake128_core has unconnected port inlen[0]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[14]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[13]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[12]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[11]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[10]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[9]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[8]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[7]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[6]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[5]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[4]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[3]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[2]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[1]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[0]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[14]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[13]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[12]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[11]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[10]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[9]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[8]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[7]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[6]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[5]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[4]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[3]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[2]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[1]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[0]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design shake128_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 745.320 ; gain = 447.063
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 745.320 ; gain = 447.063
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 745.320 ; gain = 447.063
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-802] inferred FSM for state register 'st_reg' in module 'shake128_ip_v1_0_S00_AXI'
+INFO: [Synth 8-5544] ROM "st" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'st_reg' in module 'shake128_core'
+INFO: [Synth 8-5546] ROM "rc" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+         cleaning_memory |                         00000010 |                              000
+              wait_start |                         10000000 |                              001
+          receiving_data |                         01000000 |                              010
+               reg_inlen |                         00100000 |                              011
+              processing |                         00010000 |                              100
+     pre_waiting_to_send |                         00001000 |                              101
+         waiting_to_send |                         00000100 |                              110
+              shake_done |                         00000001 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'st_reg' using encoding 'one-hot' in module 'shake128_ip_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+           waiting_ready |                             0101 |                             0000
+                 request |                             0010 |                             0001
+          receiving_data |                             0011 |                             0010
+       pre_keccak_absorb |                             0000 |                             0011
+   waiting_keccak_absorb |                             0001 |                             0100
+             absorb_done |                             0100 |                             0101
+      pre_keccak_squeeze |                             1010 |                             0110
+  waiting_keccak_squeeze |                             0110 |                             0111
+          squeezing_data |                             0111 |                             1000
+              shake_done |                             1000 |                             1001
+                  iSTATE |                             1001 |                             1111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'st_reg' using encoding 'sequential' in module 'shake128_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:07 ; elapsed = 00:01:06 . Memory (MB): peak = 821.266 ; gain = 523.008
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |shake128_core__GB0    |           1|     27622|
+|2     |shake128_core__GB1    |           1|     10232|
+|3     |shake128_core__GB2    |           1|      7848|
+|4     |shake128_core__GB3    |           1|     13493|
+|5     |shake128_ip_v1_0__GC0 |           1|     19617|
++------+----------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     15 Bit       Adders := 2     
+	   2 Input     15 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 1729  
+	   3 Input      1 Bit         XORs := 1600  
+	   5 Input      1 Bit         XORs := 320   
++---Registers : 
+	               64 Bit    Registers := 53    
+	               32 Bit    Registers := 5     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 20    
++---RAMs : 
+	             161K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 81    
+	   8 Input     64 Bit        Muxes := 1     
+	  25 Input     64 Bit        Muxes := 1     
+	   8 Input     61 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 38    
+	   3 Input      1 Bit        Muxes := 3     
+	  11 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module shake128_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 64    
++---Registers : 
+	               64 Bit    Registers := 26    
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 50    
+	   3 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 23    
+	   3 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+Module true_single_bram3 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
++---RAMs : 
+	             161K Bit         RAMs := 1     
+Module shake128_ip_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     15 Bit       Adders := 2     
+	   2 Input     15 Bit       Adders := 2     
++---XORs : 
+	   2 Input     64 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 6     
+	   8 Input     64 Bit        Muxes := 1     
+	   8 Input     61 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   3 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module keccak_f1600_mm_core_fast2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---XORs : 
+	   3 Input      1 Bit         XORs := 1600  
+	   5 Input      1 Bit         XORs := 320   
+	   2 Input      1 Bit         XORs := 1664  
++---Registers : 
+	               64 Bit    Registers := 25    
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	  25 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 25    
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'i_0/shake128_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'i_0/shake128_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\shake128_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/shake128_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'i_0/shake128_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\shake128_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:24 ; elapsed = 00:02:27 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name        | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|true_single_bram3: | RAM_reg    | 4 K x 64(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 7      | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_0/shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |shake128_core__GB0    |           1|      1741|
+|2     |shake128_core__GB1    |           1|      4186|
+|3     |shake128_core__GB2    |           1|       244|
+|4     |shake128_core__GB3    |           1|      1862|
+|5     |shake128_ip_v1_0__GC0 |           1|     14123|
++------+----------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:25 ; elapsed = 00:02:27 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++-------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name        | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|true_single_bram3: | RAM_reg    | 4 K x 64(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 7      | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |shake128_core__GB0    |           1|      1741|
+|2     |shake128_core__GB1    |           1|      4186|
+|3     |shake128_core__GB2    |           1|       244|
+|4     |shake128_core__GB3    |           1|      1862|
+|5     |shake128_ip_v1_0__GC0 |           1|     14123|
++------+----------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance shake128_mm_ip_v1_0_S00_AXI_inst/true_single_bram3_s01_inst/RAM_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:31 ; elapsed = 00:02:34 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net \shake128_mm_ip_v1_0_S00_AXI_inst/we  is driving 30 big block pins (URAM, BRAM and DSP loads). Created 3 replicas of its driver. 
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:37 ; elapsed = 00:02:39 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:37 ; elapsed = 00:02:40 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:37 ; elapsed = 00:02:40 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:37 ; elapsed = 00:02:40 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:41 ; elapsed = 00:02:44 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:41 ; elapsed = 00:02:44 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    94|
+|3     |LUT1     |    64|
+|4     |LUT2     |   347|
+|5     |LUT3     |  1604|
+|6     |LUT4     |   695|
+|7     |LUT5     |  2395|
+|8     |LUT6     |  2241|
+|9     |MUXF7    |    52|
+|10    |RAMB18E1 |     1|
+|11    |RAMB36E1 |     7|
+|12    |FDRE     |  3622|
+|13    |FDSE     |     4|
+|14    |IBUF     |    70|
+|15    |OBUF     |    42|
++------+---------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+---------------------------+------+
+|      |Instance                           |Module                     |Cells |
++------+-----------------------------------+---------------------------+------+
+|1     |top                                |                           | 11239|
+|2     |  keccak_f1600_mm_core_fast2_inst  |keccak_f1600_mm_core_fast2 |  6278|
+|3     |  shake128_core_inst               |shake128_core              |  2749|
+|4     |  shake128_mm_ip_v1_0_S00_AXI_inst |shake128_ip_v1_0_S00_AXI   |  2034|
+|5     |    true_single_bram3_s01_inst     |true_single_bram3          |   166|
++------+-----------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:41 ; elapsed = 00:02:44 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 60 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:41 ; elapsed = 00:02:45 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+Synthesis Optimization Complete : Time (s): cpu = 00:02:41 ; elapsed = 00:02:45 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 154 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1352.789 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+54 Infos, 61 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:51 ; elapsed = 00:02:56 . Memory (MB): peak = 1352.789 ; gain = 1054.531
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1352.789 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'c:/Projects/frodo-fpga/frodo-fpga.tmp/shake128_ip_v1_0_project/shake128_ip_v1_0_project.runs/synth_1/shake128_ip_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file shake128_ip_v1_0_utilization_synth.rpt -pb shake128_ip_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  6 16:38:41 2020...

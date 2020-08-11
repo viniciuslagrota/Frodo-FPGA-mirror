@@ -12,8 +12,8 @@
 unsigned int overhead;
 
 #if ENABLE_SW_TIMER
-	volatile uint32_t t_keccak_sw = 0, t_keccak_sw_acc = 0;
-	volatile uint32_t t_keccak_hw = 0, t_keccak_hw_acc = 0;
+	volatile uint32_t t_shake128_sw = 0, t_shake128_sw_acc = 0;
+	volatile uint32_t t_shake128_hw = 0, t_shake128_hw_acc = 0;
 	volatile uint32_t t_matrix_sa_sw = 0, t_matrix_sa_sw_acc = 0;
 	volatile uint32_t t_matrix_sa_hw = 0, t_matrix_sa_hw_acc = 0;
 	volatile uint32_t t_matrix_as_sw = 0, t_matrix_as_sw_acc = 0;
@@ -21,29 +21,29 @@ unsigned int overhead;
 #endif
 
 #if ENABLE_HW_TIMER
-	u32 readTimerKeccakTotal;
-	u32 readTimerKeccakProc;
+	u32 readTimerShake128Total;
+	u32 readTimerShake128Proc;
 	u32 readTimerMatrixSaTotal;
 	u32 readTimerMatrixSaProc;
 	u32 readTimerMatrixAsTotal;
 	u32 readTimerMatrixAsProc;
 
-	u32 countKeccak;
+	u32 countShake128;
 	u32 countMatrixSa;
 	u32 countMatrixAs;
 #endif
 
 static enum codeType
 {
-	KECCAK_SW_MATRIX_SA_SW_AS_SW,
-	KECCAK_HW_MM_MATRIX_SA_SW_AS_SW,
-	KECCAK_SW_MATRIX_SA_HW_AS_SW,
-	KECCAK_HW_MM_MATRIX_SA_HW_AS_SW,
-	KECCAK_SW_MATRIX_SA_SW_AS_HW,
-	KECCAK_HW_MM_MATRIX_SA_SW_AS_HW,
-	KECCAK_SW_MATRIX_SA_HW_AS_HW,
-	KECCAK_HW_MM_MATRIX_SA_HW_AS_HW
-} codeFeaturesType = KECCAK_SW_MATRIX_SA_SW_AS_SW;
+	SHAKE128_SW_MATRIX_SA_SW_AS_SW,
+	SHAKE128_HW_MM_MATRIX_SA_SW_AS_SW,
+	SHAKE128_SW_MATRIX_SA_HW_AS_SW,
+	SHAKE128_HW_MM_MATRIX_SA_HW_AS_SW,
+	SHAKE128_SW_MATRIX_SA_SW_AS_HW,
+	SHAKE128_HW_MM_MATRIX_SA_SW_AS_HW,
+	SHAKE128_SW_MATRIX_SA_HW_AS_HW,
+	SHAKE128_HW_MM_MATRIX_SA_HW_AS_HW
+} codeFeaturesType = SHAKE128_SW_MATRIX_SA_SW_AS_SW;
 
 //void ticks_to_us(u32 readTimer, u32 * whole, u32 * thousandths, u32 freq_MHz)
 //{
@@ -258,18 +258,18 @@ void shake128_hw(unsigned char *output, unsigned long long outlen, const unsigne
 //void KeccakF1600_StatePermute(uint64_t * state)
 //{
 //#if ENABLE_SW_TIMER
-//	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
-//	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
+//	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_SW ||
+//	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_HW)
 //	{
-//		t_keccak_sw = get_cyclecount();
+//		t_shake128_sw = get_cyclecount();
 //		KeccakF1600_StatePermute_SW(state);
-//		t_keccak_sw_acc += get_cyclecount() - t_keccak_sw - overhead;
+//		t_shake128_sw_acc += get_cyclecount() - t_shake128_sw - overhead;
 //	}
 //	else
 //	{
-//		t_keccak_hw = get_cyclecount();
+//		t_shake128_hw = get_cyclecount();
 //		KeccakF1600_StatePermute_HW_MM(state);
-//		t_keccak_hw_acc += get_cyclecount() - t_keccak_hw - overhead;
+//		t_shake128_hw_acc += get_cyclecount() - t_shake128_hw - overhead;
 //
 //#if ENABLE_HW_TIMER
 //		//Stopping timer and reading time
@@ -277,14 +277,14 @@ void shake128_hw(unsigned char *output, unsigned long long outlen, const unsigne
 //		float fval;
 //		u32 whole, thousandths;
 //
-//		readTimer = XGpio_DiscreteRead(&keccak_time, 1);
+//		readTimer = XGpio_DiscreteRead(&shake128_time, 1);
 //		fval = (float)readTimer / (float)100;
 //		whole = fval;
 //		thousandths = (fval - whole) * 1000;
 //		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
 //		readTimerKeccakTotal += readTimer;
 //
-//		readTimer = XGpio_DiscreteRead(&keccak_time, 2);
+//		readTimer = XGpio_DiscreteRead(&shake128_time, 2);
 //		fval = (float)readTimer / (float)100;
 //		whole = fval;
 //		thousandths = (fval - whole) * 1000;
@@ -295,8 +295,8 @@ void shake128_hw(unsigned char *output, unsigned long long outlen, const unsigne
 //#endif
 //	}
 //#else
-//	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
-//	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
+//	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_SW ||
+//	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_HW)
 //		KeccakF1600_StatePermute_SW(state);
 //	else
 //		KeccakF1600_StatePermute_HW_MM(state);
@@ -306,18 +306,18 @@ void shake128_hw(unsigned char *output, unsigned long long outlen, const unsigne
 void shake128(unsigned char *output, unsigned long long outlen, const unsigned char *input,  unsigned long long inlen)
 {
 #if ENABLE_SW_TIMER
-	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
-	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
+	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_SW ||
+	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_HW)
 	{
-		t_keccak_sw = get_cyclecount();
+		t_shake128_sw = get_cyclecount();
 		shake128_sw(output, outlen, input, inlen);
-		t_keccak_sw_acc += get_cyclecount() - t_keccak_sw - overhead;
+		t_shake128_sw_acc += get_cyclecount() - t_shake128_sw - overhead;
 	}
 	else
 	{
-		t_keccak_hw = get_cyclecount();
+		t_shake128_hw = get_cyclecount();
 		shake128_hw(output, outlen, input, inlen);
-		t_keccak_hw_acc += get_cyclecount() - t_keccak_hw - overhead;
+		t_shake128_hw_acc += get_cyclecount() - t_shake128_hw - overhead;
 
 #if ENABLE_HW_TIMER
 		//Stopping timer and reading time
@@ -325,14 +325,14 @@ void shake128(unsigned char *output, unsigned long long outlen, const unsigned c
 		float fval;
 		u32 whole, thousandths;
 
-		readTimer = XGpio_DiscreteRead(&keccak_time, 1);
+		readTimer = XGpio_DiscreteRead(&shake128_time, 1);
 		fval = (float)readTimer / (float)100;
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time took to process Keccak-f1600-MM: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
 		readTimerKeccakTotal += readTimer;
 
-		readTimer = XGpio_DiscreteRead(&keccak_time, 2);
+		readTimer = XGpio_DiscreteRead(&shake128_time, 2);
 		fval = (float)readTimer / (float)100;
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
@@ -343,8 +343,8 @@ void shake128(unsigned char *output, unsigned long long outlen, const unsigned c
 #endif
 	}
 #else
-	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW ||
-	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_HW)
+	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_SW ||
+	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_HW)
 		shake128_sw(output, outlen, input, inlen);
 	else
 		shake128_hw(output, outlen, input, inlen);
@@ -356,8 +356,8 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 	int iReturn;
 
 #if ENABLE_SW_TIMER
-	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
-	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_HW)
+	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_SW_AS_SW ||
+	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_SW_AS_HW)
 	{
 		t_matrix_sa_sw = get_cyclecount();
 		iReturn = frodo_mul_add_sa_plus_e_SW(out, s, e, seed_A);
@@ -394,8 +394,8 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 	}
 
 #else
-	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
-	   codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_HW)
+	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_SW_AS_SW ||
+	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_SW_AS_HW)
 		iReturn = frodo_mul_add_sa_plus_e_SW(out, s, e, seed_A);
 	else
 		iReturn = frodo_mul_add_sa_plus_e_HW(out, s, e, seed_A);
@@ -409,8 +409,8 @@ int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 	int iReturn;
 
 #if ENABLE_SW_TIMER
-	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
-	   codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_HW_AS_SW)
+	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_SW_AS_SW ||
+	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_SW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_HW_AS_SW)
 	{
 		t_matrix_as_sw = get_cyclecount();
 		iReturn = frodo_mul_add_as_plus_e_SW(out, s, e, seed_A);
@@ -446,8 +446,8 @@ int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 #endif
 	}
 #else
-	if(codeFeaturesType == KECCAK_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_SW_AS_SW ||
-	   codeFeaturesType == KECCAK_SW_MATRIX_SA_HW_AS_SW || codeFeaturesType == KECCAK_HW_MM_MATRIX_SA_HW_AS_SW)
+	if(codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_SW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_SW_AS_SW ||
+	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_SW || codeFeaturesType == SHAKE128_HW_MM_MATRIX_SA_HW_AS_SW)
 		iReturn = frodo_mul_add_as_plus_e_SW(out, s, e, seed_A);
 	else
 		iReturn = frodo_mul_add_as_plus_e_HW(out, s, e, seed_A);
@@ -515,18 +515,18 @@ int kem_test(const char *named_parameters, int iterations)
 	overhead = get_cyclecount();
 	overhead = get_cyclecount() - overhead;
 
-	volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_sw = 0, t_enc_keccak_sw_matrix_sa_sw_as_sw = 0, t_dec_keccak_sw_matrix_sa_sw_as_sw = 0, t_total_keccak_sw_matrix_sa_sw_as_sw = 0;
-	volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_sw = 0;
-	volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_sw = 0, t_enc_keccak_sw_matrix_sa_hw_as_sw = 0, t_dec_keccak_sw_matrix_sa_hw_as_sw = 0, t_total_keccak_sw_matrix_sa_hw_as_sw = 0;
-	volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_sw = 0;
-	volatile unsigned int t_keypair_keccak_sw_matrix_sa_sw_as_hw = 0, t_enc_keccak_sw_matrix_sa_sw_as_hw = 0, t_dec_keccak_sw_matrix_sa_sw_as_hw = 0, t_total_keccak_sw_matrix_sa_sw_as_hw = 0;
-	volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_sw_as_hw = 0;
-	volatile unsigned int t_keypair_keccak_sw_matrix_sa_hw_as_hw = 0, t_enc_keccak_sw_matrix_sa_hw_as_hw = 0, t_dec_keccak_sw_matrix_sa_hw_as_hw = 0, t_total_keccak_sw_matrix_sa_hw_as_hw = 0;
-	volatile unsigned int t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = 0, t_total_keccak_hw_mm_matrix_sa_hw_as_hw = 0;
+	volatile unsigned int t_keypair_shake128_sw_matrix_sa_sw_as_sw = 0, t_enc_shake128_sw_matrix_sa_sw_as_sw = 0, t_dec_shake128_sw_matrix_sa_sw_as_sw = 0, t_total_shake128_sw_matrix_sa_sw_as_sw = 0;
+	volatile unsigned int t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_total_shake128_hw_mm_matrix_sa_sw_as_sw = 0;
+	volatile unsigned int t_keypair_shake128_sw_matrix_sa_hw_as_sw = 0, t_enc_shake128_sw_matrix_sa_hw_as_sw = 0, t_dec_shake128_sw_matrix_sa_hw_as_sw = 0, t_total_shake128_sw_matrix_sa_hw_as_sw = 0;
+	volatile unsigned int t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw = 0, t_enc_shake128_hw_mm_matrix_sa_hw_as_sw = 0, t_dec_shake128_hw_mm_matrix_sa_hw_as_sw = 0, t_total_shake128_hw_mm_matrix_sa_hw_as_sw = 0;
+	volatile unsigned int t_keypair_shake128_sw_matrix_sa_sw_as_hw = 0, t_enc_shake128_sw_matrix_sa_sw_as_hw = 0, t_dec_shake128_sw_matrix_sa_sw_as_hw = 0, t_total_shake128_sw_matrix_sa_sw_as_hw = 0;
+	volatile unsigned int t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw = 0, t_enc_shake128_hw_mm_matrix_sa_sw_as_hw = 0, t_dec_shake128_hw_mm_matrix_sa_sw_as_hw = 0, t_total_shake128_hw_mm_matrix_sa_sw_as_hw = 0;
+	volatile unsigned int t_keypair_shake128_sw_matrix_sa_hw_as_hw = 0, t_enc_shake128_sw_matrix_sa_hw_as_hw = 0, t_dec_shake128_sw_matrix_sa_hw_as_hw = 0, t_total_shake128_sw_matrix_sa_hw_as_hw = 0;
+	volatile unsigned int t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw = 0, t_enc_shake128_hw_mm_matrix_sa_hw_as_hw = 0, t_dec_shake128_hw_mm_matrix_sa_hw_as_hw = 0, t_total_shake128_hw_mm_matrix_sa_hw_as_hw = 0;
 
 #if ENABLE_SW_TIMER
-	t_keccak_sw = 0; t_keccak_sw_acc = 0;
-	t_keccak_hw = 0; t_keccak_hw_acc = 0;
+	t_shake128_sw = 0; t_shake128_sw_acc = 0;
+	t_shake128_hw = 0; t_shake128_hw_acc = 0;
 	t_matrix_sa_sw = 0; t_matrix_sa_sw_acc = 0;
 	t_matrix_sa_hw = 0; t_matrix_sa_hw_acc = 0;
 	t_matrix_as_sw = 0; t_matrix_as_sw_acc = 0;
@@ -534,14 +534,14 @@ int kem_test(const char *named_parameters, int iterations)
 #endif
 
 #if ENABLE_HW_TIMER
-	readTimerKeccakTotal = 0;
-	readTimerKeccakProc = 0;
+	readTimerShake128Total = 0;
+	readTimerShake128Proc = 0;
 	readTimerMatrixSaTotal = 0;
 	readTimerMatrixSaProc = 0;
 	readTimerMatrixAsTotal = 0;
 	readTimerMatrixAsProc = 0;
 
-	countKeccak = 0;
+	countShake128 = 0;
 	countMatrixSa = 0;
 	countMatrixAs = 0;
 #endif
@@ -556,7 +556,7 @@ int kem_test(const char *named_parameters, int iterations)
 	init_perfcounters (1, 0);
 
 #if ENABLE_DEBUG
-	// ------ Test keccak_function ------
+	// ------ Test shake128_function ------
 //	u64 state[25] = { 0 };
 //	state[0] = 0x000000000000001f;
 //	state[20] = 0x8000000000000000;
@@ -640,7 +640,7 @@ int kem_test(const char *named_parameters, int iterations)
 
 	print_debug(DEBUG_TEST_KEM, "[SHAKE TEST] Testing shake inlen: %llu | outlen: %llu\n", ullInlen, ullOutlen);
 
-	codeFeaturesType = KECCAK_SW_MATRIX_SA_SW_AS_SW;
+	codeFeaturesType = SHAKE128_SW_MATRIX_SA_SW_AS_SW;
 	t1 = get_cyclecount();
 	shake128(&ucShakeOutSw[0], ullOutlen, ucShakeIn, ullInlen);
 	t1 = get_cyclecount() - t1 - overhead;
@@ -649,7 +649,7 @@ int kem_test(const char *named_parameters, int iterations)
 //		print_debug(DEBUG_TEST_KEM, " 0x%02x ", ucShakeOutSw[i]);
 //	print_debug(DEBUG_TEST_KEM, "\n");
 
-//	codeFeaturesType = KECCAK_HW_MM_MATRIX_SA_SW_AS_SW;
+//	codeFeaturesType = SHAKE128_HW_MM_MATRIX_SA_SW_AS_SW;
 //	t2 = get_cyclecount();
 //	shake128(&ucShakeOutHwMM[0], ullOutlen, ucShakeIn, ullInlen);
 //	t2 = get_cyclecount() - t2 - overhead;
@@ -720,286 +720,286 @@ int kem_test(const char *named_parameters, int iterations)
 
 	for (int i = 0; i < iterations; i++)
 	{
-		codeFeaturesType = KECCAK_SW_MATRIX_SA_SW_AS_SW;
+		codeFeaturesType = SHAKE128_SW_MATRIX_SA_SW_AS_SW;
 
-		t_keypair_keccak_sw_matrix_sa_sw_as_sw = get_cyclecount();
+		t_keypair_shake128_sw_matrix_sa_sw_as_sw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_sw_matrix_sa_sw_as_sw = get_cyclecount() - t_keypair_keccak_sw_matrix_sa_sw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak SW and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_sw_matrix_sa_sw_as_sw, (t_keypair_keccak_sw_matrix_sa_sw_as_sw)/666);
+		t_keypair_shake128_sw_matrix_sa_sw_as_sw = get_cyclecount() - t_keypair_shake128_sw_matrix_sa_sw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 SW and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_sw_matrix_sa_sw_as_sw, (t_keypair_shake128_sw_matrix_sa_sw_as_sw)/666);
 
-		t_enc_keccak_sw_matrix_sa_sw_as_sw = get_cyclecount();
+		t_enc_shake128_sw_matrix_sa_sw_as_sw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_sw_matrix_sa_sw_as_sw = get_cyclecount() - t_enc_keccak_sw_matrix_sa_sw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Keccak SW and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_sw_matrix_sa_sw_as_sw, (t_enc_keccak_sw_matrix_sa_sw_as_sw)/666);
+		t_enc_shake128_sw_matrix_sa_sw_as_sw = get_cyclecount() - t_enc_shake128_sw_matrix_sa_sw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Shake128 SW and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_sw_matrix_sa_sw_as_sw, (t_enc_shake128_sw_matrix_sa_sw_as_sw)/666);
 
-		t_dec_keccak_sw_matrix_sa_sw_as_sw = get_cyclecount();
+		t_dec_shake128_sw_matrix_sa_sw_as_sw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_sw_matrix_sa_sw_as_sw = get_cyclecount() - t_dec_keccak_sw_matrix_sa_sw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Keccak SW and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_sw_matrix_sa_sw_as_sw, (t_dec_keccak_sw_matrix_sa_sw_as_sw)/666);
+		t_dec_shake128_sw_matrix_sa_sw_as_sw = get_cyclecount() - t_dec_shake128_sw_matrix_sa_sw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Shake128 SW and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_sw_matrix_sa_sw_as_sw, (t_dec_shake128_sw_matrix_sa_sw_as_sw)/666);
 
 		//Total sw time
-		t_total_keccak_sw_matrix_sa_sw_as_sw = t_keypair_keccak_sw_matrix_sa_sw_as_sw + t_enc_keccak_sw_matrix_sa_sw_as_sw + t_dec_keccak_sw_matrix_sa_sw_as_sw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak SW and Matrix SA_SW AS_SW is %d cycles or %d us (including function call)\n", t_total_keccak_sw_matrix_sa_sw_as_sw, (t_total_keccak_sw_matrix_sa_sw_as_sw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak SW and matrix SA_SW AS_SW tests PASSED. All session keys matched.\n");
+		t_total_shake128_sw_matrix_sa_sw_as_sw = t_keypair_shake128_sw_matrix_sa_sw_as_sw + t_enc_shake128_sw_matrix_sa_sw_as_sw + t_dec_shake128_sw_matrix_sa_sw_as_sw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %d cycles or %d us (including function call)\n", t_total_shake128_sw_matrix_sa_sw_as_sw, (t_total_shake128_sw_matrix_sa_sw_as_sw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 SW and matrix SA_SW AS_SW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak SW and matrix SA_SW AS_SW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 SW and matrix SA_SW AS_SW ERROR!\n");
 			return false;
 		}
 
-		codeFeaturesType = KECCAK_HW_MM_MATRIX_SA_SW_AS_SW;
+		codeFeaturesType = SHAKE128_HW_MM_MATRIX_SA_SW_AS_SW;
 
-		t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = get_cyclecount();
+		t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw = get_cyclecount() - t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak HW_MM and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw, (t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw)/666);
+		t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw = get_cyclecount() - t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 HW_MM and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw, (t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw)/666);
 
-		t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = get_cyclecount();
+		t_enc_shake128_hw_mm_matrix_sa_sw_as_sw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_hw_mm_matrix_sa_sw_as_sw = get_cyclecount() - t_enc_keccak_hw_mm_matrix_sa_sw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using Keccak HW_MM and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_hw_mm_matrix_sa_sw_as_sw, (t_enc_keccak_hw_mm_matrix_sa_sw_as_sw)/666);
+		t_enc_shake128_hw_mm_matrix_sa_sw_as_sw = get_cyclecount() - t_enc_shake128_hw_mm_matrix_sa_sw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using Shake128 HW_MM and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_hw_mm_matrix_sa_sw_as_sw, (t_enc_shake128_hw_mm_matrix_sa_sw_as_sw)/666);
 
-		t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = get_cyclecount();
+		t_dec_shake128_hw_mm_matrix_sa_sw_as_sw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_hw_mm_matrix_sa_sw_as_sw = get_cyclecount() - t_dec_keccak_hw_mm_matrix_sa_sw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using Keccak HW_MM and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_hw_mm_matrix_sa_sw_as_sw, (t_dec_keccak_hw_mm_matrix_sa_sw_as_sw)/666);
+		t_dec_shake128_hw_mm_matrix_sa_sw_as_sw = get_cyclecount() - t_dec_shake128_hw_mm_matrix_sa_sw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using Shake128 HW_MM and Matrix SA_SW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_hw_mm_matrix_sa_sw_as_sw, (t_dec_shake128_hw_mm_matrix_sa_sw_as_sw)/666);
 
 		//Total hw time
-		t_total_keccak_hw_mm_matrix_sa_sw_as_sw = t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw + t_enc_keccak_hw_mm_matrix_sa_sw_as_sw + t_dec_keccak_hw_mm_matrix_sa_sw_as_sw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak HW_MM and Matrix SA_SW AS_SW is %d cycles or %d us (including function call)\n", t_total_keccak_hw_mm_matrix_sa_sw_as_sw, (t_total_keccak_hw_mm_matrix_sa_sw_as_sw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak HW_MM and Matrix SA_SW AS_SW tests PASSED. All session keys matched.\n");
+		t_total_shake128_hw_mm_matrix_sa_sw_as_sw = t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw + t_enc_shake128_hw_mm_matrix_sa_sw_as_sw + t_dec_shake128_hw_mm_matrix_sa_sw_as_sw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 HW_MM and Matrix SA_SW AS_SW is %d cycles or %d us (including function call)\n", t_total_shake128_hw_mm_matrix_sa_sw_as_sw, (t_total_shake128_hw_mm_matrix_sa_sw_as_sw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 HW_MM and Matrix SA_SW AS_SW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak HW_MM and matrix SA_SW AS_SW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 HW_MM and matrix SA_SW AS_SW ERROR!\n");
 			return false;
 		}
 
-		codeFeaturesType = KECCAK_SW_MATRIX_SA_HW_AS_SW;
+		codeFeaturesType = SHAKE128_SW_MATRIX_SA_HW_AS_SW;
 
-		t_keypair_keccak_sw_matrix_sa_hw_as_sw = get_cyclecount();
+		t_keypair_shake128_sw_matrix_sa_hw_as_sw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_sw_matrix_sa_hw_as_sw = get_cyclecount() - t_keypair_keccak_sw_matrix_sa_hw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak SW and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_sw_matrix_sa_hw_as_sw, (t_keypair_keccak_sw_matrix_sa_hw_as_sw)/666);
+		t_keypair_shake128_sw_matrix_sa_hw_as_sw = get_cyclecount() - t_keypair_shake128_sw_matrix_sa_hw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 SW and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_sw_matrix_sa_hw_as_sw, (t_keypair_shake128_sw_matrix_sa_hw_as_sw)/666);
 
-		t_enc_keccak_sw_matrix_sa_hw_as_sw = get_cyclecount();
+		t_enc_shake128_sw_matrix_sa_hw_as_sw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_sw_matrix_sa_hw_as_sw = get_cyclecount() - t_enc_keccak_sw_matrix_sa_hw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Keccak SW and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_sw_matrix_sa_hw_as_sw, (t_enc_keccak_sw_matrix_sa_hw_as_sw)/666);
+		t_enc_shake128_sw_matrix_sa_hw_as_sw = get_cyclecount() - t_enc_shake128_sw_matrix_sa_hw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Shake128 SW and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_sw_matrix_sa_hw_as_sw, (t_enc_shake128_sw_matrix_sa_hw_as_sw)/666);
 
-		t_dec_keccak_sw_matrix_sa_hw_as_sw = get_cyclecount();
+		t_dec_shake128_sw_matrix_sa_hw_as_sw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_sw_matrix_sa_hw_as_sw = get_cyclecount() - t_dec_keccak_sw_matrix_sa_hw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Keccak SW and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_sw_matrix_sa_hw_as_sw, (t_dec_keccak_sw_matrix_sa_hw_as_sw)/666);
+		t_dec_shake128_sw_matrix_sa_hw_as_sw = get_cyclecount() - t_dec_shake128_sw_matrix_sa_hw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Shake128 SW and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_sw_matrix_sa_hw_as_sw, (t_dec_shake128_sw_matrix_sa_hw_as_sw)/666);
 
 		//Total sw time
-		t_total_keccak_sw_matrix_sa_hw_as_sw = t_keypair_keccak_sw_matrix_sa_hw_as_sw + t_enc_keccak_sw_matrix_sa_hw_as_sw + t_dec_keccak_sw_matrix_sa_hw_as_sw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak SW and Matrix SA_HW AS_SW is %d cycles or %d us (including function call)\n", t_total_keccak_sw_matrix_sa_hw_as_sw, (t_total_keccak_sw_matrix_sa_hw_as_sw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak SW and matrix SA_HW AS_SW tests PASSED. All session keys matched.\n");
+		t_total_shake128_sw_matrix_sa_hw_as_sw = t_keypair_shake128_sw_matrix_sa_hw_as_sw + t_enc_shake128_sw_matrix_sa_hw_as_sw + t_dec_shake128_sw_matrix_sa_hw_as_sw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_HW AS_SW is %d cycles or %d us (including function call)\n", t_total_shake128_sw_matrix_sa_hw_as_sw, (t_total_shake128_sw_matrix_sa_hw_as_sw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 SW and matrix SA_HW AS_SW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak SW and matrix SA_HW AS_SW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 SW and matrix SA_HW AS_SW ERROR!\n");
 			return false;
 		}
 
-		codeFeaturesType = KECCAK_HW_MM_MATRIX_SA_HW_AS_SW;
+		codeFeaturesType = SHAKE128_HW_MM_MATRIX_SA_HW_AS_SW;
 
-		t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = get_cyclecount();
+		t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw = get_cyclecount() - t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak HW_MM and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw, (t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw)/666);
+		t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw = get_cyclecount() - t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 HW_MM and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw, (t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw)/666);
 
-		t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = get_cyclecount();
+		t_enc_shake128_hw_mm_matrix_sa_hw_as_sw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_hw_mm_matrix_sa_hw_as_sw = get_cyclecount() - t_enc_keccak_hw_mm_matrix_sa_hw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Keccak HW_MM and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_hw_mm_matrix_sa_hw_as_sw, (t_enc_keccak_hw_mm_matrix_sa_hw_as_sw)/666);
+		t_enc_shake128_hw_mm_matrix_sa_hw_as_sw = get_cyclecount() - t_enc_shake128_hw_mm_matrix_sa_hw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Shake128 HW_MM and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_hw_mm_matrix_sa_hw_as_sw, (t_enc_shake128_hw_mm_matrix_sa_hw_as_sw)/666);
 
-		t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = get_cyclecount();
+		t_dec_shake128_hw_mm_matrix_sa_hw_as_sw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_hw_mm_matrix_sa_hw_as_sw = get_cyclecount() - t_dec_keccak_hw_mm_matrix_sa_hw_as_sw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Keccak HW_MM and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_hw_mm_matrix_sa_hw_as_sw, (t_dec_keccak_hw_mm_matrix_sa_hw_as_sw)/666);
+		t_dec_shake128_hw_mm_matrix_sa_hw_as_sw = get_cyclecount() - t_dec_shake128_hw_mm_matrix_sa_hw_as_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Shake128 HW_MM and Matrix SA_HW AS_SW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_hw_mm_matrix_sa_hw_as_sw, (t_dec_shake128_hw_mm_matrix_sa_hw_as_sw)/666);
 
 		//Total sw time
-		t_total_keccak_hw_mm_matrix_sa_hw_as_sw = t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw + t_enc_keccak_hw_mm_matrix_sa_hw_as_sw + t_dec_keccak_hw_mm_matrix_sa_hw_as_sw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak HW_MM and Matrix SA_HW AS_SW is %d cycles or %d us (including function call)\n", t_total_keccak_hw_mm_matrix_sa_hw_as_sw, (t_total_keccak_hw_mm_matrix_sa_hw_as_sw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak HW_MM and matrix SA_HW AS_SW tests PASSED. All session keys matched.\n");
+		t_total_shake128_hw_mm_matrix_sa_hw_as_sw = t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw + t_enc_shake128_hw_mm_matrix_sa_hw_as_sw + t_dec_shake128_hw_mm_matrix_sa_hw_as_sw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 HW_MM and Matrix SA_HW AS_SW is %d cycles or %d us (including function call)\n", t_total_shake128_hw_mm_matrix_sa_hw_as_sw, (t_total_shake128_hw_mm_matrix_sa_hw_as_sw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 HW_MM and matrix SA_HW AS_SW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak HW_MM and matrix SA_HW AS_SW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 HW_MM and matrix SA_HW AS_SW ERROR!\n");
 			return false;
 		}
 
-		codeFeaturesType = KECCAK_SW_MATRIX_SA_SW_AS_HW;
+		codeFeaturesType = SHAKE128_SW_MATRIX_SA_SW_AS_HW;
 
-		t_keypair_keccak_sw_matrix_sa_sw_as_hw = get_cyclecount();
+		t_keypair_shake128_sw_matrix_sa_sw_as_hw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_sw_matrix_sa_sw_as_hw = get_cyclecount() - t_keypair_keccak_sw_matrix_sa_sw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak SW and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_sw_matrix_sa_sw_as_hw, (t_keypair_keccak_sw_matrix_sa_sw_as_hw)/666);
+		t_keypair_shake128_sw_matrix_sa_sw_as_hw = get_cyclecount() - t_keypair_shake128_sw_matrix_sa_sw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 SW and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_sw_matrix_sa_sw_as_hw, (t_keypair_shake128_sw_matrix_sa_sw_as_hw)/666);
 
-		t_enc_keccak_sw_matrix_sa_sw_as_hw = get_cyclecount();
+		t_enc_shake128_sw_matrix_sa_sw_as_hw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_sw_matrix_sa_sw_as_hw = get_cyclecount() - t_enc_keccak_sw_matrix_sa_sw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Keccak SW and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_sw_matrix_sa_sw_as_hw, (t_enc_keccak_sw_matrix_sa_sw_as_hw)/666);
+		t_enc_shake128_sw_matrix_sa_sw_as_hw = get_cyclecount() - t_enc_shake128_sw_matrix_sa_sw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Shake128 SW and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_sw_matrix_sa_sw_as_hw, (t_enc_shake128_sw_matrix_sa_sw_as_hw)/666);
 
-		t_dec_keccak_sw_matrix_sa_sw_as_hw = get_cyclecount();
+		t_dec_shake128_sw_matrix_sa_sw_as_hw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_sw_matrix_sa_sw_as_hw = get_cyclecount() - t_dec_keccak_sw_matrix_sa_sw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Keccak SW and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_sw_matrix_sa_sw_as_hw, (t_dec_keccak_sw_matrix_sa_sw_as_hw)/666);
+		t_dec_shake128_sw_matrix_sa_sw_as_hw = get_cyclecount() - t_dec_shake128_sw_matrix_sa_sw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Shake128 SW and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_sw_matrix_sa_sw_as_hw, (t_dec_shake128_sw_matrix_sa_sw_as_hw)/666);
 
 		//Total sw time
-		t_total_keccak_sw_matrix_sa_sw_as_hw = t_keypair_keccak_sw_matrix_sa_sw_as_hw + t_enc_keccak_sw_matrix_sa_sw_as_hw + t_dec_keccak_sw_matrix_sa_sw_as_hw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak SW and Matrix SA_SW AS_HW is %d cycles or %d us (including function call)\n", t_total_keccak_sw_matrix_sa_sw_as_hw, (t_total_keccak_sw_matrix_sa_sw_as_hw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak SW and matrix SA_SW AS_HW tests PASSED. All session keys matched.\n");
+		t_total_shake128_sw_matrix_sa_sw_as_hw = t_keypair_shake128_sw_matrix_sa_sw_as_hw + t_enc_shake128_sw_matrix_sa_sw_as_hw + t_dec_shake128_sw_matrix_sa_sw_as_hw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_HW is %d cycles or %d us (including function call)\n", t_total_shake128_sw_matrix_sa_sw_as_hw, (t_total_shake128_sw_matrix_sa_sw_as_hw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 SW and matrix SA_SW AS_HW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak SW and matrix SA_SW AS_HW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 SW and matrix SA_SW AS_HW ERROR!\n");
 			return false;
 		}
 
-		codeFeaturesType = KECCAK_HW_MM_MATRIX_SA_SW_AS_HW;
+		codeFeaturesType = SHAKE128_HW_MM_MATRIX_SA_SW_AS_HW;
 
-		t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = get_cyclecount();
+		t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw = get_cyclecount() - t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak HW_MM and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw, (t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw)/666);
+		t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw = get_cyclecount() - t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 HW_MM and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw, (t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw)/666);
 
-		t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = get_cyclecount();
+		t_enc_shake128_hw_mm_matrix_sa_sw_as_hw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_hw_mm_matrix_sa_sw_as_hw = get_cyclecount() - t_enc_keccak_hw_mm_matrix_sa_sw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using Keccak HW_MM and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_hw_mm_matrix_sa_sw_as_hw, (t_enc_keccak_hw_mm_matrix_sa_sw_as_hw)/666);
+		t_enc_shake128_hw_mm_matrix_sa_sw_as_hw = get_cyclecount() - t_enc_shake128_hw_mm_matrix_sa_sw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using Shake128 HW_MM and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_hw_mm_matrix_sa_sw_as_hw, (t_enc_shake128_hw_mm_matrix_sa_sw_as_hw)/666);
 
-		t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = get_cyclecount();
+		t_dec_shake128_hw_mm_matrix_sa_sw_as_hw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_hw_mm_matrix_sa_sw_as_hw = get_cyclecount() - t_dec_keccak_hw_mm_matrix_sa_sw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using Keccak HW_MM and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_hw_mm_matrix_sa_sw_as_hw, (t_dec_keccak_hw_mm_matrix_sa_sw_as_hw)/666);
+		t_dec_shake128_hw_mm_matrix_sa_sw_as_hw = get_cyclecount() - t_dec_shake128_hw_mm_matrix_sa_sw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using Shake128 HW_MM and Matrix SA_SW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_hw_mm_matrix_sa_sw_as_hw, (t_dec_shake128_hw_mm_matrix_sa_sw_as_hw)/666);
 
 		//Total hw time
-		t_total_keccak_hw_mm_matrix_sa_sw_as_hw = t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw + t_enc_keccak_hw_mm_matrix_sa_sw_as_hw + t_dec_keccak_hw_mm_matrix_sa_sw_as_hw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak HW_MM and Matrix SA_SW AS_HW is %d cycles or %d us (including function call)\n", t_total_keccak_hw_mm_matrix_sa_sw_as_hw, (t_total_keccak_hw_mm_matrix_sa_sw_as_hw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak HW_MM and Matrix SA_SW AS_HW tests PASSED. All session keys matched.\n");
+		t_total_shake128_hw_mm_matrix_sa_sw_as_hw = t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw + t_enc_shake128_hw_mm_matrix_sa_sw_as_hw + t_dec_shake128_hw_mm_matrix_sa_sw_as_hw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 HW_MM and Matrix SA_SW AS_HW is %d cycles or %d us (including function call)\n", t_total_shake128_hw_mm_matrix_sa_sw_as_hw, (t_total_shake128_hw_mm_matrix_sa_sw_as_hw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 HW_MM and Matrix SA_SW AS_HW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak HW_MM and matrix SA_SW AS_HW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 HW_MM and matrix SA_SW AS_HW ERROR!\n");
 			return false;
 		}
 
-		codeFeaturesType = KECCAK_SW_MATRIX_SA_HW_AS_HW;
+		codeFeaturesType = SHAKE128_SW_MATRIX_SA_HW_AS_HW;
 
-		t_keypair_keccak_sw_matrix_sa_hw_as_hw = get_cyclecount();
+		t_keypair_shake128_sw_matrix_sa_hw_as_hw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_sw_matrix_sa_hw_as_hw = get_cyclecount() - t_keypair_keccak_sw_matrix_sa_hw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak SW and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_sw_matrix_sa_hw_as_hw, (t_keypair_keccak_sw_matrix_sa_hw_as_hw)/666);
+		t_keypair_shake128_sw_matrix_sa_hw_as_hw = get_cyclecount() - t_keypair_shake128_sw_matrix_sa_hw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 SW and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_sw_matrix_sa_hw_as_hw, (t_keypair_shake128_sw_matrix_sa_hw_as_hw)/666);
 
-		t_enc_keccak_sw_matrix_sa_hw_as_hw = get_cyclecount();
+		t_enc_shake128_sw_matrix_sa_hw_as_hw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_sw_matrix_sa_hw_as_hw = get_cyclecount() - t_enc_keccak_sw_matrix_sa_hw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Keccak SW and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_sw_matrix_sa_hw_as_hw, (t_enc_keccak_sw_matrix_sa_hw_as_hw)/666);
+		t_enc_shake128_sw_matrix_sa_hw_as_hw = get_cyclecount() - t_enc_shake128_sw_matrix_sa_hw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Shake128 SW and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_sw_matrix_sa_hw_as_hw, (t_enc_shake128_sw_matrix_sa_hw_as_hw)/666);
 
-		t_dec_keccak_sw_matrix_sa_hw_as_hw = get_cyclecount();
+		t_dec_shake128_sw_matrix_sa_hw_as_hw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_sw_matrix_sa_hw_as_hw = get_cyclecount() - t_dec_keccak_sw_matrix_sa_hw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Keccak SW and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_sw_matrix_sa_hw_as_hw, (t_dec_keccak_sw_matrix_sa_hw_as_hw)/666);
+		t_dec_shake128_sw_matrix_sa_hw_as_hw = get_cyclecount() - t_dec_shake128_sw_matrix_sa_hw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Shake128 SW and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_sw_matrix_sa_hw_as_hw, (t_dec_shake128_sw_matrix_sa_hw_as_hw)/666);
 
 		//Total sw time
-		t_total_keccak_sw_matrix_sa_hw_as_hw = t_keypair_keccak_sw_matrix_sa_hw_as_hw + t_enc_keccak_sw_matrix_sa_hw_as_hw + t_dec_keccak_sw_matrix_sa_hw_as_hw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak SW and Matrix SA_HW AS_HW is %d cycles or %d us (including function call)\n", t_total_keccak_sw_matrix_sa_hw_as_hw, (t_total_keccak_sw_matrix_sa_hw_as_hw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak SW and matrix SA_HW AS_HW tests PASSED. All session keys matched.\n");
+		t_total_shake128_sw_matrix_sa_hw_as_hw = t_keypair_shake128_sw_matrix_sa_hw_as_hw + t_enc_shake128_sw_matrix_sa_hw_as_hw + t_dec_shake128_sw_matrix_sa_hw_as_hw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_HW AS_HW is %d cycles or %d us (including function call)\n", t_total_shake128_sw_matrix_sa_hw_as_hw, (t_total_shake128_sw_matrix_sa_hw_as_hw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 SW and matrix SA_HW AS_HW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak SW and matrix SA_HW AS_HW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 SW and matrix SA_HW AS_HW ERROR!\n");
 			return false;
 		}
 
-		codeFeaturesType = KECCAK_HW_MM_MATRIX_SA_HW_AS_HW;
+		codeFeaturesType = SHAKE128_HW_MM_MATRIX_SA_HW_AS_HW;
 
-		t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = get_cyclecount();
+		t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw = get_cyclecount();
 		crypto_kem_keypair(pk, sk);
-		t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw = get_cyclecount() - t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Keccak HW_MM and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw, (t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw)/666);
+		t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw = get_cyclecount() - t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using Shake128 HW_MM and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw, (t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw)/666);
 
-		t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = get_cyclecount();
+		t_enc_shake128_hw_mm_matrix_sa_hw_as_hw = get_cyclecount();
 		crypto_kem_enc(ct, ss_encap, pk);
-		t_enc_keccak_hw_mm_matrix_sa_hw_as_hw = get_cyclecount() - t_enc_keccak_hw_mm_matrix_sa_hw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Keccak HW_MM and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_keccak_hw_mm_matrix_sa_hw_as_hw, (t_enc_keccak_hw_mm_matrix_sa_hw_as_hw)/666);
+		t_enc_shake128_hw_mm_matrix_sa_hw_as_hw = get_cyclecount() - t_enc_shake128_hw_mm_matrix_sa_hw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using using Shake128 HW_MM and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_enc_shake128_hw_mm_matrix_sa_hw_as_hw, (t_enc_shake128_hw_mm_matrix_sa_hw_as_hw)/666);
 
-		t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = get_cyclecount();
+		t_dec_shake128_hw_mm_matrix_sa_hw_as_hw = get_cyclecount();
 		crypto_kem_dec(ss_decap, ct, sk);
-		t_dec_keccak_hw_mm_matrix_sa_hw_as_hw = get_cyclecount() - t_dec_keccak_hw_mm_matrix_sa_hw_as_hw - overhead;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Keccak HW_MM and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_keccak_hw_mm_matrix_sa_hw_as_hw, (t_dec_keccak_hw_mm_matrix_sa_hw_as_hw)/666);
+		t_dec_shake128_hw_mm_matrix_sa_hw_as_hw = get_cyclecount() - t_dec_shake128_hw_mm_matrix_sa_hw_as_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using using Shake128 HW_MM and Matrix SA_HW AS_HW took exactly %d cycles or %d us (including function call)\n", t_dec_shake128_hw_mm_matrix_sa_hw_as_hw, (t_dec_shake128_hw_mm_matrix_sa_hw_as_hw)/666);
 
 		//Total sw time
-		t_total_keccak_hw_mm_matrix_sa_hw_as_hw = t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw + t_enc_keccak_hw_mm_matrix_sa_hw_as_hw + t_dec_keccak_hw_mm_matrix_sa_hw_as_hw;
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Keccak HW_MM and Matrix SA_HW AS_HW is %d cycles or %d us (including function call)\n", t_total_keccak_hw_mm_matrix_sa_hw_as_hw, (t_total_keccak_hw_mm_matrix_sa_hw_as_hw)/666);
-		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Keccak HW_MM and matrix SA_HW AS_HW tests PASSED. All session keys matched.\n");
+		t_total_shake128_hw_mm_matrix_sa_hw_as_hw = t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw + t_enc_shake128_hw_mm_matrix_sa_hw_as_hw + t_dec_shake128_hw_mm_matrix_sa_hw_as_hw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 HW_MM and Matrix SA_HW AS_HW is %d cycles or %d us (including function call)\n", t_total_shake128_hw_mm_matrix_sa_hw_as_hw, (t_total_shake128_hw_mm_matrix_sa_hw_as_hw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Shake128 HW_MM and matrix SA_HW AS_HW tests PASSED. All session keys matched.\n");
 		print_debug(DEBUG_TEST_KEM, "\n");
 
 		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
-			print_debug(DEBUG_ERROR, "[TEST_KEM] Keccak HW_MM and matrix SA_HW AS_HW ERROR!\n");
+			print_debug(DEBUG_ERROR, "[TEST_KEM] Shake128 HW_MM and matrix SA_HW AS_HW ERROR!\n");
 			return false;
 		}
 
 		//Table
-		float fRelativeKeccakHwMMMatrixSaSwAsSw = 100.0-(t_total_keccak_hw_mm_matrix_sa_sw_as_sw/(float)t_total_keccak_sw_matrix_sa_sw_as_sw)*100.0;
-		u32 wholeKeccakHwMMMatrixSaSwAsSw, thousandthsKeccakHwMMMatrixSaSwAsSw;
-		wholeKeccakHwMMMatrixSaSwAsSw = fRelativeKeccakHwMMMatrixSaSwAsSw;
-		thousandthsKeccakHwMMMatrixSaSwAsSw = (fRelativeKeccakHwMMMatrixSaSwAsSw - wholeKeccakHwMMMatrixSaSwAsSw) * 1000;
-		float fRelativeKeccakSwMatrixSaHwAsSw = 100.0-(t_total_keccak_sw_matrix_sa_hw_as_sw/(float)t_total_keccak_sw_matrix_sa_sw_as_sw)*100.0;
-		u32 wholeKeccakSwMatrixSaHwAsSw, thousandthsKeccakSwMatrixSaHwAsSw;
-		wholeKeccakSwMatrixSaHwAsSw = fRelativeKeccakSwMatrixSaHwAsSw;
-		thousandthsKeccakSwMatrixSaHwAsSw = (fRelativeKeccakSwMatrixSaHwAsSw - wholeKeccakSwMatrixSaHwAsSw) * 1000;
-		float fRelativeKeccakHwMMMatrixSaHwAsSw = 100.0-(t_total_keccak_hw_mm_matrix_sa_hw_as_sw/(float)t_total_keccak_sw_matrix_sa_sw_as_sw)*100.0;
-		u32 wholeKeccakHwMMMatrixSaHwAsSw, thousandthsKeccakHwMMMatrixSaHwAsSw;
-		wholeKeccakHwMMMatrixSaHwAsSw = fRelativeKeccakHwMMMatrixSaHwAsSw;
-		thousandthsKeccakHwMMMatrixSaHwAsSw = (fRelativeKeccakHwMMMatrixSaHwAsSw - wholeKeccakHwMMMatrixSaHwAsSw) * 1000;
+		float fRelativeShake128HwMMMatrixSaSwAsSw = 100.0-(t_total_shake128_hw_mm_matrix_sa_sw_as_sw/(float)t_total_shake128_sw_matrix_sa_sw_as_sw)*100.0;
+		u32 wholeShake128HwMMMatrixSaSwAsSw, thousandthsShake128HwMMMatrixSaSwAsSw;
+		wholeShake128HwMMMatrixSaSwAsSw = fRelativeShake128HwMMMatrixSaSwAsSw;
+		thousandthsShake128HwMMMatrixSaSwAsSw = (fRelativeShake128HwMMMatrixSaSwAsSw - wholeShake128HwMMMatrixSaSwAsSw) * 1000;
+		float fRelativeShake128SwMatrixSaHwAsSw = 100.0-(t_total_shake128_sw_matrix_sa_hw_as_sw/(float)t_total_shake128_sw_matrix_sa_sw_as_sw)*100.0;
+		u32 wholeShake128SwMatrixSaHwAsSw, thousandthsShake128SwMatrixSaHwAsSw;
+		wholeShake128SwMatrixSaHwAsSw = fRelativeShake128SwMatrixSaHwAsSw;
+		thousandthsShake128SwMatrixSaHwAsSw = (fRelativeShake128SwMatrixSaHwAsSw - wholeShake128SwMatrixSaHwAsSw) * 1000;
+		float fRelativeShake128HwMMMatrixSaHwAsSw = 100.0-(t_total_shake128_hw_mm_matrix_sa_hw_as_sw/(float)t_total_shake128_sw_matrix_sa_sw_as_sw)*100.0;
+		u32 wholeShake128HwMMMatrixSaHwAsSw, thousandthsShake128HwMMMatrixSaHwAsSw;
+		wholeShake128HwMMMatrixSaHwAsSw = fRelativeShake128HwMMMatrixSaHwAsSw;
+		thousandthsShake128HwMMMatrixSaHwAsSw = (fRelativeShake128HwMMMatrixSaHwAsSw - wholeShake128HwMMMatrixSaHwAsSw) * 1000;
 
-		float fRelativeKeccakSwMatrixSaSwAsHw = 100.0-(t_total_keccak_sw_matrix_sa_sw_as_hw/(float)t_total_keccak_sw_matrix_sa_sw_as_sw)*100.0;
-		u32 wholeKeccakSwMatrixSaSwAsHw, thousandthsKeccakSwMatrixSaSwAsHw;
-		wholeKeccakSwMatrixSaSwAsHw = fRelativeKeccakSwMatrixSaSwAsHw;
-		thousandthsKeccakSwMatrixSaSwAsHw = (fRelativeKeccakSwMatrixSaSwAsHw - wholeKeccakSwMatrixSaSwAsHw) * 1000;
-		float fRelativeKeccakHwMMMatrixSaSwAsHw = 100.0-(t_total_keccak_hw_mm_matrix_sa_sw_as_hw/(float)t_total_keccak_sw_matrix_sa_sw_as_sw)*100.0;
-		u32 wholeKeccakHwMMMatrixSaSwAsHw, thousandthsKeccakHwMMMatrixSaSwAsHw;
-		wholeKeccakHwMMMatrixSaSwAsHw = fRelativeKeccakHwMMMatrixSaSwAsHw;
-		thousandthsKeccakHwMMMatrixSaSwAsHw = (fRelativeKeccakHwMMMatrixSaSwAsHw - wholeKeccakHwMMMatrixSaSwAsHw) * 1000;
-		float fRelativeKeccakSwMatrixSaHwAsHw = 100.0-(t_total_keccak_sw_matrix_sa_hw_as_hw/(float)t_total_keccak_sw_matrix_sa_sw_as_sw)*100.0;
-		u32 wholeKeccakSwMatrixSaHwAsHw, thousandthsKeccakSwMatrixSaHwAsHw;
-		wholeKeccakSwMatrixSaHwAsHw = fRelativeKeccakSwMatrixSaHwAsHw;
-		thousandthsKeccakSwMatrixSaHwAsHw = (fRelativeKeccakSwMatrixSaHwAsHw - wholeKeccakSwMatrixSaHwAsHw) * 1000;
-		float fRelativeKeccakHwMMMatrixSaHwAsHw = 100.0-(t_total_keccak_hw_mm_matrix_sa_hw_as_hw/(float)t_total_keccak_sw_matrix_sa_sw_as_sw)*100.0;
-		u32 wholeKeccakHwMMMatrixSaHwAsHw, thousandthsKeccakHwMMMatrixSaHwAsHw;
-		wholeKeccakHwMMMatrixSaHwAsHw = fRelativeKeccakHwMMMatrixSaHwAsHw;
-		thousandthsKeccakHwMMMatrixSaHwAsHw = (fRelativeKeccakHwMMMatrixSaHwAsHw - wholeKeccakHwMMMatrixSaHwAsHw) * 1000;
+		float fRelativeShake128SwMatrixSaSwAsHw = 100.0-(t_total_shake128_sw_matrix_sa_sw_as_hw/(float)t_total_shake128_sw_matrix_sa_sw_as_sw)*100.0;
+		u32 wholeShake128SwMatrixSaSwAsHw, thousandthsShake128SwMatrixSaSwAsHw;
+		wholeShake128SwMatrixSaSwAsHw = fRelativeShake128SwMatrixSaSwAsHw;
+		thousandthsShake128SwMatrixSaSwAsHw = (fRelativeShake128SwMatrixSaSwAsHw - wholeShake128SwMatrixSaSwAsHw) * 1000;
+		float fRelativeShake128HwMMMatrixSaSwAsHw = 100.0-(t_total_shake128_hw_mm_matrix_sa_sw_as_hw/(float)t_total_shake128_sw_matrix_sa_sw_as_sw)*100.0;
+		u32 wholeShake128HwMMMatrixSaSwAsHw, thousandthsShake128HwMMMatrixSaSwAsHw;
+		wholeShake128HwMMMatrixSaSwAsHw = fRelativeShake128HwMMMatrixSaSwAsHw;
+		thousandthsShake128HwMMMatrixSaSwAsHw = (fRelativeShake128HwMMMatrixSaSwAsHw - wholeShake128HwMMMatrixSaSwAsHw) * 1000;
+		float fRelativeShake128SwMatrixSaHwAsHw = 100.0-(t_total_shake128_sw_matrix_sa_hw_as_hw/(float)t_total_shake128_sw_matrix_sa_sw_as_sw)*100.0;
+		u32 wholeShake128SwMatrixSaHwAsHw, thousandthsShake128SwMatrixSaHwAsHw;
+		wholeShake128SwMatrixSaHwAsHw = fRelativeShake128SwMatrixSaHwAsHw;
+		thousandthsShake128SwMatrixSaHwAsHw = (fRelativeShake128SwMatrixSaHwAsHw - wholeShake128SwMatrixSaHwAsHw) * 1000;
+		float fRelativeShake128HwMMMatrixSaHwAsHw = 100.0-(t_total_shake128_hw_mm_matrix_sa_hw_as_hw/(float)t_total_shake128_sw_matrix_sa_sw_as_sw)*100.0;
+		u32 wholeShake128HwMMMatrixSaHwAsHw, thousandthsShake128HwMMMatrixSaHwAsHw;
+		wholeShake128HwMMMatrixSaHwAsHw = fRelativeShake128HwMMMatrixSaHwAsHw;
+		thousandthsShake128HwMMMatrixSaHwAsHw = (fRelativeShake128HwMMMatrixSaHwAsHw - wholeShake128HwMMMatrixSaHwAsHw) * 1000;
 
 		print_debug(DEBUG_TEST_KEM, "------------------------------------------------------------ Total time and performance ---------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\tKeccak\t\t|\t\t\tMatrix\t\t\t|\t\tkey pair (us) \t\t|\t encryption (us) \t|\t decryption (us) \t\t|\t\t total (us) \t\t|\t Improvement (%c) \n", 37);
+		print_debug(DEBUG_TEST_KEM, "\tSHAKE128\t\t|\t\t\tMatrix\t\t\t|\t\tkey pair (us) \t\t|\t encryption (us) \t|\t decryption (us) \t\t|\t\t total (us) \t\t|\t Improvement (%c) \n", 37);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t\t -\n", t_keypair_keccak_sw_matrix_sa_sw_as_sw/666, t_enc_keccak_sw_matrix_sa_sw_as_sw/666, t_dec_keccak_sw_matrix_sa_sw_as_sw/666, t_total_keccak_sw_matrix_sa_sw_as_sw/666);
+		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t\t -\n", t_keypair_shake128_sw_matrix_sa_sw_as_sw/666, t_enc_shake128_sw_matrix_sa_sw_as_sw/666, t_dec_shake128_sw_matrix_sa_sw_as_sw/666, t_total_shake128_sw_matrix_sa_sw_as_sw/666);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_hw_mm_matrix_sa_sw_as_sw/666, t_enc_keccak_hw_mm_matrix_sa_sw_as_sw/666, t_dec_keccak_hw_mm_matrix_sa_sw_as_sw/666, t_total_keccak_hw_mm_matrix_sa_sw_as_sw/666, wholeKeccakHwMMMatrixSaSwAsSw, thousandthsKeccakHwMMMatrixSaSwAsSw);
+		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_sw_as_hw/666, t_enc_shake128_sw_matrix_sa_sw_as_hw/666, t_dec_shake128_sw_matrix_sa_sw_as_hw/666, t_total_shake128_sw_matrix_sa_sw_as_hw/666, wholeShake128SwMatrixSaSwAsHw, thousandthsShake128SwMatrixSaSwAsHw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_sw_matrix_sa_hw_as_sw/666, t_enc_keccak_sw_matrix_sa_hw_as_sw/666, t_dec_keccak_sw_matrix_sa_hw_as_sw/666, t_total_keccak_sw_matrix_sa_hw_as_sw/666, wholeKeccakSwMatrixSaHwAsSw, thousandthsKeccakSwMatrixSaHwAsSw);
+		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_sw/666, t_enc_shake128_sw_matrix_sa_hw_as_sw/666, t_dec_shake128_sw_matrix_sa_hw_as_sw/666, t_total_shake128_sw_matrix_sa_hw_as_sw/666, wholeShake128SwMatrixSaHwAsSw, thousandthsShake128SwMatrixSaHwAsSw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_hw_mm_matrix_sa_hw_as_sw/666, t_enc_keccak_hw_mm_matrix_sa_hw_as_sw/666, t_dec_keccak_hw_mm_matrix_sa_hw_as_sw/666, t_total_keccak_hw_mm_matrix_sa_hw_as_sw/666, wholeKeccakHwMMMatrixSaHwAsSw, thousandthsKeccakHwMMMatrixSaHwAsSw);
+		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_hw/666, t_enc_shake128_sw_matrix_sa_hw_as_hw/666, t_dec_shake128_sw_matrix_sa_hw_as_hw/666, t_total_shake128_sw_matrix_sa_hw_as_hw/666, wholeShake128SwMatrixSaHwAsHw, thousandthsShake128SwMatrixSaHwAsHw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_sw_matrix_sa_sw_as_hw/666, t_enc_keccak_sw_matrix_sa_sw_as_hw/666, t_dec_keccak_sw_matrix_sa_sw_as_hw/666, t_total_keccak_sw_matrix_sa_sw_as_hw/666, wholeKeccakSwMatrixSaSwAsHw, thousandthsKeccakSwMatrixSaSwAsHw);
+		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw/666, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw/666, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw/666, t_total_shake128_hw_mm_matrix_sa_sw_as_sw/666, wholeShake128HwMMMatrixSaSwAsSw, thousandthsShake128HwMMMatrixSaSwAsSw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_hw_mm_matrix_sa_sw_as_hw/666, t_enc_keccak_hw_mm_matrix_sa_sw_as_hw/666, t_dec_keccak_hw_mm_matrix_sa_sw_as_hw/666, t_total_keccak_hw_mm_matrix_sa_sw_as_hw/666, wholeKeccakHwMMMatrixSaSwAsHw, thousandthsKeccakHwMMMatrixSaSwAsHw);
+		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw/666, t_enc_shake128_hw_mm_matrix_sa_sw_as_hw/666, t_dec_shake128_hw_mm_matrix_sa_sw_as_hw/666, t_total_shake128_hw_mm_matrix_sa_sw_as_hw/666, wholeShake128HwMMMatrixSaSwAsHw, thousandthsShake128HwMMMatrixSaSwAsHw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_sw_matrix_sa_hw_as_hw/666, t_enc_keccak_sw_matrix_sa_hw_as_hw/666, t_dec_keccak_sw_matrix_sa_hw_as_hw/666, t_total_keccak_sw_matrix_sa_hw_as_hw/666, wholeKeccakSwMatrixSaHwAsHw, thousandthsKeccakSwMatrixSaHwAsHw);
+		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_SW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw/666, t_enc_shake128_hw_mm_matrix_sa_hw_as_sw/666, t_dec_shake128_hw_mm_matrix_sa_hw_as_sw/666, t_total_shake128_hw_mm_matrix_sa_hw_as_sw/666, wholeShake128HwMMMatrixSaHwAsSw, thousandthsShake128HwMMMatrixSaHwAsSw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_keccak_hw_mm_matrix_sa_hw_as_hw/666, t_enc_keccak_hw_mm_matrix_sa_hw_as_hw/666, t_dec_keccak_hw_mm_matrix_sa_hw_as_hw/666, t_total_keccak_hw_mm_matrix_sa_hw_as_hw/666, wholeKeccakHwMMMatrixSaHwAsHw, thousandthsKeccakHwMMMatrixSaHwAsHw);
+		print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_HW  \t|\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw/666, t_enc_shake128_hw_mm_matrix_sa_hw_as_hw/666, t_dec_shake128_hw_mm_matrix_sa_hw_as_hw/666, t_total_shake128_hw_mm_matrix_sa_hw_as_hw/666, wholeShake128HwMMMatrixSaHwAsHw, thousandthsShake128HwMMMatrixSaHwAsHw);
 		print_debug(DEBUG_TEST_KEM, "----------------------------------------------------------------------------------------------------------------------------------------------------\n\n");
 
 #if ENABLE_SW_TIMER
-		float fRelativeKeccak = 100.0-(t_keccak_hw_acc/(float)t_keccak_sw_acc)*100.0;
-		u32 wholeKeccak, thousandthsKeccak;
-		wholeKeccak = fRelativeKeccak;
-		thousandthsKeccak = (fRelativeKeccak - wholeKeccak) * 1000;
+		float fRelativeShake128 = 100.0-(t_shake128_hw_acc/(float)t_shake128_sw_acc)*100.0;
+		u32 wholeShake128, thousandthsShake128;
+		wholeShake128 = fRelativeShake128;
+		thousandthsShake128 = (fRelativeShake128 - wholeShake128) * 1000;
 		float fRelativeMatrixSa = 100.0-(t_matrix_sa_hw_acc/(float)t_matrix_sa_sw_acc)*100.0;
 		u32 wholeMatrixSa, thousandthsMatrixSa;
 		wholeMatrixSa = fRelativeMatrixSa;
@@ -1008,9 +1008,9 @@ int kem_test(const char *named_parameters, int iterations)
 		u32 wholeMatrixAs, thousandthsMatrixAs;
 		wholeMatrixAs = fRelativeMatrixAs;
 		thousandthsMatrixAs = (fRelativeMatrixAs - wholeMatrixAs) * 1000;
-//		print_debug(DEBUG_TEST_KEM, "\tt_keccak_sw_acc: %lu cycles or %lu us\n", t_keccak_sw_acc, (t_keccak_sw_acc)/666);
-//		print_debug(DEBUG_TEST_KEM, "\tt_keccak_hw_acc: %lu cycles or %lu us\n", t_keccak_hw_acc, (t_keccak_hw_acc)/666);
-//		print_debug(DEBUG_TEST_KEM, "\tt_keccak (%c): %lu.%03lu\n", 37, wholeKeccak, thousandthsKeccak);
+//		print_debug(DEBUG_TEST_KEM, "\tt_shake128_sw_acc: %lu cycles or %lu us\n", t_shake128_sw_acc, (t_shake128_sw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_shake128_hw_acc: %lu cycles or %lu us\n", t_shake128_hw_acc, (t_shake128_hw_acc)/666);
+//		print_debug(DEBUG_TEST_KEM, "\tt_shake128 (%c): %lu.%03lu\n", 37, wholeShake128, thousandthsShake128);
 //		print_debug(DEBUG_TEST_KEM, "\tt_matrix_sa_sw_acc: %lu cycles or %lu us\n", t_matrix_sa_sw_acc, (t_matrix_sa_sw_acc)/666);
 //		print_debug(DEBUG_TEST_KEM, "\tt_matrix_sa_hw_acc: %lu cycles or %lu us\n", t_matrix_sa_hw_acc, (t_matrix_sa_hw_acc)/666);
 //		print_debug(DEBUG_TEST_KEM, "\tt_matrix_sa (%c): %lu.%03lu\n", 37, wholeMatrixSa, thousandthsMatrixSa);
@@ -1022,7 +1022,7 @@ int kem_test(const char *named_parameters, int iterations)
 		print_debug(DEBUG_TEST_KEM, "----------------------------- Function processing time -----------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\tAlgorithm\t\t|\t\tSW time (us)\t\t\t|\t\tHW time (us) \t\t|\t Improvement (%c) \n", 37);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t  Keccak  \t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_keccak_sw_acc)/666, (t_keccak_hw_acc)/666, wholeKeccak, thousandthsKeccak);
+		print_debug(DEBUG_TEST_KEM, "\t\t  SHAK128  \t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_shake128_sw_acc)/666, (t_shake128_hw_acc)/666, wholeShake128, thousandthsShake128);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (t_matrix_sa_sw_acc)/666, (t_matrix_sa_hw_acc)/666, wholeMatrixSa, thousandthsMatrixSa);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------\n");
@@ -1031,10 +1031,10 @@ int kem_test(const char *named_parameters, int iterations)
 #endif
 
 #if ENABLE_HW_TIMER
-		float fRelativeKeccakTime = (readTimerKeccakProc/(float)readTimerKeccakTotal)*100.0;
-		u32 wholeKeccakHW, thousandthsKeccakHW;
-		wholeKeccakHW = fRelativeKeccakTime;
-		thousandthsKeccakHW = (fRelativeKeccakTime - wholeKeccakHW) * 1000;
+		float fRelativeShake128Time = (readTimerShake128Proc/(float)readTimerShake128Total)*100.0;
+		u32 wholeShake128HW, thousandthsShake128HW;
+		wholeShake128HW = fRelativeShake128Time;
+		thousandthsShake128HW = (fRelativeShake128Time - wholeShake128HW) * 1000;
 		float fRelativeMatrixSaTime = (readTimerMatrixSaProc/(float)readTimerMatrixSaTotal)*100.0;
 		u32 wholeMatrixSaHW, thousandthsMatrixSaHW;
 		wholeMatrixSaHW = fRelativeMatrixSaTime;
@@ -1046,7 +1046,7 @@ int kem_test(const char *named_parameters, int iterations)
 		print_debug(DEBUG_TEST_KEM, "--------------------------------- Hardware processing time analize ----------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\tAlgorithm\t\t|\t\t\tTotal time (ns)\t\t\t|\t\t\tProc time (ns) \t\t|\t Porcentage (%c) \n", 37);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t  Keccak  \t\t|\t\t\t\t   %d   \t\t\t\t|\t\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", (readTimerKeccakTotal/countKeccak), (readTimerKeccakProc/countKeccak), wholeKeccakHW, thousandthsKeccakHW);
+		print_debug(DEBUG_TEST_KEM, "\t\t  Shake128  \t\t|\t\t\t\t   %d   \t\t\t\t|\t\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", (readTimerShake128Total/countShake128), (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t\t   %d   \t\t\t|\t\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", (readTimerMatrixSaTotal/countMatrixSa), (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------\n");
