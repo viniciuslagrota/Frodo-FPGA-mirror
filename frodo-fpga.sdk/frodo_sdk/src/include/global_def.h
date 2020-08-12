@@ -53,7 +53,7 @@ extern uint16_t CDF_TABLE_LEN;
 	#define ENABLE_TEST_SHAKE			1
 
 #define ENABLE_KEM_TEST				1
-#define ENABLE_HW_TIMER				0
+#define ENABLE_HW_TIMER				1
 #define ENABLE_SW_TIMER				1
 //Just used for debug
 #define ENABLE_MATRIX_SW			0
