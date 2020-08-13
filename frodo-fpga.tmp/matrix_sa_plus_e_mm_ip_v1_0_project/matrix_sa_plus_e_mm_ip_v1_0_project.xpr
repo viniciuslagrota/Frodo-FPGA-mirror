@@ -6,7 +6,7 @@
 <Project Version="7" Minor="40" Path="c:/projects/frodo-fpga/frodo-fpga.tmp/matrix_sa_plus_e_mm_ip_v1_0_project/matrix_sa_plus_e_mm_ip_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="c2524551873b40dc959da6be9bcf014e"/>
+    <Option Name="Id" Val="e3c79dd7fe7447c8a0e5ac1128ae1887"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -34,7 +34,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="microzed_7010"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="3"/>
+    <Option Name="WTXSimLaunchSim" Val="0"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -91,6 +91,13 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../../../../Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0/src/multiplicator.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="work"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../../Projects/ip_repo/matrix_sa_plus_e_mm_ip_1.0/hdl/timer_controller.vhd">
         <FileInfo>
           <Attr Name="Library" Val="work"/>
           <Attr Name="UsedIn" Val="synthesis"/>

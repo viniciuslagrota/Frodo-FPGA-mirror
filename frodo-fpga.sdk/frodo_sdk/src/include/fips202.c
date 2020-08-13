@@ -65,7 +65,8 @@ static const uint64_t KeccakF_RoundConstants[NROUNDS] =
     (uint64_t)0x8000000080008008ULL
 };
 
-void KeccakF1600_StatePermute_SW(uint64_t * state)
+//void KeccakF1600_StatePermute_SW(uint64_t * state)
+void KeccakF1600_StatePermute(uint64_t * state)
 {
   int round;
 
@@ -394,7 +395,7 @@ void shake128_squeezeblocks(unsigned char *output, unsigned long long nblocks, u
 }
 
 
-void shake128(unsigned char *output, unsigned long long outlen, const unsigned char *input,  unsigned long long inlen)
+void shake128_sw(unsigned char *output, unsigned long long outlen, const unsigned char *input,  unsigned long long inlen)
 {
 	uint64_t s[25] = {0};
 	unsigned char t[SHAKE128_RATE];
@@ -463,3 +464,102 @@ void shake128(unsigned char *output, unsigned long long outlen, const unsigned c
 //      output[i] = t[i];
 //  }
 //}
+
+void shake128_hw(unsigned char *output, unsigned long long outlen, const unsigned char *input,  unsigned long long inlen)
+{
+	//Variables
+	int i;
+	u32 readGpio = 0x0;
+	u32 u32InWords = (inlen >> 2) + ((inlen & 0x1) | (inlen >> 1 & 0x1));
+	u32 u32OutWords = (outlen >> 2) + ((outlen & 0x1) | (outlen >> 1 & 0x1));
+	print_debug(DEBUG_SHAKE_MM, "[SHAKE] inlen: %llu\n", inlen);
+	print_debug(DEBUG_SHAKE_MM, "[SHAKE] u32InWords: %d\n", u32InWords);
+	print_debug(DEBUG_SHAKE_MM, "[SHAKE] outlen: %llu\n", outlen);
+	print_debug(DEBUG_SHAKE_MM, "[SHAKE] u32OutWords: %d\n", u32OutWords);
+
+	//Set inlen and outlen
+	XGpio_DiscreteWrite(&axiInlenOutlen, 1, ((u32)inlen) & 0x7fff); // Set inlen
+	XGpio_DiscreteWrite(&axiInlenOutlen, 2, ((u32)outlen) & 0x7fff); // Set outlen
+
+	//Checking if BRAM has already been cleaned
+	readGpio = XGpio_DiscreteRead(&axiStartBusyShake, 1); //Check busy pin
+	while(readGpio == 0x1)
+		readGpio = XGpio_DiscreteRead(&axiStartBusyShake, 1);
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyShake, 1, 0x1); // Start gpio set high
+
+	//Sending data
+	u32 * m;
+	m = (u32 *)input;
+	for(i = 0; i < u32InWords - 1; i++)
+	{
+		memoryMMshake[i] = m[i];
+		print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", i, m[i]);
+	}
+
+	//Last word
+	switch(inlen & 0x3)
+	{
+		case 0:
+			memoryMMshake[u32InWords - 1] = m[u32InWords - 1];
+			print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1]);
+			break;
+		case 1:
+			memoryMMshake[u32InWords - 1] = m[u32InWords - 1] & 0xff;
+			print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xff);
+			break;
+		case 2:
+			memoryMMshake[u32InWords - 1] = m[u32InWords - 1] & 0xffff;
+			print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xffff);
+			break;
+		case 3:
+			memoryMMshake[u32InWords - 1] = m[u32InWords - 1] & 0xffffff;
+			print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xffffff);
+			break;
+	}
+
+	//Check if data processing is yet busy.
+	readGpio = XGpio_DiscreteRead(&axiStartBusyShake, 1); //Check busy pin
+	while(readGpio == 0x1)
+		readGpio = XGpio_DiscreteRead(&axiStartBusyShake, 1);
+	print_debug(DEBUG_SHAKE_MM, "[SHAKE] Busy bit low!\n");
+
+	//Receiving data
+	u32 cipher;
+	for(i = 0; i < u32OutWords - 1; i++)
+	{
+		cipher = memoryMMshake[i];
+		output[i << 2] 	     = cipher & 0xff;
+		output[(i << 2) + 1] = (cipher >> 8) & 0xff;
+		output[(i << 2) + 2] = (cipher >> 16) & 0xff;
+		output[(i << 2) + 3] = (cipher >> 24) & 0xff;
+	}
+
+	//Last word
+	cipher = memoryMMshake[u32OutWords - 1];
+	switch(outlen & 0x3)
+	{
+		case 0:
+			output[(u32OutWords - 1) << 2] 	     = cipher & 0xff;
+			output[((u32OutWords - 1) << 2) + 1] = (cipher >> 8) & 0xff;;
+			output[((u32OutWords - 1) << 2) + 2] = (cipher >> 16) & 0xff;
+			output[((u32OutWords - 1) << 2) + 3] = (cipher >> 24) & 0xff;
+			break;
+		case 1:
+			output[(u32OutWords - 1) << 2] 	     = cipher & 0xff;
+			break;
+		case 2:
+			output[(u32OutWords - 1) << 2] 	     = cipher & 0xff;
+			output[((u32OutWords - 1) << 2) + 1] = (cipher >> 8) & 0xff;;
+			break;
+		case 3:
+			output[(u32OutWords - 1) << 2] 	     = cipher & 0xff;
+			output[((u32OutWords - 1) << 2) + 1] = (cipher >> 8) & 0xff;
+			output[((u32OutWords - 1) << 2) + 2] = (cipher >> 16) & 0xff;
+			break;
+	}
+
+	//Set start pin low
+	XGpio_DiscreteWrite(&axiStartBusyShake, 1, 0x0); // Start gpio set low
+}

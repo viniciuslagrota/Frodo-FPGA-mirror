@@ -1,0 +1,112 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Apr  5 17:36:44 2020
+# Process ID: 13996
+# Current directory: C:/Projects/frodo-fpga
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12332 C:\Projects\frodo-fpga\frodo-fpga.xpr
+# Log file: C:/Projects/frodo-fpga/vivado.log
+# Journal file: C:/Projects/frodo-fpga\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Projects/frodo-fpga/frodo-fpga.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd}
+ipx::edit_ip_in_project -upgrade true -name matrix_as_plus_e_mm_ip_v1_0_project -directory C:/Projects/frodo-fpga/frodo-fpga.tmp/matrix_as_plus_e_mm_ip_v1_0_project c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/component.xml
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+run 1000 us
+run 1000 us
+close [ open C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd w ]
+add_files C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd
+set_property library work [get_files  C:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+save_wave_config {c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/testbench_behav.wcfg}
+run 1000 us
+run 1000 us
+run 1000 us
+relaunch_sim
+run 1000 us
+run 1000 us
+save_wave_config {c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/testbench_behav.wcfg}
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+ipx::remove_bus_interface reset_proc_timer [ipx::current_core]
+ipx::remove_bus_interface reset_total_timer [ipx::current_core]
+set_property core_revision 17 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:matrix_as_plus_e_mm_ip:1.0 [get_ips  frodoBD_matrix_as_plus_e_mm_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips frodoBD_matrix_as_plus_e_mm_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd]
+export_ip_user_files -of_objects [get_files C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd] -directory C:/Projects/frodo-fpga/frodo-fpga.ip_user_files/sim_scripts -ip_user_files_dir C:/Projects/frodo-fpga/frodo-fpga.ip_user_files -ipstatic_source_dir C:/Projects/frodo-fpga/frodo-fpga.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/modelsim} {questa=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/questa} {riviera=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/riviera} {activehdl=C:/Projects/frodo-fpga/frodo-fpga.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+copy_bd_objs /  [get_bd_cells {axi_gpio_1}]
+set_property location {3 1425 1350} [get_bd_cells axi_gpio_2]
+set_property location {3 1379 1305} [get_bd_cells axi_gpio_2]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:timer:1.0 timer_4
+endgroup
+set_property location {5 2307 1155} [get_bd_cells timer_4]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:timer:1.0 timer_5
+endgroup
+set_property location {5 2282 1291} [get_bd_cells timer_5]
+connect_bd_net [get_bd_pins axi_gpio_2/gpio_io_i] [get_bd_pins timer_4/count]
+connect_bd_net [get_bd_pins timer_5/count] [get_bd_pins axi_gpio_2/gpio2_io_i]
+connect_bd_net [get_bd_pins timer_4/clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins timer_5/clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins timer_4/reset] [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_proc_timer]
+connect_bd_net [get_bd_pins timer_5/reset] [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_proc_timer]
+delete_bd_objs [get_bd_nets matrix_sa_plus_e_mm_ip_0_reset_proc_timer]
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/reset_total_timer] [get_bd_pins timer_4/reset]
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/reset_proc_timer] [get_bd_pins timer_5/reset]
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/enable_total_timer] [get_bd_pins timer_4/enable]
+connect_bd_net [get_bd_pins matrix_as_plus_e_mm_0/enable_proc_timer] [get_bd_pins timer_5/enable]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {13}] [get_bd_cells axi_interconnect_0]
+endgroup
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M12_AXI] [get_bd_intf_pins axi_gpio_2/S_AXI]
+connect_bd_net [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+connect_bd_net [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+regenerate_bd_layout -routing
+set_property location {4 1338 833} [get_bd_cells matrix_sa_plus_e_mm_ip_0]
+set_property location {5 1634 893} [get_bd_cells timer_3]
+set_property location {5 1637 772} [get_bd_cells timer_2]
+set_property location {4 1337 416} [get_bd_cells keccak_f1600_mm_ip_0]
+set_property location {3 959 351} [get_bd_cells axi_gpio_3]
+set_property location {3 958 480} [get_bd_cells axi_gpio_0]
+set_property location {3 962 1312} [get_bd_cells axi_gpio_2]
+set_property location {3 956 1175} [get_bd_cells axi_gpio_5]
+assign_bd_address [get_bd_addr_segs {axi_gpio_2/S_AXI/Reg }]
+save_bd_design
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+report_ip_status -name ip_status 
+file copy -force C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/frodoBD_wrapper.sysdef C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
+
+launch_sdk -workspace C:/Projects/frodo-fpga/frodo-fpga.sdk -hwspec C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
+connect_bd_net [get_bd_pins matrix_sa_plus_e_mm_ip_0/reset_proc_timer] [get_bd_pins timer_3/reset]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+report_ip_status -name ip_status 
+file copy -force C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/frodoBD_wrapper.sysdef C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
+

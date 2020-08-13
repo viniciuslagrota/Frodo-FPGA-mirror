@@ -1,0 +1,203 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Mar 29 11:34:34 2020
+# Process ID: 10720
+# Current directory: C:/Projects/frodo-fpga
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14384 C:\Projects\frodo-fpga\frodo-fpga.xpr
+# Log file: C:/Projects/frodo-fpga/vivado.log
+# Journal file: C:/Projects/frodo-fpga\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Projects/frodo-fpga/frodo-fpga.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Projects/ip_repo/matrix_as_plus_e_mm_ip_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:11 . Memory (MB): peak = 756.086 ; gain = 120.484
+update_compile_order -fileset sources_1
+open_bd_design {C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd}
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+Adding component instance block -- xilinx.com:ip:axi_fifo_mm_s:4.2 - axi_fifo_mm_s_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_2
+Adding component instance block -- xilinx.com:user:timer:1.0 - timer_0
+Adding component instance block -- xilinx.com:user:keccak_f1600_ip:1.0 - keccak_f1600_ip_0
+Adding component instance block -- xilinx.com:user:timer:1.0 - timer_1
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_3
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_4
+Adding component instance block -- xilinx.com:user:matrix_sa_plus_e_mm_ip:1.0 - matrix_sa_plus_e_mm_ip_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_5
+Adding component instance block -- xilinx.com:user:matrix_as_plus_e_mm_ip:1.0 - matrix_as_plus_e_mm_0
+Adding component instance block -- xilinx.com:user:keccak_f1600_mm_ip:1.0 - keccak_f1600_mm_ip_0
+Successfully read diagram <frodoBD> from BD file <C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD.bd>
+open_bd_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 893.715 ; gain = 85.938
+delete_bd_objs [get_bd_intf_nets axi_fifo_mm_s_0_AXI_STR_TXD] [get_bd_intf_nets keccak_f1600_ip_0_M00_AXIS] [get_bd_nets axi_gpio_2_gpio_io_o] [get_bd_nets keccak_f1600_ip_0_done] [get_bd_nets keccak_f1600_ip_0_enable_timer] [get_bd_nets keccak_f1600_ip_0_reset_timer] [get_bd_cells keccak_f1600_ip_0]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_intf_nets axi_fifo_mm_s_0_AXI_STR_TXD] [get_bd_intf_nets keccak_f1600_ip_0_M00_AXIS] [get_bd_nets axi_gpio_2_gpio_io_o] [get_bd_nets keccak_f1600_ip_0_done] [get_bd_nets keccak_f1600_ip_0_enable_timer] [get_bd_nets keccak_f1600_ip_0_reset_timer] [get_bd_cells keccak_f1600_ip_0]'
+set_property location {5 2197 621} [get_bd_cells keccak_f1600_ip_0]
+delete_bd_objs [get_bd_nets keccak_f1600_ip_0_reset_timer] [get_bd_nets keccak_f1600_ip_0_enable_timer] [get_bd_nets timer_0_count] [get_bd_cells timer_0]
+delete_bd_objs [get_bd_intf_nets axi_fifo_mm_s_0_AXI_STR_TXD] [get_bd_intf_nets keccak_f1600_ip_0_M00_AXIS] [get_bd_nets axi_gpio_2_gpio_io_o] [get_bd_nets keccak_f1600_ip_0_done] [get_bd_cells keccak_f1600_ip_0]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M00_AXI] [get_bd_cells axi_gpio_1]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M01_AXI] [get_bd_cells axi_fifo_mm_s_0]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M02_AXI] [get_bd_cells axi_gpio_2]
+regenerate_bd_layout -routing
+set_property location {4.5 1616 359} [get_bd_cells timer_1]
+regenerate_bd_layout -routing
+set_property location {3 958 541} [get_bd_cells axi_gpio_3]
+set_property location {3 924 496} [get_bd_cells axi_gpio_3]
+set_property location {3 953 636} [get_bd_cells axi_gpio_0]
+set_property location {3 916 759} [get_bd_cells axi_gpio_4]
+set_property location {4 1277 1134} [get_bd_cells matrix_as_plus_e_mm_0]
+set_property location {4 1280 794} [get_bd_cells matrix_sa_plus_e_mm_ip_0]
+set_property location {3 930 790} [get_bd_cells axi_gpio_4]
+set_property location {3 903 1108} [get_bd_cells axi_gpio_5]
+set_property location {5 1536 493} [get_bd_cells timer_1]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {11}] [get_bd_cells axi_interconnect_0]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M11_AXI] [get_bd_intf_nets axi_interconnect_0_M12_AXI] [get_bd_intf_nets axi_interconnect_0_M13_AXI]
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M03_AXI]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M04_AXI]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M05_AXI]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M06_AXI]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M07_AXI]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M08_AXI]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M09_AXI]
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M10_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins keccak_f1600_mm_ip_0/S00_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins axi_gpio_0/S_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M02_AXI] [get_bd_intf_pins axi_gpio_3/S_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M03_AXI] [get_bd_intf_pins matrix_sa_plus_e_mm_ip_0/S00_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M04_AXI] [get_bd_intf_pins matrix_sa_plus_e_mm_ip_0/S01_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M05_AXI] [get_bd_intf_pins matrix_sa_plus_e_mm_ip_0/S02_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M06_AXI] [get_bd_intf_pins axi_gpio_4/S_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M07_AXI] [get_bd_intf_pins matrix_as_plus_e_mm_0/S00_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M08_AXI] [get_bd_intf_pins matrix_as_plus_e_mm_0/S01_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M09_AXI] [get_bd_intf_pins matrix_as_plus_e_mm_0/S02_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M10_AXI] [get_bd_intf_pins axi_gpio_5/S_AXI]
+save_bd_design
+Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
+Wrote  : <C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ui/bd_d4006eb0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </axi_gpio_5/S_AXI/Reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1347] Reset pin /timer_1/reset (associated clock /timer_1/clk) is connected to asynchronous reset source /keccak_f1600_mm_ip_0/reset_timer.
+This may prevent design from meeting timing. Instead it should be connected to reset source /proc_sys_reset_0/peripheral_aresetn.
+CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </axi_gpio_5/S_AXI/Reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Slave segment </matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/sim/frodoBD.vhd
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block keccak_f1600_mm_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_sa_plus_e_mm_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_as_plus_e_mm_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_5 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_mmu .
+Exporting to file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD.hwh
+Generated Block Design Tcl file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD_bd.tcl
+Generated Hardware Definition File C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.hwdef
+[Sun Mar 29 11:47:12 2020] Launched synth_1...
+Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/runme.log
+[Sun Mar 29 11:47:12 2020] Launched impl_1...
+Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1126.145 ; gain = 158.906
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Netlist 29-17] Analyzing 227 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1983.109 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1983.109 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1983.109 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  RAM16X1S => RAM32X1S (RAMS32): 64 instances
+
+open_run: Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 2136.141 ; gain = 1009.297
+open_report: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2234.113 ; gain = 97.000
+report_utilization -name utilization_1
+file copy -force C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/frodoBD_wrapper.sysdef C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
+
+launch_sdk -workspace C:/Projects/frodo-fpga/frodo-fpga.sdk -hwspec C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Projects/frodo-fpga/frodo-fpga.sdk -hwspec C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+assign_bd_address [get_bd_addr_segs {axi_gpio_5/S_AXI/Reg }]
+Slave segment </axi_gpio_5/S_AXI/Reg> is being mapped into address space </processing_system7_0/Data> at <0x4120_0000 [ 64K ]>
+set_property range 64K [get_bd_addr_segs {processing_system7_0/Data/SEG_matrix_sa_plus_e_mm_ip_0_S02_AXI_reg}]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_5_Reg]
+assign_bd_address [get_bd_addr_segs {axi_gpio_5/S_AXI/Reg }]
+Slave segment </axi_gpio_5/S_AXI/Reg> is being mapped into address space </processing_system7_0/Data> at <0x4120_0000 [ 64K ]>
+assign_bd_address [get_bd_addr_segs {matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg }]
+Slave segment </matrix_as_plus_e_mm_0/S02_AXI/S02_AXI_reg> is being mapped into address space </processing_system7_0/Data> at <0x43C0_0000 [ 64K ]>
+assign_bd_address [get_bd_addr_segs {matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg }]
+Slave segment </matrix_as_plus_e_mm_0/S01_AXI/S01_AXI_reg> is being mapped into address space </processing_system7_0/Data> at <0x43C5_0000 [ 64K ]>
+save_bd_design
+Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+CRITICAL WARNING: [BD 41-1347] Reset pin /timer_1/reset (associated clock /timer_1/clk) is connected to asynchronous reset source /keccak_f1600_mm_ip_0/reset_timer.
+This may prevent design from meeting timing. Instead it should be connected to reset source /proc_sys_reset_0/peripheral_aresetn.
+Wrote  : <C:\Projects\frodo-fpga\frodo-fpga.srcs\sources_1\bd\frodoBD\frodoBD.bd> 
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/sim/frodoBD.vhd
+VHDL Output written to : C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block keccak_f1600_mm_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block timer_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_3 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_4 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_sa_plus_e_mm_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block matrix_as_plus_e_mm_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_5 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD.hwh
+Generated Block Design Tcl file C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hw_handoff/frodoBD_bd.tcl
+Generated Hardware Definition File C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.hwdef
+[Sun Mar 29 12:14:22 2020] Launched synth_1...
+Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/runme.log
+[Sun Mar 29 12:14:22 2020] Launched impl_1...
+Run output will be captured here: C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2355.398 ; gain = 40.289
+file copy -force C:/Projects/frodo-fpga/frodo-fpga.runs/impl_1/frodoBD_wrapper.sysdef C:/Projects/frodo-fpga/frodo-fpga.sdk/frodoBD_wrapper.hdf
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 29 20:14:55 2020...

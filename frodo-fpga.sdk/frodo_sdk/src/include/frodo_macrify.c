@@ -197,11 +197,22 @@ void frodo_mul_add_as_plus_e_hw_func(uint32_t * A, uint32_t * S, uint32_t * B, u
 //	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); // Start gpio set low
 }
 
-int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A, uint32_t *u32AccTime, uint32_t *u32ItCounter)
 //int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
 { // Generate-and-multiply: generate matrix A (N x N) row-wise, multiply by s on the right.
   // Inputs: s, e (N x N_BAR)
   // Output: out = A*s + e (N x N_BAR)
+
+#if ENABLE_SW_TIMER
+	// measure the counting overhead:
+	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
+	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
+
+	//Start time
+	u32LocalTime = get_cyclecount();
+#endif
+
 	int i, k;
 	ALIGN_HEADER(32) int16_t a_row[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
 
@@ -220,6 +231,12 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high
 
 	for (i = 0; i < PARAMS_N; i += 4) {
+
+#if ENABLE_SW_TIMER
+		//Accumulate time (SHAKE will not accumulate)
+		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+#endif
+
 		seed_A_origin[0] = UINT16_TO_LE(i + 0);
 		shake128((unsigned char*)(a_row + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
 		seed_A_origin[0] = UINT16_TO_LE(i + 1);
@@ -228,6 +245,11 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		shake128((unsigned char*)(a_row + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
 		seed_A_origin[0] = UINT16_TO_LE(i + 3);
 		shake128((unsigned char*)(a_row + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+
+#if ENABLE_SW_TIMER
+		//Start time
+		u32LocalTime = get_cyclecount();
+#endif
 
 //		for (k = 0; k < 4 * PARAMS_N; k++) {
 //			a_row[k] = LE_TO_UINT16(a_row[k]);
@@ -239,7 +261,7 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		if(i > 0)
 			send_s = 0;
 
-		frodo_mul_add_as_plus_e_hw_func((uint32_t *)a_row, (uint32_t *)s, b_matrix, send_s, req_data); //TODO: adicionar um sinal de last, para pedir somente 1x os dados.
+		frodo_mul_add_as_plus_e_hw_func((uint32_t *)a_row, (uint32_t *)s, b_matrix, send_s, req_data);
 	}
 
 	//Set start pin low
@@ -248,42 +270,59 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 	for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
 	{
 		if((k & 0x1) == 0)
-			out[k] += b_matrix[k >> 1] >> 16;
+			out[k] = (b_matrix[k >> 1] >> 16) + e[k];
 		else
-			out[k] += b_matrix[k >> 1] & 0xffff;
+			out[k] = (b_matrix[k >> 1] & 0xffff) + e[k];
 	}
+
+#if ENABLE_SW_TIMER
+	//Accumulate time
+	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+
+	//Transfer values
+	*u32AccTime += u32LocalTimeAcc;
+
+	//Add iteration
+	*u32ItCounter = *u32ItCounter + 1;
+#endif
 
 	return 1;
 }
 
-int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A, uint32_t *u32AccTime, uint32_t *u32ItCounter)
 //int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
 { // Generate-and-multiply: generate matrix A (N x N) row-wise, multiply by s on the right.
   // Inputs: s, e (N x N_BAR)
   // Output: out = A*s + e (N x N_BAR)
+
+#if ENABLE_SW_TIMER
+	// measure the counting overhead:
+	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
+	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
+
+	//Start time
+	u32LocalTime = get_cyclecount();
+#endif
+
 	int i, j, k;
 	ALIGN_HEADER(32) int16_t a_row[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
-
-//	uint16_t out2[PARAMS_N*PARAMS_NBAR];
 
 	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
 		*((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
 	}
 
-//	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
-//		*((uint32_t*)&out2[i]) = *((uint32_t*)&e[i]);
-//	}
-
 	uint8_t seed_A_separated[2 + BYTES_SEED_A];
 	uint16_t* seed_A_origin = (uint16_t*)&seed_A_separated;
-//	uint32_t b_matrix[PARAMS_N*PARAMS_NBAR/2] = {0};
 	memcpy(&seed_A_separated[2], seed_A, BYTES_SEED_A);
 
-	//Debug
-	//Set start pin high
-//	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x1); // Start gpio set high\
-
 	for (i = 0; i < PARAMS_N; i += 4) {
+
+#if ENABLE_SW_TIMER
+		//Accumulate time (SHAKE will not accumulate)
+		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+#endif
+
 		seed_A_origin[0] = UINT16_TO_LE(i + 0);
 		shake128((unsigned char*)(a_row + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
 		seed_A_origin[0] = UINT16_TO_LE(i + 1);
@@ -292,6 +331,11 @@ int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 		shake128((unsigned char*)(a_row + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
 		seed_A_origin[0] = UINT16_TO_LE(i + 3);
 		shake128((unsigned char*)(a_row + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
+
+#if ENABLE_SW_TIMER
+		//Start time
+		u32LocalTime = get_cyclecount();
+#endif
 
 		for (k = 0; k < 4 * PARAMS_N; k++) {
 			a_row[k] = LE_TO_UINT16(a_row[k]);
@@ -310,42 +354,20 @@ int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 			out[(i+2)*PARAMS_NBAR + k] += sum[2];
 			out[(i+1)*PARAMS_NBAR + k] += sum[1];
 			out[(i+3)*PARAMS_NBAR + k] += sum[3];
-
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+0)*PARAMS_NBAR + k, sum[0]);
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+1)*PARAMS_NBAR + k, sum[1]);
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+2)*PARAMS_NBAR + k, sum[2]);
-//			print_debug(DEBUG_MATRIX_MM, "\tsum[%d]: 0x%lx\n", (i+3)*PARAMS_NBAR + k, sum[3]);
 		}
-
-		//Debug
-//		frodo_mul_add_as_plus_e_hw_func((uint32_t *)a_row, (uint32_t *)s, b_matrix);
-
-//		for (k = 0; k < 32; k++)
-//		{
-//			if((k & 0x1) == 0)
-//				print_debug(DEBUG_MATRIX_MM, "\tb[%d]: 0x%lx\n", k, b_matrix[k >> 1] >> 16);
-//			else
-//				print_debug(DEBUG_MATRIX_MM, "\tb[%d]: 0x%lx\n", k, b_matrix[k >> 1] & 0xffff);
-//		}
-//		print_debug(DEBUG_MATRIX_MM, "\tStop\n");
-		//End debug
 
 	} //for i
 
-	//Set start pin low
-//	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); // Start gpio set low
+#if ENABLE_SW_TIMER
+	//Accumulate time
+	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
 
-//	for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
-//	{
-//		if((k & 0x1) == 0)
-//			out2[k] += b_matrix[k >> 1] >> 16;
-//		else
-//			out2[k] += b_matrix[k >> 1] & 0xffff;
-//
-//		if(out[k] != out2[k])
-//			print_debug(DEBUG_MATRIX_MM, "\tErro em %d\n", k);
-//
-//	}
+	//Transfer values
+	*u32AccTime += u32LocalTimeAcc;
+
+	//Add iteration
+	*u32ItCounter = *u32ItCounter + 1;
+#endif
 
 	return 1;
 }
@@ -698,10 +720,20 @@ int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 ///////// END
 
 //Software
-int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A, uint32_t *u32AccTime, uint32_t *u32ItCounter)
 { // Generate-and-multiply: generate matrix A (N x N) column-wise, multiply by s' on the left.
-  // Inputs: s', e' (N_BAR x N)
-  // Output: out = s'*A + e' (N_BAR x N)
+	// Inputs: s', e' (N_BAR x N)
+	// Output: out = s'*A + e' (N_BAR x N)
+#if ENABLE_SW_TIMER
+	// measure the counting overhead:
+	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
+	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
+
+	//Start time
+	u32LocalTime = get_cyclecount();
+#endif
+
 	int i, j, kk;
 
 	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
@@ -718,6 +750,11 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 
 	for (kk = 0; kk < PARAMS_N; kk+=4) {
 
+#if ENABLE_SW_TIMER
+		//Accumulate time (SHAKE will not accumulate)
+		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+#endif
+
 //		print_debug(DEBUG_MATRIX_MM, "kk: %d\n", kk);
 		seed_A_origin[0] = UINT16_TO_LE(kk + 0);
 		shake128((unsigned char*)(a_cols + 0*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
@@ -730,6 +767,11 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 		for (i = 0; i < 4 * PARAMS_N; i++) {
 			a_cols[i] = LE_TO_UINT16(a_cols[i]);
 		}
+
+#if ENABLE_SW_TIMER
+		//Start time
+		u32LocalTime = get_cyclecount();
+#endif
 
 		for (i = 0; i < PARAMS_NBAR; i++) {
 			uint16_t sum[PARAMS_N] = {0};
@@ -745,11 +787,22 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 		}
 	} //kk for
 
+#if ENABLE_SW_TIMER
+	//Accumulate time
+	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+
+	//Transfer values
+	*u32AccTime += u32LocalTimeAcc;
+
+	//Add iteration
+	*u32ItCounter = *u32ItCounter + 1;
+#endif
+
 	return 1;
 }
 
 // Auxiliar function HW
-void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
+void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B, uint8_t req_data)
 {
 	//Variables
 	int i;
@@ -778,26 +831,39 @@ void frodo_mul_add_sa_plus_e_hw_func(uint32_t * S, uint32_t * A, uint32_t * B)
 //	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
 
 	//Interpret data
-	for (i = 0; i < 2560; i++)
+	if(req_data)
 	{
-		B[i] = memoryMatrixB[i];
-//		if(i < 20 || i > 2500)
-//			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+		for (i = 0; i < 2560; i++)
+		{
+			B[i] = memoryMatrixB[i];
+	//		if(i < 20 || i > 2500)
+	//			print_debug(DEBUG_MATRIX_MM, "\tB[%d]: 0x%lx\n", i, B[i]);
+		}
 	}
+
 }
 
 //Hardware
-int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A)
+int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t *e, const uint8_t *seed_A, uint32_t *u32AccTime, uint32_t *u32ItCounter)
 { // Generate-and-multiply: generate matrix A (N x N) column-wise, multiply by s' on the left.
   // Inputs: s', e' (N_BAR x N)
   // Output: out = s'*A + e' (N_BAR x N)
+#if ENABLE_SW_TIMER
+	// measure the counting overhead:
+	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
+	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
+
+	//Start time
+	u32LocalTime = get_cyclecount();
+#endif
+
 	int i, j, kk;
 
 	for (i = 0; i < (PARAMS_N*PARAMS_NBAR); i += 2) {
 		*((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
 	}
 
-	int t=0;
 	ALIGN_HEADER(32) uint16_t a_cols[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
 
 	int k;
@@ -814,10 +880,17 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		*((uint32_t*)&out2[i]) = *((uint32_t*)&e[i]);
 	}
 
+	uint8_t req_data = 0;
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+
 	for (kk = 0; kk < PARAMS_N; kk+=4) {
 
-		//Set start pin high
-		XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+#if ENABLE_SW_TIMER
+		//Accumulate time (SHAKE will not accumulate)
+		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+#endif
 
 //		print_debug(DEBUG_MATRIX_MM, "kk: %d\n", kk);
 		seed_A_origin[0] = UINT16_TO_LE(kk + 0);
@@ -832,6 +905,11 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 			a_cols[i] = LE_TO_UINT16(a_cols[i]);
 		}
 
+#if ENABLE_SW_TIMER
+		//Start time
+		u32LocalTime = get_cyclecount();
+#endif
+
 		idx_s_matrix = 0;
 		for(i = 0; i < PARAMS_NBAR; i++)
 		{
@@ -843,20 +921,34 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		}
 		a_matrix = (uint32_t *)a_cols;
 
-		frodo_mul_add_sa_plus_e_hw_func(s_matrix, a_matrix, sum2);
+		if(kk == PARAMS_N - 4)
+			req_data = 1;
+
+		frodo_mul_add_sa_plus_e_hw_func(s_matrix, a_matrix, sum2, req_data);
 
 		for (k = 0; k < (PARAMS_N*PARAMS_NBAR); k++)
 		{
 			if((k & 0x1) == 0)
-				out[k] += sum2[k >> 1] & 0xffff;
+				out[k] = (sum2[k >> 1] & 0xffff) + e[k];
 			else
-				out[k] += sum2[k >> 1] >> 16;
+				out[k] = (sum2[k >> 1] >> 16) + e[k];
 		}
 
-		//Set start pin high
-		XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
-
 	} //kk for
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
+
+#if ENABLE_SW_TIMER
+	//Accumulate time
+	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+
+	//Transfer values
+	*u32AccTime += u32LocalTimeAcc;
+
+	//Add iteration
+	*u32ItCounter = *u32ItCounter + 1;
+#endif
 
 	return 1;
 }
