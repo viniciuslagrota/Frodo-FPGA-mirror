@@ -864,7 +864,6 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		*((uint32_t*)&out[i]) = *((uint32_t*)&e[i]);
 	}
 
-	int t=0;
 	ALIGN_HEADER(32) uint16_t a_cols[4*PARAMS_N] ALIGN_FOOTER(32) = {0};
 
 	int k;

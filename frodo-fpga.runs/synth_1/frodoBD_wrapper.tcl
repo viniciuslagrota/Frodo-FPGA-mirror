@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -62,6 +63,12 @@ set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_7_0/frodoBD_axi_gpio_7_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_7_0/frodoBD_axi_gpio_7_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_7_0/frodoBD_axi_gpio_7_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_8_1/frodoBD_axi_gpio_8_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_8_1/frodoBD_axi_gpio_8_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_axi_gpio_8_1/frodoBD_axi_gpio_8_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_tier2_xbar_0_0/frodoBD_tier2_xbar_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_tier2_xbar_1_0/frodoBD_tier2_xbar_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_tier2_xbar_2_0/frodoBD_tier2_xbar_2_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/frodoBD_ooc.xdc]
 
