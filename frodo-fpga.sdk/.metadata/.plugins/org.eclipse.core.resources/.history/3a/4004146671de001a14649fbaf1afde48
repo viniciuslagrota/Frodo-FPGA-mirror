@@ -347,34 +347,7 @@ void shake128(unsigned char *output, unsigned long long outlen, const unsigned c
 	   codeFeaturesType == SHAKE128_SW_MATRIX_SA_SW_AS_HW || codeFeaturesType == SHAKE128_SW_MATRIX_SA_HW_AS_HW)
 		shake128_sw(output, outlen, input, inlen);
 	else
-	{
 		shake128_hw(output, outlen, input, inlen);
-
-#if ENABLE_HW_TIMER
-		//Stopping timer and reading time
-		u32 readTimer;
-		float fval;
-		u32 whole, thousandths;
-
-		readTimer = XGpio_DiscreteRead(&shake128_time, 1);
-		fval = (float)readTimer / (float)100;
-		whole = fval;
-		thousandths = (fval - whole) * 1000;
-		print_debug(DEBUG_TIMER, "[TEST_KEM] Total time taken to process Shake128: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-		readTimerShake128Total += readTimer*10; //10 multiplication converts 1 count to 10 ns.
-
-		readTimer = XGpio_DiscreteRead(&shake128_time, 2);
-		fval = (float)readTimer / (float)100;
-		whole = fval;
-		thousandths = (fval - whole) * 1000;
-		print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Shake128: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-		readTimerShake128Proc += readTimer*10;
-
-		countShake128++;
-#endif
-	}
-
-
 #endif
 }
 
@@ -402,14 +375,14 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-SA: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-		readTimerMatrixSaTotal += readTimer*10;
+		readTimerMatrixSaTotal += readTimer;
 
 		readTimer = XGpio_DiscreteRead(&matrix_sa_time, 2);
 		fval = (float)readTimer / (float)100;
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-SA: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-		readTimerMatrixSaProc += readTimer*10;
+		readTimerMatrixSaProc += readTimer;
 
 		countMatrixSa++;
 #endif
@@ -442,14 +415,14 @@ int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-AS: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-		readTimerMatrixAsTotal += readTimer*10;
+		readTimerMatrixAsTotal += readTimer;
 
 		readTimer = XGpio_DiscreteRead(&matrix_as_time, 2);
 		fval = (float)readTimer / (float)100;
 		whole = fval;
 		thousandths = (fval - whole) * 1000;
 		print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-AS: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-		readTimerMatrixAsProc += readTimer*10;
+		readTimerMatrixAsProc += readTimer;
 
 		countMatrixAs++;
 #endif
@@ -1040,11 +1013,11 @@ int kem_test(const char *named_parameters, int iterations)
 		print_debug(DEBUG_TEST_KEM, "------------------------------------------------------ Hardware processing time analize ------------------------------------------------------\n");
 		print_debug(DEBUG_TEST_KEM, "\t\tAlgorithm\t\t|\tIterations\t\t|\tTotal time (ns)\t|\tAvg Total time (ns)\t|\tProc time (ns) \t|\tAvg Proc time (ns) \t|\t Porcentage (%c) \n", 37);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t  SHAKE128  \t|\t   %d   \t\t|\t   %u   \t|\t\t\t   %d   \t\t\t|\t   %d   \t\t|\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", countShake128, readTimerShake128Total, (readTimerShake128Total/countShake128), readTimerShake128Proc, (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
+		print_debug(DEBUG_TEST_KEM, "\t\t  SHAKE128  \t|\t   %d   \t\t|\t   %d   \t|\t\t\t   %d   \t\t\t|\t   %d   \t\t|\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", countShake128, readTimerShake128Total, (readTimerShake128Total/countShake128), readTimerShake128Proc, (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixSa, readTimerMatrixSaTotal, (readTimerMatrixSaTotal/countMatrixSa), readTimerMatrixSaProc, (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
+		print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t   %d   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixSa, readTimerMatrixSaTotal, (readTimerMatrixSaTotal/countMatrixSa), readTimerMatrixSaProc, (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------------------------------------------------------\n");
-		print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixAs, readTimerMatrixAsTotal, (readTimerMatrixAsTotal/countMatrixAs), readTimerMatrixAsProc, (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
+		print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t   %d   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixAs, readTimerMatrixAsTotal, (readTimerMatrixAsTotal/countMatrixAs), readTimerMatrixAsProc, (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
 		print_debug(DEBUG_TEST_KEM, "--------------------------------------------------------------------------------------------------------------------------------------------------\n");
 #endif
 
