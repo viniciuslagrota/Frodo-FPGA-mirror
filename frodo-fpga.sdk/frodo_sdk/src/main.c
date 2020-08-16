@@ -66,10 +66,16 @@ extern XGpio_Config * ConfigPtr5;
 extern XGpio_Config * ConfigPtr6;
 extern XGpio_Config * ConfigPtr7;
 extern XGpio_Config * ConfigPtr8;
+extern XGpio_Config * ConfigPtr9;
+extern XGpio_Config * ConfigPtr10;
+extern XGpio_Config * ConfigPtr11;
 extern XGpio keccak_time;
 extern XGpio matrix_sa_time;
 extern XGpio matrix_as_time;
 extern XGpio shake128_time;
+extern XGpio reset_matrix_sa_time;
+extern XGpio reset_matrix_as_time;
+extern XGpio reset_shake128_time;
 extern XGpio axiStartBusyMatrix;
 extern XGpio axiStartBusyMatrix2;
 extern XGpio axiStartBusyShake;
@@ -163,6 +169,21 @@ int main()
 
 	ConfigPtr8 = XGpio_LookupConfig(XPAR_AXI_GPIO_8_DEVICE_ID);
 	XGpio_CfgInitialize(&shake128_time, ConfigPtr8, ConfigPtr8->BaseAddress);
+
+	ConfigPtr9 = XGpio_LookupConfig(XPAR_AXI_GPIO_9_DEVICE_ID);
+	XGpio_CfgInitialize(&reset_shake128_time, ConfigPtr9, ConfigPtr9->BaseAddress);
+	XGpio_DiscreteWrite(&reset_shake128_time, 1, 0x0); //Set reset bit low.
+	XGpio_DiscreteWrite(&reset_shake128_time, 2, 0x0); //Set reset bit low.
+
+	ConfigPtr10 = XGpio_LookupConfig(XPAR_AXI_GPIO_10_DEVICE_ID);
+	XGpio_CfgInitialize(&reset_matrix_sa_time, ConfigPtr10, ConfigPtr10->BaseAddress);
+	XGpio_DiscreteWrite(&reset_matrix_sa_time, 1, 0x0); //Set reset bit low.
+	XGpio_DiscreteWrite(&reset_matrix_sa_time, 2, 0x0); //Set reset bit low.
+
+	ConfigPtr11 = XGpio_LookupConfig(XPAR_AXI_GPIO_11_DEVICE_ID);
+	XGpio_CfgInitialize(&reset_matrix_as_time, ConfigPtr11, ConfigPtr11->BaseAddress);
+	XGpio_DiscreteWrite(&reset_matrix_as_time, 1, 0x0); //Set reset bit low.
+	XGpio_DiscreteWrite(&reset_matrix_as_time, 2, 0x0); //Set reset bit low.
 
 	//---- AXI MM ----
 	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;

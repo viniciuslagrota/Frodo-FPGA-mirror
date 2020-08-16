@@ -340,6 +340,13 @@ void shake128(unsigned char *output, unsigned long long outlen, const unsigned c
 		readTimerShake128Proc += readTimer;
 
 		countShake128++;
+
+		//Clear SA total and proc timer
+		XGpio_DiscreteWrite(&reset_shake128_time, 1, 0x1); //Set reset bit high.
+		XGpio_DiscreteWrite(&reset_shake128_time, 2, 0x1); //Set reset bit high.
+
+		XGpio_DiscreteWrite(&reset_shake128_time, 1, 0x0); //Set reset bit low.
+		XGpio_DiscreteWrite(&reset_shake128_time, 2, 0x0); //Set reset bit low.
 #endif
 	}
 #else
@@ -412,6 +419,14 @@ int frodo_mul_add_sa_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 		readTimerMatrixSaProc += readTimer*10;
 
 		countMatrixSa++;
+
+		//Clear SA total and proc timer
+		XGpio_DiscreteWrite(&reset_matrix_sa_time, 1, 0x1); //Set reset bit high.
+		XGpio_DiscreteWrite(&reset_matrix_sa_time, 2, 0x1); //Set reset bit high.
+
+		XGpio_DiscreteWrite(&reset_matrix_sa_time, 1, 0x0); //Set reset bit low.
+		XGpio_DiscreteWrite(&reset_matrix_sa_time, 2, 0x0); //Set reset bit low.
+
 #endif
 	}
 
@@ -452,6 +467,13 @@ int frodo_mul_add_as_plus_e(uint16_t *out, const uint16_t *s, const uint16_t *e,
 		readTimerMatrixAsProc += readTimer*10;
 
 		countMatrixAs++;
+
+		//Clear SA total and proc timer
+		XGpio_DiscreteWrite(&reset_matrix_as_time, 1, 0x1); //Set reset bit high.
+		XGpio_DiscreteWrite(&reset_matrix_as_time, 2, 0x1); //Set reset bit high.
+
+		XGpio_DiscreteWrite(&reset_matrix_as_time, 1, 0x0); //Set reset bit low.
+		XGpio_DiscreteWrite(&reset_matrix_as_time, 2, 0x0); //Set reset bit low.
 #endif
 	}
 
