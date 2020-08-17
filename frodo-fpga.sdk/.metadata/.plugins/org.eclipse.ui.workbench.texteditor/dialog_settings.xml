@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="readTimerMatrixSaTotal" key="selection"/>
+		<item value="matrix_sa_time" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="matrix_sa_time"/>
 			<item value="readTimerMatrixSaTotal"/>
+			<item value="t_matrix_as_sw_acc"/>
+			<item value="t_shake128_sw_acc"/>
+			<item value="readTimer"/>
+			<item value="read_timer"/>
 			<item value="u32AccTime"/>
 			<item value="t_matrix_sa_hw_acc"/>
-			<item value="readTimerShake128Total"/>
-			<item value="shake"/>
-			<item value="shake128"/>
-			<item value="readTimerShake128Proc"/>
-			<item value="DEBUG_MATRIX_MM"/>
 		</list>
 		<list key="replacehistory">
 			<item value="taken"/>

@@ -126,6 +126,8 @@ XGpio_Config * ConfigPtr8;
 XGpio_Config * ConfigPtr9;
 XGpio_Config * ConfigPtr10;
 XGpio_Config * ConfigPtr11;
+XGpio_Config * ConfigPtr12;
+XGpio_Config * ConfigPtr13;
 XGpio keccak_time;
 XGpio matrix_sa_time;
 XGpio matrix_as_time;
@@ -137,6 +139,10 @@ XGpio axiStartBusyMatrix;
 XGpio axiStartBusyMatrix2;
 XGpio axiStartBusyShake;
 XGpio axiInlenOutlen;
+XGpio general_hw_timer_control;
+XGpio general_hw_timer;
+XGpio global_timer_control;
+XGpio global_timer;
 u32 *memoryMMkeccak;
 u32 *memoryMatrixS;
 u32 *memoryMatrixA;
@@ -168,5 +174,15 @@ u32 *memoryMMshake;
 #else
     ##error -- missing method for generating matrix A
 #endif
+
+//////////////////////////////////////////////
+//
+//	Prototypes
+//
+//////////////////////////////////////////////
+void resetGeneralTimer();
+void startGeneralTimer();
+void stopGeneralTimer();
+u32 getGeneralTimer();
 
 #endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */

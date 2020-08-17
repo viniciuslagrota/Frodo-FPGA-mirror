@@ -16,18 +16,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_xbar_0 
 # IP: bd/frodoBD/ip/frodoBD_axi_interconnect_0_0/frodoBD_axi_interconnect_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_interconnect_0_0 || ORIG_REF_NAME==frodoBD_axi_interconnect_0_0} -quiet] -quiet
 
-# IP: bd/frodoBD/ip/frodoBD_keccak_f1600_mm_ip_0_0/frodoBD_keccak_f1600_mm_ip_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_keccak_f1600_mm_ip_0_0 || ORIG_REF_NAME==frodoBD_keccak_f1600_mm_ip_0_0} -quiet] -quiet
-
-# IP: bd/frodoBD/ip/frodoBD_timer_1_0/frodoBD_timer_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_timer_1_0 || ORIG_REF_NAME==frodoBD_timer_1_0} -quiet] -quiet
-
-# IP: bd/frodoBD/ip/frodoBD_axi_gpio_0_1/frodoBD_axi_gpio_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_0_1 || ORIG_REF_NAME==frodoBD_axi_gpio_0_1} -quiet] -quiet
-
-# IP: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_3_0 || ORIG_REF_NAME==frodoBD_axi_gpio_3_0} -quiet] -quiet
-
 # IP: bd/frodoBD/ip/frodoBD_axi_gpio_4_0/frodoBD_axi_gpio_4_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_4_0 || ORIG_REF_NAME==frodoBD_axi_gpio_4_0} -quiet] -quiet
 
@@ -39,9 +27,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_matrix_
 
 # IP: bd/frodoBD/ip/frodoBD_axi_gpio_5_0/frodoBD_axi_gpio_5_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_5_0 || ORIG_REF_NAME==frodoBD_axi_gpio_5_0} -quiet] -quiet
-
-# IP: bd/frodoBD/ip/frodoBD_timer_0_0/frodoBD_timer_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_timer_0_0 || ORIG_REF_NAME==frodoBD_timer_0_0} -quiet] -quiet
 
 # IP: bd/frodoBD/ip/frodoBD_timer_2_0/frodoBD_timer_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_timer_2_0 || ORIG_REF_NAME==frodoBD_timer_2_0} -quiet] -quiet
@@ -82,6 +67,30 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpi
 # IP: bd/frodoBD/ip/frodoBD_axi_gpio_9_0/frodoBD_axi_gpio_9_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_9_0 || ORIG_REF_NAME==frodoBD_axi_gpio_9_0} -quiet] -quiet
 
+# IP: bd/frodoBD/ip/frodoBD_axi_gpio_10_0/frodoBD_axi_gpio_10_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_10_0 || ORIG_REF_NAME==frodoBD_axi_gpio_10_0} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_axi_gpio_11_0/frodoBD_axi_gpio_11_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_11_0 || ORIG_REF_NAME==frodoBD_axi_gpio_11_0} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_timer_8_0/frodoBD_timer_8_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_timer_8_0 || ORIG_REF_NAME==frodoBD_timer_8_0} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_axi_gpio_12_0/frodoBD_axi_gpio_12_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_12_0 || ORIG_REF_NAME==frodoBD_axi_gpio_12_0} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_axi_gpio_13_0/frodoBD_axi_gpio_13_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_13_0 || ORIG_REF_NAME==frodoBD_axi_gpio_13_0} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_timer_0_0/frodoBD_timer_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_timer_0_0 || ORIG_REF_NAME==frodoBD_timer_0_0} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_axi_gpio_0_4/frodoBD_axi_gpio_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_0_4 || ORIG_REF_NAME==frodoBD_axi_gpio_0_4} -quiet] -quiet
+
+# IP: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_3_0 || ORIG_REF_NAME==frodoBD_axi_gpio_3_0} -quiet] -quiet
+
 # IP: bd/frodoBD/ip/frodoBD_tier2_xbar_0_0/frodoBD_tier2_xbar_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_tier2_xbar_0_0 || ORIG_REF_NAME==frodoBD_tier2_xbar_0_0} -quiet] -quiet
 
@@ -94,12 +103,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_tier2_x
 # IP: bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_auto_pc_0 || ORIG_REF_NAME==frodoBD_auto_pc_0} -quiet] -quiet
 
-# IP: bd/frodoBD/ip/frodoBD_axi_gpio_10_0/frodoBD_axi_gpio_10_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_10_0 || ORIG_REF_NAME==frodoBD_axi_gpio_10_0} -quiet] -quiet
-
-# IP: bd/frodoBD/ip/frodoBD_axi_gpio_11_0/frodoBD_axi_gpio_11_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_11_0 || ORIG_REF_NAME==frodoBD_axi_gpio_11_0} -quiet] -quiet
-
 # XDC: bd/frodoBD/ip/frodoBD_processing_system7_0_0/frodoBD_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_processing_system7_0_0 || ORIG_REF_NAME==frodoBD_processing_system7_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
@@ -108,22 +111,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/frodoBD/ip/frodoBD_proc_sys_reset_0_0/frodoBD_proc_sys_reset_0_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_proc_sys_reset_0_0 || ORIG_REF_NAME==frodoBD_proc_sys_reset_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_0_1/frodoBD_axi_gpio_0_1_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_0_1 || ORIG_REF_NAME==frodoBD_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_0_1/frodoBD_axi_gpio_0_1_ooc.xdc
-
-# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_0_1/frodoBD_axi_gpio_0_1.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_0_1 || ORIG_REF_NAME==frodoBD_axi_gpio_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_3_0 || ORIG_REF_NAME==frodoBD_axi_gpio_3_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
-
-# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0_ooc.xdc
-
-# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_3_0 || ORIG_REF_NAME==frodoBD_axi_gpio_3_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: bd/frodoBD/ip/frodoBD_axi_gpio_4_0/frodoBD_axi_gpio_4_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_4_0 || ORIG_REF_NAME==frodoBD_axi_gpio_4_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
@@ -189,14 +176,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: bd/frodoBD/ip/frodoBD_axi_gpio_9_0/frodoBD_axi_gpio_9_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_9_0 || ORIG_REF_NAME==frodoBD_axi_gpio_9_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/frodoBD/ip/frodoBD_tier2_xbar_0_0/frodoBD_tier2_xbar_0_0_ooc.xdc
-
-# XDC: bd/frodoBD/ip/frodoBD_tier2_xbar_1_0/frodoBD_tier2_xbar_1_0_ooc.xdc
-
-# XDC: bd/frodoBD/ip/frodoBD_tier2_xbar_2_0/frodoBD_tier2_xbar_2_0_ooc.xdc
-
-# XDC: bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc
-
 # XDC: bd/frodoBD/ip/frodoBD_axi_gpio_10_0/frodoBD_axi_gpio_10_0_board.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_10_0 || ORIG_REF_NAME==frodoBD_axi_gpio_10_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
@@ -212,5 +191,45 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/frodoBD/ip/frodoBD_axi_gpio_11_0/frodoBD_axi_gpio_11_0.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_11_0 || ORIG_REF_NAME==frodoBD_axi_gpio_11_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_12_0/frodoBD_axi_gpio_12_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_12_0 || ORIG_REF_NAME==frodoBD_axi_gpio_12_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_12_0/frodoBD_axi_gpio_12_0_ooc.xdc
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_12_0/frodoBD_axi_gpio_12_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_12_0 || ORIG_REF_NAME==frodoBD_axi_gpio_12_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_13_0/frodoBD_axi_gpio_13_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_13_0 || ORIG_REF_NAME==frodoBD_axi_gpio_13_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_13_0/frodoBD_axi_gpio_13_0_ooc.xdc
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_13_0/frodoBD_axi_gpio_13_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_13_0 || ORIG_REF_NAME==frodoBD_axi_gpio_13_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_0_4/frodoBD_axi_gpio_0_4_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_0_4 || ORIG_REF_NAME==frodoBD_axi_gpio_0_4} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_0_4/frodoBD_axi_gpio_0_4_ooc.xdc
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_0_4/frodoBD_axi_gpio_0_4.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_0_4 || ORIG_REF_NAME==frodoBD_axi_gpio_0_4} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_3_0 || ORIG_REF_NAME==frodoBD_axi_gpio_3_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0_ooc.xdc
+
+# XDC: bd/frodoBD/ip/frodoBD_axi_gpio_3_0/frodoBD_axi_gpio_3_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==frodoBD_axi_gpio_3_0 || ORIG_REF_NAME==frodoBD_axi_gpio_3_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/frodoBD/ip/frodoBD_tier2_xbar_0_0/frodoBD_tier2_xbar_0_0_ooc.xdc
+
+# XDC: bd/frodoBD/ip/frodoBD_tier2_xbar_1_0/frodoBD_tier2_xbar_1_0_ooc.xdc
+
+# XDC: bd/frodoBD/ip/frodoBD_tier2_xbar_2_0/frodoBD_tier2_xbar_2_0_ooc.xdc
+
+# XDC: bd/frodoBD/ip/frodoBD_auto_pc_0/frodoBD_auto_pc_0_ooc.xdc
 
 # XDC: bd/frodoBD/frodoBD_ooc.xdc
