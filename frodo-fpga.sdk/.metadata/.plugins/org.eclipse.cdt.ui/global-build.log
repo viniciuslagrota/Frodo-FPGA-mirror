@@ -1,443 +1,226 @@
-19:18:30 **** Build of project frodo_sdk_bsp ****
-make -k all 
-"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
-make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
-make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
-make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
-make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
-make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
-make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_4/src"
-make -C ps7_cortexa9_0/libsrc/gpio_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
-make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
-make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
-make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
-make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
-make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/shake128_ip_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/shake128_ip_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
-make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
-make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
-make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
-make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
-make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
-make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling coresightps_dcc"
-arm-none-eabi-ar: creating ../../../lib/libxil.a
-"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
-make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling cpu_cortexa9"
-"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling ddrps"
-"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
-make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling devcfg"
-"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
-make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling dmaps"
-"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_9/src"
-make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling emacps"
-"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
-make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling gpiops"
-"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_4/src"
-make -C ps7_cortexa9_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling gpio"
-"Running Make libs in ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/matrix_as_plus_e_mm_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling matrix_as_plus_e_mm_ip..."
-matrix_as_plus_e_mm_ip_selftest.c: In function 'MATRIX_AS_PLUS_E_MM_IP_Reg_SelfTest':
-matrix_as_plus_e_mm_ip_selftest.c:52:71: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-    if ( MATRIX_AS_PLUS_E_MM_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
-                                                                       ^~
-matrix_as_plus_e_mm_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
-  int Index;
-      ^~~~~
-"Running Make libs in ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/matrix_sa_plus_e_mm_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling matrix_sa_plus_e_mm_ip..."
-matrix_sa_plus_e_mm_ip_selftest.c: In function 'MATRIX_SA_PLUS_E_MM_IP_Reg_SelfTest':
-matrix_sa_plus_e_mm_ip_selftest.c:52:71: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-    if ( MATRIX_SA_PLUS_E_MM_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
-                                                                       ^~
-matrix_sa_plus_e_mm_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
-  int Index;
-      ^~~~~
-"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
-make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling qspips"
-"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
-make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling scugic"
-"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
-make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling scutimer"
-"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
-make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling scuwdt"
-"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_7/src"
-make -C ps7_cortexa9_0/libsrc/sdps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling sdps"
-"Running Make libs in ps7_cortexa9_0/libsrc/shake128_ip_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/shake128_ip_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling shake128_ip..."
-shake128_ip_selftest.c: In function 'SHAKE128_IP_Reg_SelfTest':
-shake128_ip_selftest.c:52:60: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-    if ( SHAKE128_IP_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
-                                                            ^~
-shake128_ip_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
-  int Index;
-      ^~~~~
-"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
-make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling standalone"
-In file included from usleep.c:56:
-xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
- #pragma message ("For the sleep routines, Global timer is being used")
-         ^~~~~~~
-In file included from xil_sleeptimer.c:51:
-xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
- #pragma message ("For the sleep routines, Global timer is being used")
-         ^~~~~~~
-In file included from xtime_l.c:49:
-xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
- #pragma message ("For the sleep routines, Global timer is being used")
-         ^~~~~~~
-In file included from sleep.c:53:
-xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
- #pragma message ("For the sleep routines, Global timer is being used")
-         ^~~~~~~
-"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_9/src"
-make -C ps7_cortexa9_0/libsrc/ttcps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling ttcps"
-"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
-make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling uartps"
-"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
-make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling usbps"
-"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
-make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling xadcps"
-'Finished building libraries'
-19:19:47 **** Build of configuration Debug for project frodo_sdk ****
+20:18:21 **** Incremental Build of configuration Debug for project frodo_sdk ****
 make pre-build main-build 
 a9-linaro-pre-build-step
- 
-Building file: ../src/include/fips202.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/fips202.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/fips202.d" -MT"src/include/fips202.o" -o "src/include/fips202.o" "../src/include/fips202.c"
-In file included from ../src/include/fips202.h:11,
-                 from ../src/include/fips202.c:11:
-../src/include/fips202.c: In function 'shake128_hw':
-../src/include/fips202.c:476:30: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-  print_debug(DEBUG_SHAKE_MM, "[SHAKE] u32InWords: %d\n", u32InWords);
-                              ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:478:30: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-  print_debug(DEBUG_SHAKE_MM, "[SHAKE] u32OutWords: %d\n", u32OutWords);
-                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:498:31: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", i, m[i]);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     ~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:506:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1]);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:506:32: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1]);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                  ~~~~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:510:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xff);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:510:32: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xff);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                  ~~~~~~~~~~~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:514:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xffff);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:514:32: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xffff);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:518:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xffffff);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/fips202.c:518:32: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
-    print_debug(DEBUG_SHAKE_MM, "[SHAKE] memoryMMshake[%d]: 0x%08x\n", u32InWords - 1, m[u32InWords - 1] & 0xffffff);
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-Finished building: ../src/include/fips202.c
- 
-Building file: ../src/include/frodo_macrify.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/frodo_macrify.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/frodo_macrify.d" -MT"src/include/frodo_macrify.o" -o "src/include/frodo_macrify.o" "../src/include/frodo_macrify.c"
-Finished building: ../src/include/frodo_macrify.c
- 
-Building file: ../src/include/keccak_f1600.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/keccak_f1600.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/keccak_f1600.d" -MT"src/include/keccak_f1600.o" -o "src/include/keccak_f1600.o" "../src/include/keccak_f1600.c"
-In file included from ../src/include/keccak_f1600.h:16,
-                 from ../src/include/keccak_f1600.c:9:
-../src/include/keccak_f1600.c: In function 'KeccakF1600_StatePermute_HW_MM':
-../src/include/keccak_f1600.c:164:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
-   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1), (u32)(state[i] & 0xffffffff));
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/keccak_f1600.c:167:32: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
-   print_debug(DEBUG_KECCAK_HW, "\tSent data %lu: 0x%lx\n", (i << 1) + 1, (u32)(state[i] >> 32));
-                                ^~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-Finished building: ../src/include/keccak_f1600.c
- 
-Building file: ../src/include/kem.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/kem.d" -MT"src/include/kem.o" -o "src/include/kem.o" "../src/include/kem.c"
-Finished building: ../src/include/kem.c
- 
-Building file: ../src/include/noise.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/noise.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/noise.d" -MT"src/include/noise.o" -o "src/include/noise.o" "../src/include/noise.c"
-Finished building: ../src/include/noise.c
- 
-Building file: ../src/include/random.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/random.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/random.d" -MT"src/include/random.o" -o "src/include/random.o" "../src/include/random.c"
-Finished building: ../src/include/random.c
- 
-Building file: ../src/include/test_KEM640.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_KEM640.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_KEM640.d" -MT"src/include/test_KEM640.o" -o "src/include/test_KEM640.o" "../src/include/test_KEM640.c"
-Finished building: ../src/include/test_KEM640.c
  
 Building file: ../src/include/test_kem.c
 Invoking: ARM v7 gcc compiler
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
 In file included from ../src/include/test_kem.c:9:
-../src/include/test_kem.c: In function 'shake128':
-../src/include/test_kem.c:340:28: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TIMER, "[TEST_KEM] Total time taken to process Shake128: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/test_kem.c:347:28: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Shake128: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/test_kem.c: In function 'frodo_mul_add_sa_plus_e':
-../src/include/test_kem.c:431:28: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-SA: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/test_kem.c:438:28: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-SA: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/test_kem.c: In function 'frodo_mul_add_as_plus_e':
-../src/include/test_kem.c:494:28: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-AS: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
-../src/include/test_kem.c:501:28: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TIMER, "[TEST_KEM] Time taken to process Matrix-AS: %lu.%03lu us (%d ticks)\n", whole, thousandths, readTimer);
-                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~~~~
-../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
-    printf(__VA_ARGS__); \
-           ^~~~~~~~~~~
 ../src/include/test_kem.c: In function 'kem_test':
-../src/include/test_kem.c:1100:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t   SHAKE128  \t|\t   %d   \t|\t\t   %lu   \t\t\t|\t\t\t\t%lu\t\t\t\t\t|\t\t\t%lu  \t\t\t|\t\t\t\t\t%lu\t\t\t\t|\t\t\t%lu.%03lu\n", iteration_shake128_sw, (t_shake128_sw_acc), (t_shake128_sw_acc/iteration_shake128_sw), (t_shake128_hw_acc), (t_shake128_hw_acc/iteration_shake128_hw), wholeShake128, thousandthsShake128);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:860:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %lu ns (including function call)\n", t_total_shake128_hw_mm_matrix_sa_sw_as_sw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1102:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t|\t\t   %lu   \t\t\t|\t\t\t%lu  \t\t\t\t|\t\t\t%lu  \t\t\t|\t\t\t\t%lu  \t\t\t|\t\t\t%lu.%03lu\n", iteration_sa_sw, (t_matrix_sa_sw_acc), (t_matrix_sa_sw_acc/iteration_sa_sw), (t_matrix_sa_hw_acc), (t_matrix_sa_hw_acc/iteration_sa_hw), wholeMatrixSa, thousandthsMatrixSa);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~
+../src/include/test_kem.c:876:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %lu ns (including function call)\n", t_total_shake128_sw_matrix_sa_hw_as_sw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1104:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t|\t\t   %lu   \t\t\t|\t\t\t%lu  \t\t\t\t|\t\t\t%lu  \t\t\t|\t\t\t\t%lu  \t\t\t\t|\t\t\t%lu.%03lu\n", iteration_as_sw, (t_matrix_as_sw_acc), (t_matrix_as_sw_acc/iteration_as_sw), (t_matrix_as_hw_acc), (t_matrix_as_hw_acc/iteration_as_hw), wholeMatrixAs, thousandthsMatrixAs);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~
+../src/include/test_kem.c:893:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %lu ns (including function call)\n", t_total_shake128_hw_mm_matrix_sa_hw_as_sw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1126:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t  SHAKE128  \t|\t   %d   \t\t|\t   %u   \t|\t\t\t   %d   \t\t\t|\t   %d   \t\t|\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", countShake128, readTimerShake128Total, (readTimerShake128Total/countShake128), readTimerShake128Proc, (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~
+../src/include/test_kem.c:910:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %lu ns (including function call)\n", t_total_shake128_sw_matrix_sa_sw_as_hw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1126:31: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t  SHAKE128  \t|\t   %d   \t\t|\t   %u   \t|\t\t\t   %d   \t\t\t|\t   %d   \t\t|\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", countShake128, readTimerShake128Total, (readTimerShake128Total/countShake128), readTimerShake128Proc, (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                 ~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:927:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %lu ns (including function call)\n", t_total_shake128_hw_mm_matrix_sa_sw_as_hw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1126:31: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t  SHAKE128  \t|\t   %d   \t\t|\t   %u   \t|\t\t\t   %d   \t\t\t|\t   %d   \t\t|\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", countShake128, readTimerShake128Total, (readTimerShake128Total/countShake128), readTimerShake128Proc, (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:944:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %lu ns (including function call)\n", t_keypair_shake128_sw_matrix_sa_hw_as_hw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1126:31: warning: format '%d' expects argument of type 'int', but argument 5 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t  SHAKE128  \t|\t   %d   \t\t|\t   %u   \t|\t\t\t   %d   \t\t\t|\t   %d   \t\t|\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", countShake128, readTimerShake128Total, (readTimerShake128Total/countShake128), readTimerShake128Proc, (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                 ~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:961:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using Shake128 SW and Matrix SA_SW AS_SW is %lu ns (including function call)\n", t_total_shake128_hw_mm_matrix_sa_hw_as_hw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1126:31: warning: format '%d' expects argument of type 'int', but argument 6 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t  SHAKE128  \t|\t   %d   \t\t|\t   %u   \t|\t\t\t   %d   \t\t\t|\t   %d   \t\t|\t\t\t\t%d  \t\t\t\t|\t\t\t%lu.%03lu\n", countShake128, readTimerShake128Total, (readTimerShake128Total/countShake128), readTimerShake128Proc, (readTimerShake128Proc/countShake128), wholeShake128HW, thousandthsShake128HW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1006:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_sw_as_hw, t_enc_shake128_sw_matrix_sa_sw_as_hw, t_dec_shake128_sw_matrix_sa_sw_as_hw, t_total_shake128_sw_matrix_sa_sw_as_hw, wholeShake128SwMatrixSaSwAsHw, thousandthsShake128SwMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1128:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixSa, readTimerMatrixSaTotal, (readTimerMatrixSaTotal/countMatrixSa), readTimerMatrixSaProc, (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~
+../src/include/test_kem.c:1006:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_sw_as_hw, t_enc_shake128_sw_matrix_sa_sw_as_hw, t_dec_shake128_sw_matrix_sa_sw_as_hw, t_total_shake128_sw_matrix_sa_sw_as_hw, wholeShake128SwMatrixSaSwAsHw, thousandthsShake128SwMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1128:31: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixSa, readTimerMatrixSaTotal, (readTimerMatrixSaTotal/countMatrixSa), readTimerMatrixSaProc, (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                 ~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1006:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_sw_as_hw, t_enc_shake128_sw_matrix_sa_sw_as_hw, t_dec_shake128_sw_matrix_sa_sw_as_hw, t_total_shake128_sw_matrix_sa_sw_as_hw, wholeShake128SwMatrixSaSwAsHw, thousandthsShake128SwMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1128:31: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixSa, readTimerMatrixSaTotal, (readTimerMatrixSaTotal/countMatrixSa), readTimerMatrixSaProc, (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1006:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_sw_as_hw, t_enc_shake128_sw_matrix_sa_sw_as_hw, t_dec_shake128_sw_matrix_sa_sw_as_hw, t_total_shake128_sw_matrix_sa_sw_as_hw, wholeShake128SwMatrixSaSwAsHw, thousandthsShake128SwMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1128:31: warning: format '%d' expects argument of type 'int', but argument 5 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixSa, readTimerMatrixSaTotal, (readTimerMatrixSaTotal/countMatrixSa), readTimerMatrixSaProc, (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                 ~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1008:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_sw, t_enc_shake128_sw_matrix_sa_hw_as_sw, t_dec_shake128_sw_matrix_sa_hw_as_sw, t_total_shake128_sw_matrix_sa_hw_as_sw, wholeShake128SwMatrixSaHwAsSw, thousandthsShake128SwMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1128:31: warning: format '%d' expects argument of type 'int', but argument 6 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix SA\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixSa, readTimerMatrixSaTotal, (readTimerMatrixSaTotal/countMatrixSa), readTimerMatrixSaProc, (readTimerMatrixSaProc/countMatrixSa), wholeMatrixSaHW, thousandthsMatrixSaHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1008:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_sw, t_enc_shake128_sw_matrix_sa_hw_as_sw, t_dec_shake128_sw_matrix_sa_hw_as_sw, t_total_shake128_sw_matrix_sa_hw_as_sw, wholeShake128SwMatrixSaHwAsSw, thousandthsShake128SwMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1130:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixAs, readTimerMatrixAsTotal, (readTimerMatrixAsTotal/countMatrixAs), readTimerMatrixAsProc, (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~
+../src/include/test_kem.c:1008:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_sw, t_enc_shake128_sw_matrix_sa_hw_as_sw, t_dec_shake128_sw_matrix_sa_hw_as_sw, t_total_shake128_sw_matrix_sa_hw_as_sw, wholeShake128SwMatrixSaHwAsSw, thousandthsShake128SwMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1130:31: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixAs, readTimerMatrixAsTotal, (readTimerMatrixAsTotal/countMatrixAs), readTimerMatrixAsProc, (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                 ~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1008:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_sw, t_enc_shake128_sw_matrix_sa_hw_as_sw, t_dec_shake128_sw_matrix_sa_hw_as_sw, t_total_shake128_sw_matrix_sa_hw_as_sw, wholeShake128SwMatrixSaHwAsSw, thousandthsShake128SwMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1130:31: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixAs, readTimerMatrixAsTotal, (readTimerMatrixAsTotal/countMatrixAs), readTimerMatrixAsProc, (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1010:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_hw, t_enc_shake128_sw_matrix_sa_hw_as_hw, t_dec_shake128_sw_matrix_sa_hw_as_hw, t_total_shake128_sw_matrix_sa_hw_as_hw, wholeShake128SwMatrixSaHwAsHw, thousandthsShake128SwMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1130:31: warning: format '%d' expects argument of type 'int', but argument 5 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixAs, readTimerMatrixAsTotal, (readTimerMatrixAsTotal/countMatrixAs), readTimerMatrixAsProc, (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                 ~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1010:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_hw, t_enc_shake128_sw_matrix_sa_hw_as_hw, t_dec_shake128_sw_matrix_sa_hw_as_hw, t_total_shake128_sw_matrix_sa_hw_as_hw, wholeShake128SwMatrixSaHwAsHw, thousandthsShake128SwMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:1130:31: warning: format '%d' expects argument of type 'int', but argument 6 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
-   print_debug(DEBUG_TEST_KEM, "\t\t Matrix AS\t\t|\t\t   %d   \t\t\t|\t   %u   \t|\t\t   %d   \t\t|\t   %d   \t\t|\t\t\t%d  \t\t\t|\t\t\t%lu.%03lu\n", countMatrixAs, readTimerMatrixAsTotal, (readTimerMatrixAsTotal/countMatrixAs), readTimerMatrixAsProc, (readTimerMatrixAsProc/countMatrixAs), wholeMatrixAsHW, thousandthsMatrixAsHW);
-                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/test_kem.c:1010:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_hw, t_enc_shake128_sw_matrix_sa_hw_as_hw, t_dec_shake128_sw_matrix_sa_hw_as_hw, t_total_shake128_sw_matrix_sa_hw_as_hw, wholeShake128SwMatrixSaHwAsHw, thousandthsShake128SwMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
     printf(__VA_ARGS__); \
            ^~~~~~~~~~~
-../src/include/test_kem.c:594:6: warning: unused variable 'readTimer' [-Wunused-variable]
+../src/include/test_kem.c:1010:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t\t  SW  \t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_sw_matrix_sa_hw_as_hw, t_enc_shake128_sw_matrix_sa_hw_as_hw, t_dec_shake128_sw_matrix_sa_hw_as_hw, t_total_shake128_sw_matrix_sa_hw_as_hw, wholeShake128SwMatrixSaHwAsHw, thousandthsShake128SwMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1012:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw, t_total_shake128_hw_mm_matrix_sa_sw_as_sw, wholeShake128HwMMMatrixSaSwAsSw, thousandthsShake128HwMMMatrixSaSwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1012:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw, t_total_shake128_hw_mm_matrix_sa_sw_as_sw, wholeShake128HwMMMatrixSaSwAsSw, thousandthsShake128HwMMMatrixSaSwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1012:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw, t_total_shake128_hw_mm_matrix_sa_sw_as_sw, wholeShake128HwMMMatrixSaSwAsSw, thousandthsShake128HwMMMatrixSaSwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1012:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw, t_total_shake128_hw_mm_matrix_sa_sw_as_sw, wholeShake128HwMMMatrixSaSwAsSw, thousandthsShake128HwMMMatrixSaSwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1014:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw, t_enc_shake128_hw_mm_matrix_sa_sw_as_hw, t_dec_shake128_hw_mm_matrix_sa_sw_as_hw, t_total_shake128_hw_mm_matrix_sa_sw_as_hw, wholeShake128HwMMMatrixSaSwAsHw, thousandthsShake128HwMMMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1014:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw, t_enc_shake128_hw_mm_matrix_sa_sw_as_hw, t_dec_shake128_hw_mm_matrix_sa_sw_as_hw, t_total_shake128_hw_mm_matrix_sa_sw_as_hw, wholeShake128HwMMMatrixSaSwAsHw, thousandthsShake128HwMMMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1014:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw, t_enc_shake128_hw_mm_matrix_sa_sw_as_hw, t_dec_shake128_hw_mm_matrix_sa_sw_as_hw, t_total_shake128_hw_mm_matrix_sa_sw_as_hw, wholeShake128HwMMMatrixSaSwAsHw, thousandthsShake128HwMMMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1014:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_SW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_sw_as_hw, t_enc_shake128_hw_mm_matrix_sa_sw_as_hw, t_dec_shake128_hw_mm_matrix_sa_sw_as_hw, t_total_shake128_hw_mm_matrix_sa_sw_as_hw, wholeShake128HwMMMatrixSaSwAsHw, thousandthsShake128HwMMMatrixSaSwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1016:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw, t_enc_shake128_hw_mm_matrix_sa_hw_as_sw, t_dec_shake128_hw_mm_matrix_sa_hw_as_sw, t_total_shake128_hw_mm_matrix_sa_hw_as_sw, wholeShake128HwMMMatrixSaHwAsSw, thousandthsShake128HwMMMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1016:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw, t_enc_shake128_hw_mm_matrix_sa_hw_as_sw, t_dec_shake128_hw_mm_matrix_sa_hw_as_sw, t_total_shake128_hw_mm_matrix_sa_hw_as_sw, wholeShake128HwMMMatrixSaHwAsSw, thousandthsShake128HwMMMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1016:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw, t_enc_shake128_hw_mm_matrix_sa_hw_as_sw, t_dec_shake128_hw_mm_matrix_sa_hw_as_sw, t_total_shake128_hw_mm_matrix_sa_hw_as_sw, wholeShake128HwMMMatrixSaHwAsSw, thousandthsShake128HwMMMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1016:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_SW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_sw, t_enc_shake128_hw_mm_matrix_sa_hw_as_sw, t_dec_shake128_hw_mm_matrix_sa_hw_as_sw, t_total_shake128_hw_mm_matrix_sa_hw_as_sw, wholeShake128HwMMMatrixSaHwAsSw, thousandthsShake128HwMMMatrixSaHwAsSw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1018:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw, t_enc_shake128_hw_mm_matrix_sa_hw_as_hw, t_dec_shake128_hw_mm_matrix_sa_hw_as_hw, t_total_shake128_hw_mm_matrix_sa_hw_as_hw, wholeShake128HwMMMatrixSaHwAsHw, thousandthsShake128HwMMMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1018:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw, t_enc_shake128_hw_mm_matrix_sa_hw_as_hw, t_dec_shake128_hw_mm_matrix_sa_hw_as_hw, t_total_shake128_hw_mm_matrix_sa_hw_as_hw, wholeShake128HwMMMatrixSaHwAsHw, thousandthsShake128HwMMMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1018:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw, t_enc_shake128_hw_mm_matrix_sa_hw_as_hw, t_dec_shake128_hw_mm_matrix_sa_hw_as_hw, t_total_shake128_hw_mm_matrix_sa_hw_as_hw, wholeShake128HwMMMatrixSaHwAsHw, thousandthsShake128HwMMMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:1018:31: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'unsigned int' [-Wformat=]
+   print_debug(DEBUG_TEST_KEM, "\t HW MM\t\t|\t SA_HW AS_HW  \t|\t\t\t %lu \t\t|\t\t\t %lu \t\t|\t\t\t %lu \t\t\t|\t\t %lu \t\t|\t\t\t %lu.%03lu\n", t_keypair_shake128_hw_mm_matrix_sa_hw_as_hw, t_enc_shake128_hw_mm_matrix_sa_hw_as_hw, t_dec_shake128_hw_mm_matrix_sa_hw_as_hw, t_total_shake128_hw_mm_matrix_sa_hw_as_hw, wholeShake128HwMMMatrixSaHwAsHw, thousandthsShake128HwMMMatrixSaHwAsHw);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/include/global_def.h:107:11: note: in definition of macro 'print_debug'
+    printf(__VA_ARGS__); \
+           ^~~~~~~~~~~
+../src/include/test_kem.c:621:6: warning: unused variable 'readTimer' [-Wunused-variable]
   u32 readTimer;
       ^~~~~~~~~
 Finished building: ../src/include/test_kem.c
- 
-Building file: ../src/include/util.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/util.d" -MT"src/include/util.o" -o "src/include/util.o" "../src/include/util.c"
-Finished building: ../src/include/util.c
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building file: ../src/platform.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-Finished building: ../src/platform.c
  
 Building target: frodo_sdk.elf
 Invoking: ARM v7 gcc linker
@@ -447,6 +230,30 @@ Finished building target: frodo_sdk.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 129088	   2856	2104592	2236536	 222078	frodo_sdk.elf
+ 116384	   2856	2104560	2223800	 21eeb8	frodo_sdk.elf
+Finished building: frodo_sdk.elf.size
+ 
+20:18:53 **** Incremental Build of configuration Debug for project frodo_sdk ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/include/test_kem.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/include/test_kem.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../frodo_sdk_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/include/test_kem.d" -MT"src/include/test_kem.o" -o "src/include/test_kem.o" "../src/include/test_kem.c"
+../src/include/test_kem.c: In function 'kem_test':
+../src/include/test_kem.c:621:6: warning: unused variable 'readTimer' [-Wunused-variable]
+  u32 readTimer;
+      ^~~~~~~~~
+Finished building: ../src/include/test_kem.c
+ 
+Building target: frodo_sdk.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../frodo_sdk_bsp/ps7_cortexa9_0/lib -o "frodo_sdk.elf"  ./src/include/fips202.o ./src/include/frodo_macrify.o ./src/include/keccak_f1600.o ./src/include/kem.o ./src/include/noise.o ./src/include/random.o ./src/include/test_KEM640.o ./src/include/test_kem.o ./src/include/util.o  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: frodo_sdk.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size frodo_sdk.elf  |tee "frodo_sdk.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 116192	   2856	2104560	2223608	 21edf8	frodo_sdk.elf
 Finished building: frodo_sdk.elf.size
  

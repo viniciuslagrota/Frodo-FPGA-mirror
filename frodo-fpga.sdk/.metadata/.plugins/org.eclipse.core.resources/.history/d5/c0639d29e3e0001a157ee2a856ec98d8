@@ -623,9 +623,9 @@ int kem_test(const char *named_parameters, int iterations)
 //	uint16_t CDF_TABLE[13] = {4643, 13363, 20579, 25843, 29227, 31145, 32103, 32525, 32689, 32745, 32762, 32766, 32767};
 //	uint16_t CDF_TABLE_LEN = 13;
 
-//	// measure the counting overhead:
-//	overhead = get_cyclecount();
-//	overhead = get_cyclecount() - overhead;
+	// measure the counting overhead:
+	overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
 
 	uint32_t t_keypair_shake128_sw_matrix_sa_sw_as_sw = 0, t_enc_shake128_sw_matrix_sa_sw_as_sw = 0, t_dec_shake128_sw_matrix_sa_sw_as_sw = 0, t_total_shake128_sw_matrix_sa_sw_as_sw = 0;
 	uint32_t t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_total_shake128_hw_mm_matrix_sa_sw_as_sw = 0;

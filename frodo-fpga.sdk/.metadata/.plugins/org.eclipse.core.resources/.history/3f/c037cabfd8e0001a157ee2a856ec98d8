@@ -53,8 +53,8 @@ extern uint16_t CDF_TABLE_LEN;
 	#define ENABLE_TEST_SHAKE			1
 
 #define ENABLE_KEM_TEST				1
-#define ENABLE_HW_TIMER				0
-#define ENABLE_SW_TIMER				0
+#define ENABLE_HW_TIMER				1
+#define ENABLE_SW_TIMER				1
 //Just used for debug
 #define ENABLE_MATRIX_SW			0
 #define ENABLE_MATRIX_HW			0
@@ -180,9 +180,9 @@ u32 *memoryMMshake;
 //	Prototypes
 //
 //////////////////////////////////////////////
-void resetTimer(XGpio * pStruct);
-void startTimer(XGpio * pStruct);
-void stopTimer(XGpio * pStruct);
-u32 getTimer(XGpio * pStruct);
+void resetGeneralTimer();
+void startGeneralTimer();
+void stopGeneralTimer();
+u32 getGeneralTimer();
 
 #endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */

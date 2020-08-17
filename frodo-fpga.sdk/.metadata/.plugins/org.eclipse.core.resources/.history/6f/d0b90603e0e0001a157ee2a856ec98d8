@@ -589,7 +589,7 @@ u32 getTimer(XGpio * pStruct)
 	return XGpio_DiscreteRead(pStruct, 1);
 }
 
-uint32_t start_crypto_kem_keypair(unsigned char * pk, unsigned char * sk)
+unsigned int start_crypto_kem_keypair(unsigned char * pk, unsigned char * sk)
 {
 	resetTimer(&global_timer_control);
 	startTimer(&global_timer_control);
@@ -598,7 +598,7 @@ uint32_t start_crypto_kem_keypair(unsigned char * pk, unsigned char * sk)
 	return getTimer(&global_timer) * 10; //x10 ticks to ns
 }
 
-uint32_t start_crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk)
+unsigned int start_crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsigned char *pk)
 {
 	resetTimer(&global_timer_control);
 	startTimer(&global_timer_control);
@@ -607,7 +607,7 @@ uint32_t start_crypto_kem_enc(unsigned char *ct, unsigned char *ss, const unsign
 	return getTimer(&global_timer) * 10; //x10 ticks to ns
 }
 
-uint32_t start_crypto_kem_dec(unsigned char *ss, const unsigned char *ct, const unsigned char *sk)
+unsigned int start_crypto_kem_dec(unsigned char *ss, const unsigned char *ct, const unsigned char *sk)
 {
 	resetTimer(&global_timer_control);
 	startTimer(&global_timer_control);
@@ -623,9 +623,9 @@ int kem_test(const char *named_parameters, int iterations)
 //	uint16_t CDF_TABLE[13] = {4643, 13363, 20579, 25843, 29227, 31145, 32103, 32525, 32689, 32745, 32762, 32766, 32767};
 //	uint16_t CDF_TABLE_LEN = 13;
 
-//	// measure the counting overhead:
-//	overhead = get_cyclecount();
-//	overhead = get_cyclecount() - overhead;
+	// measure the counting overhead:
+	overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
 
 	uint32_t t_keypair_shake128_sw_matrix_sa_sw_as_sw = 0, t_enc_shake128_sw_matrix_sa_sw_as_sw = 0, t_dec_shake128_sw_matrix_sa_sw_as_sw = 0, t_total_shake128_sw_matrix_sa_sw_as_sw = 0;
 	uint32_t t_keypair_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_enc_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_dec_shake128_hw_mm_matrix_sa_sw_as_sw = 0, t_total_shake128_hw_mm_matrix_sa_sw_as_sw = 0;
