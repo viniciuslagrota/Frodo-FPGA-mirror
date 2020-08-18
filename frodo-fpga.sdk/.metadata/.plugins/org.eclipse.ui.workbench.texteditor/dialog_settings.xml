@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="matrix_sa_time" key="selection"/>
+		<item value="t_enc_shake128_sw_matrix_sa_sw_as_sw" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="matrix_sa_time"/>
-			<item value="readTimerMatrixSaTotal"/>
-			<item value="t_matrix_as_sw_acc"/>
-			<item value="t_shake128_sw_acc"/>
-			<item value="readTimer"/>
-			<item value="read_timer"/>
-			<item value="u32AccTime"/>
-			<item value="t_matrix_sa_hw_acc"/>
+			<item value="t_enc_shake128_sw_matrix_sa_sw_as_sw"/>
+			<item value="t_total_shake128_sw_matrix_sa_sw_as_sw"/>
+			<item value="%d"/>
+			<item value="is %d ns"/>
+			<item value="t_dec_shake128_sw_matrix_sa_sw_as_sw"/>
+			<item value="t_keypair_shake128_sw_matrix_sa_sw_as_sw"/>
+			<item value="t_enc_shake128_sw_matrix_sa_sw_as_hw"/>
+			<item value="start_crypto_kem_enc"/>
 		</list>
 		<list key="replacehistory">
-			<item value="taken"/>
-			<item value="u32LocalTime"/>
-			<item value="u32LocalTimeAcc"/>
-			<item value="Shake128"/>
-			<item value="shake128_"/>
-			<item value="SHAKE128_"/>
-			<item value="SHAK128"/>
-			<item value="t_shake128"/>
+			<item value="%lu"/>
+			<item value="is %lu ns"/>
+			<item value=""/>
+			<item value="startTimer(&amp;general_hw_timer_control);"/>
+			<item value="startTimer();"/>
+			<item value="resetTimer(&amp;general_hw_timer_control);"/>
+			<item value="resetTimer();"/>
+			<item value="getTimer(&amp;general_hw_timer_control)"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="277" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="370" key="DIALOG_HEIGHT"/>
-		<item value="816" key="DIALOG_X_ORIGIN"/>
-		<item value="496" key="DIALOG_Y_ORIGIN"/>
+		<item value="576" key="DIALOG_X_ORIGIN"/>
+		<item value="484" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
