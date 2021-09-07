@@ -1,4 +1,14 @@
-17:07:16 **** Incremental Build of configuration Debug for project frodo-server ****
+18:04:43 **** Incremental Build of configuration Debug for project frodo-server ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:05:30 **** Incremental Build of configuration Debug for project frodo-server ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:06:04 **** Incremental Build of configuration Debug for project frodo-client ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  

@@ -71,7 +71,8 @@ void configTimer(XGpio_Config * pConfigStruct, XGpio * pGpioStruct, uint8_t ui8D
 {
 	pConfigStruct = XGpio_LookupConfig(ui8DeviceId);
 	XGpio_CfgInitialize(pGpioStruct, pConfigStruct, pConfigStruct->BaseAddress);
-	XGpio_DiscreteWrite(pGpioStruct, ui8Channel, 0x0); //Set enable bit and reset bit low.
+	XGpio_DiscreteWrite(pGpioStruct, 0x1, 0x0); //Set enable bit and reset bit low.
+	XGpio_DiscreteWrite(pGpioStruct, 0x2, 0x0); //Set enable bit and reset bit low.
 }
 
 //////////////////////////////////////////////
@@ -93,7 +94,7 @@ void resetTimer(XGpio * pStruct, uint8_t ui8Channel)
 //////////////////////////////////////////////
 void startTimer(XGpio * pStruct, uint8_t ui8Channel)
 {
-	XGpio_DiscreteWrite(pStruct, ui8Channel, 0x2); //Set enable bit high.
+	XGpio_DiscreteWrite(pStruct, ui8Channel, 0x1); //Set enable bit high.
 }
 
 //////////////////////////////////////////////

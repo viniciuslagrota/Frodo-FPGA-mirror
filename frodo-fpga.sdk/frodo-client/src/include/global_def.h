@@ -96,6 +96,8 @@ extern uint16_t CDF_TABLE_LEN;
 //////////////////////////////////////////////
 #define DEBUG_GLOBAL_ENABLED 		1
 #define DEBUG_ERROR					1
+//Frodo
+#define DEBUG_FRODO					1
 //Main
 #define DEBUG_MAIN					1
 //Test KEM

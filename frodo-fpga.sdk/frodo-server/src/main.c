@@ -500,15 +500,15 @@ int main(void)
 				print_debug(DEBUG_MAIN, "Generating new key pair...\r\n");
 
 				//Start timer
-				resetTimer(&XGpioGlobalTimer, 1);
-				u32Timer = getTimer(&XGpioGlobalTimer, 1);
+				resetTimer(&global_timer_control, 2);
+				u32Timer = getTimer(&global_timer, 1);
 				print_debug(DEBUG_MAIN, "Reset Timer SW: %ld ns\n", u32Timer * HW_CLOCK_PERIOD);
-				startTimer(&XGpioGlobalTimer, 1);
+				startTimer(&global_timer_control, 1);
 
 				//Generate key pair
 				crypto_kem_keypair(pk, sk);
 
-#if DEBUG_KYBER == 1
+#if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "Public key: ");
 				for(int i = 0; i < CRYPTO_PUBLICKEYBYTES; i++)
 					printf("%x", pk[i]);
@@ -529,7 +529,7 @@ int main(void)
 			case CALCULATE_SHARED_SECRET:
 				//Check CT received
 				print_debug(DEBUG_MAIN, "Calculating shared secret...\r\n");
-#if DEBUG_KYBER == 1
+#if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "ct received: ");
 				for(int i = 0; i < CRYPTO_CIPHERTEXTBYTES; i++)
 					printf("%x", ct[i]);
@@ -540,13 +540,13 @@ int main(void)
 				crypto_kem_dec(key_a, ct, sk);
 
 				//Stop timer
-				stopTimer(&XGpioGlobalTimer, 1);
-				u32Timer = getTimer(&XGpioGlobalTimer, 1) * HW_CLOCK_PERIOD;
+				stopTimer(&global_timer_control, 1);
+				u32Timer = getTimer(&global_timer, 1) * HW_CLOCK_PERIOD;
 				floatToIntegers((double)u32Timer/1000000, 		&ui32Integer, &ui32Fraction);
 				print_debug(DEBUG_MAIN, "Timer (hw) to process KEM (server side): %lu.%03lu ms\n", ui32Integer, ui32Fraction);
 
 				//Check shared secret
-#if DEBUG_KYBER == 1
+#if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "key_a calculated: ");
 				for(int i = 0; i < CRYPTO_BYTES; i++)
 					printf("%02x", key_a[i]);
@@ -564,7 +564,7 @@ int main(void)
 				incrementNonce(nonce, sSize);
 				printNonce(nonce);
 				aes256ctr_prf(u8AesKeystream, sSize, key_a, nonce);
-#if DEBUG_KYBER == 1
+#if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "aes256 calculated: ");
 				for(int i = 0; i < sSize; i++)
 					printf("%02x", u8AesKeystream[i]);
@@ -630,7 +630,7 @@ int main(void)
 			break;
 			case CALCULATING_CT:
 
-#if DEBUG_KYBER == 1
+#if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "pk rcv: ");
 				for(int i = 0; i < CRYPTO_PUBLICKEYBYTES; i++)
 					print_debug(DEBUG_MAIN, "%x", pk[i]);
@@ -638,14 +638,14 @@ int main(void)
 #endif
 
 				//Start timer
-				resetTimer(&XGpioGlobalTimer, 1);
-				u32Timer = getTimer(&XGpioGlobalTimer, 1);
+				resetTimer(&global_timer_control, 2);
+				u32Timer = getTimer(&global_timer, 1);
 				print_debug(DEBUG_MAIN, "[MAIN] Reset Timer SW: %ld ns\n", u32Timer * HW_CLOCK_PERIOD);
-				startTimer(&XGpioGlobalTimer, 1);
+				startTimer(&global_timer_control, 1);
 
 				crypto_kem_enc(ct, key_b, pk);
 
-#if DEBUG_KYBER == 1
+#if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "ct calculated: ");
 				for(int i = 0; i < CRYPTO_CIPHERTEXTBYTES; i++)
 					print_debug(DEBUG_MAIN, "%x", ct[i]);
@@ -660,8 +660,8 @@ int main(void)
 				transfer_data((char *)ct, CRYPTO_CIPHERTEXTBYTES);
 
 				//Stop timer
-				stopTimer(&XGpioGlobalTimer, 1);
-				u32Timer = getTimer(&XGpioGlobalTimer, 1) * HW_CLOCK_PERIOD;
+				stopTimer(&global_timer_control, 1);
+				u32Timer = getTimer(&global_timer, 1) * HW_CLOCK_PERIOD;
 				floatToIntegers((double)u32Timer/1000000, 		&ui32Integer, &ui32Fraction);
 				print_debug(DEBUG_MAIN, "[MAIN] Timer (hw) to process KEM (server side): %lu.%03lu ms\n", ui32Integer, ui32Fraction);
 
