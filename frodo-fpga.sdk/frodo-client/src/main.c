@@ -38,6 +38,7 @@
 #include "lwip/priv/tcp_priv.h"
 #include "lwip/init.h"
 #include "lwip/inet.h"
+#include "include/test_kem.h"
 
 #if LWIP_IPV6==1
 #include "lwip/ip6_addr.h"
@@ -56,23 +57,113 @@ extern volatile int dhcp_timoutcntr;
 
 //////////////////////////////////////////////
 //
+//	Frodo Variables
+//
+//////////////////////////////////////////////
+extern enum state st;
+extern uint8_t pk[CRYPTO_PUBLICKEYBYTES];
+#if SERVER_INIT == 0
+extern uint8_t sk[CRYPTO_SECRETKEYBYTES];
+#endif
+extern uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
+#if SERVER_INIT == 0
+extern uint8_t key_a[CRYPTO_BYTES];
+#else
+extern uint8_t key_b[CRYPTO_BYTES];
+#endif
+
+//////////////////////////////////////////////
+//
 //	System Variables
 //
 //////////////////////////////////////////////
+extern XGpio axiStartDone;
+extern XGpio axiStartDoneMM;
+extern XGpio_Config * ConfigPtr0;
+extern XGpio_Config * ConfigPtr1;
+extern XGpio_Config * ConfigPtr2;
+extern XGpio_Config * ConfigPtr3;
+extern XGpio_Config * ConfigPtr4;
+extern XGpio_Config * ConfigPtr5;
+extern XGpio_Config * ConfigPtr6;
+extern XGpio_Config * ConfigPtr7;
+extern XGpio_Config * ConfigPtr8;
+extern XGpio_Config * ConfigPtr9;
+extern XGpio_Config * ConfigPtr10;
+extern XGpio_Config * ConfigPtr11;
+extern XGpio_Config * ConfigPtr12;
+extern XGpio_Config * ConfigPtr13;
+extern XGpio keccak_time;
+extern XGpio matrix_sa_time;
+extern XGpio matrix_as_time;
+extern XGpio shake128_time;
+extern XGpio reset_matrix_sa_time;
+extern XGpio reset_matrix_as_time;
+extern XGpio reset_shake128_time;
+extern XGpio axiStartBusyMatrix;
+extern XGpio axiStartBusyMatrix2;
+extern XGpio axiStartBusyShake;
+extern XGpio axiInlenOutlen;
+extern XGpio general_hw_timer_control;
+extern XGpio general_hw_timer;
+extern XGpio global_timer_control;
+extern XGpio global_timer;
+extern u32 *memoryMMkeccak;
+extern u32 *memoryMatrixS;
+extern u32 *memoryMatrixA;
+extern u32 *memoryMatrixB;
+extern u32 *memoryMatrixA2;
+extern u32 *memoryMatrixS2;
+extern u32 *memoryMatrixB2;
+extern u32 *memoryMMshake;
+
+extern XGpio_Config * XGpioConfigPtrGlobalTimer;
+extern XGpio XGpioGlobalTimer;
+
 extern XUartPs_Config * XUartConfig0;
 extern XUartPs XUart0;
 
 extern u8 *TxBufferPtr;
 extern u8 *RxBufferPtr;
 
-extern u32 u32SystemState;
-
 extern volatile int TcpFastTmrFlag;
 extern volatile int TcpSlowTmrFlag;
 
+//Timer
+u32 u32Timer;
+uint32_t ui32Integer, ui32Fraction;
+
+//////////////////////////////////////////////
+//
+//	Software timer
+//
+//////////////////////////////////////////////
+XScuTimer xTimer;
+XScuTimer_Config *xTimerConfig;
+int timerValue;
+u32 u32CounterMinutes = 0;
+
+//////////////////////////////////////////////
+//
+//	AES
+//
+//////////////////////////////////////////////
+extern uint8_t u8AesKeystream[1024];
+uint8_t nonce[12] = {0x0};
+
+extern char cPlainText[1024];
+extern char cCipherText[1024];
+char aux[32] = "Testando";
+
+//////////////////////////////////////////////
+//
+//	Prototypes
+//
+//////////////////////////////////////////////
 void platform_enable_interrupts(void);
 void start_application(void);
-void transfer_data(void);
+void transfer_perf_data(void);
+void transfer_data(char * pcBuffer, u16_t u16BufferLen);
 void print_app_header(void);
 
 #if defined (__arm__) && !defined (ARMR5)
@@ -90,6 +181,12 @@ int IicPhyReset(void);
 #endif
 
 struct netif server_netif;
+
+//////////////////////////////////////////////
+//
+//	Functions
+//
+//////////////////////////////////////////////
 
 #if LWIP_IPV6==1
 static void print_ipv6(char *msg, ip_addr_t *ip)
@@ -132,6 +229,19 @@ static void assign_default_ip(ip_addr_t *ip, ip_addr_t *mask, ip_addr_t *gw)
 }
 #endif /* LWIP_IPV6 */
 
+#if SERVER_INIT == 0 && CHANGE_KEY_TIME != 0
+void configSoftwareTimer()
+{
+	xTimerConfig = XScuTimer_LookupConfig(XPAR_PS7_SCUTIMER_0_DEVICE_ID);
+	XScuTimer_CfgInitialize(&xTimer, xTimerConfig, xTimerConfig->BaseAddr);
+	XScuTimer_DisableAutoReload(&xTimer);
+	XScuTimer_SetPrescaler(&xTimer, PRESCALE);
+	XScuTimer_LoadTimer(&xTimer, TIMER_LOAD_VALUE);
+//	XScuTimer_Start(&xTimer);
+	print_debug(DEBUG_MAIN, "Timer configured.\r\n");
+}
+#endif
+
 int main(void)
 {
 	struct netif *netif;
@@ -166,6 +276,79 @@ int main(void)
 	//---- Initialize LED ----
 	XGpioPs Gpio;
 	ledInit(&Gpio);
+
+	//---- AXI GPIO ---
+	ConfigPtr0 = XGpio_LookupConfig(XPAR_AXI_GPIO_0_DEVICE_ID);
+	XGpio_CfgInitialize(&global_timer_control, ConfigPtr0, ConfigPtr0->BaseAddress);
+	XGpio_DiscreteWrite(&global_timer_control, 1, 0x0); //Set enable bit low.
+	XGpio_DiscreteWrite(&global_timer_control, 2, 0x0); //Set reset bit low.
+
+	ConfigPtr1 = XGpio_LookupConfig(XPAR_AXI_GPIO_1_DEVICE_ID);
+	XGpio_CfgInitialize(&matrix_sa_time, ConfigPtr1, ConfigPtr1->BaseAddress);
+
+	ConfigPtr2 = XGpio_LookupConfig(XPAR_AXI_GPIO_2_DEVICE_ID);
+	XGpio_CfgInitialize(&matrix_as_time, ConfigPtr2, ConfigPtr2->BaseAddress);
+
+	ConfigPtr3 = XGpio_LookupConfig(XPAR_AXI_GPIO_3_DEVICE_ID);
+	XGpio_CfgInitialize(&global_timer, ConfigPtr3, ConfigPtr3->BaseAddress);
+
+	ConfigPtr4 = XGpio_LookupConfig(XPAR_AXI_GPIO_4_DEVICE_ID);
+	XGpio_CfgInitialize(&axiStartBusyMatrix, ConfigPtr4, ConfigPtr4->BaseAddress);
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); //Set start bit low.
+
+	ConfigPtr5 = XGpio_LookupConfig(XPAR_AXI_GPIO_5_DEVICE_ID);
+	XGpio_CfgInitialize(&axiStartBusyMatrix2, ConfigPtr5, ConfigPtr5->BaseAddress);
+	XGpio_DiscreteWrite(&axiStartBusyMatrix2, 1, 0x0); //Set start bit low.
+
+	ConfigPtr6 = XGpio_LookupConfig(XPAR_AXI_GPIO_6_DEVICE_ID);
+	XGpio_CfgInitialize(&axiStartBusyShake, ConfigPtr6, ConfigPtr6->BaseAddress);
+	XGpio_DiscreteWrite(&axiStartBusyShake, 1, 0x0); //Set start bit low.
+
+	ConfigPtr7 = XGpio_LookupConfig(XPAR_AXI_GPIO_7_DEVICE_ID);
+	XGpio_CfgInitialize(&axiInlenOutlen, ConfigPtr7, ConfigPtr7->BaseAddress);
+
+	ConfigPtr8 = XGpio_LookupConfig(XPAR_AXI_GPIO_8_DEVICE_ID);
+	XGpio_CfgInitialize(&shake128_time, ConfigPtr8, ConfigPtr8->BaseAddress);
+
+	ConfigPtr9 = XGpio_LookupConfig(XPAR_AXI_GPIO_9_DEVICE_ID);
+	XGpio_CfgInitialize(&reset_shake128_time, ConfigPtr9, ConfigPtr9->BaseAddress);
+	XGpio_DiscreteWrite(&reset_shake128_time, 1, 0x0); //Set reset bit low.
+	XGpio_DiscreteWrite(&reset_shake128_time, 2, 0x0); //Set reset bit low.
+
+	ConfigPtr10 = XGpio_LookupConfig(XPAR_AXI_GPIO_10_DEVICE_ID);
+	XGpio_CfgInitialize(&reset_matrix_sa_time, ConfigPtr10, ConfigPtr10->BaseAddress);
+	XGpio_DiscreteWrite(&reset_matrix_sa_time, 1, 0x0); //Set reset bit low.
+	XGpio_DiscreteWrite(&reset_matrix_sa_time, 2, 0x0); //Set reset bit low.
+
+	ConfigPtr11 = XGpio_LookupConfig(XPAR_AXI_GPIO_11_DEVICE_ID);
+	XGpio_CfgInitialize(&reset_matrix_as_time, ConfigPtr11, ConfigPtr11->BaseAddress);
+	XGpio_DiscreteWrite(&reset_matrix_as_time, 1, 0x0); //Set reset bit low.
+	XGpio_DiscreteWrite(&reset_matrix_as_time, 2, 0x0); //Set reset bit low.
+
+	ConfigPtr12 = XGpio_LookupConfig(XPAR_AXI_GPIO_12_DEVICE_ID);
+	XGpio_CfgInitialize(&general_hw_timer_control, ConfigPtr12, ConfigPtr12->BaseAddress);
+	XGpio_DiscreteWrite(&general_hw_timer_control, 1, 0x0); //Set enable bit low.
+	XGpio_DiscreteWrite(&general_hw_timer_control, 2, 0x0); //Set reset bit low.
+
+	ConfigPtr13 = XGpio_LookupConfig(XPAR_AXI_GPIO_13_DEVICE_ID);
+	XGpio_CfgInitialize(&general_hw_timer, ConfigPtr13, ConfigPtr13->BaseAddress);
+
+	//---- AXI MM ----
+//	memoryMMkeccak = (u32 *) XPAR_KECCAK_F1600_MM_IP_0_S00_AXI_BASEADDR;
+//	print_debug(DEBUG_ERROR, "[MAIN] Keccak MM initialized.\n");
+
+	memoryMatrixS = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S00_AXI_BASEADDR;
+	memoryMatrixA = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S01_AXI_BASEADDR;
+	memoryMatrixB = (u32 *) XPAR_MATRIX_SA_PLUS_E_MM_IP_0_S02_AXI_BASEADDR;
+	print_debug(DEBUG_ERROR, "[MAIN] Matrix SA initialized.\n");
+
+	memoryMatrixA2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S00_AXI_BASEADDR;
+	memoryMatrixS2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S01_AXI_BASEADDR;
+	memoryMatrixB2 = (u32 *) XPAR_MATRIX_AS_PLUS_E_MM_0_S02_AXI_BASEADDR;
+	print_debug(DEBUG_ERROR, "[MAIN] Matrix AS initialized.\n");
+
+	memoryMMshake = (u32 *) XPAR_SHAKE128_IP_0_S00_AXI_BASEADDR;
+	print_debug(DEBUG_ERROR, "[MAIN] Shake128 initialized.\n");
 
 	//---- Initialize UART0 ----
 	XUartConfig0 = XUartPs_LookupConfig(XPAR_PS7_UART_0_DEVICE_ID);
@@ -268,7 +451,7 @@ int main(void)
 #endif
 
 	xil_printf("\r\n\r\n");
-	xil_printf("-----lwIP RAW Mode TCP Client Application-----\r\n");
+	print_debug(DEBUG_MAIN, "-----lwIP RAW Mode TCP Client Application (TCP MSS: %d)-----\r\n", TCP_MSS);
 
 	/* initialize lwIP */
 	lwip_init();
@@ -328,7 +511,39 @@ int main(void)
 	start_application();
 	xil_printf("\r\n");
 
+#if SERVER_INIT == 0 && CHANGE_KEY_TIME != 0
+	//Software timer
+	configSoftwareTimer();
+#endif
+
+	set_hardware_usage(SHAKE128_HW_MM_MATRIX_SA_HW_AS_HW);
+
 	while (1) {
+
+		//---- Get chip temperature ----
+		getChipTemperature();
+
+		//Blink led
+		XGpioPs_WritePin(&Gpio, ledpin, u32LedState);
+		u32LedState ^= 0x1;
+
+#if SERVER_INIT == 0 && CHANGE_KEY_TIME != 0
+		//Timer
+		timerValue = XScuTimer_GetCounterValue(&xTimer);
+		if(timerValue == 0)
+		{
+//			xil_printf("Timer!!!!!!!!!!!\r\n");
+			XScuTimer_RestartTimer(&xTimer);
+			u32CounterMinutes++;
+			if(u32CounterMinutes >= CHANGE_KEY_TIME)
+			{
+				print_debug(DEBUG_MAIN, "Change key!\r\n");
+				u32CounterMinutes = 0;
+				st = CREATE_KEY_PAIR;
+			}
+		}
+#endif
+
 		if (TcpFastTmrFlag) {
 			tcp_fasttmr();
 			TcpFastTmrFlag = 0;
@@ -338,7 +553,247 @@ int main(void)
 			TcpSlowTmrFlag = 0;
 		}
 		xemacif_input(netif);
-		transfer_data();
+
+#if PERFORMANCE_TEST == 1
+//		//Transfer performance data
+		transfer_perf_data();
+		sleep(5);
+#else
+
+#if SERVER_INIT == 0
+		switch(st)
+		{
+			case WAITING_SERVER_CONNECTION:
+				//Do nothing. Wait connection.
+			break;
+			case CONNECTED_TO_SERVER:
+				print_debug(DEBUG_MAIN, "Connected to server!\r\n");
+				XScuTimer_Start(&xTimer);
+				st = CREATE_KEY_PAIR;
+			break;
+			case CREATE_KEY_PAIR:
+				print_debug(DEBUG_MAIN, "Generating new key pair...\r\n");
+
+				//Start timer
+				resetTimer(&XGpioGlobalTimer, 1);
+				u32Timer = getTimer(&XGpioGlobalTimer, 1);
+				print_debug(DEBUG_MAIN, "Reset Timer SW: %ld ns\n", u32Timer * HW_CLOCK_PERIOD);
+				startTimer(&XGpioGlobalTimer, 1);
+
+				//Generate key pair
+				crypto_kem_keypair(pk, sk);
+
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "Public key: ");
+				for(int i = 0; i < CRYPTO_PUBLICKEYBYTES; i++)
+					printf("%x", pk[i]);
+				printf("\r\n\r\n");
+#endif
+				st = SEND_PK;
+			break;
+			case SEND_PK:
+				//Publish PK
+				transfer_data((char *)pk, CRYPTO_PUBLICKEYBYTES);
+				st = WAITING_CT;
+			break;
+			case WAITING_CT:
+				//Do nothing. Wait for ciphertext.
+			break;
+			case CALCULATE_SHARED_SECRET:
+				//Check CT received
+
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "ct received: ");
+				for(int i = 0; i < CRYPTO_CIPHERTEXTBYTES; i++)
+					printf("%x", ct[i]);
+				printf("\n\r");
+#endif
+
+				//Decapsulation
+				crypto_kem_dec(key_a, ct, sk);
+
+				//Stop timer
+				stopTimer(&XGpioGlobalTimer, 1);
+				u32Timer = getTimer(&XGpioGlobalTimer, 1) * HW_CLOCK_PERIOD;
+				floatToIntegers((double)u32Timer/1000000, 		&ui32Integer, &ui32Fraction);
+				print_debug(DEBUG_MAIN, "Timer (hw) to process KEM (client side): %lu.%03lu ms\n", ui32Integer, ui32Fraction);
+
+				//Check shared secret
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "key_a calculated: ");
+				for(int i = 0; i < CRYPTO_BYTES; i++)
+					printf("%x", key_a[i]);
+				printf("\n\r\n\r");
+#endif
+//				st = CREATE_KEY_PAIR;
+				st = CALCULATE_AES_BLOCK;
+			break;
+			case CALCULATE_AES_BLOCK:
+				nonce[0]++;
+				aes256ctr_prf(u8AesKeystream, sSize, key_a, nonce);
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "aes256 calculated: ");
+				for(int i = 0; i < 32; i++)
+					printf("%02x", u8AesKeystream[i]);
+				printf("\n\r");
+#endif
+				st = WAIT_CIPHERED_DATA;
+			break;
+			case WAIT_CIPHERED_DATA:
+				//Wait messages from client
+			break;
+			case DECIPHER_MESSAGE:
+//				print_debug(DEBUG_MAIN, "Ciphertext (bytes): ");
+//				for(int i = 0; i < 32; i++)
+//				{
+//					print_debug(DEBUG_MAIN, "%02x", cCiphertext[i]);
+//				}
+//				print_debug(DEBUG_MAIN, "\n\r");
+//				print_debug(DEBUG_MAIN, "Plaintext (bytes): ");
+				for(int i = 0; i < 32; i++)
+				{
+					cPlaintext[i] = cCiphertext[i] ^ u8AesKeystream[i];
+//					print_debug(DEBUG_MAIN, "%02x", cPlaintext[i]);
+				}
+//				print_debug(DEBUG_MAIN, "\n\r");
+				print_debug(DEBUG_MAIN, "Achieved plaintext: %s\r\n", cPlaintext);
+				printf("\n\r\n\r");
+
+				st = CALCULATE_AES_BLOCK;
+			break;
+		}
+
+//		sleep(1);
+#else
+		switch(st)
+		{
+			case WAITING_PK:
+				//Do nothing, just wait.
+			break;
+			case CALCULATING_CT:
+				print_debug(DEBUG_MAIN, "Calculating CT...\r\n");
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "pk rcv: ");
+				for(int i = 0; i < CRYPTO_PUBLICKEYBYTES; i++)
+					printf("%x", pk[i]);
+				printf("\n\r\n\r");
+#endif
+
+				//Start timer
+				resetTimer(&XGpioGlobalTimer, 1);
+				u32Timer = getTimer(&XGpioGlobalTimer, 1);
+				print_debug(DEBUG_MAIN, "Reset Timer SW: %ld ns\n", u32Timer * HW_CLOCK_PERIOD);
+				startTimer(&XGpioGlobalTimer, 1);
+
+				crypto_kem_enc(ct, key_b, pk);
+
+				st = SENDING_CT;
+			break;
+			case SENDING_CT:
+				print_debug(DEBUG_MAIN, "Sending CT...\r\n");
+//				transfer_data(cTxBuffer, sizeof(cTxBuffer));
+				transfer_data((char *)ct, CRYPTO_CIPHERTEXTBYTES);
+
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "ct calculated: ");
+				for(int i = 0; i < CRYPTO_CIPHERTEXTBYTES; i++)
+					printf("%x", ct[i]);
+				printf("\n\r");
+#endif
+
+				//Stop timer
+				stopTimer(&XGpioGlobalTimer, 1);
+				u32Timer = getTimer(&XGpioGlobalTimer, 1) * HW_CLOCK_PERIOD;
+				floatToIntegers((double)u32Timer/1000000, 		&ui32Integer, &ui32Fraction);
+				print_debug(DEBUG_MAIN, "Timer (hw) to process KEM (client side): %lu.%03lu ms\n", ui32Integer, ui32Fraction);
+
+				//Check shared secret
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "key_b calculated: ");
+				for(int i = 0; i < CRYPTO_BYTES; i++)
+					printf("%02x", key_b[i]);
+				printf("\n\r");
+#endif
+				print_debug(DEBUG_MAIN, "CT sent!\r\n");
+
+				//Restart nonce
+				memset(nonce, 0x0, 12);
+
+				st = CALCULATE_AES_BLOCK;
+			break;
+			case CALCULATE_AES_BLOCK:
+				print_debug(DEBUG_MAIN, "Calculating AES block...\r\n");
+				incrementNonce(nonce, sSize);
+				printNonce(nonce);
+//				nonce[0]++; //TODO: check this nonce.
+				aes256ctr_prf(u8AesKeystream, sSize, key_b, nonce);
+#if DEBUG_KYBER == 1
+				print_debug(DEBUG_MAIN, "aes256 block calculated: ");
+				for(int i = 0; i < sSize; i++)
+					printf("%02x", u8AesKeystream[i]);
+				printf("\n\r");
+#endif
+				usleep(10000); //Wait 10 ms
+				st = GET_SMW3000_DATA;
+			break;
+			case GET_SMW3000_DATA:
+				print_debug(DEBUG_MAIN, "Getting SMW3000 data...\r\n");
+				rv = smw3000GetAllData();
+				if(rv)
+					print_debug(DEBUG_MAIN, "Failed to get data (rv: 0x%08x).\r\n", rv);
+				else
+					print_debug(DEBUG_MAIN, "Data successfully acquired.\r\n");
+
+				//Print data for debug purpose
+				psmData = smw3000GetDataStruct();
+				smw3000PrintDataStruct(psmData);
+
+				st = CIPHER_MESSAGE;
+			break;
+			case CIPHER_MESSAGE:
+				print_debug(DEBUG_MAIN, "Ciphering message...\r\n");
+				rv = smw3000CipherDataStruct(u8AesKeystream);
+				if(rv)
+					print_debug(DEBUG_MAIN, "Failed to cipher data due to deallocated pointer.\r\n");
+				else
+					print_debug(DEBUG_MAIN, "Data successfully ciphered.\r\n");
+
+				//Print data for debug purpose
+				psmCipheredData = smw3000GetCipheredDataStruct();
+				smw3000PrintDataStruct(psmCipheredData);
+
+
+				//Initialize plaintext
+
+				//TODO: mudar aqui a mensagem que se deseja enviar para o server.
+//				memcpy(cPlaintext, aux, 32);
+//
+//				print_debug(DEBUG_MAIN, "Plaintext: %s\r\n", cPlaintext);
+//				for(int i = 0; i < 32; i++)
+//				{
+//					cCiphertext[i] = cPlaintext[i] ^ u8AesKeystream[i];
+////					print_debug(DEBUG_MAIN, "%02x", cCiphertext[i]);
+//				}
+//				print_debug(DEBUG_MAIN, "Sent ciphertext: %s\r\n", cCiphertext);
+//				printf(DEBUG_MAIN, "\n\r\n\r");
+
+				st = SEND_CIPHER_MESSAGE;
+			break;
+			case SEND_CIPHER_MESSAGE:
+				print_debug(DEBUG_MAIN, "Sending ciphered message...\r\n");
+				transfer_data((char *)psmCipheredData, sSize);
+
+				//Wait to send next message
+				usleep(10000);
+
+				st = CALCULATE_AES_BLOCK;
+			break;
+		}
+#endif
+#endif
+
+
+		//transfer_data();
 	}
 
 	/* never reached */

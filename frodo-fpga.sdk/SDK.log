@@ -48107,3 +48107,5 @@ con
 ----------------End of Script----------------
 
 15:01:17 INFO  : Launch script is exported to file 'C:\Projects\frodo-fpga\frodo-fpga.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_frodo-client.elf_on_local.tcl'
+16:12:44 INFO  : Launching XSCT server: xsct.bat -interactive C:\Projects\frodo-fpga\frodo-fpga.sdk\temp_xsdb_launch_script.tcl
+16:12:47 INFO  : XSCT server has started successfully.
