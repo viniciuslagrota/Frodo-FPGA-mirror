@@ -10,7 +10,6 @@
 
 source frodoBD_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-CRITICAL WARNING: [IP_Flow 19-4648] Error loading IP definition shake128_mm_ip_v1.0 (xilinx.com:user:shake128_mm_ip:1.0): This component is not valid; it has a subcoreRef defined to be the same as its parent.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Projects/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
 Command: synth_design -top frodoBD_wrapper -part xc7z010clg400-1
@@ -19,9 +18,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14124 
+INFO: Helper process launched with PID 8220 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 744.875 ; gain = 177.500
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 746.457 ; gain = 178.727
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'frodoBD_wrapper' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:40]
 INFO: [Synth 8-3491] module 'frodoBD' declared at 'C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/synth/frodoBD.vhd:6737' bound to instance 'frodoBD_i' of component 'frodoBD' [C:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/hdl/frodoBD_wrapper.vhd:67]
@@ -3132,7 +3131,7 @@ WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has un
 WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[29]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:11 ; elapsed = 00:01:14 . Memory (MB): peak = 1205.699 ; gain = 638.324
+Finished RTL Elaboration : Time (s): cpu = 00:01:10 ; elapsed = 00:01:14 . Memory (MB): peak = 1207.434 ; gain = 639.703
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3145,13 +3144,13 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1205.699 ; gain = 638.324
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 1207.434 ; gain = 639.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1205.699 ; gain = 638.324
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 1207.434 ; gain = 639.703
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1807 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -3226,24 +3225,21 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/frodoBD_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1278.926 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1280.883 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1807 instances were transformed.
   FDR => FDRE: 1806 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.364 . Memory (MB): peak = 1278.926 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.356 . Memory (MB): peak = 1280.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:42 ; elapsed = 00:01:45 . Memory (MB): peak = 1278.926 ; gain = 711.551
+Finished Constraint Validation : Time (s): cpu = 00:01:42 ; elapsed = 00:01:46 . Memory (MB): peak = 1280.883 ; gain = 713.152
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:42 ; elapsed = 00:01:45 . Memory (MB): peak = 1278.926 ; gain = 711.551
----------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_19_b2s_rd_cmd_fsm'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2870]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Projects/frodo-fpga/frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2870]
@@ -3306,7 +3302,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'st_reg' using encoding 'on
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'st_reg' using encoding 'sequential' in module 'shake128_core'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:21 ; elapsed = 00:02:26 . Memory (MB): peak = 1278.926 ; gain = 711.551
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:20 ; elapsed = 00:02:25 . Memory (MB): peak = 1280.883 ; gain = 713.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5417,7 +5413,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (matrix_sa_plus_e_mm_ip_0/\U0/matrix_sa_plus_e_mm_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:22 ; elapsed = 00:03:30 . Memory (MB): peak = 1278.926 ; gain = 711.551
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:25 ; elapsed = 00:03:33 . Memory (MB): peak = 1280.883 ; gain = 713.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5546,13 +5542,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:41 ; elapsed = 00:03:50 . Memory (MB): peak = 1278.926 ; gain = 711.551
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:43 ; elapsed = 00:03:52 . Memory (MB): peak = 1280.883 ; gain = 713.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:59 ; elapsed = 00:04:07 . Memory (MB): peak = 1360.480 ; gain = 793.105
+Finished Timing Optimization : Time (s): cpu = 00:04:01 ; elapsed = 00:04:09 . Memory (MB): peak = 1363.914 ; gain = 796.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5643,7 +5639,7 @@ INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance frodoBD_i/i_0/matrix_sa_plus_e_mm_ip_0/U0/matrix_sa_plus_e_mm_ip_v1_0_S02_AXI_inst/true_dual_bram_line_inst/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:12 ; elapsed = 00:04:40 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished Technology Mapping : Time (s): cpu = 00:04:15 ; elapsed = 00:04:42 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5712,7 +5708,7 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:20 ; elapsed = 00:04:48 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished IO Insertion : Time (s): cpu = 00:04:26 ; elapsed = 00:04:54 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -5725,7 +5721,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:20 ; elapsed = 00:04:48 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:26 ; elapsed = 00:04:54 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -5737,25 +5733,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:25 ; elapsed = 00:04:53 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:31 ; elapsed = 00:04:59 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:25 ; elapsed = 00:04:53 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:31 ; elapsed = 00:04:59 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:28 ; elapsed = 00:04:56 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:34 ; elapsed = 00:05:02 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:28 ; elapsed = 00:04:56 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:34 ; elapsed = 00:05:02 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -6065,17 +6061,17 @@ Report Instance Areas:
 |241   |      U0                                                                      |timer_v1_0                                                        |    41|
 +------+------------------------------------------------------------------------------+------------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:28 ; elapsed = 00:04:56 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:34 ; elapsed = 00:05:02 . Memory (MB): peak = 1365.023 ; gain = 797.293
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 109 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:53 ; elapsed = 00:04:38 . Memory (MB): peak = 1361.523 ; gain = 720.922
-Synthesis Optimization Complete : Time (s): cpu = 00:04:28 ; elapsed = 00:04:57 . Memory (MB): peak = 1361.523 ; gain = 794.148
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:00 ; elapsed = 00:04:44 . Memory (MB): peak = 1365.023 ; gain = 723.844
+Synthesis Optimization Complete : Time (s): cpu = 00:04:35 ; elapsed = 00:05:04 . Memory (MB): peak = 1365.023 ; gain = 797.293
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1374 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1376.402 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1379.887 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1109 instances were transformed.
   FDR => FDRE: 1044 instances
@@ -6083,13 +6079,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-1055 Infos, 211 Warnings, 1 Critical Warnings and 0 Errors encountered.
+1055 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:43 ; elapsed = 00:05:13 . Memory (MB): peak = 1376.402 ; gain = 1069.055
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1376.402 ; gain = 0.000
+synth_design: Time (s): cpu = 00:04:50 ; elapsed = 00:05:19 . Memory (MB): peak = 1379.887 ; gain = 1072.086
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1379.887 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Projects/frodo-fpga/frodo-fpga.runs/synth_1/frodoBD_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1376.402 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1379.887 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file frodoBD_wrapper_utilization_synth.rpt -pb frodoBD_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Aug 17 19:10:33 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  7 14:20:37 2021...
