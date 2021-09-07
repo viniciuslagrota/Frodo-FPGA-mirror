@@ -119,6 +119,9 @@
   "../../../bd/frodoBD/ip/frodoBD_axi_gpio_12_0/sim/frodoBD_axi_gpio_12_0.vhd" \
   "../../../bd/frodoBD/ip/frodoBD_axi_gpio_13_0/sim/frodoBD_axi_gpio_13_0.vhd" \
   "../../../bd/frodoBD/sim/frodoBD.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_timer_0_0/sim/frodoBD_timer_0_0.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_0_4/sim/frodoBD_axi_gpio_0_4.vhd" \
+  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_3_0/sim/frodoBD_axi_gpio_3_0.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/frodoBD/ip/frodoBD_tier2_xbar_0_0/sim/frodoBD_tier2_xbar_0_0.v" \
@@ -130,17 +133,6 @@
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/frodoBD/ip/frodoBD_auto_pc_0/sim/frodoBD_auto_pc_0.v" \
--endlib
--makelib ies_lib/axi_mmu_v2_1_17 \
-  "../../../../frodo-fpga.srcs/sources_1/bd/frodoBD/ipshared/b5b8/hdl/axi_mmu_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/frodoBD/ip/frodoBD_s00_mmu_0/sim/frodoBD_s00_mmu_0.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/frodoBD/ip/frodoBD_timer_0_0/sim/frodoBD_timer_0_0.vhd" \
-  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_0_4/sim/frodoBD_axi_gpio_0_4.vhd" \
-  "../../../bd/frodoBD/ip/frodoBD_axi_gpio_3_0/sim/frodoBD_axi_gpio_3_0.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

@@ -6,7 +6,7 @@
 <Project Version="7" Minor="40" Path="c:/projects/frodo-fpga/frodo-fpga.tmp/timer_v1_0_project/timer_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="771f4f0dac214e8a8765002abe5cba2c"/>
+    <Option Name="Id" Val="7779abd0ad004fc3a7771c94c0ad7065"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
