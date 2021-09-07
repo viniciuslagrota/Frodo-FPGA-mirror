@@ -53,11 +53,11 @@ extern uint16_t CDF_TABLE_LEN;
 	#define ENABLE_TEST_SHAKE			1
 
 #define ENABLE_KEM_TEST				1
-#define ENABLE_HW_TIMER				1
-#define ENABLE_SW_TIMER				1
+#define ENABLE_HW_TIMER				0
+#define ENABLE_SW_TIMER				0
 //Just used for debug
 #define ENABLE_MATRIX_SW			0
-#define ENABLE_MATRIX_HW			1
+#define ENABLE_MATRIX_HW			0
 
 //////////////////////////////////////////////
 //
@@ -123,14 +123,26 @@ XGpio_Config * ConfigPtr5;
 XGpio_Config * ConfigPtr6;
 XGpio_Config * ConfigPtr7;
 XGpio_Config * ConfigPtr8;
+XGpio_Config * ConfigPtr9;
+XGpio_Config * ConfigPtr10;
+XGpio_Config * ConfigPtr11;
+XGpio_Config * ConfigPtr12;
+XGpio_Config * ConfigPtr13;
 XGpio keccak_time;
 XGpio matrix_sa_time;
 XGpio matrix_as_time;
 XGpio shake128_time;
+XGpio reset_matrix_sa_time;
+XGpio reset_matrix_as_time;
+XGpio reset_shake128_time;
 XGpio axiStartBusyMatrix;
 XGpio axiStartBusyMatrix2;
 XGpio axiStartBusyShake;
 XGpio axiInlenOutlen;
+XGpio general_hw_timer_control;
+XGpio general_hw_timer;
+XGpio global_timer_control;
+XGpio global_timer;
 u32 *memoryMMkeccak;
 u32 *memoryMatrixS;
 u32 *memoryMatrixA;
@@ -162,5 +174,15 @@ u32 *memoryMMshake;
 #else
     ##error -- missing method for generating matrix A
 #endif
+
+//////////////////////////////////////////////
+//
+//	Prototypes
+//
+//////////////////////////////////////////////
+void resetTimer(XGpio * pStruct);
+void startTimer(XGpio * pStruct);
+void stopTimer(XGpio * pStruct);
+u32 getTimer(XGpio * pStruct);
 
 #endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */

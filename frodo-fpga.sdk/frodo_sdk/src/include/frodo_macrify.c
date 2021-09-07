@@ -6,6 +6,7 @@
  *      Author: Vinicius
  */
 
+#include "global_def.h"
 #include "frodo_macrify.h"
 
 /*************************************************************************************************************
@@ -204,13 +205,8 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
   // Output: out = A*s + e (N x N_BAR)
 
 #if ENABLE_SW_TIMER
-	// measure the counting overhead:
-	unsigned int overhead = get_cyclecount();
-	overhead = get_cyclecount() - overhead;
-	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
-
-	//Start time
-	u32LocalTime = get_cyclecount();
+	resetTimer(&general_hw_timer_control);
+	startTimer(&general_hw_timer_control);
 #endif
 
 	int i, k;
@@ -234,7 +230,8 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 
 #if ENABLE_SW_TIMER
 		//Accumulate time (SHAKE will not accumulate)
-		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+		stopTimer(&general_hw_timer_control);
+		*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 #endif
 
 		seed_A_origin[0] = UINT16_TO_LE(i + 0);
@@ -248,7 +245,8 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 
 #if ENABLE_SW_TIMER
 		//Start time
-		u32LocalTime = get_cyclecount();
+		resetTimer(&general_hw_timer_control);
+		startTimer(&general_hw_timer_control);
 #endif
 
 //		for (k = 0; k < 4 * PARAMS_N; k++) {
@@ -276,11 +274,12 @@ int frodo_mul_add_as_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 	}
 
 #if ENABLE_SW_TIMER
-	//Accumulate time
-	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+	stopTimer(&general_hw_timer_control);
+
+//	print_debug(1, "[AS_HW_IN] Time taken: %lu\n", getTimer(&general_hw_timer_control) * 10);
 
 	//Transfer values
-	*u32AccTime += u32LocalTimeAcc;
+	*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 
 	//Add iteration
 	*u32ItCounter = *u32ItCounter + 1;
@@ -296,13 +295,8 @@ int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
   // Output: out = A*s + e (N x N_BAR)
 
 #if ENABLE_SW_TIMER
-	// measure the counting overhead:
-	unsigned int overhead = get_cyclecount();
-	overhead = get_cyclecount() - overhead;
-	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
-
-	//Start time
-	u32LocalTime = get_cyclecount();
+	resetTimer(&general_hw_timer_control);
+	startTimer(&general_hw_timer_control);
 #endif
 
 	int i, j, k;
@@ -320,7 +314,8 @@ int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 
 #if ENABLE_SW_TIMER
 		//Accumulate time (SHAKE will not accumulate)
-		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+		stopTimer(&general_hw_timer_control);
+		*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 #endif
 
 		seed_A_origin[0] = UINT16_TO_LE(i + 0);
@@ -334,7 +329,8 @@ int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 
 #if ENABLE_SW_TIMER
 		//Start time
-		u32LocalTime = get_cyclecount();
+		resetTimer(&general_hw_timer_control);
+		startTimer(&general_hw_timer_control);
 #endif
 
 		for (k = 0; k < 4 * PARAMS_N; k++) {
@@ -359,11 +355,10 @@ int frodo_mul_add_as_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 	} //for i
 
 #if ENABLE_SW_TIMER
-	//Accumulate time
-	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+	stopTimer(&general_hw_timer_control);
 
 	//Transfer values
-	*u32AccTime += u32LocalTimeAcc;
+	*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 
 	//Add iteration
 	*u32ItCounter = *u32ItCounter + 1;
@@ -725,13 +720,8 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 	// Inputs: s', e' (N_BAR x N)
 	// Output: out = s'*A + e' (N_BAR x N)
 #if ENABLE_SW_TIMER
-	// measure the counting overhead:
-	unsigned int overhead = get_cyclecount();
-	overhead = get_cyclecount() - overhead;
-	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
-
-	//Start time
-	u32LocalTime = get_cyclecount();
+	resetTimer(&general_hw_timer_control);
+	startTimer(&general_hw_timer_control);
 #endif
 
 	int i, j, kk;
@@ -752,7 +742,8 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 
 #if ENABLE_SW_TIMER
 		//Accumulate time (SHAKE will not accumulate)
-		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+		stopTimer(&general_hw_timer_control);
+		*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 #endif
 
 //		print_debug(DEBUG_MATRIX_MM, "kk: %d\n", kk);
@@ -764,13 +755,14 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 		shake128((unsigned char*)(a_cols + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
 		seed_A_origin[0] = UINT16_TO_LE(kk + 3);
 		shake128((unsigned char*)(a_cols + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
-		for (i = 0; i < 4 * PARAMS_N; i++) {
-			a_cols[i] = LE_TO_UINT16(a_cols[i]);
-		}
+//		for (i = 0; i < 4 * PARAMS_N; i++) {
+//			a_cols[i] = LE_TO_UINT16(a_cols[i]);
+//		}
 
 #if ENABLE_SW_TIMER
 		//Start time
-		u32LocalTime = get_cyclecount();
+		resetTimer(&general_hw_timer_control);
+		startTimer(&general_hw_timer_control);
 #endif
 
 		for (i = 0; i < PARAMS_NBAR; i++) {
@@ -788,11 +780,10 @@ int frodo_mul_add_sa_plus_e_SW(uint16_t *out, const uint16_t *s, const uint16_t 
 	} //kk for
 
 #if ENABLE_SW_TIMER
-	//Accumulate time
-	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+	stopTimer(&general_hw_timer_control);
 
 	//Transfer values
-	*u32AccTime += u32LocalTimeAcc;
+	*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 
 	//Add iteration
 	*u32ItCounter = *u32ItCounter + 1;
@@ -849,13 +840,8 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
   // Inputs: s', e' (N_BAR x N)
   // Output: out = s'*A + e' (N_BAR x N)
 #if ENABLE_SW_TIMER
-	// measure the counting overhead:
-	unsigned int overhead = get_cyclecount();
-	overhead = get_cyclecount() - overhead;
-	volatile uint32_t u32LocalTime = 0, u32LocalTimeAcc = 0;
-
-	//Start time
-	u32LocalTime = get_cyclecount();
+	resetTimer(&general_hw_timer_control);
+	startTimer(&general_hw_timer_control);
 #endif
 
 	int i, j, kk;
@@ -889,7 +875,8 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 
 #if ENABLE_SW_TIMER
 		//Accumulate time (SHAKE will not accumulate)
-		u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+		stopTimer(&general_hw_timer_control);
+		*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 #endif
 
 //		print_debug(DEBUG_MATRIX_MM, "kk: %d\n", kk);
@@ -901,13 +888,14 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 		shake128((unsigned char*)(a_cols + 2*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
 		seed_A_origin[0] = UINT16_TO_LE(kk + 3);
 		shake128((unsigned char*)(a_cols + 3*PARAMS_N), (unsigned long long)(2*PARAMS_N), seed_A_separated, 2 + BYTES_SEED_A);
-		for (i = 0; i < 4 * PARAMS_N; i++) {
-			a_cols[i] = LE_TO_UINT16(a_cols[i]);
-		}
+//		for (i = 0; i < 4 * PARAMS_N; i++) {
+//			a_cols[i] = LE_TO_UINT16(a_cols[i]);
+//		}
 
 #if ENABLE_SW_TIMER
 		//Start time
-		u32LocalTime = get_cyclecount();
+		resetTimer(&general_hw_timer_control);
+		startTimer(&general_hw_timer_control);
 #endif
 
 		idx_s_matrix = 0;
@@ -940,11 +928,10 @@ int frodo_mul_add_sa_plus_e_HW(uint16_t *out, const uint16_t *s, const uint16_t 
 	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
 
 #if ENABLE_SW_TIMER
-	//Accumulate time
-	u32LocalTimeAcc += get_cyclecount() - u32LocalTime - overhead;
+	stopTimer(&general_hw_timer_control);
 
 	//Transfer values
-	*u32AccTime += u32LocalTimeAcc;
+	*u32AccTime += getTimer(&general_hw_timer) * 10; //Transform pulses into ns
 
 	//Add iteration
 	*u32ItCounter = *u32ItCounter + 1;
