@@ -1,0 +1,13 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/controller2.vhd,1585150181,vhdl,,,,controller2,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0.vhd,1597667879,vhdl,,,,matrix_as_plus_e_mm_ip_v1_0,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0_S00_AXI.vhd,1584809396,vhdl,,,,matrix_as_plus_e_mm_ip_v1_0_s00_axi,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0_S01_AXI.vhd,1584988920,vhdl,,,,matrix_as_plus_e_mm_ip_v1_0_s01_axi,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/matrix_as_plus_e_mm_ip_v1_0_S02_AXI.vhd,1597667816,vhdl,,,,matrix_as_plus_e_mm_ip_v1_0_s02_axi,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/multiplicator2.vhd,1584969386,vhdl,,,,multiplicator2,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/testbench.vhd,1584903203,vhdl,,,,testbench,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/timer_controller2.vhd,1597668096,vhdl,,,,timer_controller2,,,,,,,,
+c:/projects/ip_repo/matrix_as_plus_e_mm_ip_1.0/hdl/true_single_bram2.vhd,1584809396,vhdl,,,,true_single_bram2,,,,,,,,
