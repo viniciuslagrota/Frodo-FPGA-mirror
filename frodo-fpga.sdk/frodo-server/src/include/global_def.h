@@ -97,7 +97,7 @@ extern uint16_t CDF_TABLE_LEN;
 #define DEBUG_GLOBAL_ENABLED 		1
 #define DEBUG_ERROR					1
 //Frodo
-#define DEBUG_FRODO					1
+#define DEBUG_FRODO					0
 //Main
 #define DEBUG_MAIN					1
 //Test KEM
@@ -259,9 +259,9 @@ uint8_t sk[CRYPTO_SECRETKEYBYTES];
 #endif
 uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
 #if SERVER_INIT == 1
-uint8_t key_a[CRYPTO_BYTES];
+uint8_t key_a[2*CRYPTO_BYTES];
 #else
-uint8_t key_b[CRYPTO_BYTES];
+uint8_t key_b[2*CRYPTO_BYTES];
 #endif
 struct netif *netif;
 

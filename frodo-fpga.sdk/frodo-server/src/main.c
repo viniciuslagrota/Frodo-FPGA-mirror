@@ -65,9 +65,9 @@ extern uint8_t sk[CRYPTO_SECRETKEYBYTES];
 #endif
 extern uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
 #if SERVER_INIT == 1
-extern uint8_t key_a[CRYPTO_BYTES];
+extern uint8_t key_a[2*CRYPTO_BYTES];
 #else
-extern uint8_t key_b[CRYPTO_BYTES];
+extern uint8_t key_b[2*CRYPTO_BYTES];
 #endif
 
 //////////////////////////////////////////////
@@ -548,7 +548,7 @@ int main(void)
 				//Check shared secret
 #if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "key_a calculated: ");
-				for(int i = 0; i < CRYPTO_BYTES; i++)
+				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
 					printf("%02x", key_a[i]);
 				printf("\n\r");
 #endif
@@ -560,9 +560,9 @@ int main(void)
 			break;
 			case CALCULATE_AES_BLOCK:
 				print_debug(DEBUG_MAIN, "Calculating AES block...\r\n");
-//				nonce[0]++;
 				incrementNonce(nonce, sSize);
 				printNonce(nonce);
+				memset(&key_a[16], 0x0, CRYPTO_BYTES);
 				aes256ctr_prf(u8AesKeystream, sSize, key_a, nonce);
 #if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "aes256 calculated: ");
@@ -677,7 +677,7 @@ int main(void)
 			case CALCULATE_AES_BLOCK:
 				nonce[0]++;
 				aes256ctr_prf(u8AesKeystream, sSize, key_b, nonce);
-				print_debug(DEBUG_MAIN, "aes256 block calculated: ");
+				print_debug(DEBUG_MAIN, "aes256 calculated: ");
 				for(int i = 0; i < 32; i++)
 					print_debug(DEBUG_MAIN, "%02x", u8AesKeystream[i]);
 				print_debug(DEBUG_MAIN, "\n\r");

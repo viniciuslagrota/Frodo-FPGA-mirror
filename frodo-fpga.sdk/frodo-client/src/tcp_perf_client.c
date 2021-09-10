@@ -336,7 +336,7 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 #endif
 
 #if DEBUG_KYBER == 1
-	print_debug(DEBUG_ETH, "Writing data length: %d\n\r", u16BufferLen);
+	print_debug(DEBUG_ETH, "Writing data length: %d | %02x %02x %02x %02x\n\r", u16BufferLen, pcBuffer[0], pcBuffer[1], pcBuffer[2], pcBuffer[3]);
 #endif
 	err = tcp_write(c_pcb, pcBuffer, u16BufferLen, apiflags);
 	if (err != ERR_OK) {

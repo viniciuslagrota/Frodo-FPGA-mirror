@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="readTimerShake128Proc" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="Writing" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="readTimerShake128Proc"/>
-			<item value="t_keypair_shake128_sw_matrix_sa_sw_as_sw"/>
-			<item value="ConfigPtr12"/>
-			<item value="get_cyclecount"/>
-			<item value="iterations"/>
-			<item value="named_parameters"/>
-			<item value="XGpioPs_WritePin"/>
-			<item value="u32LedState"/>
+			<item value="Writing"/>
+			<item value="DECIPHER_MESSAGE"/>
+			<item value="Waiting ciphered dat"/>
+			<item value="DEBUG_FRODO"/>
+			<item value="key_b"/>
+			<item value="key_a"/>
+			<item value="aes256"/>
+			<item value="ct received"/>
 		</list>
 		<list key="replacehistory">
+			<item value="DEBUG_FRODO"/>
+			<item value=""/>
 			<item value="%lu"/>
 			<item value="is %lu ns"/>
-			<item value=""/>
 			<item value="startTimer(&amp;general_hw_timer_control);"/>
 			<item value="startTimer();"/>
 			<item value="resetTimer(&amp;general_hw_timer_control);"/>
 			<item value="resetTimer();"/>
-			<item value="getTimer(&amp;general_hw_timer_control)"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

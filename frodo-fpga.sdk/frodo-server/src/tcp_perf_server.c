@@ -274,11 +274,13 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 #if SERVER_INIT == 1
 	if(st == WAIT_CIPHERED_DATA)
 	{
+//		print_debug(1, "WCD p->len: %d | u32LenRecv %d | %02x %02x %02x %02x\r\n", p->len, u32LenRecv, pcBuf[0], pcBuf[1], pcBuf[2], pcBuf[3]);
 		memcpy(cCiphertext + u32LenRecv, pcBuf, p->len);
 		u32LenRecv += p->len;
 
 		st = DECIPHER_MESSAGE;
 		u32LenRecv = 0;
+
 	}
 	else
 	{
@@ -304,26 +306,26 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 #endif
 
 	/* Record total bytes for final report */
-	server.total_bytes += p->tot_len;
-
-	if (server.i_report.report_interval_time) {
-		u64_t now = get_time_ms();
-		/* Record total bytes for interim report */
-		server.i_report.total_bytes += p->tot_len;
-		if (server.i_report.start_time) {
-			u64_t diff_ms = now - server.i_report.start_time;
-
-			if (diff_ms >= server.i_report.report_interval_time) {
-				tcp_conn_report(diff_ms, INTER_REPORT);
-				/* Reset Interim report counters */
-				server.i_report.start_time = 0;
-				server.i_report.total_bytes = 0;
-			}
-		} else {
-			/* Save start time for interim report */
-			server.i_report.start_time = now;
-		}
-	}
+//	server.total_bytes += p->tot_len;
+//
+//	if (server.i_report.report_interval_time) {
+//		u64_t now = get_time_ms();
+//		/* Record total bytes for interim report */
+//		server.i_report.total_bytes += p->tot_len;
+//		if (server.i_report.start_time) {
+//			u64_t diff_ms = now - server.i_report.start_time;
+//
+//			if (diff_ms >= server.i_report.report_interval_time) {
+//				tcp_conn_report(diff_ms, INTER_REPORT);
+//				/* Reset Interim report counters */
+//				server.i_report.start_time = 0;
+//				server.i_report.total_bytes = 0;
+//			}
+//		} else {
+//			/* Save start time for interim report */
+//			server.i_report.start_time = now;
+//		}
+//	}
 
 	tcp_recved(tpcb, p->tot_len);
 
