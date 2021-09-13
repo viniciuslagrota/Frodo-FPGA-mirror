@@ -53,7 +53,7 @@
 //
 //////////////////////////////////////////////
 #define SERVER_INIT			1	//1: Server generate key pair and send PK | 0: Server waits PK from client
-#define CHANGE_KEY_TIME		2   //In minutes, if zero, does not perform AES. Only valid when SERVER_INIT = 0.
+#define CHANGE_KEY_TIME		1   //In minutes, if zero, does not perform AES. Only valid when SERVER_INIT = 0.
 
 //////////////////////////////////////////////
 //
