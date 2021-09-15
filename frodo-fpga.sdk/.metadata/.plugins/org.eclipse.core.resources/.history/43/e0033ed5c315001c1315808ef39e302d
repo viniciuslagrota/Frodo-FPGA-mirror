@@ -8,11 +8,6 @@
 #ifndef SRC_INCLUDE_GLOBAL_DEF_H_
 #define SRC_INCLUDE_GLOBAL_DEF_H_
 
-//////////////////////////////////////////////
-//
-//	Includes
-//
-//////////////////////////////////////////////
 //System
 #include <stdio.h>
 #include <stdlib.h>
@@ -232,11 +227,11 @@ u32 *memoryMMshake;
 //	Kyber variables
 //
 //////////////////////////////////////////////
-#if SERVER_INIT == 0
+#if SERVER_INIT == 1
 enum state
 {
-	WAITING_SERVER_CONNECTION,
-	CONNECTED_TO_SERVER,
+	WAITING_CLIENT_CONNECTION,
+	CLIENT_CONNECTED,
 	CREATE_KEY_PAIR,
 	SEND_PK,
 	WAITING_CT,
@@ -252,7 +247,6 @@ enum state
 	CALCULATING_CT,
 	SENDING_CT,
 	CALCULATE_AES_BLOCK,
-	GET_SMW3000_DATA,
 	CIPHER_MESSAGE,
 	SEND_CIPHER_MESSAGE
 };
@@ -260,11 +254,11 @@ enum state
 
 enum state st;
 uint8_t pk[CRYPTO_PUBLICKEYBYTES];
-#if SERVER_INIT == 0
+#if SERVER_INIT == 1
 uint8_t sk[CRYPTO_SECRETKEYBYTES];
 #endif
 uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
-#if SERVER_INIT == 0
+#if SERVER_INIT == 1
 uint8_t key_a[2*CRYPTO_BYTES];
 #else
 uint8_t key_b[2*CRYPTO_BYTES];
@@ -326,8 +320,6 @@ char cCiphertext[1024];
 //
 //////////////////////////////////////////////
 void getChipTemperature();
-u32 getAndInitializeRandomSeed();
-void setRandomSeed(u32 u32RandomSeed);
 void ledInit(XGpioPs * Gpio);
 void configTimer(XGpio_Config * pConfigStruct, XGpio * pGpioStruct, uint8_t ui8DeviceId, uint8_t ui8Channel);
 void resetTimer(XGpio * pStruct, uint8_t ui8Channel);
@@ -339,7 +331,6 @@ void resetTimeVariables();
 void printTimeVariables();
 uint16_t crc16(uint8_t * p, unsigned long len);
 uint8_t incrementNonce(uint8_t * nonce, size_t sSize);
-uint8_t generateNonce(uint8_t * nonce, size_t sSize);
 void printNonce(uint8_t * nonce);
 
 #endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */

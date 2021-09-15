@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Writing" key="selection"/>
+		<item value="printNonce" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="printNonce"/>
+			<item value="CHANGE_KEY_TIME"/>
+			<item value="1446"/>
+			<item value="WAITING_PK"/>
+			<item value="MTU"/>
+			<item value="MTTU"/>
+			<item value="u32LenRecv"/>
 			<item value="Writing"/>
-			<item value="DECIPHER_MESSAGE"/>
-			<item value="Waiting ciphered dat"/>
-			<item value="DEBUG_FRODO"/>
-			<item value="key_b"/>
-			<item value="key_a"/>
-			<item value="aes256"/>
-			<item value="ct received"/>
 		</list>
 		<list key="replacehistory">
 			<item value="DEBUG_FRODO"/>

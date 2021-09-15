@@ -193,8 +193,8 @@ static void print_ipv6(char *msg, ip_addr_t *ip)
 #else
 static void print_ip(char *msg, ip_addr_t *ip)
 {
-	print(msg);
-	xil_printf("%d.%d.%d.%d\r\n", ip4_addr1(ip), ip4_addr2(ip),
+//	print(msg);
+	print_debug(DEBUG_MAIN, "%s %d.%d.%d.%d\r\n", msg, ip4_addr1(ip), ip4_addr2(ip),
 			ip4_addr3(ip), ip4_addr4(ip));
 }
 
@@ -209,19 +209,19 @@ static void assign_default_ip(ip_addr_t *ip, ip_addr_t *mask, ip_addr_t *gw)
 {
 	int err;
 
-	xil_printf("Configuring default IP %s \r\n", DEFAULT_IP_ADDRESS);
+	print_debug(DEBUG_MAIN, "Configuring default IP %s \r\n", DEFAULT_IP_ADDRESS);
 
 	err = inet_aton(DEFAULT_IP_ADDRESS, ip);
 	if (!err)
-		xil_printf("Invalid default IP address: %d\r\n", err);
+		print_debug(DEBUG_MAIN, "Invalid default IP address: %d\r\n", err);
 
 	err = inet_aton(DEFAULT_IP_MASK, mask);
 	if (!err)
-		xil_printf("Invalid default IP MASK: %d\r\n", err);
+		print_debug(DEBUG_MAIN, "Invalid default IP MASK: %d\r\n", err);
 
 	err = inet_aton(DEFAULT_GW_ADDRESS, gw);
 	if (!err)
-		xil_printf("Invalid default gateway address: %d\r\n", err);
+		print_debug(DEBUG_MAIN, "Invalid default gateway address: %d\r\n", err);
 }
 #endif /* LWIP_IPV6 */
 
@@ -238,6 +238,11 @@ void configSoftwareTimer()
 }
 #endif
 
+//////////////////////////////////////////////
+//
+//	Main
+//
+//////////////////////////////////////////////
 int main(void)
 {
 	struct netif *netif;
@@ -355,7 +360,8 @@ int main(void)
 	u32 rv;
 
 	//Alloc keystream
-	size_t sSize = sizeof(smDataStruct);
+	size_t sSize = sizeof(smDataStruct); //Complete structure
+	size_t sSizeCiphered = sizeof(smDataStruct) - 4; //Ignore u32Seed field
 	u8 u8CrcFailed = 0x0;
 //	u8 * u8Keystream = (u8 *)malloc(sSize);
 //	if(u8Keystream == NULL)
@@ -385,7 +391,7 @@ int main(void)
 	/* Add network interface to the netif_list, and set it as default */
 	if (!xemac_add(netif, NULL, NULL, NULL, mac_ethernet_address,
 				PLATFORM_EMAC_BASEADDR)) {
-		xil_printf("Error adding N/W interface\r\n");
+		print_debug(DEBUG_MAIN, "Error adding N/W interface\r\n");
 		return -1;
 	}
 
@@ -417,7 +423,7 @@ int main(void)
 
 	if (dhcp_timoutcntr <= 0) {
 		if ((netif->ip_addr.addr) == 0) {
-			xil_printf("ERROR: DHCP request timed out\r\n");
+			print_debug(DEBUG_MAIN, "ERROR: DHCP request timed out\r\n");
 			assign_default_ip(&(netif->ip_addr),
 					&(netif->netmask), &(netif->gw));
 		}
@@ -430,14 +436,14 @@ int main(void)
 	print_ip_settings(&(netif->ip_addr), &(netif->netmask), &(netif->gw));
 #endif /* LWIP_IPV6 */
 
-	xil_printf("\r\n");
+	printf("\r\n");
 
 	/* print app header */
 	print_app_header();
 
 	/* start the application*/
 	start_application();
-	xil_printf("\r\n");
+	printf("\r\n");
 
 #if SERVER_INIT == 1 && CHANGE_KEY_TIME != 0
 	//Software timer
@@ -556,35 +562,48 @@ int main(void)
 				//Restart nonce
 				memset(nonce, 0x0, 12);
 
-				st = CALCULATE_AES_BLOCK;
+				print_debug(DEBUG_MAIN, "Waiting for ciphered data...\r\n");
+
+				st = WAIT_CIPHERED_DATA;
 			break;
+			case WAIT_CIPHERED_DATA:
+				//Wait messages from client
+				break;
 			case CALCULATE_AES_BLOCK:
 				print_debug(DEBUG_MAIN, "Calculating AES block...\r\n");
-				incrementNonce(nonce, sSize);
+
+				//Get pointer to ciphered structure
+				psmCipheredData = smw3000GetCipheredDataStruct();
+
+				//Copy received data to ciphered structure
+				memcpy(psmCipheredData, cCiphertext, sSize);
+				smw3000PrintDataStruct(psmCipheredData);
+
+				//Set random seed
+				setRandomSeed(psmCipheredData->u32Seed);
+
+				//Calculate nonce
+				rv = generateNonce(nonce, sizeof(nonce));
+				if(rv == 0)
+					print_debug(DEBUG_MAIN, "Error while generating nonce...\r\n");
 				printNonce(nonce);
-				memset(&key_a[16], 0x0, CRYPTO_BYTES);
-				aes256ctr_prf(u8AesKeystream, sSize, key_a, nonce);
-#if DEBUG_FRODO == 1
+
+				//Perform AES
+                memset(&key_a[16], 0x0, CRYPTO_BYTES);
+				aes256ctr_prf(u8AesKeystream, sSizeCiphered, key_a, nonce);
+#if DEBUG_KYBER == 1
 				print_debug(DEBUG_MAIN, "aes256 calculated: ");
 				for(int i = 0; i < sSize; i++)
 					printf("%02x", u8AesKeystream[i]);
 				printf("\n\r");
 #endif
-				print_debug(DEBUG_MAIN, "Waiting ciphered data...\r\n");
-				st = WAIT_CIPHERED_DATA;
-			break;
-			case WAIT_CIPHERED_DATA:
-				//Wait messages from client
-			break;
+				st = DECIPHER_MESSAGE;
+				break;
 			case DECIPHER_MESSAGE:
 				print_debug(DEBUG_MAIN, "Deciphering message...\r\n");
-				//Get pointer to ciphered structure
-				psmCipheredData = smw3000GetCipheredDataStruct();
-				psmData = smw3000GetDataStruct();
 
-				//Copy received data to ciphered structure
-				memcpy(psmCipheredData, cCiphertext, sSize);
-				smw3000PrintDataStruct(psmCipheredData);
+				//Get pointer to plaintext structure
+				psmData = smw3000GetDataStruct();
 
 				rv = smw3000DecipherDataStruct(u8AesKeystream);
 				if(rv)
@@ -617,7 +636,7 @@ int main(void)
 					st = CREATE_KEY_PAIR;
 				}
 				else
-					st = CALCULATE_AES_BLOCK;
+					st = WAIT_CIPHERED_DATA;
 			break;
 		}
 //		sleep(10);

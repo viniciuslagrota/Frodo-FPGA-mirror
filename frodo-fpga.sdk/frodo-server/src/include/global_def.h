@@ -8,6 +8,11 @@
 #ifndef SRC_INCLUDE_GLOBAL_DEF_H_
 #define SRC_INCLUDE_GLOBAL_DEF_H_
 
+//////////////////////////////////////////////
+//
+//	Includes
+//
+//////////////////////////////////////////////
 //System
 #include <stdio.h>
 #include <stdlib.h>
@@ -236,8 +241,8 @@ enum state
 	SEND_PK,
 	WAITING_CT,
 	CALCULATE_SHARED_SECRET,
-	CALCULATE_AES_BLOCK,
 	WAIT_CIPHERED_DATA,
+	CALCULATE_AES_BLOCK,
 	DECIPHER_MESSAGE
 };
 #else
@@ -320,6 +325,8 @@ char cCiphertext[1024];
 //
 //////////////////////////////////////////////
 void getChipTemperature();
+u32 getAndInitializeRandomSeed();
+void setRandomSeed(u32 u32RandomSeed);
 void ledInit(XGpioPs * Gpio);
 void configTimer(XGpio_Config * pConfigStruct, XGpio * pGpioStruct, uint8_t ui8DeviceId, uint8_t ui8Channel);
 void resetTimer(XGpio * pStruct, uint8_t ui8Channel);
@@ -331,6 +338,7 @@ void resetTimeVariables();
 void printTimeVariables();
 uint16_t crc16(uint8_t * p, unsigned long len);
 uint8_t incrementNonce(uint8_t * nonce, size_t sSize);
+uint8_t generateNonce(uint8_t * nonce, size_t sSize);
 void printNonce(uint8_t * nonce);
 
 #endif /* SRC_INCLUDE_GLOBAL_DEF_H_ */
