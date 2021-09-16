@@ -759,26 +759,16 @@ int main(void)
 				//Save seed into structure
 				psmData->u32Seed = u32Seed;
 
-				for(int j = 0; j < MAX_TRY; j++)
-				{
-					rv = smw3000GetAllData();
-					if(rv)
-					{
-						print_debug(DEBUG_MAIN, "Failed to get data (rv: 0x%08x).\r\n", rv);
-						usleep(10000);
-					}
-					else
-					{
-						print_debug(DEBUG_MAIN, "Data successfully acquired.\r\n");
-						break;
-					}
-				}
+				rv = smw3000GetAllData();
+				if(rv)
+					print_debug(DEBUG_MAIN, "Failed to get data (rv: 0x%08x).\r\n", rv);
+				else
+					print_debug(DEBUG_MAIN, "Data successfully acquired.\r\n");
 
 				//Print data for debug purpose
 				smw3000PrintDataStruct(psmData);
 
-				if(!rv)
-					st = CIPHER_MESSAGE;
+				st = CIPHER_MESSAGE;
 			break;
 			case CIPHER_MESSAGE:
 				print_debug(DEBUG_MAIN, "Ciphering message...\r\n");

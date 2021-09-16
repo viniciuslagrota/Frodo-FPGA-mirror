@@ -71,6 +71,7 @@ extern uint8_t key_a[2*CRYPTO_BYTES];
 #else
 extern uint8_t key_b[2*CRYPTO_BYTES];
 #endif
+uint8_t ss[CRYPTO_BYTES];
 
 //////////////////////////////////////////////
 //
