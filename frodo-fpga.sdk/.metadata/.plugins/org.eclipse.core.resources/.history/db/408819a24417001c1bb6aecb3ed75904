@@ -69,7 +69,6 @@ extern uint8_t key_a[2*CRYPTO_BYTES];
 #else
 extern uint8_t key_b[2*CRYPTO_BYTES];
 #endif
-uint8_t ss[CRYPTO_BYTES];
 
 //////////////////////////////////////////////
 //
@@ -544,18 +543,7 @@ int main(void)
 #endif
 
 				//Decapsulation
-				crypto_kem_dec(ss, ct, sk);
-				shake(key_a, 2*CRYPTO_BYTES, ss, CRYPTO_BYTES);
-
-				print_debug(DEBUG_MAIN, "ss calculated: ");
-				for(int i = 0; i < CRYPTO_BYTES; i++)
-					printf("%02x", ss[i]);
-				printf("\n\r");
-
-				print_debug(DEBUG_MAIN, "key_a calculated: ");
-				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
-					printf("%02x", key_a[i]);
-				printf("\n\r");
+				crypto_kem_dec(key_a, ct, sk);
 
 				//Stop timer
 				stopTimer(&global_timer_control, 1);

@@ -544,7 +544,7 @@ int main(void)
 #endif
 
 				//Decapsulation
-				crypto_kem_dec(ss, ct, sk);
+				crypto_kem_dec(key_a, ct, sk);
 				shake(key_a, 2*CRYPTO_BYTES, ss, CRYPTO_BYTES);
 
 				print_debug(DEBUG_MAIN, "ss calculated: ");

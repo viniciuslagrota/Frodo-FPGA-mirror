@@ -71,6 +71,7 @@ extern uint8_t key_a[2*CRYPTO_BYTES];
 #else
 extern uint8_t key_b[2*CRYPTO_BYTES];
 #endif
+uint8_t ss[CRYPTO_BYTES];
 
 //////////////////////////////////////////////
 //
@@ -690,7 +691,18 @@ int main(void)
 				print_debug(DEBUG_MAIN, "Reset Timer SW: %ld ns\n", u32Timer * HW_CLOCK_PERIOD);
 				startTimer(&global_timer_control, 1);
 
-				crypto_kem_enc(ct, key_b, pk);
+				crypto_kem_enc(ct, ss, pk);
+				shake(key_b, 2*CRYPTO_BYTES, ss, CRYPTO_BYTES);
+
+				print_debug(DEBUG_MAIN, "ss calculated: ");
+				for(int i = 0; i < CRYPTO_BYTES; i++)
+					printf("%02x", ss[i]);
+				printf("\n\r");
+
+				print_debug(DEBUG_MAIN, "key_b calculated: ");
+				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
+					printf("%02x", key_b[i]);
+				printf("\n\r");
 
 				st = SENDING_CT;
 			break;
