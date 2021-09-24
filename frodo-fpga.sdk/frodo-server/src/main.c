@@ -154,6 +154,18 @@ extern char cPlainText[1024];
 extern char cCipherText[1024];
 char aux[32] = "Testando";
 
+gcm_context ctx;            // includes the AES context structure
+unsigned char ucAad[32];
+unsigned char ucTag[16] = { 0x0 };
+
+//////////////////////////////////////////////
+//
+//	SMW3000
+//
+//////////////////////////////////////////////
+uint8_t *psmDataPtr;
+uint8_t *psmCipheredDataPtr;
+
 //////////////////////////////////////////////
 //
 //	Prototypes
@@ -362,7 +374,7 @@ int main(void)
 
 	//Alloc keystream
 	size_t sSize = sizeof(smDataStruct); //Complete structure
-	size_t sSizeCiphered = sizeof(smDataStruct) - 4; //Ignore u32Seed field
+	size_t sSizeCiphered = sizeof(smDataStruct) - 52; //Ignore u32Seed field
 	u8 u8CrcFailed = 0x0;
 //	u8 * u8Keystream = (u8 *)malloc(sSize);
 //	if(u8Keystream == NULL)
@@ -452,6 +464,9 @@ int main(void)
 #endif
 
 	set_hardware_usage(SHAKE128_HW_MM_MATRIX_SA_HW_AS_HW);
+
+	//Initialize AES256-GCM
+	gcm_initialize();
 
 	while (1) {
 
@@ -547,15 +562,15 @@ int main(void)
 				crypto_kem_dec(ss, ct, sk);
 				shake(key_a, 2*CRYPTO_BYTES, ss, CRYPTO_BYTES);
 
-				print_debug(DEBUG_MAIN, "ss calculated: ");
-				for(int i = 0; i < CRYPTO_BYTES; i++)
-					printf("%02x", ss[i]);
-				printf("\n\r");
+//				print_debug(DEBUG_MAIN, "ss calculated: ");
+//				for(int i = 0; i < CRYPTO_BYTES; i++)
+//					printf("%02x", ss[i]);
+//				printf("\n\r");
 
-				print_debug(DEBUG_MAIN, "key_a calculated: ");
-				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
-					printf("%02x", key_a[i]);
-				printf("\n\r");
+//				print_debug(DEBUG_MAIN, "key_a calculated: ");
+//				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
+//					printf("%02x", key_a[i]);
+//				printf("\n\r");
 
 				//Stop timer
 				stopTimer(&global_timer_control, 1);
@@ -564,7 +579,7 @@ int main(void)
 				print_debug(DEBUG_MAIN, "Timer (hw) to process KEM (server side): %lu.%03lu ms\n", ui32Integer, ui32Fraction);
 
 				//Check shared secret
-#if DEBUG_FRODO == 1
+#if 1 == 1
 				print_debug(DEBUG_MAIN, "key_a calculated: ");
 				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
 					printf("%02x", key_a[i]);
@@ -581,11 +596,12 @@ int main(void)
 			case WAIT_CIPHERED_DATA:
 				//Wait messages from client
 				break;
-			case CALCULATE_AES_BLOCK:
-				print_debug(DEBUG_MAIN, "Calculating AES block...\r\n");
+			case DECIPHER_MESSAGE:
+				print_debug(DEBUG_MAIN, "Deciphering message...\r\n");
 
-				//Get pointer to ciphered structure
+				//Get pointer to structures
 				psmCipheredData = smw3000GetCipheredDataStruct();
+				psmData = smw3000GetDataStruct();
 
 				//Copy received data to ciphered structure
 				memcpy(psmCipheredData, cCiphertext, sSize);
@@ -593,6 +609,7 @@ int main(void)
 
 				//Set random seed
 				setRandomSeed(psmCipheredData->u32Seed);
+				psmData->u32Seed = psmCipheredData->u32Seed;
 
 				//Calculate nonce
 				rv = generateNonce(nonce, sizeof(nonce));
@@ -600,28 +617,29 @@ int main(void)
 					print_debug(DEBUG_MAIN, "Error while generating nonce...\r\n");
 				printNonce(nonce);
 
-				//Perform AES
-                memset(&key_a[16], 0x0, CRYPTO_BYTES);
-				aes256ctr_prf(u8AesKeystream, sSizeCiphered, key_a, nonce);
-#if DEBUG_KYBER == 1
-				print_debug(DEBUG_MAIN, "aes256 calculated: ");
-				for(int i = 0; i < sSize; i++)
-					printf("%02x", u8AesKeystream[i]);
-				printf("\n\r");
-#endif
-				st = DECIPHER_MESSAGE;
-				break;
-			case DECIPHER_MESSAGE:
-				print_debug(DEBUG_MAIN, "Deciphering message...\r\n");
+				//Copy additional authenticate data and tag
+				memcpy(ucAad, psmCipheredData->u8Aad, 32);
+				memcpy(ucTag, psmCipheredData->u8Tag, 16);
 
-				//Get pointer to plaintext structure
-				psmData = smw3000GetDataStruct();
+				//Perform AES-GCM
+				psmDataPtr = (uint8_t*)psmData->u8DeviceName;
+				psmCipheredDataPtr = (uint8_t*)psmCipheredData->u8DeviceName;
 
-				rv = smw3000DecipherDataStruct(u8AesKeystream);
-				if(rv)
-					print_debug(DEBUG_MAIN, "Failed to decipher data due to deallocated pointer.\r\n");
+				gcm_setkey(&ctx, key_a, (const uint)(2*CRYPTO_BYTES));   // setup our AES-GCM key
+				rv = gcm_auth_decrypt(&ctx, nonce, 12, ucAad, sizeof(ucAad), psmCipheredDataPtr, psmDataPtr, sSizeCiphered, ucTag, sizeof(ucTag));
+
+				if(rv != 0)
+				{
+					print_debug(DEBUG_MAIN, "AES256-GCM authentication failed.\r\n");
+					XScuTimer_RestartTimer(&xTimer);
+					st = CREATE_KEY_PAIR;
+					break;
+				}
 				else
-					print_debug(DEBUG_MAIN, "Data successfully deciphered.\r\n");
+					print_debug(DEBUG_MAIN, "AES256-GCM authentication success.\r\n");
+
+				memcpy(psmData->u8Aad, ucAad, 32);
+				memcpy(psmData->u8Tag, ucTag, 16);
 
 				//Print deciphered data
 				smw3000PrintDataStruct(psmData);
@@ -649,10 +667,10 @@ int main(void)
 				}
 				else
 					st = WAIT_CIPHERED_DATA;
-			break;
+				break;
 		}
-//		sleep(10);
-//		sleep(1);
+		//		sleep(10);
+		//		sleep(1);
 #else
 		switch(st)
 		{

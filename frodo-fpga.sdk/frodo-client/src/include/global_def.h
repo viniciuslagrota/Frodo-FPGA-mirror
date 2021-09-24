@@ -30,6 +30,7 @@
 #include "xscutimer.h"
 
 //Software
+#include "aes256gcm.h"
 #include "aes256ctr.h"
 #include "weg_smw3000.h"
 #include "frodo640.h"
@@ -259,7 +260,6 @@ enum state
 	WAITING_PK,
 	CALCULATING_CT,
 	SENDING_CT,
-	CALCULATE_AES_BLOCK,
 	GET_SMW3000_DATA,
 	CIPHER_MESSAGE,
 	SEND_CIPHER_MESSAGE

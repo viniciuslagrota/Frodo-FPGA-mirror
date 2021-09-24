@@ -163,14 +163,6 @@ unsigned char ucTag[16] = { 0x0 };
 
 //////////////////////////////////////////////
 //
-//	SMW3000
-//
-//////////////////////////////////////////////
-uint8_t *psmDataPtr;
-uint8_t *psmCipheredDataPtr;
-
-//////////////////////////////////////////////
-//
 //	Prototypes
 //
 //////////////////////////////////////////////
@@ -378,7 +370,7 @@ int main(void)
 
 	//Alloc keystream
 	size_t sSize = sizeof(smDataStruct); //Complete structure
-	size_t sSizeCiphered = sizeof(smDataStruct) - 52; //Ignore u32Seed field
+	size_t sSizeCiphered = sizeof(smDataStruct) - 4; //Ignore u32Seed field
 #if LOOP_TEST_SMW3000 == 1
 	u8 * u8Keystream = (u8 *)malloc(sSize);
 	if(u8Keystream == NULL)
@@ -743,6 +735,30 @@ int main(void)
 
 				st = GET_SMW3000_DATA;
 			break;
+			case CALCULATE_AES_BLOCK:
+				print_debug(DEBUG_MAIN, "Calculating AES block...\r\n");
+
+				//Get random seed
+				u32Seed = getAndInitializeRandomSeed();
+
+				//Calculate nonce
+				rv = generateNonce(nonce, sizeof(nonce));
+				if(rv == 0)
+					print_debug(DEBUG_MAIN, "Error while generating nonce...\r\n");
+				printNonce(nonce);
+
+				//Perform AES
+                memset(&key_b[16], 0x0, CRYPTO_BYTES);
+				aes256ctr_prf(u8AesKeystream, sSizeCiphered, key_b, nonce);
+#if DEBUG_FRODO == 1
+				print_debug(DEBUG_MAIN, "aes256 block calculated: ");
+				for(int i = 0; i < sSize; i++)
+					printf("%02x", u8AesKeystream[i]);
+				printf("\n\r");
+#endif
+				usleep(10000); //Wait 10 ms
+				st = GET_SMW3000_DATA;
+			break;
 			case GET_SMW3000_DATA:
 				print_debug(DEBUG_MAIN, "Getting SMW3000 data...\r\n");
 
@@ -818,7 +834,7 @@ int main(void)
 				//Wait to send next message
 				usleep(10000);
 
-				st = GET_SMW3000_DATA;
+				st = CALCULATE_AES_BLOCK;
 			break;
 		}
 #endif
