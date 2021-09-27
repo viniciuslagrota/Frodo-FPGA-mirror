@@ -55,11 +55,13 @@
 
 //////////////////////////////////////////////
 //
-//	Change key type
+//	CHANGE ONLY HERE
 //
 //////////////////////////////////////////////
+#define KEM_TEST_ONLY		0	//1: only perform KEM | 0: perform KEM and data exchange.
+#define PERFORMANCE_MODE	0	//1: suppress prints | 0: enable prints
 #define SERVER_INIT			1	//1: Server generate key pair and send PK | 0: Server waits PK from client
-#define CHANGE_KEY_TIME		1   //In minutes, if zero, does not perform AES. Only valid when SERVER_INIT = 0.
+#define CHANGE_KEY_TIME		1   //In minutes, if zero, do not perform AES. Only valid when SERVER_INIT = 1.
 #define RANDOM_BYTES		1
 
 //////////////////////////////////////////////
@@ -110,38 +112,74 @@ extern uint16_t CDF_TABLE_LEN;
 //////////////////////////////////////////////
 #define DEBUG_GLOBAL_ENABLED 		1
 #define DEBUG_ERROR					1
-//Frodo
-#define DEBUG_FRODO					0
-//Main
-#define DEBUG_MAIN					1
-//Test KEM
-#define DEBUG_TEST_KEM				1
-//KEM
-#define DEBUG_KEM_KEYPAIR			0
-#define DEBUG_KEM_ENC				0
-#define DEBUG_KEM_DEC				0
-//Keccak_f1600
-#define DEBUG_KECCAK_HW				0
-#define DEBUG_KECCAK_HW_MM			0
-#define DEBUG_STATE_MATRIX			1
-#define DEBUG_TIMER					0
-//Random
-#define DEBUG_RANDOM				0
-//Noise
-#define DEBUG_NOISE					0
-//Matrix multiplication
-#define DEBUG_MATRIX_MM				1
-//SHAKE128
-#define DEBUG_SHAKE_MM				0
-//Accelerations
-#define DEBUG_TIME					1
-//ETH
-#define	DEBUG_ETH					1
-//SMW3000
-#define DEBUG_SM_LVL0				0
-#define DEBUG_SM_LVL1				0
-#define DEBUG_SM_LVL2				1
-#define DEBUG_SM_ERROR				1
+
+#if PERFORMANCE_MODE == 1
+	//Main
+	#define DEBUG_MAIN					0
+	//Frodo
+	#define DEBUG_FRODO					0
+	//Test KEM
+	#define DEBUG_TEST_KEM				0
+	//KEM
+	#define DEBUG_KEM_KEYPAIR			0
+	#define DEBUG_KEM_ENC				0
+	#define DEBUG_KEM_DEC				0
+	//Keccak_f1600
+	#define DEBUG_KECCAK_HW				0
+	#define DEBUG_KECCAK_HW_MM			0
+	#define DEBUG_STATE_MATRIX			0
+	#define DEBUG_TIMER					0
+	//Random
+	#define DEBUG_RANDOM				0
+	//Noise
+	#define DEBUG_NOISE					0
+	//Matrix multiplication
+	#define DEBUG_MATRIX_MM				0
+	//SHAKE128
+	#define DEBUG_SHAKE_MM				0
+	//Accelerations
+	#define DEBUG_TIME					0
+	//ETH
+	#define	DEBUG_ETH					1
+	//SMW3000
+	#define DEBUG_SM_LVL0				0
+	#define DEBUG_SM_LVL1				0
+	#define DEBUG_SM_LVL2				0
+	#define DEBUG_SM_ERROR				1
+#else
+	//Main
+	#define DEBUG_MAIN					1
+	//Frodo
+	#define DEBUG_FRODO					1
+	//Test KEM
+	#define DEBUG_TEST_KEM				0
+	//KEM
+	#define DEBUG_KEM_KEYPAIR			0
+	#define DEBUG_KEM_ENC				0
+	#define DEBUG_KEM_DEC				0
+	//Keccak_f1600
+	#define DEBUG_KECCAK_HW				0
+	#define DEBUG_KECCAK_HW_MM			0
+	#define DEBUG_STATE_MATRIX			0
+	#define DEBUG_TIMER					0
+	//Random
+	#define DEBUG_RANDOM				0
+	//Noise
+	#define DEBUG_NOISE					0
+	//Matrix multiplication
+	#define DEBUG_MATRIX_MM				0
+	//SHAKE128
+	#define DEBUG_SHAKE_MM				0
+	//Accelerations
+	#define DEBUG_TIME					0
+	//ETH
+	#define	DEBUG_ETH					1
+	//SMW3000
+	#define DEBUG_SM_LVL0				0
+	#define DEBUG_SM_LVL1				0
+	#define DEBUG_SM_LVL2				1
+	#define DEBUG_SM_ERROR				1
+#endif
 
 //////////////////////////////////////////////
 //

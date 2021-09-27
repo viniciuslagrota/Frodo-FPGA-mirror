@@ -182,6 +182,7 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 #if DEBUG_KYBER == 1
 	print_debug(DEBUG_ETH, "Writing data length: %d\n\r", u16BufferLen);
 #endif
+//	print_debug(DEBUG_ETH, "Data write length: %d\r\n", u16BufferLen);
 	err = tcp_write(c_pcb, pcBuffer, u16BufferLen, apiflags);
 	if (err != ERR_OK) {
 		print_debug(DEBUG_ETH, "TCP client: Error on tcp_write: %d\r\n",
