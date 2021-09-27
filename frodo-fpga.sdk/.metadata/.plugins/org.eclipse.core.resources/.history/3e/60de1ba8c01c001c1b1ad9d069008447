@@ -163,14 +163,6 @@ unsigned char ucTag[16] = { 0x0 };
 
 //////////////////////////////////////////////
 //
-//	SMW3000
-//
-//////////////////////////////////////////////
-uint8_t *psmDataPtr;
-uint8_t *psmCipheredDataPtr;
-
-//////////////////////////////////////////////
-//
 //	Prototypes
 //
 //////////////////////////////////////////////
@@ -378,7 +370,7 @@ int main(void)
 
 	//Alloc keystream
 	size_t sSize = sizeof(smDataStruct); //Complete structure
-	size_t sSizeCiphered = sizeof(smDataStruct) - 52; //Ignore u32Seed field
+	size_t sSizeCiphered = sizeof(smDataStruct) - 4; //Ignore u32Seed field
 #if LOOP_TEST_SMW3000 == 1
 	u8 * u8Keystream = (u8 *)malloc(sSize);
 	if(u8Keystream == NULL)
@@ -741,6 +733,30 @@ int main(void)
 				//Restart nonce
 				memset(nonce, 0x0, 12);
 
+				st = CALCULATE_AES_BLOCK;
+			break;
+			case CALCULATE_AES_BLOCK:
+				print_debug(DEBUG_MAIN, "Calculating AES block...\r\n");
+
+				//Get random seed
+				u32Seed = getAndInitializeRandomSeed();
+
+				//Calculate nonce
+				rv = generateNonce(nonce, sizeof(nonce));
+				if(rv == 0)
+					print_debug(DEBUG_MAIN, "Error while generating nonce...\r\n");
+				printNonce(nonce);
+
+				//Perform AES
+                memset(&key_b[16], 0x0, CRYPTO_BYTES);
+				aes256ctr_prf(u8AesKeystream, sSizeCiphered, key_b, nonce);
+#if DEBUG_FRODO == 1
+				print_debug(DEBUG_MAIN, "aes256 block calculated: ");
+				for(int i = 0; i < sSize; i++)
+					printf("%02x", u8AesKeystream[i]);
+				printf("\n\r");
+#endif
+				usleep(10000); //Wait 10 ms
 				st = GET_SMW3000_DATA;
 			break;
 			case GET_SMW3000_DATA:
@@ -748,6 +764,9 @@ int main(void)
 
 				//Get data pointer
 				psmData = smw3000GetDataStruct();
+
+				//Save seed into structure
+				psmData->u32Seed = u32Seed;
 
 				for(int j = 0; j < MAX_TRY; j++)
 				{
@@ -764,51 +783,39 @@ int main(void)
 					}
 				}
 
+				//Print data for debug purpose
+				smw3000PrintDataStruct(psmData);
+
 				if(!rv)
 					st = CIPHER_MESSAGE;
 			break;
 			case CIPHER_MESSAGE:
-				print_debug(DEBUG_MAIN, "Calculating AES block...\r\n");
+				print_debug(DEBUG_MAIN, "Ciphering message...\r\n");
+				rv = smw3000CipherDataStruct(u8AesKeystream);
+				if(rv)
+					print_debug(DEBUG_MAIN, "Failed to cipher data due to deallocated pointer.\r\n");
+				else
+					print_debug(DEBUG_MAIN, "Data successfully ciphered.\r\n");
 
-				//Get data pointers
-				psmData = smw3000GetDataStruct();
+				//Print data for debug purpose
 				psmCipheredData = smw3000GetCipheredDataStruct();
-
-				//Get random seed
-				u32Seed = getAndInitializeRandomSeed();
-
-				//Save seed into structure
-				psmData->u32Seed = u32Seed;
-				psmCipheredData->u32Seed = u32Seed;
-
-				//Save data into plaintext structure for print purpose
-				memcpy(psmData->u8Aad, ucAad, 32);
-				memset(ucTag, 0x0, 16);
-				memcpy(psmData->u8Tag, ucTag, 16);
-
-				//Print data for debug purpose
-				smw3000PrintDataStruct(psmData);
-
-				//Calculate nonce
-				rv = generateNonce(nonce, sizeof(nonce));
-				if(rv == 0)
-					print_debug(DEBUG_MAIN, "Error while generating nonce...\r\n");
-				printNonce(nonce);
-
-				//Set pointer
-				psmDataPtr = (uint8_t*)psmData->u8DeviceName;
-				psmCipheredDataPtr = (uint8_t*)psmCipheredData->u8DeviceName;
-
-				//Perform AES-GCM
-				gcm_setkey(&ctx, key_b, (const uint)(2*CRYPTO_BYTES));   // setup our AES-GCM key
-				gcm_crypt_and_tag(&ctx, ENCRYPT, nonce, 12, ucAad, 32, psmDataPtr, psmCipheredDataPtr, sSizeCiphered, ucTag, 16);
-				memcpy(psmCipheredData->u8Aad, ucAad, 32);
-				memcpy(psmCipheredData->u8Tag, ucTag, 16);
-
-				//Print data for debug purpose
 				smw3000PrintDataStruct(psmCipheredData);
 
-				usleep(10000); //Wait 10 ms
+
+				//Initialize plaintext
+
+				//TODO: mudar aqui a mensagem que se deseja enviar para o server.
+//				memcpy(cPlaintext, aux, 32);
+//
+//				print_debug(DEBUG_MAIN, "Plaintext: %s\r\n", cPlaintext);
+//				for(int i = 0; i < 32; i++)
+//				{
+//					cCiphertext[i] = cPlaintext[i] ^ u8AesKeystream[i];
+////					print_debug(DEBUG_MAIN, "%02x", cCiphertext[i]);
+//				}
+//				print_debug(DEBUG_MAIN, "Sent ciphertext: %s\r\n", cCiphertext);
+//				printf(DEBUG_MAIN, "\n\r\n\r");
+
 				st = SEND_CIPHER_MESSAGE;
 			break;
 			case SEND_CIPHER_MESSAGE:
@@ -818,7 +825,7 @@ int main(void)
 				//Wait to send next message
 				usleep(10000);
 
-				st = GET_SMW3000_DATA;
+				st = CALCULATE_AES_BLOCK;
 			break;
 		}
 #endif

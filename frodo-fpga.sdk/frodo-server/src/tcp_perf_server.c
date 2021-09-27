@@ -274,19 +274,16 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 #if SERVER_INIT == 1
 	if(st == WAIT_CIPHERED_DATA)
 	{
-//		print_debug(1, "WCD p->len: %d | u32LenRecv %d | %02x %02x %02x %02x\r\n", p->len, u32LenRecv, pcBuf[0], pcBuf[1], pcBuf[2], pcBuf[3]);
 		memcpy(cCiphertext + u32LenRecv, pcBuf, p->len);
 		u32LenRecv += p->len;
 
 		st = DECIPHER_MESSAGE;
 		u32LenRecv = 0;
-
 	}
 	else
 	{
 		memcpy(ct + u32LenRecv, pcBuf, p->len);
 		u32LenRecv += p->len;
-		print_debug(DEBUG_ETH, "data length: %d | u32LenRecv: %d\n\r", p->len, u32LenRecv);
 
 		if(u32LenRecv >= CRYPTO_CIPHERTEXTBYTES)
 		{

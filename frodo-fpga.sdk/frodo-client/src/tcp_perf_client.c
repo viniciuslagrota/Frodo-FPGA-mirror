@@ -419,7 +419,7 @@ static err_t tcp_client_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, er
 #else
 	memcpy(pk + u32LenRecv, pcBuf, p->len);
 	u32LenRecv += p->len;
-	print_debug(DEBUG_ETH, "data length: %d | u32LenRecv: %d\n\r", p->len, u32LenRecv);
+//	print_debug(DEBUG_ETH, "data length: %d | u32LenRecv: %d\n\r", p->len, u32LenRecv);
 
 	if(p->len == TCP_MSS - 14)
 		st = WAITING_PK;

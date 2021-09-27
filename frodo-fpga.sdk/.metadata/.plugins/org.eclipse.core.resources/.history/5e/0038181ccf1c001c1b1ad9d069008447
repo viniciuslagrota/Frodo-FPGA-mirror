@@ -378,7 +378,7 @@ int main(void)
 
 	//Alloc keystream
 	size_t sSize = sizeof(smDataStruct); //Complete structure
-	size_t sSizeCiphered = sizeof(smDataStruct) - 52; //Ignore u32Seed field
+	size_t sSizeCiphered = sizeof(smDataStruct) - 4; //Ignore u32Seed field
 #if LOOP_TEST_SMW3000 == 1
 	u8 * u8Keystream = (u8 *)malloc(sSize);
 	if(u8Keystream == NULL)
@@ -818,7 +818,7 @@ int main(void)
 				//Wait to send next message
 				usleep(10000);
 
-				st = GET_SMW3000_DATA;
+				st = CALCULATE_AES_BLOCK;
 			break;
 		}
 #endif
