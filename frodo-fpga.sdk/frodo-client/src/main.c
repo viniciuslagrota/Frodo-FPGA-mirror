@@ -50,7 +50,7 @@
 extern volatile int dhcp_timoutcntr;
 #endif
 
-#define DEFAULT_IP_ADDRESS	"192.168.1.10"
+#define DEFAULT_IP_ADDRESS	"192.168.1.101"
 #define DEFAULT_IP_MASK		"255.255.255.0"
 #define DEFAULT_GW_ADDRESS	"192.168.1.1"
 #endif /* LWIP_IPV6 */
@@ -757,6 +757,10 @@ int main(void)
 			break;
 			case WAITING_SEND_CT:
 				//Do nothing
+			break;
+			case WAIT_SERVER_CALCULATE_CT:
+				sleep(5);
+				st = GET_SMW3000_DATA;
 			break;
 			case GET_SMW3000_DATA:
 				print_debug(DEBUG_MAIN, "Getting SMW3000 data...\r\n");

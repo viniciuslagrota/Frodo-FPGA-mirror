@@ -340,7 +340,7 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 #endif
 //	if (tcp_sndbuf(c_pcb) > u16BufferLen)
 //	{
-//	print_debug(DEBUG_ETH, "Data write length: %d\r\n", u16BufferLen);
+//	print_debug(DEBUG_ETH, "w:%d\r\n", u16BufferLen);
 		err = tcp_write(c_pcb, pcBuffer, u16BufferLen, apiflags);
 		if (err != ERR_OK) {
 			print_debug(DEBUG_ETH, "TCP client: Error on tcp_write: %d\r\n",
@@ -451,7 +451,9 @@ static err_t tcp_client_sent(void *arg, struct tcp_pcb *tpcb, u16_t len)
 	return ERR_OK;
 #else
 //	print_debug(DEBUG_ETH, "Sent callback\n\r");
-	if(st == SENDING_CT || st == WAITING_SEND_CT || st == SEND_CIPHER_MESSAGE || st == WAITING_CIPHER_MESSAGE_ACK)
+	if(st == SENDING_CT || st == WAITING_SEND_CT)
+		st = WAIT_SERVER_CALCULATE_CT;
+	else if(st == SEND_CIPHER_MESSAGE || st == WAITING_CIPHER_MESSAGE_ACK)
 		st = GET_SMW3000_DATA;
 	return ERR_OK;
 #endif

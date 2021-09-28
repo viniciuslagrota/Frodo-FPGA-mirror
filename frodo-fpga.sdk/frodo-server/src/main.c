@@ -48,7 +48,7 @@
 #include "lwip/dhcp.h"
 extern volatile int dhcp_timoutcntr;
 #endif
-#define DEFAULT_IP_ADDRESS	"192.168.1.10"
+#define DEFAULT_IP_ADDRESS	"192.168.1.100"
 #define DEFAULT_IP_MASK		"255.255.255.0"
 #define DEFAULT_GW_ADDRESS	"192.168.1.1"
 #endif /* LWIP_IPV6 */
@@ -513,11 +513,13 @@ int main(void)
 				//Do nothing. Wait connection.
 			break;
 			case CLIENT_CONNECTED:
+				//print_debug(1, "a\r\n");
 				print_debug(DEBUG_MAIN, "Client connected!\r\n");
 				XScuTimer_Start(&xTimer);
 				st = CREATE_KEY_PAIR;
 			break;
 			case CREATE_KEY_PAIR:
+				//print_debug(1, "b\r\n");
 				bChangeKey = 0;
 				print_debug(DEBUG_MAIN, "Generating new key pair...\r\n");
 
@@ -539,6 +541,7 @@ int main(void)
 				st = SEND_PK;
 			break;
 			case SEND_PK:
+				//print_debug(1, "c\r\n");
 				//Publish PK
 				print_debug(DEBUG_MAIN, "Sending PK!\r\n");
 				transfer_data((char *)pk, CRYPTO_PUBLICKEYBYTES);
@@ -549,6 +552,7 @@ int main(void)
 				//Do nothing. Wait for ciphertext.
 			break;
 			case CALCULATE_SHARED_SECRET:
+				//print_debug(1, "d\r\n");
 				//Check CT received
 				print_debug(DEBUG_MAIN, "Calculating shared secret...\r\n");
 
@@ -599,6 +603,7 @@ int main(void)
 				//Wait messages from client
 				break;
 			case DECIPHER_MESSAGE:
+				//print_debug(1, "e\r\n");
 				print_debug(DEBUG_MAIN, "Deciphering message...\r\n");
 
 				//Get pointer to structures
@@ -668,7 +673,10 @@ int main(void)
 					st = CREATE_KEY_PAIR;
 				}
 				else
+				{
+//					print_debug(1, "f\r\n");
 					st = WAIT_CIPHERED_DATA;
+				}
 				break;
 		}
 		//		sleep(10);
