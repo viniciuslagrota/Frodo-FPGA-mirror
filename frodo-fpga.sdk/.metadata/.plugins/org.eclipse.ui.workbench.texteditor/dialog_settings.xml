@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="&quot;w:" key="selection"/>
+		<item value="USE_HW_ACCELERATION" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="&quot;w:"/>
-			<item value="&quot;s2"/>
-			<item value="&quot;s1"/>
-			<item value="print_debug(1,"/>
-			<item value="&quot;f"/>
-			<item value="r1"/>
-			<item value="s1"/>
-			<item value="f\r\n"/>
+			<item value="USE_HW_ACCELERATION"/>
+			<item value="KEM_TEST_ONLY"/>
+			<item value="XScu"/>
+			<item value="u32KeyExchanged"/>
+			<item value="u32TotalKeyExchanged"/>
+			<item value="client.i_report.total_bytes"/>
+			<item value="transfer"/>
+			<item value="tcp_conn_report"/>
 		</list>
 		<list key="replacehistory">
 			<item value="//print_debug(1,"/>

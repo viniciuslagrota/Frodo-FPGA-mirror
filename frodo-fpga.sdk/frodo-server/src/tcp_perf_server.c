@@ -36,6 +36,10 @@ static struct tcp_pcb *c_pcb;
 static struct perf_stats server;
 u32_t u32LenRecv = 0;
 u32_t u32LenRecvAux = 0;
+u32_t u32KeyExchanged = 0;
+u32_t u32PacketExchanged = 0;
+u32_t u32TotalKeyExchanged = 0;
+u32_t u32TotalPacketExchanged = 0;
 
 void print_app_header(void)
 {
@@ -290,6 +294,9 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 
 		st = DECIPHER_MESSAGE;
 		u32LenRecv = 0;
+
+		u32PacketExchanged++;
+		u32TotalPacketExchanged++;
 	}
 	else
 	{
@@ -301,6 +308,9 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 		{
 			st = CALCULATE_SHARED_SECRET;
 			u32LenRecv = 0;
+
+			u32KeyExchanged++;
+			u32TotalKeyExchanged++;
 		}
 	}
 
@@ -343,27 +353,30 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 	}
 #endif
 
-//	/* Record total bytes for final report */
-//	server.total_bytes += p->tot_len;
-//
-//	if (server.i_report.report_interval_time) {
-//		u64_t now = get_time_ms();
-//		/* Record total bytes for interim report */
-//		server.i_report.total_bytes += p->tot_len;
-//		if (server.i_report.start_time) {
-//			u64_t diff_ms = now - server.i_report.start_time;
-//
-//			if (diff_ms >= server.i_report.report_interval_time) {
+	/* Record total bytes for final report */
+	server.total_bytes += p->tot_len;
+
+	if (server.i_report.report_interval_time) {
+		u64_t now = get_time_ms();
+		/* Record total bytes for interim report */
+		server.i_report.total_bytes += p->tot_len;
+		if (server.i_report.start_time) {
+			u64_t diff_ms = now - server.i_report.start_time;
+
+			if (diff_ms >= server.i_report.report_interval_time) {
 //				tcp_conn_report(diff_ms, INTER_REPORT);
-//				/* Reset Interim report counters */
-//				server.i_report.start_time = 0;
-//				server.i_report.total_bytes = 0;
-//			}
-//		} else {
-//			/* Save start time for interim report */
-//			server.i_report.start_time = now;
-//		}
-//	}
+				print_debug(DEBUG_ETH, "Key exchanged: %d | Packet exchanged: %d | Total key exchanged: %d | Total packet exchanged: %d\r\n", u32KeyExchanged, u32PacketExchanged, u32TotalKeyExchanged, u32TotalPacketExchanged);
+				u32KeyExchanged = 0;
+				u32PacketExchanged = 0;
+				/* Reset Interim report counters */
+				server.i_report.start_time = 0;
+				server.i_report.total_bytes = 0;
+			}
+		} else {
+			/* Save start time for interim report */
+			server.i_report.start_time = now;
+		}
+	}
 
 //	print_debug(1, "r3\r\n");
 	tcp_recved(tpcb, p->tot_len);

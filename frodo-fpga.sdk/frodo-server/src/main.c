@@ -458,12 +458,16 @@ int main(void)
 	start_application();
 	printf("\r\n");
 
-#if SERVER_INIT == 1 && CHANGE_KEY_TIME != 0
+#if SERVER_INIT == 1 && CHANGE_KEY_TIME != 0 && KEM_TEST_ONLY == 0
 	//Software timer
 	configSoftwareTimer();
 #endif
 
+#if USE_HW_ACCELERATION == 0
+	set_hardware_usage(SHAKE128_SW_MATRIX_SA_SW_AS_SW);
+#else
 	set_hardware_usage(SHAKE128_HW_MM_MATRIX_SA_HW_AS_HW);
+#endif
 
 	//Initialize AES256-GCM
 	gcm_initialize();
@@ -515,7 +519,9 @@ int main(void)
 			case CLIENT_CONNECTED:
 				//print_debug(1, "a\r\n");
 				print_debug(DEBUG_MAIN, "Client connected!\r\n");
+#if CHANGE_KEY_TIME != 0 && KEM_TEST_ONLY == 0
 				XScuTimer_Start(&xTimer);
+#endif
 				st = CREATE_KEY_PAIR;
 			break;
 			case CREATE_KEY_PAIR:

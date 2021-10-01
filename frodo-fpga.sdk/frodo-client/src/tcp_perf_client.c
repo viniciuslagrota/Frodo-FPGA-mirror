@@ -36,6 +36,10 @@ static struct tcp_pcb *c_pcb;
 static char send_buf[TCP_SEND_BUFSIZE];
 static struct perf_stats client;
 u32_t u32LenRecv = 0;
+u32_t u32KeyExchanged = 0;
+u32_t u32PacketExchanged = 0;
+u32_t u32TotalKeyExchanged = 0;
+u32_t u32TotalPacketExchanged = 0;
 
 void print_app_header()
 {
@@ -243,82 +247,6 @@ static err_t tcp_send_perf_traffic(void)
 	return ERR_OK;
 }
 
-//static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
-//{
-//	err_t err;
-//	u8_t apiflags = TCP_WRITE_FLAG_COPY | TCP_WRITE_FLAG_MORE;
-//
-//	if (c_pcb == NULL) {
-//		return ERR_CONN;
-//	}
-//
-//#ifdef __MICROBLAZE__
-//	/* Zero-copy pbufs is used to get maximum performance for Microblaze.
-//	 * For Zynq A9, ZynqMP A53 and R5 zero-copy pbufs does not give
-//	 * significant improvement hense not used. */
-//	apiflags = 0;
-//#endif
-//
-//	if (tcp_sndbuf(c_pcb) > u16BufferLen) {
-//#if DEBUG_KYBER == 1
-//		print_debug(DEBUG_ETH, "Writing data length: %d\n\r", u16BufferLen);
-//#endif
-//		err = tcp_write(c_pcb, pcBuffer, u16BufferLen, apiflags);
-//		if (err != ERR_OK) {
-//			print_debug(DEBUG_ETH, "TCP client: Error on tcp_write: %d\r\n",
-//					err);
-//			return err;
-//		}
-//
-//		err = tcp_output(c_pcb);
-//		if (err != ERR_OK) {
-//			print_debug(DEBUG_ETH, "TCP client: Error on tcp_output: %d\r\n",
-//					err);
-//			return err;
-//		}
-//		client.total_bytes += u16BufferLen;
-//		client.i_report.total_bytes += u16BufferLen;
-//	}
-//	else
-//	{
-//		print_debug(DEBUG_ETH, "Not enough space in buffer.\n\r");
-//	}
-//
-//	if (client.end_time || client.i_report.report_interval_time) {
-//		u64_t now = get_time_ms();
-//		if (client.i_report.report_interval_time) {
-//			if (client.i_report.start_time) {
-//				u64_t diff_ms = now - client.i_report.start_time;
-//				u64_t rtime_ms = client.i_report.report_interval_time;
-//				if (diff_ms >= rtime_ms) {
-//					tcp_conn_report(diff_ms, INTER_REPORT);
-//					client.i_report.start_time = 0;
-//					client.i_report.total_bytes = 0;
-//				}
-//			} else {
-//				client.i_report.start_time = now;
-//			}
-//		}
-//
-//#if ENABLE_TIMEOUT == 1
-//		if (client.end_time) {
-//			/* this session is time-limited */
-//			u64_t diff_ms = now - client.start_time;
-//			if (diff_ms >= client.end_time) {
-//				/* time specified is over,
-//				 * close the connection */
-//				tcp_conn_report(diff_ms, TCP_DONE_CLIENT);
-//				print_debug(DEBUG_ETH, "TCP test passed Successfully\n\r");
-//				tcp_client_close(c_pcb);
-//				c_pcb = NULL;
-//				return ERR_OK;
-//			}
-//		}
-//#endif
-//	}
-//	return ERR_OK;
-//}
-
 static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 {
 	err_t err;
@@ -341,6 +269,18 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 //	if (tcp_sndbuf(c_pcb) > u16BufferLen)
 //	{
 //	print_debug(DEBUG_ETH, "w:%d\r\n", u16BufferLen);
+		if(st == SENDING_CT)
+		{
+			u32KeyExchanged++;
+			u32TotalKeyExchanged++;
+		}
+
+		if(st == SEND_CIPHER_MESSAGE)
+		{
+			u32PacketExchanged++;
+			u32TotalPacketExchanged++;
+		}
+
 		err = tcp_write(c_pcb, pcBuffer, u16BufferLen, apiflags);
 		if (err != ERR_OK) {
 			print_debug(DEBUG_ETH, "TCP client: Error on tcp_write: %d\r\n",
@@ -367,6 +307,9 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 				u64_t rtime_ms = client.i_report.report_interval_time;
 				if (diff_ms >= rtime_ms) {
 					tcp_conn_report(diff_ms, INTER_REPORT);
+					print_debug(DEBUG_ETH, "Key exchanged: %d | Packet exchanged: %d | Total key exchanged: %d | Total packet exchanged: %d\r\n", u32KeyExchanged, u32PacketExchanged, u32TotalKeyExchanged, u32TotalPacketExchanged);
+					u32KeyExchanged = 0;
+					u32PacketExchanged = 0;
 					client.i_report.start_time = 0;
 					client.i_report.total_bytes = 0;
 				}
