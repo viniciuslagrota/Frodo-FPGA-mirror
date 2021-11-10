@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="sSize" key="selection"/>
+		<item value="u32Seed" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="sSize"/>
-			<item value="AES256-GCM authentication failed."/>
-			<item value="Alloc key"/>
-			<item value="RANDOM_BYTES"/>
-			<item value="crypto_kem_enc"/>
-			<item value="data length"/>
-			<item value="print_debug"/>
-			<item value="crypto_kem_dec"/>
+			<item value="u32Seed"/>
+			<item value="generateNonce"/>
+			<item value="frodo_mul_add_"/>
+			<item value="USE_HW_ACCELERATION"/>
+			<item value="KEM_TEST_ONLY"/>
+			<item value="XScu"/>
+			<item value="u32KeyExchanged"/>
+			<item value="u32TotalKeyExchanged"/>
 		</list>
 		<list key="replacehistory">
+			<item value="//print_debug(1,"/>
 			<item value="DEBUG_FRODO"/>
 			<item value=""/>
 			<item value="%lu"/>
@@ -25,7 +26,6 @@
 			<item value="startTimer(&amp;general_hw_timer_control);"/>
 			<item value="startTimer();"/>
 			<item value="resetTimer(&amp;general_hw_timer_control);"/>
-			<item value="resetTimer();"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

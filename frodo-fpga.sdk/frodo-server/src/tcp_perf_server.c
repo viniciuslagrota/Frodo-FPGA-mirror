@@ -35,6 +35,11 @@ extern struct netif server_netif;
 static struct tcp_pcb *c_pcb;
 static struct perf_stats server;
 u32_t u32LenRecv = 0;
+u32_t u32LenRecvAux = 0;
+u32_t u32KeyExchanged = 0;
+u32_t u32PacketExchanged = 0;
+u32_t u32TotalKeyExchanged = 0;
+u32_t u32TotalPacketExchanged = 0;
 
 void print_app_header(void)
 {
@@ -165,6 +170,8 @@ static void tcp_server_err(void *arg, err_t err)
 
 static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 {
+//	print_debug(1, "s1\r\n");
+
 	err_t err;
 	u8_t apiflags = TCP_WRITE_FLAG_COPY | TCP_WRITE_FLAG_MORE;
 
@@ -182,6 +189,7 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 #if DEBUG_KYBER == 1
 	print_debug(DEBUG_ETH, "Writing data length: %d\n\r", u16BufferLen);
 #endif
+//	print_debug(DEBUG_ETH, "Data write length: %d\r\n", u16BufferLen);
 	err = tcp_write(c_pcb, pcBuffer, u16BufferLen, apiflags);
 	if (err != ERR_OK) {
 		print_debug(DEBUG_ETH, "TCP client: Error on tcp_write: %d\r\n",
@@ -195,6 +203,8 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 				err);
 		return err;
 	}
+
+//	print_debug(1, "s2\r\n");
 	return ERR_OK;
 }
 
@@ -208,6 +218,7 @@ void transfer_data(char * pcBuffer, u16_t u16BufferLen)
 static err_t tcp_recv_perf_traffic(void *arg, struct tcp_pcb *tpcb,
 		struct pbuf *p, err_t err)
 {
+
 	if (p == NULL) {
 		u64_t now = get_time_ms();
 		u64_t diff_ms = now - server.start_time;
@@ -250,6 +261,7 @@ static err_t tcp_recv_perf_traffic(void *arg, struct tcp_pcb *tpcb,
 	tcp_recved(tpcb, p->tot_len);
 
 	pbuf_free(p);
+
 	return ERR_OK;
 }
 
@@ -257,6 +269,8 @@ static err_t tcp_recv_perf_traffic(void *arg, struct tcp_pcb *tpcb,
 static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 		struct pbuf *p, err_t err)
 {
+//	print_debug(1, "r1\r\n");
+
 	if (!p) {
 		tcp_close(tpcb);
 		tcp_recv(tpcb, NULL);
@@ -274,14 +288,19 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 #if SERVER_INIT == 1
 	if(st == WAIT_CIPHERED_DATA)
 	{
+//		print_debug(DEBUG_ETH, "1:%d\n\r", p->len);
 		memcpy(cCiphertext + u32LenRecv, pcBuf, p->len);
 		u32LenRecv += p->len;
 
 		st = DECIPHER_MESSAGE;
 		u32LenRecv = 0;
+
+		u32PacketExchanged++;
+		u32TotalPacketExchanged++;
 	}
 	else
 	{
+//		print_debug(DEBUG_ETH, "2:%d\n\r", p->len);
 		memcpy(ct + u32LenRecv, pcBuf, p->len);
 		u32LenRecv += p->len;
 
@@ -289,8 +308,39 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 		{
 			st = CALCULATE_SHARED_SECRET;
 			u32LenRecv = 0;
+
+			u32KeyExchanged++;
+			u32TotalKeyExchanged++;
 		}
 	}
+
+//	print_debug(1, "r2\r\n");
+//	else if(st == WAITING_CT)
+//	{
+//		print_debug(DEBUG_ETH, "2:%d\n\r", p->len);
+//		u32LenRecvAux += p->len;
+//		if(u32LenRecvAux < CRYPTO_CIPHERTEXTBYTES)
+//		{
+//			memcpy(ct + u32LenRecv, pcBuf, p->len);
+//			u32LenRecv += p->len;
+//		}
+//		else if(u32LenRecvAux == CRYPTO_CIPHERTEXTBYTES)
+//		{
+//			memcpy(ct + u32LenRecv, pcBuf, p->len);
+//			st = CALCULATE_SHARED_SECRET;
+//			u32LenRecv = 0;
+//			u32LenRecvAux = 0;
+//		}
+//		else
+//		{
+//			print_debug(DEBUG_ETH, "-\n\r");
+//			memcpy(ct + u32LenRecv, pcBuf, p->len - (u32LenRecvAux - CRYPTO_CIPHERTEXTBYTES));
+//			st = CALCULATE_SHARED_SECRET;
+//			u32LenRecv = 0;
+//			u32LenRecvAux = 0;
+//		}
+//	}
+
 
 #else
 	memcpy(pk + u32LenRecv, pcBuf, p->len);
@@ -304,30 +354,36 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 #endif
 
 	/* Record total bytes for final report */
-//	server.total_bytes += p->tot_len;
-//
-//	if (server.i_report.report_interval_time) {
-//		u64_t now = get_time_ms();
-//		/* Record total bytes for interim report */
-//		server.i_report.total_bytes += p->tot_len;
-//		if (server.i_report.start_time) {
-//			u64_t diff_ms = now - server.i_report.start_time;
-//
-//			if (diff_ms >= server.i_report.report_interval_time) {
+	server.total_bytes += p->tot_len;
+
+	if (server.i_report.report_interval_time) {
+		u64_t now = get_time_ms();
+		/* Record total bytes for interim report */
+		server.i_report.total_bytes += p->tot_len;
+		if (server.i_report.start_time) {
+			u64_t diff_ms = now - server.i_report.start_time;
+
+			if (diff_ms >= server.i_report.report_interval_time) {
 //				tcp_conn_report(diff_ms, INTER_REPORT);
-//				/* Reset Interim report counters */
-//				server.i_report.start_time = 0;
-//				server.i_report.total_bytes = 0;
-//			}
-//		} else {
-//			/* Save start time for interim report */
-//			server.i_report.start_time = now;
-//		}
-//	}
+				print_debug(DEBUG_ETH, "Key exchanged: %d | Packet exchanged: %d | Total key exchanged: %d | Total packet exchanged: %d\r\n", u32KeyExchanged, u32PacketExchanged, u32TotalKeyExchanged, u32TotalPacketExchanged);
+				u32KeyExchanged = 0;
+				u32PacketExchanged = 0;
+				/* Reset Interim report counters */
+				server.i_report.start_time = 0;
+				server.i_report.total_bytes = 0;
+			}
+		} else {
+			/* Save start time for interim report */
+			server.i_report.start_time = now;
+		}
+	}
 
+//	print_debug(1, "r3\r\n");
 	tcp_recved(tpcb, p->tot_len);
-
+//	print_debug(1, "r4\r\n");
 	pbuf_free(p);
+
+//	print_debug(1, "r5\r\n");
 	return ERR_OK;
 }
 

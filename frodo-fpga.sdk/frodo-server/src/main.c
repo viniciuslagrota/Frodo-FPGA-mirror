@@ -48,7 +48,7 @@
 #include "lwip/dhcp.h"
 extern volatile int dhcp_timoutcntr;
 #endif
-#define DEFAULT_IP_ADDRESS	"192.168.1.10"
+#define DEFAULT_IP_ADDRESS	"192.168.1.100"
 #define DEFAULT_IP_MASK		"255.255.255.0"
 #define DEFAULT_GW_ADDRESS	"192.168.1.1"
 #endif /* LWIP_IPV6 */
@@ -207,7 +207,7 @@ static void print_ipv6(char *msg, ip_addr_t *ip)
 static void print_ip(char *msg, ip_addr_t *ip)
 {
 //	print(msg);
-	print_debug(DEBUG_MAIN, "%s %d.%d.%d.%d\r\n", msg, ip4_addr1(ip), ip4_addr2(ip),
+	print_debug(DEBUG_ETH, "%s %d.%d.%d.%d\r\n", msg, ip4_addr1(ip), ip4_addr2(ip),
 			ip4_addr3(ip), ip4_addr4(ip));
 }
 
@@ -222,19 +222,19 @@ static void assign_default_ip(ip_addr_t *ip, ip_addr_t *mask, ip_addr_t *gw)
 {
 	int err;
 
-	print_debug(DEBUG_MAIN, "Configuring default IP %s \r\n", DEFAULT_IP_ADDRESS);
+	print_debug(DEBUG_ETH, "Configuring default IP %s \r\n", DEFAULT_IP_ADDRESS);
 
 	err = inet_aton(DEFAULT_IP_ADDRESS, ip);
 	if (!err)
-		print_debug(DEBUG_MAIN, "Invalid default IP address: %d\r\n", err);
+		print_debug(DEBUG_ERROR, "Invalid default IP address: %d\r\n", err);
 
 	err = inet_aton(DEFAULT_IP_MASK, mask);
 	if (!err)
-		print_debug(DEBUG_MAIN, "Invalid default IP MASK: %d\r\n", err);
+		print_debug(DEBUG_ERROR, "Invalid default IP MASK: %d\r\n", err);
 
 	err = inet_aton(DEFAULT_GW_ADDRESS, gw);
 	if (!err)
-		print_debug(DEBUG_MAIN, "Invalid default gateway address: %d\r\n", err);
+		print_debug(DEBUG_ERROR, "Invalid default gateway address: %d\r\n", err);
 }
 #endif /* LWIP_IPV6 */
 
@@ -458,12 +458,16 @@ int main(void)
 	start_application();
 	printf("\r\n");
 
-#if SERVER_INIT == 1 && CHANGE_KEY_TIME != 0
+#if SERVER_INIT == 1 && CHANGE_KEY_TIME != 0 && KEM_TEST_ONLY == 0
 	//Software timer
 	configSoftwareTimer();
 #endif
 
+#if USE_HW_ACCELERATION == 0
+	set_hardware_usage(SHAKE128_SW_MATRIX_SA_SW_AS_SW);
+#else
 	set_hardware_usage(SHAKE128_HW_MM_MATRIX_SA_HW_AS_HW);
+#endif
 
 	//Initialize AES256-GCM
 	gcm_initialize();
@@ -513,11 +517,15 @@ int main(void)
 				//Do nothing. Wait connection.
 			break;
 			case CLIENT_CONNECTED:
+				//print_debug(1, "a\r\n");
 				print_debug(DEBUG_MAIN, "Client connected!\r\n");
+#if CHANGE_KEY_TIME != 0 && KEM_TEST_ONLY == 0
 				XScuTimer_Start(&xTimer);
+#endif
 				st = CREATE_KEY_PAIR;
 			break;
 			case CREATE_KEY_PAIR:
+				//print_debug(1, "b\r\n");
 				bChangeKey = 0;
 				print_debug(DEBUG_MAIN, "Generating new key pair...\r\n");
 
@@ -539,6 +547,7 @@ int main(void)
 				st = SEND_PK;
 			break;
 			case SEND_PK:
+				//print_debug(1, "c\r\n");
 				//Publish PK
 				print_debug(DEBUG_MAIN, "Sending PK!\r\n");
 				transfer_data((char *)pk, CRYPTO_PUBLICKEYBYTES);
@@ -549,8 +558,10 @@ int main(void)
 				//Do nothing. Wait for ciphertext.
 			break;
 			case CALCULATE_SHARED_SECRET:
+				//print_debug(1, "d\r\n");
 				//Check CT received
 				print_debug(DEBUG_MAIN, "Calculating shared secret...\r\n");
+
 #if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "ct received: ");
 				for(int i = 0; i < CRYPTO_CIPHERTEXTBYTES; i++)
@@ -562,16 +573,6 @@ int main(void)
 				crypto_kem_dec(ss, ct, sk);
 				shake(key_a, 2*CRYPTO_BYTES, ss, CRYPTO_BYTES);
 
-//				print_debug(DEBUG_MAIN, "ss calculated: ");
-//				for(int i = 0; i < CRYPTO_BYTES; i++)
-//					printf("%02x", ss[i]);
-//				printf("\n\r");
-
-//				print_debug(DEBUG_MAIN, "key_a calculated: ");
-//				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
-//					printf("%02x", key_a[i]);
-//				printf("\n\r");
-
 				//Stop timer
 				stopTimer(&global_timer_control, 1);
 				u32Timer = getTimer(&global_timer, 1) * HW_CLOCK_PERIOD;
@@ -579,7 +580,14 @@ int main(void)
 				print_debug(DEBUG_MAIN, "Timer (hw) to process KEM (server side): %lu.%03lu ms\n", ui32Integer, ui32Fraction);
 
 				//Check shared secret
-#if 1 == 1
+#if DEBUG_FRODO == 1
+				print_debug(DEBUG_MAIN, "ss calculated: ");
+				for(int i = 0; i < CRYPTO_BYTES; i++)
+					printf("%02x", ss[i]);
+				printf("\n\r");
+#endif
+
+#if DEBUG_FRODO == 1
 				print_debug(DEBUG_MAIN, "key_a calculated: ");
 				for(int i = 0; i < 2*CRYPTO_BYTES; i++)
 					printf("%02x", key_a[i]);
@@ -591,12 +599,17 @@ int main(void)
 
 				print_debug(DEBUG_MAIN, "Waiting for ciphered data...\r\n");
 
+#if KEM_TEST_ONLY == 1
+				st = CREATE_KEY_PAIR;
+#else
 				st = WAIT_CIPHERED_DATA;
+#endif
 			break;
 			case WAIT_CIPHERED_DATA:
 				//Wait messages from client
 				break;
 			case DECIPHER_MESSAGE:
+				//print_debug(1, "e\r\n");
 				print_debug(DEBUG_MAIN, "Deciphering message...\r\n");
 
 				//Get pointer to structures
@@ -608,11 +621,11 @@ int main(void)
 				smw3000PrintDataStruct(psmCipheredData);
 
 				//Set random seed
-				setRandomSeed(psmCipheredData->u32Seed);
+//				setRandomSeed(psmCipheredData->u32Seed);
 				psmData->u32Seed = psmCipheredData->u32Seed;
 
 				//Calculate nonce
-				rv = generateNonce(nonce, sizeof(nonce));
+				rv = generateNonce(psmData->u32Seed, nonce, sizeof(nonce));
 				if(rv == 0)
 					print_debug(DEBUG_MAIN, "Error while generating nonce...\r\n");
 				printNonce(nonce);
@@ -630,7 +643,7 @@ int main(void)
 
 				if(rv != 0)
 				{
-					print_debug(DEBUG_MAIN, "AES256-GCM authentication failed.\r\n");
+					print_debug(DEBUG_ERROR, "AES256-GCM authentication failed.\r\n");
 					XScuTimer_RestartTimer(&xTimer);
 					st = CREATE_KEY_PAIR;
 					break;
@@ -649,7 +662,7 @@ int main(void)
 				if(rv == CRC_FAILED)
 				{
 					u8CrcFailed = 0x1;
-					print_debug(DEBUG_MAIN, "CRC failed.\r\n");
+					print_debug(DEBUG_ERROR, "CRC failed.\r\n");
 				}
 				else
 				{
@@ -666,7 +679,10 @@ int main(void)
 					st = CREATE_KEY_PAIR;
 				}
 				else
+				{
+//					print_debug(1, "f\r\n");
 					st = WAIT_CIPHERED_DATA;
+				}
 				break;
 		}
 		//		sleep(10);
