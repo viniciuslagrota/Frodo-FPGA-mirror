@@ -466,6 +466,7 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 	/* Record total bytes for final report */
 	server.total_bytes += p->tot_len;
 
+#if PERFORMANCE_MODE == 1
 	if (server.i_report.report_interval_time) {
 		u64_t now = get_time_ms();
 		/* Record total bytes for interim report */
@@ -487,6 +488,7 @@ static err_t tcp_recv_traffic(void *arg, struct tcp_pcb *tpcb,
 			server.i_report.start_time = now;
 		}
 	}
+#endif
 
 	tcp_recved(tpcb, p->tot_len);
 

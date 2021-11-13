@@ -266,7 +266,7 @@ static err_t tcp_send_traffic(char * pcBuffer, u16_t u16BufferLen)
 	apiflags = 0;
 #endif
 
-#if DEBUG_KYBER == 1
+#if DEBUG_FRODO == 1
 	print_debug(DEBUG_ETH, "Writing data length: %d\n\r", u16BufferLen);
 #endif
 
@@ -465,6 +465,8 @@ void start_application(void)
 	struct tcp_pcb* pcb;
 	ip_addr_t remote_addr;
 	u32_t i;
+
+	print_debug(DEBUG_ETH, "Starting application...\r\n");
 
 #if LWIP_IPV6==1
 	remote_addr.type= IPADDR_TYPE_V6;

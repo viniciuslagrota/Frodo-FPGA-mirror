@@ -576,8 +576,8 @@ int main(void)
 
 #if DEBUG_FRODO == 1
 					print_debug(DEBUG_MAIN, "[%d] Public key: ", i);
-					for(int i = 0; i < CRYPTO_PUBLICKEYBYTES; i++)
-						printf("%x", pk[i]);
+					for(int j = 0; j < CRYPTO_PUBLICKEYBYTES; j++)
+						printf("%x", pk[j]);
 					printf("\r\n\r\n");
 #endif
 					clientStruct[i].stClient = SEND_PK;
@@ -599,8 +599,8 @@ int main(void)
 					print_debug(DEBUG_MAIN, "[%d] Calculating shared secret...\r\n", i);
 #if DEBUG_FRODO == 1
 					print_debug(DEBUG_MAIN, "[%d] ct received: ", i);
-					for(int i = 0; i < CRYPTO_CIPHERTEXTBYTES; i++)
-						printf("%x", ct[i]);
+					for(int j = 0; j < CRYPTO_CIPHERTEXTBYTES; j++)
+						printf("%x", ct[j]);
 					printf("\n\r");
 #endif
 
@@ -618,15 +618,15 @@ int main(void)
 					//Check shared secret
 #if DEBUG_FRODO == 1
 					print_debug(DEBUG_MAIN, "[%d] ss calculated: ", i);
-					for(int i = 0; i < CRYPTO_BYTES; i++)
-						printf("%02x", ss[i]);
+					for(int j = 0; j < CRYPTO_BYTES; j++)
+						printf("%02x", ss[j]);
 					printf("\n\r");
 #endif
 
 #if DEBUG_FRODO == 1
 					print_debug(DEBUG_MAIN, "[%d] key_a calculated: ", i);
-					for(int i = 0; i < 2*CRYPTO_BYTES; i++)
-						printf("%02x", key_a[i]);
+					for(int j = 0; j < 2*CRYPTO_BYTES; j++)
+						printf("%02x", key_a[i][j]);
 					printf("\n\r");
 #endif
 
