@@ -2,8 +2,8 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 7 -x 2750 -y 250 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 7 -x 2750 -y 220 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 7 -x 2760 -y 250 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 2760 -y 220 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -x 430 -y 330 -defaultsOSRD
 preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 430 -y 110 -defaultsOSRD
 preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 820 -y 740 -defaultsOSRD
@@ -67,32 +67,32 @@ preplace netloc timer_8_count 1 4 2 NJ -390 2350
 preplace netloc axi_gpio_0_gpio_io_o 1 4 1 2070 -730n
 preplace netloc axi_gpio_0_gpio2_io_o 1 4 1 2060 -690n
 preplace netloc timer_0_count 1 4 2 2060 -520 2350
-preplace netloc axi_interconnect_0_M13_AXI 1 2 2 1000 50 1620J
-preplace netloc axi_interconnect_0_M07_AXI 1 2 2 NJ 670 1660
+preplace netloc axi_interconnect_0_M05_AXI 1 2 2 NJ 630 1690
 preplace netloc axi_interconnect_0_M15_AXI 1 2 1 1060 370n
+preplace netloc processing_system7_0_DDR 1 1 6 660J 200 1050 280 1650 250 N 250 N 250 N
+preplace netloc axi_interconnect_0_M09_AXI 1 2 2 NJ 710 1620
+preplace netloc axi_interconnect_0_M07_AXI 1 2 2 NJ 670 1660
 preplace netloc axi_interconnect_0_M10_AXI 1 2 1 980 730n
 preplace netloc axi_interconnect_0_M06_AXI 1 2 1 1050 650n
-preplace netloc axi_interconnect_0_M05_AXI 1 2 2 NJ 630 1690
-preplace netloc axi_interconnect_0_M09_AXI 1 2 2 NJ 710 1620
-preplace netloc processing_system7_0_DDR 1 1 6 660J 200 1050 280 1650 250 N 250 N 250 N
-preplace netloc processing_system7_0_FIXED_IO 1 1 6 650J 190 1060 290 1640 220 N 220 N 220 N
+preplace netloc axi_interconnect_0_M13_AXI 1 2 2 1000 50 1620J
 preplace netloc axi_interconnect_0_M12_AXI 1 2 1 960 770n
 preplace netloc axi_interconnect_0_M03_AXI 1 2 2 NJ 590 1720
 preplace netloc S00_AXI_1 1 1 1 680 260n
-preplace netloc axi_interconnect_0_M04_AXI 1 2 2 NJ 610 1710
 preplace netloc axi_interconnect_0_M11_AXI 1 2 1 970 750n
 preplace netloc axi_interconnect_0_M08_AXI 1 2 2 NJ 690 1650
 preplace netloc axi_interconnect_0_M17_AXI 1 2 4 990 -150 NJ -150 NJ -150 2400J
 preplace netloc axi_interconnect_0_M16_AXI 1 2 1 1030 -60n
+preplace netloc processing_system7_0_FIXED_IO 1 1 6 650J 190 1060 290 1640 220 N 220 N 220 N
 preplace netloc axi_interconnect_0_M14_AXI 1 2 1 1040 180n
 preplace netloc axi_interconnect_0_M19_AXI 1 2 4 1100J 720 1700J 710 NJ 710 2360
 preplace netloc axi_interconnect_0_M18_AXI 1 2 4 1090J 700 NJ 700 NJ 700 2370
+preplace netloc axi_interconnect_0_M04_AXI 1 2 2 NJ 610 1710
 preplace netloc axi_interconnect_0_M21_AXI 1 2 2 1010 -420 NJ
 preplace netloc axi_interconnect_0_M20_AXI 1 2 2 1020 -260 NJ
 preplace netloc axi_interconnect_0_M00_AXI 1 2 2 960 -740 NJ
 preplace netloc axi_interconnect_0_M01_AXI 1 2 2 970 -590 NJ
-levelinfo -pg 1 -10 430 820 1480 1890 2240 2580 2750
-pagesize -pg 1 -db -bbox -sgen -10 -950 2860 1630
+levelinfo -pg 1 -10 430 820 1480 1890 2240 2580 2760
+pagesize -pg 1 -db -bbox -sgen -10 -950 2870 1630
 "
 }
 {

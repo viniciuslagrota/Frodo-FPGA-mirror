@@ -32,7 +32,7 @@
 		<item value="0" key="y"/>
 		<item value="true" key="show_typedefs"/>
 		<item value="true" key="show_variables"/>
-		<item value="881" key="height"/>
+		<item value="860" key="height"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
 		<item value="180" key="size.height"/>
