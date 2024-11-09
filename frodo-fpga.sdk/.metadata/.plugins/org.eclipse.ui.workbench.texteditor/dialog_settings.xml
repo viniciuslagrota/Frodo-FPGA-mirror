@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="u32Seed" key="selection"/>
+		<item value="RECONNECTING" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="u32Seed"/>
-			<item value="generateNonce"/>
-			<item value="frodo_mul_add_"/>
-			<item value="USE_HW_ACCELERATION"/>
-			<item value="KEM_TEST_ONLY"/>
-			<item value="XScu"/>
-			<item value="u32KeyExchanged"/>
-			<item value="u32TotalKeyExchanged"/>
+			<item value="RECONNECTING"/>
+			<item value="System timeout"/>
+			<item value="data length"/>
+			<item value="DISCONNECT_CLIENT"/>
+			<item value="TIMER_LOAD"/>
+			<item value="key_a"/>
+			<item value="KYBER"/>
+			<item value="pk["/>
 		</list>
 		<list key="replacehistory">
-			<item value="//print_debug(1,"/>
+			<item value="FRODO"/>
 			<item value="DEBUG_FRODO"/>
+			<item value="//print_debug(1,"/>
 			<item value=""/>
 			<item value="%lu"/>
 			<item value="is %lu ns"/>
 			<item value="startTimer(&amp;general_hw_timer_control);"/>
 			<item value="startTimer();"/>
-			<item value="resetTimer(&amp;general_hw_timer_control);"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -62,7 +62,8 @@
 #define PERFORMANCE_MODE	0	//1: suppress prints | 0: enable prints
 #define USE_HW_ACCELERATION	1	//1: use hardware acceleration | 0: do not use hardware acceleration
 #define SERVER_INIT			1	//1: Server generate key pair and send PK | 0: Server waits PK from client
-#define CHANGE_KEY_TIME		5   //In minutes, if zero, does not perform AES. Only valid when SERVER_INIT = 0
+#define CHANGE_KEY_TIME		60  //In seconds, if zero, does not perform AES. Only valid when SERVER_INIT = 0
+#define INACTIVE_TIMEOUT	30	//In seconds
 #define SIMULATED_DATA		0	//1: fixed and simulated data from SMW3000 | 0: acquire data from SMW3000
 #define RANDOM_BYTES		1
 
@@ -217,8 +218,8 @@ extern uint16_t CDF_TABLE_LEN;
 //	Software timer timeout counter
 //
 //////////////////////////////////////////////
-#define TIMER_LOAD_VALUE		5*(XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ/2) //1 second if prescale = 0
-#define PRESCALE				11 // Total time wait = (PRESCALE + 1) * TIMER_LOAD_VALUE
+#define TIMER_LOAD_VALUE		(XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ/2) //1 second if prescale = 0
+#define PRESCALE				0 // Total time wait = (PRESCALE + 1) * TIMER_LOAD_VALUE
 
 /////////////////////////////////////////////
 //
@@ -305,11 +306,13 @@ enum state
 	GET_SMW3000_DATA,
 	CIPHER_MESSAGE,
 	SEND_CIPHER_MESSAGE,
-	WAITING_CIPHER_MESSAGE_ACK
+	WAITING_CIPHER_MESSAGE_ACK,
+	RECONNECTING
 };
 #endif
 
 enum state st;
+bool bCtReceived;
 uint8_t pk[CRYPTO_PUBLICKEYBYTES];
 #if SERVER_INIT == 0
 uint8_t sk[CRYPTO_SECRETKEYBYTES];
