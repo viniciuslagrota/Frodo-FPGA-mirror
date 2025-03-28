@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;frodo_sdk/src/include/keccak-f1600.c&apos; to &apos;keccak_f1600.c&apos;" description="Rename resource &apos;keccak-f1600.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/include/keccak-f1600.c" name="keccak_f1600.c" stamp="1575124375791" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;frodo_sdk/src/include/keccak-f1600.h&apos; to &apos;keccak_f1600.h&apos;" description="Rename resource &apos;keccak-f1600.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/include/keccak-f1600.h" name="keccak_f1600.h" stamp="1575124386961" updateReferences="true"/>
-</session>

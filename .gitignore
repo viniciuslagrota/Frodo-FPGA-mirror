@@ -1,1 +1,27 @@
 
+# Vivado project cache and temporary files
+*.log
+*.jou
+*.backup.*
+*.str
+*.tmp
+*.wdb
+*.xml
+*.html
+
+# Vivado generated folders
+*.cache/
+*.runs/
+*.ip_user_files/
+*.webtalk/
+*.sim/
+*.xsim/
+*.hw/
+*.sdk/
+* - Copy*/
+
+# Other common
+*.bak
+*.orig
+*.swp
+.DS_Store

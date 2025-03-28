@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;frodo-client/src/include&apos;" deleteContents="false" description="Delete resource &apos;frodo-client/src/include&apos;" element1="/frodo-client/src/include" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1631034298406"/>&#x0A;<refactoring comment="Delete resource &apos;frodoBD_wrapper_hw_platform_1&apos;" deleteContents="false" description="Delete resource &apos;frodoBD_wrapper_hw_platform_1&apos;" element1="/frodoBD_wrapper_hw_platform_1" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1631036066011"/>
-</session>
