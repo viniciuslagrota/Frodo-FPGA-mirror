@@ -16,8 +16,6 @@
 *.webtalk/
 *.sim/
 *.xsim/
-*.hw/
-*.sdk/
 * - Copy*/
 
 # Other common

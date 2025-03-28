@@ -1,0 +1,312 @@
+/*
+ * frodo_main.c
+
+ *
+ *  Created on: 25 de nov de 2019
+ *      Author: Vinicius
+ */
+
+#include "global_def.h"
+#include "fips202.h"
+
+static enum keccakType
+{
+	KECCAK_SW,
+	KECCAK_HW,
+	KECCAK_HW_MM
+} keccakStatePermuteType = KECCAK_SW;
+
+void matrix_SA_mult(uint32_t * S, uint32_t * A, uint32_t * B)
+{
+	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Matrix init\n");
+
+	//Variables
+	int i;
+	u32 readGpio = 0x0;
+
+	//Set start pin high
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x1); // Start gpio set high
+
+	print_debug(DEBUG_MATRIX_MM, "\tTest 0x%08x\n", S[1]);
+	print_debug(DEBUG_MATRIX_MM, "\tTest 0x%08x\n", A[1]);
+
+	//Sending data S
+	for(i = 0; i < 8; i++)
+	{
+		memoryMatrixS[i] = S[i];
+		print_debug(DEBUG_MATRIX_MM, "\tTest 0x%08lx\n", S[i]);
+		print_debug(DEBUG_MATRIX_MM, "\tSent data S[%lu]: 0x%08x\n", i, memoryMatrixS[i]);
+	}
+
+	//Sending data A
+	for(i = 0; i < 640; i++)
+	{
+		memoryMatrixA[i] = A[i];
+		print_debug(DEBUG_MATRIX_MM, "\tSent data A[%lu]: 0x%08x\n", i, memoryMatrixA[i]);
+	}
+
+	//Reading busy bit
+	readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1); //Check done pin
+	while(readGpio == 0x1)
+	{
+		readGpio = XGpio_DiscreteRead(&axiStartBusyMatrix, 1);
+	}
+	print_debug(DEBUG_MATRIX_MM, "[MATRIX] Busy bit low!\n");
+
+	//Interpret data
+	for (i = 0; i < 640*8; i++)
+	{
+		B[i] = memoryMatrixB[i];
+		if(i < 20)
+			print_debug(DEBUG_MATRIX_MM, "\tB[%lu]: 0x%08x\n", i, B[i]);
+	}
+
+	//Set start pin low
+	XGpio_DiscreteWrite(&axiStartBusyMatrix, 1, 0x0); // Start gpio set low
+
+}
+
+void KeccakF1600_StatePermute(uint64_t * state)
+{
+	switch(keccakStatePermuteType)
+	{
+		case KECCAK_SW:
+		{
+			KeccakF1600_StatePermute_SW(state);
+			break;
+		}
+		case KECCAK_HW:
+		{
+			KeccakF1600_StatePermute_HW(state);
+			break;
+		}
+		case KECCAK_HW_MM:
+		{
+			KeccakF1600_StatePermute_HW_MM(state);
+			break;
+		}
+	}
+}
+
+unsigned int get_cyclecount (void)
+{
+	unsigned int value;
+	// Read CCNT Register
+	asm volatile ("MRC p15, 0, %0, c9, c13, 0\t\n": "=r"(value));
+	return value;
+}
+
+void init_perfcounters (int32_t do_reset, int32_t enable_divider)
+{
+	// in general enable all counters (including cycle counter)
+	int32_t value = 1;
+
+	// peform reset:
+	if (do_reset)
+	{
+		value |= 2;     // reset all counters to zero.
+		value |= 4;     // reset cycle counter to zero.
+	}
+
+	if (enable_divider)
+		value |= 8;     // enable "by 64" divider for CCNT.
+
+	value |= 16;
+
+	// program the performance-counter control-register:
+	asm volatile ("MCR p15, 0, %0, c9, c12, 0\t\n" :: "r"(value));
+
+	// enable all counters:
+	asm volatile ("MCR p15, 0, %0, c9, c12, 1\t\n" :: "r"(0x8000000f));
+
+	// clear overflows:
+	asm volatile ("MCR p15, 0, %0, c9, c12, 3\t\n" :: "r"(0x8000000f));
+}
+
+int kem_test(const char *named_parameters, int iterations)
+{
+	// CDF table
+//	uint16_t CDF_TABLE[13] = {4643, 13363, 20579, 25843, 29227, 31145, 32103, 32525, 32689, 32745, 32762, 32766, 32767};
+//	uint16_t CDF_TABLE_LEN = 13;
+
+	// measure the counting overhead:
+	unsigned int overhead = get_cyclecount();
+	overhead = get_cyclecount() - overhead;
+
+	volatile unsigned int t_keypair_sw = 0, t_enc_sw = 0, t_dec_sw = 0, t_total_sw = 0;
+	volatile unsigned int t_keypair_hw = 0, t_enc_hw = 0, t_dec_hw = 0, t_total_hw = 0;
+	volatile unsigned int t_keypair_hw_mm = 0, t_enc_hw_mm = 0, t_dec_hw_mm = 0, t_total_hw_mm = 0;
+
+	/* enable user-mode access to the performance counter*/
+	asm ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
+
+	/* disable counter overflow interrupts (just in case)*/
+	asm ("MCR p15, 0, %0, C9, C14, 2\n\t" :: "r"(0x8000000f));
+
+	// init counters:
+	init_perfcounters (1, 0);
+
+#if ENABLE_KECCAK_DEBUG
+	// ------ Test keccak_function ------
+	u64 state[25] = { 0 };
+	state[0] = 0x000000000000001f;
+	state[20] = 0x8000000000000000;
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Initializing Hardware function test\n");
+	printStateMatrixDebug(state);
+	unsigned int t;
+	t = get_cyclecount();
+	KeccakF1600_StatePermute_HW(state);
+	t = get_cyclecount() - t;
+	printStateMatrixDebug(state);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware function took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
+
+	u64 state2[25] = { 0 };
+	state2[0] = 0x000000000000001f;
+	state2[20] = 0x8000000000000000;
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Initializing Software function test\n");
+	printStateMatrixDebug(state2);
+	t = get_cyclecount();
+	KeccakF1600_StatePermute_SW(state2);
+	t = get_cyclecount() - t;
+	printStateMatrixDebug(state2);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Software function took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
+
+	u64 state3[25] = { 0 };
+	state3[0] = 0x000000000000001f;
+	state3[20] = 0x8000000000000000;
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Initializing Hardware Memory-Mapped function test\n");
+	printStateMatrixDebug(state3);
+	t = get_cyclecount();
+	KeccakF1600_StatePermute_HW_MM(state3);
+	t = get_cyclecount() - t;
+	printStateMatrixDebug(state3);
+	print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Hardware Memory-Mapped function took exactly %d cycles or %d us (including function call)\n\n", t - overhead, (t - overhead)/666);
+
+	u32 S[8] = {0x00000064, 0x00C8012C, 0x019001F4, 0x025802BC};
+	u32 A[640] = {0x00000001, 0x00020003, 0x00040005, 0x00060007, 0x00080009, 0x000A000B, 0x000C000D, 0x000E000F, 0x00100011, 0x00120013, 0x00140015, 0x00160017, 0x00180019, 0x001A001B, 0x001C001D, 0x001E001F, 0x00200021, 0x00220023, 0x00240025, 0x00260027, 0x00280029, 0x002A002B, 0x002C002D, 0x002E002F, 0x00300031, 0x00320033, 0x00340035, 0x00360037, 0x00380039, 0x003A003B, 0x003C003D, 0x003E003F, 0x00400041, 0x00420043, 0x00440045, 0x00460047, 0x00480049, 0x004A004B, 0x004C004D, 0x004E004F, 0x00500051, 0x00520053, 0x00540055, 0x00560057, 0x00580059, 0x005A005B, 0x005C005D, 0x005E005F, 0x00600061, 0x00620063, 0x00640065, 0x00660067, 0x00680069, 0x006A006B, 0x006C006D, 0x006E006F, 0x00700071, 0x00720073, 0x00740075, 0x00760077, 0x00780079, 0x007A007B, 0x007C007D, 0x007E007F, 0x00800081, 0x00820083, 0x00840085, 0x00860087, 0x00880089, 0x008A008B, 0x008C008D, 0x008E008F, 0x00900091, 0x00920093, 0x00940095, 0x00960097, 0x00980099, 0x009A009B, 0x009C009D, 0x009E009F, 0x00A000A1, 0x00A200A3, 0x00A400A5, 0x00A600A7, 0x00A800A9, 0x00AA00AB, 0x00AC00AD, 0x00AE00AF, 0x00B000B1, 0x00B200B3, 0x00B400B5, 0x00B600B7, 0x00B800B9, 0x00BA00BB, 0x00BC00BD, 0x00BE00BF, 0x00C000C1, 0x00C200C3, 0x00C400C5, 0x00C600C7, 0x00C800C9, 0x00CA00CB, 0x00CC00CD, 0x00CE00CF, 0x00D000D1, 0x00D200D3, 0x00D400D5, 0x00D600D7, 0x00D800D9, 0x00DA00DB, 0x00DC00DD, 0x00DE00DF, 0x00E000E1, 0x00E200E3, 0x00E400E5, 0x00E600E7, 0x00E800E9, 0x00EA00EB, 0x00EC00ED, 0x00EE00EF, 0x00F000F1, 0x00F200F3, 0x00F400F5, 0x00F600F7, 0x00F800F9, 0x00FA00FB, 0x00FC00FD, 0x00FE00FF, 0x01000101, 0x01020103, 0x01040105, 0x01060107, 0x01080109, 0x010A010B, 0x010C010D, 0x010E010F, 0x01100111, 0x01120113, 0x01140115, 0x01160117, 0x01180119, 0x011A011B, 0x011C011D, 0x011E011F, 0x01200121, 0x01220123, 0x01240125, 0x01260127, 0x01280129, 0x012A012B, 0x012C012D, 0x012E012F, 0x01300131, 0x01320133, 0x01340135, 0x01360137, 0x01380139, 0x013A013B, 0x013C013D, 0x013E013F, 0x01400141, 0x01420143, 0x01440145, 0x01460147, 0x01480149, 0x014A014B, 0x014C014D, 0x014E014F, 0x01500151, 0x01520153, 0x01540155, 0x01560157, 0x01580159, 0x015A015B, 0x015C015D, 0x015E015F, 0x01600161, 0x01620163, 0x01640165, 0x01660167, 0x01680169, 0x016A016B, 0x016C016D, 0x016E016F, 0x01700171, 0x01720173, 0x01740175, 0x01760177, 0x01780179, 0x017A017B, 0x017C017D, 0x017E017F, 0x01800181, 0x01820183, 0x01840185, 0x01860187, 0x01880189, 0x018A018B, 0x018C018D, 0x018E018F, 0x01900191, 0x01920193, 0x01940195, 0x01960197, 0x01980199, 0x019A019B, 0x019C019D, 0x019E019F, 0x01A001A1, 0x01A201A3, 0x01A401A5, 0x01A601A7, 0x01A801A9, 0x01AA01AB, 0x01AC01AD, 0x01AE01AF, 0x01B001B1, 0x01B201B3, 0x01B401B5, 0x01B601B7, 0x01B801B9, 0x01BA01BB, 0x01BC01BD, 0x01BE01BF, 0x01C001C1, 0x01C201C3, 0x01C401C5, 0x01C601C7, 0x01C801C9, 0x01CA01CB, 0x01CC01CD, 0x01CE01CF, 0x01D001D1, 0x01D201D3, 0x01D401D5, 0x01D601D7, 0x01D801D9, 0x01DA01DB, 0x01DC01DD, 0x01DE01DF, 0x01E001E1, 0x01E201E3, 0x01E401E5, 0x01E601E7, 0x01E801E9, 0x01EA01EB, 0x01EC01ED, 0x01EE01EF, 0x01F001F1, 0x01F201F3, 0x01F401F5, 0x01F601F7, 0x01F801F9, 0x01FA01FB, 0x01FC01FD, 0x01FE01FF, 0x02000201, 0x02020203, 0x02040205, 0x02060207, 0x02080209, 0x020A020B, 0x020C020D, 0x020E020F, 0x02100211, 0x02120213, 0x02140215, 0x02160217, 0x02180219, 0x021A021B, 0x021C021D, 0x021E021F, 0x02200221, 0x02220223, 0x02240225, 0x02260227, 0x02280229, 0x022A022B, 0x022C022D, 0x022E022F, 0x02300231, 0x02320233, 0x02340235, 0x02360237, 0x02380239, 0x023A023B, 0x023C023D, 0x023E023F, 0x02400241, 0x02420243, 0x02440245, 0x02460247, 0x02480249, 0x024A024B, 0x024C024D, 0x024E024F, 0x02500251, 0x02520253, 0x02540255, 0x02560257, 0x02580259, 0x025A025B, 0x025C025D, 0x025E025F, 0x02600261, 0x02620263, 0x02640265, 0x02660267, 0x02680269, 0x026A026B, 0x026C026D, 0x026E026F, 0x02700271, 0x02720273, 0x02740275, 0x02760277, 0x02780279, 0x027A027B, 0x027C027D, 0x027E027F};
+	u32 B[640*8];
+	matrix_SA_mult(S, A, B);
+#endif
+
+#if ENABLE_KEM_TEST
+	// ------ KEM test ------
+	uint8_t pk[CRYPTO_PUBLICKEYBYTES];
+	uint8_t sk[CRYPTO_SECRETKEYBYTES];
+	uint8_t ss_encap[CRYPTO_BYTES], ss_decap[CRYPTO_BYTES];
+	uint8_t ct[CRYPTO_CIPHERTEXTBYTES];
+
+	print_debug(DEBUG_TEST_KEM, "\n");
+	print_debug(DEBUG_TEST_KEM, "=============================================================================================================================\n");
+	print_debug(DEBUG_TEST_KEM, "Testing correctness of key encapsulation mechanism (KEM), system %s, tests for %d iterations\n", named_parameters, iterations);
+	print_debug(DEBUG_TEST_KEM, "=============================================================================================================================\n");
+
+	for (int i = 0; i < iterations; i++)
+	{
+		keccakStatePermuteType = KECCAK_SW;
+
+		t_keypair_sw = get_cyclecount();
+		crypto_kem_keypair(pk, sk);
+		t_keypair_sw = get_cyclecount() - t_keypair_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using SW took exactly %d cycles or %d us (including function call)\n", t_keypair_sw, (t_keypair_sw)/666);
+
+		t_enc_sw = get_cyclecount();
+		crypto_kem_enc(ct, ss_encap, pk);
+		t_enc_sw = get_cyclecount() - t_enc_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using SW took exactly %d cycles or %d us (including function call)\n", t_enc_sw, (t_enc_sw)/666);
+
+		t_dec_sw = get_cyclecount();
+		crypto_kem_dec(ss_decap, ct, sk);
+		t_dec_sw = get_cyclecount() - t_dec_sw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using SW took exactly %d cycles or %d us (including function call)\n", t_dec_sw, (t_dec_sw)/666);
+
+		//Total sw time
+		t_total_sw = t_keypair_sw + t_enc_sw + t_dec_sw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using SW is %d cycles or %d us (including function call)\n", t_total_sw, (t_total_sw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] SW tests PASSED. All session keys matched.\n");
+		print_debug(DEBUG_TEST_KEM, "\n");
+
+		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
+			print_debug(DEBUG_ERROR, "[TEST_KEM] SW ERROR!\n");
+			return false;
+		}
+
+		keccakStatePermuteType = KECCAK_HW;
+
+		t_keypair_hw = get_cyclecount();
+		crypto_kem_keypair(pk, sk);
+		t_keypair_hw = get_cyclecount() - t_keypair_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using HW took exactly %d cycles or %d us (including function call)\n", t_keypair_hw, (t_keypair_hw)/666);
+
+		t_enc_hw = get_cyclecount();
+		crypto_kem_enc(ct, ss_encap, pk);
+		t_enc_hw = get_cyclecount() - t_enc_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using HW took exactly %d cycles or %d us (including function call)\n", t_enc_hw, (t_enc_hw)/666);
+
+		t_dec_hw = get_cyclecount();
+		crypto_kem_dec(ss_decap, ct, sk);
+		t_dec_hw = get_cyclecount() - t_dec_hw - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using HW took exactly %d cycles or %d us (including function call)\n", t_dec_hw, (t_dec_hw)/666);
+
+		//Total hw time
+		t_total_hw = t_keypair_hw + t_enc_hw + t_dec_hw;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using HW is %d cycles or %d us (including function call)\n", t_total_hw, (t_total_hw)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] HW tests PASSED. All session keys matched.\n");
+		print_debug(DEBUG_TEST_KEM, "\n");
+
+		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
+			print_debug(DEBUG_ERROR, "[TEST_KEM] HW ERROR!\n");
+			return false;
+		}
+
+		keccakStatePermuteType = KECCAK_HW_MM;
+
+		t_keypair_hw_mm = get_cyclecount();
+		crypto_kem_keypair(pk, sk);
+		t_keypair_hw_mm = get_cyclecount() - t_keypair_hw_mm - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_keypair using HW_MM took exactly %d cycles or %d us (including function call)\n", t_keypair_hw_mm, (t_keypair_hw_mm)/666);
+
+		t_enc_hw_mm = get_cyclecount();
+		crypto_kem_enc(ct, ss_encap, pk);
+		t_enc_hw_mm = get_cyclecount() - t_enc_hw_mm - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_enc using HW_MM took exactly %d cycles or %d us (including function call)\n", t_enc_hw_mm, (t_enc_hw_mm)/666);
+
+		t_dec_hw_mm = get_cyclecount();
+		crypto_kem_dec(ss_decap, ct, sk);
+		t_dec_hw_mm = get_cyclecount() - t_dec_hw_mm - overhead;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Crypto_kem_dec using HW_MM took exactly %d cycles or %d us (including function call)\n", t_dec_hw_mm, (t_dec_hw_mm)/666);
+
+		//Total hw time
+		t_total_hw_mm = t_keypair_hw_mm + t_enc_hw_mm + t_dec_hw_mm;
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] Total time using HW_MM is %d cycles or %d us (including function call)\n", t_total_hw_mm, (t_total_hw_mm)/666);
+		print_debug(DEBUG_TEST_KEM, "[TEST_KEM] HW_MM tests PASSED. All session keys matched.\n");
+		print_debug(DEBUG_TEST_KEM, "\n");
+
+		if (memcmp(ss_encap, ss_decap, CRYPTO_BYTES) != 0) {
+			print_debug(DEBUG_ERROR, "[TEST_KEM] HW_MM ERROR!\n");
+			return false;
+		}
+
+		//Table
+		float fRelativeHw = 100.0-(t_total_hw/(float)t_total_sw)*100.0;
+		u32 wholeHw, thousandthsHw;
+		wholeHw = fRelativeHw;
+		thousandthsHw = (fRelativeHw - wholeHw) * 1000;
+		float fRelativeHwMM = 100.0-(t_total_hw_mm/(float)t_total_sw)*100.0;
+		u32 wholeHwMM, thousandthsHwMM;
+		wholeHwMM = fRelativeHwMM;
+		thousandthsHwMM = (fRelativeHwMM - wholeHwMM) * 1000;
+		print_debug(DEBUG_TEST_KEM, "\t\tkey pair (us) \t|\t encryption (us) \t|\t decryption (us) \t\t|\t\t total (us) \t\t|\t Improvement (%c) \n", 37);
+		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t\t -\n", t_keypair_sw/666, t_enc_sw/666, t_dec_sw/666, t_total_sw/666);
+		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t %lu.%03lu\n", t_keypair_hw/666, t_enc_hw/666, t_dec_hw/666, t_total_hw/666, wholeHw, thousandthsHw);
+		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n");
+		print_debug(DEBUG_TEST_KEM, "\t\t\t %d \t\t|\t\t\t %d \t\t|\t\t\t %d \t\t\t|\t\t %d \t\t|\t\t %lu.%03lu\n", t_keypair_hw_mm/666, t_enc_hw_mm/666, t_dec_hw_mm/666, t_total_hw_mm/666, wholeHwMM, thousandthsHwMM);
+		print_debug(DEBUG_TEST_KEM, "     -----------------------------------------------------------------------------------------------------------\n\n\n");
+
+
+	}
+#endif
+
+	return true;
+}
